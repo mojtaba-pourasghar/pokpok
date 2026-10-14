@@ -1,0 +1,533 @@
+{
+ "scenes": [
+  {
+   "id": "home.living",
+   "world": "home",
+   "title": "پذیرایی",
+   "icon": "sofa",
+   "background": "living",
+   "intro": "scene.home.living",
+   "objects": [
+    {
+     "id": "rug",
+     "art": "rug",
+     "x": 0.5,
+     "y": 0.84,
+     "size": 0.55,
+     "label": "فرش",
+     "z": -1,
+     "persist": false
+    },
+    {
+     "id": "clock",
+     "art": "clock",
+     "x": 0.16,
+     "y": 0.2,
+     "size": 0.16,
+     "label": "ساعت",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/clock.mp3"
+     }
+    },
+    {
+     "id": "sofa",
+     "art": "sofa",
+     "x": 0.3,
+     "y": 0.58,
+     "size": 0.42,
+     "label": "مبل",
+     "drag": "free",
+     "tap": {
+      "anim": "squash",
+      "sound": "audio/sfx/boing.mp3"
+     }
+    },
+    {
+     "id": "lamp",
+     "art": "lamp",
+     "x": 0.86,
+     "y": 0.47,
+     "size": 0.36,
+     "label": "چراغ",
+     "glow": true,
+     "tap": {
+      "anim": "pop",
+      "sound": "audio/sfx/light_switch.mp3",
+      "toggle": true
+     }
+    },
+    {
+     "id": "tv",
+     "art": "tv",
+     "x": 0.64,
+     "y": 0.5,
+     "size": 0.3,
+     "label": "تلویزیون",
+     "glow": true,
+     "tap": {
+      "anim": "pop",
+      "sound": "audio/sfx/tv_on.mp3",
+      "toggle": true
+     }
+    },
+    {
+     "id": "plant",
+     "art": "plant",
+     "x": 0.08,
+     "y": 0.53,
+     "size": 0.24,
+     "label": "گلدان",
+     "drag": "free",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/rustle.mp3"
+     }
+    },
+    {
+     "id": "ball",
+     "art": "ball",
+     "x": 0.72,
+     "y": 0.86,
+     "size": 0.15,
+     "label": "توپ",
+     "drag": "free",
+     "tags": [
+      "toy"
+     ],
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/sfx/boing.mp3"
+     }
+    },
+    {
+     "id": "bunny",
+     "art": "teddy",
+     "x": 0.45,
+     "y": 0.8,
+     "size": 0.18,
+     "label": "عروسک خرگوش",
+     "drag": "free",
+     "tags": [
+      "toy"
+     ],
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/sfx/giggle.mp3"
+     }
+    },
+    {
+     "id": "blocks",
+     "art": "toy_blocks",
+     "x": 0.2,
+     "y": 0.86,
+     "size": 0.19,
+     "label": "مکعب‌ها",
+     "drag": "free",
+     "tags": [
+      "toy"
+     ],
+     "tap": {
+      "anim": "squash",
+      "sound": "audio/sfx/thunk.mp3"
+     }
+    }
+   ]
+  },
+  {
+   "id": "home.kitchen",
+   "world": "home",
+   "title": "آشپزخانه",
+   "icon": "pot",
+   "background": "kitchen",
+   "intro": "scene.home.kitchen",
+   "objects": [
+    {
+     "id": "fridge",
+     "art": "fridge",
+     "x": 0.12,
+     "y": 0.44,
+     "size": 0.44,
+     "label": "یخچال",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/door.mp3"
+     }
+    },
+    {
+     "id": "stove",
+     "art": "stove",
+     "x": 0.78,
+     "y": 0.52,
+     "size": 0.34,
+     "label": "اجاق",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/sizzle.mp3"
+     }
+    },
+    {
+     "id": "pot",
+     "art": "pot",
+     "x": 0.78,
+     "y": 0.36,
+     "size": 0.2,
+     "label": "قابلمه",
+     "z": 1,
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/sfx/bubbles.mp3"
+     },
+     "accepts": [
+      {
+       "tag": "food",
+       "anim": "jump",
+       "then": "hide",
+       "sound": "audio/sfx/bubbles.mp3"
+      }
+     ]
+    },
+    {
+     "id": "table",
+     "art": "table",
+     "x": 0.44,
+     "y": 0.72,
+     "size": 0.44,
+     "label": "میز",
+     "z": -1,
+     "persist": false
+    },
+    {
+     "id": "plate",
+     "art": "plate",
+     "x": 0.44,
+     "y": 0.6,
+     "size": 0.24,
+     "label": "بشقاب",
+     "accepts": [
+      {
+       "tag": "fruit",
+       "anim": "jump",
+       "then": "stay",
+       "sound": "audio/ui/pop.mp3"
+      }
+     ]
+    },
+    {
+     "id": "cup",
+     "art": "cup",
+     "x": 0.6,
+     "y": 0.57,
+     "size": 0.12,
+     "label": "لیوان",
+     "drag": "free",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/pour.mp3"
+     }
+    },
+    {
+     "id": "kettle_tap",
+     "art": "cup",
+     "x": 0.3,
+     "y": 0.57,
+     "size": 0.1,
+     "label": "لیوان آب",
+     "drag": "free",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/water_tap.mp3"
+     }
+    },
+    {
+     "id": "apple",
+     "art": "apple",
+     "x": 0.28,
+     "y": 0.88,
+     "size": 0.12,
+     "label": "سیب",
+     "drag": "free",
+     "tags": [
+      "fruit",
+      "food"
+     ],
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/ui/pop.mp3"
+     }
+    },
+    {
+     "id": "banana",
+     "art": "banana",
+     "x": 0.46,
+     "y": 0.9,
+     "size": 0.13,
+     "label": "موز",
+     "drag": "free",
+     "tags": [
+      "fruit",
+      "food"
+     ],
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/ui/pop.mp3"
+     }
+    },
+    {
+     "id": "carrot",
+     "art": "carrot",
+     "x": 0.62,
+     "y": 0.88,
+     "size": 0.12,
+     "label": "هویج",
+     "drag": "free",
+     "tags": [
+      "food"
+     ],
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/ui/pop.mp3"
+     }
+    },
+    {
+     "id": "bread",
+     "art": "bread",
+     "x": 0.14,
+     "y": 0.9,
+     "size": 0.13,
+     "label": "نان",
+     "drag": "free",
+     "tags": [
+      "food"
+     ],
+     "tap": {
+      "anim": "squash",
+      "sound": "audio/ui/pop.mp3"
+     }
+    }
+   ]
+  },
+  {
+   "id": "home.bedroom",
+   "world": "home",
+   "title": "اتاق خواب",
+   "icon": "bed",
+   "background": "bedroom",
+   "intro": "scene.home.bedroom",
+   "objects": [
+    {
+     "id": "clock",
+     "art": "clock",
+     "x": 0.2,
+     "y": 0.2,
+     "size": 0.15,
+     "label": "ساعت",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/clock.mp3"
+     }
+    },
+    {
+     "id": "bookshelf",
+     "art": "bookshelf",
+     "x": 0.88,
+     "y": 0.44,
+     "size": 0.38,
+     "label": "کتابخانه",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/ui/page.mp3"
+     }
+    },
+    {
+     "id": "bed",
+     "art": "bed",
+     "x": 0.55,
+     "y": 0.58,
+     "size": 0.5,
+     "label": "تخت",
+     "tap": {
+      "anim": "squash",
+      "sound": "audio/sfx/boing.mp3"
+     },
+     "accepts": [
+      {
+       "tag": "toy",
+       "anim": "squash",
+       "then": "stay",
+       "sound": "audio/sfx/yawn.mp3"
+      }
+     ]
+    },
+    {
+     "id": "lamp",
+     "art": "lamp",
+     "x": 0.12,
+     "y": 0.46,
+     "size": 0.3,
+     "label": "چراغ خواب",
+     "glow": true,
+     "tap": {
+      "anim": "pop",
+      "sound": "audio/sfx/light_switch.mp3",
+      "toggle": true
+     }
+    },
+    {
+     "id": "bunny",
+     "art": "teddy",
+     "x": 0.42,
+     "y": 0.84,
+     "size": 0.18,
+     "label": "عروسک خرگوش",
+     "drag": "free",
+     "tags": [
+      "toy"
+     ],
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/sfx/giggle.mp3"
+     }
+    },
+    {
+     "id": "ball",
+     "art": "ball",
+     "x": 0.76,
+     "y": 0.86,
+     "size": 0.14,
+     "label": "توپ",
+     "drag": "free",
+     "tags": [
+      "toy"
+     ],
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/sfx/boing.mp3"
+     }
+    },
+    {
+     "id": "blocks",
+     "art": "toy_blocks",
+     "x": 0.2,
+     "y": 0.88,
+     "size": 0.18,
+     "label": "مکعب‌ها",
+     "drag": "free",
+     "tags": [
+      "toy"
+     ],
+     "tap": {
+      "anim": "squash",
+      "sound": "audio/sfx/thunk.mp3"
+     }
+    }
+   ]
+  },
+  {
+   "id": "home.bathroom",
+   "world": "home",
+   "title": "حمام",
+   "icon": "bathtub",
+   "background": "bathroom",
+   "intro": "scene.home.bathroom",
+   "objects": [
+    {
+     "id": "towel",
+     "art": "towel",
+     "x": 0.88,
+     "y": 0.34,
+     "size": 0.26,
+     "label": "حوله",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/rustle.mp3"
+     }
+    },
+    {
+     "id": "bathtub",
+     "art": "bathtub",
+     "x": 0.52,
+     "y": 0.62,
+     "size": 0.56,
+     "label": "وان",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/splash.mp3"
+     },
+     "accepts": [
+      {
+       "tag": "duck",
+       "anim": "wiggle",
+       "then": "stay",
+       "sound": "audio/sfx/splash.mp3"
+      },
+      {
+       "tag": "soap",
+       "anim": "jump",
+       "then": "return",
+       "sound": "audio/sfx/bubbles.mp3"
+      }
+     ]
+    },
+    {
+     "id": "brush",
+     "art": "toothbrush",
+     "x": 0.14,
+     "y": 0.44,
+     "size": 0.18,
+     "label": "مسواک",
+     "drag": "free",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/eraser.mp3"
+     }
+    },
+    {
+     "id": "duck",
+     "art": "rubber_duck",
+     "x": 0.2,
+     "y": 0.86,
+     "size": 0.16,
+     "label": "اردک پلاستیکی",
+     "drag": "free",
+     "tags": [
+      "duck"
+     ],
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/sfx/squeak.mp3"
+     }
+    },
+    {
+     "id": "soap",
+     "art": "soap",
+     "x": 0.84,
+     "y": 0.86,
+     "size": 0.15,
+     "label": "صابون",
+     "drag": "free",
+     "tags": [
+      "soap"
+     ],
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/bubbles.mp3"
+     }
+    },
+    {
+     "id": "water",
+     "art": "cup",
+     "x": 0.66,
+     "y": 0.88,
+     "size": 0.11,
+     "label": "لیوان",
+     "drag": "free",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/water_tap.mp3"
+     }
+    }
+   ]
+  }
+ ]
+}

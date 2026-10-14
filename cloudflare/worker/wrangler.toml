@@ -1,0 +1,22 @@
+# POPO asset gateway (Cloudflare Worker in front of a private R2 bucket).
+# Deploy: npx wrangler@4 deploy   (from this folder, after `npx wrangler@4 login`)
+# No secrets live in this file or in the app; wrangler keeps credentials in your local login.
+
+name = "popo-assets"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "popo-assets"
+
+[vars]
+# Mobile apps send no Origin header; this only matters for the web build.
+ALLOWED_ORIGIN = "*"
+
+# Optional, for licensed/private content under popo-private/ only:
+#   npx wrangler@4 secret put SIGNING_KEY
+# Without it, everything under popo-private/ answers 404.
+
+# Uncomment and set your own domain once it is on Cloudflare:
+# routes = [{ pattern = "assets.example.com", custom_domain = true }]

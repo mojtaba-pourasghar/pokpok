@@ -1,0 +1,320 @@
+{
+ "categories": [
+  {
+   "id": "explore",
+   "title": "کاوش",
+   "art": "house",
+   "color": "#FF9D37"
+  },
+  {
+   "id": "nature",
+   "title": "طبیعت",
+   "art": "tree",
+   "color": "#6CC24A"
+  },
+  {
+   "id": "build",
+   "title": "ساختن",
+   "art": "gear",
+   "color": "#F2B33D"
+  },
+  {
+   "id": "art",
+   "title": "هنر",
+   "art": "palette",
+   "color": "#FF8FB8"
+  },
+  {
+   "id": "music",
+   "title": "موسیقی",
+   "art": "note",
+   "color": "#A77BEF"
+  },
+  {
+   "id": "roleplay",
+   "title": "نقش‌آفرینی",
+   "art": "basket",
+   "color": "#16B9D1"
+  },
+  {
+   "id": "puzzles",
+   "title": "پازل",
+   "art": "toy_blocks",
+   "color": "#3778F6"
+  }
+ ],
+ "activities": [
+  {
+   "id": "home.living",
+   "title": "پذیرایی",
+   "category": "explore",
+   "art": "sofa",
+   "route": "/world/home?scene=home.living"
+  },
+  {
+   "id": "home.kitchen",
+   "title": "آشپزخانه",
+   "category": "explore",
+   "art": "pot",
+   "route": "/world/home?scene=home.kitchen"
+  },
+  {
+   "id": "home.bedroom",
+   "title": "اتاق خواب",
+   "category": "explore",
+   "art": "bed",
+   "route": "/world/home?scene=home.bedroom"
+  },
+  {
+   "id": "home.bathroom",
+   "title": "حمام",
+   "category": "explore",
+   "art": "bathtub",
+   "route": "/world/home?scene=home.bathroom"
+  },
+  {
+   "id": "city.street",
+   "title": "خیابان",
+   "category": "explore",
+   "art": "car",
+   "route": "/world/city?scene=city.street"
+  },
+  {
+   "id": "city.park",
+   "title": "پارک",
+   "category": "explore",
+   "art": "fountain",
+   "route": "/world/city?scene=city.park"
+  },
+  {
+   "id": "nature.forest",
+   "title": "جنگل",
+   "category": "nature",
+   "art": "pine",
+   "route": "/world/nature?scene=nature.forest"
+  },
+  {
+   "id": "nature.garden",
+   "title": "باغ",
+   "category": "nature",
+   "art": "flower_red",
+   "route": "/world/nature?scene=nature.garden"
+  },
+  {
+   "id": "nature.pond",
+   "title": "برکه",
+   "category": "nature",
+   "art": "duck",
+   "route": "/world/nature?scene=nature.pond"
+  },
+  {
+   "id": "nature.farm",
+   "title": "مزرعه",
+   "category": "nature",
+   "art": "cow",
+   "route": "/world/nature?scene=nature.farm"
+  },
+  {
+   "id": "build",
+   "title": "کارگاه",
+   "category": "build",
+   "art": "crane",
+   "route": "/build"
+  },
+  {
+   "id": "art.draw",
+   "title": "نقاشی",
+   "category": "art",
+   "art": "brush",
+   "route": "/art"
+  },
+  {
+   "id": "art.gallery",
+   "title": "نقاشی‌های من",
+   "category": "art",
+   "art": "palette",
+   "route": "/art/gallery"
+  },
+  {
+   "id": "music.studio",
+   "title": "استودیو",
+   "category": "music",
+   "art": "drum",
+   "route": "/music"
+  },
+  {
+   "id": "music.songs",
+   "title": "آهنگ‌های من",
+   "category": "music",
+   "art": "note",
+   "route": "/music?tab=songs"
+  },
+  {
+   "id": "play.cook",
+   "title": "آشپزی",
+   "category": "roleplay",
+   "art": "pot",
+   "route": "/play/play.cook"
+  },
+  {
+   "id": "play.shop",
+   "title": "خرید",
+   "category": "roleplay",
+   "art": "basket",
+   "route": "/play/play.shop"
+  },
+  {
+   "id": "play.garden",
+   "title": "باغبانی",
+   "category": "roleplay",
+   "art": "watering_can",
+   "route": "/play/play.garden"
+  },
+  {
+   "id": "play.pet",
+   "title": "مراقبت از سگ",
+   "category": "roleplay",
+   "art": "dog",
+   "route": "/play/play.pet"
+  },
+  {
+   "id": "play.tidy",
+   "title": "مرتب کردن اتاق",
+   "category": "roleplay",
+   "art": "toy_blocks",
+   "route": "/play/play.tidy"
+  },
+  {
+   "id": "puzzle.shapes",
+   "title": "شکل‌ها",
+   "category": "puzzles",
+   "art": "toy_blocks",
+   "route": "/puzzle/shapes"
+  },
+  {
+   "id": "puzzle.sort",
+   "title": "رنگ‌ها",
+   "category": "puzzles",
+   "art": "basket",
+   "route": "/puzzle/sort"
+  },
+  {
+   "id": "puzzle.pattern",
+   "title": "الگو",
+   "category": "puzzles",
+   "art": "flower_yellow",
+   "route": "/puzzle/pattern",
+   "minAge": 4
+  },
+  {
+   "id": "puzzle.match",
+   "title": "جفت‌ها",
+   "category": "puzzles",
+   "art": "cat",
+   "route": "/puzzle/match",
+   "minAge": 3
+  }
+ ],
+ "stickers": [
+  {
+   "id": "world.home",
+   "art": "house",
+   "title": "خانه‌ی من"
+  },
+  {
+   "id": "world.city",
+   "art": "bus",
+   "title": "شهر بازی"
+  },
+  {
+   "id": "world.nature",
+   "art": "cow",
+   "title": "طبیعت"
+  },
+  {
+   "id": "world.art",
+   "art": "palette",
+   "title": "نقاش کوچولو"
+  },
+  {
+   "id": "world.music",
+   "art": "drum",
+   "title": "نوازنده"
+  },
+  {
+   "id": "world.build",
+   "art": "crane",
+   "title": "سازنده"
+  },
+  {
+   "id": "chef",
+   "art": "pot",
+   "title": "آشپز"
+  },
+  {
+   "id": "shopper",
+   "art": "basket",
+   "title": "خریدار"
+  },
+  {
+   "id": "gardener",
+   "art": "flower_yellow",
+   "title": "باغبان"
+  },
+  {
+   "id": "petcare",
+   "art": "dog",
+   "title": "دوست حیوانات"
+  },
+  {
+   "id": "tidy",
+   "art": "toy_blocks",
+   "title": "مرتب"
+  },
+  {
+   "id": "puzzle.shapes",
+   "art": "gear",
+   "title": "شکل‌شناس"
+  },
+  {
+   "id": "puzzle.sort",
+   "art": "rug",
+   "title": "رنگ‌شناس"
+  },
+  {
+   "id": "puzzle.pattern",
+   "art": "flower_purple",
+   "title": "الگوساز"
+  },
+  {
+   "id": "puzzle.match",
+   "art": "cat",
+   "title": "حافظه‌ی قوی"
+  },
+  {
+   "id": "art.saved",
+   "art": "brush",
+   "title": "اولین نقاشی"
+  },
+  {
+   "id": "music.saved",
+   "art": "note",
+   "title": "اولین آهنگ"
+  },
+  {
+   "id": "build.gears",
+   "art": "gear",
+   "title": "چرخ‌دنده‌ها"
+  },
+  {
+   "id": "garden.bloom",
+   "art": "flower_red",
+   "title": "گل شکفت"
+  },
+  {
+   "id": "farm.feed",
+   "art": "hay",
+   "title": "غذای حیوانات"
+  }
+ ]
+}

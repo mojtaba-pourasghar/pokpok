@@ -1,0 +1,512 @@
+{
+ "version": 1,
+ "language": "fa-IR",
+ "speaker": "پوپو — خرس کوچولوی نارنجی؛ صدای گرم، شاد و آرام، مناسب کودک ۲ تا ۸ سال",
+ "format": {
+  "container": "mp3",
+  "sampleRate": 44100,
+  "channels": 1,
+  "bitrateKbps": 96,
+  "loudnessLufs": -16,
+  "silenceMs": {
+   "head": 80,
+   "tail": 150
+  }
+ },
+ "lines": [
+  {
+   "id": "app.splash.welcome",
+   "text": "سلام! من پوپو هستم. ببین، لمس کن، کشف کن!",
+   "event": "splash.shown",
+   "screen": "splash",
+   "file": "voice/app_splash_welcome.mp3",
+   "delayMs": 500
+  },
+  {
+   "id": "app.intro.1",
+   "text": "سلام دوست کوچولو! من پوپو هستم، یک خرس کوچولو که عاشق بازی است.",
+   "event": "intro.page1",
+   "screen": "intro",
+   "file": "voice/app_intro_1.mp3",
+   "delayMs": 300
+  },
+  {
+   "id": "app.intro.2",
+   "text": "هر چیزی را که دوست داری لمس کن. ببین چه اتفاقی می‌افتد!",
+   "event": "intro.page2",
+   "screen": "intro",
+   "file": "voice/app_intro_2.mp3",
+   "delayMs": 300
+  },
+  {
+   "id": "app.intro.3",
+   "text": "می‌توانی چیزها را بکشی و جابه‌جا کنی. بیا با هم دنیا را کشف کنیم!",
+   "event": "intro.page3",
+   "screen": "intro",
+   "file": "voice/app_intro_3.mp3",
+   "delayMs": 300
+  },
+  {
+   "id": "app.profiles.pick",
+   "text": "کی می‌خواهد بازی کند؟ عکس خودت را لمس کن.",
+   "event": "profiles.shown",
+   "screen": "profiles",
+   "file": "voice/app_profiles_pick.mp3",
+   "delayMs": 300
+  },
+  {
+   "id": "app.map.hello",
+   "text": "کجا برویم؟ یک جا را روی نقشه لمس کن.",
+   "event": "map.shown",
+   "screen": "map",
+   "file": "voice/app_map_hello.mp3",
+   "delayMs": 400
+  },
+  {
+   "id": "app.map.back",
+   "text": "دوباره سلام! بیا ادامه بدهیم.",
+   "event": "map.resume",
+   "screen": "map",
+   "file": "voice/app_map_back.mp3",
+   "delayMs": 300
+  },
+  {
+   "id": "world.home.hello",
+   "text": "این خانه‌ی من است! بیا اتاق‌ها را ببینیم.",
+   "event": "world.home.open",
+   "screen": "world",
+   "file": "voice/world_home_hello.mp3"
+  },
+  {
+   "id": "world.city.hello",
+   "text": "به شهر بازی خوش آمدی! ماشین‌ها را روی جاده ببر.",
+   "event": "world.city.open",
+   "screen": "world",
+   "file": "voice/world_city_hello.mp3"
+  },
+  {
+   "id": "world.nature.hello",
+   "text": "چه طبیعت قشنگی! حیوان‌ها را لمس کن تا صدایشان را بشنوی.",
+   "event": "world.nature.open",
+   "screen": "world",
+   "file": "voice/world_nature_hello.mp3"
+  },
+  {
+   "id": "world.art.hello",
+   "text": "وقت نقاشی است! یک رنگ انتخاب کن و بکش.",
+   "event": "world.art.open",
+   "screen": "world",
+   "file": "voice/world_art_hello.mp3"
+  },
+  {
+   "id": "world.music.hello",
+   "text": "بیا موسیقی بسازیم! کلیدها را بزن.",
+   "event": "world.music.open",
+   "screen": "world",
+   "file": "voice/world_music_hello.mp3"
+  },
+  {
+   "id": "world.build.hello",
+   "text": "کارگاه ساخت‌وساز! قطعه‌ها را بکش و چیزی بساز.",
+   "event": "world.build.open",
+   "screen": "world",
+   "file": "voice/world_build_hello.mp3"
+  },
+  {
+   "id": "scene.home.living",
+   "text": "این اتاق پذیرایی است. چراغ را روشن کن!",
+   "event": "scene.home.living.open",
+   "screen": "scene",
+   "file": "voice/scene_home_living.mp3"
+  },
+  {
+   "id": "scene.home.kitchen",
+   "text": "آشپزخانه! میوه‌ها را در بشقاب بگذار.",
+   "event": "scene.home.kitchen.open",
+   "screen": "scene",
+   "file": "voice/scene_home_kitchen.mp3"
+  },
+  {
+   "id": "scene.home.bedroom",
+   "text": "اتاق خواب! اسباب‌بازی‌ها را جابه‌جا کن.",
+   "event": "scene.home.bedroom.open",
+   "screen": "scene",
+   "file": "voice/scene_home_bedroom.mp3"
+  },
+  {
+   "id": "scene.home.bathroom",
+   "text": "حمام! اردک را در وان بگذار.",
+   "event": "scene.home.bathroom.open",
+   "screen": "scene",
+   "file": "voice/scene_home_bathroom.mp3"
+  },
+  {
+   "id": "scene.city.street",
+   "text": "ماشین را بگیر و روی جاده حرکت بده.",
+   "event": "scene.city.street.open",
+   "screen": "scene",
+   "file": "voice/scene_city_street.mp3"
+  },
+  {
+   "id": "scene.city.park",
+   "text": "پارک! اینجا بازی کنیم.",
+   "event": "scene.city.park.open",
+   "screen": "scene",
+   "file": "voice/scene_city_park.mp3"
+  },
+  {
+   "id": "scene.nature.forest",
+   "text": "جنگل! درخت‌ها و حیوان‌ها را لمس کن.",
+   "event": "scene.nature.forest.open",
+   "screen": "scene",
+   "file": "voice/scene_nature_forest.mp3"
+  },
+  {
+   "id": "scene.nature.garden",
+   "text": "باغ! با آب‌پاش به گل‌ها آب بده.",
+   "event": "scene.nature.garden.open",
+   "screen": "scene",
+   "file": "voice/scene_nature_garden.mp3"
+  },
+  {
+   "id": "scene.nature.pond",
+   "text": "برکه! ماهی و اردک را پیدا کن.",
+   "event": "scene.nature.pond.open",
+   "screen": "scene",
+   "file": "voice/scene_nature_pond.mp3"
+  },
+  {
+   "id": "scene.nature.farm",
+   "text": "مزرعه! به حیوان‌ها غذا بده.",
+   "event": "scene.nature.farm.open",
+   "screen": "scene",
+   "file": "voice/scene_nature_farm.mp3"
+  },
+  {
+   "id": "art.hello",
+   "text": "یک رنگ انتخاب کن و با انگشتت بکش.",
+   "event": "art.open",
+   "screen": "art",
+   "file": "voice/art_hello.mp3"
+  },
+  {
+   "id": "art.saved",
+   "text": "آفرین! نقاشی‌ات ذخیره شد.",
+   "event": "art.saved",
+   "screen": "art",
+   "file": "voice/art_saved.mp3"
+  },
+  {
+   "id": "art.clear.ask",
+   "text": "همه‌ی نقاشی پاک شود؟",
+   "event": "art.clear",
+   "screen": "art",
+   "file": "voice/art_clear_ask.mp3"
+  },
+  {
+   "id": "art.gallery",
+   "text": "این‌ها نقاشی‌های تو هستند!",
+   "event": "art.gallery",
+   "screen": "art",
+   "file": "voice/art_gallery.mp3"
+  },
+  {
+   "id": "music.hello",
+   "text": "یک ساز انتخاب کن و بزن!",
+   "event": "music.open",
+   "screen": "music",
+   "file": "voice/music_hello.mp3"
+  },
+  {
+   "id": "music.record",
+   "text": "دکمه‌ی قرمز را بزن تا آهنگت را ضبط کنم.",
+   "event": "music.record.hint",
+   "screen": "music",
+   "file": "voice/music_record.mp3"
+  },
+  {
+   "id": "music.recording",
+   "text": "دارم گوش می‌دهم... بزن!",
+   "event": "music.record.start",
+   "screen": "music",
+   "file": "voice/music_recording.mp3"
+  },
+  {
+   "id": "music.saved",
+   "text": "آهنگ تو ذخیره شد! دکمه‌ی پخش را بزن.",
+   "event": "music.saved",
+   "screen": "music",
+   "file": "voice/music_saved.mp3"
+  },
+  {
+   "id": "build.hello",
+   "text": "قطعه‌ها را از پایین بکش و روی زمین بگذار.",
+   "event": "build.open",
+   "screen": "build",
+   "file": "voice/build_hello.mp3"
+  },
+  {
+   "id": "build.gears",
+   "text": "چرخ‌دنده‌ها کنار هم می‌چرخند! چند تا کنار هم بگذار.",
+   "event": "build.gears",
+   "screen": "build",
+   "file": "voice/build_gears.mp3"
+  },
+  {
+   "id": "build.remove",
+   "text": "برای برداشتن، قطعه را روی سطل بکش.",
+   "event": "build.remove.hint",
+   "screen": "build",
+   "file": "voice/build_remove.mp3"
+  },
+  {
+   "id": "puzzle.shapes",
+   "text": "هر شکل را روی سایه‌ی خودش بگذار.",
+   "event": "puzzle.shapes.open",
+   "screen": "puzzle",
+   "file": "voice/puzzle_shapes.mp3"
+  },
+  {
+   "id": "puzzle.sort",
+   "text": "هر چیز را در سبد هم‌رنگش بگذار.",
+   "event": "puzzle.sort.open",
+   "screen": "puzzle",
+   "file": "voice/puzzle_sort.mp3"
+  },
+  {
+   "id": "puzzle.pattern",
+   "text": "بعدی چیست؟ الگو را کامل کن.",
+   "event": "puzzle.pattern.open",
+   "screen": "puzzle",
+   "file": "voice/puzzle_pattern.mp3"
+  },
+  {
+   "id": "puzzle.match",
+   "text": "جفت‌ها را پیدا کن. کارت‌ها را برگردان.",
+   "event": "puzzle.match.open",
+   "screen": "puzzle",
+   "file": "voice/puzzle_match.mp3"
+  },
+  {
+   "id": "puzzle.try",
+   "text": "نزدیک بود! یک بار دیگر امتحان کن.",
+   "event": "puzzle.try",
+   "screen": "puzzle",
+   "file": "voice/puzzle_try.mp3",
+   "group": "try"
+  },
+  {
+   "id": "puzzle.try.2",
+   "text": "اشکالی ندارد، دوباره امتحان کن.",
+   "event": "puzzle.try",
+   "screen": "puzzle",
+   "file": "voice/puzzle_try_2.mp3",
+   "group": "try"
+  },
+  {
+   "id": "play.cook.hello",
+   "text": "بیا سوپ بپزیم! سبزی‌ها را در قابلمه بریز.",
+   "event": "play.cook.open",
+   "screen": "roleplay",
+   "file": "voice/play_cook_hello.mp3"
+  },
+  {
+   "id": "play.shop.hello",
+   "text": "فروشگاه! چیزهای فهرست را در سبد بگذار.",
+   "event": "play.shop.open",
+   "screen": "roleplay",
+   "file": "voice/play_shop_hello.mp3"
+  },
+  {
+   "id": "play.garden.hello",
+   "text": "دانه را بکار و با آب‌پاش آبش بده.",
+   "event": "play.garden.open",
+   "screen": "roleplay",
+   "file": "voice/play_garden_hello.mp3"
+  },
+  {
+   "id": "play.pet.hello",
+   "text": "سگ کوچولو گرسنه است! به او غذا بده.",
+   "event": "play.pet.open",
+   "screen": "roleplay",
+   "file": "voice/play_pet_hello.mp3"
+  },
+  {
+   "id": "play.tidy.hello",
+   "text": "اتاق به هم ریخته! اسباب‌بازی‌ها را در سبد بگذار.",
+   "event": "play.tidy.open",
+   "screen": "roleplay",
+   "file": "voice/play_tidy_hello.mp3"
+  },
+  {
+   "id": "play.cook.done",
+   "text": "به‌به! سوپ آماده شد!",
+   "event": "play.cook.done",
+   "screen": "roleplay",
+   "file": "voice/play_cook_done.mp3"
+  },
+  {
+   "id": "play.shop.done",
+   "text": "همه را خریدی! آفرین!",
+   "event": "play.shop.done",
+   "screen": "roleplay",
+   "file": "voice/play_shop_done.mp3"
+  },
+  {
+   "id": "play.garden.done",
+   "text": "وای! دانه گل شد!",
+   "event": "play.garden.done",
+   "screen": "roleplay",
+   "file": "voice/play_garden_done.mp3"
+  },
+  {
+   "id": "play.pet.done",
+   "text": "سگ کوچولو سیر شد و خوشحال است!",
+   "event": "play.pet.done",
+   "screen": "roleplay",
+   "file": "voice/play_pet_done.mp3"
+  },
+  {
+   "id": "play.tidy.done",
+   "text": "اتاق مرتب شد! چه عالی!",
+   "event": "play.tidy.done",
+   "screen": "roleplay",
+   "file": "voice/play_tidy_done.mp3"
+  },
+  {
+   "id": "praise.1",
+   "text": "آفرین!",
+   "event": "praise",
+   "screen": "any",
+   "file": "voice/praise_1.mp3",
+   "group": "praise"
+  },
+  {
+   "id": "praise.2",
+   "text": "چه عالی!",
+   "event": "praise",
+   "screen": "any",
+   "file": "voice/praise_2.mp3",
+   "group": "praise"
+  },
+  {
+   "id": "praise.3",
+   "text": "تو فوق‌العاده‌ای!",
+   "event": "praise",
+   "screen": "any",
+   "file": "voice/praise_3.mp3",
+   "group": "praise"
+  },
+  {
+   "id": "praise.4",
+   "text": "هورا!",
+   "event": "praise",
+   "screen": "any",
+   "file": "voice/praise_4.mp3",
+   "group": "praise"
+  },
+  {
+   "id": "praise.5",
+   "text": "خیلی خوب بود!",
+   "event": "praise",
+   "screen": "any",
+   "file": "voice/praise_5.mp3",
+   "group": "praise"
+  },
+  {
+   "id": "praise.6",
+   "text": "باریکلا!",
+   "event": "praise",
+   "screen": "any",
+   "file": "voice/praise_6.mp3",
+   "group": "praise"
+  },
+  {
+   "id": "idle.1",
+   "text": "این چیه؟ لمسش کن!",
+   "event": "idle",
+   "screen": "scene",
+   "file": "voice/idle_1.mp3",
+   "group": "idle"
+  },
+  {
+   "id": "idle.2",
+   "text": "ببین اینجا چی هست!",
+   "event": "idle",
+   "screen": "scene",
+   "file": "voice/idle_2.mp3",
+   "group": "idle"
+  },
+  {
+   "id": "idle.3",
+   "text": "می‌خواهی این را جابه‌جا کنی؟",
+   "event": "idle",
+   "screen": "scene",
+   "file": "voice/idle_3.mp3",
+   "group": "idle"
+  },
+  {
+   "id": "sticker.new",
+   "text": "یک برچسب تازه گرفتی! در دفتر خاطره‌هایت است.",
+   "event": "sticker.earned",
+   "screen": "any",
+   "file": "voice/sticker_new.mp3"
+  },
+  {
+   "id": "rewards.hello",
+   "text": "این‌ها خاطره‌های تو هستند!",
+   "event": "rewards.open",
+   "screen": "rewards",
+   "file": "voice/rewards_hello.mp3"
+  },
+  {
+   "id": "rewards.empty",
+   "text": "هنوز برچسبی نداری. بیا بازی کنیم!",
+   "event": "rewards.empty",
+   "screen": "rewards",
+   "file": "voice/rewards_empty.mp3"
+  },
+  {
+   "id": "library.hello",
+   "text": "چه بازی‌ای دوست داری؟",
+   "event": "library.open",
+   "screen": "library",
+   "file": "voice/library_hello.mp3"
+  },
+  {
+   "id": "session.pause",
+   "text": "بازی ایستاد. هر وقت خواستی ادامه بده.",
+   "event": "pause",
+   "screen": "any",
+   "file": "voice/session_pause.mp3"
+  },
+  {
+   "id": "session.resume",
+   "text": "برگشتی! بیا ادامه بدهیم.",
+   "event": "resume",
+   "screen": "any",
+   "file": "voice/session_resume.mp3"
+  },
+  {
+   "id": "session.bye",
+   "text": "خداحافظ! زود برگرد.",
+   "event": "exit",
+   "screen": "any",
+   "file": "voice/session_bye.mp3"
+  },
+  {
+   "id": "session.sleepy",
+   "text": "پوپو کمی خسته است... شاید وقت استراحت باشد.",
+   "event": "time.limit",
+   "screen": "any",
+   "file": "voice/session_sleepy.mp3"
+  },
+  {
+   "id": "parent.ask",
+   "text": "این بخش برای بزرگ‌ترهاست. از مامان یا بابا کمک بگیر.",
+   "event": "parent.gate",
+   "screen": "parent",
+   "file": "voice/parent_ask.mp3"
+  }
+ ]
+}

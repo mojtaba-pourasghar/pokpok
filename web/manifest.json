@@ -1,0 +1,37 @@
+{
+    "name": "پوپو — ببین، لمس کن، کشف کن!",
+    "short_name": "پوپو",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#F4F8FF",
+    "theme_color": "#FF9D37",
+    "description": "دنیای بازی، کشف و خلاقیت برای کودکان ۲ تا ۸ سال",
+    "orientation": "any",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "lang": "fa",
+    "dir": "rtl"
+}

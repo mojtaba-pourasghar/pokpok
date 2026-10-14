@@ -1,0 +1,9 @@
+# این فایل را به key.properties تغییر نام دهید و مقدارها را پر کنید.
+# key.properties و فایل keystore هرگز نباید در گیت قرار بگیرند (در .gitignore هستند).
+#
+# ساخت keystore:
+#   keytool -genkey -v -keystore ~/popo-release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias popo
+storePassword=
+keyPassword=
+keyAlias=popo
+storeFile=/absolute/path/to/popo-release.jks

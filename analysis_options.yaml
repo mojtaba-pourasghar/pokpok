@@ -1,0 +1,22 @@
+include: package:flutter_lints/flutter.yaml
+
+formatter:
+  page_width: 140
+
+analyzer:
+  exclude:
+    - build/**
+    - tools/voice-studio/**
+    - cloudflare/**
+    - android/**
+    - ios/**
+    - web/**
+
+linter:
+  rules:
+    - prefer_single_quotes
+    - prefer_const_constructors
+    - prefer_final_locals
+    - avoid_print
+    - always_declare_return_types
+    - unawaited_futures

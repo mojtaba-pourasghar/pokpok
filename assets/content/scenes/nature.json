@@ -1,0 +1,548 @@
+{
+ "scenes": [
+  {
+   "id": "nature.forest",
+   "world": "nature",
+   "title": "جنگل",
+   "icon": "pine",
+   "background": "forest",
+   "intro": "scene.nature.forest",
+   "ambient": "audio/ambient/wind.mp3",
+   "objects": [
+    {
+     "id": "pine1",
+     "art": "pine",
+     "x": 0.1,
+     "y": 0.44,
+     "size": 0.34,
+     "label": "کاج",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/rustle.mp3"
+     }
+    },
+    {
+     "id": "tree",
+     "art": "tree",
+     "x": 0.86,
+     "y": 0.44,
+     "size": 0.36,
+     "label": "درخت سیب",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/rustle.mp3"
+     }
+    },
+    {
+     "id": "bush",
+     "art": "bush",
+     "x": 0.42,
+     "y": 0.6,
+     "size": 0.28,
+     "label": "بوته",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/rustle.mp3"
+     }
+    },
+    {
+     "id": "rock",
+     "art": "rock",
+     "x": 0.7,
+     "y": 0.66,
+     "size": 0.2,
+     "label": "سنگ",
+     "tap": {
+      "anim": "squash",
+      "sound": "audio/sfx/thunk.mp3"
+     }
+    },
+    {
+     "id": "mushroom",
+     "art": "mushroom",
+     "x": 0.24,
+     "y": 0.84,
+     "size": 0.15,
+     "label": "قارچ",
+     "tap": {
+      "anim": "squash",
+      "sound": "audio/sfx/boing.mp3"
+     }
+    },
+    {
+     "id": "rabbit",
+     "art": "rabbit",
+     "x": 0.58,
+     "y": 0.84,
+     "size": 0.2,
+     "label": "خرگوش",
+     "drag": "free",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/sfx/boing.mp3"
+     }
+    },
+    {
+     "id": "bird",
+     "art": "bird",
+     "x": 0.7,
+     "y": 0.2,
+     "size": 0.12,
+     "label": "پرنده",
+     "drag": "free",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/animals/bird.mp3"
+     }
+    },
+    {
+     "id": "butterfly",
+     "art": "butterfly",
+     "x": 0.3,
+     "y": 0.26,
+     "size": 0.12,
+     "label": "پروانه",
+     "drag": "free",
+     "tap": {
+      "anim": "spin",
+      "sound": "audio/ui/sparkle.mp3"
+     }
+    },
+    {
+     "id": "bee",
+     "art": "bee",
+     "x": 0.5,
+     "y": 0.36,
+     "size": 0.1,
+     "label": "زنبور",
+     "drag": "free",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/buzz.mp3"
+     }
+    }
+   ]
+  },
+  {
+   "id": "nature.garden",
+   "world": "nature",
+   "title": "باغ",
+   "icon": "flower_red",
+   "background": "garden",
+   "intro": "scene.nature.garden",
+   "sticker": "garden.bloom",
+   "goals": [
+    {
+     "target": "plot1",
+     "stage": 2
+    },
+    {
+     "target": "plot2",
+     "stage": 2
+    },
+    {
+     "target": "plot3",
+     "stage": 2
+    }
+   ],
+   "objects": [
+    {
+     "id": "plot1",
+     "art": "seed",
+     "x": 0.22,
+     "y": 0.72,
+     "size": 0.2,
+     "label": "دانه",
+     "states": [
+      "seed",
+      "sprout",
+      "flower_red"
+     ],
+     "accepts": [
+      {
+       "tag": "water",
+       "anim": "grow",
+       "then": "return",
+       "sound": "audio/sfx/grow.mp3",
+       "advance": true
+      }
+     ],
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/ui/pop.mp3"
+     }
+    },
+    {
+     "id": "plot2",
+     "art": "seed",
+     "x": 0.5,
+     "y": 0.72,
+     "size": 0.2,
+     "label": "دانه",
+     "states": [
+      "seed",
+      "sprout",
+      "flower_yellow"
+     ],
+     "accepts": [
+      {
+       "tag": "water",
+       "anim": "grow",
+       "then": "return",
+       "sound": "audio/sfx/grow.mp3",
+       "advance": true
+      }
+     ],
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/ui/pop.mp3"
+     }
+    },
+    {
+     "id": "plot3",
+     "art": "seed",
+     "x": 0.78,
+     "y": 0.72,
+     "size": 0.2,
+     "label": "دانه",
+     "states": [
+      "seed",
+      "sprout",
+      "flower_purple"
+     ],
+     "accepts": [
+      {
+       "tag": "water",
+       "anim": "grow",
+       "then": "return",
+       "sound": "audio/sfx/grow.mp3",
+       "advance": true
+      }
+     ],
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/ui/pop.mp3"
+     }
+    },
+    {
+     "id": "can",
+     "art": "watering_can",
+     "x": 0.2,
+     "y": 0.9,
+     "size": 0.18,
+     "label": "آب‌پاش",
+     "drag": "free",
+     "tags": [
+      "water"
+     ],
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/pour.mp3"
+     }
+    },
+    {
+     "id": "carrot",
+     "art": "carrot",
+     "x": 0.62,
+     "y": 0.88,
+     "size": 0.13,
+     "label": "هویج",
+     "drag": "free",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/ui/pop.mp3"
+     }
+    },
+    {
+     "id": "bee",
+     "art": "bee",
+     "x": 0.7,
+     "y": 0.3,
+     "size": 0.1,
+     "label": "زنبور",
+     "drag": "free",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/buzz.mp3"
+     }
+    },
+    {
+     "id": "butterfly",
+     "art": "butterfly",
+     "x": 0.3,
+     "y": 0.3,
+     "size": 0.12,
+     "label": "پروانه",
+     "drag": "free",
+     "tap": {
+      "anim": "spin",
+      "sound": "audio/ui/sparkle.mp3"
+     }
+    }
+   ]
+  },
+  {
+   "id": "nature.pond",
+   "world": "nature",
+   "title": "برکه",
+   "icon": "duck",
+   "background": "pond",
+   "intro": "scene.nature.pond",
+   "ambient": "audio/ambient/river.mp3",
+   "objects": [
+    {
+     "id": "lily1",
+     "art": "lily",
+     "x": 0.3,
+     "y": 0.76,
+     "size": 0.16,
+     "label": "برگ نیلوفر",
+     "z": -1,
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/bloop.mp3"
+     }
+    },
+    {
+     "id": "lily2",
+     "art": "lily",
+     "x": 0.7,
+     "y": 0.82,
+     "size": 0.14,
+     "label": "برگ نیلوفر",
+     "z": -1,
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/bloop.mp3"
+     }
+    },
+    {
+     "id": "fish",
+     "art": "fish",
+     "x": 0.46,
+     "y": 0.82,
+     "size": 0.15,
+     "label": "ماهی",
+     "drag": "free",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/sfx/bloop.mp3"
+     }
+    },
+    {
+     "id": "duck",
+     "art": "duck",
+     "x": 0.62,
+     "y": 0.7,
+     "size": 0.2,
+     "label": "اردک",
+     "drag": "free",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/animals/duck.mp3"
+     }
+    },
+    {
+     "id": "frog",
+     "art": "frog",
+     "x": 0.28,
+     "y": 0.72,
+     "size": 0.14,
+     "label": "قورباغه",
+     "drag": "free",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/animals/frog.mp3"
+     }
+    },
+    {
+     "id": "tree",
+     "art": "tree",
+     "x": 0.88,
+     "y": 0.44,
+     "size": 0.3,
+     "label": "درخت",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/rustle.mp3"
+     }
+    },
+    {
+     "id": "bird",
+     "art": "bird",
+     "x": 0.2,
+     "y": 0.22,
+     "size": 0.12,
+     "label": "پرنده",
+     "drag": "free",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/animals/bird.mp3"
+     }
+    },
+    {
+     "id": "rock",
+     "art": "rock",
+     "x": 0.1,
+     "y": 0.6,
+     "size": 0.16,
+     "label": "سنگ",
+     "tap": {
+      "anim": "squash",
+      "sound": "audio/sfx/splash.mp3"
+     }
+    }
+   ]
+  },
+  {
+   "id": "nature.farm",
+   "world": "nature",
+   "title": "مزرعه",
+   "icon": "cow",
+   "background": "farm",
+   "intro": "scene.nature.farm",
+   "sticker": "farm.feed",
+   "goals": [
+    {
+     "target": "cow",
+     "tag": "hay"
+    },
+    {
+     "target": "sheep",
+     "tag": "hay"
+    },
+    {
+     "target": "horse",
+     "tag": "hay"
+    }
+   ],
+   "objects": [
+    {
+     "id": "barn",
+     "art": "barn",
+     "x": 0.16,
+     "y": 0.42,
+     "size": 0.34,
+     "label": "انبار",
+     "tap": {
+      "anim": "wiggle",
+      "sound": "audio/sfx/door.mp3"
+     }
+    },
+    {
+     "id": "horse",
+     "art": "horse",
+     "x": 0.82,
+     "y": 0.5,
+     "size": 0.26,
+     "label": "اسب",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/animals/horse.mp3"
+     },
+     "accepts": [
+      {
+       "tag": "hay",
+       "anim": "jump",
+       "then": "return",
+       "sound": "audio/animals/horse.mp3"
+      }
+     ]
+    },
+    {
+     "id": "cow",
+     "art": "cow",
+     "x": 0.5,
+     "y": 0.64,
+     "size": 0.3,
+     "label": "گاو",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/animals/cow.mp3"
+     },
+     "accepts": [
+      {
+       "tag": "hay",
+       "anim": "jump",
+       "then": "return",
+       "sound": "audio/animals/cow.mp3"
+      }
+     ]
+    },
+    {
+     "id": "sheep",
+     "art": "sheep",
+     "x": 0.8,
+     "y": 0.78,
+     "size": 0.24,
+     "label": "گوسفند",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/animals/sheep.mp3"
+     },
+     "accepts": [
+      {
+       "tag": "hay",
+       "anim": "jump",
+       "then": "return",
+       "sound": "audio/animals/sheep.mp3"
+      }
+     ]
+    },
+    {
+     "id": "hen",
+     "art": "hen",
+     "x": 0.36,
+     "y": 0.86,
+     "size": 0.17,
+     "label": "مرغ",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/animals/rooster.mp3"
+     }
+    },
+    {
+     "id": "chick",
+     "art": "chick",
+     "x": 0.52,
+     "y": 0.9,
+     "size": 0.11,
+     "label": "جوجه",
+     "drag": "free",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/sfx/giggle.mp3"
+     }
+    },
+    {
+     "id": "hay",
+     "art": "hay",
+     "x": 0.12,
+     "y": 0.84,
+     "size": 0.18,
+     "label": "یونجه",
+     "drag": "free",
+     "tags": [
+      "hay"
+     ],
+     "tap": {
+      "anim": "squash",
+      "sound": "audio/sfx/rustle.mp3"
+     }
+    },
+    {
+     "id": "dog",
+     "art": "dog",
+     "x": 0.64,
+     "y": 0.9,
+     "size": 0.17,
+     "label": "سگ",
+     "tap": {
+      "anim": "jump",
+      "sound": "audio/animals/dog.mp3"
+     }
+    }
+   ]
+  }
+ ]
+}

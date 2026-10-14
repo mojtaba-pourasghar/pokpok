@@ -1,0 +1,98 @@
+{
+ "note": "یک فایل Wikimedia Commons برای هر صدای واقعی، دستی انتخاب‌شده. کلید = مسیر زیر assets/audio بدون پسوند. اجرا: python3 tools/sfx/fetch_sounds.py",
+ "picks": {
+  "animals/cow": {
+   "file": "File:Single Cow Moo.ogg",
+   "seconds": 4
+  },
+  "animals/dog": {
+   "file": "File:Barking of a dog 2.ogg",
+   "seconds": 4
+  },
+  "animals/cat": {
+   "file": "File:Felis silvestris catus meows.ogg",
+   "seconds": 4
+  },
+  "animals/bird": {
+   "file": "File:Arremon abeillei - Black-capped Sparrow XC250490.mp3",
+   "seconds": 5
+  },
+  "animals/sheep": {
+   "file": "File:Sheep bleating.ogg",
+   "seconds": 4
+  },
+  "animals/horse": {
+   "file": "File:Wiehern.ogg",
+   "seconds": 4
+  },
+  "animals/duck": {
+   "file": "File:Domestic duck sound 01.wav",
+   "seconds": 4
+  },
+  "animals/frog": {
+   "file": "File:Edible frogs, sounds. May. The Village of Krzemienica, Łódź Voivodeship, Poland.ogg",
+   "seconds": 5
+  },
+  "animals/elephant": {
+   "file": "File:Elephant voice - trumpeting.ogg",
+   "seconds": 4
+  },
+  "animals/rooster": {
+   "file": "File:Rooster crowing.ogg",
+   "seconds": 5
+  },
+  "sfx/doorbell": {
+   "file": "File:Doorbell-classic-dingdong.ogg",
+   "seconds": 4,
+   "start": 0
+  },
+  "sfx/clock": {
+   "file": "File:Clock ticking.ogg",
+   "seconds": 4
+  },
+  "sfx/kettle": {
+   "file": "File:Kettle whistle.ogg",
+   "seconds": 5
+  },
+  "sfx/water_tap": {
+   "file": "File:ZapSibAudio-Water from the tap.ogg",
+   "seconds": 5
+  },
+  "sfx/door": {
+   "file": "File:Knock on door.wav",
+   "seconds": 4,
+   "start": 0
+  },
+  "ambient/rain": {
+   "file": "File:Heavy Rain in Summer.ogg",
+   "seconds": 5
+  },
+  "ambient/wind": {
+   "file": "File:Wind in Swedish pine forest at 25 mps.ogg",
+   "seconds": 5
+  },
+  "ambient/river": {
+   "file": "File:Hemlock stream.ogg",
+   "seconds": 5
+  },
+  "ambient/waterfall": {
+   "file": "File:Water fall.ogg",
+   "seconds": 5
+  },
+  "instruments/guitar": {
+   "file": "File:El Noi de la Mare (guitar).ogg",
+   "seconds": 7,
+   "start": 0
+  },
+  "instruments/violin": {
+   "file": "File:Violin chords.ogg",
+   "seconds": 6,
+   "start": 0
+  },
+  "instruments/flute": {
+   "file": "File:Bach - Partita For Solo Flute - Modern Flute - 4. Bouree.ogg",
+   "seconds": 7,
+   "start": 0
+  }
+ }
+}

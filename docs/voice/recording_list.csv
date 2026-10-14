@@ -1,0 +1,69 @@
+﻿id,file,text,event,screen,group,delay_ms,recorded
+app.splash.welcome,app_splash_welcome.mp3,سلام! من پوپو هستم. ببین، لمس کن، کشف کن!,splash.shown,splash,,500,no
+app.intro.1,app_intro_1.mp3,سلام دوست کوچولو! من پوپو هستم، یک خرس کوچولو که عاشق بازی است.,intro.page1,intro,,300,no
+app.intro.2,app_intro_2.mp3,هر چیزی را که دوست داری لمس کن. ببین چه اتفاقی می‌افتد!,intro.page2,intro,,300,no
+app.intro.3,app_intro_3.mp3,می‌توانی چیزها را بکشی و جابه‌جا کنی. بیا با هم دنیا را کشف کنیم!,intro.page3,intro,,300,no
+app.profiles.pick,app_profiles_pick.mp3,کی می‌خواهد بازی کند؟ عکس خودت را لمس کن.,profiles.shown,profiles,,300,no
+app.map.hello,app_map_hello.mp3,کجا برویم؟ یک جا را روی نقشه لمس کن.,map.shown,map,,400,no
+app.map.back,app_map_back.mp3,دوباره سلام! بیا ادامه بدهیم.,map.resume,map,,300,no
+world.home.hello,world_home_hello.mp3,این خانه‌ی من است! بیا اتاق‌ها را ببینیم.,world.home.open,world,,0,no
+world.city.hello,world_city_hello.mp3,به شهر بازی خوش آمدی! ماشین‌ها را روی جاده ببر.,world.city.open,world,,0,no
+world.nature.hello,world_nature_hello.mp3,چه طبیعت قشنگی! حیوان‌ها را لمس کن تا صدایشان را بشنوی.,world.nature.open,world,,0,no
+world.art.hello,world_art_hello.mp3,وقت نقاشی است! یک رنگ انتخاب کن و بکش.,world.art.open,world,,0,no
+world.music.hello,world_music_hello.mp3,بیا موسیقی بسازیم! کلیدها را بزن.,world.music.open,world,,0,no
+world.build.hello,world_build_hello.mp3,کارگاه ساخت‌وساز! قطعه‌ها را بکش و چیزی بساز.,world.build.open,world,,0,no
+scene.home.living,scene_home_living.mp3,این اتاق پذیرایی است. چراغ را روشن کن!,scene.home.living.open,scene,,0,no
+scene.home.kitchen,scene_home_kitchen.mp3,آشپزخانه! میوه‌ها را در بشقاب بگذار.,scene.home.kitchen.open,scene,,0,no
+scene.home.bedroom,scene_home_bedroom.mp3,اتاق خواب! اسباب‌بازی‌ها را جابه‌جا کن.,scene.home.bedroom.open,scene,,0,no
+scene.home.bathroom,scene_home_bathroom.mp3,حمام! اردک را در وان بگذار.,scene.home.bathroom.open,scene,,0,no
+scene.city.street,scene_city_street.mp3,ماشین را بگیر و روی جاده حرکت بده.,scene.city.street.open,scene,,0,no
+scene.city.park,scene_city_park.mp3,پارک! اینجا بازی کنیم.,scene.city.park.open,scene,,0,no
+scene.nature.forest,scene_nature_forest.mp3,جنگل! درخت‌ها و حیوان‌ها را لمس کن.,scene.nature.forest.open,scene,,0,no
+scene.nature.garden,scene_nature_garden.mp3,باغ! با آب‌پاش به گل‌ها آب بده.,scene.nature.garden.open,scene,,0,no
+scene.nature.pond,scene_nature_pond.mp3,برکه! ماهی و اردک را پیدا کن.,scene.nature.pond.open,scene,,0,no
+scene.nature.farm,scene_nature_farm.mp3,مزرعه! به حیوان‌ها غذا بده.,scene.nature.farm.open,scene,,0,no
+art.hello,art_hello.mp3,یک رنگ انتخاب کن و با انگشتت بکش.,art.open,art,,0,no
+art.saved,art_saved.mp3,آفرین! نقاشی‌ات ذخیره شد.,art.saved,art,,0,no
+art.clear.ask,art_clear_ask.mp3,همه‌ی نقاشی پاک شود؟,art.clear,art,,0,no
+art.gallery,art_gallery.mp3,این‌ها نقاشی‌های تو هستند!,art.gallery,art,,0,no
+music.hello,music_hello.mp3,یک ساز انتخاب کن و بزن!,music.open,music,,0,no
+music.record,music_record.mp3,دکمه‌ی قرمز را بزن تا آهنگت را ضبط کنم.,music.record.hint,music,,0,no
+music.recording,music_recording.mp3,دارم گوش می‌دهم... بزن!,music.record.start,music,,0,no
+music.saved,music_saved.mp3,آهنگ تو ذخیره شد! دکمه‌ی پخش را بزن.,music.saved,music,,0,no
+build.hello,build_hello.mp3,قطعه‌ها را از پایین بکش و روی زمین بگذار.,build.open,build,,0,no
+build.gears,build_gears.mp3,چرخ‌دنده‌ها کنار هم می‌چرخند! چند تا کنار هم بگذار.,build.gears,build,,0,no
+build.remove,build_remove.mp3,برای برداشتن، قطعه را روی سطل بکش.,build.remove.hint,build,,0,no
+puzzle.shapes,puzzle_shapes.mp3,هر شکل را روی سایه‌ی خودش بگذار.,puzzle.shapes.open,puzzle,,0,no
+puzzle.sort,puzzle_sort.mp3,هر چیز را در سبد هم‌رنگش بگذار.,puzzle.sort.open,puzzle,,0,no
+puzzle.pattern,puzzle_pattern.mp3,بعدی چیست؟ الگو را کامل کن.,puzzle.pattern.open,puzzle,,0,no
+puzzle.match,puzzle_match.mp3,جفت‌ها را پیدا کن. کارت‌ها را برگردان.,puzzle.match.open,puzzle,,0,no
+puzzle.try,puzzle_try.mp3,نزدیک بود! یک بار دیگر امتحان کن.,puzzle.try,puzzle,try,0,no
+puzzle.try.2,puzzle_try_2.mp3,اشکالی ندارد، دوباره امتحان کن.,puzzle.try,puzzle,try,0,no
+play.cook.hello,play_cook_hello.mp3,بیا سوپ بپزیم! سبزی‌ها را در قابلمه بریز.,play.cook.open,roleplay,,0,no
+play.shop.hello,play_shop_hello.mp3,فروشگاه! چیزهای فهرست را در سبد بگذار.,play.shop.open,roleplay,,0,no
+play.garden.hello,play_garden_hello.mp3,دانه را بکار و با آب‌پاش آبش بده.,play.garden.open,roleplay,,0,no
+play.pet.hello,play_pet_hello.mp3,سگ کوچولو گرسنه است! به او غذا بده.,play.pet.open,roleplay,,0,no
+play.tidy.hello,play_tidy_hello.mp3,اتاق به هم ریخته! اسباب‌بازی‌ها را در سبد بگذار.,play.tidy.open,roleplay,,0,no
+play.cook.done,play_cook_done.mp3,به‌به! سوپ آماده شد!,play.cook.done,roleplay,,0,no
+play.shop.done,play_shop_done.mp3,همه را خریدی! آفرین!,play.shop.done,roleplay,,0,no
+play.garden.done,play_garden_done.mp3,وای! دانه گل شد!,play.garden.done,roleplay,,0,no
+play.pet.done,play_pet_done.mp3,سگ کوچولو سیر شد و خوشحال است!,play.pet.done,roleplay,,0,no
+play.tidy.done,play_tidy_done.mp3,اتاق مرتب شد! چه عالی!,play.tidy.done,roleplay,,0,no
+praise.1,praise_1.mp3,آفرین!,praise,any,praise,0,no
+praise.2,praise_2.mp3,چه عالی!,praise,any,praise,0,no
+praise.3,praise_3.mp3,تو فوق‌العاده‌ای!,praise,any,praise,0,no
+praise.4,praise_4.mp3,هورا!,praise,any,praise,0,no
+praise.5,praise_5.mp3,خیلی خوب بود!,praise,any,praise,0,no
+praise.6,praise_6.mp3,باریکلا!,praise,any,praise,0,no
+idle.1,idle_1.mp3,این چیه؟ لمسش کن!,idle,scene,idle,0,no
+idle.2,idle_2.mp3,ببین اینجا چی هست!,idle,scene,idle,0,no
+idle.3,idle_3.mp3,می‌خواهی این را جابه‌جا کنی؟,idle,scene,idle,0,no
+sticker.new,sticker_new.mp3,یک برچسب تازه گرفتی! در دفتر خاطره‌هایت است.,sticker.earned,any,,0,no
+rewards.hello,rewards_hello.mp3,این‌ها خاطره‌های تو هستند!,rewards.open,rewards,,0,no
+rewards.empty,rewards_empty.mp3,هنوز برچسبی نداری. بیا بازی کنیم!,rewards.empty,rewards,,0,no
+library.hello,library_hello.mp3,چه بازی‌ای دوست داری؟,library.open,library,,0,no
+session.pause,session_pause.mp3,بازی ایستاد. هر وقت خواستی ادامه بده.,pause,any,,0,no
+session.resume,session_resume.mp3,برگشتی! بیا ادامه بدهیم.,resume,any,,0,no
+session.bye,session_bye.mp3,خداحافظ! زود برگرد.,exit,any,,0,no
+session.sleepy,session_sleepy.mp3,پوپو کمی خسته است... شاید وقت استراحت باشد.,time.limit,any,,0,no
+parent.ask,parent_ask.mp3,این بخش برای بزرگ‌ترهاست. از مامان یا بابا کمک بگیر.,parent.gate,parent,,0,no
