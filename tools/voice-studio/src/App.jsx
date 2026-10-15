@@ -59,7 +59,7 @@ export default function App() {
   const [sample, setSample] = useState({ running: false, mode: "", items: [] });
   const [probe, setProbe] = useState({
     endpoint: "short", speaker: "", speed: "", timestamps: false,
-    text: "سَلام! مَن پوپو هَستَم، یِک خِرسِ کوچولو کِه عاشِقِ بازی اَست. بیا با هَم دُنیا را کَشف کُنیم.",
+    text: "سَلام! مَن پوپو هَستَم، یِک روباهِ کوچولو کِه عاشِقِ بازی اَست. بیا با هَم دُنیا را کَشف کُنیم.",
   });
   const logBox = useRef(null);
 

@@ -7,7 +7,7 @@
    "icon": "pine",
    "background": "forest",
    "intro": "scene.nature.forest",
-   "ambient": "audio/ambient/wind.mp3",
+   "ambient": "audio/ambient/forest.mp3",
    "objects": [
     {
      "id": "pine1",
@@ -125,6 +125,7 @@
   },
   {
    "id": "nature.garden",
+   "ambient": "audio/ambient/garden.mp3",
    "world": "nature",
    "title": "باغ",
    "icon": "flower_red",
@@ -288,7 +289,7 @@
    "icon": "duck",
    "background": "pond",
    "intro": "scene.nature.pond",
-   "ambient": "audio/ambient/river.mp3",
+   "ambient": "audio/ambient/pond.mp3",
    "objects": [
     {
      "id": "lily1",
@@ -396,6 +397,7 @@
   },
   {
    "id": "nature.farm",
+   "ambient": "audio/ambient/farm.mp3",
    "world": "nature",
    "title": "مزرعه",
    "icon": "cow",

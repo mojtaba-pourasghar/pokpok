@@ -1,4 +1,4 @@
-package ir.brandimo.popo
+package com.pokpok.ir
 
 import android.os.StatFs
 import io.flutter.embedding.android.FlutterActivity
@@ -9,7 +9,7 @@ class MainActivity : FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
         // فضای آزاد حافظه‌ی برنامه برای صفحه‌ی دانلودها (lib/core/assets/storage_info.dart).
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "ir.brandimo.popo/storage")
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "com.pokpok.ir/storage")
             .setMethodCallHandler { call, result ->
                 when (call.method) {
                     "freeBytes" -> result.success(StatFs(filesDir.path).availableBytes)

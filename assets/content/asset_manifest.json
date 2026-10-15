@@ -179,6 +179,51 @@
    "height": 200
   },
   {
+   "id": "card_build",
+   "group": "cards",
+   "path": "art/cards/card_build.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 8386,
+   "sha256": "8a66a82a4725817889710090be01effa499d343da19d0745feb349ba0e649213"
+  },
+  {
+   "id": "card_city",
+   "group": "cards",
+   "path": "art/cards/card_city.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 69558,
+   "sha256": "ff27ffcaec0108be07055341668c1e0ba69462e019116f183b15c98d922a25d7"
+  },
+  {
+   "id": "card_home",
+   "group": "cards",
+   "path": "art/cards/card_home.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 37692,
+   "sha256": "7f2a39c72e00c46463b0c028d5d459e2435d0b0564dc1269fa8f044e79ef282e"
+  },
+  {
+   "id": "card_music",
+   "group": "cards",
+   "path": "art/cards/card_music.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 20380,
+   "sha256": "c1f4ca8c02d25c01ac9267ce675b30d9938cac9694d6b6328a260e7c6a6a25a1"
+  },
+  {
+   "id": "card_nature",
+   "group": "cards",
+   "path": "art/cards/card_nature.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 49792,
+   "sha256": "e22ad3be26cba3c144f81714530ceed36d1c9e7bcaa0b2c623648fdf147fa9a6"
+  },
+  {
    "id": "bench",
    "group": "city",
    "path": "art/city/bench.svg",
@@ -762,6 +807,15 @@
    "height": 200
   },
   {
+   "id": "guitar",
+   "group": "music",
+   "path": "art/music/guitar.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 29480,
+   "sha256": "bfaf26aed9623b75b7175b33bcb6c27448de9525410920c6f35724e9afa768b7"
+  },
+  {
    "id": "note",
    "group": "music",
    "path": "art/music/note.svg",
@@ -982,6 +1036,60 @@
    "height": 200
   },
   {
+   "id": "ambient/bathroom",
+   "group": "ambient",
+   "path": "audio/ambient/bathroom.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 168691,
+   "sha256": "a186c82e27ee70c6c9c7fcff6e2f5d3cac7c48891fa3fbeee4e0f00debe7cba6"
+  },
+  {
+   "id": "ambient/farm",
+   "group": "ambient",
+   "path": "audio/ambient/farm.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 288750,
+   "sha256": "a6f3f5eebefc8dc9e5817dabcd9b30cfe1929c86068acf9156483b34a77bfd13"
+  },
+  {
+   "id": "ambient/forest",
+   "group": "ambient",
+   "path": "audio/ambient/forest.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 288750,
+   "sha256": "a0a53b8407cf6e3e5544deb5691d9169191294efb30f0363d1fbd52a5af8843f"
+  },
+  {
+   "id": "ambient/garden",
+   "group": "ambient",
+   "path": "audio/ambient/garden.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 288750,
+   "sha256": "d05d46824abbb235c33e69ade46d2f443104bc0d3a42497d4a0572cf849c80a0"
+  },
+  {
+   "id": "ambient/park",
+   "group": "ambient",
+   "path": "audio/ambient/park.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 288750,
+   "sha256": "0c4c1f0784fba5137b7d3ebf3419f1305892afe0721468e072514aa321b842be"
+  },
+  {
+   "id": "ambient/pond",
+   "group": "ambient",
+   "path": "audio/ambient/pond.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 288750,
+   "sha256": "bd17af0b9c51aa11a4a7e2027fbf1f0331553eeabaece887984bab0324a1fe08"
+  },
+  {
    "id": "ambient/rain",
    "group": "ambient",
    "path": "audio/ambient/rain.mp3",
@@ -998,6 +1106,15 @@
    "version": 1,
    "bytes": 82799,
    "sha256": "2c464a9c6bf422eb26fdb69c3d2c0d63736822c94052e3a08917b7d1348f0419"
+  },
+  {
+   "id": "ambient/street",
+   "group": "ambient",
+   "path": "audio/ambient/street.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 288750,
+   "sha256": "b0abdf65efa598c7b8c4350a0dccb67239987cd0225c21603babb10c44ec09af"
   },
   {
    "id": "ambient/waterfall",

@@ -34,7 +34,7 @@ Future<void> _icon(String path, int size, {bool round = false, bool maskable = f
   c.save();
   c.translate((s - w) / 2, s * (maskable ? .2 : .12));
   c.scale(scale);
-  c.clipRect(const Rect.fromLTWH(-20, -20, 240, 186));
+  c.clipRect(const Rect.fromLTWH(-20, -20, 240, 182));
   PopoPainter(pose: PopoPose.happy).paint(c, PopoPainter.designSize);
   c.restore();
   final img = await rec.endRecording().toImage(size, size);

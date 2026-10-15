@@ -425,6 +425,7 @@
   },
   {
    "id": "home.bathroom",
+   "ambient": "audio/ambient/bathroom.mp3",
    "world": "home",
    "title": "حمام",
    "icon": "bathtub",

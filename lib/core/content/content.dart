@@ -35,6 +35,7 @@ class WorldDef {
     required this.mapY,
     this.scenes = const [],
     this.voice,
+    this.card,
   });
 
   final String id;
@@ -48,6 +49,9 @@ class WorldDef {
   final List<String> scenes;
   final String? voice;
 
+  /// تصویر کارت نقشه (رستری)؛ اگر نباشد [art] نشان داده می‌شود.
+  final String? card;
+
   factory WorldDef.fromJson(Map<String, dynamic> j) => WorldDef(
     id: j['id'] as String,
     title: j['title'] as String,
@@ -58,6 +62,7 @@ class WorldDef {
     mapY: (j['mapY'] as num).toDouble(),
     scenes: [for (final s in (j['scenes'] ?? const []) as List) s as String],
     voice: j['voice'] as String?,
+    card: j['card'] as String?,
   );
 }
 
@@ -414,12 +419,22 @@ class ContentRepository {
           s['id'] as String: StickerDef(id: s['id'] as String, art: s['art'] as String, title: s['title'] as String),
       },
       voiceLines: {for (final l in voiceJ['lines'] as List) l['id'] as String: VoiceLine.fromJson(Map<String, dynamic>.from(l as Map))},
-      art: {
-        for (final a in artJ['assets'] as List)
-          if (a['type'] == 'image/svg+xml')
-            a['id'] as String: ArtAsset(id: a['id'] as String, group: a['group'] as String, path: a['path'] as String),
-      },
+      art: _artIndex((artJ['assets'] as List).cast<Map>()),
     );
+  }
+
+  /// شناسه ← تصویر. طرح برداری (SVG) جای اصلی است؛ تصویری که فقط رستری دارد (کارت‌ها،
+  /// پس‌زمینه‌ها، حالت‌های پوپو) هم با مسیر WebP خودش ثبت می‌شود.
+  static Map<String, ArtAsset> _artIndex(List<Map> assets) {
+    final out = <String, ArtAsset>{};
+    for (final a in assets) {
+      final path = a['path'] as String;
+      if (!path.startsWith('art/')) continue;
+      final id = a['id'] as String;
+      final isSvg = path.endsWith('.svg');
+      if (isSvg || !out.containsKey(id)) out[id] = ArtAsset(id: id, group: a['group'] as String, path: path);
+    }
+    return out;
   }
 
   WorldDef? world(String id) {

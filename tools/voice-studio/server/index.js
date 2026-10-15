@@ -38,7 +38,7 @@ const DEFAULTS = {
   // The app plays audio/voice/<key>.mp3 from its bundled assets (or a downloaded voice-fa
   // pack), so clips are written straight there and travel with the project.
   outDir: path.join(APP, "assets/audio/voice"),
-  speaker: "pune",         // پونه — a warm voice, right for a bear talking to a child
+  speaker: "pune",         // پونه — a warm, young female voice for پوپو, a little girl fox
   // 1 is the service's own pace, which for a third-grader runs ahead of the animation on the
   // stage. A shade under it lets the words breathe and the sentence stay in one piece, which
   // is what «روان» means here. The test tab's «نمونه‌ی سرعت‌ها» button is for settling this
@@ -84,7 +84,7 @@ function speedOf(value, fallback = 1) {
 }
 
 /** One sentence پوپو really says, so a sample is judged on the real thing. */
-const SAMPLE_TEXT = "سَلام! مَن پوپو هَستَم، یِک خِرسِ کوچولو کِه عاشِقِ بازی اَست. بیا با هَم دُنیا را کَشف کُنیم.";
+const SAMPLE_TEXT = "سَلام! مَن پوپو هَستَم، یِک روباهِ کوچولو کِه عاشِقِ بازی اَست. بیا با هَم دُنیا را کَشف کُنیم.";
 
 /** _sample-pune-090 — the speed in the name, so two paces never overwrite each other. */
 const sampleKey = (speaker, speed) =>
@@ -424,7 +424,7 @@ const publicConfig = () => ({
   configFile: CONFIG_FILE,
   savedAt,
   speakers: SPEAKERS,
-  voices: VOICES,
+  voices: VOICES.filter((v) => SPEAKERS.includes(v.name)),
   groupLabels: GROUP_LABELS,
   ffmpeg: hasFfmpeg,
 });
@@ -785,7 +785,7 @@ app.post("/api/stop", (_req, res) => {
 
 app.post("/api/test", async (req, res) => {
   if (!config.token) return res.status(400).json({ error: "توکن خالی است" });
-  const text = String(req.body?.text || "سلام! من پوپو هستم، یک خرس کوچولو که عاشق بازی است.");
+  const text = String(req.body?.text || "سلام! من پوپو هستم، یک روباه کوچولو که عاشق بازی است.");
   try {
     const { buffer, ext, raw } = await speak({
       token: config.token, text, speaker: config.speaker,

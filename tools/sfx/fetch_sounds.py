@@ -109,7 +109,15 @@ def search(query: str) -> None:
         print(f"          {plain(meta, 'ImageDescription')[:120]}")
 
 
-def clean(src: Path, dst: Path, start: float, seconds: float) -> None:
+def clean(src: Path, dst: Path, start: float, seconds: float, loop: bool = False) -> None:
+    if loop:
+        # صدای محیط حلقه‌ای: بدون بریدن سکوت، محو آرام اول و آخر تا تکرارش پرش نداشته باشد، آرام‌تر از جلوه‌ها
+        chain = (f"atrim=0:{seconds},afade=t=in:d=1.2,afade=t=out:st={max(0, seconds - 1.2)}:d=1.2,"
+                 "loudnorm=I=-24:TP=-3:LRA=11")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(start), "-t", str(seconds + 1), "-i", str(src),
+                        "-vn", "-ac", "1", "-ar", "44100", "-af", chain, "-c:a", "libmp3lame", "-b:a", "96k",
+                        str(dst)], check=True, stdin=subprocess.DEVNULL, timeout=180)
+        return
     chain = ("silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.02,"
              "areverse,silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.05,areverse,"
              f"atrim=0:{seconds},afade=t=out:st={max(0, seconds - 0.4)}:d=0.4,"
@@ -247,7 +255,7 @@ def apply(sid: str, pick: dict, sound: dict, m: dict, sources: dict, *, patience
             start = pick.get("start")
             if start is None:
                 start = loudest(src, seconds) if duration(src) > seconds + 1 else 0.0
-            clean(src, out, float(start), seconds)
+            clean(src, out, float(start), seconds, loop=bool(pick.get("loop")))
         except Deferred as err:
             print(f"   … {err} — بعد از بقیه دوباره", flush=True)
             return "deferred"

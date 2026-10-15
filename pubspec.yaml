@@ -46,6 +46,9 @@ flutter:
     - assets/art/music/
     - assets/art/art/
     - assets/art/construction/
+    - assets/art/cards/
+    - assets/art/backgrounds/
+    - assets/art/character/
     - assets/audio/ui/
     - assets/audio/sfx/
     - assets/audio/animals/

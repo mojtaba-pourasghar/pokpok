@@ -34,10 +34,13 @@ class ArtImage extends ConsumerWidget {
     final content = ref.watch(contentProvider);
     final assets = ref.watch(assetsProvider);
     final path = content.artPath(id);
-    final raster = assets.rasterOverride(path);
+    final raster = path.endsWith('.svg') ? assets.rasterOverride(path) : path;
     Widget img;
     if (raster != null) {
-      img = Image(image: assets.image(raster)!, width: size, height: size, fit: fit, gaplessPlayback: true);
+      final provider = assets.image(raster);
+      img = provider == null
+          ? SizedBox(width: size, height: size)
+          : Image(image: provider, width: size, height: size, fit: fit, gaplessPlayback: true, filterQuality: FilterQuality.medium);
     } else {
       final r = assets.resolve(path);
       img = r != null && r.source == AssetSource.downloaded

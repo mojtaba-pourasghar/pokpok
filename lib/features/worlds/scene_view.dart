@@ -34,11 +34,13 @@ class SceneViewState extends ConsumerState<SceneView> {
   Timer? _poseReset;
   Timer? _idle;
   late final String _profile = ref.read(activeIdProvider);
+  late final PopoAudio _audio = ref.read(audioProvider);
 
   @override
   void initState() {
     super.initState();
     controller = _build(widget.scene);
+    _audio;
     WidgetsBinding.instance.addPostFrameCallback((_) => _enter());
   }
 
@@ -114,6 +116,8 @@ class SceneViewState extends ConsumerState<SceneView> {
 
   @override
   void dispose() {
+    // صدای محیط مال همین صحنه است؛ با بیرون رفتن قطع می‌شود.
+    if (widget.scene.ambient != null) _audio.stopAmbient();
     _idle?.cancel();
     _poseReset?.cancel();
     controller.dispose();

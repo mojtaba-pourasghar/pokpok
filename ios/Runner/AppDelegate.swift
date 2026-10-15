@@ -14,7 +14,7 @@ import UIKit
     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
     // فضای آزاد دستگاه برای صفحه‌ی دانلودها (lib/core/assets/storage_info.dart).
     if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "PopoStorage") {
-      let channel = FlutterMethodChannel(name: "ir.brandimo.popo/storage", binaryMessenger: registrar.messenger())
+      let channel = FlutterMethodChannel(name: "com.pokpok.ir/storage", binaryMessenger: registrar.messenger())
       channel.setMethodCallHandler { call, result in
         guard call.method == "freeBytes" else {
           result(FlutterMethodNotImplemented)

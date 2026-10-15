@@ -221,6 +221,7 @@
   },
   {
    "id": "play.garden",
+   "ambient": "audio/ambient/garden.mp3",
    "world": "play",
    "title": "باغبانی",
    "icon": "watering_can",
@@ -292,6 +293,7 @@
   },
   {
    "id": "play.pet",
+   "ambient": "audio/ambient/park.mp3",
    "world": "play",
    "title": "مراقبت از سگ",
    "icon": "dog",

@@ -93,6 +93,48 @@
    "file": "File:Bach - Partita For Solo Flute - Modern Flute - 4. Bouree.ogg",
    "seconds": 7,
    "start": 0
+  },
+  "ambient/forest": {
+   "file": "File:Birdsong Bourne Woods 2020-04-27 0722.mp3",
+   "seconds": 24,
+   "start": 2,
+   "loop": true
+  },
+  "ambient/garden": {
+   "file": "File:Birdsong volga st.ogg",
+   "seconds": 24,
+   "start": 5,
+   "loop": true
+  },
+  "ambient/park": {
+   "file": "File:209901 foongaz city-playground-boxhagenerplatz-berlin.wav",
+   "seconds": 24,
+   "start": 10,
+   "loop": true
+  },
+  "ambient/street": {
+   "file": "File:Ambient sound Mauerstrasse Gransee birds and traffic 2026-05-22.oga",
+   "seconds": 24,
+   "start": 2,
+   "loop": true
+  },
+  "ambient/pond": {
+   "file": "File:Nature sounds ambience in a Dordogne pond.ogg",
+   "seconds": 24,
+   "start": 5,
+   "loop": true
+  },
+  "ambient/farm": {
+   "file": "File:Cowbells on Monte Baldo.ogg",
+   "seconds": 24,
+   "start": 4,
+   "loop": true
+  },
+  "ambient/bathroom": {
+   "file": "File:Water drops dripping.ogg",
+   "seconds": 14,
+   "start": 1,
+   "loop": true
   }
  }
 }

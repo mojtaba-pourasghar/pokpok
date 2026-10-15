@@ -2,6 +2,9 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../app/providers.dart';
 import '../../../app/theme/tokens.dart';
 
 /// پس‌زمینه‌های مصورِ صحنه‌ها، کشیده با کد.
@@ -9,7 +12,10 @@ import '../../../app/theme/tokens.dart';
 /// پس‌زمینه با همان مختصات نسبی اشیا (۰ تا ۱) کشیده می‌شود، پس کف اتاق، جاده و برکه در هر
 /// اندازه و جهت صفحه دقیقاً زیر اشیای صحنه می‌مانند. هر شناسه در JSON صحنه‌ها («background»)
 /// به یکی از این‌ها نگاشت می‌شود.
-class SceneBackground extends StatelessWidget {
+///
+/// اگر تصویر ساخته‌شده‌ی `assets/art/backgrounds/<id>.webp` (Cloudflare، tools/art/generate_cf.py)
+/// باشد، همان تصویر نشان داده می‌شود و فقط جاده/راه‌ها با کد رویش کشیده می‌شوند.
+class SceneBackground extends ConsumerWidget {
   const SceneBackground({super.key, required this.id, this.paths = const {}, this.points = const []});
 
   final String id;
@@ -19,20 +25,42 @@ class SceneBackground extends StatelessWidget {
   final List<Offset> points;
 
   @override
-  Widget build(BuildContext context) => RepaintBoundary(
-    child: CustomPaint(
-      painter: SceneBackgroundPainter(id, paths: paths, points: points),
-      size: Size.infinite,
-    ),
-  );
+  Widget build(BuildContext context, WidgetRef ref) {
+    final assets = ref.watch(assetsProvider);
+    final raster = 'art/backgrounds/$id.webp';
+    if (!assets.exists(raster)) {
+      return RepaintBoundary(
+        child: CustomPaint(
+          painter: SceneBackgroundPainter(id, paths: paths, points: points),
+          size: Size.infinite,
+        ),
+      );
+    }
+    return RepaintBoundary(
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image(image: assets.image(raster)!, fit: BoxFit.cover, gaplessPlayback: true, filterQuality: FilterQuality.medium),
+          if (paths.isNotEmpty || points.isNotEmpty)
+            CustomPaint(
+              painter: SceneBackgroundPainter(id, paths: paths, points: points, overlayOnly: true),
+              size: Size.infinite,
+            ),
+        ],
+      ),
+    );
+  }
 }
 
 class SceneBackgroundPainter extends CustomPainter {
-  SceneBackgroundPainter(this.id, {this.paths = const {}, this.points = const []});
+  SceneBackgroundPainter(this.id, {this.paths = const {}, this.points = const [], this.overlayOnly = false});
 
   final String id;
   final Map<String, List<Offset>> paths;
   final List<Offset> points;
+
+  /// روی تصویر رستری فقط چیزهایی کشیده می‌شود که به مختصات بازی گره خورده‌اند (جاده، راه‌های نقشه).
+  final bool overlayOnly;
 
   static const ids = [
     'living',
@@ -57,6 +85,11 @@ class SceneBackgroundPainter extends CustomPainter {
 
   @override
   void paint(Canvas c, Size s) {
+    if (overlayOnly) {
+      if (paths['road'] != null) _road(c, s, paths['road']!);
+      if (id == 'map') _mapPaths(c, s);
+      return;
+    }
     switch (id) {
       case 'living':
         _room(c, s, wall: const Color(0xFFFFE3C7), pattern: _Pattern.dots, floor: const Color(0xFFE2A66A), planks: true, window: true);
@@ -592,6 +625,12 @@ class SceneBackgroundPainter extends CustomPainter {
         ..strokeWidth = math.min(s.width, s.height) * .05
         ..strokeCap = StrokeCap.round,
     );
+    _mapPaths(c, s);
+    // درخت‌ها
+    _treesScatter(c, s, rnd);
+  }
+
+  void _mapPaths(Canvas c, Size s) {
     // راه‌های بین جهان‌ها
     if (points.length > 1) {
       final road = Paint()
@@ -618,8 +657,6 @@ class SceneBackgroundPainter extends CustomPainter {
         }
       }
     }
-    // درخت‌ها
-    _treesScatter(c, s, rnd);
   }
 
   void _treesScatter(Canvas c, Size s, math.Random rnd) {
@@ -636,7 +673,8 @@ class SceneBackgroundPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(SceneBackgroundPainter old) => old.id != id || old.paths != paths || old.points != points;
+  bool shouldRepaint(SceneBackgroundPainter old) =>
+      old.id != id || old.paths != paths || old.points != points || old.overlayOnly != overlayOnly;
 }
 
 enum _Pattern { dots, stripes, tiles, stars }

@@ -23,11 +23,12 @@ abstract final class PColors {
   static const line = Color(0xFFE2E8F5);
   static const sky = Color(0xFFDDF1FF);
   static const cream = Color(0xFFFFF4E3);
-  static const fur = Color(0xFFFF9D37);
-  static const furDark = Color(0xFFD9741A);
-  static const muzzle = Color(0xFFFFE9C9);
-  static const outfit = Color(0xFF16B9D1);
-  static const headphones = Color(0xFF3778F6);
+  // پوپو، روباه کوچولوی دختر
+  static const fur = Color(0xFFFF8A3D);
+  static const furDark = Color(0xFFD9641A);
+  static const muzzle = Color(0xFFFFFBF5);
+  static const outfit = Color(0xFFA77BEF);
+  static const bow = Color(0xFFFF6FAE);
 
   /// رنگ هر جهان (برای کارت‌ها و عنوان‌ها).
   static const worlds = <String, Color>{

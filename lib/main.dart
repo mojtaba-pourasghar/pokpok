@@ -10,6 +10,7 @@ import 'core/assets/asset_resolver.dart';
 import 'core/audio/just_audio_service.dart';
 import 'core/content/content.dart';
 import 'core/storage/local_store.dart';
+import 'features/mascot/popo_mascot.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +22,8 @@ Future<void> main() async {
   final content = await ContentRepository.load(rootBundle);
   final assets = AssetResolver();
   await assets.init(rootBundle);
+  // حالت‌های رستری پوپو، اگر با tools/art/generate_cf.py ساخته شده باشند.
+  MascotArt.resolve = (path) => assets.exists(path) ? assets.image(path) : null;
 
   runApp(
     ProviderScope(

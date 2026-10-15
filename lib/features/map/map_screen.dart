@@ -229,7 +229,7 @@ class _ContinueChip extends StatelessWidget {
 }
 
 /// کارت مصور یک جهان روی نقشه.
-class WorldCard extends StatelessWidget {
+class WorldCard extends ConsumerWidget {
   const WorldCard({super.key, required this.world, required this.onTap, this.visited = false});
 
   final WorldDef world;
@@ -237,8 +237,11 @@ class WorldCard extends StatelessWidget {
   final bool visited;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final color = PColors.worlds[world.id] ?? PColors.blue;
+    final card = world.card;
+    // تصویر رستری کارت (ساخته‌شده با Cloudflare) اگر باشد، وگرنه طرح برداری جهان.
+    final hasCard = card != null && ref.watch(contentProvider).art.containsKey(card);
     return PTile(
       label: world.title,
       labelLines: 2,
@@ -247,18 +250,21 @@ class WorldCard extends StatelessWidget {
       onTap: onTap,
       child: AspectRatio(
         aspectRatio: 1.25,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                gradient: RadialGradient(colors: [Colors.white, PColors.tint(color, .2)]),
-                borderRadius: BorderRadius.circular(PRadius.sm),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(PRadius.sm),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              DecoratedBox(
+                decoration: BoxDecoration(gradient: RadialGradient(colors: [Colors.white, PColors.tint(color, .2)])),
               ),
-            ),
-            Padding(padding: const EdgeInsets.all(PSpace.xs), child: ArtImage(world.art)),
-            if (visited) const PositionedDirectional(top: 2, end: 2, child: Icon(Icons.star_rounded, color: PColors.orange, size: 22)),
-          ],
+              if (hasCard)
+                ArtImage(card, fit: BoxFit.cover)
+              else
+                Padding(padding: const EdgeInsets.all(PSpace.xs), child: ArtImage(world.art)),
+              if (visited) const PositionedDirectional(top: 2, end: 2, child: Icon(Icons.star_rounded, color: PColors.orange, size: 22)),
+            ],
+          ),
         ),
       ),
     );

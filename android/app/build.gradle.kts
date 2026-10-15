@@ -14,7 +14,7 @@ val keyProperties = Properties().apply {
 }
 
 android {
-    namespace = "ir.brandimo.popo"
+    namespace = "com.pokpok.ir"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -24,7 +24,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "ir.brandimo.popo"
+        applicationId = "com.pokpok.ir"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         // Uses the version code from pubspec.yaml. When using split APKs, 1000 * ABI_VERSION

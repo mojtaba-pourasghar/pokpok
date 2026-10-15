@@ -84,7 +84,7 @@ HOME = [
          o("ball", "ball", .76, .86, .14, "توپ", drag="free", tags=["toy"], tap=tap("jump", S + "boing.mp3")),
          o("blocks", "toy_blocks", .2, .88, .18, "مکعب‌ها", drag="free", tags=["toy"], tap=tap("squash", S + "thunk.mp3")),
      ]},
-    {"id": "home.bathroom", "world": "home", "title": "حمام", "icon": "bathtub", "background": "bathroom", "intro": "scene.home.bathroom",
+    {"id": "home.bathroom", "ambient": "audio/ambient/bathroom.mp3", "world": "home", "title": "حمام", "icon": "bathtub", "background": "bathroom", "intro": "scene.home.bathroom",
      "objects": [
          o("towel", "towel", .88, .34, .26, "حوله", tap=tap("wiggle", S + "rustle.mp3")),
          o("bathtub", "bathtub", .52, .62, .56, "وان", tap=tap("wiggle", S + "splash.mp3"),
@@ -98,7 +98,7 @@ HOME = [
 
 ROAD = [[-.05, .72], [.25, .66], [.55, .78], [.8, .7], [1.05, .74]]
 CITY = [
-    {"id": "city.street", "world": "city", "title": "خیابان", "icon": "car", "background": "street", "intro": "scene.city.street",
+    {"id": "city.street", "ambient": "audio/ambient/street.mp3", "world": "city", "title": "خیابان", "icon": "car", "background": "street", "intro": "scene.city.street",
      "paths": {"road": ROAD},
      "objects": [
          o("house", "house", .13, .44, .26, "خانه", tap=tap("wiggle", S + "doorbell.mp3")),
@@ -112,7 +112,7 @@ CITY = [
          o("truck", "truck", .05, .72, .2, "کامیون", drag="path:road", z=2, tap=tap("jump", S + "truck_horn.mp3")),
          o("bike", "bicycle", .64, .9, .17, "دوچرخه", drag="free", tap=tap("wiggle", S + "bike_bell.mp3")),
      ]},
-    {"id": "city.park", "world": "city", "title": "پارک", "icon": "fountain", "background": "park", "intro": "scene.city.park",
+    {"id": "city.park", "ambient": "audio/ambient/park.mp3", "world": "city", "title": "پارک", "icon": "fountain", "background": "park", "intro": "scene.city.park",
      "objects": [
          o("tree1", "tree", .12, .46, .32, "درخت", tap=tap("wiggle", S + "rustle.mp3")),
          o("tree2", "tree", .88, .48, .3, "درخت", tap=tap("wiggle", S + "rustle.mp3")),
@@ -129,7 +129,7 @@ CITY = [
 
 NATURE = [
     {"id": "nature.forest", "world": "nature", "title": "جنگل", "icon": "pine", "background": "forest", "intro": "scene.nature.forest",
-     "ambient": "audio/ambient/wind.mp3",
+     "ambient": "audio/ambient/forest.mp3",
      "objects": [
          o("pine1", "pine", .1, .44, .34, "کاج", tap=tap("wiggle", S + "rustle.mp3")),
          o("tree", "tree", .86, .44, .36, "درخت سیب", tap=tap("wiggle", S + "rustle.mp3")),
@@ -141,7 +141,7 @@ NATURE = [
          o("butterfly", "butterfly", .3, .26, .12, "پروانه", drag="free", tap=tap("spin", U + "sparkle.mp3")),
          o("bee", "bee", .5, .36, .1, "زنبور", drag="free", tap=tap("wiggle", S + "buzz.mp3")),
      ]},
-    {"id": "nature.garden", "world": "nature", "title": "باغ", "icon": "flower_red", "background": "garden", "intro": "scene.nature.garden",
+    {"id": "nature.garden", "ambient": "audio/ambient/garden.mp3", "world": "nature", "title": "باغ", "icon": "flower_red", "background": "garden", "intro": "scene.nature.garden",
      "sticker": "garden.bloom", "goals": [{"target": "plot1", "stage": 2}, {"target": "plot2", "stage": 2}, {"target": "plot3", "stage": 2}],
      "objects": [
          o("plot1", "seed", .22, .72, .2, "دانه", states=["seed", "sprout", "flower_red"], accepts=[acc("water", "grow", S + "grow.mp3", then="return", advance=True)], tap=tap("wiggle", U + "pop.mp3")),
@@ -153,7 +153,7 @@ NATURE = [
          o("butterfly", "butterfly", .3, .3, .12, "پروانه", drag="free", tap=tap("spin", U + "sparkle.mp3")),
      ]},
     {"id": "nature.pond", "world": "nature", "title": "برکه", "icon": "duck", "background": "pond", "intro": "scene.nature.pond",
-     "ambient": "audio/ambient/river.mp3",
+     "ambient": "audio/ambient/pond.mp3",
      "objects": [
          o("lily1", "lily", .3, .76, .16, "برگ نیلوفر", z=-1, tap=tap("wiggle", S + "bloop.mp3")),
          o("lily2", "lily", .7, .82, .14, "برگ نیلوفر", z=-1, tap=tap("wiggle", S + "bloop.mp3")),
@@ -164,7 +164,7 @@ NATURE = [
          o("bird", "bird", .2, .22, .12, "پرنده", drag="free", tap=tap("jump", A + "bird.mp3")),
          o("rock", "rock", .1, .6, .16, "سنگ", tap=tap("squash", S + "splash.mp3")),
      ]},
-    {"id": "nature.farm", "world": "nature", "title": "مزرعه", "icon": "cow", "background": "farm", "intro": "scene.nature.farm",
+    {"id": "nature.farm", "ambient": "audio/ambient/farm.mp3", "world": "nature", "title": "مزرعه", "icon": "cow", "background": "farm", "intro": "scene.nature.farm",
      "sticker": "farm.feed", "goals": [{"target": "cow", "tag": "hay"}, {"target": "sheep", "tag": "hay"}, {"target": "horse", "tag": "hay"}],
      "objects": [
          o("barn", "barn", .16, .42, .34, "انبار", tap=tap("wiggle", S + "door.mp3")),
@@ -203,7 +203,7 @@ PLAY = [
          o("banana", "banana", .62, .5, .13, "موز", drag="free", tags=["extra"], persist=False),
          o("cheese", "cheese", .86, .88, .13, "پنیر", drag="free", tags=["extra"], persist=False),
      ]},
-    {"id": "play.garden", "world": "play", "title": "باغبانی", "icon": "watering_can", "background": "garden", "intro": "play.garden.hello", "done": "play.garden.done",
+    {"id": "play.garden", "ambient": "audio/ambient/garden.mp3", "world": "play", "title": "باغبانی", "icon": "watering_can", "background": "garden", "intro": "play.garden.hello", "done": "play.garden.done",
      "hint": "با آب‌پاش دو بار به دانه آب بده", "sticker": "gardener",
      "goals": [{"target": "plot", "stage": 2}],
      "objects": [
@@ -212,7 +212,7 @@ PLAY = [
          o("can", "watering_can", .2, .88, .2, "آب‌پاش", drag="free", tags=["water"], persist=False, tap=tap("wiggle", S + "pour.mp3")),
          o("sun", "sun", .8, .2, .18, "خورشید", tap=tap("spin", U + "chime.mp3")),
      ]},
-    {"id": "play.pet", "world": "play", "title": "مراقبت از سگ", "icon": "dog", "background": "park", "intro": "play.pet.hello", "done": "play.pet.done",
+    {"id": "play.pet", "ambient": "audio/ambient/park.mp3", "world": "play", "title": "مراقبت از سگ", "icon": "dog", "background": "park", "intro": "play.pet.hello", "done": "play.pet.done",
      "hint": "به سگ غذا بده، بشویَش و با او توپ‌بازی کن", "sticker": "petcare",
      "goals": [{"target": "dog", "tag": "food"}, {"target": "dog", "tag": "soap"}, {"target": "dog", "tag": "toy"}],
      "objects": [
@@ -239,15 +239,15 @@ PLAY = [
 WORLDS = {
     "sceneFiles": ["home.json", "city.json", "nature.json", "play.json"],
     "worlds": [
-        {"id": "home", "title": "خانه‌ی من", "subtitle": "پذیرایی، آشپزخانه، اتاق خواب، حمام", "art": "house", "route": "/world/home", "mapX": .26, "mapY": .2, "voice": "world.home.hello",
+        {"id": "home", "card": "card_home", "title": "خانه‌ی من", "subtitle": "پذیرایی، آشپزخانه، اتاق خواب، حمام", "art": "house", "route": "/world/home", "mapX": .26, "mapY": .2, "voice": "world.home.hello",
          "scenes": ["home.living", "home.kitchen", "home.bedroom", "home.bathroom"]},
-        {"id": "city", "title": "شهر بازی", "subtitle": "ماشین‌ها، اتوبوس، فروشگاه، پارک", "art": "bus", "route": "/world/city", "mapX": .74, "mapY": .24, "voice": "world.city.hello",
+        {"id": "city", "card": "card_city", "title": "شهر بازی", "subtitle": "ماشین‌ها، اتوبوس، فروشگاه، پارک", "art": "bus", "route": "/world/city", "mapX": .74, "mapY": .24, "voice": "world.city.hello",
          "scenes": ["city.street", "city.park"]},
-        {"id": "nature", "title": "طبیعت و حیوانات", "subtitle": "جنگل، باغ، برکه، مزرعه", "art": "cow", "route": "/world/nature", "mapX": .3, "mapY": .5, "voice": "world.nature.hello",
+        {"id": "nature", "card": "card_nature", "title": "طبیعت و حیوانات", "subtitle": "جنگل، باغ، برکه، مزرعه", "art": "cow", "route": "/world/nature", "mapX": .3, "mapY": .5, "voice": "world.nature.hello",
          "scenes": ["nature.forest", "nature.garden", "nature.pond", "nature.farm"]},
-        {"id": "art", "title": "هنر و نقاشی", "subtitle": "رنگ‌ها، قلم‌مو، نقاشی‌های من", "art": "palette", "route": "/art", "mapX": .72, "mapY": .54, "voice": "world.art.hello"},
-        {"id": "music", "title": "استودیوی موسیقی", "subtitle": "پیانو، زایلوفون، درام", "art": "drum", "route": "/music", "mapX": .28, "mapY": .8, "voice": "world.music.hello"},
-        {"id": "build", "title": "کارگاه ساخت‌وساز", "subtitle": "بلوک، جاده، پل، چرخ‌دنده", "art": "crane", "route": "/build", "mapX": .72, "mapY": .82, "voice": "world.build.hello"},
+        {"id": "art", "card": "card_art", "title": "هنر و نقاشی", "subtitle": "رنگ‌ها، قلم‌مو، نقاشی‌های من", "art": "palette", "route": "/art", "mapX": .72, "mapY": .54, "voice": "world.art.hello"},
+        {"id": "music", "card": "card_music", "title": "استودیوی موسیقی", "subtitle": "پیانو، زایلوفون، درام", "art": "drum", "route": "/music", "mapX": .28, "mapY": .8, "voice": "world.music.hello"},
+        {"id": "build", "card": "card_build", "title": "کارگاه ساخت‌وساز", "subtitle": "بلوک، جاده، پل، چرخ‌دنده", "art": "crane", "route": "/build", "mapX": .72, "mapY": .82, "voice": "world.build.hello"},
     ],
 }
 

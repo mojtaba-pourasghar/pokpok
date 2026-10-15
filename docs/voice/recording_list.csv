@@ -1,6 +1,6 @@
 ﻿id,file,text,event,screen,group,delay_ms,recorded
 app.splash.welcome,app_splash_welcome.mp3,سلام! من پوپو هستم. ببین، لمس کن، کشف کن!,splash.shown,splash,,500,no
-app.intro.1,app_intro_1.mp3,سلام دوست کوچولو! من پوپو هستم، یک خرس کوچولو که عاشق بازی است.,intro.page1,intro,,300,no
+app.intro.1,app_intro_1.mp3,سلام دوست کوچولو! من پوپو هستم، یک روباه کوچولو که عاشق بازی است.,intro.page1,intro,,300,no
 app.intro.2,app_intro_2.mp3,هر چیزی را که دوست داری لمس کن. ببین چه اتفاقی می‌افتد!,intro.page2,intro,,300,no
 app.intro.3,app_intro_3.mp3,می‌توانی چیزها را بکشی و جابه‌جا کنی. بیا با هم دنیا را کشف کنیم!,intro.page3,intro,,300,no
 app.profiles.pick,app_profiles_pick.mp3,کی می‌خواهد بازی کند؟ عکس خودت را لمس کن.,profiles.shown,profiles,,300,no

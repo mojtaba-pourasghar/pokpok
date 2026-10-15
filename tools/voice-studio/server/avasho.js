@@ -35,8 +35,8 @@ export const ENDPOINTS = { short: FAMILIES.short.request, long: FAMILIES.long.re
 /**
  * Every voice the service offers, with the Persian name shown in the studio.
  *
- * پوپو talks to a small child, so a warm voice carries it best — but
- * the male ones are here too, for a second character or for whoever wants to listen first.
+ * پوپو is a little girl fox, so only the female voices are offered for her lines
+ * (SPEAKERS below). The male ones stay listed for reference and a possible second character.
  */
 export const VOICES = [
   { name: "sara",      gender: "female", label: "سارا" },
@@ -55,7 +55,7 @@ export const VOICES = [
   { name: "ariya",     gender: "male",   label: "آریا" },
 ];
 
-export const SPEAKERS = VOICES.map((v) => v.name);
+export const SPEAKERS = VOICES.filter((v) => v.gender === "female").map((v) => v.name);
 
 const AUDIO_EXT = { "audio/mpeg": ".mp3", "audio/mp3": ".mp3", "audio/wav": ".wav",
                     "audio/x-wav": ".wav", "audio/ogg": ".ogg", "audio/wave": ".wav" };

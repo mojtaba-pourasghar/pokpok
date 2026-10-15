@@ -8,6 +8,7 @@
  "worlds": [
   {
    "id": "home",
+   "card": "card_home",
    "title": "خانه‌ی من",
    "subtitle": "پذیرایی، آشپزخانه، اتاق خواب، حمام",
    "art": "house",
@@ -24,6 +25,7 @@
   },
   {
    "id": "city",
+   "card": "card_city",
    "title": "شهر بازی",
    "subtitle": "ماشین‌ها، اتوبوس، فروشگاه، پارک",
    "art": "bus",
@@ -38,6 +40,7 @@
   },
   {
    "id": "nature",
+   "card": "card_nature",
    "title": "طبیعت و حیوانات",
    "subtitle": "جنگل، باغ، برکه، مزرعه",
    "art": "cow",
@@ -54,6 +57,7 @@
   },
   {
    "id": "art",
+   "card": "card_art",
    "title": "هنر و نقاشی",
    "subtitle": "رنگ‌ها، قلم‌مو، نقاشی‌های من",
    "art": "palette",
@@ -64,6 +68,7 @@
   },
   {
    "id": "music",
+   "card": "card_music",
    "title": "استودیوی موسیقی",
    "subtitle": "پیانو، زایلوفون، درام",
    "art": "drum",
@@ -74,6 +79,7 @@
   },
   {
    "id": "build",
+   "card": "card_build",
    "title": "کارگاه ساخت‌وساز",
    "subtitle": "بلوک، جاده، پل، چرخ‌دنده",
    "art": "crane",
