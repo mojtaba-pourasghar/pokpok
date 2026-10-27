@@ -13,6 +13,14 @@ val keyProperties = Properties().apply {
     if (f.exists()) f.inputStream().use { load(it) }
 }
 
+// کلید RSA پرداخت بازار از android/services.properties (در گیت نیست؛ نمونه: services.properties.example).
+// خالی بودنش ساخت را نمی‌شکند: پرداخت خطای «کلید نیست» می‌دهد و برنامه «بازار در دسترس نیست» نشان می‌دهد.
+val serviceProperties = Properties().apply {
+    val f = rootProject.file("services.properties")
+    if (f.exists()) f.inputStream().use { load(it) }
+}
+val bazaarRsa: String = serviceProperties.getProperty("bazaar.rsa", "").trim()
+
 android {
     namespace = "com.pokpok.ir"
     compileSdk = flutter.compileSdkVersion
@@ -33,6 +41,7 @@ android {
         // flag during build.
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        manifestPlaceholders["bazaarRsa"] = bazaarRsa
     }
 
     signingConfigs {
@@ -65,4 +74,13 @@ kotlin {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // پرداخت درون‌برنامه‌ای کافه‌بازار (BazaarBilling.kt)، مستقیم و بی افزونه‌ی flutter_poolakey.
+    implementation("com.github.cafebazaar.Poolakey:poolakey:2.2.0")
+    implementation("androidx.activity:activity-ktx:1.9.3")
+    // اعلان‌ها بدون هیچ سرویس پوشی: برنامه خودش فایل امضاشده‌ی خبرها را از سرور می‌خواند
+    // (NoticeWork.kt هر ربع ساعت، NoticeAlarm.kt از میان Doze) و خبر تازه را در نوار اعلان می‌گذارد.
+    implementation("androidx.work:work-runtime:2.9.1")
 }

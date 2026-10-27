@@ -1,6 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- تنها مجوز: دانلود بسته‌های اختیاری محتوا از CDN. -->
+    <!-- دانلود بسته‌های اختیاری محتوا از CDN، خواندن فایل امضاشده‌ی خبرها و پرداخت کافه‌بازار. -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- اعلان‌ها بدون سرویس پوش: برنامه فایل امضاشده‌ی خبرها را خودش از سرور می‌خواند و خبر تازه را
+         در نوار اعلان می‌گذارد (NoticeCenter.kt). اندروید ۱۳ به بعد برای نمایش اجازه می‌خواهد؛ فقط وقتی
+         خبری برای گفتن هست پرسیده می‌شود، نه در اولین اجرا. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <!-- زنجیره‌ی NoticeAlarm با هر روشن شدن گوشی یا به‌روزرسانی برنامه پاک می‌شود؛ BootReceiver آن را
+         دوباره می‌گذارد (WorkManager صف خودش را دارد). -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- بدون این، Doze و App Standby بررسی پس‌زمینه را ساعت‌ها عقب می‌اندازند. یک بار پرسیده می‌شود و
+         «نه» محترم است (NoticeCenter.askBackground). -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
 
     <application
         android:label="پوپو"
@@ -30,6 +40,27 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PurchaseActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- مقدارها از android/services.properties (در گیت نیست) -->
+        <meta-data android:name="com.pokpok.ir.BAZAAR_RSA" android:value="${bazaarRsa}" />
+        <!-- بررسی پس‌زمینه‌ی خبرها که از میان Doze هم رد می‌شود (NoticeAlarm.kt) -->
+        <receiver
+            android:name=".NoticeAlarm"
+            android:exported="false" />
+        <!-- بعد از روشن شدن گوشی یا به‌روزرسانی برنامه، زنجیره‌ی بالا دوباره گذاشته می‌شود -->
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data
@@ -42,6 +73,12 @@
 
          In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
     <queries>
+        <!-- پرداخت و باز کردن صفحه‌ی برنامه‌ها در کافه‌بازار -->
+        <package android:name="com.farsitel.bazaar" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>

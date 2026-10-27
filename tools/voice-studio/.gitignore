@@ -3,3 +3,7 @@ dist/
 # the token and your local paths live here — never commit it
 voice-studio.config.json
 samples/
+# پیش‌نویس خبرها، تصویرها و فایل امضاشده‌ی آخر (server/notices.js)؛ کلید خصوصی در voice-studio.config.json است
+notices.json
+notices/
+published/

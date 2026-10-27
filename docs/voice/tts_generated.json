@@ -1,0 +1,355 @@
+{
+  "note": "clips made with the TTS service — temporary until a voice actor records them",
+  "files": {
+    "app_intro_1": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:15.338Z"
+    },
+    "app_intro_2": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:15.128Z"
+    },
+    "app_intro_3": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:16.217Z"
+    },
+    "app_map_back": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:14.266Z"
+    },
+    "app_map_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:14.117Z"
+    },
+    "app_profiles_pick": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:14.964Z"
+    },
+    "app_splash_welcome": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:03.110Z"
+    },
+    "art_clear_ask": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:21.376Z"
+    },
+    "art_gallery": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:21.144Z"
+    },
+    "art_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:21.390Z"
+    },
+    "art_saved": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:21.400Z"
+    },
+    "build_gears": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:24.992Z"
+    },
+    "build_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:23.612Z"
+    },
+    "build_remove": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:23.844Z"
+    },
+    "full_locked": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:37.315Z"
+    },
+    "idle_1": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:31.708Z"
+    },
+    "idle_2": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:31.849Z"
+    },
+    "idle_3": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:32.270Z"
+    },
+    "library_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:32.567Z"
+    },
+    "music_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:22.190Z"
+    },
+    "music_record": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:22.659Z"
+    },
+    "music_recording": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:22.490Z"
+    },
+    "music_saved": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:23.628Z"
+    },
+    "notice_new": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:35.889Z"
+    },
+    "parent_ask": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:36.418Z"
+    },
+    "play_cook_done": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:28.008Z"
+    },
+    "play_cook_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:26.867Z"
+    },
+    "play_garden_done": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:29.386Z"
+    },
+    "play_garden_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:27.828Z"
+    },
+    "play_pet_done": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:29.459Z"
+    },
+    "play_pet_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:28.187Z"
+    },
+    "play_shop_done": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:28.249Z"
+    },
+    "play_shop_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:27.604Z"
+    },
+    "play_tidy_done": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:29.725Z"
+    },
+    "play_tidy_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:28.205Z"
+    },
+    "praise_1": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:30.477Z"
+    },
+    "praise_2": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:30.272Z"
+    },
+    "praise_3": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:30.123Z"
+    },
+    "praise_4": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:30.075Z"
+    },
+    "praise_5": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:29.973Z"
+    },
+    "praise_6": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:31.595Z"
+    },
+    "puzzle_match": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:25.570Z"
+    },
+    "puzzle_pattern": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:25.624Z"
+    },
+    "puzzle_shapes": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:25.373Z"
+    },
+    "puzzle_sort": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:25.002Z"
+    },
+    "puzzle_try": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:26.014Z"
+    },
+    "puzzle_try_2": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:26.887Z"
+    },
+    "rewards_empty": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:34.212Z"
+    },
+    "rewards_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:32.454Z"
+    },
+    "scene_city_park": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:19.021Z"
+    },
+    "scene_city_street": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:19.103Z"
+    },
+    "scene_home_bathroom": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:18.653Z"
+    },
+    "scene_home_bedroom": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.824Z"
+    },
+    "scene_home_kitchen": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.635Z"
+    },
+    "scene_home_living": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:18.669Z"
+    },
+    "scene_nature_farm": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:20.583Z"
+    },
+    "scene_nature_forest": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:19.654Z"
+    },
+    "scene_nature_garden": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:20.804Z"
+    },
+    "scene_nature_pond": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:20.326Z"
+    },
+    "session_bye": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:34.251Z"
+    },
+    "session_pause": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:34.660Z"
+    },
+    "session_resume": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:34.352Z"
+    },
+    "session_sleepy": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:35.019Z"
+    },
+    "sticker_new": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:33.003Z"
+    },
+    "world_art_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.003Z"
+    },
+    "world_build_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.688Z"
+    },
+    "world_city_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:14.843Z"
+    },
+    "world_home_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:14.307Z"
+    },
+    "world_music_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.028Z"
+    },
+    "world_nature_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.085Z"
+    }
+  }
+}

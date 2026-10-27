@@ -18,6 +18,8 @@ import { readManifest, existingKeys, setSpoken, GROUP_LABELS } from "./manifest.
 import { createRegistry } from "./tts-registry.js";
 import { speak, SPEAKERS, VOICES, RateLimited } from "./avasho.js";
 import { createSfx } from "./sfx.js";
+import { NOTICE_DEFAULTS, createNotices } from "./notices.js";
+import { createFtp } from "./ftp.js";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "..");
@@ -57,6 +59,19 @@ const DEFAULTS = {
   // Needs ffmpeg on PATH. Without it the service's own file is kept.
   normalize: true,
   schedule: { enabled: false, everySeconds: 300, batchSize: 25 },
+  // خبرهای امضاشده (server/notices.js): نام سطل R2. کلید امضا (noticeKeyPrivate/noticeKeyPublic) هم
+  // در همین فایل ذخیره می‌شود و هرگز به صفحه فرستاده نمی‌شود.
+  notices: { ...NOTICE_DEFAULTS },
+  // انتشار خبرها با FTP، مثل گوش‌یار: public_html/popo روی هاست همان https://mp-apdl.ir/popo/ است که
+  // برنامه می‌خواند (lib/core/assets/asset_config.dart).
+  ftp: {
+    host: "ftp.mp-apdl.ir",
+    port: 21,
+    user: "",
+    password: "",
+    path: "/public_html/popo",
+    secure: false, // FTPS (explicit)
+  },
 };
 
 /**
@@ -98,6 +113,7 @@ try {
     config = {
       ...DEFAULTS, ...saved,
       schedule: { ...DEFAULTS.schedule, ...(saved.schedule || {}) },
+      notices: { ...DEFAULTS.notices, ...(saved.notices || {}) },
     };
     if (normalizeEndpoint(config.endpoint) === "long") {
       migrated = `نقطه‌ی سرویس از avasho-large به متنِ کوتاه برگشت (جمله‌های بازی کوتاه‌اند)`;
@@ -420,6 +436,8 @@ const publicConfig = () => ({
   ...config,
   token: undefined,
   tokenSet: Boolean(config.token),
+  noticeKeyPrivate: undefined,
+  noticeKeyPublic: undefined,
   tokenHint: config.token ? `${config.token.slice(0, 6)}…${config.token.slice(-4)}` : "",
   configFile: CONFIG_FILE,
   savedAt,
@@ -833,6 +851,84 @@ app.get("/api/events", (req, res) => {
   listeners.add(res);
   req.on("close", () => listeners.delete(res));
 });
+
+// ── خبرها و اعلان‌ها (server/notices.js) ──────────────────────────────────────
+// There is no push service and nothing to sign up for. A notice is written here, signed here
+// with a key that never leaves this machine, and put on R2 as popo/notices.json only when
+// «انتشار» is pressed. The app reads that one file — every two minutes while it is open, about
+// every quarter hour from the background while it is closed — and puts what is new in the
+// notification tray. Anything unsigned is thrown away.
+const notices = createNotices({
+  dir: ROOT,
+  keyAsset: path.join(APP, "assets/notices/notice-key.pub"),
+  getConfig: () => config,
+  saveConfig,
+  say,
+});
+
+const noticeRoute = (fn) => async (req, res) => {
+  try {
+    res.json(await fn(req));
+  } catch (err) {
+    say("error", `خبرها: ${err.message}`);
+    res.status(err.status || 400).json({ error: err.message });
+  }
+};
+
+// The FTP password never goes back to the page; a mask stands in for "one is saved".
+const FTP_MASK = "\u2022\u2022\u2022\u2022\u2022\u2022";
+const ftpForPage = () => ({ ...DEFAULTS.ftp, ...config.ftp, password: config.ftp?.password ? FTP_MASK : "" });
+
+app.get("/api/notices", noticeRoute(() => ({ ...notices.list(), ftp: ftpForPage() })));
+app.post("/api/notices/key", noticeRoute((req) => notices.makeKey(req.body?.replace)));
+app.post("/api/notices", noticeRoute((req) => notices.save(req.body || {})));
+app.post("/api/notices/:id/move", noticeRoute((req) => notices.move(req.params.id, Number(req.body?.delta) || 0)));
+app.delete("/api/notices/:id", noticeRoute((req) => notices.remove(req.params.id)));
+app.post("/api/notices/publish", noticeRoute(async () => {
+  // Without a host, images go to R2 alongside notices.json (wrangler), as before.
+  const ftp = config.ftp?.host ? createFtp(config.ftp) : null;
+  return { ...(await notices.publish({ ftp })), ftp: ftpForPage() };
+}));
+app.post("/api/notices/settings", noticeRoute((req) => {
+  const bucket = String(req.body?.bucket || "").trim();
+  if (!/^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$/.test(bucket)) throw new Error("نام سطل R2 درست نیست");
+  config.notices = { ...config.notices, bucket };
+  saveConfig();
+  return notices.list();
+}));
+
+app.post("/api/ftp/settings", noticeRoute((req) => {
+  const ftp = { ...config.ftp };
+  if (req.body.host !== undefined) ftp.host = String(req.body.host).trim();
+  if (req.body.port !== undefined) ftp.port = Number(req.body.port) || 21;
+  if (req.body.user !== undefined) ftp.user = String(req.body.user).trim();
+  // The mask means "keep the saved one"; anything else (including empty) replaces it.
+  if (req.body.password !== undefined && req.body.password !== FTP_MASK) ftp.password = String(req.body.password);
+  if (req.body.path !== undefined) ftp.path = String(req.body.path).trim() || "/";
+  if (req.body.secure !== undefined) ftp.secure = Boolean(req.body.secure);
+  config.ftp = ftp;
+  saveConfig();
+  return { ok: true, ftp: ftpForPage() };
+}));
+
+// Tests what is in the form right now (saved or not); the mask stands for the saved password.
+// Every command and reply goes to the live log, so a slow or silent host is visible as it happens.
+app.post("/api/ftp/test", noticeRoute(async (req) => {
+  const body = req.body || {};
+  const cfg = { ...config.ftp };
+  for (const k of ["host", "port", "user", "path", "secure"]) if (body[k] !== undefined) cfg[k] = body[k];
+  if (body.password !== undefined && body.password !== FTP_MASK) cfg.password = String(body.password);
+  const ftp = createFtp(cfg, { onLine: (line) => say("info", `FTP › ${line}`) });
+  say("info", `آزمایش FTP: ${ftp.host || "—"}:${ftp.port}${ftp.secure ? " (FTPS)" : ""} …`);
+  try {
+    await ftp.test();
+  } catch (err) {
+    err.status = 502;
+    throw err;   // noticeRoute writes it to the log as an error
+  }
+  say("ok", `اتصال FTP به ${ftp.host}:${ftp.port} برقرار شد`);
+  return { ok: true, host: ftp.host, port: ftp.port };
+}));
 
 // ── صدای حیوان‌ها و وسایل: real recordings dropped in by hand ────────────────
 // TTS cannot moo. These files are found by a person (Freesound, Pixabay, a recording of their

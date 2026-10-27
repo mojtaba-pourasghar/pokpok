@@ -507,6 +507,20 @@
    "event": "parent.gate",
    "screen": "parent",
    "file": "voice/parent_ask.mp3"
+  },
+  {
+   "id": "full.locked",
+   "text": "این‌جا مال نسخه‌ی کامله. از مامان یا بابا بخواه برات بازش کنن!",
+   "event": "paywall.shown",
+   "screen": "paywall",
+   "file": "voice/full_locked.mp3"
+  },
+  {
+   "id": "notice.new",
+   "text": "یه خبر تازه داریم! بیا ببین.",
+   "event": "notice.shown",
+   "screen": "notice",
+   "file": "voice/notice_new.mp3"
   }
  ]
 }

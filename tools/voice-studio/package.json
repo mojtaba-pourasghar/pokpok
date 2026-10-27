@@ -11,7 +11,8 @@
     "build": "vite build"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "basic-ftp": "^6.2.2"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",

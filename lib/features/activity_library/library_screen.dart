@@ -4,9 +4,11 @@ import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../app/theme/tokens.dart';
+import '../../core/content/content.dart';
 import '../../core/narrator.dart';
 import '../../core/widgets/buttons.dart';
 import '../../core/widgets/common.dart';
+import '../paywall/paywall.dart';
 
 /// کتابخانه‌ی فعالیت‌ها: دسته‌ها با تصویر و رنگ، و کاشی‌های بزرگ با کمترین متن.
 class LibraryScreen extends ConsumerStatefulWidget {
@@ -34,6 +36,10 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
       // مناسب سن جلوتر؛ چیزی پنهان نمی‌شود.
       ..sort((a, b) => (a.minAge > age ? 1 : 0).compareTo(b.minAge > age ? 1 : 0));
     final cat = content.categories.firstWhere((c) => c.id == _cat);
+    final access = ref.watch(accessProvider);
+    // اولین فعالیت هر دسته (به ترتیب فایل، نه ترتیب سنی نمایش) رایگان است؛ بقیه در نسخه‌ی کامل.
+    final order = content.activities.where((a) => a.category == _cat).toList();
+    bool locked(ActivityDef a) => access.needsPurchase(order.indexOf(a));
     return PScaffold(
       title: 'همه‌ی بازی‌ها',
       body: Stack(
@@ -82,7 +88,16 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
                             child: PTile(
                               label: a.title,
                               color: PColors.tint(cat.color, .34),
-                              onTap: () => context.push(a.route),
+                              locked: locked(a),
+                              semanticHint: locked(a) ? 'در نسخه‌ی کامل' : null,
+                              onTap: () {
+                                if (locked(a)) {
+                                  ref.say('full.locked');
+                                  showPaywall(context);
+                                  return;
+                                }
+                                context.push(a.route);
+                              },
                               child: Padding(padding: const EdgeInsets.all(PSpace.sm), child: ArtImage(a.art)),
                             ),
                           ),

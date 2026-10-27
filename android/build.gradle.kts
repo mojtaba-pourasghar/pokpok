@@ -2,6 +2,8 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        // Poolakey (پرداخت کافه‌بازار) فقط روی JitPack است.
+        maven { url = uri("https://jitpack.io") }
     }
 }
 

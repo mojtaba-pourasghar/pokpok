@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -5,7 +6,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../core/assets/asset_resolver.dart';
 import '../core/assets/download_manager.dart';
 import '../core/audio/popo_audio.dart';
+import '../core/billing/access_store.dart';
+import '../core/billing/billing.dart';
 import '../core/content/content.dart';
+import '../core/notices/notices_store.dart';
 import '../core/storage/local_store.dart';
 import '../data/models/models.dart';
 import '../data/repositories/repositories.dart';
@@ -17,6 +21,36 @@ final contentProvider = Provider<ContentRepository>((_) => throw UnimplementedEr
 final audioProvider = Provider<PopoAudio>((_) => throw UnimplementedError('audioProvider'));
 final assetsProvider = ChangeNotifierProvider<AssetResolver>((_) => throw UnimplementedError('assetsProvider'));
 final downloadsProvider = ChangeNotifierProvider<DownloadManager>((ref) => DownloadManager(ref.watch(assetsProvider)));
+
+/// نسخه‌ی کامل (کافه‌بازار). در main.dart با BazaarBilling جایگزین می‌شود؛ پیش‌فرض (آزمون‌ها، وب) بی پرداخت
+/// و با قاعده‌ی همان ساختی که اجرا می‌شود (debug: همه باز).
+final accessProvider = ChangeNotifierProvider<AccessStore>((ref) => AccessStore(ref.watch(prefsProvider), const NoBilling()));
+
+/// خبرهای امضاشده. در main.dart با کلید عمومی همراه برنامه جایگزین می‌شود؛ پیش‌فرض بی‌کلید است، پس
+/// هیچ خبری خوانده و نشان داده نمی‌شود.
+final noticesProvider = ChangeNotifierProvider<NoticesStore>((ref) => NoticesStore(ref.watch(prefsProvider)));
+
+/// پنجره‌هایی (دیالوگ، برگه‌ی پایین) که الان روی Navigator ریشه باز است؛ خبر رویشان نمی‌آید (NoticeHost).
+class PopupWatcher extends NavigatorObserver {
+  int open = 0;
+
+  @override
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    if (route is PopupRoute) open++;
+  }
+
+  @override
+  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    if (route is PopupRoute && open > 0) open--;
+  }
+
+  @override
+  void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    if (route is PopupRoute && open > 0) open--;
+  }
+}
+
+final popupWatcherProvider = Provider((_) => PopupWatcher());
 
 final profileRepoProvider = Provider((ref) => ProfileRepository(ref.watch(storeProvider)));
 final settingsRepoProvider = Provider((ref) => SettingsRepository(ref.watch(storeProvider)));

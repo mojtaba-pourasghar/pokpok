@@ -316,5 +316,19 @@
    "art": "hay",
    "title": "غذای حیوانات"
   }
+ ],
+ "otherGames": [
+  {
+   "package": "com.goshyar.app",
+   "title": "گوش‌یار",
+   "subtitle": "صداها را بشنو، حدس بزن و کشف کن",
+   "color": "#7A5AF8"
+  },
+  {
+   "package": "com.pashmak.app",
+   "title": "پشمک",
+   "subtitle": "نقاشی، قصه، حافظه و بازی‌های شاد با پشمک",
+   "color": "#FF8A1F"
+  }
  ]
 }

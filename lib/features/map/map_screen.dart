@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../app/localization/fa.dart';
 import '../../app/providers.dart';
 import '../../app/theme/theme.dart';
 import '../../app/theme/tokens.dart';
@@ -75,6 +76,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     final progress = ref.watch(progressProvider);
     final settings = ref.watch(settingsProvider);
     final soundOn = settings.musicOn || settings.effectsOn;
+    final notices = ref.watch(noticesProvider);
     final worlds = content.worlds;
     return Scaffold(
       body: LayoutBuilder(
@@ -133,6 +135,17 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                             ),
                           ),
                         const Spacer(),
+                        // زنگوله‌ی خبرها؛ فقط وقتی خبری هست، با شمار خبرهای دیده‌نشده.
+                        if (notices.visible) ...[
+                          PIconButton(
+                            icon: notices.unread > 0 ? Icons.notifications_active_rounded : Icons.notifications_rounded,
+                            label: notices.unread > 0 ? 'خبرها، ${faDigits(notices.unread)} تازه' : 'خبرها',
+                            iconColor: PColors.orange,
+                            onPressed: () => context.push('/notices'),
+                            badge: notices.unread > 0 ? _Badge(notices.unread > 9 ? 9 : notices.unread) : null,
+                          ),
+                          const SizedBox(width: PSpace.xs),
+                        ],
                         PIconButton(
                           icon: Icons.apps_rounded,
                           label: 'همه‌ی بازی‌ها',

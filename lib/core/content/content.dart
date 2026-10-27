@@ -361,6 +361,23 @@ class ArtAsset {
   final String path;
 }
 
+/// یکی از بازی‌های دیگر سازنده در کافه‌بازار (activities.json ← otherGames)، برای بخش والدین.
+class OtherGame {
+  const OtherGame({required this.package, required this.title, this.subtitle = '', this.color = '#A77BEF'});
+
+  final String package;
+  final String title;
+  final String subtitle;
+  final String color;
+
+  factory OtherGame.fromJson(Map<String, dynamic> j) => OtherGame(
+    package: j['package'] as String,
+    title: j['title'] as String,
+    subtitle: (j['subtitle'] as String?) ?? '',
+    color: (j['color'] as String?) ?? '#A77BEF',
+  );
+}
+
 /// همه‌ی محتوای متنی برنامه (جهان‌ها، صحنه‌ها، فعالیت‌ها، جمله‌ها)، بارگذاری‌شده از assets/content.
 /// برای افزودن جهان یا صحنه‌ی تازه فقط فایل JSON اضافه می‌شود، نه کد.
 class ContentRepository {
@@ -372,6 +389,7 @@ class ContentRepository {
     required this.stickers,
     required this.voiceLines,
     required this.art,
+    this.otherGames = const [],
   });
 
   final List<WorldDef> worlds;
@@ -381,6 +399,7 @@ class ContentRepository {
   final Map<String, StickerDef> stickers;
   final Map<String, VoiceLine> voiceLines;
   final Map<String, ArtAsset> art;
+  final List<OtherGame> otherGames;
 
   final _rand = Random();
   final Map<String, String> _lastPick = {};
@@ -420,6 +439,7 @@ class ContentRepository {
       },
       voiceLines: {for (final l in voiceJ['lines'] as List) l['id'] as String: VoiceLine.fromJson(Map<String, dynamic>.from(l as Map))},
       art: _artIndex((artJ['assets'] as List).cast<Map>()),
+      otherGames: [for (final g in (actJ['otherGames'] ?? const []) as List) OtherGame.fromJson(Map<String, dynamic>.from(g as Map))],
     );
   }
 

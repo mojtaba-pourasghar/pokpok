@@ -31,6 +31,7 @@ void main() {
     '/puzzle/pattern',
     '/puzzle/match',
     '/rewards',
+    '/notices',
     '/parent-gate',
   ];
   const sizes = {'phone-small': Size(320, 640), 'phone': Size(412, 915), 'tablet-landscape': Size(1280, 800)};

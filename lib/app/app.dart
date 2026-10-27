@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../features/notices/notice_host.dart';
 import 'providers.dart';
 import 'router.dart';
 import 'theme/theme.dart';
@@ -56,7 +57,8 @@ class _PopoAppState extends ConsumerState<PopoApp> with WidgetsBindingObserver {
             : mq.textScaler.clamp(maxScaleFactor: 1.4);
         return MediaQuery(
           data: mq.copyWith(textScaler: scaler, disableAnimations: mq.disableAnimations || settings.reducedMotion),
-          child: Directionality(textDirection: TextDirection.rtl, child: child!),
+          // خبرهای امضاشده وقتی برنامه باز است: نگاه هر دقیقه و کارت خبر روی صفحه.
+          child: Directionality(textDirection: TextDirection.rtl, child: NoticeHost(child: child!)),
         );
       },
     );

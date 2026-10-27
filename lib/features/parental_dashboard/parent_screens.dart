@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_riverpod/legacy.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/localization/fa.dart';
@@ -8,13 +7,12 @@ import '../../app/providers.dart';
 import '../../app/theme/theme.dart';
 import '../../app/theme/tokens.dart';
 import '../../core/assets/storage_info.dart';
-import '../../core/purchases.dart';
+import '../../core/platform/native_bridge.dart';
 import '../../core/storage/local_store.dart';
 import '../../core/widgets/buttons.dart';
 import '../../core/widgets/common.dart';
+import '../paywall/paywall.dart';
 import '../profiles/profiles_screen.dart';
-
-final purchaseProvider = ChangeNotifierProvider<PurchaseService>((_) => NoStorePurchaseService());
 
 /// داشبورد والدین (پشت دروازه).
 class ParentDashboardScreen extends ConsumerWidget {
@@ -33,7 +31,8 @@ class ParentDashboardScreen extends ConsumerWidget {
       (Icons.cloud_download_rounded, 'دانلود محتوا', '/parent/downloads', PColors.success),
       (Icons.sd_storage_rounded, 'فضای ذخیره‌سازی', '/parent/storage', PColors.inkSoft),
       (Icons.privacy_tip_rounded, 'حریم خصوصی', '/parent/privacy', PColors.pink),
-      (Icons.shopping_bag_rounded, 'خریدها', '/parent/purchases', PColors.yellow),
+      (Icons.shopping_bag_rounded, 'خریدها و بازی‌های دیگر', '/parent/purchases', PColors.yellow),
+      (Icons.notifications_rounded, 'اعلان‌ها و خبرها', '/parent/notices', PColors.orange),
     ];
     return PScaffold(
       title: 'پنل والدین',
@@ -294,8 +293,9 @@ class PrivacyScreen extends ConsumerWidget {
       ('بدون تبلیغ و ردیاب', 'هیچ تبلیغ، کتابخانه‌ی آمار، ردیاب یا شناسه‌ی تبلیغاتی در برنامه نیست.'),
       ('کمترین داده', 'برای نمایه فقط یک نام یا لقب، یک نماد و گروه سنی گرفته می‌شود؛ نه تاریخ تولد، نه عکس، نه مکان.'),
       (
-        'اینترنت فقط برای دانلود محتوا',
-        'اگر سرور محتوا تنظیم شده باشد، برنامه فقط فایل‌های عمومی بسته‌ها را دانلود می‌کند و هیچ داده‌ای از کودک نمی‌فرستد.',
+        'اینترنت فقط برای محتوا، خبرها و خرید',
+        'برنامه فقط فایل‌های عمومی بسته‌ها و یک فایل امضاشده‌ی خبرها را می‌خواند و خرید را به کافه‌بازار می‌سپارد؛ '
+            'هیچ داده‌ای از کودک فرستاده نمی‌شود. خبرها را والدین در «اعلان‌ها و خبرها» خاموش می‌کنند.',
       ),
       ('بدون گفت‌وگو و نمایه‌ی عمومی', 'هیچ امکان ارتباط با دیگران، گفت‌وگو یا نمایش عمومی در برنامه نیست.'),
       ('کنترل والدین', 'خرید، خروجی گرفتن از نقاشی، پیوندهای بیرونی و تغییر تنظیمات فقط پس از دروازه‌ی والدین ممکن است.'),
@@ -355,29 +355,124 @@ class PrivacyScreen extends ConsumerWidget {
   }
 }
 
+/// خریدها (کافه‌بازار): وضعیت نسخه‌ی کامل، خرید و بازیابی، و بازی‌های دیگر ما. دروازه‌ی والدین از قبل
+/// گذرانده شده است.
 class PurchasesScreen extends ConsumerWidget {
   const PurchasesScreen({super.key});
 
+  Future<void> _restore(BuildContext context, WidgetRef ref) async {
+    final found = await ref.read(accessProvider).restore();
+    if (!context.mounted) return;
+    toast(context, switch (found) {
+      true => 'خرید قبلی پیدا شد؛ همه‌چیز باز است.',
+      false => 'خریدی با این حساب کافه‌بازار پیدا نشد.',
+      null => 'به کافه‌بازار وصل نشد. اینترنت و ورود به حساب بازار را بررسی کنید.',
+    });
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final p = ref.watch(purchaseProvider);
+    final access = ref.watch(accessProvider);
+    final String status;
+    if (access.everythingOpen) {
+      status = 'نسخه‌ی آزمایشی (debug): همه‌ی جهان‌ها و بازی‌ها باز است.';
+    } else if (access.owned) {
+      status = 'نسخه‌ی کامل خریده شده؛ همه‌چیز باز است.';
+    } else {
+      status = 'فقط اولین صحنه‌ی هر جهان و اولین بازی هر دسته باز است.';
+    }
     return PScaffold(
       title: 'خریدها',
-      body: switch (p.status) {
-        PurchaseStatus.unavailable => const StateView(
-          state: ViewState.empty,
-          message: 'در این نسخه خرید درون‌برنامه‌ای وجود ندارد و همه‌ی محتوا رایگان و داخل برنامه است.\nفروشگاهی به برنامه وصل نشده است.',
-        ),
-        PurchaseStatus.pending => const StateView(state: ViewState.pending, message: 'خرید در انتظار تأیید فروشگاه است…'),
-        PurchaseStatus.failed => StateView(state: ViewState.error, message: 'خرید انجام نشد.', actionLabel: 'دوباره', onAction: p.restore),
-        PurchaseStatus.done => const StateView(state: ViewState.success, message: 'خرید انجام شد. ممنون!'),
-        PurchaseStatus.ready => StateView(
-          state: ViewState.empty,
-          message: 'خریدی ثبت نشده.',
-          actionLabel: 'بازیابی خریدها',
-          onAction: p.restore,
-        ),
-      },
+      body: ListView(
+        padding: const EdgeInsets.all(PSpace.md),
+        children: [
+          PCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('نسخه‌ی کامل', style: PText.heading.copyWith(color: PColors.purple)),
+                const SizedBox(height: PSpace.xs),
+                Text(status, style: PText.body),
+                if (access.paywall && !access.owned) ...[
+                  const SizedBox(height: PSpace.sm),
+                  PButton(
+                    label: 'باز کردن همه — ${access.price}',
+                    icon: Icons.lock_open_rounded,
+                    color: PColors.success,
+                    expand: true,
+                    onPressed: () => showPaywall(context, parentVerified: true),
+                  ),
+                  const SizedBox(height: PSpace.xs),
+                  TextButton(
+                    onPressed: access.busy ? null : () => _restore(context, ref),
+                    child: Text('قبلاً خریده‌ام', style: PText.bodyStrong.copyWith(color: PColors.purple)),
+                  ),
+                ],
+              ],
+            ),
+          ),
+          const SizedBox(height: PSpace.md),
+          const OtherGamesSection(),
+        ],
+      ),
+    );
+  }
+}
+
+/// «بازی‌های دیگر ما» در کافه‌بازار (activities.json ← otherGames). اینجا بخش والدین است؛ باز کردن
+/// بازار پیوند بیرونی است و جای دیگری برای کودک نشان داده نمی‌شود.
+class OtherGamesSection extends ConsumerWidget {
+  const OtherGamesSection({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final games = ref.watch(contentProvider).otherGames;
+    if (games.isEmpty) return const SizedBox.shrink();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const Text('بازی‌های دیگر ما', style: PText.heading),
+        const SizedBox(height: PSpace.xs),
+        for (final g in games)
+          Padding(
+            padding: const EdgeInsets.only(bottom: PSpace.sm),
+            child: Material(
+              color: PColors.fromHex(g.color),
+              borderRadius: BorderRadius.circular(PRadius.lg),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(PRadius.lg),
+                onTap: () async {
+                  final ok = await const NativeBridge().openStorePage(g.package);
+                  if (!ok && context.mounted) toast(context, 'cafebazaar.ir/app/${g.package}');
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(PSpace.md),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 56,
+                        height: 56,
+                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(PRadius.md)),
+                        child: Icon(Icons.sports_esports_rounded, color: PColors.fromHex(g.color), size: 32),
+                      ),
+                      const SizedBox(width: PSpace.md),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(g.title, style: PText.heading.copyWith(color: Colors.white)),
+                            Text(g.subtitle, style: PText.caption.copyWith(color: Colors.white)),
+                          ],
+                        ),
+                      ),
+                      const Icon(Icons.storefront_rounded, color: Colors.white),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 }

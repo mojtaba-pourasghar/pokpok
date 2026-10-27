@@ -8,6 +8,7 @@ import '../../core/content/content.dart';
 import '../../core/narrator.dart';
 import '../../core/widgets/buttons.dart';
 import '../../core/widgets/common.dart';
+import '../paywall/paywall.dart';
 import 'scene_view.dart';
 
 /// یک جهان (خانه، شهر، طبیعت) با چند صحنه و نوار پایین برای رفتن بین صحنه‌ها.
@@ -63,6 +64,9 @@ class _WorldScreenState extends ConsumerState<WorldScreen> with ActivitySession 
         body: StateView(state: ViewState.empty, message: 'این جهان هنوز آماده نیست.'),
       );
     }
+    final access = ref.watch(accessProvider);
+    // صحنه‌ای که از «ادامه» یا کتابخانه باز شده ولی پولی است: صحنه‌ی رایگان نشان داده می‌شود.
+    if (access.needsPurchase(_index)) _index = 0;
     final scene = _scenes[_index];
     return Scaffold(
       backgroundColor: PColors.background,
@@ -104,7 +108,21 @@ class _WorldScreenState extends ConsumerState<WorldScreen> with ActivitySession 
               ],
             ),
           ),
-          if (_scenes.length > 1) _SceneTabs(scenes: _scenes, index: _index, onSelect: (i) => setState(() => _index = i)),
+          if (_scenes.length > 1)
+            _SceneTabs(
+              scenes: _scenes,
+              index: _index,
+              locked: (i) => access.needsPurchase(i),
+              onSelect: (i) {
+                // صحنه‌ی اول هر جهان رایگان است؛ بقیه در نسخه‌ی کامل (پشت دروازه‌ی والدین).
+                if (access.needsPurchase(i)) {
+                  ref.say('full.locked');
+                  showPaywall(context);
+                  return;
+                }
+                setState(() => _index = i);
+              },
+            ),
         ],
       ),
     );
@@ -113,11 +131,12 @@ class _WorldScreenState extends ConsumerState<WorldScreen> with ActivitySession 
 
 /// نوار صحنه‌ها با تصویر هر اتاق/مکان (مثل نوار پایین تصویر مرجع).
 class _SceneTabs extends StatelessWidget {
-  const _SceneTabs({required this.scenes, required this.index, required this.onSelect});
+  const _SceneTabs({required this.scenes, required this.index, required this.onSelect, required this.locked});
 
   final List<SceneDef> scenes;
   final int index;
   final ValueChanged<int> onSelect;
+  final bool Function(int index) locked;
 
   @override
   Widget build(BuildContext context) {
@@ -139,6 +158,8 @@ class _SceneTabs extends StatelessWidget {
                 child: PTile(
                   label: scenes[i].title,
                   selected: i == index,
+                  locked: locked(i),
+                  semanticHint: locked(i) ? 'در نسخه‌ی کامل' : null,
                   color: i == index ? PColors.tint(PColors.orange, .3) : Colors.white,
                   onTap: () => onSelect(i),
                   child: ArtImage(scenes[i].icon),

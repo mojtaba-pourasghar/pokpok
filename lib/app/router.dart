@@ -9,8 +9,10 @@ import '../features/construction/build_screen.dart';
 import '../features/downloads/downloads_screen.dart';
 import '../features/map/map_screen.dart';
 import '../features/music_studio/music_screen.dart';
+import '../features/notices/notices_screen.dart';
 import '../features/onboarding/intro_screen.dart';
 import '../features/onboarding/splash_screen.dart';
+import '../features/parental_dashboard/notices_settings_screen.dart';
 import '../features/parental_dashboard/parent_gate_screen.dart';
 import '../features/parental_dashboard/parent_screens.dart';
 import '../features/profiles/profile_edit_screen.dart';
@@ -54,6 +56,8 @@ GoRouter buildRouter(Ref ref, {Listenable? refresh, String initialLocation = '/'
   return GoRouter(
     initialLocation: initialLocation,
     refreshListenable: refresh,
+    // خبرها روی دیالوگ یا برگه‌ی باز نمی‌آیند (NoticeHost).
+    observers: [ref.read(popupWatcherProvider)],
     redirect: (context, state) {
       final loc = state.matchedLocation;
       if (isProtected(loc) && !ref.read(parentGateProvider.notifier).isOpen) {
@@ -90,6 +94,7 @@ GoRouter buildRouter(Ref ref, {Listenable? refresh, String initialLocation = '/'
         pageBuilder: (c, s) => page(s, PuzzleScreen(kind: s.pathParameters['kind']!)),
       ),
       GoRoute(path: '/rewards', pageBuilder: (c, s) => page(s, const RewardsScreen())),
+      GoRoute(path: '/notices', pageBuilder: (c, s) => page(s, const NoticesScreen())),
       GoRoute(
         path: '/parent-gate',
         pageBuilder: (c, s) => page(
@@ -110,6 +115,7 @@ GoRouter buildRouter(Ref ref, {Listenable? refresh, String initialLocation = '/'
       GoRoute(path: '/parent/privacy', pageBuilder: (c, s) => page(s, const PrivacyScreen())),
       GoRoute(path: '/parent/purchases', pageBuilder: (c, s) => page(s, const PurchasesScreen())),
       GoRoute(path: '/parent/storage', pageBuilder: (c, s) => page(s, const StorageScreen())),
+      GoRoute(path: '/parent/notices', pageBuilder: (c, s) => page(s, const NoticesSettingsScreen())),
     ],
   );
 }
