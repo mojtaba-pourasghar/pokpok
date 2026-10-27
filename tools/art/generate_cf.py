@@ -8,7 +8,8 @@ generator goshyar_game uses (.claude/skills/level-3-image-generator), and instal
     python3 tools/art/generate_cf.py --kind character background
     python3 tools/art/generate_cf.py --process-only  # re-cut what is already in art/generated/
 
-Needs CF_ACCOUNT_ID and CF_API_TOKEN (environment or the project's .env; see .env.example) and
+Needs CF_ACCOUNT_ID and CF_API_TOKEN (environment or the project's .env; see .env.example; more accounts as
+CF_ACCOUNT_ID_2/CF_API_TOKEN_2 …, used in turn when one runs out of its daily allocation) and
 network access to api.cloudflare.com. The token is only used here, on your machine; it never goes
 into the app.
 
@@ -41,20 +42,40 @@ MANIFEST = ROOT / "art/art_manifest.json"
 RAW = ROOT / "art/generated"
 
 
-def load_env() -> None:
+class QuotaUsed(Exception):
+    """This account's free daily allocation is used up."""
+
+
+def accounts() -> list[tuple[str, str]]:
+    """Every Cloudflare account we can use, in order: the project's .env, then the environment's
+    CF_ACCOUNT_ID/CF_API_TOKEN, then CF_ACCOUNT_ID_2/CF_API_TOKEN_2, _3, … (duplicates dropped).
+    Each free account renders about 55 images a day; when one runs out the next one takes over."""
+    pairs: list[tuple[str, str]] = []
     env = ROOT / ".env"
     if env.exists():
+        vals = {}
         for line in env.read_text(encoding="utf-8").splitlines():
             if "=" in line and not line.strip().startswith("#"):
                 k, v = line.split("=", 1)
-                # the project's .env wins over the shell, so a key set for this project is the one used
-                os.environ[k.strip()] = v.strip().strip('"')
+                vals[k.strip()] = v.strip().strip('"')
+        pairs += _pairs(vals)
+    pairs += _pairs(os.environ)
+    out, seen = [], set()
+    for acc, tok in pairs:
+        if acc and tok and acc not in seen:
+            seen.add(acc)
+            out.append((acc, tok))
+    return out
 
 
-def generate(prompt: str, steps: int) -> bytes:
-    account, token = os.environ.get("CF_ACCOUNT_ID"), os.environ.get("CF_API_TOKEN")
-    if not account or not token:
-        sys.exit("CF_ACCOUNT_ID / CF_API_TOKEN are not set (environment or .env).")
+def _pairs(vals) -> list[tuple[str, str]]:
+    found = [(vals.get("CF_ACCOUNT_ID", ""), vals.get("CF_API_TOKEN", ""))]
+    for n in range(2, 10):
+        found.append((vals.get(f"CF_ACCOUNT_ID_{n}", ""), vals.get(f"CF_API_TOKEN_{n}", "")))
+    return found
+
+
+def generate(prompt: str, steps: int, account: str, token: str) -> bytes:
     url = f"https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/@cf/black-forest-labs/flux-1-schnell"
     body = json.dumps({"prompt": prompt, "steps": steps}).encode()
     for attempt in range(4):
@@ -67,10 +88,13 @@ def generate(prompt: str, steps: int) -> bytes:
                 return base64.b64decode(image)
             raise RuntimeError(data.get("errors") or data)
         except urllib.error.HTTPError as e:
+            text = e.read()[:300]
+            if e.code == 429 and b"daily free allocation" in text:
+                raise QuotaUsed() from e
             if e.code in (429, 500, 502, 503) and attempt < 3:
                 time.sleep(5 * (attempt + 1))
                 continue
-            raise RuntimeError(f"HTTP {e.code}: {e.read()[:300]!r}") from e
+            raise RuntimeError(f"HTTP {e.code}: {text!r}") from e
     raise RuntimeError("no image")
 
 
@@ -128,10 +152,10 @@ def main() -> int:
     ap.add_argument("--force", action="store_true", help="render again even if a raw image exists")
     ap.add_argument("--process-only", action="store_true", help="only re-cut images already in art/generated/")
     ap.add_argument("--steps", type=int, default=6)
-    ap.add_argument("--no-dotenv", action="store_true", help="use CF_* from the shell, not the project's .env (a second account)")
     a = ap.parse_args()
-    if not a.no_dotenv:
-        load_env()
+    pool = accounts()
+    if not pool and not a.process_only:
+        sys.exit("No Cloudflare account: set CF_ACCOUNT_ID / CF_API_TOKEN (environment or .env); more as CF_ACCOUNT_ID_2 …")
     items = json.loads(MANIFEST.read_text(encoding="utf-8"))["items"]
     if a.only:
         items = [i for i in items if i["id"] in a.only]
@@ -142,12 +166,22 @@ def main() -> int:
     for item in items:
         raw = RAW / f"{item['id']}.jpg"
         if not a.process_only and (a.force or not raw.exists()):
-            try:
-                raw.write_bytes(generate(item["prompt"], a.steps))
-                print(f"✓ {item['id']}", flush=True)
-            except Exception as e:  # noqa: BLE001 — report and go on with the rest
-                print(f"✗ {item['id']}: {e}", flush=True)
-                failed += 1
+            while pool:
+                try:
+                    raw.write_bytes(generate(item["prompt"], a.steps, *pool[0]))
+                    print(f"✓ {item['id']}", flush=True)
+                    break
+                except QuotaUsed:
+                    print(f"… account {pool[0][0][:6]}… has used today's free allocation", flush=True)
+                    pool.pop(0)
+                except Exception as e:  # noqa: BLE001 — report and go on with the rest
+                    print(f"✗ {item['id']}: {e}", flush=True)
+                    failed += 1
+                    break
+            if not pool and not raw.exists():
+                print("All accounts are out of today's allocation; the rest waits for tomorrow.")
+                break
+            if not raw.exists():
                 continue
         if raw.exists():
             print(f"  → {install(item, raw).relative_to(ROOT)}")

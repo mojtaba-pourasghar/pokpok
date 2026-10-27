@@ -117,7 +117,7 @@ flutter test                          # آزمون سلامت محتوا ارج�
 
 ```bash
 cp .env.example .env          # CF_ACCOUNT_ID (۳۲ نویسه) و CF_API_TOKEN؛ .env در گیت نیست
-python3 tools/art/generate_cf.py --steps 4           # همه‌ی تصویرهای کم
+python3 tools/art/generate_cf.py --steps 4           # همه‌ی تصویرهای کم؛ حساب‌ها (CF_ACCOUNT_ID، CF_ACCOUNT_ID_2 …) به نوبت
 python3 tools/art/generate_cf.py --kind character    # فقط شخصیت‌ها
 ```
 
