@@ -18,13 +18,14 @@ import 'package:hive_ce/hive.dart';
 ///   songs     آهنگ‌ها               (کلید = profile/song)
 ///   builds    ساخته‌های کارگاه       (کلید = profile)
 ///   content   فهرست بسته‌ها و نسخه‌ی دارایی‌ها
+///   game      پیشرفت بازی هر نمایه: ستاره، سکه، کوله‌پشتی، ابزارها (کلید = نمایه)
 class LocalStore {
   LocalStore._(this._boxes);
 
   /// نسخه‌ی فعلی طرح‌واره‌ی داده. هر تغییر ناسازگار یک گام در [migrations] لازم دارد.
   static const schemaVersion = 2;
 
-  static const boxNames = ['meta', 'profiles', 'settings', 'progress', 'scenes', 'artworks', 'songs', 'builds', 'content'];
+  static const boxNames = ['meta', 'profiles', 'settings', 'progress', 'scenes', 'artworks', 'songs', 'builds', 'content', 'game'];
 
   final Map<String, Box<String>> _boxes;
 

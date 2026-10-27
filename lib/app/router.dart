@@ -2,26 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../features/activity_library/library_screen.dart';
-import '../features/art_studio/art_screen.dart';
-import '../features/art_studio/gallery_screen.dart';
-import '../features/construction/build_screen.dart';
+import '../features/chapter/chapter_screen.dart';
+import '../features/chapter/film_screen.dart';
 import '../features/downloads/downloads_screen.dart';
-import '../features/map/map_screen.dart';
-import '../features/music_studio/music_screen.dart';
+import '../features/home/home_shell.dart';
 import '../features/notices/notices_screen.dart';
 import '../features/onboarding/intro_screen.dart';
 import '../features/onboarding/splash_screen.dart';
 import '../features/parental_dashboard/notices_settings_screen.dart';
 import '../features/parental_dashboard/parent_gate_screen.dart';
 import '../features/parental_dashboard/parent_screens.dart';
+import '../features/play/section_screen.dart';
 import '../features/profiles/profile_edit_screen.dart';
 import '../features/profiles/profiles_screen.dart';
-import '../features/progress/rewards_screen.dart';
-import '../features/puzzles/puzzle_screen.dart';
-import '../features/role_play/role_play_screen.dart';
 import '../features/settings/settings_screen.dart';
-import '../features/worlds/world_screen.dart';
+import '../features/workshop/tool_screen.dart';
 import 'providers.dart';
 
 /// مسیرهایی که فقط پس از دروازه‌ی والدین باز می‌شوند.
@@ -69,31 +64,26 @@ GoRouter buildRouter(Ref ref, {Listenable? refresh, String initialLocation = '/'
       GoRoute(path: '/', pageBuilder: (c, s) => page(s, const SplashScreen())),
       GoRoute(path: '/intro', pageBuilder: (c, s) => page(s, const IntroScreen())),
       GoRoute(path: '/profiles', pageBuilder: (c, s) => page(s, const ProfilesScreen())),
-      GoRoute(path: '/map', pageBuilder: (c, s) => page(s, const MapScreen())),
       GoRoute(
-        path: '/world/:id',
-        pageBuilder: (c, s) => page(s, WorldScreen(worldId: s.pathParameters['id']!, initialScene: s.uri.queryParameters['scene'])),
+        path: '/home',
+        pageBuilder: (c, s) => page(s, HomeShell(tab: s.uri.queryParameters['tab'])),
+      ),
+      GoRoute(
+        path: '/chapter/:id',
+        pageBuilder: (c, s) => page(s, ChapterScreen(chapterId: s.pathParameters['id']!)),
       ),
       GoRoute(
         path: '/play/:id',
-        pageBuilder: (c, s) => page(s, RolePlayScreen(sceneId: s.pathParameters['id']!)),
+        pageBuilder: (c, s) => page(s, SectionScreen(sectionId: s.pathParameters['id']!)),
       ),
       GoRoute(
-        path: '/art',
-        pageBuilder: (c, s) => page(s, ArtScreen(artworkId: s.uri.queryParameters['open'])),
+        path: '/film/:id',
+        pageBuilder: (c, s) => page(s, FilmScreen(chapterId: s.pathParameters['id']!)),
       ),
-      GoRoute(path: '/art/gallery', pageBuilder: (c, s) => page(s, const GalleryScreen())),
       GoRoute(
-        path: '/music',
-        pageBuilder: (c, s) => page(s, MusicScreen(showSongs: s.uri.queryParameters['tab'] == 'songs')),
+        path: '/tool/:id',
+        pageBuilder: (c, s) => page(s, ToolScreen(toolId: s.pathParameters['id']!)),
       ),
-      GoRoute(path: '/build', pageBuilder: (c, s) => page(s, const BuildScreen())),
-      GoRoute(path: '/library', pageBuilder: (c, s) => page(s, const LibraryScreen())),
-      GoRoute(
-        path: '/puzzle/:kind',
-        pageBuilder: (c, s) => page(s, PuzzleScreen(kind: s.pathParameters['kind']!)),
-      ),
-      GoRoute(path: '/rewards', pageBuilder: (c, s) => page(s, const RewardsScreen())),
       GoRoute(path: '/notices', pageBuilder: (c, s) => page(s, const NoticesScreen())),
       GoRoute(
         path: '/parent-gate',

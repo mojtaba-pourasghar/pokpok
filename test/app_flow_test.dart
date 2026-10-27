@@ -9,7 +9,17 @@ import 'package:popo/core/widgets/buttons.dart';
 import 'package:popo/core/widgets/common.dart';
 import 'package:popo/data/models/models.dart';
 import 'package:popo/data/repositories/repositories.dart';
-import 'package:popo/features/worlds/world_screen.dart';
+import 'package:popo/app/app.dart';
+import 'package:popo/app/router.dart';
+import 'package:popo/features/chapter/chapter_screen.dart';
+import 'package:popo/features/home/home_shell.dart';
+import 'package:popo/features/play/discover.dart';
+import 'package:popo/game/engines/backpack_engines.dart';
+import 'package:popo/game/engines/drag_engines.dart';
+import 'package:popo/game/engines/tap_engines.dart';
+import 'package:popo/game/game_data.dart';
+import 'package:popo/game/game_state.dart';
+import 'package:popo/ui/clay.dart';
 
 import 'helpers.dart';
 
@@ -31,112 +41,171 @@ void main() {
 
   void go(WidgetTester tester, String location) => routerOf(tester).go(location);
 
-  testWidgets('onboarding: start → intro → skip → map, without any registration', (tester) async {
+  testWidgets('onboarding: start → intro → skip → home with chapters, without any registration', (tester) async {
     await boot(tester, '/', prefs: const {});
     expect(find.text('شروع بازی'), findsOneWidget);
     expect(find.text('ورود والدین'), findsOneWidget);
     await tester.tap(find.text('شروع بازی'));
     await settle(tester);
     expect(find.text('رد کردن'), findsOneWidget);
-    // گام دوم بدون لمس پوپو باز نمی‌شود، ولی «رد کردن» همیشه هست.
     await tester.tap(find.text('بعدی'));
     await settle(tester);
     await tester.tap(find.text('رد کردن'));
     await settle(tester);
-    expect(find.text('خانه‌ی من'), findsOneWidget);
+    expect(find.text('فصل‌ها'), findsOneWidget);
     expect(env.prefs.getBool('introSeen'), isTrue);
     expect(ProfileRepository(env.store).all(), hasLength(1), reason: 'a default profile is created silently');
     expect(env.audio.log, contains('say:app.splash.welcome'));
     await finish(tester);
   });
 
-  testWidgets('map: the layout is right-to-left and a world opens with its first scene', (tester) async {
-    await boot(tester, '/map');
-    expect(Directionality.of(tester.element(find.text('خانه‌ی من'))), TextDirection.rtl);
-    await tester.tap(find.text('طبیعت و حیوانات'));
-    await settle(tester, 20);
-    expect(find.byType(WorldScreen), findsOneWidget);
-    expect(find.text('طبیعت و حیوانات · جنگل'), findsOneWidget);
-    await tester.tap(find.text('مزرعه'));
+  testWidgets('home: right-to-left, daily bonus once, chapter 1 opens and later chapters are locked', (tester) async {
+    final semantics = tester.ensureSemantics();
+    await boot(tester, '/home', prefs: const {'introSeen': true});
+    // جایزه‌ی روزانه‌ی اول
+    expect(find.text('جایزه‌ی امروز!'), findsOneWidget);
+    expect(env.audio.log, contains('say:game.daily'));
+    await tester.tap(find.text('جایزه‌ی امروز!'));
     await settle(tester);
-    expect(find.text('طبیعت و حیوانات · مزرعه'), findsOneWidget);
-    final container = ProviderScope.containerOf(tester.element(find.byType(WorldScreen)));
-    expect(container.read(progressProvider).stickers, contains('world.nature'));
-    expect(container.read(progressProvider).lastWorld, 'nature');
+    expect(find.text('جایزه‌ی امروز!'), findsNothing);
+    expect(Directionality.of(tester.element(find.text('فصل‌ها'))), TextDirection.rtl);
+    final container = ProviderScope.containerOf(tester.element(find.text('فصل‌ها')));
+    expect(container.read(gameProvider).coins, 10);
+    final gate = container.read(gateProvider);
+    final data = container.read(gameDataProvider);
+    expect(gate.chapterOpen(data.chapters[0]), isTrue);
+    expect(gate.chapterOpen(data.chapters[1]), gate.open, reason: 'chapter 2 waits for chapter 1 (open only in debug)');
+    await tester.tap(find.text('آشپزخانه‌ی خاله خرسی').first);
+    await settle(tester, 20);
+    expect(find.byType(ChapterScreen), findsOneWidget);
+    expect(env.audio.log, contains('say:c1.intro'));
+    await tester.tap(find.bySemanticsLabel(RegExp('بخش ۱: آب‌پرتقال')));
+    await settle(tester, 20);
+    expect(find.text('شروع کنیم!'), findsOneWidget);
+    expect(env.audio.log, contains('say:c1s1.mission'));
+    semantics.dispose();
     await finish(tester);
   });
 
-  testWidgets('object interaction is real and survives an app restart', (tester) async {
-    final semantics = tester.ensureSemantics();
-    await boot(tester, '/world/home');
-    await tester.tap(find.bySemanticsLabel('چراغ'));
-    await settle(tester, 4);
-    expect(env.audio.log, contains('play:audio/sfx/light_switch.mp3'));
-
-    final ball = find.bySemanticsLabel('توپ');
-    final before = tester.getCenter(ball);
-    await tester.drag(ball, const Offset(-150, -200));
-    await settle(tester, 4);
-    final after = tester.getCenter(ball);
-    expect((after - before).distance, greaterThan(100));
-
-    // «بستن» برنامه و باز کردن دوباره با همان ذخیره‌سازی
+  testWidgets('a whole section: steps → made → discover → quiz → play → backpack and stars', (tester) async {
+    env = (await tester.runAsync(() => TestEnv.create()))!;
+    // یک بخش کوتاه با یک گام «ضربه»، تا کل چرخه در آزمون اجرا شود.
+    final real = env.game;
+    final juice = real.items['juice']!;
+    final data = GameData(
+      friends: real.friends,
+      items: real.items,
+      chapters: [
+        const ChapterDef(
+          id: 'c1',
+          index: 0,
+          title: 'آزمون',
+          friend: 'bear',
+          bg: 'kitchen',
+          color: '#FF8A1F',
+          ambient: 'audio/ambient/garden.mp3',
+          intro: 'آزمون',
+          film: ['آب‌میوه'],
+          next: '',
+          sections: [
+            SectionDef(
+              id: 'c1s1',
+              title: 'آب‌پرتقال',
+              makes: 'juice',
+              mission: 'آزمون',
+              targetSec: 100,
+              steps: [
+                StepDef('tap', 'بزن', {
+                  'engine': 'tap',
+                  'target': 'orange',
+                  'count': 2,
+                  'sound': 'audio/sfx/squeak.mp3',
+                  '_section': 'c1s1',
+                  '_index': 1,
+                }),
+              ],
+            ),
+          ],
+        ),
+      ],
+      kits: const [],
+      tools: const [],
+      combos: const [],
+      orders: const [],
+      emoji: real.emoji,
+    );
+    await setSurface(tester, const Size(412, 915));
+    final overrides = [
+      for (final o in env.overrides) o,
+      routerProvider.overrideWith((ref) => buildRouter(ref, initialLocation: '/play/c1s1')),
+    ];
+    final container = ProviderContainer(
+      overrides: [...overrides.where((o) => !identical(o, overrides[3])), gameDataProvider.overrideWithValue(data)],
+    );
+    await tester.pumpWidget(UncontrolledProviderScope(container: container, child: const PopoApp()));
+    await settle(tester);
+    await tester.tap(find.text('شروع کنیم!'));
+    await settle(tester, 6);
+    expect(find.byType(TapEngine), findsOneWidget);
+    for (var i = 0; i < 2; i++) {
+      await tester.tap(find.byType(TapEngine));
+      await settle(tester, 2);
+    }
+    await settle(tester, 10);
+    expect(find.text('آب‌پرتقال آماده شد!'), findsOneWidget);
+    expect(env.audio.log, contains('play:audio/sfx/squeak.mp3'));
+    await tester.tap(find.text('امتحانش کنیم!'));
+    await settle(tester, 6);
+    await tester.tap(find.byType(ItemShowcase));
+    await settle(tester, 20);
+    expect(env.audio.log, contains('say:item.juice.taste'), reason: 'tasting food says how it tastes');
+    await tester.tap(find.text('فهمیدم!'));
+    await settle(tester, 6);
+    expect(env.audio.log, contains('say:item.juice.quiz'));
+    await tester.tap(find.text(juice.quiz.options[juice.quiz.answer].label));
+    await settle(tester, 30);
+    await tester.tap(find.text('بگذارش در کوله‌پشتی'));
+    await settle(tester, 20);
+    final g = container.read(gameProvider);
+    expect(g.backpack, contains('juice'));
+    expect(g.starsOf('c1s1'), 3);
+    expect(g.coins, greaterThan(0));
+    expect(find.text('عالی!'), findsOneWidget);
     await tester.pumpWidget(const SizedBox());
     await settle(tester, 3);
-    await tester.pumpWidget(testApp(env, location: '/world/home'));
-    await settle(tester);
-    final saved = SceneRepository(env.store).load(ProfileRepository(env.store).activeId ?? '_guest', 'home.living');
-    expect(saved['lamp']!.on, isTrue);
-    expect((tester.getCenter(find.bySemanticsLabel('توپ')) - after).distance, lessThan(2));
-    semantics.dispose();
-    await finish(tester);
+    container.dispose();
+    await tester.runAsync(env.dispose);
   });
 
-  testWidgets('role-play: shopping list completed → celebration and sticker', (tester) async {
+  testWidgets('an obstacle needs the right thing from the backpack; the wrong one explains itself', (tester) async {
     final semantics = tester.ensureSemantics();
-    await boot(tester, '/play/play.shop');
-    for (final item in ['سیب', 'شیر', 'نان']) {
-      final from = tester.getCenter(find.bySemanticsLabel(item));
-      final to = tester.getCenter(find.bySemanticsLabel('سبد خرید'));
-      await tester.dragFrom(from, to - from);
-      await settle(tester, 4);
-    }
-    await settle(tester);
-    expect(find.text('آفرین!'), findsOneWidget);
-    final container = ProviderScope.containerOf(tester.element(find.text('آفرین!')));
-    expect(container.read(progressProvider).stickers, contains('shopper'));
-    expect(container.read(progressProvider).completed, contains('play.shop'));
-    semantics.dispose();
-    await finish(tester);
-  });
-
-  testWidgets('drawing: strokes, undo, save to the gallery, reopen', (tester) async {
-    final semantics = tester.ensureSemantics();
-    await boot(tester, '/art');
-    final canvas = find.bySemanticsLabel('بوم نقاشی؛ با انگشت بکش');
-    await tester.drag(canvas, const Offset(120, 80));
-    await settle(tester, 2);
-    await tester.drag(canvas, const Offset(-60, 100));
-    await settle(tester, 2);
-    final profile = ProfileRepository(env.store).activeId ?? '_guest';
-    expect(ArtworkRepository(env.store).draft(profile)!.strokes, hasLength(2), reason: 'draft is saved after every stroke');
-    await tester.tap(find.bySemanticsLabel('برگرداندن'));
-    await settle(tester, 2);
-    expect(ArtworkRepository(env.store).draft(profile)!.strokes, hasLength(1));
-    await tester.tap(find.bySemanticsLabel('ذخیره'));
-    await settle(tester);
-    final saved = ArtworkRepository(env.store).all(profile).where((a) => a.id != '_draft').toList();
-    expect(saved, hasLength(1));
-    expect(saved.single.strokes, hasLength(1));
-    go(tester, '/art/gallery');
-    await settle(tester);
-    expect(find.text('نقاشی تازه'), findsOneWidget);
+    await boot(tester, '/play/c2s1');
+    final container = ProviderScope.containerOf(tester.element(find.byType(Scaffold).first));
+    await tester.tap(find.text('شروع کنیم!'));
+    await settle(tester, 6);
+    expect(find.byType(UseEngine), findsOneWidget);
+    expect(find.text('کوله‌پشتی پوپو'), findsOneWidget);
+    // آب‌پرتقال هنوز ساخته نشده؛ نسخه‌ی قرضی در کوله هست.
+    expect(find.byTooltip('قرضی از دوستان'), findsOneWidget);
+    Finder inTray(String id) => find.byWidgetPredicate((w) => w is GameArt && w.id == id && w.size == 78);
+    final juice = inTray('juice');
+    final hammer = inTray('hammer');
+    final spot = tester.getCenter(find.byType(UseEngine)) - const Offset(0, 120);
+    await tester.timedDragFrom(tester.getCenter(hammer), spot - tester.getCenter(hammer), const Duration(milliseconds: 400));
+    await settle(tester, 6);
+    expect(env.audio.log, contains('say:c2s1.s1.why'));
+    expect(env.audio.log, contains('say:item.hammer.use'));
+    await tester.timedDragFrom(tester.getCenter(juice), spot - tester.getCenter(juice), const Duration(milliseconds: 400));
+    await settle(tester, 25);
+    expect(env.audio.log, contains('say:c2s1.s1.done'));
+    expect(find.byType(AssembleEngine), findsOneWidget, reason: 'next step');
+    expect(container.read(gameProvider).backpack, isEmpty, reason: 'nothing is finished yet');
     semantics.dispose();
     await finish(tester);
   });
 
   testWidgets('parent area is protected; the right digits open it', (tester) async {
-    await boot(tester, '/map');
+    await boot(tester, '/home');
     go(tester, '/parent');
     await settle(tester);
     expect(find.text('فقط برای بزرگ‌ترها'), findsOneWidget);
@@ -162,8 +231,8 @@ void main() {
   });
 
   testWidgets('sound settings are applied to the audio engine and saved per profile', (tester) async {
-    await boot(tester, '/map');
-    final container = ProviderScope.containerOf(tester.element(find.text('خانه‌ی من')));
+    await boot(tester, '/home');
+    final container = ProviderScope.containerOf(tester.element(find.byType(Scaffold).first));
     container.read(parentGateProvider.notifier).unlock();
     go(tester, '/settings');
     await settle(tester);
@@ -178,18 +247,18 @@ void main() {
   });
 
   testWidgets('profiles keep separate settings and progress', (tester) async {
-    await boot(tester, '/map');
-    final container = ProviderScope.containerOf(tester.element(find.text('خانه‌ی من')));
+    await boot(tester, '/home');
+    final container = ProviderScope.containerOf(tester.element(find.byType(Scaffold).first));
     final n = container.read(profilesProvider.notifier);
     final a = await tester.runAsync(() => n.create(name: 'آرا', avatar: 'cat', ageBand: AgeBand.toddler));
-    await tester.runAsync(() => container.read(progressProvider.notifier).addSticker('chef'));
+    await tester.runAsync(() => container.read(gameProvider.notifier).addCoins(40));
     await tester.runAsync(() => container.read(settingsProvider.notifier).update((s) => s.copyWith(reducedMotion: true)));
     final b = await tester.runAsync(() => n.create(name: 'نیما', avatar: 'dog', ageBand: AgeBand.early));
     expect(container.read(activeIdProvider), b!.id);
-    expect(container.read(progressProvider).stickers, isEmpty);
+    expect(container.read(gameProvider).coins, 0);
     expect(container.read(settingsProvider).reducedMotion, isFalse);
     await tester.runAsync(() => n.select(a!.id));
-    expect(container.read(progressProvider).stickers, {'chef'});
+    expect(container.read(gameProvider).coins, 40);
     expect(container.read(settingsProvider).reducedMotion, isTrue);
     go(tester, '/profiles');
     await settle(tester);
@@ -199,7 +268,7 @@ void main() {
   });
 
   testWidgets('large text and reduced motion: key screens still fit a small phone', (tester) async {
-    for (final r in ['/map', '/world/home', '/art', '/music', '/build', '/library', '/rewards']) {
+    for (final r in ['/home', '/home?tab=workshop', '/home?tab=playroom', '/home?tab=me', '/chapter/c1', '/play/c1s1']) {
       env = (await tester.runAsync(() => TestEnv.create()))!;
       await SettingsRepository(env.store).save('_guest', const ProfileSettings(largeText: true, reducedMotion: true));
       await setSurface(tester, const Size(320, 640));

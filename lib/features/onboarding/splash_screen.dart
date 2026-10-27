@@ -9,7 +9,7 @@ import '../../core/widgets/buttons.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/logo.dart';
 import '../mascot/popo_mascot.dart';
-import '../worlds/backgrounds/scene_backgrounds.dart';
+import '../../ui/clay.dart';
 
 /// صفحه‌ی شروع: نشان پوپو، پوپوی دست‌تکان‌دهنده، دکمه‌ی بزرگ شروع و دکمه‌ی جدای والدین.
 class SplashScreen extends ConsumerStatefulWidget {
@@ -37,7 +37,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     } else if (ref.read(profilesProvider).profiles.length > 1) {
       context.go('/profiles');
     } else {
-      context.go('/map');
+      context.go('/home');
     }
   }
 
@@ -47,7 +47,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          const Positioned.fill(child: SceneBackground(id: 'splash')),
+          const Positioned.fill(child: SkyScene(image: 'art/backgrounds/meadow.webp')),
           SafeArea(
             child: LayoutBuilder(
               builder: (context, box) {

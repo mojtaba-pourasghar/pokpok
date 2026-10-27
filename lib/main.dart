@@ -16,6 +16,8 @@ import 'core/content/content.dart';
 import 'core/notices/notices_store.dart';
 import 'core/storage/local_store.dart';
 import 'features/mascot/popo_mascot.dart';
+import 'game/game_data.dart';
+import 'game/game_state.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +27,7 @@ Future<void> main() async {
   final store = await LocalStore.open();
   final prefs = await SharedPreferences.getInstance();
   final content = await ContentRepository.load(rootBundle);
+  final game = await GameData.load(rootBundle);
   final assets = AssetResolver();
   await assets.init(rootBundle);
   // حالت‌های رستری پوپو، اگر با tools/art/generate_cf.py ساخته شده باشند.
@@ -44,6 +47,7 @@ Future<void> main() async {
         storeProvider.overrideWithValue(store),
         prefsProvider.overrideWithValue(prefs),
         contentProvider.overrideWithValue(content),
+        gameDataProvider.overrideWithValue(game),
         assetsProvider.overrideWith((_) => assets),
         audioProvider.overrideWithValue(JustAudioService(assets)),
         accessProvider.overrideWith((_) => access),

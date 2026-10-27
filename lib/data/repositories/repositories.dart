@@ -35,6 +35,7 @@ class ProfileRepository {
     await store.delete('settings', id);
     await store.delete('progress', id);
     await store.delete('builds', id);
+    await store.delete('game', id);
     for (final box in ['scenes', 'artworks', 'songs']) {
       for (final k in store.keysWithPrefix(box, '$id/').toList()) {
         await store.delete(box, k);

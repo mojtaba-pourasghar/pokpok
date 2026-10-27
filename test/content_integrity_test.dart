@@ -4,95 +4,141 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:popo/core/content/content.dart';
-import 'package:popo/features/worlds/backgrounds/scene_backgrounds.dart';
+import 'package:popo/game/engines/engines.dart';
+import 'package:popo/game/game_data.dart';
 
 /// سلامت محتوا: هر ارجاع در JSONها به چیزی واقعی اشاره می‌کند.
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   late ContentRepository c;
+  late GameData game;
   late Set<String> bundled;
 
   setUpAll(() async {
     c = await ContentRepository.load(rootBundle);
+    game = await GameData.load(rootBundle);
     bundled = (await AssetManifest.loadFromAssetBundle(rootBundle)).listAssets().toSet();
   });
 
   bool exists(String logical) => bundled.contains('assets/$logical');
 
-  test('six worlds, each with an entry route and art', () {
-    expect(c.worlds.map((w) => w.id), ['home', 'city', 'nature', 'art', 'music', 'build']);
-    for (final w in c.worlds) {
-      expect(c.art.containsKey(w.art), isTrue, reason: w.id);
-      for (final s in w.scenes) {
-        expect(c.scenes.containsKey(s), isTrue, reason: '${w.id} → $s');
+  test('eight chapters of four sections; every step uses a known engine and real pictures', () {
+    expect(game.chapters, hasLength(8));
+    for (final ch in game.chapters) {
+      expect(ch.sections, hasLength(4), reason: ch.id);
+      expect(game.friends.containsKey(ch.friend), isTrue, reason: ch.id);
+      expect(exists(ch.ambient), isTrue, reason: ch.ambient);
+      expect(ch.film, hasLength(ch.sections.length), reason: '${ch.id} film');
+    }
+    final pictures = {...game.emoji.keys, ...game.items.keys, ...game.friends.keys};
+    for (final s in game.sections.values) {
+      expect(game.items.containsKey(s.makes), isTrue, reason: s.id);
+      expect(s.steps, isNotEmpty, reason: s.id);
+      for (final st in s.steps) {
+        expect(engineNames, contains(st.engine), reason: '${s.id}: ${st.engine}');
+        for (final k in ['target', 'result', 'base', 'into', 'source', 'spot', 'need']) {
+          final v = st.opt(k);
+          if (v != null && st.engine != 'mix') expect(pictures, contains(v), reason: '${s.id}.$k = $v');
+        }
+        for (final k in ['distract', 'good', 'bad', 'items']) {
+          for (final v in st.list(k)) {
+            expect(pictures, contains(v), reason: '${s.id}.$k');
+          }
+        }
+        for (final p in [...st.maps('parts'), ...st.maps('pads')]) {
+          expect(pictures, contains(p['art']), reason: s.id);
+        }
+        for (final k in ['sound']) {
+          final v = st.opt(k);
+          if (v != null) expect(exists(v), isTrue, reason: '${s.id}: $v');
+        }
+        for (final p in st.maps('pads')) {
+          expect(exists(p['sound'] as String), isTrue, reason: '${s.id}: ${p['sound']}');
+        }
+        if (st.engine == 'use') expect(game.items.containsKey(st.str('need')), isTrue);
+        for (final p in st.maps('pairs')) {
+          expect(game.items.containsKey(p['item']), isTrue);
+          expect(game.friends.containsKey(p['friend']), isTrue);
+        }
       }
     }
-    expect(c.scenesOf('home').map((s) => s.title), ['پذیرایی', 'آشپزخانه', 'اتاق خواب', 'حمام']);
-    expect(c.scenesOf('nature').map((s) => s.title), ['جنگل', 'باغ', 'برکه', 'مزرعه']);
-  });
-
-  test('every scene object has art, every sound and voice line exists', () {
-    for (final s in c.scenes.values) {
-      expect(SceneBackgroundPainter.ids, contains(s.background), reason: s.id);
-      expect(c.art.containsKey(s.icon), isTrue, reason: '${s.id} icon');
-      for (final id in [s.intro, s.done]) {
-        if (id != null) expect(c.voiceLines.containsKey(id), isTrue, reason: '${s.id}: $id');
-      }
-      if (s.sticker != null) expect(c.stickers.containsKey(s.sticker), isTrue, reason: s.id);
-      if (s.ambient != null) expect(exists(s.ambient!), isTrue, reason: s.ambient);
-      final ids = s.objects.map((o) => o.id).toSet();
-      expect(ids.length, s.objects.length, reason: 'duplicate object id in ${s.id}');
-      for (final o in s.objects) {
-        expect(c.art.containsKey(o.art), isTrue, reason: '${s.id}/${o.id}: ${o.art}');
-        for (final st in o.states) {
-          expect(c.art.containsKey(st), isTrue, reason: '${s.id}/${o.id}: $st');
-        }
-        if (o.tap?.sound != null) expect(exists(o.tap!.sound!), isTrue, reason: '${s.id}/${o.id}: ${o.tap!.sound}');
-        for (final r in o.accepts) {
-          if (r.sound != null) expect(exists(r.sound!), isTrue, reason: r.sound);
-        }
-        if (o.drag == DragMode.path) expect(s.paths.containsKey(o.path), isTrue, reason: '${s.id}/${o.id}');
-        expect(o.x, inInclusiveRange(0, 1));
-        expect(o.y, inInclusiveRange(0, 1));
-        expect(o.label, isNotNull, reason: '${s.id}/${o.id} needs a Persian label for screen readers');
-      }
-      for (final g in s.goals) {
-        expect(ids, contains(g.target), reason: '${s.id} goal');
-        if (g.tag != null) {
-          expect(s.objects.any((o) => o.tags.contains(g.tag)), isTrue, reason: '${s.id}: nothing carries tag ${g.tag}');
-        }
-      }
-      for (final w in s.want) {
-        expect(ids, contains(w));
-      }
-    }
-  });
-
-  test('role-play goals can actually be reached', () {
-    for (final s in c.scenes.values.where((s) => s.world == 'play')) {
-      for (final g in s.goals.where((g) => g.tag != null)) {
-        final carriers = s.objects.where((o) => o.tags.contains(g.tag) && o.drag != DragMode.none).length;
-        final target = s.objects.firstWhere((o) => o.id == g.target);
-        final r = target.accepts.firstWhere((a) => a.tag == g.tag);
-        final reusable = r.then != AfterDrop.hide;
-        expect(reusable || carriers >= g.count, isTrue, reason: '${s.id}: ${g.count} × ${g.tag} but only $carriers');
+    for (final i in game.items.values) {
+      expect(exists(i.sound), isTrue, reason: '${i.id}: ${i.sound}');
+      expect(i.quiz.options, hasLength(3), reason: i.id);
+      expect(i.quiz.answer, inInclusiveRange(0, 2));
+      for (final o in i.quiz.options) {
+        expect(pictures, contains(o.art), reason: i.id);
       }
     }
   });
 
-  test('activities point at real routes and art; stickers have art', () {
-    final routes = RegExp(
-      r'^/(world/(home|city|nature)(\?scene=[\w.]+)?|play/play\.\w+|art(/gallery)?|music(\?tab=songs)?|build|puzzle/(shapes|sort|pattern|match))$',
-    );
-    for (final a in c.activities) {
-      expect(routes.hasMatch(a.route), isTrue, reason: a.route);
-      expect(c.art.containsKey(a.art), isTrue, reason: a.id);
-      expect(c.categories.any((k) => k.id == a.category), isTrue, reason: a.id);
-      final scene = Uri.parse(a.route).queryParameters['scene'];
-      if (scene != null) expect(c.scenes.containsKey(scene), isTrue);
+  test('the backpack only asks for things made earlier in the story', () {
+    final made = <String>{};
+    for (final ch in game.chapters) {
+      for (final s in ch.sections) {
+        for (final need in s.needs) {
+          expect(made, contains(need), reason: '${s.id} needs $need before it is made');
+        }
+        made.add(s.makes);
+      }
     }
-    for (final s in c.stickers.values) {
-      expect(c.art.containsKey(s.art), isTrue, reason: s.id);
+  });
+
+  test('kits open with rising star counts and tools have recipes', () {
+    final stars = [for (final k in game.kits) k.stars];
+    expect(stars, orderedEquals([...stars]..sort()));
+    expect(stars.last, lessThanOrEqualTo(game.totalSections * 3));
+    for (final t in game.tools) {
+      expect(t.recipes, isNotEmpty, reason: t.id);
+      expect(t.price, greaterThan(0));
+    }
+    for (final s in game.sections.values) {
+      if (s.secret != null) expect(game.tools.any((t) => t.id == s.secret), isTrue, reason: s.id);
+    }
+    for (final c in game.combos) {
+      for (final i in c.items) {
+        expect(game.items.containsKey(i), isTrue, reason: c.id);
+      }
+    }
+    // هر سفارش دست‌کم با یک ساخته انجام‌شدنی است.
+    for (final o in game.orders) {
+      expect(game.items.values.any((i) => i.tags.contains(o.tag)), isTrue, reason: o.tag);
+    }
+  });
+
+  test('every line the game says exists', () {
+    void has(String id) => expect(c.voiceLines.containsKey(id), isTrue, reason: id);
+    for (final ch in game.chapters) {
+      has('${ch.id}.intro');
+      for (var i = 1; i <= ch.film.length; i++) {
+        has('${ch.id}.film.$i');
+      }
+      if (ch.next.isNotEmpty) has('${ch.id}.next');
+    }
+    for (final s in game.sections.values) {
+      has('${s.id}.mission');
+      for (var i = 1; i <= s.steps.length; i++) {
+        has('${s.id}.s$i');
+        if (s.steps[i - 1].engine == 'use') {
+          has('${s.id}.s$i.done');
+          has('${s.id}.s$i.why');
+        }
+      }
+    }
+    for (final i in game.items.values) {
+      has('item.${i.id}.made');
+      has('item.${i.id}.use');
+      has('item.${i.id}.quiz');
+      if (i.taste != null) has('item.${i.id}.taste');
+    }
+    for (final t in game.tools) {
+      has('tool.${t.id}.safety');
+    }
+    for (var i = 1; i <= game.orders.length; i++) {
+      has('order.$i');
+    }
+    for (var i = 1; i <= game.combos.length; i++) {
+      has('combo.$i');
     }
   });
 
@@ -104,7 +150,6 @@ void main() {
       expect(RegExp(r'[؀-ۿ]').hasMatch(l.text), isTrue, reason: l.id);
     }
     expect(c.pick('praise'), isNotNull);
-    expect(c.pick('try'), isNotNull);
     expect(c.pick('idle'), isNotNull);
   });
 

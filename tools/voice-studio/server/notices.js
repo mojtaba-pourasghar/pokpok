@@ -25,8 +25,11 @@ export const LIMITS = { title: 80, body: 600, imageBytes: 2 * 1024 * 1024, fileB
 const IMAGE_TYPES = { webp: "image/webp", png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg" };
 
 /** Values the app understands for `screen` (lib/features/notices/notice_card.dart noticeScreens) plus ANYWHERE. */
-export const SCREENS = ["ANYWHERE", "HOME", "LIBRARY", "WORLD_HOME", "WORLD_CITY", "WORLD_NATURE", "ART",
-  "MUSIC", "BUILD", "REWARDS", "DOWNLOADS", "PAYWALL"];
+export const SCREENS = ["ANYWHERE", "HOME", "WORKSHOP", "PLAYROOM", "ME",
+  "CHAPTER_1", "CHAPTER_2", "CHAPTER_3", "CHAPTER_4", "CHAPTER_5", "CHAPTER_6", "CHAPTER_7", "CHAPTER_8",
+  "DOWNLOADS", "PAYWALL",
+  // names from the first version; the app still opens something sensible for them
+  "LIBRARY", "WORLD_HOME", "WORLD_CITY", "WORLD_NATURE", "ART", "MUSIC", "BUILD", "REWARDS"];
 
 export function makeKeyPair() {
   return crypto.generateKeyPairSync("rsa", {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:popo/core/widgets/buttons.dart';
 import 'package:popo/core/widgets/common.dart';
+import 'package:popo/ui/clay.dart';
 
 import 'helpers.dart';
 
@@ -11,26 +12,19 @@ void main() {
     '/',
     '/intro',
     '/profiles',
-    '/map',
-    '/world/home',
-    '/world/city',
-    '/world/nature?scene=nature.farm',
-    '/play/play.cook',
-    '/play/play.shop',
-    '/play/play.garden',
-    '/play/play.pet',
-    '/play/play.tidy',
-    '/art',
-    '/art/gallery',
-    '/music',
-    '/music?tab=songs',
-    '/build',
-    '/library',
-    '/puzzle/shapes',
-    '/puzzle/sort',
-    '/puzzle/pattern',
-    '/puzzle/match',
-    '/rewards',
+    '/home',
+    '/home?tab=workshop',
+    '/home?tab=playroom',
+    '/home?tab=me',
+    '/chapter/c1',
+    '/chapter/c5',
+    '/play/c1s1',
+    '/play/c2s1',
+    '/play/c8s1',
+    '/play/k_robot',
+    '/play/r_pizza',
+    '/film/c1',
+    '/tool/magnifier',
     '/notices',
     '/parent-gate',
   ];
@@ -54,7 +48,7 @@ void main() {
         expect(scaffoldBox.size, s.value);
         // هر کنترل لمسی که روی صفحه دیده می‌شود، واقعاً لمس‌پذیر است (نه فقط کشیده‌شده).
         final screen = Offset.zero & s.value;
-        for (final type in [PTile, PButton, PIconButton]) {
+        for (final type in [PTile, PButton, PIconButton, Pressable]) {
           for (final e in find.byType(type).evaluate()) {
             final box = e.renderObject! as RenderBox;
             final c = box.localToGlobal(box.size.center(Offset.zero));

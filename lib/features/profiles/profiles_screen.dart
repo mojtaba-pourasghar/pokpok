@@ -77,7 +77,7 @@ class _ProfilesScreenState extends ConsumerState<ProfilesScreen> {
                       selected: p.id == state.active?.id,
                       onTap: () async {
                         await ref.read(profilesProvider.notifier).select(p.id);
-                        if (context.mounted) context.go('/map');
+                        if (context.mounted) context.go('/home');
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(PSpace.xs),

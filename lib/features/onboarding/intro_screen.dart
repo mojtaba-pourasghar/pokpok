@@ -10,7 +10,7 @@ import '../../core/narrator.dart';
 import '../../core/widgets/buttons.dart';
 import '../../core/widgets/common.dart';
 import '../mascot/popo_mascot.dart';
-import '../worlds/backgrounds/scene_backgrounds.dart';
+import '../../ui/clay.dart';
 
 /// آشنایی با پوپو در سه گام کوتاه و تعاملی. هر گام یک کار واقعی از کودک می‌خواهد
 /// (لمس کردن، کشیدن) و می‌شود کل آن را رد کرد. ثبت‌نامی در کار نیست.
@@ -38,7 +38,7 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
   Future<void> _finish() async {
     await ref.read(appPrefsProvider).setIntroSeen();
     if (!mounted) return;
-    context.go(ref.read(profilesProvider).profiles.length > 1 ? '/profiles' : '/map');
+    context.go(ref.read(profilesProvider).profiles.length > 1 ? '/profiles' : '/home');
   }
 
   void _next() {
@@ -63,7 +63,7 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          const Positioned.fill(child: SceneBackground(id: 'meadow')),
+          const Positioned.fill(child: SkyScene(image: 'art/backgrounds/meadow.webp')),
           SafeArea(
             child: LayoutBuilder(
               builder: (context, box) {

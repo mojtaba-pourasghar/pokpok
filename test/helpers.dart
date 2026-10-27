@@ -13,16 +13,19 @@ import 'package:popo/core/assets/asset_resolver.dart';
 import 'package:popo/core/audio/popo_audio.dart';
 import 'package:popo/core/content/content.dart';
 import 'package:popo/core/storage/local_store.dart';
+import 'package:popo/game/game_data.dart';
+import 'package:popo/game/game_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// محیط آزمون: Hive در پوشه‌ی موقت، SharedPreferences ساختگی، محتوای واقعی برنامه، صدای بی‌صدا.
 class TestEnv {
-  TestEnv._(this.dir, this.store, this.prefs, this.content, this.bundled, this.audio);
+  TestEnv._(this.dir, this.store, this.prefs, this.content, this.game, this.bundled, this.audio);
 
   final Directory dir;
   final LocalStore store;
   final SharedPreferences prefs;
   final ContentRepository content;
+  final GameData game;
   final Set<String> bundled;
   final SilentAudio audio;
 
@@ -45,14 +48,16 @@ class TestEnv {
     SharedPreferences.setMockInitialValues(prefs);
     final p = await SharedPreferences.getInstance();
     final content = await ContentRepository.load(rootBundle);
+    final game = await GameData.load(rootBundle);
     final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
-    return TestEnv._(dir, store, p, content, manifest.listAssets().toSet(), SilentAudio());
+    return TestEnv._(dir, store, p, content, game, manifest.listAssets().toSet(), SilentAudio());
   }
 
   List<Override> get overrides => [
     storeProvider.overrideWithValue(store),
     prefsProvider.overrideWithValue(prefs),
     contentProvider.overrideWithValue(content),
+    gameDataProvider.overrideWithValue(game),
     // هر ProviderScope نمونه‌ی خودش را می‌گیرد (Riverpod آن را هنگام بستن dispose می‌کند).
     assetsProvider.overrideWith((_) => AssetResolver()..setBundled(bundled)),
     audioProvider.overrideWithValue(audio),
@@ -66,7 +71,7 @@ class TestEnv {
 }
 
 /// برنامه‌ی کامل با مسیر شروع دلخواه.
-Widget testApp(TestEnv env, {String location = '/map', ProviderContainer? container}) {
+Widget testApp(TestEnv env, {String location = '/home', ProviderContainer? container}) {
   final overrides = [...env.overrides, routerProvider.overrideWith((ref) => buildRouter(ref, initialLocation: location))];
   return container != null
       ? UncontrolledProviderScope(container: container, child: const PopoApp())

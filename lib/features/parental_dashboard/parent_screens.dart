@@ -38,7 +38,7 @@ class ParentDashboardScreen extends ConsumerWidget {
       title: 'پنل والدین',
       onBack: () {
         ref.read(parentGateProvider.notifier).lock();
-        context.go('/map');
+        context.go('/home');
       },
       actions: [
         PIconButton(
@@ -47,7 +47,7 @@ class ParentDashboardScreen extends ConsumerWidget {
           iconColor: PColors.inkSoft,
           onPressed: () {
             ref.read(parentGateProvider.notifier).lock();
-            context.go('/map');
+            context.go('/home');
           },
         ),
       ],

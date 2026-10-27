@@ -74,6 +74,10 @@ class AppPrefs {
   Future<void> setDailyLimit(int m) => prefs.setInt('dailyLimit', m);
 
   /// ثبت تاریخچه‌ی فعالیت روی دستگاه (والدین می‌توانند خاموشش کنند).
+  /// ستاره‌ی زمانی (سریع‌تر = ستاره‌ی بیشتر) برای ۴ سال به بالا. والدین می‌توانند خاموشش کنند.
+  bool get timedStars => prefs.getBool('timedStars') ?? true;
+  Future<void> setTimedStars(bool v) => prefs.setBool('timedStars', v);
+
   bool get keepHistory => prefs.getBool('keepHistory') ?? true;
   Future<void> setKeepHistory(bool v) => prefs.setBool('keepHistory', v);
 }

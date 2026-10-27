@@ -55,3 +55,6 @@ keystore.properties
 
 # Python cache
 __pycache__/
+art/generated/*.jpg
+!art/generated/card_*.jpg
+!art/generated/guitar.jpg

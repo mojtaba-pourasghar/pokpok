@@ -260,7 +260,8 @@ class NoticesStore extends ChangeNotifier {
   static List<Notice> byUrgency(Iterable<Notice> list) {
     final items = list.toList();
     final order = <String, int>{for (var i = 0; i < items.length; i++) items[i].id: i};
-    int key(Notice n) => n.until > 0 ? n.until : 0x7fffffffffffffff;
+    // 2^53 − 1: بزرگ‌ترین عدد دقیق در JavaScript، تا نسخه‌ی وب هم ساخته شود.
+    int key(Notice n) => n.until > 0 ? n.until : 9007199254740991;
     items.sort((a, b) {
       final c = key(a).compareTo(key(b));
       return c != 0 ? c : order[a.id]!.compareTo(order[b.id]!);

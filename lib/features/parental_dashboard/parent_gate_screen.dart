@@ -82,7 +82,7 @@ class _ParentGateScreenState extends ConsumerState<ParentGateScreen> {
     final words = _target.map((d) => faNumberWords[d]).join('، ');
     return PScaffold(
       title: 'فقط برای بزرگ‌ترها',
-      onBack: () => context.canPop() ? context.pop(false) : context.go('/map'),
+      onBack: () => context.canPop() ? context.pop(false) : context.go('/home'),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(PSpace.lg),
@@ -144,7 +144,7 @@ class _ParentGateScreenState extends ConsumerState<ParentGateScreen> {
                 PButton(
                   label: 'انصراف',
                   color: PColors.turquoise,
-                  onPressed: () => context.canPop() ? context.pop(false) : context.go('/map'),
+                  onPressed: () => context.canPop() ? context.pop(false) : context.go('/home'),
                 ),
               ],
             ),

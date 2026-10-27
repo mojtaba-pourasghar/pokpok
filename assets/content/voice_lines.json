@@ -521,6 +521,3478 @@
    "event": "notice.shown",
    "screen": "notice",
    "file": "voice/notice_new.mp3"
+  },
+  {
+   "id": "c1.intro",
+   "text": "طوفان آشپزخانه‌ی خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده. بیا با هم آشپزی کنیم!",
+   "event": "c1.intro",
+   "screen": "chapter",
+   "file": "voice/c1_intro.mp3"
+  },
+  {
+   "id": "c1.film.1",
+   "text": "آب‌پرتقال شیرین و ترش",
+   "event": "c1.film.1",
+   "screen": "film",
+   "file": "voice/c1_film_1.mp3"
+  },
+  {
+   "id": "c1.film.2",
+   "text": "نان ترد و گرم",
+   "event": "c1.film.2",
+   "screen": "film",
+   "file": "voice/c1_film_2.mp3"
+  },
+  {
+   "id": "c1.film.3",
+   "text": "سوپ داغ و خوشمزه",
+   "event": "c1.film.3",
+   "screen": "film",
+   "file": "voice/c1_film_3.mp3"
+  },
+  {
+   "id": "c1.film.4",
+   "text": "و کیک تولد با شمع‌های روشن!",
+   "event": "c1.film.4",
+   "screen": "film",
+   "file": "voice/c1_film_4.mp3"
+  },
+  {
+   "id": "c1.next",
+   "text": "بانی در باغ تشنه است... بیا برویم پیشش!",
+   "event": "c1.next",
+   "screen": "film",
+   "file": "voice/c1_next.mp3"
+  },
+  {
+   "id": "c1s1.mission",
+   "text": "خاله خرسی تشنه است. بیا برایش آب‌پرتقال درست کنیم!",
+   "event": "c1s1.mission",
+   "screen": "c1",
+   "file": "voice/c1s1_mission.mp3"
+  },
+  {
+   "id": "c1s1.s1",
+   "text": "پرتقال‌های رسیده را از درخت بچین.",
+   "event": "c1s1.s1",
+   "screen": "c1",
+   "file": "voice/c1s1_s1.mp3"
+  },
+  {
+   "id": "c1s1.s2",
+   "text": "پرتقال را از وسط نصف کن. انگشتت را روی خط بکش.",
+   "event": "c1s1.s2",
+   "screen": "c1",
+   "file": "voice/c1s1_s2.mp3"
+  },
+  {
+   "id": "c1s1.s3",
+   "text": "پرتقال را روی آب‌گیری فشار بده! تند تند بزن.",
+   "event": "c1s1.s3",
+   "screen": "c1",
+   "file": "voice/c1s1_s3.mp3"
+  },
+  {
+   "id": "c1s1.s4",
+   "text": "حالا آب‌میوه را در لیوان بریز. تا خط پر کن، نه بیشتر!",
+   "event": "c1s1.s4",
+   "screen": "c1",
+   "file": "voice/c1s1_s4.mp3"
+  },
+  {
+   "id": "item.juice.made",
+   "text": "آفرین! آب‌پرتقال آماده شد!",
+   "event": "item.juice.made",
+   "screen": "c1",
+   "file": "voice/item_juice_made.mp3"
+  },
+  {
+   "id": "c1s2.mission",
+   "text": "برای ناهار نان لازم داریم. بیا نان بپزیم!",
+   "event": "c1s2.mission",
+   "screen": "c1",
+   "file": "voice/c1s2_mission.mp3"
+  },
+  {
+   "id": "c1s2.s1",
+   "text": "آرد را در کاسه بریز.",
+   "event": "c1s2.s1",
+   "screen": "c1",
+   "file": "voice/c1s2_s1.mp3"
+  },
+  {
+   "id": "c1s2.s2",
+   "text": "کمی آب هم اضافه کن.",
+   "event": "c1s2.s2",
+   "screen": "c1",
+   "file": "voice/c1s2_s2.mp3"
+  },
+  {
+   "id": "c1s2.s3",
+   "text": "خمیر را ورز بده! با هر ضربه نرم‌تر می‌شود.",
+   "event": "c1s2.s3",
+   "screen": "c1",
+   "file": "voice/c1s2_s3.mp3"
+  },
+  {
+   "id": "c1s2.s4",
+   "text": "نان را در فر گذاشتیم. وقتی طلایی شد، بزن!",
+   "event": "c1s2.s4",
+   "screen": "c1",
+   "file": "voice/c1s2_s4.mp3"
+  },
+  {
+   "id": "item.bread.made",
+   "text": "آفرین! نان آماده شد!",
+   "event": "item.bread.made",
+   "screen": "c1",
+   "file": "voice/item_bread_made.mp3"
+  },
+  {
+   "id": "c1s3.mission",
+   "text": "باد سرد می‌آید. یک سوپ گرم بپزیم!",
+   "event": "c1s3.mission",
+   "screen": "c1",
+   "file": "voice/c1s3_mission.mp3"
+  },
+  {
+   "id": "c1s3.s1",
+   "text": "سبزی‌های سالم را در سبد بگذار و خراب‌ها را در سطل.",
+   "event": "c1s3.s1",
+   "screen": "c1",
+   "file": "voice/c1s3_s1.mp3"
+  },
+  {
+   "id": "c1s3.s2",
+   "text": "هویج را خرد کن.",
+   "event": "c1s3.s2",
+   "screen": "c1",
+   "file": "voice/c1s3_s2.mp3"
+  },
+  {
+   "id": "c1s3.s3",
+   "text": "سه تکه هویج در قابلمه بینداز.",
+   "event": "c1s3.s3",
+   "screen": "c1",
+   "file": "voice/c1s3_s3.mp3"
+  },
+  {
+   "id": "c1s3.s4",
+   "text": "سوپ را هم بزن. انگشتت را دور قابلمه بچرخان.",
+   "event": "c1s3.s4",
+   "screen": "c1",
+   "file": "voice/c1s3_s4.mp3"
+  },
+  {
+   "id": "item.soup.made",
+   "text": "آفرین! سوپ سبزیجات آماده شد!",
+   "event": "item.soup.made",
+   "screen": "c1",
+   "file": "voice/item_soup_made.mp3"
+  },
+  {
+   "id": "c1s4.mission",
+   "text": "امروز تولد خاله خرسی است! بیا کیک بپزیم.",
+   "event": "c1s4.mission",
+   "screen": "c1",
+   "file": "voice/c1s4_mission.mp3"
+  },
+  {
+   "id": "c1s4.s1",
+   "text": "تخم‌مرغ‌ها را بشکن. روی هر کدام بزن.",
+   "event": "c1s4.s1",
+   "screen": "c1",
+   "file": "voice/c1s4_s1.mp3"
+  },
+  {
+   "id": "c1s4.s2",
+   "text": "آرد را اضافه کن.",
+   "event": "c1s4.s2",
+   "screen": "c1",
+   "file": "voice/c1s4_s2.mp3"
+  },
+  {
+   "id": "c1s4.s3",
+   "text": "خوب هم بزن تا خمیر کیک صاف شود.",
+   "event": "c1s4.s3",
+   "screen": "c1",
+   "file": "voice/c1s4_s3.mp3"
+  },
+  {
+   "id": "c1s4.s4",
+   "text": "کیک را با رنگ‌های خوشمزه تزئین کن.",
+   "event": "c1s4.s4",
+   "screen": "c1",
+   "file": "voice/c1s4_s4.mp3"
+  },
+  {
+   "id": "c1s4.s5",
+   "text": "چهار شمع روی کیک بگذار.",
+   "event": "c1s4.s5",
+   "screen": "c1",
+   "file": "voice/c1s4_s5.mp3"
+  },
+  {
+   "id": "item.cake.made",
+   "text": "آفرین! کیک تولد آماده شد!",
+   "event": "item.cake.made",
+   "screen": "c1",
+   "file": "voice/item_cake_made.mp3"
+  },
+  {
+   "id": "c2.intro",
+   "text": "بانی تشنه است و باغش خشک شده. کمکش کنیم باغ دوباره سبز شود!",
+   "event": "c2.intro",
+   "screen": "chapter",
+   "file": "voice/c2_intro.mp3"
+  },
+  {
+   "id": "c2.film.1",
+   "text": "آب‌پاش، گل‌ها را سیراب کرد",
+   "event": "c2.film.1",
+   "screen": "film",
+   "file": "voice/c2_film_1.mp3"
+  },
+  {
+   "id": "c2.film.2",
+   "text": "گلدان گل، زنبورها را آورد",
+   "event": "c2.film.2",
+   "screen": "film",
+   "file": "voice/c2_film_2.mp3"
+  },
+  {
+   "id": "c2.film.3",
+   "text": "مرغ‌ها تخم گذاشتند",
+   "event": "c2.film.3",
+   "screen": "film",
+   "file": "voice/c2_film_3.mp3"
+  },
+  {
+   "id": "c2.film.4",
+   "text": "و ساندویچ پنیر برای پیک‌نیک!",
+   "event": "c2.film.4",
+   "screen": "film",
+   "file": "voice/c2_film_4.mp3"
+  },
+  {
+   "id": "c2.next",
+   "text": "کارگاه آقا سنجاب خراب شده... بیا کمکش کنیم!",
+   "event": "c2.next",
+   "screen": "film",
+   "file": "voice/c2_next.mp3"
+  },
+  {
+   "id": "c2s1.mission",
+   "text": "بانی خیلی تشنه است و حرف نمی‌زند! اول یک چیزی برای نوشیدن بهش بده.",
+   "event": "c2s1.mission",
+   "screen": "c2",
+   "file": "voice/c2s1_mission.mp3"
+  },
+  {
+   "id": "c2s1.s1",
+   "text": "از کوله‌پشتی چیزی بده که تشنگی را برطرف کند.",
+   "event": "c2s1.s1",
+   "screen": "c2",
+   "file": "voice/c2s1_s1.mp3"
+  },
+  {
+   "id": "c2s1.s1.done",
+   "text": "به به! بانی سرحال شد.",
+   "event": "c2s1.s1.done",
+   "screen": "c2",
+   "file": "voice/c2s1_s1_done.mp3"
+  },
+  {
+   "id": "c2s1.s1.why",
+   "text": "این برای رفع تشنگی نیست.",
+   "event": "c2s1.s1.why",
+   "screen": "c2",
+   "file": "voice/c2s1_s1_why.mp3"
+  },
+  {
+   "id": "c2s1.s2",
+   "text": "تکه‌های آب‌پاش را سر جایشان بگذار.",
+   "event": "c2s1.s2",
+   "screen": "c2",
+   "file": "voice/c2s1_s2.mp3"
+  },
+  {
+   "id": "c2s1.s3",
+   "text": "دسته‌ی چاه را بچرخان تا آب بالا بیاید.",
+   "event": "c2s1.s3",
+   "screen": "c2",
+   "file": "voice/c2s1_s3.mp3"
+  },
+  {
+   "id": "c2s1.s4",
+   "text": "آب‌پاش را پر کن.",
+   "event": "c2s1.s4",
+   "screen": "c2",
+   "file": "voice/c2s1_s4.mp3"
+  },
+  {
+   "id": "item.watering_can.made",
+   "text": "آفرین! آب‌پاش آماده شد!",
+   "event": "item.watering_can.made",
+   "screen": "c2",
+   "file": "voice/item_watering_can_made.mp3"
+  },
+  {
+   "id": "c2s2.mission",
+   "text": "بانی می‌خواهد یک گل قشنگ بکارد.",
+   "event": "c2s2.mission",
+   "screen": "c2",
+   "file": "voice/c2s2_mission.mp3"
+  },
+  {
+   "id": "c2s2.s1",
+   "text": "خاک را با بیلچه بکن.",
+   "event": "c2s2.s1",
+   "screen": "c2",
+   "file": "voice/c2s2_s1.mp3"
+  },
+  {
+   "id": "c2s2.s2",
+   "text": "سه دانه در خاک بکار.",
+   "event": "c2s2.s2",
+   "screen": "c2",
+   "file": "voice/c2s2_s2.mp3"
+  },
+  {
+   "id": "c2s2.s3",
+   "text": "دانه‌ها تشنه‌اند! از کوله چیزی بیاور که با آن آب بدهیم.",
+   "event": "c2s2.s3",
+   "screen": "c2",
+   "file": "voice/c2s2_s3.mp3"
+  },
+  {
+   "id": "c2s2.s3.done",
+   "text": "آفرین! دانه‌ها آب خوردند.",
+   "event": "c2s2.s3.done",
+   "screen": "c2",
+   "file": "voice/c2s2_s3_done.mp3"
+  },
+  {
+   "id": "c2s2.s3.why",
+   "text": "با این نمی‌شود آب داد.",
+   "event": "c2s2.s3.why",
+   "screen": "c2",
+   "file": "voice/c2s2_s3_why.mp3"
+  },
+  {
+   "id": "c2s2.s4",
+   "text": "جوانه دارد بزرگ می‌شود... وقتی گل باز شد بزن!",
+   "event": "c2s2.s4",
+   "screen": "c2",
+   "file": "voice/c2s2_s4.mp3"
+  },
+  {
+   "id": "item.flower_pot.made",
+   "text": "آفرین! گلدان گل آماده شد!",
+   "event": "item.flower_pot.made",
+   "screen": "c2",
+   "file": "voice/item_flower_pot_made.mp3"
+  },
+  {
+   "id": "c2s3.mission",
+   "text": "مرغ‌های بانی لانه ندارند و گم شده‌اند!",
+   "event": "c2s3.mission",
+   "screen": "c2",
+   "file": "voice/c2s3_mission.mp3"
+  },
+  {
+   "id": "c2s3.s1",
+   "text": "کاه جمع کن.",
+   "event": "c2s3.s1",
+   "screen": "c2",
+   "file": "voice/c2s3_s1.mp3"
+  },
+  {
+   "id": "c2s3.s2",
+   "text": "کاه‌ها را در لانه بگذار.",
+   "event": "c2s3.s2",
+   "screen": "c2",
+   "file": "voice/c2s3_s2.mp3"
+  },
+  {
+   "id": "c2s3.s3",
+   "text": "مرغ‌های گم‌شده را پیدا کن. پشت بوته‌ها را ببین!",
+   "event": "c2s3.s3",
+   "screen": "c2",
+   "file": "voice/c2s3_s3.mp3"
+  },
+  {
+   "id": "item.eggs.made",
+   "text": "آفرین! تخم‌مرغ آماده شد!",
+   "event": "item.eggs.made",
+   "screen": "c2",
+   "file": "voice/item_eggs_made.mp3"
+  },
+  {
+   "id": "c2s4.mission",
+   "text": "وقت پیک‌نیک است! یک ساندویچ خوشمزه درست کنیم.",
+   "event": "c2s4.mission",
+   "screen": "c2",
+   "file": "voice/c2s4_mission.mp3"
+  },
+  {
+   "id": "c2s4.s1",
+   "text": "گاو را آرام بدوش. با هر ضربه شیر می‌آید.",
+   "event": "c2s4.s1",
+   "screen": "c2",
+   "file": "voice/c2s4_s1.mp3"
+  },
+  {
+   "id": "c2s4.s2",
+   "text": "شیر را هم بزن تا پنیر شود.",
+   "event": "c2s4.s2",
+   "screen": "c2",
+   "file": "voice/c2s4_s2.mp3"
+  },
+  {
+   "id": "c2s4.s3",
+   "text": "برای ساندویچ نان لازم داریم! از کوله بیاور.",
+   "event": "c2s4.s3",
+   "screen": "c2",
+   "file": "voice/c2s4_s3.mp3"
+  },
+  {
+   "id": "c2s4.s3.done",
+   "text": "نان رسید!",
+   "event": "c2s4.s3.done",
+   "screen": "c2",
+   "file": "voice/c2s4_s3_done.mp3"
+  },
+  {
+   "id": "c2s4.s3.why",
+   "text": "این نان نیست.",
+   "event": "c2s4.s3.why",
+   "screen": "c2",
+   "file": "voice/c2s4_s3_why.mp3"
+  },
+  {
+   "id": "c2s4.s4",
+   "text": "ساندویچ را لایه‌لایه بچین: نان، کاهو، پنیر، نان.",
+   "event": "c2s4.s4",
+   "screen": "c2",
+   "file": "voice/c2s4_s4.mp3"
+  },
+  {
+   "id": "item.sandwich.made",
+   "text": "آفرین! ساندویچ پنیر آماده شد!",
+   "event": "item.sandwich.made",
+   "screen": "c2",
+   "file": "voice/item_sandwich_made.mp3"
+  },
+  {
+   "id": "c3.intro",
+   "text": "طوفان کارگاه آقا سنجاب را خراب کرده و ابزارهایش پخش شده‌اند. بیا ابزار بسازیم!",
+   "event": "c3.intro",
+   "screen": "chapter",
+   "file": "voice/c3_intro.mp3"
+  },
+  {
+   "id": "c3.film.1",
+   "text": "چکش، میخ را فرو کرد: تق تق!",
+   "event": "c3.film.1",
+   "screen": "film",
+   "file": "voice/c3_film_1.mp3"
+  },
+  {
+   "id": "c3.film.2",
+   "text": "چراغ‌قوه تاریکی را روشن کرد",
+   "event": "c3.film.2",
+   "screen": "film",
+   "file": "voice/c3_film_2.mp3"
+  },
+  {
+   "id": "c3.film.3",
+   "text": "گاری جعبه‌ها را برد",
+   "event": "c3.film.3",
+   "screen": "film",
+   "file": "voice/c3_film_3.mp3"
+  },
+  {
+   "id": "c3.film.4",
+   "text": "و ماشین با کلید روشن شد: برووووم!",
+   "event": "c3.film.4",
+   "screen": "film",
+   "file": "voice/c3_film_4.mp3"
+  },
+  {
+   "id": "c3.next",
+   "text": "کوکو همه‌ی رنگ‌هایش را گم کرده...",
+   "event": "c3.next",
+   "screen": "film",
+   "file": "voice/c3_next.mp3"
+  },
+  {
+   "id": "c3s1.mission",
+   "text": "آقا سنجاب چکشش را گم کرده. تکه‌هایش این‌جا پخش شده‌اند!",
+   "event": "c3s1.mission",
+   "screen": "c3",
+   "file": "voice/c3s1_mission.mp3"
+  },
+  {
+   "id": "c3s1.s1",
+   "text": "سر چکش را در کارگاه شلوغ پیدا کن.",
+   "event": "c3s1.s1",
+   "screen": "c3",
+   "file": "voice/c3s1_s1.mp3"
+  },
+  {
+   "id": "c3s1.s2",
+   "text": "دسته‌ی چوبی را هم پیدا کن.",
+   "event": "c3s1.s2",
+   "screen": "c3",
+   "file": "voice/c3s1_s2.mp3"
+  },
+  {
+   "id": "c3s1.s3",
+   "text": "سر و دسته را به هم وصل کن.",
+   "event": "c3s1.s3",
+   "screen": "c3",
+   "file": "voice/c3s1_s3.mp3"
+  },
+  {
+   "id": "c3s1.s4",
+   "text": "پیچ را سفت کن.",
+   "event": "c3s1.s4",
+   "screen": "c3",
+   "file": "voice/c3s1_s4.mp3"
+  },
+  {
+   "id": "item.hammer.made",
+   "text": "آفرین! چکش آماده شد!",
+   "event": "item.hammer.made",
+   "screen": "c3",
+   "file": "voice/item_hammer_made.mp3"
+  },
+  {
+   "id": "c3s2.mission",
+   "text": "گوشه‌ی کارگاه خیلی تاریک است!",
+   "event": "c3s2.mission",
+   "screen": "c3",
+   "file": "voice/c3s2_mission.mp3"
+  },
+  {
+   "id": "c3s2.s1",
+   "text": "باتری‌ها را در چراغ‌قوه بگذار.",
+   "event": "c3s2.s1",
+   "screen": "c3",
+   "file": "voice/c3s2_s1.mp3"
+  },
+  {
+   "id": "c3s2.s2",
+   "text": "لامپ را بپیچان.",
+   "event": "c3s2.s2",
+   "screen": "c3",
+   "file": "voice/c3s2_s2.mp3"
+  },
+  {
+   "id": "c3s2.s3",
+   "text": "کلید را بزن!",
+   "event": "c3s2.s3",
+   "screen": "c3",
+   "file": "voice/c3s2_s3.mp3"
+  },
+  {
+   "id": "c3s2.s4",
+   "text": "با نور، جعبه‌های گم‌شده را در تاریکی پیدا کن.",
+   "event": "c3s2.s4",
+   "screen": "c3",
+   "file": "voice/c3s2_s4.mp3"
+  },
+  {
+   "id": "item.flashlight.made",
+   "text": "آفرین! چراغ‌قوه آماده شد!",
+   "event": "item.flashlight.made",
+   "screen": "c3",
+   "file": "voice/item_flashlight_made.mp3"
+  },
+  {
+   "id": "c3s3.mission",
+   "text": "جعبه‌ها خیلی سنگین‌اند. یک گاری لازم داریم!",
+   "event": "c3s3.mission",
+   "screen": "c3",
+   "file": "voice/c3s3_mission.mp3"
+  },
+  {
+   "id": "c3s3.s1",
+   "text": "تخته‌ها باید با میخ به هم وصل شوند. چه وسیله‌ای لازم است؟",
+   "event": "c3s3.s1",
+   "screen": "c3",
+   "file": "voice/c3s3_s1.mp3"
+  },
+  {
+   "id": "c3s3.s1.done",
+   "text": "تق تق! تخته‌ها وصل شدند.",
+   "event": "c3s3.s1.done",
+   "screen": "c3",
+   "file": "voice/c3s3_s1_done.mp3"
+  },
+  {
+   "id": "c3s3.s1.why",
+   "text": "با این نمی‌شود میخ زد.",
+   "event": "c3s3.s1.why",
+   "screen": "c3",
+   "file": "voice/c3s3_s1_why.mp3"
+  },
+  {
+   "id": "c3s3.s2",
+   "text": "میخ‌ها را با چکش بکوب!",
+   "event": "c3s3.s2",
+   "screen": "c3",
+   "file": "voice/c3s3_s2.mp3"
+  },
+  {
+   "id": "c3s3.s3",
+   "text": "دو چرخ به گاری وصل کن.",
+   "event": "c3s3.s3",
+   "screen": "c3",
+   "file": "voice/c3s3_s3.mp3"
+  },
+  {
+   "id": "item.cart.made",
+   "text": "آفرین! گاری آماده شد!",
+   "event": "item.cart.made",
+   "screen": "c3",
+   "file": "voice/item_cart_made.mp3"
+  },
+  {
+   "id": "c3s4.mission",
+   "text": "آقا سنجاب یک ماشین قدیمی دارد. بیا درستش کنیم!",
+   "event": "c3s4.mission",
+   "screen": "c3",
+   "file": "voice/c3s4_mission.mp3"
+  },
+  {
+   "id": "c3s4.s1",
+   "text": "چهار چرخ به ماشین وصل کن. بشمار!",
+   "event": "c3s4.s1",
+   "screen": "c3",
+   "file": "voice/c3s4_s1.mp3"
+  },
+  {
+   "id": "c3s4.s2",
+   "text": "ماشین را رنگ کن.",
+   "event": "c3s4.s2",
+   "screen": "c3",
+   "file": "voice/c3s4_s2.mp3"
+  },
+  {
+   "id": "c3s4.s3",
+   "text": "کلید را بچرخان تا ماشین روشن شود!",
+   "event": "c3s4.s3",
+   "screen": "c3",
+   "file": "voice/c3s4_s3.mp3"
+  },
+  {
+   "id": "item.toy_car.made",
+   "text": "آفرین! ماشین اسباب‌بازی آماده شد!",
+   "event": "item.toy_car.made",
+   "screen": "c3",
+   "file": "voice/item_toy_car_made.mp3"
+  },
+  {
+   "id": "c4.intro",
+   "text": "کوکو همه‌ی رنگ‌هایش را در طوفان گم کرده و تزئینات جشن بی‌رنگ مانده‌اند.",
+   "event": "c4.intro",
+   "screen": "chapter",
+   "file": "voice/c4_intro.mp3"
+  },
+  {
+   "id": "c4.film.1",
+   "text": "قرمز و زرد، نارنجی شد!",
+   "event": "c4.film.1",
+   "screen": "film",
+   "file": "voice/c4_film_1.mp3"
+  },
+  {
+   "id": "c4.film.2",
+   "text": "کاسه‌ی گلی آب را نگه داشت",
+   "event": "c4.film.2",
+   "screen": "film",
+   "file": "voice/c4_film_2.mp3"
+  },
+  {
+   "id": "c4.film.3",
+   "text": "فانوس با لامپ چراغ‌قوه روشن شد",
+   "event": "c4.film.3",
+   "screen": "film",
+   "file": "voice/c4_film_3.mp3"
+  },
+  {
+   "id": "c4.film.4",
+   "text": "و ماسک‌ها و پرچم‌ها رنگی شدند!",
+   "event": "c4.film.4",
+   "screen": "film",
+   "file": "voice/c4_film_4.mp3"
+  },
+  {
+   "id": "c4.next",
+   "text": "مادربزرگ جغد راه خانه‌اش را در شب گم کرده...",
+   "event": "c4.next",
+   "screen": "film",
+   "file": "voice/c4_next.mp3"
+  },
+  {
+   "id": "c4s1.mission",
+   "text": "اول یک قلم‌مو و رنگ می‌خواهیم!",
+   "event": "c4s1.mission",
+   "screen": "c4",
+   "file": "voice/c4s1_mission.mp3"
+  },
+  {
+   "id": "c4s1.s1",
+   "text": "موهای قلم‌مو را به دسته وصل کن.",
+   "event": "c4s1.s1",
+   "screen": "c4",
+   "file": "voice/c4s1_s1.mp3"
+  },
+  {
+   "id": "c4s1.s2",
+   "text": "قرمز و زرد را با هم مخلوط کن. چه رنگی شد؟",
+   "event": "c4s1.s2",
+   "screen": "c4",
+   "file": "voice/c4s1_s2.mp3"
+  },
+  {
+   "id": "c4s1.s3",
+   "text": "حالا آبی و زرد!",
+   "event": "c4s1.s3",
+   "screen": "c4",
+   "file": "voice/c4s1_s3.mp3"
+  },
+  {
+   "id": "item.paints.made",
+   "text": "آفرین! رنگ‌ها آماده شد!",
+   "event": "item.paints.made",
+   "screen": "c4",
+   "file": "voice/item_paints_made.mp3"
+  },
+  {
+   "id": "c4s2.mission",
+   "text": "کوکو یک کاسه برای آب رنگ‌ها می‌خواهد.",
+   "event": "c4s2.mission",
+   "screen": "c4",
+   "file": "voice/c4s2_mission.mp3"
+  },
+  {
+   "id": "c4s2.s1",
+   "text": "گل رس خشک است! با چه خیسش کنیم؟",
+   "event": "c4s2.s1",
+   "screen": "c4",
+   "file": "voice/c4s2_s1.mp3"
+  },
+  {
+   "id": "c4s2.s1.done",
+   "text": "شُر شُر! گل نرم شد.",
+   "event": "c4s2.s1.done",
+   "screen": "c4",
+   "file": "voice/c4s2_s1_done.mp3"
+  },
+  {
+   "id": "c4s2.s1.why",
+   "text": "با این نمی‌شود خیس کرد.",
+   "event": "c4s2.s1.why",
+   "screen": "c4",
+   "file": "voice/c4s2_s1_why.mp3"
+  },
+  {
+   "id": "c4s2.s2",
+   "text": "گل را ورز بده.",
+   "event": "c4s2.s2",
+   "screen": "c4",
+   "file": "voice/c4s2_s2.mp3"
+  },
+  {
+   "id": "c4s2.s3",
+   "text": "چرخ سفالگری را بچرخان تا کاسه شکل بگیرد.",
+   "event": "c4s2.s3",
+   "screen": "c4",
+   "file": "voice/c4s2_s3.mp3"
+  },
+  {
+   "id": "c4s2.s4",
+   "text": "کاسه را رنگ کن.",
+   "event": "c4s2.s4",
+   "screen": "c4",
+   "file": "voice/c4s2_s4.mp3"
+  },
+  {
+   "id": "item.clay_bowl.made",
+   "text": "آفرین! کاسه‌ی گلی آماده شد!",
+   "event": "item.clay_bowl.made",
+   "screen": "c4",
+   "file": "voice/item_clay_bowl_made.mp3"
+  },
+  {
+   "id": "c4s3.mission",
+   "text": "برای شب جشن فانوس رنگی لازم داریم.",
+   "event": "c4s3.mission",
+   "screen": "c4",
+   "file": "voice/c4s3_mission.mp3"
+  },
+  {
+   "id": "c4s3.s1",
+   "text": "کاغذ را روی خط‌ها ببُر.",
+   "event": "c4s3.s1",
+   "screen": "c4",
+   "file": "voice/c4s3_s1.mp3"
+  },
+  {
+   "id": "c4s3.s2",
+   "text": "فانوس را رنگ کن.",
+   "event": "c4s3.s2",
+   "screen": "c4",
+   "file": "voice/c4s3_s2.mp3"
+  },
+  {
+   "id": "c4s3.s3",
+   "text": "فانوس نور ندارد! چه چیزی لامپ دارد؟",
+   "event": "c4s3.s3",
+   "screen": "c4",
+   "file": "voice/c4s3_s3.mp3"
+  },
+  {
+   "id": "c4s3.s3.done",
+   "text": "روشن شد! چه قشنگ.",
+   "event": "c4s3.s3.done",
+   "screen": "c4",
+   "file": "voice/c4s3_s3_done.mp3"
+  },
+  {
+   "id": "c4s3.s3.why",
+   "text": "این نور ندارد.",
+   "event": "c4s3.s3.why",
+   "screen": "c4",
+   "file": "voice/c4s3_s3_why.mp3"
+  },
+  {
+   "id": "item.lantern.made",
+   "text": "آفرین! فانوس آماده شد!",
+   "event": "item.lantern.made",
+   "screen": "c4",
+   "file": "voice/item_lantern_made.mp3"
+  },
+  {
+   "id": "c4s4.mission",
+   "text": "برای جشن ماسک و پرچم درست کنیم!",
+   "event": "c4s4.mission",
+   "screen": "c4",
+   "file": "voice/c4s4_mission.mp3"
+  },
+  {
+   "id": "c4s4.s1",
+   "text": "ماسک را با قیچی ببُر.",
+   "event": "c4s4.s1",
+   "screen": "c4",
+   "file": "voice/c4s4_s1.mp3"
+  },
+  {
+   "id": "c4s4.s2",
+   "text": "ماسک را رنگ کن.",
+   "event": "c4s4.s2",
+   "screen": "c4",
+   "file": "voice/c4s4_s2.mp3"
+  },
+  {
+   "id": "c4s4.s3",
+   "text": "پنج پرچم به نخ آویزان کن.",
+   "event": "c4s4.s3",
+   "screen": "c4",
+   "file": "voice/c4s4_s3.mp3"
+  },
+  {
+   "id": "item.mask.made",
+   "text": "آفرین! ماسک آماده شد!",
+   "event": "item.mask.made",
+   "screen": "c4",
+   "file": "voice/item_mask_made.mp3"
+  },
+  {
+   "id": "c5.intro",
+   "text": "مادربزرگ جغد راه خانه‌اش را در جنگلِ شب گم کرده. نترس، با هم پیدایش می‌کنیم!",
+   "event": "c5.intro",
+   "screen": "chapter",
+   "file": "voice/c5_intro.mp3"
+  },
+  {
+   "id": "c5.film.1",
+   "text": "نقشه راه را نشان داد",
+   "event": "c5.film.1",
+   "screen": "film",
+   "file": "voice/c5_film_1.mp3"
+  },
+  {
+   "id": "c5.film.2",
+   "text": "چادر ما را از باران حفظ کرد",
+   "event": "c5.film.2",
+   "screen": "film",
+   "file": "voice/c5_film_2.mp3"
+  },
+  {
+   "id": "c5.film.3",
+   "text": "کرم‌های شب‌تاب مسیر را روشن کردند",
+   "event": "c5.film.3",
+   "screen": "film",
+   "file": "voice/c5_film_3.mp3"
+  },
+  {
+   "id": "c5.film.4",
+   "text": "و با تلسکوپ ماه را دیدیم!",
+   "event": "c5.film.4",
+   "screen": "film",
+   "file": "voice/c5_film_4.mp3"
+  },
+  {
+   "id": "c5.next",
+   "text": "سازهای گروه میمی شکسته‌اند...",
+   "event": "c5.next",
+   "screen": "film",
+   "file": "voice/c5_next.mp3"
+  },
+  {
+   "id": "c5s1.mission",
+   "text": "تکه‌های نقشه در باد پخش شده‌اند!",
+   "event": "c5s1.mission",
+   "screen": "c5",
+   "file": "voice/c5s1_mission.mp3"
+  },
+  {
+   "id": "c5s1.s1",
+   "text": "تکه‌های نقشه را کنار هم بچین.",
+   "event": "c5s1.s1",
+   "screen": "c5",
+   "file": "voice/c5s1_s1.mp3"
+  },
+  {
+   "id": "c5s1.s2",
+   "text": "با انگشت راه را از خانه‌ی جغد تا درخت بزرگ دنبال کن.",
+   "event": "c5s1.s2",
+   "screen": "c5",
+   "file": "voice/c5s1_s2.mp3"
+  },
+  {
+   "id": "item.map.made",
+   "text": "آفرین! نقشه‌ی جنگل آماده شد!",
+   "event": "item.map.made",
+   "screen": "c5",
+   "file": "voice/item_map_made.mp3"
+  },
+  {
+   "id": "c5s2.mission",
+   "text": "باران دارد می‌آید! یک چادر بزنیم.",
+   "event": "c5s2.mission",
+   "screen": "c5",
+   "file": "voice/c5s2_mission.mp3"
+  },
+  {
+   "id": "c5s2.s1",
+   "text": "پارچه و ستون‌های چادر را سر جایشان بگذار.",
+   "event": "c5s2.s1",
+   "screen": "c5",
+   "file": "voice/c5s2_s1.mp3"
+  },
+  {
+   "id": "c5s2.s2",
+   "text": "میخ‌های چادر را با چه بکوبیم؟",
+   "event": "c5s2.s2",
+   "screen": "c5",
+   "file": "voice/c5s2_s2.mp3"
+  },
+  {
+   "id": "c5s2.s2.done",
+   "text": "تق تق! چادر محکم شد.",
+   "event": "c5s2.s2.done",
+   "screen": "c5",
+   "file": "voice/c5s2_s2_done.mp3"
+  },
+  {
+   "id": "c5s2.s2.why",
+   "text": "با این نمی‌شود میخ زد.",
+   "event": "c5s2.s2.why",
+   "screen": "c5",
+   "file": "voice/c5s2_s2_why.mp3"
+  },
+  {
+   "id": "c5s2.s3",
+   "text": "همه‌ی میخ‌ها را بکوب.",
+   "event": "c5s2.s3",
+   "screen": "c5",
+   "file": "voice/c5s2_s3.mp3"
+  },
+  {
+   "id": "item.tent.made",
+   "text": "آفرین! چادر آماده شد!",
+   "event": "item.tent.made",
+   "screen": "c5",
+   "file": "voice/item_tent_made.mp3"
+  },
+  {
+   "id": "c5s3.mission",
+   "text": "مسیر خیلی تاریک است و مادربزرگ سردش است.",
+   "event": "c5s3.mission",
+   "screen": "c5",
+   "file": "voice/c5s3_mission.mp3"
+  },
+  {
+   "id": "c5s3.s1",
+   "text": "با چه چیزی تاریکی را روشن کنیم؟",
+   "event": "c5s3.s1",
+   "screen": "c5",
+   "file": "voice/c5s3_s1.mp3"
+  },
+  {
+   "id": "c5s3.s1.done",
+   "text": "روشن شد!",
+   "event": "c5s3.s1.done",
+   "screen": "c5",
+   "file": "voice/c5s3_s1_done.mp3"
+  },
+  {
+   "id": "c5s3.s1.why",
+   "text": "این نور ندارد.",
+   "event": "c5s3.s1.why",
+   "screen": "c5",
+   "file": "voice/c5s3_s1_why.mp3"
+  },
+  {
+   "id": "c5s3.s2",
+   "text": "کرم‌های شب‌تاب را در تاریکی پیدا کن و در شیشه بگذار.",
+   "event": "c5s3.s2",
+   "screen": "c5",
+   "file": "voice/c5s3_s2.mp3"
+  },
+  {
+   "id": "c5s3.s3",
+   "text": "مادربزرگ جغد سردش است. از کوله چیزی بده که گرمش کند.",
+   "event": "c5s3.s3",
+   "screen": "c5",
+   "file": "voice/c5s3_s3.mp3"
+  },
+  {
+   "id": "c5s3.s3.done",
+   "text": "آخیش! گرم شدم، ممنون عزیزم.",
+   "event": "c5s3.s3.done",
+   "screen": "c5",
+   "file": "voice/c5s3_s3_done.mp3"
+  },
+  {
+   "id": "c5s3.s3.why",
+   "text": "این گرم نمی‌کند.",
+   "event": "c5s3.s3.why",
+   "screen": "c5",
+   "file": "voice/c5s3_s3_why.mp3"
+  },
+  {
+   "id": "item.firefly_jar.made",
+   "text": "آفرین! شیشه‌ی کرم شب‌تاب آماده شد!",
+   "event": "item.firefly_jar.made",
+   "screen": "c5",
+   "file": "voice/item_firefly_jar_made.mp3"
+  },
+  {
+   "id": "c5s4.mission",
+   "text": "مادربزرگ جغد می‌خواهد ستاره‌ها را نشانت بدهد.",
+   "event": "c5s4.mission",
+   "screen": "c5",
+   "file": "voice/c5s4_mission.mp3"
+  },
+  {
+   "id": "c5s4.s1",
+   "text": "مقوا را لوله کن.",
+   "event": "c5s4.s1",
+   "screen": "c5",
+   "file": "voice/c5s4_s1.mp3"
+  },
+  {
+   "id": "c5s4.s2",
+   "text": "عدسی‌ها را از بزرگ به کوچک بگذار.",
+   "event": "c5s4.s2",
+   "screen": "c5",
+   "file": "voice/c5s4_s2.mp3"
+  },
+  {
+   "id": "c5s4.s3",
+   "text": "تلسکوپ را تنظیم کن تا تصویر واضح شود.",
+   "event": "c5s4.s3",
+   "screen": "c5",
+   "file": "voice/c5s4_s3.mp3"
+  },
+  {
+   "id": "item.telescope.made",
+   "text": "آفرین! تلسکوپ آماده شد!",
+   "event": "item.telescope.made",
+   "screen": "c5",
+   "file": "voice/item_telescope_made.mp3"
+  },
+  {
+   "id": "c6.intro",
+   "text": "میمی می‌خواهد در جشن بخواند، اما سازهای گروه در طوفان شکسته‌اند.",
+   "event": "c6.intro",
+   "screen": "chapter",
+   "file": "voice/c6_intro.mp3"
+  },
+  {
+   "id": "c6.film.1",
+   "text": "طبل: بوم بوم!",
+   "event": "c6.film.1",
+   "screen": "film",
+   "file": "voice/c6_film_1.mp3"
+  },
+  {
+   "id": "c6.film.2",
+   "text": "زایلوفون: زیر و بم",
+   "event": "c6.film.2",
+   "screen": "film",
+   "file": "voice/c6_film_2.mp3"
+  },
+  {
+   "id": "c6.film.3",
+   "text": "نی: فووو",
+   "event": "c6.film.3",
+   "screen": "film",
+   "file": "voice/c6_film_3.mp3"
+  },
+  {
+   "id": "c6.film.4",
+   "text": "و آهنگ جشن با همه‌ی سازها!",
+   "event": "c6.film.4",
+   "screen": "film",
+   "file": "voice/c6_film_4.mp3"
+  },
+  {
+   "id": "c6.next",
+   "text": "پل شهر شکسته و اتوبوس لاکی خراب است...",
+   "event": "c6.next",
+   "screen": "film",
+   "file": "voice/c6_next.mp3"
+  },
+  {
+   "id": "c6s1.mission",
+   "text": "اول یک طبل محکم بسازیم!",
+   "event": "c6s1.mission",
+   "screen": "c6",
+   "file": "voice/c6s1_mission.mp3"
+  },
+  {
+   "id": "c6s1.s1",
+   "text": "برای بدنه‌ی طبل یک کاسه لازم داریم.",
+   "event": "c6s1.s1",
+   "screen": "c6",
+   "file": "voice/c6s1_s1.mp3"
+  },
+  {
+   "id": "c6s1.s1.done",
+   "text": "این کاسه عالی است!",
+   "event": "c6s1.s1.done",
+   "screen": "c6",
+   "file": "voice/c6s1_s1_done.mp3"
+  },
+  {
+   "id": "c6s1.s1.why",
+   "text": "این کاسه نیست.",
+   "event": "c6s1.s1.why",
+   "screen": "c6",
+   "file": "voice/c6s1_s1_why.mp3"
+  },
+  {
+   "id": "c6s1.s2",
+   "text": "پوست طبل را روی کاسه بکش.",
+   "event": "c6s1.s2",
+   "screen": "c6",
+   "file": "voice/c6s1_s2.mp3"
+  },
+  {
+   "id": "c6s1.s3",
+   "text": "طناب‌ها را سفت کن. هر بار بزن!",
+   "event": "c6s1.s3",
+   "screen": "c6",
+   "file": "voice/c6s1_s3.mp3"
+  },
+  {
+   "id": "item.drum.made",
+   "text": "آفرین! طبل آماده شد!",
+   "event": "item.drum.made",
+   "screen": "c6",
+   "file": "voice/item_drum_made.mp3"
+  },
+  {
+   "id": "c6s2.mission",
+   "text": "زایلوفون تیغه‌های رنگی دارد.",
+   "event": "c6s2.mission",
+   "screen": "c6",
+   "file": "voice/c6s2_mission.mp3"
+  },
+  {
+   "id": "c6s2.s1",
+   "text": "تیغه‌ها را از بلند به کوتاه بچین.",
+   "event": "c6s2.s1",
+   "screen": "c6",
+   "file": "voice/c6s2_s1.mp3"
+  },
+  {
+   "id": "c6s2.s2",
+   "text": "تیغه‌ها با میخ به پایه وصل می‌شوند. چه وسیله‌ای لازم است؟",
+   "event": "c6s2.s2",
+   "screen": "c6",
+   "file": "voice/c6s2_s2.mp3"
+  },
+  {
+   "id": "c6s2.s2.done",
+   "text": "تق تق!",
+   "event": "c6s2.s2.done",
+   "screen": "c6",
+   "file": "voice/c6s2_s2_done.mp3"
+  },
+  {
+   "id": "c6s2.s2.why",
+   "text": "با این نمی‌شود میخ زد.",
+   "event": "c6s2.s2.why",
+   "screen": "c6",
+   "file": "voice/c6s2_s2_why.mp3"
+  },
+  {
+   "id": "c6s2.s3",
+   "text": "آهنگ میمی را تکرار کن!",
+   "event": "c6s2.s3",
+   "screen": "c6",
+   "file": "voice/c6s2_s3.mp3"
+  },
+  {
+   "id": "item.xylophone.made",
+   "text": "آفرین! زایلوفون آماده شد!",
+   "event": "item.xylophone.made",
+   "screen": "c6",
+   "file": "voice/item_xylophone_made.mp3"
+  },
+  {
+   "id": "c6s3.mission",
+   "text": "نی صدای پرنده‌ها را دارد.",
+   "event": "c6s3.mission",
+   "screen": "c6",
+   "file": "voice/c6s3_mission.mp3"
+  },
+  {
+   "id": "c6s3.s1",
+   "text": "نی را ببُر.",
+   "event": "c6s3.s1",
+   "screen": "c6",
+   "file": "voice/c6s3_s1.mp3"
+  },
+  {
+   "id": "c6s3.s2",
+   "text": "جای سوراخ‌ها را لمس کن.",
+   "event": "c6s3.s2",
+   "screen": "c6",
+   "file": "voice/c6s3_s2.mp3"
+  },
+  {
+   "id": "c6s3.s3",
+   "text": "فوت کن... حالا بزن!",
+   "event": "c6s3.s3",
+   "screen": "c6",
+   "file": "voice/c6s3_s3.mp3"
+  },
+  {
+   "id": "item.flute.made",
+   "text": "آفرین! نی آماده شد!",
+   "event": "item.flute.made",
+   "screen": "c6",
+   "file": "voice/item_flute_made.mp3"
+  },
+  {
+   "id": "c6s4.mission",
+   "text": "با سازهایی که ساختی آهنگ جشن را بسازیم!",
+   "event": "c6s4.mission",
+   "screen": "c6",
+   "file": "voice/c6s4_mission.mp3"
+  },
+  {
+   "id": "c6s4.s1",
+   "text": "آهنگ را تکرار کن. اول گوش کن!",
+   "event": "c6s4.s1",
+   "screen": "c6",
+   "file": "voice/c6s4_s1.mp3"
+  },
+  {
+   "id": "item.song.made",
+   "text": "آفرین! آهنگ جشن آماده شد!",
+   "event": "item.song.made",
+   "screen": "c6",
+   "file": "voice/item_song_made.mp3"
+  },
+  {
+   "id": "c7.intro",
+   "text": "پل شهر شکسته و اتوبوس لاکی خراب شده. هیچ‌کس نمی‌تواند به جشن برسد!",
+   "event": "c7.intro",
+   "screen": "chapter",
+   "file": "voice/c7_intro.mp3"
+  },
+  {
+   "id": "c7.film.1",
+   "text": "پل دوباره ساخته شد",
+   "event": "c7.film.1",
+   "screen": "film",
+   "file": "voice/c7_film_1.mp3"
+  },
+  {
+   "id": "c7.film.2",
+   "text": "چراغ راهنمایی: قرمز بایست، سبز برو",
+   "event": "c7.film.2",
+   "screen": "film",
+   "file": "voice/c7_film_2.mp3"
+  },
+  {
+   "id": "c7.film.3",
+   "text": "اتوبوس روشن شد: بوق بوق!",
+   "event": "c7.film.3",
+   "screen": "film",
+   "file": "voice/c7_film_3.mp3"
+  },
+  {
+   "id": "c7.film.4",
+   "text": "و همه کارت دعوت گرفتند!",
+   "event": "c7.film.4",
+   "screen": "film",
+   "file": "voice/c7_film_4.mp3"
+  },
+  {
+   "id": "c7.next",
+   "text": "همه آماده‌اند... وقت جشن بزرگ است!",
+   "event": "c7.next",
+   "screen": "film",
+   "file": "voice/c7_next.mp3"
+  },
+  {
+   "id": "c7s1.mission",
+   "text": "پل شکسته! ماشین‌ها نمی‌توانند رد شوند.",
+   "event": "c7s1.mission",
+   "screen": "c7",
+   "file": "voice/c7s1_mission.mp3"
+  },
+  {
+   "id": "c7s1.s1",
+   "text": "تخته‌ها سنگین‌اند. با چه بیاوریمشان؟",
+   "event": "c7s1.s1",
+   "screen": "c7",
+   "file": "voice/c7s1_s1.mp3"
+  },
+  {
+   "id": "c7s1.s1.done",
+   "text": "گاری تخته‌ها را آورد!",
+   "event": "c7s1.s1.done",
+   "screen": "c7",
+   "file": "voice/c7s1_s1_done.mp3"
+  },
+  {
+   "id": "c7s1.s1.why",
+   "text": "این بار نمی‌برد.",
+   "event": "c7s1.s1.why",
+   "screen": "c7",
+   "file": "voice/c7s1_s1_why.mp3"
+  },
+  {
+   "id": "c7s1.s2",
+   "text": "تخته‌ها را در جاهای خالی پل بگذار.",
+   "event": "c7s1.s2",
+   "screen": "c7",
+   "file": "voice/c7s1_s2.mp3"
+  },
+  {
+   "id": "c7s1.s3",
+   "text": "تخته‌ها را با چه محکم کنیم؟",
+   "event": "c7s1.s3",
+   "screen": "c7",
+   "file": "voice/c7s1_s3.mp3"
+  },
+  {
+   "id": "c7s1.s3.done",
+   "text": "تق تق! پل محکم شد.",
+   "event": "c7s1.s3.done",
+   "screen": "c7",
+   "file": "voice/c7s1_s3_done.mp3"
+  },
+  {
+   "id": "c7s1.s3.why",
+   "text": "با این نمی‌شود میخ زد.",
+   "event": "c7s1.s3.why",
+   "screen": "c7",
+   "file": "voice/c7s1_s3_why.mp3"
+  },
+  {
+   "id": "item.bridge.made",
+   "text": "آفرین! پل آماده شد!",
+   "event": "item.bridge.made",
+   "screen": "c7",
+   "file": "voice/item_bridge_made.mp3"
+  },
+  {
+   "id": "c7s2.mission",
+   "text": "چراغ راهنمایی خاموش است و ماشین‌ها گیج شده‌اند.",
+   "event": "c7s2.mission",
+   "screen": "c7",
+   "file": "voice/c7s2_mission.mp3"
+  },
+  {
+   "id": "c7s2.s1",
+   "text": "چراغ‌ها را به ترتیب بچین: قرمز، زرد، سبز.",
+   "event": "c7s2.s1",
+   "screen": "c7",
+   "file": "voice/c7s2_s1.mp3"
+  },
+  {
+   "id": "c7s2.s2",
+   "text": "رنگ چراغ‌ها رفته! چه چیزی رنگ دارد؟",
+   "event": "c7s2.s2",
+   "screen": "c7",
+   "file": "voice/c7s2_s2.mp3"
+  },
+  {
+   "id": "c7s2.s2.done",
+   "text": "رنگی شد!",
+   "event": "c7s2.s2.done",
+   "screen": "c7",
+   "file": "voice/c7s2_s2_done.mp3"
+  },
+  {
+   "id": "c7s2.s2.why",
+   "text": "این رنگ ندارد.",
+   "event": "c7s2.s2.why",
+   "screen": "c7",
+   "file": "voice/c7s2_s2_why.mp3"
+  },
+  {
+   "id": "c7s2.s3",
+   "text": "چراغ را عوض کن: قرمز، زرد، سبز!",
+   "event": "c7s2.s3",
+   "screen": "c7",
+   "file": "voice/c7s2_s3.mp3"
+  },
+  {
+   "id": "item.traffic_light.made",
+   "text": "آفرین! چراغ راهنمایی آماده شد!",
+   "event": "item.traffic_light.made",
+   "screen": "c7",
+   "file": "voice/item_traffic_light_made.mp3"
+  },
+  {
+   "id": "c7s3.mission",
+   "text": "اتوبوس لاکی پنچر و کثیف و بی‌بنزین است!",
+   "event": "c7s3.mission",
+   "screen": "c7",
+   "file": "voice/c7s3_mission.mp3"
+  },
+  {
+   "id": "c7s3.s1",
+   "text": "پیچ‌های لاستیک نو را ببند.",
+   "event": "c7s3.s1",
+   "screen": "c7",
+   "file": "voice/c7s3_s1.mp3"
+  },
+  {
+   "id": "c7s3.s2",
+   "text": "اتوبوس را بشور. گل‌ها را پاک کن!",
+   "event": "c7s3.s2",
+   "screen": "c7",
+   "file": "voice/c7s3_s2.mp3"
+  },
+  {
+   "id": "c7s3.s3",
+   "text": "باک را پر کن.",
+   "event": "c7s3.s3",
+   "screen": "c7",
+   "file": "voice/c7s3_s3.mp3"
+  },
+  {
+   "id": "c7s3.s4",
+   "text": "حالا روشنش کن!",
+   "event": "c7s3.s4",
+   "screen": "c7",
+   "file": "voice/c7s3_s4.mp3"
+  },
+  {
+   "id": "item.bus.made",
+   "text": "آفرین! اتوبوس آماده شد!",
+   "event": "item.bus.made",
+   "screen": "c7",
+   "file": "voice/item_bus_made.mp3"
+  },
+  {
+   "id": "c7s4.mission",
+   "text": "باید همه را به جشن دعوت کنیم!",
+   "event": "c7s4.mission",
+   "screen": "c7",
+   "file": "voice/c7s4_mission.mp3"
+  },
+  {
+   "id": "c7s4.s1",
+   "text": "عکس دوستان را روی کارت درست کن.",
+   "event": "c7s4.s1",
+   "screen": "c7",
+   "file": "voice/c7s4_s1.mp3"
+  },
+  {
+   "id": "c7s4.s2",
+   "text": "نامه‌ها را در صندوق بینداز.",
+   "event": "c7s4.s2",
+   "screen": "c7",
+   "file": "voice/c7s4_s2.mp3"
+  },
+  {
+   "id": "c7s4.s3",
+   "text": "خانه‌ها دورند. با چه نامه‌ها را برسانیم؟",
+   "event": "c7s4.s3",
+   "screen": "c7",
+   "file": "voice/c7s4_s3.mp3"
+  },
+  {
+   "id": "c7s4.s3.done",
+   "text": "برووووم! نامه‌ها رسیدند.",
+   "event": "c7s4.s3.done",
+   "screen": "c7",
+   "file": "voice/c7s4_s3_done.mp3"
+  },
+  {
+   "id": "c7s4.s3.why",
+   "text": "این حرکت نمی‌کند.",
+   "event": "c7s4.s3.why",
+   "screen": "c7",
+   "file": "voice/c7s4_s3_why.mp3"
+  },
+  {
+   "id": "c7s4.s4",
+   "text": "ماشین را در مسیر بران.",
+   "event": "c7s4.s4",
+   "screen": "c7",
+   "file": "voice/c7s4_s4.mp3"
+  },
+  {
+   "id": "item.invitation.made",
+   "text": "آفرین! کارت دعوت آماده شد!",
+   "event": "item.invitation.made",
+   "screen": "c7",
+   "file": "voice/item_invitation_made.mp3"
+  },
+  {
+   "id": "c8.intro",
+   "text": "همه‌چیز آماده است! با چیزهایی که ساختی جشن بزرگ جنگل را برپا کنیم.",
+   "event": "c8.intro",
+   "screen": "chapter",
+   "file": "voice/c8_intro.mp3"
+  },
+  {
+   "id": "c8.film.1",
+   "text": "میز جشن پر از غذاهای تو",
+   "event": "c8.film.1",
+   "screen": "film",
+   "file": "voice/c8_film_1.mp3"
+  },
+  {
+   "id": "c8.film.2",
+   "text": "میدان با فانوس و پرچم‌های تو",
+   "event": "c8.film.2",
+   "screen": "film",
+   "file": "voice/c8_film_2.mp3"
+  },
+  {
+   "id": "c8.film.3",
+   "text": "کنسرت با سازهای تو",
+   "event": "c8.film.3",
+   "screen": "film",
+   "file": "voice/c8_film_3.mp3"
+  },
+  {
+   "id": "c8.film.4",
+   "text": "و تو قهرمان جنگل شدی!",
+   "event": "c8.film.4",
+   "screen": "film",
+   "file": "voice/c8_film_4.mp3"
+  },
+  {
+   "id": "c8s1.mission",
+   "text": "مهمان‌ها گرسنه‌اند! هر کدام غذای دلخواهش را می‌خواهد.",
+   "event": "c8s1.mission",
+   "screen": "c8",
+   "file": "voice/c8s1_mission.mp3"
+  },
+  {
+   "id": "c8s1.s1",
+   "text": "به هر مهمان غذای دلخواهش را بده.",
+   "event": "c8s1.s1",
+   "screen": "c8",
+   "file": "voice/c8s1_s1.mp3"
+  },
+  {
+   "id": "item.feast.made",
+   "text": "آفرین! میز جشن آماده شد!",
+   "event": "item.feast.made",
+   "screen": "c8",
+   "file": "voice/item_feast_made.mp3"
+  },
+  {
+   "id": "c8s2.mission",
+   "text": "میدان جشن را قشنگ کنیم!",
+   "event": "c8s2.mission",
+   "screen": "c8",
+   "file": "voice/c8s2_mission.mp3"
+  },
+  {
+   "id": "c8s2.s1",
+   "text": "هر تزئین را به دوستی بده که می‌خواهد.",
+   "event": "c8s2.s1",
+   "screen": "c8",
+   "file": "voice/c8s2_s1.mp3"
+  },
+  {
+   "id": "c8s2.s2",
+   "text": "پرچم‌ها را آویزان کن.",
+   "event": "c8s2.s2",
+   "screen": "c8",
+   "file": "voice/c8s2_s2.mp3"
+  },
+  {
+   "id": "item.decorations.made",
+   "text": "آفرین! تزئینات جشن آماده شد!",
+   "event": "item.decorations.made",
+   "screen": "c8",
+   "file": "voice/item_decorations_made.mp3"
+  },
+  {
+   "id": "c8s3.mission",
+   "text": "وقت کنسرت میمی است!",
+   "event": "c8s3.mission",
+   "screen": "c8",
+   "file": "voice/c8s3_mission.mp3"
+  },
+  {
+   "id": "c8s3.s1",
+   "text": "سازها را به نوازنده‌ها بده.",
+   "event": "c8s3.s1",
+   "screen": "c8",
+   "file": "voice/c8s3_s1.mp3"
+  },
+  {
+   "id": "c8s3.s2",
+   "text": "با گروه بنواز!",
+   "event": "c8s3.s2",
+   "screen": "c8",
+   "file": "voice/c8s3_s2.mp3"
+  },
+  {
+   "id": "item.concert.made",
+   "text": "آفرین! کنسرت جشن آماده شد!",
+   "event": "item.concert.made",
+   "screen": "c8",
+   "file": "voice/item_concert_made.mp3"
+  },
+  {
+   "id": "c8s4.mission",
+   "text": "آخرین کار: مهمان‌ها را بیاوریم و آتش‌بازی کنیم!",
+   "event": "c8s4.mission",
+   "screen": "c8",
+   "file": "voice/c8s4_mission.mp3"
+  },
+  {
+   "id": "c8s4.s1",
+   "text": "مهمان‌ها دورند. با چه بیاوریمشان؟",
+   "event": "c8s4.s1",
+   "screen": "c8",
+   "file": "voice/c8s4_s1.mp3"
+  },
+  {
+   "id": "c8s4.s1.done",
+   "text": "بوق بوق! همه رسیدند.",
+   "event": "c8s4.s1.done",
+   "screen": "c8",
+   "file": "voice/c8s4_s1_done.mp3"
+  },
+  {
+   "id": "c8s4.s1.why",
+   "text": "این همه را نمی‌آورد.",
+   "event": "c8s4.s1.why",
+   "screen": "c8",
+   "file": "voice/c8s4_s1_why.mp3"
+  },
+  {
+   "id": "c8s4.s2",
+   "text": "برای دیدن نمایش ستاره‌ها چه لازم است؟",
+   "event": "c8s4.s2",
+   "screen": "c8",
+   "file": "voice/c8s4_s2.mp3"
+  },
+  {
+   "id": "c8s4.s2.done",
+   "text": "وای! ستاره‌ها!",
+   "event": "c8s4.s2.done",
+   "screen": "c8",
+   "file": "voice/c8s4_s2_done.mp3"
+  },
+  {
+   "id": "c8s4.s2.why",
+   "text": "با این نمی‌شود دور را دید.",
+   "event": "c8s4.s2.why",
+   "screen": "c8",
+   "file": "voice/c8s4_s2_why.mp3"
+  },
+  {
+   "id": "c8s4.s3",
+   "text": "آتش‌بازی کن! روی آسمان بزن.",
+   "event": "c8s4.s3",
+   "screen": "c8",
+   "file": "voice/c8s4_s3.mp3"
+  },
+  {
+   "id": "item.medal.made",
+   "text": "آفرین! مدال قهرمان جنگل آماده شد!",
+   "event": "item.medal.made",
+   "screen": "c8",
+   "file": "voice/item_medal_made.mp3"
+  },
+  {
+   "id": "k_bubbles.mission",
+   "text": "بیا یک حباب‌ساز بسازیم!",
+   "event": "k_bubbles.mission",
+   "screen": "workshop",
+   "file": "voice/k_bubbles_mission.mp3"
+  },
+  {
+   "id": "k_bubbles.s1",
+   "text": "صابون را در کاسه بریز.",
+   "event": "k_bubbles.s1",
+   "screen": "workshop",
+   "file": "voice/k_bubbles_s1.mp3"
+  },
+  {
+   "id": "k_bubbles.s2",
+   "text": "هم بزن.",
+   "event": "k_bubbles.s2",
+   "screen": "workshop",
+   "file": "voice/k_bubbles_s2.mp3"
+  },
+  {
+   "id": "k_bubbles.s3",
+   "text": "حباب‌ها را بترکان!",
+   "event": "k_bubbles.s3",
+   "screen": "workshop",
+   "file": "voice/k_bubbles_s3.mp3"
+  },
+  {
+   "id": "item.bubbles.made",
+   "text": "آفرین! حباب‌ساز آماده شد!",
+   "event": "item.bubbles.made",
+   "screen": "workshop",
+   "file": "voice/item_bubbles_made.mp3"
+  },
+  {
+   "id": "k_necklace.mission",
+   "text": "یک گردنبند رنگی بسازیم.",
+   "event": "k_necklace.mission",
+   "screen": "workshop",
+   "file": "voice/k_necklace_mission.mp3"
+  },
+  {
+   "id": "k_necklace.s1",
+   "text": "مهره‌ها را به نخ بکش.",
+   "event": "k_necklace.s1",
+   "screen": "workshop",
+   "file": "voice/k_necklace_s1.mp3"
+  },
+  {
+   "id": "k_necklace.s2",
+   "text": "مهره‌ها را رنگ کن.",
+   "event": "k_necklace.s2",
+   "screen": "workshop",
+   "file": "voice/k_necklace_s2.mp3"
+  },
+  {
+   "id": "item.necklace.made",
+   "text": "آفرین! گردنبند مهره‌ای آماده شد!",
+   "event": "item.necklace.made",
+   "screen": "workshop",
+   "file": "voice/item_necklace_made.mp3"
+  },
+  {
+   "id": "k_kite.mission",
+   "text": "روز بادی است! بادبادک بسازیم.",
+   "event": "k_kite.mission",
+   "screen": "workshop",
+   "file": "voice/k_kite_mission.mp3"
+  },
+  {
+   "id": "k_kite.s1",
+   "text": "کاغذ بادبادک را ببُر.",
+   "event": "k_kite.s1",
+   "screen": "workshop",
+   "file": "voice/k_kite_s1.mp3"
+  },
+  {
+   "id": "k_kite.s2",
+   "text": "بادبادک را رنگ کن.",
+   "event": "k_kite.s2",
+   "screen": "workshop",
+   "file": "voice/k_kite_s2.mp3"
+  },
+  {
+   "id": "k_kite.s3",
+   "text": "بادبادک را در باد بالا ببر.",
+   "event": "k_kite.s3",
+   "screen": "workshop",
+   "file": "voice/k_kite_s3.mp3"
+  },
+  {
+   "id": "item.kite.made",
+   "text": "آفرین! بادبادک آماده شد!",
+   "event": "item.kite.made",
+   "screen": "workshop",
+   "file": "voice/item_kite_made.mp3"
+  },
+  {
+   "id": "k_robot.mission",
+   "text": "یک ربات دوست بسازیم!",
+   "event": "k_robot.mission",
+   "screen": "workshop",
+   "file": "voice/k_robot_mission.mp3"
+  },
+  {
+   "id": "k_robot.s1",
+   "text": "سر و بدنه‌ی ربات را وصل کن.",
+   "event": "k_robot.s1",
+   "screen": "workshop",
+   "file": "voice/k_robot_s1.mp3"
+  },
+  {
+   "id": "k_robot.s2",
+   "text": "باتری‌ها را بگذار.",
+   "event": "k_robot.s2",
+   "screen": "workshop",
+   "file": "voice/k_robot_s2.mp3"
+  },
+  {
+   "id": "k_robot.s3",
+   "text": "ربات را رنگ کن.",
+   "event": "k_robot.s3",
+   "screen": "workshop",
+   "file": "voice/k_robot_s3.mp3"
+  },
+  {
+   "id": "k_robot.s4",
+   "text": "ربات را تا گل راه ببر.",
+   "event": "k_robot.s4",
+   "screen": "workshop",
+   "file": "voice/k_robot_s4.mp3"
+  },
+  {
+   "id": "item.robot.made",
+   "text": "آفرین! ربات آماده شد!",
+   "event": "item.robot.made",
+   "screen": "workshop",
+   "file": "voice/item_robot_made.mp3"
+  },
+  {
+   "id": "k_dollhouse.mission",
+   "text": "یک خانه‌ی کوچک برای عروسک‌ها!",
+   "event": "k_dollhouse.mission",
+   "screen": "workshop",
+   "file": "voice/k_dollhouse_mission.mp3"
+  },
+  {
+   "id": "k_dollhouse.s1",
+   "text": "اتاق‌ها را روی هم بچین.",
+   "event": "k_dollhouse.s1",
+   "screen": "workshop",
+   "file": "voice/k_dollhouse_s1.mp3"
+  },
+  {
+   "id": "k_dollhouse.s2",
+   "text": "دیوارها را رنگ کن.",
+   "event": "k_dollhouse.s2",
+   "screen": "workshop",
+   "file": "voice/k_dollhouse_s2.mp3"
+  },
+  {
+   "id": "k_dollhouse.s3",
+   "text": "چراغ اتاق‌ها را روشن کن.",
+   "event": "k_dollhouse.s3",
+   "screen": "workshop",
+   "file": "voice/k_dollhouse_s3.mp3"
+  },
+  {
+   "id": "item.dollhouse.made",
+   "text": "آفرین! خانه‌ی عروسکی آماده شد!",
+   "event": "item.dollhouse.made",
+   "screen": "workshop",
+   "file": "voice/item_dollhouse_made.mp3"
+  },
+  {
+   "id": "k_rocket.mission",
+   "text": "به فضا برویم!",
+   "event": "k_rocket.mission",
+   "screen": "workshop",
+   "file": "voice/k_rocket_mission.mp3"
+  },
+  {
+   "id": "k_rocket.s1",
+   "text": "بدنه‌ی موشک را بگذار.",
+   "event": "k_rocket.s1",
+   "screen": "workshop",
+   "file": "voice/k_rocket_s1.mp3"
+  },
+  {
+   "id": "k_rocket.s2",
+   "text": "موشک را رنگ کن.",
+   "event": "k_rocket.s2",
+   "screen": "workshop",
+   "file": "voice/k_rocket_s2.mp3"
+  },
+  {
+   "id": "k_rocket.s3",
+   "text": "شمارش معکوس: ستاره‌ها را از بزرگ به کوچک بزن!",
+   "event": "k_rocket.s3",
+   "screen": "workshop",
+   "file": "voice/k_rocket_s3.mp3"
+  },
+  {
+   "id": "k_rocket.s4",
+   "text": "در فضا ستاره جمع کن.",
+   "event": "k_rocket.s4",
+   "screen": "workshop",
+   "file": "voice/k_rocket_s4.mp3"
+  },
+  {
+   "id": "item.rocket.made",
+   "text": "آفرین! موشک آماده شد!",
+   "event": "item.rocket.made",
+   "screen": "workshop",
+   "file": "voice/item_rocket_made.mp3"
+  },
+  {
+   "id": "k_submarine.mission",
+   "text": "زیر دریا چه خبر است؟",
+   "event": "k_submarine.mission",
+   "screen": "workshop",
+   "file": "voice/k_submarine_mission.mp3"
+  },
+  {
+   "id": "k_submarine.s1",
+   "text": "پنجره‌ی زیردریایی را بگذار.",
+   "event": "k_submarine.s1",
+   "screen": "workshop",
+   "file": "voice/k_submarine_s1.mp3"
+  },
+  {
+   "id": "k_submarine.s2",
+   "text": "زیردریایی را رنگ کن.",
+   "event": "k_submarine.s2",
+   "screen": "workshop",
+   "file": "voice/k_submarine_s2.mp3"
+  },
+  {
+   "id": "k_submarine.s3",
+   "text": "با چراغ زیردریایی ماهی‌ها را پیدا کن.",
+   "event": "k_submarine.s3",
+   "screen": "workshop",
+   "file": "voice/k_submarine_s3.mp3"
+  },
+  {
+   "id": "item.submarine.made",
+   "text": "آفرین! زیردریایی آماده شد!",
+   "event": "item.submarine.made",
+   "screen": "workshop",
+   "file": "voice/item_submarine_made.mp3"
+  },
+  {
+   "id": "k_train.mission",
+   "text": "چووو چووو! یک قطار بسازیم.",
+   "event": "k_train.mission",
+   "screen": "workshop",
+   "file": "voice/k_train_mission.mp3"
+  },
+  {
+   "id": "k_train.s1",
+   "text": "ریل‌ها را بچین.",
+   "event": "k_train.s1",
+   "screen": "workshop",
+   "file": "voice/k_train_s1.mp3"
+  },
+  {
+   "id": "k_train.s2",
+   "text": "چرخ‌های قطار را بگذار.",
+   "event": "k_train.s2",
+   "screen": "workshop",
+   "file": "voice/k_train_s2.mp3"
+  },
+  {
+   "id": "k_train.s3",
+   "text": "قطار را رنگ کن.",
+   "event": "k_train.s3",
+   "screen": "workshop",
+   "file": "voice/k_train_s3.mp3"
+  },
+  {
+   "id": "k_train.s4",
+   "text": "قطار را روی ریل ببر.",
+   "event": "k_train.s4",
+   "screen": "workshop",
+   "file": "voice/k_train_s4.mp3"
+  },
+  {
+   "id": "item.train.made",
+   "text": "آفرین! قطار آماده شد!",
+   "event": "item.train.made",
+   "screen": "workshop",
+   "file": "voice/item_train_made.mp3"
+  },
+  {
+   "id": "tool.magnifier.safety",
+   "text": "ذره‌بین را هیچ‌وقت رو به خورشید نگیر.",
+   "event": "tool.magnifier.safety",
+   "screen": "shop",
+   "file": "voice/tool_magnifier_safety.mp3"
+  },
+  {
+   "id": "r_bug_book.mission",
+   "text": "با ذره‌بین حشره‌ها را پیدا کنیم!",
+   "event": "r_bug_book.mission",
+   "screen": "shop",
+   "file": "voice/r_bug_book_mission.mp3"
+  },
+  {
+   "id": "r_bug_book.s1",
+   "text": "حشره‌های کوچک را با ذره‌بین پیدا کن.",
+   "event": "r_bug_book.s1",
+   "screen": "shop",
+   "file": "voice/r_bug_book_s1.mp3"
+  },
+  {
+   "id": "item.bug_book.made",
+   "text": "آفرین! دفترچه‌ی حشره‌ها آماده شد!",
+   "event": "item.bug_book.made",
+   "screen": "shop",
+   "file": "voice/item_bug_book_made.mp3"
+  },
+  {
+   "id": "tool.saw.safety",
+   "text": "با اره همیشه با یک بزرگ‌تر کار می‌کنیم.",
+   "event": "tool.saw.safety",
+   "screen": "shop",
+   "file": "voice/tool_saw_safety.mp3"
+  },
+  {
+   "id": "r_bird_house.mission",
+   "text": "برای پرنده‌ها خانه بسازیم.",
+   "event": "r_bird_house.mission",
+   "screen": "shop",
+   "file": "voice/r_bird_house_mission.mp3"
+  },
+  {
+   "id": "r_bird_house.s1",
+   "text": "تخته را با اره ببُر.",
+   "event": "r_bird_house.s1",
+   "screen": "shop",
+   "file": "voice/r_bird_house_s1.mp3"
+  },
+  {
+   "id": "r_bird_house.s2",
+   "text": "دیوارها را بچین.",
+   "event": "r_bird_house.s2",
+   "screen": "shop",
+   "file": "voice/r_bird_house_s2.mp3"
+  },
+  {
+   "id": "r_bird_house.s3",
+   "text": "خانه را رنگ کن.",
+   "event": "r_bird_house.s3",
+   "screen": "shop",
+   "file": "voice/r_bird_house_s3.mp3"
+  },
+  {
+   "id": "item.bird_house.made",
+   "text": "آفرین! خانه‌ی پرنده آماده شد!",
+   "event": "item.bird_house.made",
+   "screen": "shop",
+   "file": "voice/item_bird_house_made.mp3"
+  },
+  {
+   "id": "tool.glue_gun.safety",
+   "text": "سر چسب‌تفنگی داغ است؛ به آن دست نمی‌زنیم.",
+   "event": "tool.glue_gun.safety",
+   "screen": "shop",
+   "file": "voice/tool_glue_gun_safety.mp3"
+  },
+  {
+   "id": "r_photo_frame.mission",
+   "text": "یک قاب برای عکس یادگاری!",
+   "event": "r_photo_frame.mission",
+   "screen": "shop",
+   "file": "voice/r_photo_frame_mission.mp3"
+  },
+  {
+   "id": "r_photo_frame.s1",
+   "text": "ستاره‌ها را دور قاب بچسبان.",
+   "event": "r_photo_frame.s1",
+   "screen": "shop",
+   "file": "voice/r_photo_frame_s1.mp3"
+  },
+  {
+   "id": "r_photo_frame.s2",
+   "text": "قاب را رنگ کن.",
+   "event": "r_photo_frame.s2",
+   "screen": "shop",
+   "file": "voice/r_photo_frame_s2.mp3"
+  },
+  {
+   "id": "item.photo_frame.made",
+   "text": "آفرین! قاب عکس آماده شد!",
+   "event": "item.photo_frame.made",
+   "screen": "shop",
+   "file": "voice/item_photo_frame_made.mp3"
+  },
+  {
+   "id": "tool.big_oven.safety",
+   "text": "در فر داغ است؛ با دستکش بازش می‌کنیم.",
+   "event": "tool.big_oven.safety",
+   "screen": "shop",
+   "file": "voice/tool_big_oven_safety.mp3"
+  },
+  {
+   "id": "r_pizza.mission",
+   "text": "بیا پیتزا بپزیم!",
+   "event": "r_pizza.mission",
+   "screen": "shop",
+   "file": "voice/r_pizza_mission.mp3"
+  },
+  {
+   "id": "r_pizza.s1",
+   "text": "گوجه‌ها را روی خمیر بگذار.",
+   "event": "r_pizza.s1",
+   "screen": "shop",
+   "file": "voice/r_pizza_s1.mp3"
+  },
+  {
+   "id": "r_pizza.s2",
+   "text": "پنیر بریز.",
+   "event": "r_pizza.s2",
+   "screen": "shop",
+   "file": "voice/r_pizza_s2.mp3"
+  },
+  {
+   "id": "r_pizza.s3",
+   "text": "وقتی پنیر آب شد بزن!",
+   "event": "r_pizza.s3",
+   "screen": "shop",
+   "file": "voice/r_pizza_s3.mp3"
+  },
+  {
+   "id": "item.pizza.made",
+   "text": "آفرین! پیتزا آماده شد!",
+   "event": "item.pizza.made",
+   "screen": "shop",
+   "file": "voice/item_pizza_made.mp3"
+  },
+  {
+   "id": "r_cookie.mission",
+   "text": "کلوچه‌ی تازه!",
+   "event": "r_cookie.mission",
+   "screen": "shop",
+   "file": "voice/r_cookie_mission.mp3"
+  },
+  {
+   "id": "r_cookie.s1",
+   "text": "خمیر کلوچه را هم بزن.",
+   "event": "r_cookie.s1",
+   "screen": "shop",
+   "file": "voice/r_cookie_s1.mp3"
+  },
+  {
+   "id": "r_cookie.s2",
+   "text": "وقتی طلایی شد بزن!",
+   "event": "r_cookie.s2",
+   "screen": "shop",
+   "file": "voice/r_cookie_s2.mp3"
+  },
+  {
+   "id": "item.cookie.made",
+   "text": "آفرین! کلوچه آماده شد!",
+   "event": "item.cookie.made",
+   "screen": "shop",
+   "file": "voice/item_cookie_made.mp3"
+  },
+  {
+   "id": "tool.sewing_machine.safety",
+   "text": "انگشت‌ها را از سوزن دور نگه می‌داریم.",
+   "event": "tool.sewing_machine.safety",
+   "screen": "shop",
+   "file": "voice/tool_sewing_machine_safety.mp3"
+  },
+  {
+   "id": "r_rag_doll.mission",
+   "text": "یک عروسک نرم بدوزیم.",
+   "event": "r_rag_doll.mission",
+   "screen": "shop",
+   "file": "voice/r_rag_doll_mission.mp3"
+  },
+  {
+   "id": "r_rag_doll.s1",
+   "text": "پدال را بزن تا چرخ بدوزد: تق تق تق!",
+   "event": "r_rag_doll.s1",
+   "screen": "shop",
+   "file": "voice/r_rag_doll_s1.mp3"
+  },
+  {
+   "id": "r_rag_doll.s2",
+   "text": "لباس عروسک را رنگ کن.",
+   "event": "r_rag_doll.s2",
+   "screen": "shop",
+   "file": "voice/r_rag_doll_s2.mp3"
+  },
+  {
+   "id": "item.rag_doll.made",
+   "text": "آفرین! عروسک پارچه‌ای آماده شد!",
+   "event": "item.rag_doll.made",
+   "screen": "shop",
+   "file": "voice/item_rag_doll_made.mp3"
+  },
+  {
+   "id": "tool.drill.safety",
+   "text": "دریل را فقط بزرگ‌ترها روشن می‌کنند و ما کمک می‌کنیم.",
+   "event": "tool.drill.safety",
+   "screen": "shop",
+   "file": "voice/tool_drill_safety.mp3"
+  },
+  {
+   "id": "r_windmill.mission",
+   "text": "یک آسیاب بادی بسازیم.",
+   "event": "r_windmill.mission",
+   "screen": "shop",
+   "file": "voice/r_windmill_mission.mp3"
+  },
+  {
+   "id": "r_windmill.s1",
+   "text": "با دریل سوراخ کن.",
+   "event": "r_windmill.s1",
+   "screen": "shop",
+   "file": "voice/r_windmill_s1.mp3"
+  },
+  {
+   "id": "r_windmill.s2",
+   "text": "پره‌ها را وصل کن.",
+   "event": "r_windmill.s2",
+   "screen": "shop",
+   "file": "voice/r_windmill_s2.mp3"
+  },
+  {
+   "id": "r_windmill.s3",
+   "text": "فوت کن تا بچرخد!",
+   "event": "r_windmill.s3",
+   "screen": "shop",
+   "file": "voice/r_windmill_s3.mp3"
+  },
+  {
+   "id": "item.windmill.made",
+   "text": "آفرین! آسیاب بادی آماده شد!",
+   "event": "item.windmill.made",
+   "screen": "shop",
+   "file": "voice/item_windmill_made.mp3"
+  },
+  {
+   "id": "tool.wrench.safety",
+   "text": "آچار را محکم و آرام می‌چرخانیم.",
+   "event": "tool.wrench.safety",
+   "screen": "shop",
+   "file": "voice/tool_wrench_safety.mp3"
+  },
+  {
+   "id": "r_bicycle.mission",
+   "text": "یک دوچرخه برای پوپو!",
+   "event": "r_bicycle.mission",
+   "screen": "shop",
+   "file": "voice/r_bicycle_mission.mp3"
+  },
+  {
+   "id": "r_bicycle.s1",
+   "text": "چرخ‌ها را وصل کن.",
+   "event": "r_bicycle.s1",
+   "screen": "shop",
+   "file": "voice/r_bicycle_s1.mp3"
+  },
+  {
+   "id": "r_bicycle.s2",
+   "text": "پیچ‌ها را با آچار سفت کن.",
+   "event": "r_bicycle.s2",
+   "screen": "shop",
+   "file": "voice/r_bicycle_s2.mp3"
+  },
+  {
+   "id": "r_bicycle.s3",
+   "text": "دوچرخه را رنگ کن.",
+   "event": "r_bicycle.s3",
+   "screen": "shop",
+   "file": "voice/r_bicycle_s3.mp3"
+  },
+  {
+   "id": "item.bicycle.made",
+   "text": "آفرین! دوچرخه آماده شد!",
+   "event": "item.bicycle.made",
+   "screen": "shop",
+   "file": "voice/item_bicycle_made.mp3"
+  },
+  {
+   "id": "tool.magnet.safety",
+   "text": "آهن‌ربا را نزدیک گوشی و تلویزیون نمی‌بریم.",
+   "event": "tool.magnet.safety",
+   "screen": "shop",
+   "file": "voice/tool_magnet_safety.mp3"
+  },
+  {
+   "id": "r_magnet_fish.mission",
+   "text": "بیا ماهیگیری کنیم!",
+   "event": "r_magnet_fish.mission",
+   "screen": "shop",
+   "file": "voice/r_magnet_fish_mission.mp3"
+  },
+  {
+   "id": "r_magnet_fish.s1",
+   "text": "چیزهایی که آهن‌ربا می‌کشد را جدا کن.",
+   "event": "r_magnet_fish.s1",
+   "screen": "shop",
+   "file": "voice/r_magnet_fish_s1.mp3"
+  },
+  {
+   "id": "r_magnet_fish.s2",
+   "text": "ماهی‌های آهنی را بگیر!",
+   "event": "r_magnet_fish.s2",
+   "screen": "shop",
+   "file": "voice/r_magnet_fish_s2.mp3"
+  },
+  {
+   "id": "item.magnet_fish.made",
+   "text": "آفرین! ماهیگیری آهن‌ربایی آماده شد!",
+   "event": "item.magnet_fish.made",
+   "screen": "shop",
+   "file": "voice/item_magnet_fish_made.mp3"
+  },
+  {
+   "id": "item.juice.use",
+   "text": "آب‌میوه تشنگی را برطرف می‌کند و ویتامین دارد.",
+   "event": "item.juice.use",
+   "screen": "discover",
+   "file": "voice/item_juice_use.mp3"
+  },
+  {
+   "id": "item.juice.quiz",
+   "text": "با آب‌میوه چه کار می‌کنیم؟",
+   "event": "item.juice.quiz",
+   "screen": "discover",
+   "file": "voice/item_juice_quiz.mp3"
+  },
+  {
+   "id": "item.juice.taste",
+   "text": "مزه‌اش شیرین و کمی ترش است!",
+   "event": "item.juice.taste",
+   "screen": "discover",
+   "file": "voice/item_juice_taste.mp3"
+  },
+  {
+   "id": "item.bread.use",
+   "text": "نان غذای هر روز ماست؛ با آن ساندویچ هم درست می‌کنیم.",
+   "event": "item.bread.use",
+   "screen": "discover",
+   "file": "voice/item_bread_use.mp3"
+  },
+  {
+   "id": "item.bread.quiz",
+   "text": "نان را کی می‌خوریم؟",
+   "event": "item.bread.quiz",
+   "screen": "discover",
+   "file": "voice/item_bread_quiz.mp3"
+  },
+  {
+   "id": "item.bread.taste",
+   "text": "مزه‌اش ترد و گرم است!",
+   "event": "item.bread.taste",
+   "screen": "discover",
+   "file": "voice/item_bread_taste.mp3"
+  },
+  {
+   "id": "item.soup.use",
+   "text": "سوپ گرم، وقتی سردمان است بدن را گرم می‌کند.",
+   "event": "item.soup.use",
+   "screen": "discover",
+   "file": "voice/item_soup_use.mp3"
+  },
+  {
+   "id": "item.soup.quiz",
+   "text": "سوپ گرم به درد کی می‌خورد؟",
+   "event": "item.soup.quiz",
+   "screen": "discover",
+   "file": "voice/item_soup_quiz.mp3"
+  },
+  {
+   "id": "item.soup.taste",
+   "text": "مزه‌اش شور و داغ است!",
+   "event": "item.soup.taste",
+   "screen": "discover",
+   "file": "voice/item_soup_taste.mp3"
+  },
+  {
+   "id": "item.cake.use",
+   "text": "کیک برای جشن و تولد است؛ شمع‌ها را فوت می‌کنیم.",
+   "event": "item.cake.use",
+   "screen": "discover",
+   "file": "voice/item_cake_use.mp3"
+  },
+  {
+   "id": "item.cake.quiz",
+   "text": "کیک تولد برای چیست؟",
+   "event": "item.cake.quiz",
+   "screen": "discover",
+   "file": "voice/item_cake_quiz.mp3"
+  },
+  {
+   "id": "item.cake.taste",
+   "text": "مزه‌اش شیرین است!",
+   "event": "item.cake.taste",
+   "screen": "discover",
+   "file": "voice/item_cake_taste.mp3"
+  },
+  {
+   "id": "item.watering_can.use",
+   "text": "با آب‌پاش به گل‌ها و گیاه‌ها آب می‌دهیم.",
+   "event": "item.watering_can.use",
+   "screen": "discover",
+   "file": "voice/item_watering_can_use.mp3"
+  },
+  {
+   "id": "item.watering_can.quiz",
+   "text": "با آب‌پاش چه کار می‌کنیم؟",
+   "event": "item.watering_can.quiz",
+   "screen": "discover",
+   "file": "voice/item_watering_can_quiz.mp3"
+  },
+  {
+   "id": "item.flower_pot.use",
+   "text": "گل بوی خوش دارد و زنبورها از آن شهد می‌گیرند.",
+   "event": "item.flower_pot.use",
+   "screen": "discover",
+   "file": "voice/item_flower_pot_use.mp3"
+  },
+  {
+   "id": "item.flower_pot.quiz",
+   "text": "کی سراغ گل می‌آید؟",
+   "event": "item.flower_pot.quiz",
+   "screen": "discover",
+   "file": "voice/item_flower_pot_quiz.mp3"
+  },
+  {
+   "id": "item.flower_pot.taste",
+   "text": "مزه‌اش خوش‌بو است!",
+   "event": "item.flower_pot.taste",
+   "screen": "discover",
+   "file": "voice/item_flower_pot_taste.mp3"
+  },
+  {
+   "id": "item.eggs.use",
+   "text": "مرغ تخم می‌گذارد؛ با تخم‌مرغ کیک و نیمرو درست می‌کنیم.",
+   "event": "item.eggs.use",
+   "screen": "discover",
+   "file": "voice/item_eggs_use.mp3"
+  },
+  {
+   "id": "item.eggs.quiz",
+   "text": "تخم‌مرغ از کجا می‌آید؟",
+   "event": "item.eggs.quiz",
+   "screen": "discover",
+   "file": "voice/item_eggs_quiz.mp3"
+  },
+  {
+   "id": "item.eggs.taste",
+   "text": "مزه‌اش پخته‌اش خوشمزه است است!",
+   "event": "item.eggs.taste",
+   "screen": "discover",
+   "file": "voice/item_eggs_taste.mp3"
+  },
+  {
+   "id": "item.sandwich.use",
+   "text": "ساندویچ یک غذای کامل و راحت برای پیک‌نیک است.",
+   "event": "item.sandwich.use",
+   "screen": "discover",
+   "file": "voice/item_sandwich_use.mp3"
+  },
+  {
+   "id": "item.sandwich.quiz",
+   "text": "ساندویچ را با چه درست کردیم؟",
+   "event": "item.sandwich.quiz",
+   "screen": "discover",
+   "file": "voice/item_sandwich_quiz.mp3"
+  },
+  {
+   "id": "item.sandwich.taste",
+   "text": "مزه‌اش نرم و شور است!",
+   "event": "item.sandwich.taste",
+   "screen": "discover",
+   "file": "voice/item_sandwich_taste.mp3"
+  },
+  {
+   "id": "item.hammer.use",
+   "text": "با چکش میخ را در چوب فرو می‌کنیم تا تکه‌ها به هم بچسبند.",
+   "event": "item.hammer.use",
+   "screen": "discover",
+   "file": "voice/item_hammer_use.mp3"
+  },
+  {
+   "id": "item.hammer.quiz",
+   "text": "با چکش چه کار می‌کنیم؟",
+   "event": "item.hammer.quiz",
+   "screen": "discover",
+   "file": "voice/item_hammer_quiz.mp3"
+  },
+  {
+   "id": "item.flashlight.use",
+   "text": "چراغ‌قوه در تاریکی راه را روشن می‌کند.",
+   "event": "item.flashlight.use",
+   "screen": "discover",
+   "file": "voice/item_flashlight_use.mp3"
+  },
+  {
+   "id": "item.flashlight.quiz",
+   "text": "چراغ‌قوه کجا به کار می‌آید؟",
+   "event": "item.flashlight.quiz",
+   "screen": "discover",
+   "file": "voice/item_flashlight_quiz.mp3"
+  },
+  {
+   "id": "item.cart.use",
+   "text": "با گاری بارهای سنگین را راحت جابه‌جا می‌کنیم.",
+   "event": "item.cart.use",
+   "screen": "discover",
+   "file": "voice/item_cart_use.mp3"
+  },
+  {
+   "id": "item.cart.quiz",
+   "text": "گاری به چه کاری می‌آید؟",
+   "event": "item.cart.quiz",
+   "screen": "discover",
+   "file": "voice/item_cart_quiz.mp3"
+  },
+  {
+   "id": "item.toy_car.use",
+   "text": "ماشین با موتور روشن می‌شود و ما را به جاهای دور می‌برد.",
+   "event": "item.toy_car.use",
+   "screen": "discover",
+   "file": "voice/item_toy_car_use.mp3"
+  },
+  {
+   "id": "item.toy_car.quiz",
+   "text": "ماشین چطور راه می‌افتد؟",
+   "event": "item.toy_car.quiz",
+   "screen": "discover",
+   "file": "voice/item_toy_car_quiz.mp3"
+  },
+  {
+   "id": "item.paints.use",
+   "text": "قرمز و زرد با هم نارنجی می‌شوند؛ آبی و زرد سبز!",
+   "event": "item.paints.use",
+   "screen": "discover",
+   "file": "voice/item_paints_use.mp3"
+  },
+  {
+   "id": "item.paints.quiz",
+   "text": "قرمز و زرد با هم چه رنگی می‌شوند؟",
+   "event": "item.paints.quiz",
+   "screen": "discover",
+   "file": "voice/item_paints_quiz.mp3"
+  },
+  {
+   "id": "item.clay_bowl.use",
+   "text": "کاسه‌ی خوب آب را نگه می‌دارد و چیزی نمی‌ریزد.",
+   "event": "item.clay_bowl.use",
+   "screen": "discover",
+   "file": "voice/item_clay_bowl_use.mp3"
+  },
+  {
+   "id": "item.clay_bowl.quiz",
+   "text": "کاسه را برای چه می‌سازیم؟",
+   "event": "item.clay_bowl.quiz",
+   "screen": "discover",
+   "file": "voice/item_clay_bowl_quiz.mp3"
+  },
+  {
+   "id": "item.lantern.use",
+   "text": "فانوس با نور رنگی، شب را قشنگ و روشن می‌کند.",
+   "event": "item.lantern.use",
+   "screen": "discover",
+   "file": "voice/item_lantern_use.mp3"
+  },
+  {
+   "id": "item.lantern.quiz",
+   "text": "فانوس کی روشن می‌شود؟",
+   "event": "item.lantern.quiz",
+   "screen": "discover",
+   "file": "voice/item_lantern_quiz.mp3"
+  },
+  {
+   "id": "item.mask.use",
+   "text": "ماسک را برای بازی و جشن به صورت می‌زنیم.",
+   "event": "item.mask.use",
+   "screen": "discover",
+   "file": "voice/item_mask_use.mp3"
+  },
+  {
+   "id": "item.mask.quiz",
+   "text": "ماسک را کجا می‌زنیم؟",
+   "event": "item.mask.quiz",
+   "screen": "discover",
+   "file": "voice/item_mask_quiz.mp3"
+  },
+  {
+   "id": "item.map.use",
+   "text": "نقشه راه را نشان می‌دهد تا گم نشویم.",
+   "event": "item.map.use",
+   "screen": "discover",
+   "file": "voice/item_map_use.mp3"
+  },
+  {
+   "id": "item.map.quiz",
+   "text": "نقشه به چه درد می‌خورد؟",
+   "event": "item.map.quiz",
+   "screen": "discover",
+   "file": "voice/item_map_quiz.mp3"
+  },
+  {
+   "id": "item.tent.use",
+   "text": "چادر زیر باران ما را خشک و گرم نگه می‌دارد.",
+   "event": "item.tent.use",
+   "screen": "discover",
+   "file": "voice/item_tent_use.mp3"
+  },
+  {
+   "id": "item.tent.quiz",
+   "text": "چادر کی به کار می‌آید؟",
+   "event": "item.tent.quiz",
+   "screen": "discover",
+   "file": "voice/item_tent_quiz.mp3"
+  },
+  {
+   "id": "item.firefly_jar.use",
+   "text": "کرم‌های شب‌تاب خودشان نور دارند!",
+   "event": "item.firefly_jar.use",
+   "screen": "discover",
+   "file": "voice/item_firefly_jar_use.mp3"
+  },
+  {
+   "id": "item.firefly_jar.quiz",
+   "text": "کرم شب‌تاب کی می‌درخشد؟",
+   "event": "item.firefly_jar.quiz",
+   "screen": "discover",
+   "file": "voice/item_firefly_jar_quiz.mp3"
+  },
+  {
+   "id": "item.telescope.use",
+   "text": "با تلسکوپ چیزهای خیلی دور مثل ماه و ستاره‌ها را نزدیک می‌بینیم.",
+   "event": "item.telescope.use",
+   "screen": "discover",
+   "file": "voice/item_telescope_use.mp3"
+  },
+  {
+   "id": "item.telescope.quiz",
+   "text": "با تلسکوپ چه می‌بینیم؟",
+   "event": "item.telescope.quiz",
+   "screen": "discover",
+   "file": "voice/item_telescope_quiz.mp3"
+  },
+  {
+   "id": "item.drum.use",
+   "text": "طبل با ضربه صدا می‌دهد؛ ضربه‌ی محکم بلند، ضربه‌ی آرام آهسته.",
+   "event": "item.drum.use",
+   "screen": "discover",
+   "file": "voice/item_drum_use.mp3"
+  },
+  {
+   "id": "item.drum.quiz",
+   "text": "طبل را چطور می‌نوازیم؟",
+   "event": "item.drum.quiz",
+   "screen": "discover",
+   "file": "voice/item_drum_quiz.mp3"
+  },
+  {
+   "id": "item.xylophone.use",
+   "text": "تیغه‌ی بلند صدای بم دارد و تیغه‌ی کوتاه صدای زیر.",
+   "event": "item.xylophone.use",
+   "screen": "discover",
+   "file": "voice/item_xylophone_use.mp3"
+  },
+  {
+   "id": "item.xylophone.quiz",
+   "text": "تیغه‌ی کوتاه چه صدایی دارد؟",
+   "event": "item.xylophone.quiz",
+   "screen": "discover",
+   "file": "voice/item_xylophone_quiz.mp3"
+  },
+  {
+   "id": "item.flute.use",
+   "text": "نی را با فوت می‌نوازیم؛ سوراخ‌ها نت را عوض می‌کنند.",
+   "event": "item.flute.use",
+   "screen": "discover",
+   "file": "voice/item_flute_use.mp3"
+  },
+  {
+   "id": "item.flute.quiz",
+   "text": "نی را چطور می‌نوازیم؟",
+   "event": "item.flute.quiz",
+   "screen": "discover",
+   "file": "voice/item_flute_quiz.mp3"
+  },
+  {
+   "id": "item.song.use",
+   "text": "آهنگ را با چند ساز با هم می‌نوازیم.",
+   "event": "item.song.use",
+   "screen": "discover",
+   "file": "voice/item_song_use.mp3"
+  },
+  {
+   "id": "item.song.quiz",
+   "text": "آهنگ را با چه ساختیم؟",
+   "event": "item.song.quiz",
+   "screen": "discover",
+   "file": "voice/item_song_quiz.mp3"
+  },
+  {
+   "id": "item.bridge.use",
+   "text": "پل دو طرف رودخانه را به هم وصل می‌کند.",
+   "event": "item.bridge.use",
+   "screen": "discover",
+   "file": "voice/item_bridge_use.mp3"
+  },
+  {
+   "id": "item.bridge.quiz",
+   "text": "پل به چه درد می‌خورد؟",
+   "event": "item.bridge.quiz",
+   "screen": "discover",
+   "file": "voice/item_bridge_quiz.mp3"
+  },
+  {
+   "id": "item.traffic_light.use",
+   "text": "قرمز یعنی بایست، سبز یعنی برو.",
+   "event": "item.traffic_light.use",
+   "screen": "discover",
+   "file": "voice/item_traffic_light_use.mp3"
+  },
+  {
+   "id": "item.traffic_light.quiz",
+   "text": "چراغ قرمز یعنی چه؟",
+   "event": "item.traffic_light.quiz",
+   "screen": "discover",
+   "file": "voice/item_traffic_light_quiz.mp3"
+  },
+  {
+   "id": "item.bus.use",
+   "text": "اتوبوس خیلی‌ها را با هم جابه‌جا می‌کند.",
+   "event": "item.bus.use",
+   "screen": "discover",
+   "file": "voice/item_bus_use.mp3"
+  },
+  {
+   "id": "item.bus.quiz",
+   "text": "اتوبوس برای چیست؟",
+   "event": "item.bus.quiz",
+   "screen": "discover",
+   "file": "voice/item_bus_quiz.mp3"
+  },
+  {
+   "id": "item.invitation.use",
+   "text": "با کارت دعوت دوستانمان را به جشن خبر می‌کنیم.",
+   "event": "item.invitation.use",
+   "screen": "discover",
+   "file": "voice/item_invitation_use.mp3"
+  },
+  {
+   "id": "item.invitation.quiz",
+   "text": "کارت دعوت برای چیست؟",
+   "event": "item.invitation.quiz",
+   "screen": "discover",
+   "file": "voice/item_invitation_quiz.mp3"
+  },
+  {
+   "id": "item.feast.use",
+   "text": "همه‌ی غذاهایی که ساختی روی یک میز!",
+   "event": "item.feast.use",
+   "screen": "discover",
+   "file": "voice/item_feast_use.mp3"
+  },
+  {
+   "id": "item.feast.quiz",
+   "text": "روی میز جشن چه گذاشتیم؟",
+   "event": "item.feast.quiz",
+   "screen": "discover",
+   "file": "voice/item_feast_quiz.mp3"
+  },
+  {
+   "id": "item.feast.taste",
+   "text": "مزه‌اش خوشمزه است!",
+   "event": "item.feast.taste",
+   "screen": "discover",
+   "file": "voice/item_feast_taste.mp3"
+  },
+  {
+   "id": "item.decorations.use",
+   "text": "تزئینات میدان را رنگی و شاد می‌کند.",
+   "event": "item.decorations.use",
+   "screen": "discover",
+   "file": "voice/item_decorations_use.mp3"
+  },
+  {
+   "id": "item.decorations.quiz",
+   "text": "تزئینات برای چیست؟",
+   "event": "item.decorations.quiz",
+   "screen": "discover",
+   "file": "voice/item_decorations_quiz.mp3"
+  },
+  {
+   "id": "item.concert.use",
+   "text": "گروه میمی آهنگ تو را می‌نوازد!",
+   "event": "item.concert.use",
+   "screen": "discover",
+   "file": "voice/item_concert_use.mp3"
+  },
+  {
+   "id": "item.concert.quiz",
+   "text": "در کنسرت چه می‌شنویم؟",
+   "event": "item.concert.quiz",
+   "screen": "discover",
+   "file": "voice/item_concert_quiz.mp3"
+  },
+  {
+   "id": "item.medal.use",
+   "text": "تو با ساخته‌هایت جشن جنگل را نجات دادی!",
+   "event": "item.medal.use",
+   "screen": "discover",
+   "file": "voice/item_medal_use.mp3"
+  },
+  {
+   "id": "item.medal.quiz",
+   "text": "چه کسی جشن را نجات داد؟",
+   "event": "item.medal.quiz",
+   "screen": "discover",
+   "file": "voice/item_medal_quiz.mp3"
+  },
+  {
+   "id": "item.bubbles.use",
+   "text": "با فوت، صابون حباب‌های رنگی می‌شود.",
+   "event": "item.bubbles.use",
+   "screen": "discover",
+   "file": "voice/item_bubbles_use.mp3"
+  },
+  {
+   "id": "item.bubbles.quiz",
+   "text": "حباب چطور درست می‌شود؟",
+   "event": "item.bubbles.quiz",
+   "screen": "discover",
+   "file": "voice/item_bubbles_quiz.mp3"
+  },
+  {
+   "id": "item.necklace.use",
+   "text": "مهره‌ها را به ترتیب رنگ به نخ می‌کشیم.",
+   "event": "item.necklace.use",
+   "screen": "discover",
+   "file": "voice/item_necklace_use.mp3"
+  },
+  {
+   "id": "item.necklace.quiz",
+   "text": "گردنبند را کجا می‌اندازیم؟",
+   "event": "item.necklace.quiz",
+   "screen": "discover",
+   "file": "voice/item_necklace_quiz.mp3"
+  },
+  {
+   "id": "item.kite.use",
+   "text": "باد بادبادک را بالا می‌برد.",
+   "event": "item.kite.use",
+   "screen": "discover",
+   "file": "voice/item_kite_use.mp3"
+  },
+  {
+   "id": "item.kite.quiz",
+   "text": "بادبادک با چه بالا می‌رود؟",
+   "event": "item.kite.quiz",
+   "screen": "discover",
+   "file": "voice/item_kite_quiz.mp3"
+  },
+  {
+   "id": "item.robot.use",
+   "text": "ربات با باتری روشن می‌شود و کارهایی را که بگوییم انجام می‌دهد.",
+   "event": "item.robot.use",
+   "screen": "discover",
+   "file": "voice/item_robot_use.mp3"
+  },
+  {
+   "id": "item.robot.quiz",
+   "text": "ربات با چه روشن می‌شود؟",
+   "event": "item.robot.quiz",
+   "screen": "discover",
+   "file": "voice/item_robot_quiz.mp3"
+  },
+  {
+   "id": "item.dollhouse.use",
+   "text": "در خانه‌ی عروسکی چراغ‌ها روشن می‌شوند و شیر آب باز می‌شود.",
+   "event": "item.dollhouse.use",
+   "screen": "discover",
+   "file": "voice/item_dollhouse_use.mp3"
+  },
+  {
+   "id": "item.dollhouse.quiz",
+   "text": "خانه برای چیست؟",
+   "event": "item.dollhouse.quiz",
+   "screen": "discover",
+   "file": "voice/item_dollhouse_quiz.mp3"
+  },
+  {
+   "id": "item.rocket.use",
+   "text": "موشک با موتورهای قوی به فضا می‌رود.",
+   "event": "item.rocket.use",
+   "screen": "discover",
+   "file": "voice/item_rocket_use.mp3"
+  },
+  {
+   "id": "item.rocket.quiz",
+   "text": "موشک کجا می‌رود؟",
+   "event": "item.rocket.quiz",
+   "screen": "discover",
+   "file": "voice/item_rocket_quiz.mp3"
+  },
+  {
+   "id": "item.submarine.use",
+   "text": "زیردریایی زیر آب می‌رود و با چراغش ماهی‌ها را می‌بیند.",
+   "event": "item.submarine.use",
+   "screen": "discover",
+   "file": "voice/item_submarine_use.mp3"
+  },
+  {
+   "id": "item.submarine.quiz",
+   "text": "زیردریایی کجا می‌رود؟",
+   "event": "item.submarine.quiz",
+   "screen": "discover",
+   "file": "voice/item_submarine_quiz.mp3"
+  },
+  {
+   "id": "item.train.use",
+   "text": "قطار روی ریل حرکت می‌کند و سوت می‌کشد: چوووو!",
+   "event": "item.train.use",
+   "screen": "discover",
+   "file": "voice/item_train_use.mp3"
+  },
+  {
+   "id": "item.train.quiz",
+   "text": "قطار روی چه حرکت می‌کند؟",
+   "event": "item.train.quiz",
+   "screen": "discover",
+   "file": "voice/item_train_quiz.mp3"
+  },
+  {
+   "id": "item.bug_book.use",
+   "text": "با ذره‌بین حشره‌های کوچک را بزرگ می‌بینیم.",
+   "event": "item.bug_book.use",
+   "screen": "discover",
+   "file": "voice/item_bug_book_use.mp3"
+  },
+  {
+   "id": "item.bug_book.quiz",
+   "text": "ذره‌بین چه کار می‌کند؟",
+   "event": "item.bug_book.quiz",
+   "screen": "discover",
+   "file": "voice/item_bug_book_quiz.mp3"
+  },
+  {
+   "id": "item.bird_house.use",
+   "text": "پرنده در خانه‌اش لانه می‌سازد.",
+   "event": "item.bird_house.use",
+   "screen": "discover",
+   "file": "voice/item_bird_house_use.mp3"
+  },
+  {
+   "id": "item.bird_house.quiz",
+   "text": "خانه‌ی پرنده برای کیست؟",
+   "event": "item.bird_house.quiz",
+   "screen": "discover",
+   "file": "voice/item_bird_house_quiz.mp3"
+  },
+  {
+   "id": "item.photo_frame.use",
+   "text": "عکس یادگاری را در قاب می‌گذاریم و به دیوار می‌زنیم.",
+   "event": "item.photo_frame.use",
+   "screen": "discover",
+   "file": "voice/item_photo_frame_use.mp3"
+  },
+  {
+   "id": "item.photo_frame.quiz",
+   "text": "قاب عکس برای چیست؟",
+   "event": "item.photo_frame.quiz",
+   "screen": "discover",
+   "file": "voice/item_photo_frame_quiz.mp3"
+  },
+  {
+   "id": "item.pizza.use",
+   "text": "پیتزا را در فر می‌پزیم تا پنیرش آب شود.",
+   "event": "item.pizza.use",
+   "screen": "discover",
+   "file": "voice/item_pizza_use.mp3"
+  },
+  {
+   "id": "item.pizza.quiz",
+   "text": "پیتزا را کجا می‌پزیم؟",
+   "event": "item.pizza.quiz",
+   "screen": "discover",
+   "file": "voice/item_pizza_quiz.mp3"
+  },
+  {
+   "id": "item.pizza.taste",
+   "text": "مزه‌اش شور و داغ است!",
+   "event": "item.pizza.taste",
+   "screen": "discover",
+   "file": "voice/item_pizza_taste.mp3"
+  },
+  {
+   "id": "item.cookie.use",
+   "text": "کلوچه‌ی تازه ترد و شیرین است.",
+   "event": "item.cookie.use",
+   "screen": "discover",
+   "file": "voice/item_cookie_use.mp3"
+  },
+  {
+   "id": "item.cookie.quiz",
+   "text": "کلوچه چه مزه‌ای دارد؟",
+   "event": "item.cookie.quiz",
+   "screen": "discover",
+   "file": "voice/item_cookie_quiz.mp3"
+  },
+  {
+   "id": "item.cookie.taste",
+   "text": "مزه‌اش شیرین و ترد است!",
+   "event": "item.cookie.taste",
+   "screen": "discover",
+   "file": "voice/item_cookie_taste.mp3"
+  },
+  {
+   "id": "item.rag_doll.use",
+   "text": "عروسک نرم را بغل می‌کنیم.",
+   "event": "item.rag_doll.use",
+   "screen": "discover",
+   "file": "voice/item_rag_doll_use.mp3"
+  },
+  {
+   "id": "item.rag_doll.quiz",
+   "text": "با عروسک چه کار می‌کنیم؟",
+   "event": "item.rag_doll.quiz",
+   "screen": "discover",
+   "file": "voice/item_rag_doll_quiz.mp3"
+  },
+  {
+   "id": "item.windmill.use",
+   "text": "باد پره‌ها را می‌چرخاند.",
+   "event": "item.windmill.use",
+   "screen": "discover",
+   "file": "voice/item_windmill_use.mp3"
+  },
+  {
+   "id": "item.windmill.quiz",
+   "text": "چه چیزی آسیاب بادی را می‌چرخاند؟",
+   "event": "item.windmill.quiz",
+   "screen": "discover",
+   "file": "voice/item_windmill_quiz.mp3"
+  },
+  {
+   "id": "item.bicycle.use",
+   "text": "دوچرخه با رکاب زدن حرکت می‌کند: زینگ زینگ!",
+   "event": "item.bicycle.use",
+   "screen": "discover",
+   "file": "voice/item_bicycle_use.mp3"
+  },
+  {
+   "id": "item.bicycle.quiz",
+   "text": "دوچرخه چطور حرکت می‌کند؟",
+   "event": "item.bicycle.quiz",
+   "screen": "discover",
+   "file": "voice/item_bicycle_quiz.mp3"
+  },
+  {
+   "id": "item.magnet_fish.use",
+   "text": "آهن‌ربا چیزهای آهنی را به خودش می‌کشد.",
+   "event": "item.magnet_fish.use",
+   "screen": "discover",
+   "file": "voice/item_magnet_fish_use.mp3"
+  },
+  {
+   "id": "item.magnet_fish.quiz",
+   "text": "آهن‌ربا چه چیزی را می‌کشد؟",
+   "event": "item.magnet_fish.quiz",
+   "screen": "discover",
+   "file": "voice/item_magnet_fish_quiz.mp3"
+  },
+  {
+   "id": "order.1",
+   "text": "بانی تشنه است. چی بهش بدیم؟",
+   "event": "order.1",
+   "screen": "playroom",
+   "file": "voice/order_1.mp3"
+  },
+  {
+   "id": "order.2",
+   "text": "خاله خرسی یک چیز شیرین می‌خواهد.",
+   "event": "order.2",
+   "screen": "playroom",
+   "file": "voice/order_2.mp3"
+  },
+  {
+   "id": "order.3",
+   "text": "مادربزرگ جغد سردش است.",
+   "event": "order.3",
+   "screen": "playroom",
+   "file": "voice/order_3.mp3"
+  },
+  {
+   "id": "order.4",
+   "text": "میمی یک ساز با صدای بم می‌خواهد.",
+   "event": "order.4",
+   "screen": "playroom",
+   "file": "voice/order_4.mp3"
+  },
+  {
+   "id": "order.5",
+   "text": "میمی یک ساز با صدای زیر می‌خواهد.",
+   "event": "order.5",
+   "screen": "playroom",
+   "file": "voice/order_5.mp3"
+  },
+  {
+   "id": "order.6",
+   "text": "آقا سنجاب در تاریکی چیزی را گم کرده.",
+   "event": "order.6",
+   "screen": "playroom",
+   "file": "voice/order_6.mp3"
+  },
+  {
+   "id": "order.7",
+   "text": "لاکی یک وسیله‌ی نقلیه می‌خواهد.",
+   "event": "order.7",
+   "screen": "playroom",
+   "file": "voice/order_7.mp3"
+  },
+  {
+   "id": "order.8",
+   "text": "کوکو یک چیز قشنگ برای تزئین می‌خواهد.",
+   "event": "order.8",
+   "screen": "playroom",
+   "file": "voice/order_8.mp3"
+  },
+  {
+   "id": "order.9",
+   "text": "آقا سنجاب باید میخ بزند.",
+   "event": "order.9",
+   "screen": "playroom",
+   "file": "voice/order_9.mp3"
+  },
+  {
+   "id": "order.10",
+   "text": "گل‌های بانی تشنه‌اند.",
+   "event": "order.10",
+   "screen": "playroom",
+   "file": "voice/order_10.mp3"
+  },
+  {
+   "id": "order.11",
+   "text": "خاله خرسی گرسنه است.",
+   "event": "order.11",
+   "screen": "playroom",
+   "file": "voice/order_11.mp3"
+  },
+  {
+   "id": "order.12",
+   "text": "مادربزرگ جغد راه را گم کرده.",
+   "event": "order.12",
+   "screen": "playroom",
+   "file": "voice/order_12.mp3"
+  },
+  {
+   "id": "order.13",
+   "text": "کوکو دلش موسیقی می‌خواهد.",
+   "event": "order.13",
+   "screen": "playroom",
+   "file": "voice/order_13.mp3"
+  },
+  {
+   "id": "combo.1",
+   "text": "مهمانی کوچک! دوستان آمدند.",
+   "event": "combo.1",
+   "screen": "playroom",
+   "file": "voice/combo_1.mp3"
+  },
+  {
+   "id": "combo.2",
+   "text": "ربات گل‌ها را آب داد!",
+   "event": "combo.2",
+   "screen": "playroom",
+   "file": "voice/combo_2.mp3"
+  },
+  {
+   "id": "combo.3",
+   "text": "یک آهنگ دونفره!",
+   "event": "combo.3",
+   "screen": "playroom",
+   "file": "voice/combo_3.mp3"
+  },
+  {
+   "id": "combo.4",
+   "text": "چادر شب روشن شد.",
+   "event": "combo.4",
+   "screen": "playroom",
+   "file": "voice/combo_4.mp3"
+  },
+  {
+   "id": "combo.5",
+   "text": "ماشین نامه‌ها را رساند.",
+   "event": "combo.5",
+   "screen": "playroom",
+   "file": "voice/combo_5.mp3"
+  },
+  {
+   "id": "combo.6",
+   "text": "تماشای شب پرستاره!",
+   "event": "combo.6",
+   "screen": "playroom",
+   "file": "voice/combo_6.mp3"
+  },
+  {
+   "id": "combo.7",
+   "text": "باد هر دو را چرخاند!",
+   "event": "combo.7",
+   "screen": "playroom",
+   "file": "voice/combo_7.mp3"
+  },
+  {
+   "id": "combo.8",
+   "text": "ماهی‌گیری زیر آب!",
+   "event": "combo.8",
+   "screen": "playroom",
+   "file": "voice/combo_8.mp3"
+  },
+  {
+   "id": "combo.9",
+   "text": "ناهار گرم و خوشمزه!",
+   "event": "combo.9",
+   "screen": "playroom",
+   "file": "voice/combo_9.mp3"
+  },
+  {
+   "id": "combo.10",
+   "text": "رقص با ماسک!",
+   "event": "combo.10",
+   "screen": "playroom",
+   "file": "voice/combo_10.mp3"
+  },
+  {
+   "id": "combo.11",
+   "text": "موشک در آسمان دیده شد!",
+   "event": "combo.11",
+   "screen": "playroom",
+   "file": "voice/combo_11.mp3"
+  },
+  {
+   "id": "combo.12",
+   "text": "پرنده‌ها در باغ لانه ساختند.",
+   "event": "combo.12",
+   "screen": "playroom",
+   "file": "voice/combo_12.mp3"
+  },
+  {
+   "id": "combo.13",
+   "text": "یک نقاشی قاب‌شده!",
+   "event": "combo.13",
+   "screen": "playroom",
+   "file": "voice/combo_13.mp3"
+  },
+  {
+   "id": "combo.14",
+   "text": "گردش با دوچرخه در جنگل!",
+   "event": "combo.14",
+   "screen": "playroom",
+   "file": "voice/combo_14.mp3"
+  },
+  {
+   "id": "game.hint.1",
+   "text": "این‌جا را ببین...",
+   "event": "game.hint.1",
+   "screen": "game",
+   "file": "voice/game_hint_1.mp3"
+  },
+  {
+   "id": "game.hint.2",
+   "text": "بیا با هم انجامش بدهیم.",
+   "event": "game.hint.2",
+   "screen": "game",
+   "file": "voice/game_hint_2.mp3"
+  },
+  {
+   "id": "game.wrong",
+   "text": "نه این یکی نه؛ دوباره امتحان کن!",
+   "event": "game.wrong",
+   "screen": "game",
+   "file": "voice/game_wrong.mp3"
+  },
+  {
+   "id": "game.quiz.right",
+   "text": "درست گفتی!",
+   "event": "game.quiz.right",
+   "screen": "game",
+   "file": "voice/game_quiz_right.mp3"
+  },
+  {
+   "id": "game.quiz.wrong",
+   "text": "نه عزیزم، به این دقت کن.",
+   "event": "game.quiz.wrong",
+   "screen": "game",
+   "file": "voice/game_quiz_wrong.mp3"
+  },
+  {
+   "id": "game.play",
+   "text": "حالا باهاش بازی کن!",
+   "event": "game.play",
+   "screen": "game",
+   "file": "voice/game_play.mp3"
+  },
+  {
+   "id": "game.backpack",
+   "text": "گذاشتمش در کوله‌پشتی.",
+   "event": "game.backpack",
+   "screen": "game",
+   "file": "voice/game_backpack.mp3"
+  },
+  {
+   "id": "game.stars.3",
+   "text": "عالی بود! سه ستاره!",
+   "event": "game.stars.3",
+   "screen": "game",
+   "file": "voice/game_stars_3.mp3"
+  },
+  {
+   "id": "game.stars.2",
+   "text": "خیلی خوب بود!",
+   "event": "game.stars.2",
+   "screen": "game",
+   "file": "voice/game_stars_2.mp3"
+  },
+  {
+   "id": "game.stars.1",
+   "text": "تمامش کردی، آفرین!",
+   "event": "game.stars.1",
+   "screen": "game",
+   "file": "voice/game_stars_1.mp3"
+  },
+  {
+   "id": "game.fast",
+   "text": "چه سریع!",
+   "event": "game.fast",
+   "screen": "game",
+   "file": "voice/game_fast.mp3"
+  },
+  {
+   "id": "game.locked",
+   "text": "این بخش برای بعد است. اول بخش قبلی را تمام کن.",
+   "event": "game.locked",
+   "screen": "game",
+   "file": "voice/game_locked.mp3"
+  },
+  {
+   "id": "game.coins.low",
+   "text": "سکه‌هایت کم است. بیا یک بخش را دوباره بازی کنیم!",
+   "event": "game.coins.low",
+   "screen": "game",
+   "file": "voice/game_coins_low.mp3"
+  },
+  {
+   "id": "game.secret",
+   "text": "یک چیز پنهان پیدا کردی!",
+   "event": "game.secret",
+   "screen": "game",
+   "file": "voice/game_secret.mp3"
+  },
+  {
+   "id": "game.daily",
+   "text": "جایزه‌ی امروز! سکه گرفتی.",
+   "event": "game.daily",
+   "screen": "game",
+   "file": "voice/game_daily.mp3"
+  },
+  {
+   "id": "home.hello",
+   "text": "سلام! امروز چی بسازیم؟",
+   "event": "home.hello",
+   "screen": "game",
+   "file": "voice/home_hello.mp3"
+  },
+  {
+   "id": "workshop.hello",
+   "text": "به کارگاه ستاره خوش آمدی! با ستاره‌هایت کیت‌های تازه باز می‌شوند.",
+   "event": "workshop.hello",
+   "screen": "game",
+   "file": "voice/workshop_hello.mp3"
+  },
+  {
+   "id": "shop.hello",
+   "text": "این‌جا با سکه ابزار می‌خری و چیزهای تازه می‌سازی.",
+   "event": "shop.hello",
+   "screen": "game",
+   "file": "voice/shop_hello.mp3"
+  },
+  {
+   "id": "shop.bought",
+   "text": "ابزار تازه! بیا ببینیم چطور کار می‌کند.",
+   "event": "shop.bought",
+   "screen": "game",
+   "file": "voice/shop_bought.mp3"
+  },
+  {
+   "id": "playroom.hello",
+   "text": "این اتاق بازی توست. همه‌ی ساخته‌هایت این‌جاست!",
+   "event": "playroom.hello",
+   "screen": "game",
+   "file": "voice/playroom_hello.mp3"
+  },
+  {
+   "id": "playroom.combo",
+   "text": "یک ترکیب تازه کشف کردی!",
+   "event": "playroom.combo",
+   "screen": "game",
+   "file": "voice/playroom_combo.mp3"
+  },
+  {
+   "id": "playroom.order.done",
+   "text": "دقیقاً همین را می‌خواستم! ممنون!",
+   "event": "playroom.order.done",
+   "screen": "game",
+   "file": "voice/playroom_order_done.mp3"
+  },
+  {
+   "id": "playroom.order.wrong",
+   "text": "این را نمی‌خواهم؛ یک چیز دیگر بده.",
+   "event": "playroom.order.wrong",
+   "screen": "game",
+   "file": "voice/playroom_order_wrong.mp3"
+  },
+  {
+   "id": "film.end",
+   "text": "یک تکه‌ی تازه از نقشه‌ی جشن روشن شد!",
+   "event": "film.end",
+   "screen": "game",
+   "file": "voice/film_end.mp3"
+  },
+  {
+   "id": "kit.open",
+   "text": "یک کیت تازه باز شد!",
+   "event": "kit.open",
+   "screen": "game",
+   "file": "voice/kit_open.mp3"
   }
  ]
 }

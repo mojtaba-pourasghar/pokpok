@@ -1,0 +1,3979 @@
+{
+ "version": 1,
+ "friends": {
+  "bear": {
+   "name": "خاله خرسی",
+   "emoji": "🐻"
+  },
+  "bunny": {
+   "name": "بانی",
+   "emoji": "🐰"
+  },
+  "squirrel": {
+   "name": "آقا سنجاب",
+   "emoji": "🐿️"
+  },
+  "parrot": {
+   "name": "کوکو",
+   "emoji": "🦜"
+  },
+  "owl": {
+   "name": "مادربزرگ جغد",
+   "emoji": "🦉"
+  },
+  "cat": {
+   "name": "میمی",
+   "emoji": "🐱"
+  },
+  "turtle": {
+   "name": "لاکی",
+   "emoji": "🐢"
+  }
+ },
+ "items": {
+  "juice": {
+   "id": "juice",
+   "title": "آب‌پرتقال",
+   "kind": "drink",
+   "sound": "audio/sfx/pour.mp3",
+   "use": "آب‌میوه تشنگی را برطرف می‌کند و ویتامین دارد.",
+   "taste": "شیرین و کمی ترش",
+   "target": null,
+   "tags": [
+    "drink",
+    "sweet",
+    "food"
+   ],
+   "play": "drink",
+   "quiz": {
+    "q": "با آب‌میوه چه کار می‌کنیم؟",
+    "options": [
+     {
+      "art": "q_thirsty",
+      "label": "تشنگی"
+     },
+     {
+      "art": "q_sleep",
+      "label": "خواب"
+     },
+     {
+      "art": "q_paint",
+      "label": "نقاشی"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "bread": {
+   "id": "bread",
+   "title": "نان",
+   "kind": "food",
+   "sound": "audio/sfx/snap.mp3",
+   "use": "نان غذای هر روز ماست؛ با آن ساندویچ هم درست می‌کنیم.",
+   "taste": "ترد و گرم",
+   "target": null,
+   "tags": [
+    "food"
+   ],
+   "play": "food",
+   "quiz": {
+    "q": "نان را کی می‌خوریم؟",
+    "options": [
+     {
+      "art": "q_hungry",
+      "label": "وقتی گرسنه‌ایم"
+     },
+     {
+      "art": "q_cold",
+      "label": "وقتی سردمان است"
+     },
+     {
+      "art": "q_dark",
+      "label": "وقتی تاریک است"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "soup": {
+   "id": "soup",
+   "title": "سوپ سبزیجات",
+   "kind": "food",
+   "sound": "audio/sfx/sizzle.mp3",
+   "use": "سوپ گرم، وقتی سردمان است بدن را گرم می‌کند.",
+   "taste": "شور و داغ",
+   "target": null,
+   "tags": [
+    "food",
+    "warm"
+   ],
+   "play": "food",
+   "quiz": {
+    "q": "سوپ گرم به درد کی می‌خورد؟",
+    "options": [
+     {
+      "art": "q_cold",
+      "label": "کسی که سردش است"
+     },
+     {
+      "art": "q_swim",
+      "label": "کسی که شنا می‌کند"
+     },
+     {
+      "art": "q_paint",
+      "label": "کسی که نقاشی می‌کند"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "cake": {
+   "id": "cake",
+   "title": "کیک تولد",
+   "kind": "food",
+   "sound": "audio/sfx/giggle.mp3",
+   "use": "کیک برای جشن و تولد است؛ شمع‌ها را فوت می‌کنیم.",
+   "taste": "شیرین",
+   "target": null,
+   "tags": [
+    "food",
+    "sweet",
+    "party"
+   ],
+   "play": "food",
+   "quiz": {
+    "q": "کیک تولد برای چیست؟",
+    "options": [
+     {
+      "art": "q_party",
+      "label": "جشن"
+     },
+     {
+      "art": "q_rain",
+      "label": "باران"
+     },
+     {
+      "art": "q_carry",
+      "label": "بار بردن"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "watering_can": {
+   "id": "watering_can",
+   "title": "آب‌پاش",
+   "kind": "container",
+   "sound": "audio/sfx/splash.mp3",
+   "use": "با آب‌پاش به گل‌ها و گیاه‌ها آب می‌دهیم.",
+   "taste": null,
+   "target": "q_flowers",
+   "tags": [
+    "water"
+   ],
+   "play": "container",
+   "quiz": {
+    "q": "با آب‌پاش چه کار می‌کنیم؟",
+    "options": [
+     {
+      "art": "q_flowers",
+      "label": "آب دادن به گل‌ها"
+     },
+     {
+      "art": "q_eat",
+      "label": "غذا خوردن"
+     },
+     {
+      "art": "q_nail",
+      "label": "میخ زدن"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "flower_pot": {
+   "id": "flower_pot",
+   "title": "گلدان گل",
+   "kind": "plant",
+   "sound": "audio/sfx/buzz.mp3",
+   "use": "گل بوی خوش دارد و زنبورها از آن شهد می‌گیرند.",
+   "taste": "خوش‌بو",
+   "target": null,
+   "tags": [
+    "pretty",
+    "plant"
+   ],
+   "play": "plant",
+   "quiz": {
+    "q": "کی سراغ گل می‌آید؟",
+    "options": [
+     {
+      "art": "bee",
+      "label": "زنبور"
+     },
+     {
+      "art": "fish",
+      "label": "ماهی"
+     },
+     {
+      "art": "moon",
+      "label": "ماه"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "eggs": {
+   "id": "eggs",
+   "title": "تخم‌مرغ",
+   "kind": "food",
+   "sound": "audio/animals/rooster.mp3",
+   "use": "مرغ تخم می‌گذارد؛ با تخم‌مرغ کیک و نیمرو درست می‌کنیم.",
+   "taste": "پخته‌اش خوشمزه است",
+   "target": null,
+   "tags": [
+    "food"
+   ],
+   "play": "food",
+   "quiz": {
+    "q": "تخم‌مرغ از کجا می‌آید؟",
+    "options": [
+     {
+      "art": "hen",
+      "label": "مرغ"
+     },
+     {
+      "art": "cow",
+      "label": "گاو"
+     },
+     {
+      "art": "bee",
+      "label": "زنبور"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "sandwich": {
+   "id": "sandwich",
+   "title": "ساندویچ پنیر",
+   "kind": "food",
+   "sound": "audio/sfx/snap.mp3",
+   "use": "ساندویچ یک غذای کامل و راحت برای پیک‌نیک است.",
+   "taste": "نرم و شور",
+   "target": null,
+   "tags": [
+    "food"
+   ],
+   "play": "food",
+   "quiz": {
+    "q": "ساندویچ را با چه درست کردیم؟",
+    "options": [
+     {
+      "art": "bread",
+      "label": "نان و پنیر"
+     },
+     {
+      "art": "paints",
+      "label": "رنگ"
+     },
+     {
+      "art": "nail",
+      "label": "میخ"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "hammer": {
+   "id": "hammer",
+   "title": "چکش",
+   "kind": "tool",
+   "sound": "audio/sfx/hammer.mp3",
+   "use": "با چکش میخ را در چوب فرو می‌کنیم تا تکه‌ها به هم بچسبند.",
+   "taste": null,
+   "target": "nail",
+   "tags": [
+    "tool",
+    "build"
+   ],
+   "play": "tool",
+   "quiz": {
+    "q": "با چکش چه کار می‌کنیم؟",
+    "options": [
+     {
+      "art": "q_nail",
+      "label": "میخ زدن"
+     },
+     {
+      "art": "q_flowers",
+      "label": "آب دادن"
+     },
+     {
+      "art": "q_eat",
+      "label": "غذا خوردن"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "flashlight": {
+   "id": "flashlight",
+   "title": "چراغ‌قوه",
+   "kind": "light",
+   "sound": "audio/sfx/light_switch.mp3",
+   "use": "چراغ‌قوه در تاریکی راه را روشن می‌کند.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "light"
+   ],
+   "play": "light",
+   "quiz": {
+    "q": "چراغ‌قوه کجا به کار می‌آید؟",
+    "options": [
+     {
+      "art": "q_dark",
+      "label": "تاریکی"
+     },
+     {
+      "art": "q_swim",
+      "label": "استخر"
+     },
+     {
+      "art": "q_party",
+      "label": "تولد"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "cart": {
+   "id": "cart",
+   "title": "گاری",
+   "kind": "cart",
+   "sound": "audio/sfx/squeak.mp3",
+   "use": "با گاری بارهای سنگین را راحت جابه‌جا می‌کنیم.",
+   "taste": null,
+   "target": "box",
+   "tags": [
+    "carry"
+   ],
+   "play": "cart",
+   "quiz": {
+    "q": "گاری به چه کاری می‌آید؟",
+    "options": [
+     {
+      "art": "q_carry",
+      "label": "بردن بار"
+     },
+     {
+      "art": "q_music",
+      "label": "موسیقی"
+     },
+     {
+      "art": "q_sleep",
+      "label": "خواب"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "toy_car": {
+   "id": "toy_car",
+   "title": "ماشین اسباب‌بازی",
+   "kind": "vehicle",
+   "sound": "audio/sfx/engine.mp3",
+   "use": "ماشین با موتور روشن می‌شود و ما را به جاهای دور می‌برد.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "vehicle"
+   ],
+   "play": "vehicle",
+   "quiz": {
+    "q": "ماشین چطور راه می‌افتد؟",
+    "options": [
+     {
+      "art": "car_key",
+      "label": "با کلید روشن می‌شود"
+     },
+     {
+      "art": "watering_can",
+      "label": "با آب"
+     },
+     {
+      "art": "brush",
+      "label": "با رنگ"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "paints": {
+   "id": "paints",
+   "title": "رنگ‌ها",
+   "kind": "craft",
+   "sound": "audio/sfx/rustle.mp3",
+   "use": "قرمز و زرد با هم نارنجی می‌شوند؛ آبی و زرد سبز!",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "color"
+   ],
+   "play": "craft",
+   "quiz": {
+    "q": "قرمز و زرد با هم چه رنگی می‌شوند؟",
+    "options": [
+     {
+      "art": "orange",
+      "label": "نارنجی"
+     },
+     {
+      "art": "lettuce",
+      "label": "سبز"
+     },
+     {
+      "art": "bar_red",
+      "label": "قرمز"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "clay_bowl": {
+   "id": "clay_bowl",
+   "title": "کاسه‌ی گلی",
+   "kind": "container",
+   "sound": "audio/ui/pop.mp3",
+   "use": "کاسه‌ی خوب آب را نگه می‌دارد و چیزی نمی‌ریزد.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "water",
+    "container"
+   ],
+   "play": "container",
+   "quiz": {
+    "q": "کاسه را برای چه می‌سازیم؟",
+    "options": [
+     {
+      "art": "q_water",
+      "label": "نگه داشتن آب و غذا"
+     },
+     {
+      "art": "q_nail",
+      "label": "میخ زدن"
+     },
+     {
+      "art": "q_dark",
+      "label": "روشنایی"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "lantern": {
+   "id": "lantern",
+   "title": "فانوس",
+   "kind": "light",
+   "sound": "audio/ui/chime.mp3",
+   "use": "فانوس با نور رنگی، شب را قشنگ و روشن می‌کند.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "light",
+    "pretty"
+   ],
+   "play": "light",
+   "quiz": {
+    "q": "فانوس کی روشن می‌شود؟",
+    "options": [
+     {
+      "art": "q_dark",
+      "label": "شب"
+     },
+     {
+      "art": "q_swim",
+      "label": "استخر"
+     },
+     {
+      "art": "q_eat",
+      "label": "غذا"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "mask": {
+   "id": "mask",
+   "title": "ماسک",
+   "kind": "craft",
+   "sound": "audio/sfx/giggle.mp3",
+   "use": "ماسک را برای بازی و جشن به صورت می‌زنیم.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "pretty",
+    "party"
+   ],
+   "play": "craft",
+   "quiz": {
+    "q": "ماسک را کجا می‌زنیم؟",
+    "options": [
+     {
+      "art": "q_wear",
+      "label": "روی صورت"
+     },
+     {
+      "art": "q_flowers",
+      "label": "روی گل"
+     },
+     {
+      "art": "q_carry",
+      "label": "روی جعبه"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "map": {
+   "id": "map",
+   "title": "نقشه‌ی جنگل",
+   "kind": "map",
+   "sound": "audio/ui/page.mp3",
+   "use": "نقشه راه را نشان می‌دهد تا گم نشویم.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "find"
+   ],
+   "play": "map",
+   "quiz": {
+    "q": "نقشه به چه درد می‌خورد؟",
+    "options": [
+     {
+      "art": "q_lost",
+      "label": "پیدا کردن راه"
+     },
+     {
+      "art": "q_hungry",
+      "label": "غذا"
+     },
+     {
+      "art": "q_music",
+      "label": "آواز"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "tent": {
+   "id": "tent",
+   "title": "چادر",
+   "kind": "shelter",
+   "sound": "audio/ambient/rain.mp3",
+   "use": "چادر زیر باران ما را خشک و گرم نگه می‌دارد.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "shelter"
+   ],
+   "play": "shelter",
+   "quiz": {
+    "q": "چادر کی به کار می‌آید؟",
+    "options": [
+     {
+      "art": "q_rain",
+      "label": "باران"
+     },
+     {
+      "art": "q_paint",
+      "label": "نقاشی"
+     },
+     {
+      "art": "q_cross",
+      "label": "خیابان"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "firefly_jar": {
+   "id": "firefly_jar",
+   "title": "شیشه‌ی کرم شب‌تاب",
+   "kind": "light",
+   "sound": "audio/ui/sparkle.mp3",
+   "use": "کرم‌های شب‌تاب خودشان نور دارند!",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "light"
+   ],
+   "play": "light",
+   "quiz": {
+    "q": "کرم شب‌تاب کی می‌درخشد؟",
+    "options": [
+     {
+      "art": "q_dark",
+      "label": "شب"
+     },
+     {
+      "art": "q_swim",
+      "label": "استخر"
+     },
+     {
+      "art": "q_hungry",
+      "label": "ناهار"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "telescope": {
+   "id": "telescope",
+   "title": "تلسکوپ",
+   "kind": "lookout",
+   "sound": "audio/ui/sparkle.mp3",
+   "use": "با تلسکوپ چیزهای خیلی دور مثل ماه و ستاره‌ها را نزدیک می‌بینیم.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "find",
+    "sky"
+   ],
+   "play": "lookout",
+   "quiz": {
+    "q": "با تلسکوپ چه می‌بینیم؟",
+    "options": [
+     {
+      "art": "q_sky",
+      "label": "ماه و ستاره‌ها"
+     },
+     {
+      "art": "q_eat",
+      "label": "غذا"
+     },
+     {
+      "art": "q_carry",
+      "label": "جعبه‌ها"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "drum": {
+   "id": "drum",
+   "title": "طبل",
+   "kind": "instrument",
+   "sound": "audio/instruments/drum_tom.mp3",
+   "use": "طبل با ضربه صدا می‌دهد؛ ضربه‌ی محکم بلند، ضربه‌ی آرام آهسته.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "music",
+    "low"
+   ],
+   "play": "instrument",
+   "quiz": {
+    "q": "طبل را چطور می‌نوازیم؟",
+    "options": [
+     {
+      "art": "drum",
+      "label": "با ضربه"
+     },
+     {
+      "art": "flute",
+      "label": "با فوت"
+     },
+     {
+      "art": "water_jug",
+      "label": "با آب"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "xylophone": {
+   "id": "xylophone",
+   "title": "زایلوفون",
+   "kind": "instrument",
+   "sound": "audio/instruments/xylo_c4.mp3",
+   "use": "تیغه‌ی بلند صدای بم دارد و تیغه‌ی کوتاه صدای زیر.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "music",
+    "high"
+   ],
+   "play": "instrument",
+   "quiz": {
+    "q": "تیغه‌ی کوتاه چه صدایی دارد؟",
+    "options": [
+     {
+      "art": "note",
+      "label": "زیر"
+     },
+     {
+      "art": "drum",
+      "label": "بم"
+     },
+     {
+      "art": "q_sleep",
+      "label": "بی‌صدا"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "flute": {
+   "id": "flute",
+   "title": "نی",
+   "kind": "instrument",
+   "sound": "audio/instruments/flute.mp3",
+   "use": "نی را با فوت می‌نوازیم؛ سوراخ‌ها نت را عوض می‌کنند.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "music",
+    "high"
+   ],
+   "play": "instrument",
+   "quiz": {
+    "q": "نی را چطور می‌نوازیم؟",
+    "options": [
+     {
+      "art": "flute",
+      "label": "با فوت"
+     },
+     {
+      "art": "hammer",
+      "label": "با چکش"
+     },
+     {
+      "art": "brush",
+      "label": "با رنگ"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "song": {
+   "id": "song",
+   "title": "آهنگ جشن",
+   "kind": "song",
+   "sound": "audio/instruments/xylo_g4.mp3",
+   "use": "آهنگ را با چند ساز با هم می‌نوازیم.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "music"
+   ],
+   "play": "song",
+   "quiz": {
+    "q": "آهنگ را با چه ساختیم؟",
+    "options": [
+     {
+      "art": "drum",
+      "label": "سازها"
+     },
+     {
+      "art": "pot",
+      "label": "قابلمه"
+     },
+     {
+      "art": "bus",
+      "label": "اتوبوس"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "bridge": {
+   "id": "bridge",
+   "title": "پل",
+   "kind": "build",
+   "sound": "audio/sfx/car_horn.mp3",
+   "use": "پل دو طرف رودخانه را به هم وصل می‌کند.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "build"
+   ],
+   "play": "build",
+   "quiz": {
+    "q": "پل به چه درد می‌خورد؟",
+    "options": [
+     {
+      "art": "q_travel",
+      "label": "رد شدن از رودخانه"
+     },
+     {
+      "art": "q_sleep",
+      "label": "خوابیدن"
+     },
+     {
+      "art": "q_eat",
+      "label": "غذا"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "traffic_light": {
+   "id": "traffic_light",
+   "title": "چراغ راهنمایی",
+   "kind": "signal",
+   "sound": "audio/ui/toggle.mp3",
+   "use": "قرمز یعنی بایست، سبز یعنی برو.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "rules"
+   ],
+   "play": "signal",
+   "quiz": {
+    "q": "چراغ قرمز یعنی چه؟",
+    "options": [
+     {
+      "art": "light_red",
+      "label": "بایست"
+     },
+     {
+      "art": "light_green",
+      "label": "برو"
+     },
+     {
+      "art": "q_party",
+      "label": "جشن"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "bus": {
+   "id": "bus",
+   "title": "اتوبوس",
+   "kind": "vehicle",
+   "sound": "audio/sfx/bus_horn.mp3",
+   "use": "اتوبوس خیلی‌ها را با هم جابه‌جا می‌کند.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "vehicle"
+   ],
+   "play": "vehicle",
+   "quiz": {
+    "q": "اتوبوس برای چیست؟",
+    "options": [
+     {
+      "art": "q_travel",
+      "label": "بردن مسافرها"
+     },
+     {
+      "art": "q_flowers",
+      "label": "آب دادن"
+     },
+     {
+      "art": "q_music",
+      "label": "آواز"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "invitation": {
+   "id": "invitation",
+   "title": "کارت دعوت",
+   "kind": "letter",
+   "sound": "audio/ui/page.mp3",
+   "use": "با کارت دعوت دوستانمان را به جشن خبر می‌کنیم.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "party"
+   ],
+   "play": "letter",
+   "quiz": {
+    "q": "کارت دعوت برای چیست؟",
+    "options": [
+     {
+      "art": "q_party",
+      "label": "خبر کردن برای جشن"
+     },
+     {
+      "art": "q_hungry",
+      "label": "غذا"
+     },
+     {
+      "art": "q_dark",
+      "label": "نور"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "feast": {
+   "id": "feast",
+   "title": "میز جشن",
+   "kind": "food",
+   "sound": "audio/sfx/giggle.mp3",
+   "use": "همه‌ی غذاهایی که ساختی روی یک میز!",
+   "taste": "خوشمزه",
+   "target": null,
+   "tags": [
+    "food",
+    "party"
+   ],
+   "play": "food",
+   "quiz": {
+    "q": "روی میز جشن چه گذاشتیم؟",
+    "options": [
+     {
+      "art": "q_eat",
+      "label": "غذاها"
+     },
+     {
+      "art": "tent",
+      "label": "چادر"
+     },
+     {
+      "art": "tire",
+      "label": "لاستیک"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "decorations": {
+   "id": "decorations",
+   "title": "تزئینات جشن",
+   "kind": "craft",
+   "sound": "audio/ui/sparkle.mp3",
+   "use": "تزئینات میدان را رنگی و شاد می‌کند.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "pretty",
+    "party"
+   ],
+   "play": "craft",
+   "quiz": {
+    "q": "تزئینات برای چیست؟",
+    "options": [
+     {
+      "art": "q_party",
+      "label": "قشنگ کردن جشن"
+     },
+     {
+      "art": "q_cold",
+      "label": "گرم شدن"
+     },
+     {
+      "art": "q_travel",
+      "label": "سفر"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "concert": {
+   "id": "concert",
+   "title": "کنسرت جشن",
+   "kind": "song",
+   "sound": "audio/instruments/xylo_c5.mp3",
+   "use": "گروه میمی آهنگ تو را می‌نوازد!",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "music",
+    "party"
+   ],
+   "play": "song",
+   "quiz": {
+    "q": "در کنسرت چه می‌شنویم؟",
+    "options": [
+     {
+      "art": "q_music",
+      "label": "موسیقی"
+     },
+     {
+      "art": "q_rain",
+      "label": "باران"
+     },
+     {
+      "art": "cow",
+      "label": "گاو"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "medal": {
+   "id": "medal",
+   "title": "مدال قهرمان جنگل",
+   "kind": "medal",
+   "sound": "audio/ui/success.mp3",
+   "use": "تو با ساخته‌هایت جشن جنگل را نجات دادی!",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "party"
+   ],
+   "play": "medal",
+   "quiz": {
+    "q": "چه کسی جشن را نجات داد؟",
+    "options": [
+     {
+      "art": "medal",
+      "label": "من!"
+     },
+     {
+      "art": "moon",
+      "label": "ماه"
+     },
+     {
+      "art": "tire",
+      "label": "لاستیک"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "bubbles": {
+   "id": "bubbles",
+   "title": "حباب‌ساز",
+   "kind": "bubbles",
+   "sound": "audio/sfx/bubbles.mp3",
+   "use": "با فوت، صابون حباب‌های رنگی می‌شود.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "play"
+   ],
+   "play": "bubbles",
+   "quiz": {
+    "q": "حباب چطور درست می‌شود؟",
+    "options": [
+     {
+      "art": "bubbles",
+      "label": "با فوت و صابون"
+     },
+     {
+      "art": "hammer",
+      "label": "با چکش"
+     },
+     {
+      "art": "bread",
+      "label": "با نان"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "necklace": {
+   "id": "necklace",
+   "title": "گردنبند مهره‌ای",
+   "kind": "craft",
+   "sound": "audio/ui/chime.mp3",
+   "use": "مهره‌ها را به ترتیب رنگ به نخ می‌کشیم.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "pretty"
+   ],
+   "play": "craft",
+   "quiz": {
+    "q": "گردنبند را کجا می‌اندازیم؟",
+    "options": [
+     {
+      "art": "q_wear",
+      "label": "گردن"
+     },
+     {
+      "art": "q_flowers",
+      "label": "گل"
+     },
+     {
+      "art": "q_carry",
+      "label": "جعبه"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "kite": {
+   "id": "kite",
+   "title": "بادبادک",
+   "kind": "kite",
+   "sound": "audio/ambient/wind.mp3",
+   "use": "باد بادبادک را بالا می‌برد.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "play",
+    "sky"
+   ],
+   "play": "kite",
+   "quiz": {
+    "q": "بادبادک با چه بالا می‌رود؟",
+    "options": [
+     {
+      "art": "q_sky",
+      "label": "باد"
+     },
+     {
+      "art": "q_water",
+      "label": "آب"
+     },
+     {
+      "art": "q_eat",
+      "label": "غذا"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "robot": {
+   "id": "robot",
+   "title": "ربات",
+   "kind": "robot",
+   "sound": "audio/sfx/gear.mp3",
+   "use": "ربات با باتری روشن می‌شود و کارهایی را که بگوییم انجام می‌دهد.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "play",
+    "machine"
+   ],
+   "play": "robot",
+   "quiz": {
+    "q": "ربات با چه روشن می‌شود؟",
+    "options": [
+     {
+      "art": "battery",
+      "label": "باتری"
+     },
+     {
+      "art": "water_jug",
+      "label": "آب"
+     },
+     {
+      "art": "bread",
+      "label": "نان"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "dollhouse": {
+   "id": "dollhouse",
+   "title": "خانه‌ی عروسکی",
+   "kind": "house",
+   "sound": "audio/sfx/door.mp3",
+   "use": "در خانه‌ی عروسکی چراغ‌ها روشن می‌شوند و شیر آب باز می‌شود.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "play"
+   ],
+   "play": "house",
+   "quiz": {
+    "q": "خانه برای چیست؟",
+    "options": [
+     {
+      "art": "q_sleep",
+      "label": "زندگی و خواب"
+     },
+     {
+      "art": "q_swim",
+      "label": "شنا"
+     },
+     {
+      "art": "q_travel",
+      "label": "سفر"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "rocket": {
+   "id": "rocket",
+   "title": "موشک",
+   "kind": "rocket",
+   "sound": "audio/ui/whoosh.mp3",
+   "use": "موشک با موتورهای قوی به فضا می‌رود.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "play",
+    "sky",
+    "vehicle"
+   ],
+   "play": "rocket",
+   "quiz": {
+    "q": "موشک کجا می‌رود؟",
+    "options": [
+     {
+      "art": "q_sky",
+      "label": "فضا"
+     },
+     {
+      "art": "q_swim",
+      "label": "استخر"
+     },
+     {
+      "art": "q_eat",
+      "label": "آشپزخانه"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "submarine": {
+   "id": "submarine",
+   "title": "زیردریایی",
+   "kind": "submarine",
+   "sound": "audio/sfx/bubbles.mp3",
+   "use": "زیردریایی زیر آب می‌رود و با چراغش ماهی‌ها را می‌بیند.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "play",
+    "vehicle"
+   ],
+   "play": "submarine",
+   "quiz": {
+    "q": "زیردریایی کجا می‌رود؟",
+    "options": [
+     {
+      "art": "fish",
+      "label": "زیر آب"
+     },
+     {
+      "art": "q_sky",
+      "label": "آسمان"
+     },
+     {
+      "art": "q_party",
+      "label": "جشن"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "train": {
+   "id": "train",
+   "title": "قطار",
+   "kind": "vehicle",
+   "sound": "audio/sfx/engine.mp3",
+   "use": "قطار روی ریل حرکت می‌کند و سوت می‌کشد: چوووو!",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "play",
+    "vehicle"
+   ],
+   "play": "vehicle",
+   "quiz": {
+    "q": "قطار روی چه حرکت می‌کند؟",
+    "options": [
+     {
+      "art": "rail",
+      "label": "ریل"
+     },
+     {
+      "art": "q_water",
+      "label": "آب"
+     },
+     {
+      "art": "q_sky",
+      "label": "ابر"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "bug_book": {
+   "id": "bug_book",
+   "title": "دفترچه‌ی حشره‌ها",
+   "kind": "find",
+   "sound": "audio/ui/page.mp3",
+   "use": "با ذره‌بین حشره‌های کوچک را بزرگ می‌بینیم.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "find"
+   ],
+   "play": "find",
+   "quiz": {
+    "q": "ذره‌بین چه کار می‌کند؟",
+    "options": [
+     {
+      "art": "ladybug",
+      "label": "کوچک را بزرگ نشان می‌دهد"
+     },
+     {
+      "art": "q_cold",
+      "label": "گرم می‌کند"
+     },
+     {
+      "art": "q_music",
+      "label": "آواز"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "bird_house": {
+   "id": "bird_house",
+   "title": "خانه‌ی پرنده",
+   "kind": "house",
+   "sound": "audio/animals/bird.mp3",
+   "use": "پرنده در خانه‌اش لانه می‌سازد.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "build"
+   ],
+   "play": "house",
+   "quiz": {
+    "q": "خانه‌ی پرنده برای کیست؟",
+    "options": [
+     {
+      "art": "q_sky",
+      "label": "پرنده"
+     },
+     {
+      "art": "fish",
+      "label": "ماهی"
+     },
+     {
+      "art": "cow",
+      "label": "گاو"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "photo_frame": {
+   "id": "photo_frame",
+   "title": "قاب عکس",
+   "kind": "craft",
+   "sound": "audio/ui/camera.mp3",
+   "use": "عکس یادگاری را در قاب می‌گذاریم و به دیوار می‌زنیم.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "pretty"
+   ],
+   "play": "craft",
+   "quiz": {
+    "q": "قاب عکس برای چیست؟",
+    "options": [
+     {
+      "art": "q_party",
+      "label": "نگه داشتن یادگاری"
+     },
+     {
+      "art": "q_hungry",
+      "label": "غذا"
+     },
+     {
+      "art": "q_rain",
+      "label": "باران"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "pizza": {
+   "id": "pizza",
+   "title": "پیتزا",
+   "kind": "food",
+   "sound": "audio/sfx/sizzle.mp3",
+   "use": "پیتزا را در فر می‌پزیم تا پنیرش آب شود.",
+   "taste": "شور و داغ",
+   "target": null,
+   "tags": [
+    "food"
+   ],
+   "play": "food",
+   "quiz": {
+    "q": "پیتزا را کجا می‌پزیم؟",
+    "options": [
+     {
+      "art": "big_oven",
+      "label": "فر"
+     },
+     {
+      "art": "fridge",
+      "label": "یخچال"
+     },
+     {
+      "art": "bucket",
+      "label": "سطل"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "cookie": {
+   "id": "cookie",
+   "title": "کلوچه",
+   "kind": "food",
+   "sound": "audio/sfx/snap.mp3",
+   "use": "کلوچه‌ی تازه ترد و شیرین است.",
+   "taste": "شیرین و ترد",
+   "target": null,
+   "tags": [
+    "food",
+    "sweet"
+   ],
+   "play": "food",
+   "quiz": {
+    "q": "کلوچه چه مزه‌ای دارد؟",
+    "options": [
+     {
+      "art": "cake",
+      "label": "شیرین"
+     },
+     {
+      "art": "lettuce",
+      "label": "تلخ"
+     },
+     {
+      "art": "soup",
+      "label": "شور"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "rag_doll": {
+   "id": "rag_doll",
+   "title": "عروسک پارچه‌ای",
+   "kind": "doll",
+   "sound": "audio/sfx/giggle.mp3",
+   "use": "عروسک نرم را بغل می‌کنیم.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "play"
+   ],
+   "play": "doll",
+   "quiz": {
+    "q": "با عروسک چه کار می‌کنیم؟",
+    "options": [
+     {
+      "art": "q_sleep",
+      "label": "بغل و بازی"
+     },
+     {
+      "art": "q_nail",
+      "label": "میخ"
+     },
+     {
+      "art": "q_travel",
+      "label": "رانندگی"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "windmill": {
+   "id": "windmill",
+   "title": "آسیاب بادی",
+   "kind": "windmill",
+   "sound": "audio/ambient/wind.mp3",
+   "use": "باد پره‌ها را می‌چرخاند.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "machine"
+   ],
+   "play": "windmill",
+   "quiz": {
+    "q": "چه چیزی آسیاب بادی را می‌چرخاند؟",
+    "options": [
+     {
+      "art": "q_sky",
+      "label": "باد"
+     },
+     {
+      "art": "q_water",
+      "label": "آب"
+     },
+     {
+      "art": "q_hungry",
+      "label": "غذا"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "bicycle": {
+   "id": "bicycle",
+   "title": "دوچرخه",
+   "kind": "vehicle",
+   "sound": "audio/sfx/bike_bell.mp3",
+   "use": "دوچرخه با رکاب زدن حرکت می‌کند: زینگ زینگ!",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "vehicle"
+   ],
+   "play": "vehicle",
+   "quiz": {
+    "q": "دوچرخه چطور حرکت می‌کند؟",
+    "options": [
+     {
+      "art": "q_travel",
+      "label": "با رکاب زدن"
+     },
+     {
+      "art": "q_rain",
+      "label": "با باران"
+     },
+     {
+      "art": "q_music",
+      "label": "با آواز"
+     }
+    ],
+    "answer": 0
+   }
+  },
+  "magnet_fish": {
+   "id": "magnet_fish",
+   "title": "ماهیگیری آهن‌ربایی",
+   "kind": "magnet",
+   "sound": "audio/sfx/snap.mp3",
+   "use": "آهن‌ربا چیزهای آهنی را به خودش می‌کشد.",
+   "taste": null,
+   "target": null,
+   "tags": [
+    "play",
+    "machine"
+   ],
+   "play": "magnet",
+   "quiz": {
+    "q": "آهن‌ربا چه چیزی را می‌کشد؟",
+    "options": [
+     {
+      "art": "nail",
+      "label": "میخ آهنی"
+     },
+     {
+      "art": "paper",
+      "label": "کاغذ"
+     },
+     {
+      "art": "bread",
+      "label": "نان"
+     }
+    ],
+    "answer": 0
+   }
+  }
+ },
+ "chapters": [
+  {
+   "id": "c1",
+   "title": "آشپزخانه‌ی خاله خرسی",
+   "friend": "bear",
+   "bg": "kitchen",
+   "color": "#FF8A1F",
+   "ambient": "audio/ambient/garden.mp3",
+   "intro": "طوفان آشپزخانه‌ی خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده. بیا با هم آشپزی کنیم!",
+   "film": [
+    "آب‌پرتقال شیرین و ترش",
+    "نان ترد و گرم",
+    "سوپ داغ و خوشمزه",
+    "و کیک تولد با شمع‌های روشن!"
+   ],
+   "next": "بانی در باغ تشنه است... بیا برویم پیشش!",
+   "sections": [
+    {
+     "id": "c1s1",
+     "title": "آب‌پرتقال",
+     "makes": "juice",
+     "mission": "خاله خرسی تشنه است. بیا برایش آب‌پرتقال درست کنیم!",
+     "steps": [
+      {
+       "engine": "collect",
+       "say": "پرتقال‌های رسیده را از درخت بچین.",
+       "target": "orange",
+       "count": 4,
+       "distract": [
+        "rotten_apple"
+       ],
+       "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "cut",
+       "say": "پرتقال را از وسط نصف کن. انگشتت را روی خط بکش.",
+       "target": "orange",
+       "lines": 1,
+       "result": "orange_half"
+      },
+      {
+       "engine": "tap",
+       "say": "پرتقال را روی آب‌گیری فشار بده! تند تند بزن.",
+       "target": "juicer",
+       "count": 8,
+       "sound": "audio/sfx/squeak.mp3",
+       "label": "",
+       "result": "juice"
+      },
+      {
+       "engine": "pour",
+       "say": "حالا آب‌میوه را در لیوان بریز. تا خط پر کن، نه بیشتر!",
+       "source": "juice",
+       "into": "glass",
+       "sound": "audio/sfx/pour.mp3",
+       "color": "#FFA726"
+      }
+     ],
+     "targetSec": 100,
+     "secret": "magnifier"
+    },
+    {
+     "id": "c1s2",
+     "title": "نان",
+     "makes": "bread",
+     "mission": "برای ناهار نان لازم داریم. بیا نان بپزیم!",
+     "steps": [
+      {
+       "engine": "pour",
+       "say": "آرد را در کاسه بریز.",
+       "source": "flour",
+       "into": "bowl_mix",
+       "sound": "audio/sfx/rustle.mp3",
+       "color": "#FFF3E0"
+      },
+      {
+       "engine": "pour",
+       "say": "کمی آب هم اضافه کن.",
+       "source": "water_jug",
+       "into": "bowl_mix",
+       "sound": "audio/sfx/pour.mp3",
+       "color": "#4FC3F7"
+      },
+      {
+       "engine": "tap",
+       "say": "خمیر را ورز بده! با هر ضربه نرم‌تر می‌شود.",
+       "target": "dough",
+       "count": 10,
+       "sound": "audio/sfx/thunk.mp3",
+       "label": "",
+       "result": "dough"
+      },
+      {
+       "engine": "timing",
+       "say": "نان را در فر گذاشتیم. وقتی طلایی شد، بزن!",
+       "target": "oven",
+       "sound": "audio/sfx/kettle.mp3",
+       "label": "حالا!",
+       "result": "bread"
+      }
+     ],
+     "targetSec": 110,
+     "secret": "big_oven"
+    },
+    {
+     "id": "c1s3",
+     "title": "سوپ سبزیجات",
+     "makes": "soup",
+     "mission": "باد سرد می‌آید. یک سوپ گرم بپزیم!",
+     "steps": [
+      {
+       "engine": "sort",
+       "say": "سبزی‌های سالم را در سبد بگذار و خراب‌ها را در سطل.",
+       "good": [
+        "carrot",
+        "potato",
+        "tomato"
+       ],
+       "bad": [
+        "rotten_apple",
+        "old_shoe"
+       ],
+       "goodLabel": "سالم",
+       "badLabel": "خراب"
+      },
+      {
+       "engine": "cut",
+       "say": "هویج را خرد کن.",
+       "target": "carrot",
+       "lines": 3,
+       "result": "carrot"
+      },
+      {
+       "engine": "count",
+       "say": "سه تکه هویج در قابلمه بینداز.",
+       "target": "carrot",
+       "count": 3,
+       "into": "pot",
+       "sound": "audio/sfx/splash.mp3"
+      },
+      {
+       "engine": "rotate",
+       "say": "سوپ را هم بزن. انگشتت را دور قابلمه بچرخان.",
+       "target": "pot",
+       "turns": 3,
+       "sound": "audio/sfx/stir.mp3",
+       "result": "soup"
+      }
+     ],
+     "targetSec": 120,
+     "secret": null
+    },
+    {
+     "id": "c1s4",
+     "title": "کیک تولد",
+     "makes": "cake",
+     "mission": "امروز تولد خاله خرسی است! بیا کیک بپزیم.",
+     "steps": [
+      {
+       "engine": "tap",
+       "say": "تخم‌مرغ‌ها را بشکن. روی هر کدام بزن.",
+       "target": "egg",
+       "count": 3,
+       "sound": "audio/sfx/snap.mp3",
+       "label": "",
+       "result": "bowl_mix"
+      },
+      {
+       "engine": "pour",
+       "say": "آرد را اضافه کن.",
+       "source": "flour",
+       "into": "bowl_mix",
+       "sound": "audio/sfx/rustle.mp3",
+       "color": "#FFF3E0"
+      },
+      {
+       "engine": "rotate",
+       "say": "خوب هم بزن تا خمیر کیک صاف شود.",
+       "target": "bowl_mix",
+       "turns": 3,
+       "sound": "audio/sfx/stir.mp3",
+       "result": "cake"
+      },
+      {
+       "engine": "paint",
+       "say": "کیک را با رنگ‌های خوشمزه تزئین کن.",
+       "target": "cake",
+       "areas": 4
+      },
+      {
+       "engine": "count",
+       "say": "چهار شمع روی کیک بگذار.",
+       "target": "candle",
+       "count": 4,
+       "into": "cake",
+       "sound": "audio/ui/chime.mp3"
+      }
+     ],
+     "targetSec": 140,
+     "secret": null
+    }
+   ]
+  },
+  {
+   "id": "c2",
+   "title": "باغ و مزرعه‌ی بانی",
+   "friend": "bunny",
+   "bg": "farm",
+   "color": "#2FBF71",
+   "ambient": "audio/ambient/farm.mp3",
+   "intro": "بانی تشنه است و باغش خشک شده. کمکش کنیم باغ دوباره سبز شود!",
+   "film": [
+    "آب‌پاش، گل‌ها را سیراب کرد",
+    "گلدان گل، زنبورها را آورد",
+    "مرغ‌ها تخم گذاشتند",
+    "و ساندویچ پنیر برای پیک‌نیک!"
+   ],
+   "next": "کارگاه آقا سنجاب خراب شده... بیا کمکش کنیم!",
+   "sections": [
+    {
+     "id": "c2s1",
+     "title": "آب‌پاش",
+     "makes": "watering_can",
+     "mission": "بانی خیلی تشنه است و حرف نمی‌زند! اول یک چیزی برای نوشیدن بهش بده.",
+     "steps": [
+      {
+       "engine": "use",
+       "say": "از کوله‌پشتی چیزی بده که تشنگی را برطرف کند.",
+       "need": "juice",
+       "spot": "q_thirsty",
+       "done": "به به! بانی سرحال شد.",
+       "why": "این برای رفع تشنگی نیست."
+      },
+      {
+       "engine": "assemble",
+       "say": "تکه‌های آب‌پاش را سر جایشان بگذار.",
+       "base": "watering_can",
+       "parts": [
+        {
+         "art": "can_body",
+         "x": 0.5,
+         "y": 0.6
+        },
+        {
+         "art": "can_spout",
+         "x": 0.2,
+         "y": 0.45
+        },
+        {
+         "art": "can_handle",
+         "x": 0.78,
+         "y": 0.38
+        }
+       ],
+       "result": "watering_can"
+      },
+      {
+       "engine": "rotate",
+       "say": "دسته‌ی چاه را بچرخان تا آب بالا بیاید.",
+       "target": "well",
+       "turns": 3,
+       "sound": "audio/sfx/water_tap.mp3",
+       "result": "well"
+      },
+      {
+       "engine": "pour",
+       "say": "آب‌پاش را پر کن.",
+       "source": "water_jug",
+       "into": "watering_can",
+       "sound": "audio/sfx/pour.mp3",
+       "color": "#4FC3F7"
+      }
+     ],
+     "targetSec": 110,
+     "secret": "magnifier"
+    },
+    {
+     "id": "c2s2",
+     "title": "گلدان گل",
+     "makes": "flower_pot",
+     "mission": "بانی می‌خواهد یک گل قشنگ بکارد.",
+     "steps": [
+      {
+       "engine": "tap",
+       "say": "خاک را با بیلچه بکن.",
+       "target": "empty_pot",
+       "count": 5,
+       "sound": "audio/sfx/rustle.mp3",
+       "label": "",
+       "result": "empty_pot"
+      },
+      {
+       "engine": "count",
+       "say": "سه دانه در خاک بکار.",
+       "target": "seed",
+       "count": 3,
+       "into": "empty_pot",
+       "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "use",
+       "say": "دانه‌ها تشنه‌اند! از کوله چیزی بیاور که با آن آب بدهیم.",
+       "need": "watering_can",
+       "spot": "empty_pot",
+       "done": "آفرین! دانه‌ها آب خوردند.",
+       "why": "با این نمی‌شود آب داد."
+      },
+      {
+       "engine": "timing",
+       "say": "جوانه دارد بزرگ می‌شود... وقتی گل باز شد بزن!",
+       "target": "sprout",
+       "sound": "audio/sfx/grow.mp3",
+       "label": "حالا!",
+       "result": "flower_pot"
+      }
+     ],
+     "targetSec": 110,
+     "secret": null
+    },
+    {
+     "id": "c2s3",
+     "title": "لانه‌ی مرغ",
+     "makes": "eggs",
+     "mission": "مرغ‌های بانی لانه ندارند و گم شده‌اند!",
+     "steps": [
+      {
+       "engine": "collect",
+       "say": "کاه جمع کن.",
+       "target": "hay",
+       "count": 5,
+       "distract": [
+        "old_shoe"
+       ],
+       "sound": "audio/sfx/rustle.mp3"
+      },
+      {
+       "engine": "count",
+       "say": "کاه‌ها را در لانه بگذار.",
+       "target": "hay",
+       "count": 4,
+       "into": "nest",
+       "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "collect",
+       "say": "مرغ‌های گم‌شده را پیدا کن. پشت بوته‌ها را ببین!",
+       "target": "hen",
+       "count": 3,
+       "distract": [],
+       "sound": "audio/animals/rooster.mp3"
+      }
+     ],
+     "targetSec": 100,
+     "secret": "saw"
+    },
+    {
+     "id": "c2s4",
+     "title": "ساندویچ پیک‌نیک",
+     "makes": "sandwich",
+     "mission": "وقت پیک‌نیک است! یک ساندویچ خوشمزه درست کنیم.",
+     "steps": [
+      {
+       "engine": "tap",
+       "say": "گاو را آرام بدوش. با هر ضربه شیر می‌آید.",
+       "target": "cow",
+       "count": 6,
+       "sound": "audio/animals/cow.mp3",
+       "label": "",
+       "result": "milk"
+      },
+      {
+       "engine": "rotate",
+       "say": "شیر را هم بزن تا پنیر شود.",
+       "target": "bucket",
+       "turns": 3,
+       "sound": "audio/sfx/stir.mp3",
+       "result": "cheese"
+      },
+      {
+       "engine": "use",
+       "say": "برای ساندویچ نان لازم داریم! از کوله بیاور.",
+       "need": "bread",
+       "spot": "q_hungry",
+       "done": "نان رسید!",
+       "why": "این نان نیست."
+      },
+      {
+       "engine": "order",
+       "say": "ساندویچ را لایه‌لایه بچین: نان، کاهو، پنیر، نان.",
+       "items": [
+        "bread",
+        "lettuce",
+        "cheese",
+        "bread"
+       ],
+       "sound": null
+      }
+     ],
+     "targetSec": 120,
+     "secret": null
+    }
+   ]
+  },
+  {
+   "id": "c3",
+   "title": "کارگاه آقا سنجاب",
+   "friend": "squirrel",
+   "bg": "workshop",
+   "color": "#3B82F6",
+   "ambient": "audio/ambient/wind.mp3",
+   "intro": "طوفان کارگاه آقا سنجاب را خراب کرده و ابزارهایش پخش شده‌اند. بیا ابزار بسازیم!",
+   "film": [
+    "چکش، میخ را فرو کرد: تق تق!",
+    "چراغ‌قوه تاریکی را روشن کرد",
+    "گاری جعبه‌ها را برد",
+    "و ماشین با کلید روشن شد: برووووم!"
+   ],
+   "next": "کوکو همه‌ی رنگ‌هایش را گم کرده...",
+   "sections": [
+    {
+     "id": "c3s1",
+     "title": "چکش",
+     "makes": "hammer",
+     "mission": "آقا سنجاب چکشش را گم کرده. تکه‌هایش این‌جا پخش شده‌اند!",
+     "steps": [
+      {
+       "engine": "collect",
+       "say": "سر چکش را در کارگاه شلوغ پیدا کن.",
+       "target": "hammer_head",
+       "count": 1,
+       "distract": [
+        "junk_spoon",
+        "junk_sock"
+       ],
+       "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "collect",
+       "say": "دسته‌ی چوبی را هم پیدا کن.",
+       "target": "hammer_handle",
+       "count": 1,
+       "distract": [
+        "junk_spoon",
+        "junk_sock"
+       ],
+       "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "assemble",
+       "say": "سر و دسته را به هم وصل کن.",
+       "base": "hammer",
+       "parts": [
+        {
+         "art": "hammer_head",
+         "x": 0.5,
+         "y": 0.25
+        },
+        {
+         "art": "hammer_handle",
+         "x": 0.5,
+         "y": 0.65
+        }
+       ],
+       "result": "hammer"
+      },
+      {
+       "engine": "rotate",
+       "say": "پیچ را سفت کن.",
+       "target": "screw",
+       "turns": 2,
+       "sound": "audio/sfx/gear.mp3",
+       "result": "hammer"
+      }
+     ],
+     "targetSec": 100,
+     "secret": "wrench"
+    },
+    {
+     "id": "c3s2",
+     "title": "چراغ‌قوه",
+     "makes": "flashlight",
+     "mission": "گوشه‌ی کارگاه خیلی تاریک است!",
+     "steps": [
+      {
+       "engine": "assemble",
+       "say": "باتری‌ها را در چراغ‌قوه بگذار.",
+       "base": "flashlight",
+       "parts": [
+        {
+         "art": "battery",
+         "x": 0.35,
+         "y": 0.5
+        },
+        {
+         "art": "battery",
+         "x": 0.6,
+         "y": 0.5
+        }
+       ],
+       "result": "flashlight"
+      },
+      {
+       "engine": "rotate",
+       "say": "لامپ را بپیچان.",
+       "target": "bulb",
+       "turns": 2,
+       "sound": "audio/sfx/gear.mp3",
+       "result": "bulb"
+      },
+      {
+       "engine": "tap",
+       "say": "کلید را بزن!",
+       "target": "flashlight",
+       "count": 1,
+       "sound": "audio/sfx/light_switch.mp3",
+       "label": "",
+       "result": "flashlight"
+      },
+      {
+       "engine": "dark",
+       "say": "با نور، جعبه‌های گم‌شده را در تاریکی پیدا کن.",
+       "target": "box",
+       "count": 3
+      }
+     ],
+     "targetSec": 100,
+     "secret": "magnifier"
+    },
+    {
+     "id": "c3s3",
+     "title": "گاری",
+     "makes": "cart",
+     "mission": "جعبه‌ها خیلی سنگین‌اند. یک گاری لازم داریم!",
+     "steps": [
+      {
+       "engine": "use",
+       "say": "تخته‌ها باید با میخ به هم وصل شوند. چه وسیله‌ای لازم است؟",
+       "need": "hammer",
+       "spot": "q_nail",
+       "done": "تق تق! تخته‌ها وصل شدند.",
+       "why": "با این نمی‌شود میخ زد."
+      },
+      {
+       "engine": "tap",
+       "say": "میخ‌ها را با چکش بکوب!",
+       "target": "nail",
+       "count": 4,
+       "sound": "audio/sfx/hammer.mp3",
+       "label": "",
+       "result": "nail"
+      },
+      {
+       "engine": "count",
+       "say": "دو چرخ به گاری وصل کن.",
+       "target": "wheel",
+       "count": 2,
+       "into": "cart",
+       "sound": "audio/sfx/gear.mp3"
+      }
+     ],
+     "targetSec": 100,
+     "secret": "drill"
+    },
+    {
+     "id": "c3s4",
+     "title": "ماشین اسباب‌بازی",
+     "makes": "toy_car",
+     "mission": "آقا سنجاب یک ماشین قدیمی دارد. بیا درستش کنیم!",
+     "steps": [
+      {
+       "engine": "count",
+       "say": "چهار چرخ به ماشین وصل کن. بشمار!",
+       "target": "wheel",
+       "count": 4,
+       "into": "car_body",
+       "sound": "audio/sfx/gear.mp3"
+      },
+      {
+       "engine": "paint",
+       "say": "ماشین را رنگ کن.",
+       "target": "toy_car",
+       "areas": 3
+      },
+      {
+       "engine": "rotate",
+       "say": "کلید را بچرخان تا ماشین روشن شود!",
+       "target": "car_key",
+       "turns": 3,
+       "sound": "audio/sfx/engine.mp3",
+       "result": "toy_car"
+      }
+     ],
+     "targetSec": 110,
+     "secret": "wrench"
+    }
+   ]
+  },
+  {
+   "id": "c4",
+   "title": "آتلیه‌ی رنگی کوکو",
+   "friend": "parrot",
+   "bg": "studio",
+   "color": "#E9478F",
+   "ambient": "audio/ambient/garden.mp3",
+   "intro": "کوکو همه‌ی رنگ‌هایش را در طوفان گم کرده و تزئینات جشن بی‌رنگ مانده‌اند.",
+   "film": [
+    "قرمز و زرد، نارنجی شد!",
+    "کاسه‌ی گلی آب را نگه داشت",
+    "فانوس با لامپ چراغ‌قوه روشن شد",
+    "و ماسک‌ها و پرچم‌ها رنگی شدند!"
+   ],
+   "next": "مادربزرگ جغد راه خانه‌اش را در شب گم کرده...",
+   "sections": [
+    {
+     "id": "c4s1",
+     "title": "رنگ‌ها",
+     "makes": "paints",
+     "mission": "اول یک قلم‌مو و رنگ می‌خواهیم!",
+     "steps": [
+      {
+       "engine": "assemble",
+       "say": "موهای قلم‌مو را به دسته وصل کن.",
+       "base": "brush",
+       "parts": [
+        {
+         "art": "bristles",
+         "x": 0.5,
+         "y": 0.2
+        },
+        {
+         "art": "brush",
+         "x": 0.5,
+         "y": 0.6
+        }
+       ],
+       "result": "brush"
+      },
+      {
+       "engine": "mix",
+       "say": "قرمز و زرد را با هم مخلوط کن. چه رنگی شد؟",
+       "a": "#F44336",
+       "b": "#FFEB3B",
+       "result": "#FF9800",
+       "resultName": "نارنجی"
+      },
+      {
+       "engine": "mix",
+       "say": "حالا آبی و زرد!",
+       "a": "#2196F3",
+       "b": "#FFEB3B",
+       "result": "#4CAF50",
+       "resultName": "سبز"
+      }
+     ],
+     "targetSec": 90,
+     "secret": "glue_gun"
+    },
+    {
+     "id": "c4s2",
+     "title": "کاسه‌ی گلی",
+     "makes": "clay_bowl",
+     "mission": "کوکو یک کاسه برای آب رنگ‌ها می‌خواهد.",
+     "steps": [
+      {
+       "engine": "use",
+       "say": "گل رس خشک است! با چه خیسش کنیم؟",
+       "need": "watering_can",
+       "spot": "clay",
+       "done": "شُر شُر! گل نرم شد.",
+       "why": "با این نمی‌شود خیس کرد."
+      },
+      {
+       "engine": "tap",
+       "say": "گل را ورز بده.",
+       "target": "clay",
+       "count": 6,
+       "sound": "audio/sfx/thunk.mp3",
+       "label": "",
+       "result": "clay"
+      },
+      {
+       "engine": "rotate",
+       "say": "چرخ سفالگری را بچرخان تا کاسه شکل بگیرد.",
+       "target": "pottery_wheel",
+       "turns": 3,
+       "sound": "audio/sfx/stir.mp3",
+       "result": "clay_bowl"
+      },
+      {
+       "engine": "paint",
+       "say": "کاسه را رنگ کن.",
+       "target": "clay_bowl",
+       "areas": 3
+      }
+     ],
+     "targetSec": 120,
+     "secret": null
+    },
+    {
+     "id": "c4s3",
+     "title": "فانوس",
+     "makes": "lantern",
+     "mission": "برای شب جشن فانوس رنگی لازم داریم.",
+     "steps": [
+      {
+       "engine": "cut",
+       "say": "کاغذ را روی خط‌ها ببُر.",
+       "target": "paper",
+       "lines": 2,
+       "result": "paper"
+      },
+      {
+       "engine": "paint",
+       "say": "فانوس را رنگ کن.",
+       "target": "lantern",
+       "areas": 4
+      },
+      {
+       "engine": "use",
+       "say": "فانوس نور ندارد! چه چیزی لامپ دارد؟",
+       "need": "flashlight",
+       "spot": "lantern",
+       "done": "روشن شد! چه قشنگ.",
+       "why": "این نور ندارد."
+      }
+     ],
+     "targetSec": 110,
+     "secret": "glue_gun"
+    },
+    {
+     "id": "c4s4",
+     "title": "ماسک و پرچم",
+     "makes": "mask",
+     "mission": "برای جشن ماسک و پرچم درست کنیم!",
+     "steps": [
+      {
+       "engine": "cut",
+       "say": "ماسک را با قیچی ببُر.",
+       "target": "paper",
+       "lines": 2,
+       "result": "mask"
+      },
+      {
+       "engine": "paint",
+       "say": "ماسک را رنگ کن.",
+       "target": "mask",
+       "areas": 4
+      },
+      {
+       "engine": "count",
+       "say": "پنج پرچم به نخ آویزان کن.",
+       "target": "flag",
+       "count": 5,
+       "into": "bunting",
+       "sound": "audio/ui/pop.mp3"
+      }
+     ],
+     "targetSec": 110,
+     "secret": "sewing_machine"
+    }
+   ]
+  },
+  {
+   "id": "c5",
+   "title": "شب جنگل و مادربزرگ جغد",
+   "friend": "owl",
+   "bg": "night_forest",
+   "color": "#5B2BC4",
+   "ambient": "audio/ambient/forest.mp3",
+   "night": true,
+   "intro": "مادربزرگ جغد راه خانه‌اش را در جنگلِ شب گم کرده. نترس، با هم پیدایش می‌کنیم!",
+   "film": [
+    "نقشه راه را نشان داد",
+    "چادر ما را از باران حفظ کرد",
+    "کرم‌های شب‌تاب مسیر را روشن کردند",
+    "و با تلسکوپ ماه را دیدیم!"
+   ],
+   "next": "سازهای گروه میمی شکسته‌اند...",
+   "sections": [
+    {
+     "id": "c5s1",
+     "title": "نقشه‌ی جنگل",
+     "makes": "map",
+     "mission": "تکه‌های نقشه در باد پخش شده‌اند!",
+     "steps": [
+      {
+       "engine": "puzzle",
+       "say": "تکه‌های نقشه را کنار هم بچین.",
+       "target": "map"
+      },
+      {
+       "engine": "trace",
+       "say": "با انگشت راه را از خانه‌ی جغد تا درخت بزرگ دنبال کن.",
+       "target": "map",
+       "shape": "wave"
+      }
+     ],
+     "targetSec": 100,
+     "secret": "magnifier"
+    },
+    {
+     "id": "c5s2",
+     "title": "چادر",
+     "makes": "tent",
+     "mission": "باران دارد می‌آید! یک چادر بزنیم.",
+     "steps": [
+      {
+       "engine": "assemble",
+       "say": "پارچه و ستون‌های چادر را سر جایشان بگذار.",
+       "base": "tent",
+       "parts": [
+        {
+         "art": "tent_cloth",
+         "x": 0.5,
+         "y": 0.45
+        },
+        {
+         "art": "pole",
+         "x": 0.25,
+         "y": 0.6
+        },
+        {
+         "art": "pole",
+         "x": 0.75,
+         "y": 0.6
+        }
+       ],
+       "result": "tent"
+      },
+      {
+       "engine": "use",
+       "say": "میخ‌های چادر را با چه بکوبیم؟",
+       "need": "hammer",
+       "spot": "peg",
+       "done": "تق تق! چادر محکم شد.",
+       "why": "با این نمی‌شود میخ زد."
+      },
+      {
+       "engine": "tap",
+       "say": "همه‌ی میخ‌ها را بکوب.",
+       "target": "peg",
+       "count": 4,
+       "sound": "audio/sfx/hammer.mp3",
+       "label": "",
+       "result": "peg"
+      }
+     ],
+     "targetSec": 110,
+     "secret": null
+    },
+    {
+     "id": "c5s3",
+     "title": "مسیر نورانی",
+     "makes": "firefly_jar",
+     "mission": "مسیر خیلی تاریک است و مادربزرگ سردش است.",
+     "steps": [
+      {
+       "engine": "use",
+       "say": "با چه چیزی تاریکی را روشن کنیم؟",
+       "need": "flashlight",
+       "spot": "q_dark",
+       "done": "روشن شد!",
+       "why": "این نور ندارد."
+      },
+      {
+       "engine": "dark",
+       "say": "کرم‌های شب‌تاب را در تاریکی پیدا کن و در شیشه بگذار.",
+       "target": "firefly",
+       "count": 4
+      },
+      {
+       "engine": "use",
+       "say": "مادربزرگ جغد سردش است. از کوله چیزی بده که گرمش کند.",
+       "need": "soup",
+       "spot": "q_cold",
+       "done": "آخیش! گرم شدم، ممنون عزیزم.",
+       "why": "این گرم نمی‌کند."
+      }
+     ],
+     "targetSec": 120,
+     "secret": null
+    },
+    {
+     "id": "c5s4",
+     "title": "تلسکوپ",
+     "makes": "telescope",
+     "mission": "مادربزرگ جغد می‌خواهد ستاره‌ها را نشانت بدهد.",
+     "steps": [
+      {
+       "engine": "rotate",
+       "say": "مقوا را لوله کن.",
+       "target": "tube",
+       "turns": 2,
+       "sound": "audio/sfx/rustle.mp3",
+       "result": "tube"
+      },
+      {
+       "engine": "order",
+       "say": "عدسی‌ها را از بزرگ به کوچک بگذار.",
+       "items": [
+        "lens",
+        "lens",
+        "lens"
+       ],
+       "sound": null
+      },
+      {
+       "engine": "rotate",
+       "say": "تلسکوپ را تنظیم کن تا تصویر واضح شود.",
+       "target": "telescope",
+       "turns": 2,
+       "sound": "audio/sfx/gear.mp3",
+       "result": "telescope"
+      }
+     ],
+     "targetSec": 110,
+     "secret": "magnet"
+    }
+   ]
+  },
+  {
+   "id": "c6",
+   "title": "گروه موسیقی میمی",
+   "friend": "cat",
+   "bg": "stage",
+   "color": "#A855F7",
+   "ambient": "audio/ambient/park.mp3",
+   "intro": "میمی می‌خواهد در جشن بخواند، اما سازهای گروه در طوفان شکسته‌اند.",
+   "film": [
+    "طبل: بوم بوم!",
+    "زایلوفون: زیر و بم",
+    "نی: فووو",
+    "و آهنگ جشن با همه‌ی سازها!"
+   ],
+   "next": "پل شهر شکسته و اتوبوس لاکی خراب است...",
+   "sections": [
+    {
+     "id": "c6s1",
+     "title": "طبل",
+     "makes": "drum",
+     "mission": "اول یک طبل محکم بسازیم!",
+     "steps": [
+      {
+       "engine": "use",
+       "say": "برای بدنه‌ی طبل یک کاسه لازم داریم.",
+       "need": "clay_bowl",
+       "spot": "drum_skin",
+       "done": "این کاسه عالی است!",
+       "why": "این کاسه نیست."
+      },
+      {
+       "engine": "assemble",
+       "say": "پوست طبل را روی کاسه بکش.",
+       "base": "drum",
+       "parts": [
+        {
+         "art": "drum_skin",
+         "x": 0.5,
+         "y": 0.3
+        }
+       ],
+       "result": "drum"
+      },
+      {
+       "engine": "tap",
+       "say": "طناب‌ها را سفت کن. هر بار بزن!",
+       "target": "drum",
+       "count": 5,
+       "sound": "audio/instruments/drum_tom.mp3",
+       "label": "",
+       "result": "drum"
+      }
+     ],
+     "targetSec": 90,
+     "secret": "drill"
+    },
+    {
+     "id": "c6s2",
+     "title": "زایلوفون",
+     "makes": "xylophone",
+     "mission": "زایلوفون تیغه‌های رنگی دارد.",
+     "steps": [
+      {
+       "engine": "order",
+       "say": "تیغه‌ها را از بلند به کوتاه بچین.",
+       "items": [
+        "bar_red",
+        "bar_red",
+        "bar_red",
+        "bar_red"
+       ],
+       "sound": "audio/instruments/xylo_c4.mp3"
+      },
+      {
+       "engine": "use",
+       "say": "تیغه‌ها با میخ به پایه وصل می‌شوند. چه وسیله‌ای لازم است؟",
+       "need": "hammer",
+       "spot": "q_nail",
+       "done": "تق تق!",
+       "why": "با این نمی‌شود میخ زد."
+      },
+      {
+       "engine": "rhythm",
+       "say": "آهنگ میمی را تکرار کن!",
+       "pads": [
+        {
+         "art": "bar_red",
+         "sound": "audio/instruments/xylo_c4.mp3"
+        },
+        {
+         "art": "bar_red",
+         "sound": "audio/instruments/xylo_e4.mp3"
+        },
+        {
+         "art": "bar_red",
+         "sound": "audio/instruments/xylo_g4.mp3"
+        }
+       ],
+       "rounds": 2
+      }
+     ],
+     "targetSec": 110,
+     "secret": null
+    },
+    {
+     "id": "c6s3",
+     "title": "نی",
+     "makes": "flute",
+     "mission": "نی صدای پرنده‌ها را دارد.",
+     "steps": [
+      {
+       "engine": "cut",
+       "say": "نی را ببُر.",
+       "target": "reed",
+       "lines": 1,
+       "result": "flute"
+      },
+      {
+       "engine": "collect",
+       "say": "جای سوراخ‌ها را لمس کن.",
+       "target": "flute",
+       "count": 4,
+       "distract": [],
+       "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "timing",
+       "say": "فوت کن... حالا بزن!",
+       "target": "flute",
+       "sound": "audio/instruments/flute.mp3",
+       "label": "حالا!",
+       "result": "flute"
+      }
+     ],
+     "targetSec": 90,
+     "secret": "saw"
+    },
+    {
+     "id": "c6s4",
+     "title": "آهنگ جشن",
+     "makes": "song",
+     "mission": "با سازهایی که ساختی آهنگ جشن را بسازیم!",
+     "steps": [
+      {
+       "engine": "rhythm",
+       "say": "آهنگ را تکرار کن. اول گوش کن!",
+       "pads": [
+        {
+         "art": "drum",
+         "sound": "audio/instruments/drum_tom.mp3"
+        },
+        {
+         "art": "xylophone",
+         "sound": "audio/instruments/xylo_e4.mp3"
+        },
+        {
+         "art": "flute",
+         "sound": "audio/instruments/flute.mp3"
+        }
+       ],
+       "rounds": 3
+      }
+     ],
+     "targetSec": 90,
+     "secret": null
+    }
+   ]
+  },
+  {
+   "id": "c7",
+   "title": "شهر و راننده لاکی",
+   "friend": "turtle",
+   "bg": "city",
+   "color": "#F0524F",
+   "ambient": "audio/ambient/street.mp3",
+   "intro": "پل شهر شکسته و اتوبوس لاکی خراب شده. هیچ‌کس نمی‌تواند به جشن برسد!",
+   "film": [
+    "پل دوباره ساخته شد",
+    "چراغ راهنمایی: قرمز بایست، سبز برو",
+    "اتوبوس روشن شد: بوق بوق!",
+    "و همه کارت دعوت گرفتند!"
+   ],
+   "next": "همه آماده‌اند... وقت جشن بزرگ است!",
+   "sections": [
+    {
+     "id": "c7s1",
+     "title": "تعمیر پل",
+     "makes": "bridge",
+     "mission": "پل شکسته! ماشین‌ها نمی‌توانند رد شوند.",
+     "steps": [
+      {
+       "engine": "use",
+       "say": "تخته‌ها سنگین‌اند. با چه بیاوریمشان؟",
+       "need": "cart",
+       "spot": "plank",
+       "done": "گاری تخته‌ها را آورد!",
+       "why": "این بار نمی‌برد."
+      },
+      {
+       "engine": "count",
+       "say": "تخته‌ها را در جاهای خالی پل بگذار.",
+       "target": "plank",
+       "count": 3,
+       "into": "bridge",
+       "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "use",
+       "say": "تخته‌ها را با چه محکم کنیم؟",
+       "need": "hammer",
+       "spot": "q_nail",
+       "done": "تق تق! پل محکم شد.",
+       "why": "با این نمی‌شود میخ زد."
+      }
+     ],
+     "targetSec": 110,
+     "secret": "drill"
+    },
+    {
+     "id": "c7s2",
+     "title": "چراغ راهنمایی",
+     "makes": "traffic_light",
+     "mission": "چراغ راهنمایی خاموش است و ماشین‌ها گیج شده‌اند.",
+     "steps": [
+      {
+       "engine": "order",
+       "say": "چراغ‌ها را به ترتیب بچین: قرمز، زرد، سبز.",
+       "items": [
+        "light_red",
+        "light_yellow",
+        "light_green"
+       ],
+       "sound": null
+      },
+      {
+       "engine": "use",
+       "say": "رنگ چراغ‌ها رفته! چه چیزی رنگ دارد؟",
+       "need": "paints",
+       "spot": "traffic_light",
+       "done": "رنگی شد!",
+       "why": "این رنگ ندارد."
+      },
+      {
+       "engine": "tap",
+       "say": "چراغ را عوض کن: قرمز، زرد، سبز!",
+       "target": "traffic_light",
+       "count": 3,
+       "sound": "audio/ui/toggle.mp3",
+       "label": "",
+       "result": "traffic_light"
+      }
+     ],
+     "targetSec": 100,
+     "secret": null
+    },
+    {
+     "id": "c7s3",
+     "title": "تعمیر اتوبوس",
+     "makes": "bus",
+     "mission": "اتوبوس لاکی پنچر و کثیف و بی‌بنزین است!",
+     "steps": [
+      {
+       "engine": "rotate",
+       "say": "پیچ‌های لاستیک نو را ببند.",
+       "target": "tire",
+       "turns": 2,
+       "sound": "audio/sfx/gear.mp3",
+       "result": "tire"
+      },
+      {
+       "engine": "scrub",
+       "say": "اتوبوس را بشور. گل‌ها را پاک کن!",
+       "target": "bus"
+      },
+      {
+       "engine": "pour",
+       "say": "باک را پر کن.",
+       "source": "fuel",
+       "into": "bus",
+       "sound": "audio/sfx/pour.mp3",
+       "color": "#E53935"
+      },
+      {
+       "engine": "rotate",
+       "say": "حالا روشنش کن!",
+       "target": "car_key",
+       "turns": 2,
+       "sound": "audio/sfx/engine.mp3",
+       "result": "bus"
+      }
+     ],
+     "targetSec": 130,
+     "secret": "wrench"
+    },
+    {
+     "id": "c7s4",
+     "title": "کارت دعوت",
+     "makes": "invitation",
+     "mission": "باید همه را به جشن دعوت کنیم!",
+     "steps": [
+      {
+       "engine": "puzzle",
+       "say": "عکس دوستان را روی کارت درست کن.",
+       "target": "invitation"
+      },
+      {
+       "engine": "count",
+       "say": "نامه‌ها را در صندوق بینداز.",
+       "target": "letter",
+       "count": 3,
+       "into": "mailbox",
+       "sound": "audio/ui/page.mp3"
+      },
+      {
+       "engine": "use",
+       "say": "خانه‌ها دورند. با چه نامه‌ها را برسانیم؟",
+       "need": "toy_car",
+       "spot": "q_travel",
+       "done": "برووووم! نامه‌ها رسیدند.",
+       "why": "این حرکت نمی‌کند."
+      },
+      {
+       "engine": "trace",
+       "say": "ماشین را در مسیر بران.",
+       "target": "toy_car",
+       "shape": "zigzag"
+      }
+     ],
+     "targetSec": 130,
+     "secret": "magnet"
+    }
+   ]
+  },
+  {
+   "id": "c8",
+   "title": "جشن بزرگ جنگل",
+   "friend": "bear",
+   "bg": "festival",
+   "color": "#FFC83D",
+   "ambient": "audio/ambient/park.mp3",
+   "intro": "همه‌چیز آماده است! با چیزهایی که ساختی جشن بزرگ جنگل را برپا کنیم.",
+   "film": [
+    "میز جشن پر از غذاهای تو",
+    "میدان با فانوس و پرچم‌های تو",
+    "کنسرت با سازهای تو",
+    "و تو قهرمان جنگل شدی!"
+   ],
+   "next": "",
+   "sections": [
+    {
+     "id": "c8s1",
+     "title": "میز جشن",
+     "makes": "feast",
+     "mission": "مهمان‌ها گرسنه‌اند! هر کدام غذای دلخواهش را می‌خواهد.",
+     "steps": [
+      {
+       "engine": "serve",
+       "say": "به هر مهمان غذای دلخواهش را بده.",
+       "pairs": [
+        {
+         "friend": "bear",
+         "item": "cake"
+        },
+        {
+         "friend": "bunny",
+         "item": "juice"
+        },
+        {
+         "friend": "owl",
+         "item": "soup"
+        },
+        {
+         "friend": "squirrel",
+         "item": "sandwich"
+        }
+       ]
+      }
+     ],
+     "targetSec": 90,
+     "secret": null
+    },
+    {
+     "id": "c8s2",
+     "title": "تزئین میدان",
+     "makes": "decorations",
+     "mission": "میدان جشن را قشنگ کنیم!",
+     "steps": [
+      {
+       "engine": "serve",
+       "say": "هر تزئین را به دوستی بده که می‌خواهد.",
+       "pairs": [
+        {
+         "friend": "parrot",
+         "item": "lantern"
+        },
+        {
+         "friend": "cat",
+         "item": "mask"
+        },
+        {
+         "friend": "bunny",
+         "item": "flower_pot"
+        }
+       ]
+      },
+      {
+       "engine": "count",
+       "say": "پرچم‌ها را آویزان کن.",
+       "target": "flag",
+       "count": 4,
+       "into": "bunting",
+       "sound": "audio/ui/pop.mp3"
+      }
+     ],
+     "targetSec": 100,
+     "secret": null
+    },
+    {
+     "id": "c8s3",
+     "title": "کنسرت",
+     "makes": "concert",
+     "mission": "وقت کنسرت میمی است!",
+     "steps": [
+      {
+       "engine": "serve",
+       "say": "سازها را به نوازنده‌ها بده.",
+       "pairs": [
+        {
+         "friend": "cat",
+         "item": "drum"
+        },
+        {
+         "friend": "parrot",
+         "item": "xylophone"
+        },
+        {
+         "friend": "owl",
+         "item": "flute"
+        }
+       ]
+      },
+      {
+       "engine": "rhythm",
+       "say": "با گروه بنواز!",
+       "pads": [
+        {
+         "art": "drum",
+         "sound": "audio/instruments/drum_tom.mp3"
+        },
+        {
+         "art": "xylophone",
+         "sound": "audio/instruments/xylo_e4.mp3"
+        },
+        {
+         "art": "flute",
+         "sound": "audio/instruments/flute.mp3"
+        }
+       ],
+       "rounds": 3
+      }
+     ],
+     "targetSec": 110,
+     "secret": null
+    },
+    {
+     "id": "c8s4",
+     "title": "جشن نهایی",
+     "makes": "medal",
+     "mission": "آخرین کار: مهمان‌ها را بیاوریم و آتش‌بازی کنیم!",
+     "steps": [
+      {
+       "engine": "use",
+       "say": "مهمان‌ها دورند. با چه بیاوریمشان؟",
+       "need": "bus",
+       "spot": "q_travel",
+       "done": "بوق بوق! همه رسیدند.",
+       "why": "این همه را نمی‌آورد."
+      },
+      {
+       "engine": "use",
+       "say": "برای دیدن نمایش ستاره‌ها چه لازم است؟",
+       "need": "telescope",
+       "spot": "q_sky",
+       "done": "وای! ستاره‌ها!",
+       "why": "با این نمی‌شود دور را دید."
+      },
+      {
+       "engine": "collect",
+       "say": "آتش‌بازی کن! روی آسمان بزن.",
+       "target": "firework",
+       "count": 5,
+       "distract": [],
+       "sound": "audio/ui/whoosh.mp3"
+      }
+     ],
+     "targetSec": 120,
+     "secret": null
+    }
+   ]
+  }
+ ],
+ "kits": [
+  {
+   "id": "k_bubbles",
+   "title": "حباب‌ساز",
+   "makes": "bubbles",
+   "mission": "بیا یک حباب‌ساز بسازیم!",
+   "steps": [
+    {
+     "engine": "pour",
+     "say": "صابون را در کاسه بریز.",
+     "source": "soap_bottle",
+     "into": "bowl_mix",
+     "sound": "audio/sfx/pour.mp3",
+     "color": "#B3E5FC"
+    },
+    {
+     "engine": "rotate",
+     "say": "هم بزن.",
+     "target": "bowl_mix",
+     "turns": 2,
+     "sound": "audio/sfx/stir.mp3",
+     "result": "bubbles"
+    },
+    {
+     "engine": "collect",
+     "say": "حباب‌ها را بترکان!",
+     "target": "bubbles",
+     "count": 6,
+     "distract": [],
+     "sound": "audio/sfx/bloop.mp3"
+    }
+   ],
+   "targetSec": 80,
+   "secret": null,
+   "stars": 5
+  },
+  {
+   "id": "k_necklace",
+   "title": "گردنبند مهره‌ای",
+   "makes": "necklace",
+   "mission": "یک گردنبند رنگی بسازیم.",
+   "steps": [
+    {
+     "engine": "count",
+     "say": "مهره‌ها را به نخ بکش.",
+     "target": "bead",
+     "count": 6,
+     "into": "necklace",
+     "sound": "audio/ui/chime.mp3"
+    },
+    {
+     "engine": "paint",
+     "say": "مهره‌ها را رنگ کن.",
+     "target": "necklace",
+     "areas": 4
+    }
+   ],
+   "targetSec": 80,
+   "secret": null,
+   "stars": 10
+  },
+  {
+   "id": "k_kite",
+   "title": "بادبادک",
+   "makes": "kite",
+   "mission": "روز بادی است! بادبادک بسازیم.",
+   "steps": [
+    {
+     "engine": "cut",
+     "say": "کاغذ بادبادک را ببُر.",
+     "target": "paper",
+     "lines": 2,
+     "result": "paper"
+    },
+    {
+     "engine": "paint",
+     "say": "بادبادک را رنگ کن.",
+     "target": "kite",
+     "areas": 4
+    },
+    {
+     "engine": "trace",
+     "say": "بادبادک را در باد بالا ببر.",
+     "target": "kite",
+     "shape": "wave"
+    }
+   ],
+   "targetSec": 100,
+   "secret": null,
+   "stars": 18
+  },
+  {
+   "id": "k_robot",
+   "title": "ربات",
+   "makes": "robot",
+   "mission": "یک ربات دوست بسازیم!",
+   "steps": [
+    {
+     "engine": "assemble",
+     "say": "سر و بدنه‌ی ربات را وصل کن.",
+     "base": "robot",
+     "parts": [
+      {
+       "art": "robot_head",
+       "x": 0.5,
+       "y": 0.25
+      },
+      {
+       "art": "robot_body",
+       "x": 0.5,
+       "y": 0.6
+      }
+     ],
+     "result": "robot"
+    },
+    {
+     "engine": "count",
+     "say": "باتری‌ها را بگذار.",
+     "target": "battery",
+     "count": 2,
+     "into": "robot",
+     "sound": "audio/sfx/gear.mp3"
+    },
+    {
+     "engine": "paint",
+     "say": "ربات را رنگ کن.",
+     "target": "robot",
+     "areas": 4
+    },
+    {
+     "engine": "trace",
+     "say": "ربات را تا گل راه ببر.",
+     "target": "robot",
+     "shape": "zigzag"
+    }
+   ],
+   "targetSec": 120,
+   "secret": null,
+   "stars": 28
+  },
+  {
+   "id": "k_dollhouse",
+   "title": "خانه‌ی عروسکی",
+   "makes": "dollhouse",
+   "mission": "یک خانه‌ی کوچک برای عروسک‌ها!",
+   "steps": [
+    {
+     "engine": "count",
+     "say": "اتاق‌ها را روی هم بچین.",
+     "target": "box",
+     "count": 4,
+     "into": "dollhouse",
+     "sound": "audio/sfx/thunk.mp3"
+    },
+    {
+     "engine": "paint",
+     "say": "دیوارها را رنگ کن.",
+     "target": "dollhouse",
+     "areas": 4
+    },
+    {
+     "engine": "tap",
+     "say": "چراغ اتاق‌ها را روشن کن.",
+     "target": "bulb",
+     "count": 3,
+     "sound": "audio/sfx/light_switch.mp3",
+     "label": "",
+     "result": "bulb"
+    }
+   ],
+   "targetSec": 110,
+   "secret": null,
+   "stars": 38
+  },
+  {
+   "id": "k_rocket",
+   "title": "موشک",
+   "makes": "rocket",
+   "mission": "به فضا برویم!",
+   "steps": [
+    {
+     "engine": "assemble",
+     "say": "بدنه‌ی موشک را بگذار.",
+     "base": "rocket",
+     "parts": [
+      {
+       "art": "tube",
+       "x": 0.5,
+       "y": 0.5
+      }
+     ],
+     "result": "rocket"
+    },
+    {
+     "engine": "paint",
+     "say": "موشک را رنگ کن.",
+     "target": "rocket",
+     "areas": 4
+    },
+    {
+     "engine": "order",
+     "say": "شمارش معکوس: ستاره‌ها را از بزرگ به کوچک بزن!",
+     "items": [
+      "star",
+      "star",
+      "star",
+      "star",
+      "star"
+     ],
+     "sound": null
+    },
+    {
+     "engine": "collect",
+     "say": "در فضا ستاره جمع کن.",
+     "target": "star",
+     "count": 5,
+     "distract": [],
+     "sound": "audio/ui/sparkle.mp3"
+    }
+   ],
+   "targetSec": 130,
+   "secret": null,
+   "stars": 50
+  },
+  {
+   "id": "k_submarine",
+   "title": "زیردریایی",
+   "makes": "submarine",
+   "mission": "زیر دریا چه خبر است؟",
+   "steps": [
+    {
+     "engine": "assemble",
+     "say": "پنجره‌ی زیردریایی را بگذار.",
+     "base": "submarine",
+     "parts": [
+      {
+       "art": "lens",
+       "x": 0.62,
+       "y": 0.45
+      }
+     ],
+     "result": "submarine"
+    },
+    {
+     "engine": "paint",
+     "say": "زیردریایی را رنگ کن.",
+     "target": "submarine",
+     "areas": 3
+    },
+    {
+     "engine": "dark",
+     "say": "با چراغ زیردریایی ماهی‌ها را پیدا کن.",
+     "target": "fish",
+     "count": 4
+    }
+   ],
+   "targetSec": 120,
+   "secret": null,
+   "stars": 65
+  },
+  {
+   "id": "k_train",
+   "title": "قطار",
+   "makes": "train",
+   "mission": "چووو چووو! یک قطار بسازیم.",
+   "steps": [
+    {
+     "engine": "count",
+     "say": "ریل‌ها را بچین.",
+     "target": "rail",
+     "count": 5,
+     "into": "train",
+     "sound": "audio/sfx/thunk.mp3"
+    },
+    {
+     "engine": "count",
+     "say": "چرخ‌های قطار را بگذار.",
+     "target": "wheel",
+     "count": 4,
+     "into": "train",
+     "sound": "audio/sfx/gear.mp3"
+    },
+    {
+     "engine": "paint",
+     "say": "قطار را رنگ کن.",
+     "target": "train",
+     "areas": 4
+    },
+    {
+     "engine": "trace",
+     "say": "قطار را روی ریل ببر.",
+     "target": "train",
+     "shape": "wave"
+    }
+   ],
+   "targetSec": 130,
+   "secret": null,
+   "stars": 80
+  }
+ ],
+ "tools": [
+  {
+   "id": "magnifier",
+   "title": "ذره‌بین",
+   "price": 30,
+   "sound": "audio/ui/sparkle.mp3",
+   "safety": "ذره‌بین را هیچ‌وقت رو به خورشید نگیر.",
+   "recipes": [
+    {
+     "id": "r_bug_book",
+     "title": "دفترچه‌ی حشره‌ها",
+     "makes": "bug_book",
+     "mission": "با ذره‌بین حشره‌ها را پیدا کنیم!",
+     "steps": [
+      {
+       "engine": "dark",
+       "say": "حشره‌های کوچک را با ذره‌بین پیدا کن.",
+       "target": "ladybug",
+       "count": 4
+      }
+     ],
+     "targetSec": 60,
+     "secret": null
+    }
+   ]
+  },
+  {
+   "id": "saw",
+   "title": "اره",
+   "price": 40,
+   "sound": "audio/sfx/rustle.mp3",
+   "safety": "با اره همیشه با یک بزرگ‌تر کار می‌کنیم.",
+   "recipes": [
+    {
+     "id": "r_bird_house",
+     "title": "خانه‌ی پرنده",
+     "makes": "bird_house",
+     "mission": "برای پرنده‌ها خانه بسازیم.",
+     "steps": [
+      {
+       "engine": "cut",
+       "say": "تخته را با اره ببُر.",
+       "target": "plank",
+       "lines": 2,
+       "result": "plank"
+      },
+      {
+       "engine": "count",
+       "say": "دیوارها را بچین.",
+       "target": "plank",
+       "count": 3,
+       "into": "bird_house",
+       "sound": "audio/sfx/thunk.mp3"
+      },
+      {
+       "engine": "paint",
+       "say": "خانه را رنگ کن.",
+       "target": "bird_house",
+       "areas": 3
+      }
+     ],
+     "targetSec": 90,
+     "secret": null
+    }
+   ]
+  },
+  {
+   "id": "glue_gun",
+   "title": "چسب‌تفنگی",
+   "price": 50,
+   "sound": "audio/sfx/squeak.mp3",
+   "safety": "سر چسب‌تفنگی داغ است؛ به آن دست نمی‌زنیم.",
+   "recipes": [
+    {
+     "id": "r_photo_frame",
+     "title": "قاب عکس",
+     "makes": "photo_frame",
+     "mission": "یک قاب برای عکس یادگاری!",
+     "steps": [
+      {
+       "engine": "count",
+       "say": "ستاره‌ها را دور قاب بچسبان.",
+       "target": "star",
+       "count": 4,
+       "into": "photo_frame",
+       "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "paint",
+       "say": "قاب را رنگ کن.",
+       "target": "photo_frame",
+       "areas": 4
+      }
+     ],
+     "targetSec": 70,
+     "secret": null
+    }
+   ]
+  },
+  {
+   "id": "big_oven",
+   "title": "فر بزرگ",
+   "price": 60,
+   "sound": "audio/sfx/kettle.mp3",
+   "safety": "در فر داغ است؛ با دستکش بازش می‌کنیم.",
+   "recipes": [
+    {
+     "id": "r_pizza",
+     "title": "پیتزا",
+     "makes": "pizza",
+     "mission": "بیا پیتزا بپزیم!",
+     "steps": [
+      {
+       "engine": "count",
+       "say": "گوجه‌ها را روی خمیر بگذار.",
+       "target": "tomato",
+       "count": 3,
+       "into": "dough",
+       "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "count",
+       "say": "پنیر بریز.",
+       "target": "cheese",
+       "count": 2,
+       "into": "dough",
+       "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "timing",
+       "say": "وقتی پنیر آب شد بزن!",
+       "target": "big_oven",
+       "sound": "audio/sfx/sizzle.mp3",
+       "label": "حالا!",
+       "result": "pizza"
+      }
+     ],
+     "targetSec": 80,
+     "secret": null
+    },
+    {
+     "id": "r_cookie",
+     "title": "کلوچه",
+     "makes": "cookie",
+     "mission": "کلوچه‌ی تازه!",
+     "steps": [
+      {
+       "engine": "rotate",
+       "say": "خمیر کلوچه را هم بزن.",
+       "target": "bowl_mix",
+       "turns": 2,
+       "sound": "audio/sfx/stir.mp3",
+       "result": "bowl_mix"
+      },
+      {
+       "engine": "timing",
+       "say": "وقتی طلایی شد بزن!",
+       "target": "big_oven",
+       "sound": "audio/sfx/kettle.mp3",
+       "label": "حالا!",
+       "result": "cookie"
+      }
+     ],
+     "targetSec": 70,
+     "secret": null
+    }
+   ]
+  },
+  {
+   "id": "sewing_machine",
+   "title": "چرخ خیاطی",
+   "price": 70,
+   "sound": "audio/sfx/gear.mp3",
+   "safety": "انگشت‌ها را از سوزن دور نگه می‌داریم.",
+   "recipes": [
+    {
+     "id": "r_rag_doll",
+     "title": "عروسک پارچه‌ای",
+     "makes": "rag_doll",
+     "mission": "یک عروسک نرم بدوزیم.",
+     "steps": [
+      {
+       "engine": "tap",
+       "say": "پدال را بزن تا چرخ بدوزد: تق تق تق!",
+       "target": "sewing_machine",
+       "count": 8,
+       "sound": "audio/sfx/gear.mp3",
+       "label": "",
+       "result": "sewing_machine"
+      },
+      {
+       "engine": "paint",
+       "say": "لباس عروسک را رنگ کن.",
+       "target": "rag_doll",
+       "areas": 4
+      }
+     ],
+     "targetSec": 80,
+     "secret": null
+    }
+   ]
+  },
+  {
+   "id": "drill",
+   "title": "دریل",
+   "price": 80,
+   "sound": "audio/sfx/crane.mp3",
+   "safety": "دریل را فقط بزرگ‌ترها روشن می‌کنند و ما کمک می‌کنیم.",
+   "recipes": [
+    {
+     "id": "r_windmill",
+     "title": "آسیاب بادی",
+     "makes": "windmill",
+     "mission": "یک آسیاب بادی بسازیم.",
+     "steps": [
+      {
+       "engine": "tap",
+       "say": "با دریل سوراخ کن.",
+       "target": "drill",
+       "count": 3,
+       "sound": "audio/sfx/crane.mp3",
+       "label": "",
+       "result": "drill"
+      },
+      {
+       "engine": "assemble",
+       "say": "پره‌ها را وصل کن.",
+       "base": "windmill",
+       "parts": [
+        {
+         "art": "flag",
+         "x": 0.5,
+         "y": 0.3
+        }
+       ],
+       "result": "windmill"
+      },
+      {
+       "engine": "rotate",
+       "say": "فوت کن تا بچرخد!",
+       "target": "windmill",
+       "turns": 2,
+       "sound": "audio/ambient/wind.mp3",
+       "result": "windmill"
+      }
+     ],
+     "targetSec": 80,
+     "secret": null
+    }
+   ]
+  },
+  {
+   "id": "wrench",
+   "title": "آچار",
+   "price": 90,
+   "sound": "audio/sfx/gear.mp3",
+   "safety": "آچار را محکم و آرام می‌چرخانیم.",
+   "recipes": [
+    {
+     "id": "r_bicycle",
+     "title": "دوچرخه",
+     "makes": "bicycle",
+     "mission": "یک دوچرخه برای پوپو!",
+     "steps": [
+      {
+       "engine": "count",
+       "say": "چرخ‌ها را وصل کن.",
+       "target": "wheel",
+       "count": 2,
+       "into": "bicycle",
+       "sound": "audio/sfx/gear.mp3"
+      },
+      {
+       "engine": "rotate",
+       "say": "پیچ‌ها را با آچار سفت کن.",
+       "target": "wrench",
+       "turns": 3,
+       "sound": "audio/sfx/gear.mp3",
+       "result": "bicycle"
+      },
+      {
+       "engine": "paint",
+       "say": "دوچرخه را رنگ کن.",
+       "target": "bicycle",
+       "areas": 3
+      }
+     ],
+     "targetSec": 90,
+     "secret": null
+    }
+   ]
+  },
+  {
+   "id": "magnet",
+   "title": "آهن‌ربا",
+   "price": 100,
+   "sound": "audio/sfx/snap.mp3",
+   "safety": "آهن‌ربا را نزدیک گوشی و تلویزیون نمی‌بریم.",
+   "recipes": [
+    {
+     "id": "r_magnet_fish",
+     "title": "ماهیگیری آهن‌ربایی",
+     "makes": "magnet_fish",
+     "mission": "بیا ماهیگیری کنیم!",
+     "steps": [
+      {
+       "engine": "sort",
+       "say": "چیزهایی که آهن‌ربا می‌کشد را جدا کن.",
+       "good": [
+        "nail",
+        "screw"
+       ],
+       "bad": [
+        "paper",
+        "bread"
+       ],
+       "goodLabel": "آهنی",
+       "badLabel": "غیرآهنی"
+      },
+      {
+       "engine": "collect",
+       "say": "ماهی‌های آهنی را بگیر!",
+       "target": "fish",
+       "count": 4,
+       "distract": [],
+       "sound": "audio/sfx/splash.mp3"
+      }
+     ],
+     "targetSec": 80,
+     "secret": null
+    }
+   ]
+  }
+ ],
+ "combos": [
+  {
+   "items": [
+    "juice",
+    "cake"
+   ],
+   "text": "مهمانی کوچک! دوستان آمدند.",
+   "fx": "giggle"
+  },
+  {
+   "items": [
+    "robot",
+    "watering_can"
+   ],
+   "text": "ربات گل‌ها را آب داد!",
+   "fx": "splash"
+  },
+  {
+   "items": [
+    "drum",
+    "xylophone"
+   ],
+   "text": "یک آهنگ دونفره!",
+   "fx": "music"
+  },
+  {
+   "items": [
+    "lantern",
+    "tent"
+   ],
+   "text": "چادر شب روشن شد.",
+   "fx": "light"
+  },
+  {
+   "items": [
+    "toy_car",
+    "invitation"
+   ],
+   "text": "ماشین نامه‌ها را رساند.",
+   "fx": "drive"
+  },
+  {
+   "items": [
+    "flashlight",
+    "telescope"
+   ],
+   "text": "تماشای شب پرستاره!",
+   "fx": "sky"
+  },
+  {
+   "items": [
+    "kite",
+    "windmill"
+   ],
+   "text": "باد هر دو را چرخاند!",
+   "fx": "wind"
+  },
+  {
+   "items": [
+    "submarine",
+    "magnet_fish"
+   ],
+   "text": "ماهی‌گیری زیر آب!",
+   "fx": "splash"
+  },
+  {
+   "items": [
+    "soup",
+    "bread"
+   ],
+   "text": "ناهار گرم و خوشمزه!",
+   "fx": "eat"
+  },
+  {
+   "items": [
+    "mask",
+    "concert"
+   ],
+   "text": "رقص با ماسک!",
+   "fx": "music"
+  },
+  {
+   "items": [
+    "rocket",
+    "telescope"
+   ],
+   "text": "موشک در آسمان دیده شد!",
+   "fx": "sky"
+  },
+  {
+   "items": [
+    "flower_pot",
+    "bird_house"
+   ],
+   "text": "پرنده‌ها در باغ لانه ساختند.",
+   "fx": "bird"
+  },
+  {
+   "items": [
+    "paints",
+    "photo_frame"
+   ],
+   "text": "یک نقاشی قاب‌شده!",
+   "fx": "sparkle"
+  },
+  {
+   "items": [
+    "bicycle",
+    "map"
+   ],
+   "text": "گردش با دوچرخه در جنگل!",
+   "fx": "drive"
+  }
+ ],
+ "orders": [
+  {
+   "friend": "bunny",
+   "tag": "drink",
+   "text": "بانی تشنه است. چی بهش بدیم؟"
+  },
+  {
+   "friend": "bear",
+   "tag": "sweet",
+   "text": "خاله خرسی یک چیز شیرین می‌خواهد."
+  },
+  {
+   "friend": "owl",
+   "tag": "warm",
+   "text": "مادربزرگ جغد سردش است."
+  },
+  {
+   "friend": "cat",
+   "tag": "low",
+   "text": "میمی یک ساز با صدای بم می‌خواهد."
+  },
+  {
+   "friend": "cat",
+   "tag": "high",
+   "text": "میمی یک ساز با صدای زیر می‌خواهد."
+  },
+  {
+   "friend": "squirrel",
+   "tag": "light",
+   "text": "آقا سنجاب در تاریکی چیزی را گم کرده."
+  },
+  {
+   "friend": "turtle",
+   "tag": "vehicle",
+   "text": "لاکی یک وسیله‌ی نقلیه می‌خواهد."
+  },
+  {
+   "friend": "parrot",
+   "tag": "pretty",
+   "text": "کوکو یک چیز قشنگ برای تزئین می‌خواهد."
+  },
+  {
+   "friend": "squirrel",
+   "tag": "tool",
+   "text": "آقا سنجاب باید میخ بزند."
+  },
+  {
+   "friend": "bunny",
+   "tag": "water",
+   "text": "گل‌های بانی تشنه‌اند."
+  },
+  {
+   "friend": "bear",
+   "tag": "food",
+   "text": "خاله خرسی گرسنه است."
+  },
+  {
+   "friend": "owl",
+   "tag": "find",
+   "text": "مادربزرگ جغد راه را گم کرده."
+  },
+  {
+   "friend": "parrot",
+   "tag": "music",
+   "text": "کوکو دلش موسیقی می‌خواهد."
+  }
+ ],
+ "art": {
+  "baby_owl": "🦉",
+  "bar_red": "🟥",
+  "battery": "🔋",
+  "bead": "🔵",
+  "bee": "🐝",
+  "bicycle": "🚲",
+  "big_oven": "♨️",
+  "bird_house": "🏡",
+  "bowl_mix": "🥣",
+  "box": "📦",
+  "bread": "🍞",
+  "bridge": "🌉",
+  "bristles": "🖌️",
+  "brush": "🖌️",
+  "bubbles": "🫧",
+  "bucket": "🪣",
+  "bug_book": "📔",
+  "bulb": "💡",
+  "bunting": "🎏",
+  "bus": "🚌",
+  "cake": "🎂",
+  "can_body": "🪣",
+  "can_handle": "➰",
+  "can_spout": "🚿",
+  "candle": "🕯️",
+  "car_body": "🚙",
+  "car_key": "🗝️",
+  "carrot": "🥕",
+  "cart": "🛒",
+  "cheese": "🧀",
+  "clay": "🟤",
+  "clay_bowl": "🥣",
+  "concert": "🎤",
+  "cookie": "🍪",
+  "cow": "🐄",
+  "decorations": "🎊",
+  "dollhouse": "🏠",
+  "dough": "🫓",
+  "drill": "🛠️",
+  "drum": "🥁",
+  "drum_skin": "⚪",
+  "egg": "🥚",
+  "eggs": "🥚",
+  "empty_pot": "🪴",
+  "feast": "🍱",
+  "firefly": "✨",
+  "firefly_jar": "🫙",
+  "firework": "🎆",
+  "fish": "🐟",
+  "flag": "🚩",
+  "flashlight": "🔦",
+  "flour": "🌾",
+  "flower_pot": "🌷",
+  "flute": "🪈",
+  "fridge": "🧊",
+  "fuel": "⛽",
+  "glass": "🥛",
+  "glue_gun": "🧴",
+  "hammer": "🔨",
+  "hammer_handle": "🪵",
+  "hammer_head": "🔩",
+  "hay": "🌾",
+  "hen": "🐔",
+  "honey": "🍯",
+  "invitation": "💌",
+  "juice": "🧃",
+  "juicer": "🍋",
+  "junk_sock": "🧦",
+  "junk_spoon": "🥄",
+  "kite": "🪁",
+  "ladybug": "🐞",
+  "lantern": "🏮",
+  "lens": "🔍",
+  "letter": "✉️",
+  "lettuce": "🥬",
+  "light_green": "🟢",
+  "light_red": "🔴",
+  "light_yellow": "🟡",
+  "magnet": "🧲",
+  "magnet_fish": "🎣",
+  "magnifier": "🔍",
+  "mailbox": "📮",
+  "map": "🗺️",
+  "map_piece": "🗺️",
+  "mask": "🎭",
+  "medal": "🏅",
+  "milk": "🥛",
+  "moon": "🌙",
+  "nail": "📍",
+  "necklace": "📿",
+  "nest": "🪺",
+  "note": "🎵",
+  "old_shoe": "👞",
+  "orange": "🍊",
+  "orange_half": "🍊",
+  "oven": "🔥",
+  "paints": "🎨",
+  "paper": "📄",
+  "peg": "📌",
+  "photo_frame": "🖼️",
+  "pizza": "🍕",
+  "plank": "🪵",
+  "pole": "🥢",
+  "pot": "🍲",
+  "potato": "🥔",
+  "pottery_wheel": "🏺",
+  "q_carry": "📦",
+  "q_cold": "🥶",
+  "q_cross": "🚸",
+  "q_dark": "🌑",
+  "q_eat": "🍽️",
+  "q_flowers": "🌼",
+  "q_hungry": "😋",
+  "q_lost": "❓",
+  "q_music": "🎵",
+  "q_nail": "🪵",
+  "q_paint": "🎨",
+  "q_party": "🎉",
+  "q_rain": "🌧️",
+  "q_sky": "🌌",
+  "q_sleep": "😴",
+  "q_swim": "🏊",
+  "q_thirsty": "🥵",
+  "q_travel": "🛣️",
+  "q_water": "💧",
+  "q_wear": "😺",
+  "rag_doll": "🧸",
+  "rail": "🛤️",
+  "reed": "🎋",
+  "robot": "🤖",
+  "robot_body": "🟦",
+  "robot_head": "🤖",
+  "rocket": "🚀",
+  "rotten_apple": "🍂",
+  "sandwich": "🥪",
+  "saw": "🪚",
+  "scissors": "✂️",
+  "screw": "🔩",
+  "seed": "🌰",
+  "sewing_machine": "🧵",
+  "soap_bottle": "🧴",
+  "song": "🎶",
+  "soup": "🍲",
+  "sprout": "🌱",
+  "star": "⭐",
+  "submarine": "🟡",
+  "telescope": "🔭",
+  "tent": "⛺",
+  "tent_cloth": "🟧",
+  "tire": "🛞",
+  "tomato": "🍅",
+  "toy_car": "🚗",
+  "traffic_light": "🚦",
+  "train": "🚂",
+  "tube": "🧻",
+  "water_jug": "💧",
+  "watering_can": "🚿",
+  "well": "⛲",
+  "wheel": "⚙️",
+  "windmill": "🌬️",
+  "wrench": "🔧",
+  "xylophone": "🎹"
+ }
+}

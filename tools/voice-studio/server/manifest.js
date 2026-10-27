@@ -14,24 +14,32 @@ import fs from "node:fs";
 import path from "node:path";
 
 // Groups follow the id prefixes of voice_lines.json.
+const CHAPTER_TITLES = {
+  1: "فصل ۱ — آشپزخانه‌ی خاله خرسی", 2: "فصل ۲ — باغ و مزرعه‌ی بانی", 3: "فصل ۳ — کارگاه آقا سنجاب",
+  4: "فصل ۴ — آتلیه‌ی رنگی کوکو", 5: "فصل ۵ — شب جنگل", 6: "فصل ۶ — گروه موسیقی میمی",
+  7: "فصل ۷ — شهر و راننده لاکی", 8: "فصل ۸ — جشن بزرگ جنگل",
+};
 const GROUPS = [
-  { id: "app",      test: (id) => id.startsWith("app."),      label: "صفحه‌ها، خوشامد و نقشه" },
-  { id: "worlds",   test: (id) => /^(world|scene)\./.test(id), label: "جهان‌ها و صحنه‌ها" },
-  { id: "studios",  test: (id) => /^(art|music|build)\./.test(id), label: "نقاشی، موسیقی، ساخت‌وساز" },
-  { id: "puzzles",  test: (id) => id.startsWith("puzzle."),   label: "پازل‌ها" },
-  { id: "roleplay", test: (id) => id.startsWith("play."),     label: "نقش‌آفرینی" },
+  ...Object.entries(CHAPTER_TITLES).map(([n, label]) => ({ id: `c${n}`, test: (id) => id.startsWith(`c${n}`), label })),
+  { id: "items",    test: (id) => id.startsWith("item."),     label: "ساخته‌ها: کاربرد، مزه، سؤال" },
+  { id: "kits",     test: (id) => /^(k_|kit\.|workshop\.)/.test(id), label: "کارگاه ستاره (کیت‌ها)" },
+  { id: "shop",     test: (id) => /^(r_|tool\.|shop\.)/.test(id), label: "فروشگاه ابزار و دستورهای ساخت" },
+  { id: "playroom", test: (id) => /^(playroom|order|combo)\./.test(id), label: "اتاق بازی، سفارش‌ها و ترکیب‌ها" },
+  { id: "game",     test: (id) => /^(game|home|film)\./.test(id), label: "راهنما، ستاره، جایزه" },
+  { id: "app",      test: (id) => id.startsWith("app."),      label: "صفحه‌ها و خوشامد" },
   { id: "feedback", test: (id) => /^(praise|idle)\./.test(id), label: "تشویق و راهنمایی" },
-  { id: "rewards",  test: (id) => /^(sticker|rewards|library)\./.test(id), label: "برچسب‌ها و کتابخانه" },
-  { id: "session",  test: (id) => /^(session|parent)\./.test(id), label: "توقف، ادامه، والدین" },
+  { id: "session",  test: (id) => /^(session|parent|full|notice)\./.test(id), label: "توقف، ادامه، والدین" },
+  { id: "old",      test: (id) => /^(world|scene|art|music|build|puzzle|play|sticker|rewards|library)\./.test(id), label: "نسخه‌ی قبل (دیگر پخش نمی‌شود)" },
 ];
 
 function groupOf(id) {
   return (GROUPS.find((g) => g.test(id)) || { id: "other" }).id;
 }
 
-/** POPO lines have no level number. */
-function levelOf() {
-  return null;
+/** Chapter number (1–8) for chapter lines, so the studio can filter by chapter. */
+function levelOf(id) {
+  const m = /^c(\d)/.exec(id);
+  return m ? Number(m[1]) : null;
 }
 
 /** The studio's key for a line: the base name of the file the app plays. */

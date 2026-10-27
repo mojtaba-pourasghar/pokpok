@@ -6,7 +6,9 @@ import 'package:popo/app/providers.dart';
 import 'package:popo/app/router.dart';
 import 'package:popo/core/billing/access_store.dart';
 import 'package:popo/core/billing/billing.dart';
-import 'package:popo/core/widgets/buttons.dart';
+import 'package:popo/data/repositories/repositories.dart';
+import 'package:popo/features/home/home_shell.dart';
+import 'package:popo/game/game_state.dart';
 import 'package:popo/features/paywall/paywall.dart';
 
 import 'helpers.dart';
@@ -26,21 +28,33 @@ void main() {
     );
   }
 
-  Iterable<PTile> tiles(WidgetTester tester) => tester.widgetList<PTile>(find.byType(PTile));
+  /// فصل ۱ و بخش اول فصل ۲ تمام شده‌اند.
+  Future<void> seed(TestEnv env) async {
+    final data = env.game;
+    final done = {
+      for (final s in [...data.chapters[0].sections, data.chapters[1].sections.first])
+        s.id: const SectionRecord(stars: 2, seconds: 60, plays: 1).toJson(),
+    };
+    final id = ProfileRepository(env.store).activeId ?? '_guest';
+    await env.store.writeJson('game', id, {'records': done, 'lastBonusDay': dayKey(DateTime.now())});
+  }
 
-  testWidgets('کتابخانه: فقط بازی اول هر دسته باز است و لمس قفل برگه‌ی خرید را باز می‌کند', (tester) async {
+  testWidgets('فصل ۱ کامل رایگان؛ در فصل‌های بعد فقط بخش اول، و بخش پولی برگه‌ی خرید را باز می‌کند', (tester) async {
     final env = await tester.runAsync(TestEnv.create);
+    await tester.runAsync(() => seed(env!));
     await setSurface(tester, const Size(412, 915));
-    await tester.pumpWidget(app(env!, '/library'));
-    await settle(tester);
+    await tester.pumpWidget(app(env!, '/chapter/c2'));
+    await settle(tester, 20);
+    final c = ProviderScope.containerOf(tester.element(find.byType(Scaffold).first));
+    final gate = c.read(gateProvider);
+    final ch1 = env.game.chapters[0], ch2 = env.game.chapters[1];
+    expect([for (var i = 0; i < 4; i++) gate.needsPurchase(ch1, i)], everyElement(isFalse));
+    expect(gate.needsPurchase(ch2, 0), isFalse);
+    expect(gate.needsPurchase(ch2, 1), isTrue);
+    expect(gate.sectionOpen(ch2, 1), isTrue, reason: 'section 1 done → section 2 is next');
+    expect(gate.sectionOpen(ch2, 2), isFalse);
 
-    final locked = tiles(tester).where((t) => t.locked).toList();
-    expect(locked, isNotEmpty);
-    // دسته‌ی «کاوش»: اولی (پذیرایی) باز، بقیه قفل.
-    expect(tiles(tester).firstWhere((t) => t.label == 'پذیرایی').locked, isFalse);
-    expect(tiles(tester).firstWhere((t) => t.label == 'آشپزخانه').locked, isTrue);
-
-    await tester.tap(find.widgetWithText(PTile, 'آشپزخانه'));
+    await tester.tap(find.bySemanticsLabel(RegExp('بخش ۲: ')));
     await settle(tester);
     expect(find.byType(PaywallSheet), findsOneWidget);
     expect(tester.takeException(), isNull);
@@ -50,29 +64,18 @@ void main() {
     await tester.runAsync(env.dispose);
   });
 
-  testWidgets('جهان: صحنه‌ی اول باز، بقیه‌ی نوار صحنه‌ها قفل؛ صحنه‌ی پولی از نشانی به صحنه‌ی اول برمی‌گردد', (tester) async {
+  testWidgets('بعد از خرید هیچ بخشی پشت پرداخت نیست', (tester) async {
     final env = await tester.runAsync(TestEnv.create);
     await setSurface(tester, const Size(412, 915));
-    await tester.pumpWidget(app(env!, '/world/home?scene=home.kitchen'));
+    await tester.pumpWidget(app(env!, '/home', owned: true));
     await settle(tester);
-
-    final bar = tiles(tester).toList();
-    expect(bar.first.locked, isFalse);
-    expect(bar.first.selected, isTrue, reason: 'آشپزخانه پولی است؛ صحنه‌ی رایگان نشان داده شد');
-    expect(bar.skip(1).every((t) => t.locked), isTrue);
-    expect(tester.takeException(), isNull);
-
-    await tester.pumpWidget(const SizedBox());
-    await settle(tester, 3);
-    await tester.runAsync(env.dispose);
-  });
-
-  testWidgets('بعد از خرید هیچ چیزی قفل نیست', (tester) async {
-    final env = await tester.runAsync(TestEnv.create);
-    await setSurface(tester, const Size(412, 915));
-    await tester.pumpWidget(app(env!, '/library', owned: true));
-    await settle(tester);
-    expect(tiles(tester).any((t) => t.locked), isFalse);
+    final c = ProviderScope.containerOf(tester.element(find.byType(Scaffold).first));
+    final gate = c.read(gateProvider);
+    for (final ch in env.game.chapters) {
+      for (var i = 0; i < ch.sections.length; i++) {
+        expect(gate.needsPurchase(ch, i), isFalse);
+      }
+    }
 
     await tester.pumpWidget(const SizedBox());
     await settle(tester, 3);

@@ -47,7 +47,8 @@ def load_env() -> None:
         for line in env.read_text(encoding="utf-8").splitlines():
             if "=" in line and not line.strip().startswith("#"):
                 k, v = line.split("=", 1)
-                os.environ.setdefault(k.strip(), v.strip())
+                # the project's .env wins over the shell, so a key set for this project is the one used
+                os.environ[k.strip()] = v.strip().strip('"')
 
 
 def generate(prompt: str, steps: int) -> bytes:

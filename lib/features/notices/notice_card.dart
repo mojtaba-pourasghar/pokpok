@@ -16,17 +16,22 @@ import '../paywall/paywall.dart';
 enum NoticeAction { go, close }
 
 /// صفحه‌هایی که استودیو می‌شناسد (مقدار `screen` خبر) و مسیرشان در برنامه.
-const noticeScreens = <String, String>{
-  'HOME': '/map',
-  'LIBRARY': '/library',
-  'ART': '/art',
-  'MUSIC': '/music',
-  'BUILD': '/build',
-  'REWARDS': '/rewards',
-  'WORLD_HOME': '/world/home',
-  'WORLD_CITY': '/world/city',
-  'WORLD_NATURE': '/world/nature',
+final noticeScreens = <String, String>{
+  'HOME': '/home',
+  'WORKSHOP': '/home?tab=workshop',
+  'PLAYROOM': '/home?tab=playroom',
+  'ME': '/home?tab=me',
+  for (var i = 1; i <= 8; i++) 'CHAPTER_$i': '/chapter/c$i',
   'DOWNLOADS': '/parent/downloads',
+  // نام‌های نسخه‌ی قبل، تا خبرهای منتشرشده هنوز جایی باز کنند.
+  'LIBRARY': '/home',
+  'REWARDS': '/home?tab=me',
+  'ART': '/chapter/c4',
+  'MUSIC': '/chapter/c6',
+  'BUILD': '/chapter/c3',
+  'WORLD_HOME': '/chapter/c1',
+  'WORLD_CITY': '/chapter/c7',
+  'WORLD_NATURE': '/chapter/c2',
 };
 
 /// متن دکمه‌ی اصلی، یا خالی وقتی خبر فقط چند کلمه است.
@@ -87,9 +92,12 @@ class NoticeCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text('📣 ${notice.title}', textAlign: TextAlign.center, style: PText.heading.copyWith(color: PColors.furDark)),
-                if (notice.hasImage)
-                  NoticePicture(store: store, notice: notice, onTap: go.isEmpty ? null : () => pick(NoticeAction.go)),
+                Text(
+                  '📣 ${notice.title}',
+                  textAlign: TextAlign.center,
+                  style: PText.heading.copyWith(color: PColors.furDark),
+                ),
+                if (notice.hasImage) NoticePicture(store: store, notice: notice, onTap: go.isEmpty ? null : () => pick(NoticeAction.go)),
                 if (notice.body.isNotEmpty) ...[
                   const SizedBox(height: PSpace.sm),
                   Text(notice.body, textAlign: TextAlign.center, style: PText.body),
