@@ -128,8 +128,10 @@ def main() -> int:
     ap.add_argument("--force", action="store_true", help="render again even if a raw image exists")
     ap.add_argument("--process-only", action="store_true", help="only re-cut images already in art/generated/")
     ap.add_argument("--steps", type=int, default=6)
+    ap.add_argument("--no-dotenv", action="store_true", help="use CF_* from the shell, not the project's .env (a second account)")
     a = ap.parse_args()
-    load_env()
+    if not a.no_dotenv:
+        load_env()
     items = json.loads(MANIFEST.read_text(encoding="utf-8"))["items"]
     if a.only:
         items = [i for i in items if i["id"] in a.only]
