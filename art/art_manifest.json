@@ -217,21 +217,23 @@
    "kind": "object",
    "target": "assets/art/items/glass.webp",
    "size": 512,
-   "prompt": "an empty clear drinking glass. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "an empty clear drinking glass. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain solid sky blue background, soft contact shadow, no text, no letters, no watermark",
+   "key": "blue"
   },
   {
    "id": "juice",
    "kind": "object",
    "target": "assets/art/items/juice.webp",
    "size": 512,
-   "prompt": "a cute cartoon cup of orange juice with a striped straw. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a cartoon juice box with a bendy straw and an orange on it. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "flour",
    "kind": "object",
    "target": "assets/art/items/flour.webp",
    "size": 512,
-   "prompt": "a small sack of white flour. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a small sack of white flour. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain solid sky blue background, soft contact shadow, no text, no letters, no watermark",
+   "key": "blue"
   },
   {
    "id": "water_jug",
@@ -252,7 +254,7 @@
    "kind": "object",
    "target": "assets/art/items/dough.webp",
    "size": 512,
-   "prompt": "a round beige ball of pizza dough on a small wooden board. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a round beige pizza base on a wooden cutting board. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "oven",
@@ -287,7 +289,7 @@
    "kind": "object",
    "target": "assets/art/items/tomato.webp",
    "size": 512,
-   "prompt": "a cute cartoon red tomato vegetable with green leaves. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a bunch of three red cherry tomatoes on a vine. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "rotten_apple",
@@ -322,7 +324,8 @@
    "kind": "object",
    "target": "assets/art/items/egg.webp",
    "size": 512,
-   "prompt": "a white egg. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a white egg. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain solid sky blue background, soft contact shadow, no text, no letters, no watermark",
+   "key": "blue"
   },
   {
    "id": "eggs",
@@ -350,14 +353,16 @@
    "kind": "object",
    "target": "assets/art/items/milk.webp",
    "size": 512,
-   "prompt": "a bottle of milk. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a bottle of milk. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain solid sky blue background, soft contact shadow, no text, no letters, no watermark",
+   "key": "blue"
   },
   {
    "id": "fridge",
    "kind": "object",
    "target": "assets/art/items/fridge.webp",
    "size": 512,
-   "prompt": "a cute white refrigerator. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a cute white refrigerator. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain solid sky blue background, soft contact shadow, no text, no letters, no watermark",
+   "key": "blue"
   },
   {
    "id": "cheese",
@@ -637,7 +642,7 @@
    "kind": "object",
    "target": "assets/art/items/clay.webp",
    "size": 512,
-   "prompt": "a lump of brown clay. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "an orange terracotta clay block with a wooden sculpting tool. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "clay_bowl",
@@ -651,7 +656,7 @@
    "kind": "object",
    "target": "assets/art/items/pottery_wheel.webp",
    "size": 512,
-   "prompt": "a small pottery wheel. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a small toy potter's wheel with a clay pot on it. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "paper",
@@ -770,7 +775,7 @@
    "kind": "object",
    "target": "assets/art/items/lens.webp",
    "size": 512,
-   "prompt": "a round glass lens. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a round magnifying glass lens without handle. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "tube",
@@ -805,7 +810,7 @@
    "kind": "object",
    "target": "assets/art/items/drum_skin.webp",
    "size": 512,
-   "prompt": "a round drum skin. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a round white drum head. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "xylophone",
@@ -924,7 +929,7 @@
    "kind": "object",
    "target": "assets/art/items/invitation.webp",
    "size": 512,
-   "prompt": "a colorful party invitation card. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a colorful folded greeting card decorated with balloons and confetti, blank, without any writing. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "feast",
@@ -966,7 +971,7 @@
    "kind": "object",
    "target": "assets/art/items/bubbles.webp",
    "size": 512,
-   "prompt": "a bubble wand with big rainbow soap bubbles. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a pink bubble wand with rainbow soap bubbles floating. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "soap_bottle",
@@ -1085,7 +1090,7 @@
    "kind": "object",
    "target": "assets/art/items/saw.webp",
    "size": 512,
-   "prompt": "a hand saw. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a classic carpenter hand saw with a wooden handle and a long flat toothed metal blade, toy style. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "bird_house",
@@ -1120,7 +1125,7 @@
    "kind": "object",
    "target": "assets/art/items/pizza.webp",
    "size": 512,
-   "prompt": "a cheese pizza. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a whole round pizza with cheese and tomato slices. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "cookie",
@@ -1267,7 +1272,8 @@
    "kind": "object",
    "target": "assets/art/items/q_rain.webp",
    "size": 512,
-   "prompt": "a rain cloud with drops. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a rain cloud with drops. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain solid sky blue background, soft contact shadow, no text, no letters, no watermark",
+   "key": "blue"
   },
   {
    "id": "q_lost",
@@ -1288,7 +1294,7 @@
    "kind": "object",
    "target": "assets/art/items/q_party.webp",
    "size": 512,
-   "prompt": "a party with balloons. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+   "prompt": "a bunch of colorful balloons and a gift box, without any writing. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   },
   {
    "id": "q_swim",

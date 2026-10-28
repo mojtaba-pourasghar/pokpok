@@ -1028,6 +1028,78 @@
    "height": 200
   },
   {
+   "id": "baby_owl",
+   "group": "items",
+   "path": "art/items/baby_owl.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 35746,
+   "sha256": "ef05e5a236362709c560b06b0ede303d40d48f9649c4b50cc32306a3ddf82fe2"
+  },
+  {
+   "id": "bar_red",
+   "group": "items",
+   "path": "art/items/bar_red.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 18182,
+   "sha256": "a54bc6183696b84d9f9fd079e67de0262f5c5c7a55f2ff700965e0e91c7c9b6e"
+  },
+  {
+   "id": "battery",
+   "group": "items",
+   "path": "art/items/battery.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 21976,
+   "sha256": "a4fe47793bd3dce1b1359550e691535fe63ad97b0df0e72d1e47d040dc3ca645"
+  },
+  {
+   "id": "bead",
+   "group": "items",
+   "path": "art/items/bead.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 27306,
+   "sha256": "106259c947be825e78d2165f0392ccdf200c30babb139b644a53e947819b80c3"
+  },
+  {
+   "id": "bee",
+   "group": "items",
+   "path": "art/items/bee.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 40460,
+   "sha256": "c3de4f2cb05263da0497cd83769a0e9336ede63100bff18de297bef562cdf60d"
+  },
+  {
+   "id": "bicycle",
+   "group": "items",
+   "path": "art/items/bicycle.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 58260,
+   "sha256": "d8216ce2cdeddb3ba0fe472e3848be4e8bcc346b89d209c089881bbef54a3482"
+  },
+  {
+   "id": "big_oven",
+   "group": "items",
+   "path": "art/items/big_oven.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 36794,
+   "sha256": "0498886e2fa2503208d52a76b2eda480026a893716b682562f2b5ec4bdea46eb"
+  },
+  {
+   "id": "bird_house",
+   "group": "items",
+   "path": "art/items/bird_house.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 27084,
+   "sha256": "eb7cf7b0ffea5abaf38f8524a1f26fcb5c1f197495bcc49803d3f7613e100216"
+  },
+  {
    "id": "bowl_mix",
    "group": "items",
    "path": "art/items/bowl_mix.webp",
@@ -1035,6 +1107,105 @@
    "version": 1,
    "bytes": 37370,
    "sha256": "7e4ee882aa08336254fa7dc5eb0a6f3308914be0e99689a24e3ac33b559b3e1d"
+  },
+  {
+   "id": "box",
+   "group": "items",
+   "path": "art/items/box.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 15682,
+   "sha256": "446367ec153e8da500c206f5ecc109968cf94808765acd47d9711b06aa58324c"
+  },
+  {
+   "id": "bread",
+   "group": "items",
+   "path": "art/items/bread.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 23568,
+   "sha256": "f61e78c98987b874d45551eb82074201b011f1edad441b4a1995d5050ddb3c13"
+  },
+  {
+   "id": "bridge",
+   "group": "items",
+   "path": "art/items/bridge.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 32610,
+   "sha256": "baf094e5570a34cb478ac188be25d2c1555b248b4313f34a7986618ef8c03157"
+  },
+  {
+   "id": "bristles",
+   "group": "items",
+   "path": "art/items/bristles.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 59044,
+   "sha256": "e570ab2d3313d01d030b726e8e02b57d22fcc8656e8c5daf13e2d6032e8a49d7"
+  },
+  {
+   "id": "brush",
+   "group": "items",
+   "path": "art/items/brush.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 19864,
+   "sha256": "e7dfdd4d235cb9c71302797dd41772823c7cd48136faeefba3afb417d0f6f6d6"
+  },
+  {
+   "id": "bubbles",
+   "group": "items",
+   "path": "art/items/bubbles.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 25278,
+   "sha256": "435bf7c4408aefdef4d7c80cb40ac261507d44e26825110a099735868fa7baf6"
+  },
+  {
+   "id": "bucket",
+   "group": "items",
+   "path": "art/items/bucket.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 49698,
+   "sha256": "331a5d2821407056ae73f93274a38574cedf070562e75da5cabb49fe69cb0db3"
+  },
+  {
+   "id": "bug_book",
+   "group": "items",
+   "path": "art/items/bug_book.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 37794,
+   "sha256": "03f0a9a7c45fddb5791457b6fd28f19e7ccd4634d3976c8f2357816f2e3de485"
+  },
+  {
+   "id": "bulb",
+   "group": "items",
+   "path": "art/items/bulb.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 24352,
+   "sha256": "ef822744a7be6cae7e3ecdb7601e7fab1a919621e9aa21a9223a0ec824d46c5e"
+  },
+  {
+   "id": "bunting",
+   "group": "items",
+   "path": "art/items/bunting.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 27982,
+   "sha256": "62726a591f818ec02e1175e0ef3130a078c5e40c286c9bc92912d2ca3610c79a"
+  },
+  {
+   "id": "bus",
+   "group": "items",
+   "path": "art/items/bus.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 32852,
+   "sha256": "5f3b283b7aed3fca238e095eb1f18ed3b97da355766374bf4e36a5adae60cb99"
   },
   {
    "id": "cake",
@@ -1082,6 +1253,24 @@
    "sha256": "21e1d56f0db878b462a0b08cd15a84c5650e4e462efd0feda596bbbc1b7c39a5"
   },
   {
+   "id": "car_body",
+   "group": "items",
+   "path": "art/items/car_body.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 29424,
+   "sha256": "bb435b668c7eacc2d98c9279ec5c593ef630a6a0f78f2db06a119d310216c55e"
+  },
+  {
+   "id": "car_key",
+   "group": "items",
+   "path": "art/items/car_key.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 27050,
+   "sha256": "b8716d046fbe8840b08f880bda86c3c8391a261b916b095254c37c420bb45258"
+  },
+  {
    "id": "carrot",
    "group": "items",
    "path": "art/items/carrot.webp",
@@ -1091,6 +1280,15 @@
    "sha256": "d3046dc1fe7270dbe645b71d27c6d88edb8588ef57237358f0024de97ef3beb2"
   },
   {
+   "id": "cart",
+   "group": "items",
+   "path": "art/items/cart.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 17092,
+   "sha256": "dd6996850d51e3763fc08109d0031b13017f801018134794bad1a7232eb2f79d"
+  },
+  {
    "id": "cheese",
    "group": "items",
    "path": "art/items/cheese.webp",
@@ -1098,6 +1296,105 @@
    "version": 1,
    "bytes": 26076,
    "sha256": "5847734afe407e41d9c343dfa6a570a8fa3732aeb8172faf825d092b3f00a8b4"
+  },
+  {
+   "id": "clay",
+   "group": "items",
+   "path": "art/items/clay.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 21410,
+   "sha256": "545ea7379cafaefb248bc8559efa98d581b731b05f9e6a551c41c43cc50475a9"
+  },
+  {
+   "id": "clay_bowl",
+   "group": "items",
+   "path": "art/items/clay_bowl.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 28520,
+   "sha256": "3779fc71d836cabbb939c35d018457340063e392fd87a0a2b8a563dbb36354bd"
+  },
+  {
+   "id": "concert",
+   "group": "items",
+   "path": "art/items/concert.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 56442,
+   "sha256": "ca4526e7392c248c33353b9e2d01d654118d01743e406e219d0dbcb198a08993"
+  },
+  {
+   "id": "cookie",
+   "group": "items",
+   "path": "art/items/cookie.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 24954,
+   "sha256": "e6b47d685ae9b25bae42c0ed9f7295bfbbb120673366a98a071b9aa0baaa7c17"
+  },
+  {
+   "id": "cow",
+   "group": "items",
+   "path": "art/items/cow.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 55408,
+   "sha256": "4215875b53d1052998397edb4b409a607198ff40ec88687e09e3d97b48e32f9c"
+  },
+  {
+   "id": "decorations",
+   "group": "items",
+   "path": "art/items/decorations.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 48914,
+   "sha256": "c9cac74587e39d3b7b4c9be50037fb9b7f0ead40922f9c50896609821a4368b0"
+  },
+  {
+   "id": "dollhouse",
+   "group": "items",
+   "path": "art/items/dollhouse.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 29638,
+   "sha256": "26a1067751ae65a1925312fa2ec15cb1b1b6bf078cdcdf5eeddc982a2694c9c4"
+  },
+  {
+   "id": "dough",
+   "group": "items",
+   "path": "art/items/dough.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 24376,
+   "sha256": "539b60d275cd6b8659875c33f24ab213fb48eb244200fbc18d834b8d1049926a"
+  },
+  {
+   "id": "drill",
+   "group": "items",
+   "path": "art/items/drill.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 23244,
+   "sha256": "ddac99ecde8b37662825db7418eec97b53335c2a035f421c28222f98ea629d79"
+  },
+  {
+   "id": "drum",
+   "group": "items",
+   "path": "art/items/drum.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 26238,
+   "sha256": "8951b757db3ffb99b9daa3dc28640c21d229e4dec879ed78fd65ea7fcf790407"
+  },
+  {
+   "id": "drum_skin",
+   "group": "items",
+   "path": "art/items/drum_skin.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 26444,
+   "sha256": "ffc9eb0ab9c1c637b2850ffbdd66690f943078167db167f89fde41a0ada8ddb0"
   },
   {
    "id": "egg",
@@ -1118,13 +1415,103 @@
    "sha256": "2f2b1b271f63fb479295706f1c0448cc1e77cd443d799ffce50b75812a13b146"
   },
   {
+   "id": "empty_pot",
+   "group": "items",
+   "path": "art/items/empty_pot.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 31356,
+   "sha256": "6b84733a1d3c07429562c443f16d4e87a06e32182c74db2ae45eca32740804f1"
+  },
+  {
+   "id": "feast",
+   "group": "items",
+   "path": "art/items/feast.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 54528,
+   "sha256": "a85b30e747f841ffffdf8813a50b0edc71c9092595f404c4924344d03feb139b"
+  },
+  {
+   "id": "firefly",
+   "group": "items",
+   "path": "art/items/firefly.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 38608,
+   "sha256": "bee4cb24c3667ec542235a5cbe0fffb8f595dad5729ac1b16412e2bff97d872e"
+  },
+  {
+   "id": "firefly_jar",
+   "group": "items",
+   "path": "art/items/firefly_jar.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 32994,
+   "sha256": "be7fa48c30d7a122001ed5f19c0eb42659cdbccc661c7f4b480426b1a621f7d9"
+  },
+  {
+   "id": "firework",
+   "group": "items",
+   "path": "art/items/firework.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 36504,
+   "sha256": "7042e25264c73795b4cdd4d9f0194ff9434fba30be9a1db1c00999a1421ccb80"
+  },
+  {
+   "id": "fish",
+   "group": "items",
+   "path": "art/items/fish.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 33576,
+   "sha256": "bf7df9b84e3c0914039669dcaa8dee3c0457136bf1ca71920daa31d44af405ea"
+  },
+  {
+   "id": "flag",
+   "group": "items",
+   "path": "art/items/flag.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 24066,
+   "sha256": "88b864f43e2dceede392adf4b4cfbf83a2ae2466660f004a3e3f0a46c2756981"
+  },
+  {
+   "id": "flashlight",
+   "group": "items",
+   "path": "art/items/flashlight.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 18206,
+   "sha256": "e2fc257b0c0cf8038fb7f10827f3c49e61249e04c1b032df44c94608c3d6d4d0"
+  },
+  {
    "id": "flour",
    "group": "items",
    "path": "art/items/flour.webp",
    "type": "image/webp",
    "version": 1,
-   "bytes": 47334,
-   "sha256": "554f90008f2ce4a759077c4b2258571951c5bba305f082079102ae957ae24b5b"
+   "bytes": 37774,
+   "sha256": "cb25b50bd4a1495f3cda7814c784ea0b1d5cd96ac6ef50f5cce160ad282e419c"
+  },
+  {
+   "id": "flower_pot",
+   "group": "items",
+   "path": "art/items/flower_pot.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 24914,
+   "sha256": "98981f9cd6bc0d10d79dcd810e4224fa5fa12356005ea262011cb0cca6ef6861"
+  },
+  {
+   "id": "flute",
+   "group": "items",
+   "path": "art/items/flute.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 9326,
+   "sha256": "248ed6f5d7c5ad176e9248de69c196686327cf104c988e877086fe3926d0926a"
   },
   {
    "id": "fridge",
@@ -1132,8 +1519,17 @@
    "path": "art/items/fridge.webp",
    "type": "image/webp",
    "version": 1,
-   "bytes": 38466,
-   "sha256": "d6d311d4f2583fcb041626cf83ba917cc97fd15f57769e39ccd6ff6c56c78738"
+   "bytes": 26154,
+   "sha256": "2f9d501a646f4f64eab170deb7a142fc542c491f1f35d398ea2dcf76cdb4af5f"
+  },
+  {
+   "id": "fuel",
+   "group": "items",
+   "path": "art/items/fuel.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 24914,
+   "sha256": "612c5e3882090989e9eb4723f69fc98468008262b0f6218fe9486d271622193a"
   },
   {
    "id": "glass",
@@ -1141,8 +1537,62 @@
    "path": "art/items/glass.webp",
    "type": "image/webp",
    "version": 1,
-   "bytes": 45698,
-   "sha256": "063a5c2723a3f5f3ac2bf1f693fe67aafd2efed743d206b8d169c4240a76d6bb"
+   "bytes": 36346,
+   "sha256": "587497a5981115cf15d724cf13d56d596aa69a0fc29988793c9c28c6b27975b2"
+  },
+  {
+   "id": "glue_gun",
+   "group": "items",
+   "path": "art/items/glue_gun.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 39288,
+   "sha256": "70db08bc6a6956d2a212d4827bcf24bfc7b9077e07f3e2e271a624bd2bd3a56c"
+  },
+  {
+   "id": "hammer",
+   "group": "items",
+   "path": "art/items/hammer.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 29972,
+   "sha256": "9650beaa173b1be2271dcddf022c246451f2fa45f70db78fd9d8a9b1a2c730e0"
+  },
+  {
+   "id": "hammer_handle",
+   "group": "items",
+   "path": "art/items/hammer_handle.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 21260,
+   "sha256": "e2bbcc629400387622c0c0c62cb349fc02c684d5894499fa2de13adadf0a5734"
+  },
+  {
+   "id": "hammer_head",
+   "group": "items",
+   "path": "art/items/hammer_head.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 26868,
+   "sha256": "9c3441051caaea588e3e7030f34b869ada8e2dfca400c1b888e6f4a2e0b75800"
+  },
+  {
+   "id": "hay",
+   "group": "items",
+   "path": "art/items/hay.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 30254,
+   "sha256": "28e6fa4ea187540dff927623ca951cd97d9e7718dbd7bc4b052949c5d6934735"
+  },
+  {
+   "id": "hen",
+   "group": "items",
+   "path": "art/items/hen.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 33844,
+   "sha256": "44ab27afa876a4e0406caff1d46f713eb54afe269652b129b281df5d1a6dee7e"
   },
   {
    "id": "honey",
@@ -1154,6 +1604,24 @@
    "sha256": "2fe1a6eac39ea90ecd87429fd31835d3851067b3567bf2289fd326eaf1f65be2"
   },
   {
+   "id": "invitation",
+   "group": "items",
+   "path": "art/items/invitation.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 48750,
+   "sha256": "a776ffb1b079837bfe0483f37f29e01cfb8d180b4bbab3572121d9200fc28c25"
+  },
+  {
+   "id": "juice",
+   "group": "items",
+   "path": "art/items/juice.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 29326,
+   "sha256": "44a32cefb1fcb4b75127b43221735524ca66f520703957b54d8ef837031058d0"
+  },
+  {
    "id": "juicer",
    "group": "items",
    "path": "art/items/juicer.webp",
@@ -1161,6 +1629,69 @@
    "version": 1,
    "bytes": 21306,
    "sha256": "e4db66cc4cb2435d4d03fb9ffa16607cbd42ecb0a12226e6a261a14b74005ebe"
+  },
+  {
+   "id": "junk_sock",
+   "group": "items",
+   "path": "art/items/junk_sock.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 24970,
+   "sha256": "0c318eb5c666283f971bb154964f0f11a64565eb85ddad116c4353e215aa66c3"
+  },
+  {
+   "id": "junk_spoon",
+   "group": "items",
+   "path": "art/items/junk_spoon.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 35802,
+   "sha256": "a539a1456f6b892b82a3a0bd728e835e99ff995f563ff5fde7f3b0b83727f442"
+  },
+  {
+   "id": "kite",
+   "group": "items",
+   "path": "art/items/kite.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 25584,
+   "sha256": "39e89b80b23fe1d99664d85cf43e4e54f00b80cc4a792c76508370451bba21fd"
+  },
+  {
+   "id": "ladybug",
+   "group": "items",
+   "path": "art/items/ladybug.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 28560,
+   "sha256": "f1844fa0c17a267f97b80b99de1c0987793a50c93d2839ab562f65bd17f59895"
+  },
+  {
+   "id": "lantern",
+   "group": "items",
+   "path": "art/items/lantern.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 25204,
+   "sha256": "a498f9bb8bcf94244847dd068273dd14d3008aa5e35a1a316611c7e944bc0a55"
+  },
+  {
+   "id": "lens",
+   "group": "items",
+   "path": "art/items/lens.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 27192,
+   "sha256": "96c39fb483a6567c70ba95e7f1d12bc0aa78cea49aecc256c0f9686558964aec"
+  },
+  {
+   "id": "letter",
+   "group": "items",
+   "path": "art/items/letter.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 16422,
+   "sha256": "552e1dd45c42b87936b3bc6410f49b1be7f5afd911ba4d32b7245ed439a5f4cd"
   },
   {
    "id": "lettuce",
@@ -1172,13 +1703,157 @@
    "sha256": "aa105dd3aebf556bfe0230b08c694d8a57806931a13f3f47d5910b4d29e6edb3"
   },
   {
+   "id": "light_green",
+   "group": "items",
+   "path": "art/items/light_green.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 13304,
+   "sha256": "67e763a0ff9b87fa30c33e2ad9825766f83e9f08cbae1655d3e8b658b815cfff"
+  },
+  {
+   "id": "light_red",
+   "group": "items",
+   "path": "art/items/light_red.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 37172,
+   "sha256": "35639f38a14a1390449898fee68fd1008d366efc95cf95b3ec410a7ef709b6e5"
+  },
+  {
+   "id": "light_yellow",
+   "group": "items",
+   "path": "art/items/light_yellow.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 43324,
+   "sha256": "25ab4b5a4df0a254dd9fd3345203ba192db5ad91ba02348be0a17b2c6c8d92b8"
+  },
+  {
+   "id": "magnet",
+   "group": "items",
+   "path": "art/items/magnet.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 41306,
+   "sha256": "2a58633a603a5cb07fb645a8d51a005e87ec04b0c4fb094db70ee7455cdabccc"
+  },
+  {
+   "id": "magnet_fish",
+   "group": "items",
+   "path": "art/items/magnet_fish.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 18036,
+   "sha256": "13cf2f273c6faf34845b67cff436a9af85a1cc835e29bdea5e1cc9c50e229d5e"
+  },
+  {
+   "id": "magnifier",
+   "group": "items",
+   "path": "art/items/magnifier.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 24642,
+   "sha256": "33b3207b7d6a1b6a78ae496278ddb64b4c94cea1d0d782f684edaef344dc181a"
+  },
+  {
+   "id": "mailbox",
+   "group": "items",
+   "path": "art/items/mailbox.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 17984,
+   "sha256": "6cc5f98ecb09ac7e1b240c501a85cc755870a18c89005d71bae68688a37f99ed"
+  },
+  {
+   "id": "map",
+   "group": "items",
+   "path": "art/items/map.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 29334,
+   "sha256": "3f3061a2a170230abce97148b4ca7ef7d2f4392566605faba0e5c582036666a2"
+  },
+  {
+   "id": "map_piece",
+   "group": "items",
+   "path": "art/items/map_piece.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 33932,
+   "sha256": "c9bd9ca78dd1c198a08a8377621e4fd7e12951c2b8be5b02f4059430af6d2d58"
+  },
+  {
+   "id": "mask",
+   "group": "items",
+   "path": "art/items/mask.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 47666,
+   "sha256": "96a5781d8f431e71747ea63383c0b1a2ec0ec17af5c838c2d7e6da69934731f7"
+  },
+  {
+   "id": "medal",
+   "group": "items",
+   "path": "art/items/medal.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 29758,
+   "sha256": "55c3fee57eb1acdd29da12820ad6dc22ad7127dc59d7e952039eec5678d649e4"
+  },
+  {
    "id": "milk",
    "group": "items",
    "path": "art/items/milk.webp",
    "type": "image/webp",
    "version": 1,
-   "bytes": 26334,
-   "sha256": "921952666f4aa5cfec4eafbef3246402fab4183337076fbcd966496cc1bf1561"
+   "bytes": 17388,
+   "sha256": "c271a75002ccd860233b6539e64e01d0c4ce48e01b8b72549088787a4d1f01a0"
+  },
+  {
+   "id": "moon",
+   "group": "items",
+   "path": "art/items/moon.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 47678,
+   "sha256": "dda3fe02a920755f11e9caf64b530b1519e8055c0740acc112d29cf1ee52c34c"
+  },
+  {
+   "id": "nail",
+   "group": "items",
+   "path": "art/items/nail.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 21224,
+   "sha256": "6fe9aa8c952d732069d5522cacdb9b446e4b160f5c67243fa6a05cb3774c48f6"
+  },
+  {
+   "id": "necklace",
+   "group": "items",
+   "path": "art/items/necklace.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 34204,
+   "sha256": "247afc6f47f7ceba737ad03479ff1eef8f4ae8c2010c54842cb92b6ab6d91076"
+  },
+  {
+   "id": "nest",
+   "group": "items",
+   "path": "art/items/nest.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 34764,
+   "sha256": "3e66741aff6fad7e04876e9cf530cb55de648c30e80ec747fba2ec41c02f3985"
+  },
+  {
+   "id": "note",
+   "group": "items",
+   "path": "art/items/note.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 15284,
+   "sha256": "bce52a5ea85d889aa9c28bffb876d2370a6c52c91e56f7d4a6dd6dc5a17d599f"
   },
   {
    "id": "old_shoe",
@@ -1217,6 +1892,69 @@
    "sha256": "d946e08775018a79435b49f14c5588c6baaaeb89d8446a7969b4ee86f6568216"
   },
   {
+   "id": "paints",
+   "group": "items",
+   "path": "art/items/paints.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 36174,
+   "sha256": "d271c8c311cb641f72d2c8a061880e93be80e97931055897fcc6c3e91b9ab3be"
+  },
+  {
+   "id": "paper",
+   "group": "items",
+   "path": "art/items/paper.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 22222,
+   "sha256": "d59013eb3f1afa5efa6a96960d5c9d870e5fa507704d9248f278133fd6451bc7"
+  },
+  {
+   "id": "peg",
+   "group": "items",
+   "path": "art/items/peg.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 11808,
+   "sha256": "b55481baf19982736283fe09f79f1b36bf475bbfe682423987085d856166cdbb"
+  },
+  {
+   "id": "photo_frame",
+   "group": "items",
+   "path": "art/items/photo_frame.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 18960,
+   "sha256": "dd49786a185ce971fe568d77cb54686e64799df2219a2371a4bee902358abd0c"
+  },
+  {
+   "id": "pizza",
+   "group": "items",
+   "path": "art/items/pizza.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 39704,
+   "sha256": "994d1bc6499c983a1ba9d71943f612aef89e65fef13b01e4b4b2ccdd96894ea0"
+  },
+  {
+   "id": "plank",
+   "group": "items",
+   "path": "art/items/plank.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 14226,
+   "sha256": "532871511fce4e2c6d2c078bb4a7c89c4d259d5ae51014d0e4cd8530472c1b3b"
+  },
+  {
+   "id": "pole",
+   "group": "items",
+   "path": "art/items/pole.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 7976,
+   "sha256": "9aabe3ec207672d1ffa3f220b9b3f85e0b0167ec48ed4a994badf613f6645985"
+  },
+  {
    "id": "pot",
    "group": "items",
    "path": "art/items/pot.webp",
@@ -1233,6 +1971,258 @@
    "version": 1,
    "bytes": 18190,
    "sha256": "6f13bdb59fa48ed6fe6815b652c5297db44125cb43fb37fc51965d540c165019"
+  },
+  {
+   "id": "pottery_wheel",
+   "group": "items",
+   "path": "art/items/pottery_wheel.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 27612,
+   "sha256": "7f9c040d1b3ea181e2d141f61c8b0d94e0f7bf546907db31b3823f19f1094492"
+  },
+  {
+   "id": "q_carry",
+   "group": "items",
+   "path": "art/items/q_carry.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 15986,
+   "sha256": "9eb8015bcc4182f8ce966f752ab90bedb8ce8cf28aeac43f9f95e86ec0d66a3c"
+  },
+  {
+   "id": "q_cold",
+   "group": "items",
+   "path": "art/items/q_cold.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 48360,
+   "sha256": "e4c3a8e97c099d6301e7fb42ebf882eca09f0efc69c2114819adf3aaa1f77ea7"
+  },
+  {
+   "id": "q_cross",
+   "group": "items",
+   "path": "art/items/q_cross.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 38028,
+   "sha256": "fe77ac20492a022dcd62f2ac8938e248f7c7a72341482ffc07e133430f668e2e"
+  },
+  {
+   "id": "q_dark",
+   "group": "items",
+   "path": "art/items/q_dark.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 6296,
+   "sha256": "87f5366db3bb1028121054a33aaaf7f826b4415ed4cbb0e293e70b6335f5f3c1"
+  },
+  {
+   "id": "q_eat",
+   "group": "items",
+   "path": "art/items/q_eat.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 52382,
+   "sha256": "ff9c604b08c52857eb0d221ec16e2242ed2c3b38815dacd1bafdd8cbbf6b7b38"
+  },
+  {
+   "id": "q_flowers",
+   "group": "items",
+   "path": "art/items/q_flowers.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 34624,
+   "sha256": "fbfb8337a38cd98fe721b1f0b928039efdd749ea94157fd1d00a13449b6753a5"
+  },
+  {
+   "id": "q_hungry",
+   "group": "items",
+   "path": "art/items/q_hungry.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 51408,
+   "sha256": "0f9557704d4ca76307567ebaa4fed282680bdb339c21dc2df0b8528f1be912b3"
+  },
+  {
+   "id": "q_lost",
+   "group": "items",
+   "path": "art/items/q_lost.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 45326,
+   "sha256": "c8ae32b99e41fc43130bc701b904ed8466306c84e707dc531f54f96fa057cd6e"
+  },
+  {
+   "id": "q_music",
+   "group": "items",
+   "path": "art/items/q_music.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 18912,
+   "sha256": "175104f5392a115681b1b414c9cd557182e3525b33d69f6b8c6216983202bfda"
+  },
+  {
+   "id": "q_nail",
+   "group": "items",
+   "path": "art/items/q_nail.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 32232,
+   "sha256": "91d367724086b467ed7d1b81342f9a1aec73a54a2540aed038ca2035529a6fd5"
+  },
+  {
+   "id": "q_paint",
+   "group": "items",
+   "path": "art/items/q_paint.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 47208,
+   "sha256": "f3d0a842553ccdc61cf0fc6ea6a24e87d8ee620258a67dfb8509f8a05cf0e98a"
+  },
+  {
+   "id": "q_party",
+   "group": "items",
+   "path": "art/items/q_party.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 28756,
+   "sha256": "5a9b6d08cd23eba8128906cd12a8e0882fa9b8f5d8f65daa4e5e2ade745c5674"
+  },
+  {
+   "id": "q_rain",
+   "group": "items",
+   "path": "art/items/q_rain.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 31506,
+   "sha256": "f0588a69873c2e6144fd8a4dc30d0e4fab0131e38e19499a332f25bf80e0b36f"
+  },
+  {
+   "id": "q_sky",
+   "group": "items",
+   "path": "art/items/q_sky.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 30428,
+   "sha256": "2edd240d5c6f6361431473816dc5148534b4cc60058461ec18c097ee3f751d27"
+  },
+  {
+   "id": "q_sleep",
+   "group": "items",
+   "path": "art/items/q_sleep.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 46602,
+   "sha256": "9df240152c2b490ce0134599dd28182d145ed915a9f2f12992648af0b7c65889"
+  },
+  {
+   "id": "q_swim",
+   "group": "items",
+   "path": "art/items/q_swim.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 22052,
+   "sha256": "0e2f816b9ca69402d143597654402a55db55c3cab9687d5968a686c0371e1573"
+  },
+  {
+   "id": "q_thirsty",
+   "group": "items",
+   "path": "art/items/q_thirsty.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 29994,
+   "sha256": "188db6302ac3a2f01e35a1b5f72c0b05791a125bef7aa6cafe11d999d438167a"
+  },
+  {
+   "id": "q_travel",
+   "group": "items",
+   "path": "art/items/q_travel.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 41464,
+   "sha256": "a3b7b2d0609e944ec1e777d821beb1355456066d8eee86d403a104bdf68af00c"
+  },
+  {
+   "id": "q_water",
+   "group": "items",
+   "path": "art/items/q_water.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 22686,
+   "sha256": "377bfe1a60e1962f71845a1b67771416d5cf86988c109cdb3c2d9db2814a48fa"
+  },
+  {
+   "id": "q_wear",
+   "group": "items",
+   "path": "art/items/q_wear.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 31470,
+   "sha256": "dd78dd7f3cc828e9f010011aa53c96f6122dea94663593a7738f5904b2f7b533"
+  },
+  {
+   "id": "rag_doll",
+   "group": "items",
+   "path": "art/items/rag_doll.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 26408,
+   "sha256": "cee349e482187d559df7f73ef770aef1c276b3e5490e07a5c4477a26a9c8153f"
+  },
+  {
+   "id": "rail",
+   "group": "items",
+   "path": "art/items/rail.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 41204,
+   "sha256": "22f151b04a07293dcd526958aa8d022fd848f0c160ddb650fc63f8c097a69e7e"
+  },
+  {
+   "id": "reed",
+   "group": "items",
+   "path": "art/items/reed.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 17212,
+   "sha256": "0790c1e36ce00785d56ea90b06f38eb03f89c81c078fb8be7b6f498981ea8e76"
+  },
+  {
+   "id": "robot",
+   "group": "items",
+   "path": "art/items/robot.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 53226,
+   "sha256": "e31749ee0834547d9077678893cbf2842404e9455ed84de82988bfe5a8302b89"
+  },
+  {
+   "id": "robot_body",
+   "group": "items",
+   "path": "art/items/robot_body.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 50854,
+   "sha256": "001b4e36c0389429088f394368b4b7c8ea94ca080ba8d11082902e6bc927f092"
+  },
+  {
+   "id": "robot_head",
+   "group": "items",
+   "path": "art/items/robot_head.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 48654,
+   "sha256": "08b8b5c4e0fa9bae3dd8831e401e9682aeb55bc22ec051f5ce5a8f5ef15ac498"
+  },
+  {
+   "id": "rocket",
+   "group": "items",
+   "path": "art/items/rocket.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 34072,
+   "sha256": "ec02378ee59be7973e7acaaf457977412551aa0ee2965f8201cf752cd7fa44c0"
   },
   {
    "id": "rotten_apple",
@@ -1253,6 +2243,69 @@
    "sha256": "a6afc21c30c0fb1fc4a76f7091dd7a66f343213c740d570ddd33da3a2e8392a0"
   },
   {
+   "id": "saw",
+   "group": "items",
+   "path": "art/items/saw.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 17286,
+   "sha256": "eab53bf5bc0f450df8d9d32fc43b5ff185f84c71d2b19373e3e3128fe1b560cd"
+  },
+  {
+   "id": "scissors",
+   "group": "items",
+   "path": "art/items/scissors.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 31348,
+   "sha256": "fdd76b4edcefc1dccb249a9b9f1b91334ca3f23033aaf9a4f7932c6b9438987f"
+  },
+  {
+   "id": "screw",
+   "group": "items",
+   "path": "art/items/screw.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 49130,
+   "sha256": "8c2ee9bd649736e50fa016615849dfefd2eb4defe8ae7bf6c77c33baada33c79"
+  },
+  {
+   "id": "seed",
+   "group": "items",
+   "path": "art/items/seed.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 21258,
+   "sha256": "f47aadc125917132f3023bda352295f43fb247e0b0f6d0a8cd4f2591b40a7736"
+  },
+  {
+   "id": "sewing_machine",
+   "group": "items",
+   "path": "art/items/sewing_machine.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 54578,
+   "sha256": "fc1a4d500fb7a284a72261c2d8aab8ea9f3208b1bac4bd6c09204b2aa4abd1c9"
+  },
+  {
+   "id": "soap_bottle",
+   "group": "items",
+   "path": "art/items/soap_bottle.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 16908,
+   "sha256": "82ceaabc351946054362c3471a3b4533fe9764cc25572ed572e9683fdc461fa3"
+  },
+  {
+   "id": "song",
+   "group": "items",
+   "path": "art/items/song.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 23732,
+   "sha256": "168bb5adf563c26dae2f87aecbcff50ad2208bee64cf8264581accda2050cc37"
+  },
+  {
    "id": "soup",
    "group": "items",
    "path": "art/items/soup.webp",
@@ -1260,6 +2313,114 @@
    "version": 1,
    "bytes": 43096,
    "sha256": "b9fa2daf605b1889221c1ecd50d1f307e6633d888fec0de264d0b46abeb89418"
+  },
+  {
+   "id": "sprout",
+   "group": "items",
+   "path": "art/items/sprout.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 22954,
+   "sha256": "5a9d1d368a50ddcd53cf4c45c844bd1943a2f294a780254252b10da1ff7b720b"
+  },
+  {
+   "id": "star",
+   "group": "items",
+   "path": "art/items/star.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 28974,
+   "sha256": "738f5b7331b801a017b19f950245ccd01fb6e91fbca45cb1e65e29b3faf6cb8f"
+  },
+  {
+   "id": "submarine",
+   "group": "items",
+   "path": "art/items/submarine.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 24062,
+   "sha256": "8b4b9896c01d6b9b43d46ddf2d366f23a0596e61438f749e2ea9a552fa2310ca"
+  },
+  {
+   "id": "telescope",
+   "group": "items",
+   "path": "art/items/telescope.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 24358,
+   "sha256": "55ebb0615dd250dd8dcc425a48295d0308d1f4e41b4f4f6345b64fe29b468a19"
+  },
+  {
+   "id": "tent",
+   "group": "items",
+   "path": "art/items/tent.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 22998,
+   "sha256": "a57e3e98e16292fbeb6f553f16088d4717300a2a78fe47112bf72a8d57cdd828"
+  },
+  {
+   "id": "tent_cloth",
+   "group": "items",
+   "path": "art/items/tent_cloth.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 18438,
+   "sha256": "06f6c33e013faaec54b8270c67d47997b6337220e7dffdc6333eb9a35fc7cb4f"
+  },
+  {
+   "id": "tire",
+   "group": "items",
+   "path": "art/items/tire.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 30134,
+   "sha256": "60766cee57b1e548e339742de2eaa2bce1cb507d957811bc7696a7c7012b74b5"
+  },
+  {
+   "id": "tomato",
+   "group": "items",
+   "path": "art/items/tomato.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 28146,
+   "sha256": "bc8251014b7b53057fc3417f2440cfe22f4f88dea153b40fab13c077f9e97d47"
+  },
+  {
+   "id": "toy_car",
+   "group": "items",
+   "path": "art/items/toy_car.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 28176,
+   "sha256": "5f7d820f9ff0a6e72b179abbc43fa59efb88063ab0a8adbd5e0dd43f901500de"
+  },
+  {
+   "id": "traffic_light",
+   "group": "items",
+   "path": "art/items/traffic_light.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 25992,
+   "sha256": "1c248d8178e2c26753ac027c5c94d65efae8e506778be817f7643ccc7644c5e9"
+  },
+  {
+   "id": "train",
+   "group": "items",
+   "path": "art/items/train.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 28850,
+   "sha256": "1618e261e027dce670ca4e67310eacbe6e78aec17d7701cc0fcfa1d23daaf695"
+  },
+  {
+   "id": "tube",
+   "group": "items",
+   "path": "art/items/tube.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 19372,
+   "sha256": "836ee57693dc1f679bd1b9d131510a21827ab74185bee352cdaed448ad96a958"
   },
   {
    "id": "water_jug",
@@ -1278,6 +2439,51 @@
    "version": 1,
    "bytes": 20816,
    "sha256": "ee873fce57b2fe4ee66dc2dff9206eae1e42bd85282b9de47b9ed832cfd32226"
+  },
+  {
+   "id": "well",
+   "group": "items",
+   "path": "art/items/well.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 36538,
+   "sha256": "0b59a3da49925bd8294417e44e55161a2c0bd7b6dc434343da014ea60fd69d64"
+  },
+  {
+   "id": "wheel",
+   "group": "items",
+   "path": "art/items/wheel.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 30674,
+   "sha256": "557064941e4a531c17fe7c38fb57bd3775d8a1c76fe67051937e2a5158d8e47b"
+  },
+  {
+   "id": "windmill",
+   "group": "items",
+   "path": "art/items/windmill.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 28612,
+   "sha256": "242027525252adbaa5db67dba190c0cb4c3a7077bf9025d1e82608620a14b7e0"
+  },
+  {
+   "id": "wrench",
+   "group": "items",
+   "path": "art/items/wrench.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 20658,
+   "sha256": "a3befe77a8d6dce94f1c12cd04df3ee2040614b05d780a42ecd82a838e526197"
+  },
+  {
+   "id": "xylophone",
+   "group": "items",
+   "path": "art/items/xylophone.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 34984,
+   "sha256": "67ab0ccadaa1938b102ebd400f63b86a1373fe755a966974c4c51f13730090de"
   },
   {
    "id": "drum",

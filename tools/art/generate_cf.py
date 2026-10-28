@@ -125,6 +125,34 @@ def cut_out(img: Image.Image) -> Image.Image:
     return out
 
 
+def cut_key(img: Image.Image) -> Image.Image:
+    """For white objects rendered on a coloured backdrop: removes the backdrop colour (sampled from the
+    border) where it is connected to the border, so white parts of the object stay."""
+    rgb = np.asarray(img.convert("RGB")).astype(np.int16)
+    border = np.concatenate([rgb[0], rgb[-1], rgb[:, 0], rgb[:, -1]])
+    key = np.median(border, axis=0)
+    dist = np.sqrt(((rgb - key) ** 2).sum(axis=2))
+    near = dist < 70
+    bg = np.zeros_like(near)
+    bg[0, :], bg[-1, :], bg[:, 0], bg[:, -1] = near[0, :], near[-1, :], near[:, 0], near[:, -1]
+    while True:
+        grown = bg.copy()
+        grown[1:, :] |= bg[:-1, :]
+        grown[:-1, :] |= bg[1:, :]
+        grown[:, 1:] |= bg[:, :-1]
+        grown[:, :-1] |= bg[:, 1:]
+        grown &= near
+        if (grown == bg).all():
+            break
+        bg = grown
+    alpha = np.full(dist.shape, 255.0)
+    alpha[bg] = np.clip((dist[bg] - 30) / 40 * 255, 0, 255)
+    a = Image.fromarray(alpha.astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.8))
+    out = img.convert("RGBA")
+    out.putalpha(a)
+    return out
+
+
 def square(img: Image.Image, size: int, margin: float = .06) -> Image.Image:
     box = img.getchannel("A").point(lambda v: 255 if v > 24 else 0).getbbox() or (0, 0, *img.size)
     sub = img.crop(box)
@@ -139,7 +167,7 @@ def install(item: dict, raw: Path) -> Path:
     target = ROOT / item["target"]
     target.parent.mkdir(parents=True, exist_ok=True)
     if item["kind"] in ("object", "character"):
-        square(cut_out(img), item["size"]).save(target, "WEBP", quality=90, method=6)
+        square((cut_key if item.get("key") else cut_out)(img), item["size"]).save(target, "WEBP", quality=90, method=6)
     else:
         img.convert("RGB").resize((item["size"], item["size"]), Image.LANCZOS).save(target, "WEBP", quality=84, method=6)
     return target

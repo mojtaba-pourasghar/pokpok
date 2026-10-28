@@ -57,6 +57,9 @@ GAME = json.loads((ROOT / "art/game_art.json").read_text(encoding="utf-8"))
 
 # Which pictures are made first (the daily Cloudflare allowance is limited): characters and
 # chapter 1–3 first, then the rest.
+# White things vanish when a white backdrop is cut away: these render on sky blue, which is keyed out.
+ON_BLUE = {"milk", "fridge", "glass", "flour", "q_rain", "egg", "sheep"}
+
 FIRST = ["kitchen", "farm", "workshop", "meadow"]
 
 
@@ -74,8 +77,12 @@ def main():
         items.append({"id": f"bg_{sid}", "kind": "background", "target": f"assets/art/backgrounds/{sid}.webp", "size": 1024,
                       "prompt": f"{SCENES[sid]}. {STYLE_SCENE}"})
     for oid, desc in GAME["objects"].items():
-        items.append({"id": oid, "kind": "object", "target": f"assets/art/items/{oid}.webp", "size": 512,
-                      "prompt": f"{desc}. {STYLE_OBJECT}"})
+        item = {"id": oid, "kind": "object", "target": f"assets/art/items/{oid}.webp", "size": 512,
+                "prompt": f"{desc}. {STYLE_OBJECT}"}
+        if oid in ON_BLUE:
+            item["prompt"] = item["prompt"].replace("plain pure white background", "plain solid sky blue background")
+            item["key"] = "blue"
+        items.append(item)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({
         "model": "@cf/black-forest-labs/flux-1-schnell",
