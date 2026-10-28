@@ -1600,6 +1600,16 @@
      "mission": "خاله خرسی تشنه است. بیا برایش آب‌پرتقال درست کنیم!",
      "steps": [
       {
+       "engine": "catch",
+       "say": "باد پرتقال‌ها را از درخت می‌اندازد! سبد را جابه‌جا کن و بگیرشان.",
+       "target": "orange",
+       "count": 4,
+       "distract": [
+        "rotten_apple"
+       ],
+       "sound": null
+      },
+      {
        "engine": "collect",
        "say": "پرتقال‌های رسیده را از درخت بچین.",
        "target": "orange",
@@ -1608,6 +1618,11 @@
         "rotten_apple"
        ],
        "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "scrub",
+       "say": "پرتقال‌ها خاکی‌اند. بشورشان تا تمیز شوند.",
+       "target": "orange"
       },
       {
        "engine": "cut",
@@ -1632,9 +1647,20 @@
        "into": "glass",
        "sound": "audio/sfx/pour.mp3",
        "color": "#FFA726"
+      },
+      {
+       "engine": "feed",
+       "say": "آب‌پرتقال را به خاله خرسی بده تا بنوشد!",
+       "friend": "bear",
+       "food": [
+        "juice"
+       ],
+       "count": 2,
+       "distract": [],
+       "sound": "audio/sfx/sip.mp3"
       }
      ],
-     "targetSec": 100,
+     "targetSec": 210,
      "secret": "magnifier"
     },
     {
@@ -1643,6 +1669,16 @@
      "makes": "bread",
      "mission": "برای ناهار نان لازم داریم. بیا نان بپزیم!",
      "steps": [
+      {
+       "engine": "memory",
+       "say": "وسایل نان را به خاطر بسپار. جفت‌ها را پیدا کن!",
+       "items": [
+        "flour",
+        "egg",
+        "milk",
+        "water_jug"
+       ]
+      },
       {
        "engine": "pour",
        "say": "آرد را در کاسه بریز.",
@@ -1669,15 +1705,33 @@
        "result": "dough"
       },
       {
+       "engine": "cut",
+       "say": "خمیر را چند تکه کن تا چند نان کوچک شود.",
+       "target": "dough",
+       "lines": 2,
+       "result": "dough"
+      },
+      {
        "engine": "timing",
        "say": "نان را در فر گذاشتیم. وقتی طلایی شد، بزن!",
        "target": "oven",
        "sound": "audio/sfx/kettle.mp3",
        "label": "حالا!",
        "result": "bread"
+      },
+      {
+       "engine": "feed",
+       "say": "نان گرم را به خاله خرسی بده.",
+       "friend": "bear",
+       "food": [
+        "bread"
+       ],
+       "count": 2,
+       "distract": [],
+       "sound": "audio/sfx/crunch.mp3"
       }
      ],
-     "targetSec": 110,
+     "targetSec": 210,
      "secret": "big_oven"
     },
     {
@@ -1686,6 +1740,17 @@
      "makes": "soup",
      "mission": "باد سرد می‌آید. یک سوپ گرم بپزیم!",
      "steps": [
+      {
+       "engine": "catch",
+       "say": "سبزی‌ها از قفسه می‌افتند! فقط سالم‌ها را بگیر.",
+       "target": "carrot",
+       "count": 4,
+       "distract": [
+        "rotten_apple",
+        "old_shoe"
+       ],
+       "sound": null
+      },
       {
        "engine": "sort",
        "say": "سبزی‌های سالم را در سبد بگذار و خراب‌ها را در سطل.",
@@ -1700,6 +1765,11 @@
        ],
        "goodLabel": "سالم",
        "badLabel": "خراب"
+      },
+      {
+       "engine": "scrub",
+       "say": "سیب‌زمینی گلی است. بشورش!",
+       "target": "potato"
       },
       {
        "engine": "cut",
@@ -1723,9 +1793,18 @@
        "turns": 3,
        "sound": "audio/sfx/stir.mp3",
        "result": "soup"
+      },
+      {
+       "engine": "blow",
+       "say": "سوپ خیلی داغ است! نگه دار و فوت کن تا خنک شود.",
+       "target": "soup",
+       "mode": "cool",
+       "count": 1,
+       "result": "soup",
+       "sound": null
       }
      ],
-     "targetSec": 120,
+     "targetSec": 210,
      "secret": null
     },
     {
@@ -1772,9 +1851,29 @@
        "count": 4,
        "into": "cake",
        "sound": "audio/ui/chime.mp3"
+      },
+      {
+       "engine": "blow",
+       "say": "تولدت مبارک خاله خرسی! شمع‌ها را فوت کن.",
+       "target": "candle",
+       "mode": "out",
+       "count": 4,
+       "result": "candle",
+       "sound": null
+      },
+      {
+       "engine": "feed",
+       "say": "یک تکه کیک به خاله خرسی بده.",
+       "friend": "bear",
+       "food": [
+        "cake"
+       ],
+       "count": 2,
+       "distract": [],
+       "sound": null
       }
      ],
-     "targetSec": 140,
+     "targetSec": 210,
      "secret": null
     }
    ]
@@ -1808,6 +1907,13 @@
        "spot": "q_thirsty",
        "done": "به به! بانی سرحال شد.",
        "why": "این برای رفع تشنگی نیست."
+      },
+      {
+       "engine": "connect",
+       "say": "نقطه‌ها را به ترتیب وصل کن تا ببینی چه می‌سازیم!",
+       "target": "watering_can",
+       "dots": 6,
+       "shape": "circle"
       },
       {
        "engine": "assemble",
@@ -1847,9 +1953,15 @@
        "into": "watering_can",
        "sound": "audio/sfx/pour.mp3",
        "color": "#4FC3F7"
+      },
+      {
+       "engine": "trace",
+       "say": "آب‌پاش را روی ردیف گل‌ها ببر تا همه آب بخورند.",
+       "target": "watering_can",
+       "shape": "wave"
       }
      ],
-     "targetSec": 110,
+     "targetSec": 180,
      "secret": "magnifier"
     },
     {
@@ -1858,6 +1970,16 @@
      "makes": "flower_pot",
      "mission": "بانی می‌خواهد یک گل قشنگ بکارد.",
      "steps": [
+      {
+       "engine": "catch",
+       "say": "باد دانه‌ها را می‌آورد! بگیرشان.",
+       "target": "seed",
+       "count": 3,
+       "distract": [
+        "old_shoe"
+       ],
+       "sound": null
+      },
       {
        "engine": "tap",
        "say": "خاک را با بیلچه بکن.",
@@ -1890,9 +2012,15 @@
        "sound": "audio/sfx/grow.mp3",
        "label": "حالا!",
        "result": "flower_pot"
+      },
+      {
+       "engine": "paint",
+       "say": "گلدان را رنگ کن.",
+       "target": "flower_pot",
+       "areas": 3
       }
      ],
-     "targetSec": 110,
+     "targetSec": 180,
      "secret": null
     },
     {
@@ -1920,15 +2048,48 @@
        "sound": "audio/ui/pop.mp3"
       },
       {
-       "engine": "collect",
-       "say": "مرغ‌های گم‌شده را پیدا کن. پشت بوته‌ها را ببین!",
+       "engine": "whack",
+       "say": "مرغ‌ها از پشت بوته‌ها سر می‌کشند! هر مرغ را بزن تا به لانه بیاید.",
        "target": "hen",
-       "count": 3,
-       "distract": [],
+       "count": 4,
+       "distract": [
+        "rotten_apple"
+       ],
        "sound": "audio/sfx/cluck.mp3"
+      },
+      {
+       "engine": "feed",
+       "say": "مرغ‌ها گرسنه‌اند. بهشان دانه بده.",
+       "friend": "hen",
+       "food": [
+        "seed"
+       ],
+       "count": 3,
+       "distract": [
+        "old_shoe"
+       ],
+       "sound": "audio/sfx/cluck.mp3"
+      },
+      {
+       "engine": "catch",
+       "say": "مرغ‌ها تخم گذاشتند! تخم‌مرغ‌ها را آرام با سبد بگیر.",
+       "target": "egg",
+       "count": 4,
+       "distract": [
+        "old_shoe"
+       ],
+       "sound": null
+      },
+      {
+       "engine": "count",
+       "say": "تخم‌مرغ‌ها را در لانه بشمار.",
+       "target": "egg",
+       "count": 3,
+       "into": "nest",
+       "sound": "audio/ui/pop.mp3"
       }
      ],
-     "targetSec": 100,
+     "targetSec": 180,
      "secret": "saw"
     },
     {
@@ -1963,6 +2124,18 @@
        "why": "این نان نیست."
       },
       {
+       "engine": "scrub",
+       "say": "کاهو را بشور.",
+       "target": "lettuce"
+      },
+      {
+       "engine": "cut",
+       "say": "پنیر را برش بزن.",
+       "target": "cheese",
+       "lines": 2,
+       "result": "cheese"
+      },
+      {
        "engine": "order",
        "say": "ساندویچ را لایه‌لایه بچین: نان، کاهو، پنیر، نان.",
        "items": [
@@ -1972,9 +2145,20 @@
         "bread"
        ],
        "sound": null
+      },
+      {
+       "engine": "feed",
+       "say": "ساندویچ را به بانی بده!",
+       "friend": "bunny",
+       "food": [
+        "sandwich"
+       ],
+       "count": 2,
+       "distract": [],
+       "sound": "audio/sfx/crunch.mp3"
       }
      ],
-     "targetSec": 120,
+     "targetSec": 210,
      "secret": null
     }
    ]
@@ -2024,6 +2208,11 @@
        "sound": "audio/ui/pop.mp3"
       },
       {
+       "engine": "scrub",
+       "say": "سر چکش زنگ زده. تمیزش کن تا برق بزند.",
+       "target": "hammer_head"
+      },
+      {
        "engine": "assemble",
        "say": "سر و دسته را به هم وصل کن.",
        "base": "hammer",
@@ -2048,9 +2237,19 @@
        "turns": 2,
        "sound": "audio/sfx/gear.mp3",
        "result": "hammer"
+      },
+      {
+       "engine": "whack",
+       "say": "میخ‌ها بیرون زده‌اند! با چکش بکوبشان. جوراب را نزن!",
+       "target": "nail",
+       "count": 5,
+       "distract": [
+        "junk_sock"
+       ],
+       "sound": "audio/sfx/hammer.mp3"
       }
      ],
-     "targetSec": 100,
+     "targetSec": 180,
      "secret": "wrench"
     },
     {
@@ -2059,6 +2258,26 @@
      "makes": "flashlight",
      "mission": "گوشه‌ی کارگاه خیلی تاریک است!",
      "steps": [
+      {
+       "engine": "catch",
+       "say": "باتری‌ها از قفسه می‌افتند! بگیرشان.",
+       "target": "battery",
+       "count": 3,
+       "distract": [
+        "junk_spoon"
+       ],
+       "sound": null
+      },
+      {
+       "engine": "memory",
+       "say": "قطعه‌های چراغ‌قوه را به خاطر بسپار و جفت کن.",
+       "items": [
+        "battery",
+        "bulb",
+        "flashlight",
+        "screw"
+       ]
+      },
       {
        "engine": "assemble",
        "say": "باتری‌ها را در چراغ‌قوه بگذار.",
@@ -2101,7 +2320,7 @@
        "count": 3
       }
      ],
-     "targetSec": 100,
+     "targetSec": 180,
      "secret": "magnifier"
     },
     {
@@ -2110,6 +2329,13 @@
      "makes": "cart",
      "mission": "جعبه‌ها خیلی سنگین‌اند. یک گاری لازم داریم!",
      "steps": [
+      {
+       "engine": "connect",
+       "say": "نقطه‌ها را وصل کن تا شکل گاری پیدا شود.",
+       "target": "cart",
+       "dots": 6,
+       "shape": "circle"
+      },
       {
        "engine": "use",
        "say": "تخته‌ها باید با میخ به هم وصل شوند. چه وسیله‌ای لازم است؟",
@@ -2134,9 +2360,35 @@
        "count": 2,
        "into": "cart",
        "sound": "audio/sfx/gear.mp3"
+      },
+      {
+       "engine": "paint",
+       "say": "گاری را رنگ کن.",
+       "target": "cart",
+       "areas": 3
+      },
+      {
+       "engine": "stack",
+       "say": "جعبه‌ها را با جرثقیل روی گاری بچین. وقتی بالای خط سبز بود بزن!",
+       "target": "box",
+       "count": 4,
+       "sound": "audio/sfx/thunk.mp3"
+      },
+      {
+       "engine": "steer",
+       "say": "گاری را بران و جعبه‌ها را جمع کن. به سنگ‌ها نخور!",
+       "target": "cart",
+       "good": [
+        "box"
+       ],
+       "bad": [
+        "rock"
+       ],
+       "count": 4,
+       "sound": null
       }
      ],
-     "targetSec": 100,
+     "targetSec": 210,
      "secret": "drill"
     },
     {
@@ -2146,12 +2398,22 @@
      "mission": "آقا سنجاب یک ماشین قدیمی دارد. بیا درستش کنیم!",
      "steps": [
       {
+       "engine": "puzzle",
+       "say": "تکه‌های عکس ماشین را کنار هم بگذار.",
+       "target": "toy_car"
+      },
+      {
        "engine": "count",
        "say": "چهار چرخ به ماشین وصل کن. بشمار!",
        "target": "wheel",
        "count": 4,
        "into": "car_body",
        "sound": "audio/sfx/gear.mp3"
+      },
+      {
+       "engine": "scrub",
+       "say": "ماشین گلی است. بشورش!",
+       "target": "toy_car"
       },
       {
        "engine": "paint",
@@ -2166,9 +2428,23 @@
        "turns": 3,
        "sound": "audio/sfx/engine.mp3",
        "result": "toy_car"
+      },
+      {
+       "engine": "steer",
+       "say": "برووووم! ستاره‌ها را جمع کن و به مانع نخور.",
+       "target": "toy_car",
+       "good": [
+        "star"
+       ],
+       "bad": [
+        "cone",
+        "rock"
+       ],
+       "count": 5,
+       "sound": "audio/ui/sparkle.mp3"
       }
      ],
-     "targetSec": 110,
+     "targetSec": 180,
      "secret": "wrench"
     }
    ]
@@ -2214,6 +2490,16 @@
        "result": "brush"
       },
       {
+       "engine": "memory",
+       "say": "کارت‌های رنگی کوکو را جفت کن.",
+       "items": [
+        "paints",
+        "brush",
+        "paper",
+        "bristles"
+       ]
+      },
+      {
        "engine": "mix",
        "say": "قرمز و زرد را با هم مخلوط کن. چه رنگی شد؟",
        "a": "#F44336",
@@ -2228,9 +2514,23 @@
        "b": "#FFEB3B",
        "result": "#4CAF50",
        "resultName": "سبز"
+      },
+      {
+       "engine": "mix",
+       "say": "قرمز و آبی چه می‌شود؟",
+       "a": "#F44336",
+       "b": "#2196F3",
+       "result": "#9C27B0",
+       "resultName": "بنفش"
+      },
+      {
+       "engine": "paint",
+       "say": "با رنگ‌های تازه روی کاغذ نقاشی کن.",
+       "target": "paper",
+       "areas": 4
       }
      ],
-     "targetSec": 90,
+     "targetSec": 180,
      "secret": "glue_gun"
     },
     {
@@ -2246,6 +2546,21 @@
        "spot": "clay",
        "done": "شُر شُر! گل نرم شد.",
        "why": "با این نمی‌شود خیس کرد."
+      },
+      {
+       "engine": "sort",
+       "say": "گل رس را از آشغال‌ها جدا کن.",
+       "good": [
+        "clay",
+        "clay",
+        "clay"
+       ],
+       "bad": [
+        "old_shoe",
+        "junk_sock"
+       ],
+       "goodLabel": "گل",
+       "badLabel": "آشغال"
       },
       {
        "engine": "tap",
@@ -2265,13 +2580,22 @@
        "result": "clay_bowl"
       },
       {
+       "engine": "blow",
+       "say": "کاسه خیس است. فوت کن تا خشک شود!",
+       "target": "clay_bowl",
+       "mode": "cool",
+       "count": 1,
+       "result": "clay_bowl",
+       "sound": null
+      },
+      {
        "engine": "paint",
        "say": "کاسه را رنگ کن.",
        "target": "clay_bowl",
        "areas": 3
       }
      ],
-     "targetSec": 120,
+     "targetSec": 180,
      "secret": null
     },
     {
@@ -2281,11 +2605,27 @@
      "mission": "برای شب جشن فانوس رنگی لازم داریم.",
      "steps": [
       {
+       "engine": "connect",
+       "say": "نقطه‌ها را وصل کن تا شکل فانوس پیدا شود.",
+       "target": "lantern",
+       "dots": 6,
+       "shape": "circle"
+      },
+      {
        "engine": "cut",
        "say": "کاغذ را روی خط‌ها ببُر.",
        "target": "paper",
        "lines": 2,
        "result": "paper"
+      },
+      {
+       "engine": "tap",
+       "say": "کاغذ را تا بزن! هر بار بزن.",
+       "target": "paper",
+       "count": 4,
+       "sound": "audio/sfx/rustle.mp3",
+       "label": "",
+       "result": "lantern"
       },
       {
        "engine": "paint",
@@ -2300,9 +2640,17 @@
        "spot": "lantern",
        "done": "روشن شد! چه قشنگ.",
        "why": "این نور ندارد."
+      },
+      {
+       "engine": "count",
+       "say": "فانوس‌ها را به نخ آویزان کن.",
+       "target": "lantern",
+       "count": 3,
+       "into": "bunting",
+       "sound": "audio/ui/chime.mp3"
       }
      ],
-     "targetSec": 110,
+     "targetSec": 180,
      "secret": "glue_gun"
     },
     {
@@ -2311,6 +2659,16 @@
      "makes": "mask",
      "mission": "برای جشن ماسک و پرچم درست کنیم!",
      "steps": [
+      {
+       "engine": "memory",
+       "say": "تزئین‌های جشن را جفت کن.",
+       "items": [
+        "mask",
+        "flag",
+        "lantern",
+        "paints"
+       ]
+      },
       {
        "engine": "cut",
        "say": "ماسک را با قیچی ببُر.",
@@ -2325,6 +2683,23 @@
        "areas": 4
       },
       {
+       "engine": "connect",
+       "say": "نقطه‌ها را وصل کن تا لبه‌ی ماسک کشیده شود.",
+       "target": "mask",
+       "dots": 8,
+       "shape": "star"
+      },
+      {
+       "engine": "catch",
+       "say": "پرچم‌ها در باد پرواز می‌کنند! بگیرشان.",
+       "target": "flag",
+       "count": 4,
+       "distract": [
+        "junk_sock"
+       ],
+       "sound": null
+      },
+      {
        "engine": "count",
        "say": "پنج پرچم به نخ آویزان کن.",
        "target": "flag",
@@ -2333,7 +2708,7 @@
        "sound": "audio/ui/pop.mp3"
       }
      ],
-     "targetSec": 110,
+     "targetSec": 180,
      "secret": "sewing_machine"
     }
    ]
@@ -2361,9 +2736,40 @@
      "mission": "تکه‌های نقشه در باد پخش شده‌اند!",
      "steps": [
       {
+       "engine": "catch",
+       "say": "تکه‌های نقشه در باد می‌چرخند! بگیرشان.",
+       "target": "map_piece",
+       "count": 3,
+       "distract": [
+        "junk_sock"
+       ],
+       "sound": null
+      },
+      {
        "engine": "puzzle",
        "say": "تکه‌های نقشه را کنار هم بچین.",
        "target": "map"
+      },
+      {
+       "engine": "use",
+       "say": "هوا تاریک است. برای خواندن نقشه چه لازم داریم؟",
+       "need": "flashlight",
+       "spot": "q_dark",
+       "done": "حالا نقشه را می‌بینیم!",
+       "why": "این نور ندارد."
+      },
+      {
+       "engine": "dark",
+       "say": "با نور، ستاره‌های راهنما را پیدا کن.",
+       "target": "star",
+       "count": 3
+      },
+      {
+       "engine": "connect",
+       "say": "ستاره‌ها را به ترتیب وصل کن تا راه پیدا شود.",
+       "target": "map",
+       "dots": 6,
+       "shape": "star"
       },
       {
        "engine": "trace",
@@ -2372,7 +2778,7 @@
        "shape": "wave"
       }
      ],
-     "targetSec": 100,
+     "targetSec": 180,
      "secret": "magnifier"
     },
     {
@@ -2381,6 +2787,21 @@
      "makes": "tent",
      "mission": "باران دارد می‌آید! یک چادر بزنیم.",
      "steps": [
+      {
+       "engine": "sort",
+       "say": "وسایل چادر را از آشغال جدا کن.",
+       "good": [
+        "tent_cloth",
+        "pole",
+        "peg"
+       ],
+       "bad": [
+        "old_shoe",
+        "rotten_apple"
+       ],
+       "goodLabel": "چادر",
+       "badLabel": "آشغال"
+      },
       {
        "engine": "assemble",
        "say": "پارچه و ستون‌های چادر را سر جایشان بگذار.",
@@ -2413,16 +2834,36 @@
        "why": "با این نمی‌شود میخ زد."
       },
       {
-       "engine": "tap",
-       "say": "همه‌ی میخ‌ها را بکوب.",
+       "engine": "whack",
+       "say": "میخ‌های چادر بالا می‌پرند! بکوبشان.",
        "target": "peg",
        "count": 4,
-       "sound": "audio/sfx/hammer.mp3",
-       "label": "",
-       "result": "peg"
+       "distract": [
+        "junk_sock"
+       ],
+       "sound": "audio/sfx/hammer.mp3"
+      },
+      {
+       "engine": "blow",
+       "say": "فوت کن تا چادر پر از هوا شود و بایستد!",
+       "target": "tent",
+       "mode": "inflate",
+       "count": 1,
+       "result": "tent",
+       "sound": null
+      },
+      {
+       "engine": "memory",
+       "say": "وسایل اردو را جفت کن.",
+       "items": [
+        "tent",
+        "pole",
+        "peg",
+        "lantern"
+       ]
       }
      ],
-     "targetSec": 110,
+     "targetSec": 180,
      "secret": null
     },
     {
@@ -2440,10 +2881,33 @@
        "why": "این نور ندارد."
       },
       {
+       "engine": "catch",
+       "say": "کرم‌های شب‌تاب پرواز می‌کنند! با شیشه بگیرشان.",
+       "target": "firefly",
+       "count": 4,
+       "distract": [
+        "ladybug"
+       ],
+       "sound": null
+      },
+      {
        "engine": "dark",
-       "say": "کرم‌های شب‌تاب را در تاریکی پیدا کن و در شیشه بگذار.",
+       "say": "کرم‌های شب‌تاب پنهان را در تاریکی پیدا کن و در شیشه بگذار.",
        "target": "firefly",
        "count": 4
+      },
+      {
+       "engine": "connect",
+       "say": "شب‌تاب‌ها را به ترتیب وصل کن تا شیشه روشن شود.",
+       "target": "firefly_jar",
+       "dots": 5,
+       "shape": "circle"
+      },
+      {
+       "engine": "trace",
+       "say": "کرم شب‌تاب را تا خانه‌ی جغد راهنمایی کن.",
+       "target": "firefly",
+       "shape": "wave"
       },
       {
        "engine": "use",
@@ -2454,7 +2918,7 @@
        "why": "این گرم نمی‌کند."
       }
      ],
-     "targetSec": 120,
+     "targetSec": 180,
      "secret": null
     },
     {
@@ -2470,6 +2934,11 @@
        "turns": 2,
        "sound": "audio/sfx/rustle.mp3",
        "result": "tube"
+      },
+      {
+       "engine": "scrub",
+       "say": "عدسی گرد و خاکی است. پاکش کن.",
+       "target": "lens"
       },
       {
        "engine": "order",
@@ -2488,9 +2957,26 @@
        "turns": 2,
        "sound": "audio/sfx/gear.mp3",
        "result": "telescope"
+      },
+      {
+       "engine": "connect",
+       "say": "ستاره‌ها را به ترتیب وصل کن تا صورت فلکی پیدا شود.",
+       "target": "star",
+       "dots": 5,
+       "shape": "star"
+      },
+      {
+       "engine": "memory",
+       "say": "چیزهای آسمان شب را جفت کن.",
+       "items": [
+        "moon",
+        "star",
+        "telescope",
+        "lens"
+       ]
       }
      ],
-     "targetSec": 110,
+     "targetSec": 180,
      "secret": "magnet"
     }
    ]
@@ -2526,6 +3012,13 @@
        "why": "این کاسه نیست."
       },
       {
+       "engine": "cut",
+       "say": "پوست طبل را گرد ببُر.",
+       "target": "drum_skin",
+       "lines": 1,
+       "result": "drum_skin"
+      },
+      {
        "engine": "assemble",
        "say": "پوست طبل را روی کاسه بکش.",
        "base": "drum",
@@ -2546,9 +3039,25 @@
        "sound": "audio/instruments/drum_tom.mp3",
        "label": "",
        "result": "drum"
+      },
+      {
+       "engine": "paint",
+       "say": "طبل را رنگ کن.",
+       "target": "drum",
+       "areas": 4
+      },
+      {
+       "engine": "whack",
+       "say": "نُت‌ها از طبل بیرون می‌پرند! بزنشان.",
+       "target": "note",
+       "count": 5,
+       "distract": [
+        "junk_sock"
+       ],
+       "sound": "audio/instruments/drum_tom.mp3"
       }
      ],
-     "targetSec": 90,
+     "targetSec": 180,
      "secret": "drill"
     },
     {
@@ -2577,6 +3086,30 @@
        "why": "با این نمی‌شود میخ زد."
       },
       {
+       "engine": "count",
+       "say": "تیغه‌ها را روی پایه بگذار.",
+       "target": "bar_red",
+       "count": 4,
+       "into": "xylophone",
+       "sound": "audio/instruments/xylo_e4.mp3"
+      },
+      {
+       "engine": "paint",
+       "say": "تیغه‌ها را رنگی کن.",
+       "target": "xylophone",
+       "areas": 4
+      },
+      {
+       "engine": "memory",
+       "say": "سازها را جفت کن.",
+       "items": [
+        "drum",
+        "xylophone",
+        "flute",
+        "note"
+       ]
+      },
+      {
        "engine": "rhythm",
        "say": "آهنگ میمی را تکرار کن!",
        "pads": [
@@ -2596,7 +3129,7 @@
        "rounds": 2
       }
      ],
-     "targetSec": 110,
+     "targetSec": 180,
      "secret": null
     },
     {
@@ -2605,6 +3138,11 @@
      "makes": "flute",
      "mission": "نی صدای پرنده‌ها را دارد.",
      "steps": [
+      {
+       "engine": "scrub",
+       "say": "نی را تمیز کن.",
+       "target": "reed"
+      },
       {
        "engine": "cut",
        "say": "نی را ببُر.",
@@ -2621,15 +3159,34 @@
        "sound": "audio/ui/pop.mp3"
       },
       {
+       "engine": "blow",
+       "say": "نگه دار و در نی فوت کن!",
+       "target": "flute",
+       "mode": "music",
+       "count": 1,
+       "result": "flute",
+       "sound": "audio/instruments/flute.mp3"
+      },
+      {
        "engine": "timing",
        "say": "فوت کن... حالا بزن!",
        "target": "flute",
        "sound": "audio/instruments/flute.mp3",
        "label": "حالا!",
        "result": "flute"
+      },
+      {
+       "engine": "catch",
+       "say": "نُت‌ها در هوا می‌رقصند! بگیرشان.",
+       "target": "note",
+       "count": 4,
+       "distract": [
+        "junk_sock"
+       ],
+       "sound": "audio/instruments/xylo_g4.mp3"
       }
      ],
-     "targetSec": 90,
+     "targetSec": 180,
      "secret": "saw"
     },
     {
@@ -2638,6 +3195,50 @@
      "makes": "song",
      "mission": "با سازهایی که ساختی آهنگ جشن را بسازیم!",
      "steps": [
+      {
+       "engine": "whack",
+       "say": "نُت‌های آهنگ سر بیرون می‌آورند! بزنشان.",
+       "target": "note",
+       "count": 6,
+       "distract": [
+        "junk_sock"
+       ],
+       "sound": "audio/instruments/xylo_c5.mp3"
+      },
+      {
+       "engine": "memory",
+       "say": "سازهای گروه را جفت کن.",
+       "items": [
+        "drum",
+        "xylophone",
+        "flute",
+        "note"
+       ]
+      },
+      {
+       "engine": "count",
+       "say": "پنج نُت به آهنگ اضافه کن.",
+       "target": "note",
+       "count": 5,
+       "into": "song",
+       "sound": "audio/instruments/xylo_g4.mp3"
+      },
+      {
+       "engine": "connect",
+       "say": "نقطه‌ها را وصل کن تا نُت جشن پیدا شود.",
+       "target": "song",
+       "dots": 6,
+       "shape": "star"
+      },
+      {
+       "engine": "blow",
+       "say": "با نی بنواز! نگه دار و فوت کن.",
+       "target": "flute",
+       "mode": "music",
+       "count": 1,
+       "result": "flute",
+       "sound": "audio/instruments/flute.mp3"
+      },
       {
        "engine": "rhythm",
        "say": "آهنگ را تکرار کن. اول گوش کن!",
@@ -2658,7 +3259,7 @@
        "rounds": 3
       }
      ],
-     "targetSec": 90,
+     "targetSec": 180,
      "secret": null
     }
    ]
@@ -2694,6 +3295,13 @@
        "why": "این بار نمی‌برد."
       },
       {
+       "engine": "stack",
+       "say": "تخته‌ها را با جرثقیل روی هم بگذار تا پایه‌ی پل ساخته شود.",
+       "target": "plank",
+       "count": 4,
+       "sound": "audio/sfx/thunk.mp3"
+      },
+      {
        "engine": "count",
        "say": "تخته‌ها را در جاهای خالی پل بگذار.",
        "target": "plank",
@@ -2708,9 +3316,33 @@
        "spot": "q_nail",
        "done": "تق تق! پل محکم شد.",
        "why": "با این نمی‌شود میخ زد."
+      },
+      {
+       "engine": "whack",
+       "say": "میخ‌های پل بالا آمده‌اند! بکوبشان.",
+       "target": "nail",
+       "count": 5,
+       "distract": [
+        "junk_sock"
+       ],
+       "sound": "audio/sfx/hammer.mp3"
+      },
+      {
+       "engine": "steer",
+       "say": "ماشین را از روی پل تازه رد کن!",
+       "target": "toy_car",
+       "good": [
+        "star"
+       ],
+       "bad": [
+        "rock",
+        "cone"
+       ],
+       "count": 4,
+       "sound": "audio/ui/sparkle.mp3"
       }
      ],
-     "targetSec": 110,
+     "targetSec": 180,
      "secret": "drill"
     },
     {
@@ -2738,6 +3370,13 @@
        "why": "این رنگ ندارد."
       },
       {
+       "engine": "connect",
+       "say": "نقطه‌ها را وصل کن تا قاب چراغ کشیده شود.",
+       "target": "traffic_light",
+       "dots": 6,
+       "shape": "circle"
+      },
+      {
        "engine": "tap",
        "say": "چراغ را عوض کن: قرمز، زرد، سبز!",
        "target": "traffic_light",
@@ -2745,9 +3384,29 @@
        "sound": "audio/ui/toggle.mp3",
        "label": "",
        "result": "traffic_light"
+      },
+      {
+       "engine": "memory",
+       "say": "چراغ‌ها را جفت کن.",
+       "items": [
+        "light_red",
+        "light_yellow",
+        "light_green",
+        "traffic_light"
+       ]
+      },
+      {
+       "engine": "whack",
+       "say": "وقتی چراغ سبز شد بزن! قرمز را نزن.",
+       "target": "light_green",
+       "count": 5,
+       "distract": [
+        "light_red"
+       ],
+       "sound": "audio/ui/toggle.mp3"
       }
      ],
-     "targetSec": 100,
+     "targetSec": 180,
      "secret": null
     },
     {
@@ -2756,6 +3415,15 @@
      "makes": "bus",
      "mission": "اتوبوس لاکی پنچر و کثیف و بی‌بنزین است!",
      "steps": [
+      {
+       "engine": "blow",
+       "say": "لاستیک پنچر است! نگه دار و بادش کن.",
+       "target": "tire",
+       "mode": "inflate",
+       "count": 1,
+       "result": "tire",
+       "sound": null
+      },
       {
        "engine": "rotate",
        "say": "پیچ‌های لاستیک نو را ببند.",
@@ -2784,9 +3452,23 @@
        "turns": 2,
        "sound": "audio/sfx/engine.mp3",
        "result": "bus"
+      },
+      {
+       "engine": "steer",
+       "say": "اتوبوس را بران! ستاره‌ها را جمع کن و به مانع نخور.",
+       "target": "bus",
+       "good": [
+        "star"
+       ],
+       "bad": [
+        "rock",
+        "cone"
+       ],
+       "count": 5,
+       "sound": "audio/sfx/bus_horn.mp3"
       }
      ],
-     "targetSec": 130,
+     "targetSec": 180,
      "secret": "wrench"
     },
     {
@@ -2799,6 +3481,22 @@
        "engine": "puzzle",
        "say": "عکس دوستان را روی کارت درست کن.",
        "target": "invitation"
+      },
+      {
+       "engine": "paint",
+       "say": "کارت دعوت را رنگ کن.",
+       "target": "invitation",
+       "areas": 4
+      },
+      {
+       "engine": "catch",
+       "say": "نامه‌ها در باد پخش شدند! بگیرشان.",
+       "target": "letter",
+       "count": 4,
+       "distract": [
+        "junk_sock"
+       ],
+       "sound": "audio/ui/page.mp3"
       },
       {
        "engine": "count",
@@ -2823,7 +3521,7 @@
        "shape": "zigzag"
       }
      ],
-     "targetSec": 130,
+     "targetSec": 180,
      "secret": "magnet"
     }
    ]
@@ -2851,6 +3549,41 @@
      "mission": "مهمان‌ها گرسنه‌اند! هر کدام غذای دلخواهش را می‌خواهد.",
      "steps": [
       {
+       "engine": "catch",
+       "say": "کلوچه‌ها از سینی می‌افتند! بگیرشان.",
+       "target": "cookie",
+       "count": 4,
+       "distract": [
+        "old_shoe"
+       ],
+       "sound": null
+      },
+      {
+       "engine": "sort",
+       "say": "غذاها را روی میز بگذار و آشغال‌ها را در سطل.",
+       "good": [
+        "pizza",
+        "cake",
+        "cookie"
+       ],
+       "bad": [
+        "old_shoe",
+        "junk_sock"
+       ],
+       "goodLabel": "میز",
+       "badLabel": "سطل"
+      },
+      {
+       "engine": "memory",
+       "say": "غذاهای جشن را جفت کن.",
+       "items": [
+        "cake",
+        "juice",
+        "soup",
+        "sandwich"
+       ]
+      },
+      {
        "engine": "serve",
        "say": "به هر مهمان غذای دلخواهش را بده.",
        "pairs": [
@@ -2871,9 +3604,31 @@
          "item": "sandwich"
         }
        ]
+      },
+      {
+       "engine": "feed",
+       "say": "مادربزرگ جغد هنوز گرسنه است. بهش غذا بده.",
+       "friend": "owl",
+       "food": [
+        "soup",
+        "bread"
+       ],
+       "count": 3,
+       "distract": [
+        "old_shoe"
+       ],
+       "sound": null
+      },
+      {
+       "engine": "count",
+       "say": "کلوچه‌ها را روی میز جشن بچین.",
+       "target": "cookie",
+       "count": 4,
+       "into": "feast",
+       "sound": "audio/ui/pop.mp3"
       }
      ],
-     "targetSec": 90,
+     "targetSec": 180,
      "secret": null
     },
     {
@@ -2882,6 +3637,16 @@
      "makes": "decorations",
      "mission": "میدان جشن را قشنگ کنیم!",
      "steps": [
+      {
+       "engine": "memory",
+       "say": "تزئین‌ها را جفت کن.",
+       "items": [
+        "lantern",
+        "mask",
+        "flag",
+        "balloon"
+       ]
+      },
       {
        "engine": "serve",
        "say": "هر تزئین را به دوستی بده که می‌خواهد.",
@@ -2901,15 +3666,37 @@
        ]
       },
       {
+       "engine": "blow",
+       "say": "بادکنک‌ها را باد کن! نگه دار و فوت کن.",
+       "target": "balloon",
+       "mode": "inflate",
+       "count": 3,
+       "result": "balloon",
+       "sound": null
+      },
+      {
+       "engine": "stack",
+       "say": "جعبه‌های هدیه را روی هم بچین!",
+       "target": "box",
+       "count": 5,
+       "sound": "audio/sfx/thunk.mp3"
+      },
+      {
        "engine": "count",
        "say": "پرچم‌ها را آویزان کن.",
        "target": "flag",
        "count": 4,
        "into": "bunting",
        "sound": "audio/ui/pop.mp3"
+      },
+      {
+       "engine": "paint",
+       "say": "میدان را رنگی کن.",
+       "target": "decorations",
+       "areas": 4
       }
      ],
-     "targetSec": 100,
+     "targetSec": 180,
      "secret": null
     },
     {
@@ -2937,6 +3724,22 @@
        ]
       },
       {
+       "engine": "connect",
+       "say": "نقطه‌ها را وصل کن تا صحنه‌ی کنسرت پیدا شود.",
+       "target": "concert",
+       "dots": 6,
+       "shape": "circle"
+      },
+      {
+       "engine": "blow",
+       "say": "گرم کردن! نگه دار و در نی فوت کن.",
+       "target": "flute",
+       "mode": "music",
+       "count": 1,
+       "result": "flute",
+       "sound": "audio/instruments/flute.mp3"
+      },
+      {
        "engine": "rhythm",
        "say": "با گروه بنواز!",
        "pads": [
@@ -2954,9 +3757,30 @@
         }
        ],
        "rounds": 3
+      },
+      {
+       "engine": "catch",
+       "say": "نُت‌ها از صحنه می‌ریزند! بگیرشان.",
+       "target": "note",
+       "count": 5,
+       "distract": [
+        "junk_sock"
+       ],
+       "sound": "audio/instruments/xylo_g4.mp3"
+      },
+      {
+       "engine": "feed",
+       "say": "میمی بعد از آواز تشنه است. آب‌پرتقال بهش بده.",
+       "friend": "cat",
+       "food": [
+        "juice"
+       ],
+       "count": 2,
+       "distract": [],
+       "sound": "audio/sfx/sip.mp3"
       }
      ],
-     "targetSec": 110,
+     "targetSec": 180,
      "secret": null
     },
     {
@@ -2974,6 +3798,20 @@
        "why": "این همه را نمی‌آورد."
       },
       {
+       "engine": "steer",
+       "say": "مهمان‌ها را با اتوبوس بیاور. ستاره جمع کن!",
+       "target": "bus",
+       "good": [
+        "star"
+       ],
+       "bad": [
+        "rock",
+        "cone"
+       ],
+       "count": 4,
+       "sound": "audio/sfx/bus_horn.mp3"
+      },
+      {
        "engine": "use",
        "say": "برای دیدن نمایش ستاره‌ها چه لازم است؟",
        "need": "telescope",
@@ -2982,15 +3820,30 @@
        "why": "با این نمی‌شود دور را دید."
       },
       {
-       "engine": "collect",
-       "say": "آتش‌بازی کن! روی آسمان بزن.",
+       "engine": "whack",
+       "say": "آتش‌بازی‌ها از هر طرف بالا می‌آیند! بزنشان!",
        "target": "firework",
-       "count": 5,
+       "count": 6,
        "distract": [],
        "sound": "audio/ui/whoosh.mp3"
+      },
+      {
+       "engine": "catch",
+       "say": "ستاره‌ها از آسمان می‌بارند! بگیرشان.",
+       "target": "star",
+       "count": 5,
+       "distract": [],
+       "sound": "audio/ui/sparkle.mp3"
+      },
+      {
+       "engine": "connect",
+       "say": "نقطه‌ها را وصل کن تا مدال قهرمانی پیدا شود!",
+       "target": "medal",
+       "dots": 8,
+       "shape": "star"
       }
      ],
-     "targetSec": 120,
+     "targetSec": 180,
      "secret": null
     }
    ]
@@ -3020,15 +3873,32 @@
      "result": "bubbles"
     },
     {
+     "engine": "blow",
+     "say": "در حباب‌ساز فوت کن!",
+     "target": "bubbles",
+     "mode": "inflate",
+     "count": 3,
+     "result": "bubbles",
+     "sound": null
+    },
+    {
      "engine": "collect",
      "say": "حباب‌ها را بترکان!",
      "target": "bubbles",
      "count": 6,
      "distract": [],
      "sound": "audio/sfx/bloop.mp3"
+    },
+    {
+     "engine": "whack",
+     "say": "حباب‌ها همه جا پیدا می‌شوند. بترکانشان!",
+     "target": "bubbles",
+     "count": 6,
+     "distract": [],
+     "sound": "audio/sfx/bloop.mp3"
     }
    ],
-   "targetSec": 80,
+   "targetSec": 150,
    "secret": null,
    "stars": 5
   },
@@ -3039,6 +3909,27 @@
    "mission": "یک گردنبند رنگی بسازیم.",
    "steps": [
     {
+     "engine": "catch",
+     "say": "مهره‌ها می‌افتند. بگیرشان!",
+     "target": "bead",
+     "count": 5,
+     "distract": [
+      "junk_sock"
+     ],
+     "sound": "audio/ui/chime.mp3"
+    },
+    {
+     "engine": "order",
+     "say": "مهره‌ها را از بزرگ به کوچک بچین.",
+     "items": [
+      "bead",
+      "bead",
+      "bead",
+      "bead"
+     ],
+     "sound": null
+    },
+    {
      "engine": "count",
      "say": "مهره‌ها را به نخ بکش.",
      "target": "bead",
@@ -3047,13 +3938,20 @@
      "sound": "audio/ui/chime.mp3"
     },
     {
+     "engine": "connect",
+     "say": "نقطه‌ها را وصل کن تا نخ گردنبند بسته شود.",
+     "target": "necklace",
+     "dots": 6,
+     "shape": "circle"
+    },
+    {
      "engine": "paint",
      "say": "مهره‌ها را رنگ کن.",
      "target": "necklace",
      "areas": 4
     }
    ],
-   "targetSec": 80,
+   "targetSec": 150,
    "secret": null,
    "stars": 10
   },
@@ -3063,6 +3961,13 @@
    "makes": "kite",
    "mission": "روز بادی است! بادبادک بسازیم.",
    "steps": [
+    {
+     "engine": "connect",
+     "say": "چهار نقطه را وصل کن تا شکل بادبادک پیدا شود.",
+     "target": "kite",
+     "dots": 4,
+     "shape": "circle"
+    },
     {
      "engine": "cut",
      "say": "کاغذ بادبادک را ببُر.",
@@ -3077,13 +3982,22 @@
      "areas": 4
     },
     {
+     "engine": "blow",
+     "say": "فوت کن تا باد بیاید و بادبادک بچرخد!",
+     "target": "kite",
+     "mode": "spin",
+     "count": 1,
+     "result": "kite",
+     "sound": null
+    },
+    {
      "engine": "trace",
      "say": "بادبادک را در باد بالا ببر.",
      "target": "kite",
      "shape": "wave"
     }
    ],
-   "targetSec": 100,
+   "targetSec": 150,
    "secret": null,
    "stars": 18
   },
@@ -3093,6 +4007,16 @@
    "makes": "robot",
    "mission": "یک ربات دوست بسازیم!",
    "steps": [
+    {
+     "engine": "memory",
+     "say": "قطعه‌های ربات را جفت کن.",
+     "items": [
+      "robot",
+      "robot_head",
+      "robot_body",
+      "battery"
+     ]
+    },
     {
      "engine": "assemble",
      "say": "سر و بدنه‌ی ربات را وصل کن.",
@@ -3132,7 +4056,7 @@
      "shape": "zigzag"
     }
    ],
-   "targetSec": 120,
+   "targetSec": 150,
    "secret": null,
    "stars": 28
   },
@@ -3143,12 +4067,23 @@
    "mission": "یک خانه‌ی کوچک برای عروسک‌ها!",
    "steps": [
     {
-     "engine": "count",
-     "say": "اتاق‌ها را روی هم بچین.",
+     "engine": "stack",
+     "say": "اتاق‌ها را با جرثقیل روی هم بگذار.",
      "target": "box",
      "count": 4,
-     "into": "dollhouse",
      "sound": "audio/sfx/thunk.mp3"
+    },
+    {
+     "engine": "connect",
+     "say": "نقطه‌ها را وصل کن تا سقف خانه کشیده شود.",
+     "target": "dollhouse",
+     "dots": 5,
+     "shape": "circle"
+    },
+    {
+     "engine": "scrub",
+     "say": "خانه را تمیز کن.",
+     "target": "dollhouse"
     },
     {
      "engine": "paint",
@@ -3166,7 +4101,7 @@
      "result": "bulb"
     }
    ],
-   "targetSec": 110,
+   "targetSec": 150,
    "secret": null,
    "stars": 38
   },
@@ -3208,6 +4143,19 @@
      "sound": null
     },
     {
+     "engine": "steer",
+     "say": "موشک را در فضا بران. ستاره جمع کن و به سنگ‌های فضایی نخور!",
+     "target": "rocket",
+     "good": [
+      "star"
+     ],
+     "bad": [
+      "rock"
+     ],
+     "count": 5,
+     "sound": "audio/ui/sparkle.mp3"
+    },
+    {
      "engine": "collect",
      "say": "در فضا ستاره جمع کن.",
      "target": "star",
@@ -3216,7 +4164,7 @@
      "sound": "audio/ui/sparkle.mp3"
     }
    ],
-   "targetSec": 130,
+   "targetSec": 150,
    "secret": null,
    "stars": 50
   },
@@ -3250,9 +4198,32 @@
      "say": "با چراغ زیردریایی ماهی‌ها را پیدا کن.",
      "target": "fish",
      "count": 4
+    },
+    {
+     "engine": "steer",
+     "say": "زیردریایی را بران و به ماهی‌ها سلام کن. به سنگ نخور!",
+     "target": "submarine",
+     "good": [
+      "fish"
+     ],
+     "bad": [
+      "rock"
+     ],
+     "count": 4,
+     "sound": null
+    },
+    {
+     "engine": "whack",
+     "say": "ماهی‌ها از لای جلبک‌ها سر بیرون می‌آورند! لمسشان کن.",
+     "target": "fish",
+     "count": 5,
+     "distract": [
+      "old_shoe"
+     ],
+     "sound": "audio/sfx/bloop.mp3"
     }
    ],
-   "targetSec": 120,
+   "targetSec": 150,
    "secret": null,
    "stars": 65
   },
@@ -3279,6 +4250,13 @@
      "sound": "audio/sfx/gear.mp3"
     },
     {
+     "engine": "connect",
+     "say": "نقطه‌ها را وصل کن تا قطار پیدا شود.",
+     "target": "train",
+     "dots": 6,
+     "shape": "circle"
+    },
+    {
      "engine": "paint",
      "say": "قطار را رنگ کن.",
      "target": "train",
@@ -3291,7 +4269,7 @@
      "shape": "wave"
     }
    ],
-   "targetSec": 130,
+   "targetSec": 150,
    "secret": null,
    "stars": 80
   }
@@ -3433,7 +4411,7 @@
        "result": "pizza"
       }
      ],
-     "targetSec": 80,
+     "targetSec": 90,
      "secret": null
     },
     {
@@ -3542,7 +4520,7 @@
        "result": "windmill"
       }
      ],
-     "targetSec": 80,
+     "targetSec": 90,
      "secret": null
     }
    ]
@@ -3813,6 +4791,7 @@
  ],
  "art": {
   "baby_owl": "🦉",
+  "balloon": "🎈",
   "bar_red": "🟥",
   "battery": "🔋",
   "bead": "🔵",
@@ -3845,6 +4824,7 @@
   "clay": "🟤",
   "clay_bowl": "🥣",
   "concert": "🎤",
+  "cone": "🚧",
   "cookie": "🍪",
   "cow": "🐄",
   "decorations": "🎊",
@@ -3944,6 +4924,7 @@
   "robot": "🤖",
   "robot_body": "🟦",
   "robot_head": "🤖",
+  "rock": "🪨",
   "rocket": "🚀",
   "rotten_apple": "🍂",
   "sandwich": "🥪",

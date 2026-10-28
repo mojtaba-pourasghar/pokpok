@@ -2,7 +2,7 @@
  "note": "صداهای ضبط واقعی (Wikimedia Commons) با منبع، مجوز و پدیدآورنده. صداهای دیگر با tools/sfx/synth.py ساخته شده‌اند و مجوز ندارند (ساخته‌ی خود پروژه).",
  "files": {
   "ambient/farm": {
-   "file": "audio/ambient/farm.mp3",
+   "file": "audio/ambient/farm.ogg",
    "commons": "File:Cowbells on Monte Baldo.ogg",
    "source": "https://commons.wikimedia.org/wiki/File:Cowbells_on_Monte_Baldo.ogg",
    "license": "CC BY-SA 4.0",
@@ -10,10 +10,11 @@
    "author": "Wittylama",
    "kept": "4s + 24.0s",
    "via": "tools/sfx/fetch_sounds.py",
-   "at": "2026-10-15T05:19:31+00:00"
+   "at": "2026-10-15T05:19:31+00:00",
+   "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
   },
   "ambient/rain": {
-   "file": "audio/ambient/rain.mp3",
+   "file": "audio/ambient/rain.ogg",
    "commons": "File:Heavy Rain in Summer.ogg",
    "source": "https://commons.wikimedia.org/wiki/File:Heavy_Rain_in_Summer.ogg",
    "license": "CC BY-SA 3.0",
@@ -21,10 +22,11 @@
    "author": "Fiver, der Hellseher",
    "kept": "3.1s + 5.0s",
    "via": "goshyar_game tools/sfx/fetch_sounds.py (same recording, copied)",
-   "at": "2026-10-14T09:41:20+00:00"
+   "at": "2026-10-14T09:41:20+00:00",
+   "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
   },
   "ambient/street": {
-   "file": "audio/ambient/street.mp3",
+   "file": "audio/ambient/street.ogg",
    "commons": "File:Ambient sound Mauerstrasse Gransee birds and traffic 2026-05-22.oga",
    "source": "https://commons.wikimedia.org/wiki/File:Ambient_sound_Mauerstrasse_Gransee_birds_and_traffic_2026-05-22.oga",
    "license": "CC BY-SA 4.0",
@@ -32,10 +34,11 @@
    "author": "SchlurcherBot",
    "kept": "2s + 24.0s",
    "via": "tools/sfx/fetch_sounds.py",
-   "at": "2026-10-15T05:19:14+00:00"
+   "at": "2026-10-15T05:19:14+00:00",
+   "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
   },
   "ambient/wind": {
-   "file": "audio/ambient/wind.mp3",
+   "file": "audio/ambient/wind.ogg",
    "commons": "File:Wind in Swedish pine forest at 25 mps.ogg",
    "source": "https://commons.wikimedia.org/wiki/File:Wind_in_Swedish_pine_forest_at_25_mps.ogg",
    "license": "CC BY-SA 4.0",
@@ -43,7 +46,8 @@
    "author": "W.carter",
    "kept": "42.6s + 5.0s",
    "via": "goshyar_game tools/sfx/fetch_sounds.py (same recording, copied)",
-   "at": "2026-10-14T09:48:21+00:00"
+   "at": "2026-10-14T09:48:21+00:00",
+   "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
   },
   "animals/bird": {
    "file": "audio/animals/bird.mp3",

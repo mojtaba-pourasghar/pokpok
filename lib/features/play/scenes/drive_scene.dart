@@ -240,11 +240,11 @@ class _Control extends StatelessWidget {
   Widget build(BuildContext context) => Semantics(
     button: true,
     label: label,
-    child: GestureDetector(
-      onTapDown: (_) => onDown(),
-      onTapUp: (_) => onUp?.call(),
-      onTapCancel: () => onUp?.call(),
-      onLongPressEnd: (_) => onUp?.call(),
+    // Listener: نگه داشتن طولانی با ژست فشار طولانی لغو نمی‌شود.
+    child: Listener(
+      onPointerDown: (_) => onDown(),
+      onPointerUp: (_) => onUp?.call(),
+      onPointerCancel: (_) => onUp?.call(),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

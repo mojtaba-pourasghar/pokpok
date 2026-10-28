@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../game_data.dart';
+import 'action_engines.dart';
 import 'backpack_engines.dart';
 import 'drag_engines.dart';
 import 'engine.dart';
@@ -29,10 +30,19 @@ Widget buildEngine(StepDef step, EngineHost host, {Key? key}) => switch (step.en
   'puzzle' => PuzzleEngine(key: key, step: step, host: host),
   'use' => UseEngine(key: key, step: step, host: host),
   'serve' => ServeEngine(key: key, step: step, host: host),
+  'catch' => CatchEngine(key: key, step: step, host: host),
+  'feed' => FeedEngine(key: key, step: step, host: host),
+  'stack' => StackEngine(key: key, step: step, host: host),
+  'blow' => BlowEngine(key: key, step: step, host: host),
+  'steer' => SteerEngine(key: key, step: step, host: host),
+  'connect' => ConnectEngine(key: key, step: step, host: host),
+  'memory' => MemoryEngine(key: key, step: step, host: host),
+  'whack' => WhackEngine(key: key, step: step, host: host),
   _ => TapEngine(key: key, step: step, host: host),
 };
 
 const engineNames = {
   'collect', 'sort', 'cut', 'tap', 'rotate', 'pour', 'timing', 'assemble', 'order', 'count', //
-  'paint', 'mix', 'scrub', 'dark', 'trace', 'rhythm', 'puzzle', 'use', 'serve',
+  'paint', 'mix', 'scrub', 'dark', 'trace', 'rhythm', 'puzzle', 'use', 'serve', //
+  'catch', 'feed', 'stack', 'blow', 'steer', 'connect', 'memory', 'whack',
 };

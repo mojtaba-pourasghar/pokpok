@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ENGINES = {
     "collect", "sort", "cut", "tap", "rotate", "pour", "timing", "assemble", "order", "count",
     "paint", "mix", "scrub", "dark", "trace", "rhythm", "puzzle", "use", "serve",
+    "catch", "feed", "stack", "blow", "steer", "connect", "memory", "whack",
 }
 
 # ── pictures: id → (emoji fallback, prompt subject) ─────────────────────────────────────────────
@@ -206,6 +207,9 @@ for _id, _e, _p in [
     ("q_eat", "🍽️", "a plate and a spoon"),
     ("q_wear", "😺", "a happy cat wearing a mask"),
     ("q_water", "💧", "a water drop"),
+    ("rock", "🪨", "a round grey rock with a little moss"),
+    ("cone", "🚧", "an orange and white traffic cone"),
+    ("balloon", "🎈", "a shiny red party balloon with a curly string"),
 ]:
     art(_id, _e, _p)
 
@@ -297,6 +301,46 @@ def rhythm(pads, say, rounds=3):
 
 def puzzle(target, say):
     return step("puzzle", say, target=target)
+
+
+def catch(target, n, say, distract=(), sound=None):
+    """Things fall from the top; move the basket and catch only the right ones."""
+    return step("catch", say, target=target, count=n, distract=list(distract), sound=sound)
+
+
+def feed(friend, food, say, n=None, distract=(), sound=None):
+    """A friend asks for [food] in turn; drag (or tap) it from the plate to their mouth."""
+    return step("feed", say, friend=friend, food=list(food), count=n or max(3, len(food)), distract=list(distract), sound=sound)
+
+
+def stack(target, n, say, sound=None):
+    """A crane swings a block; tap to drop it on the tower."""
+    return step("stack", say, target=target, count=n, sound=sound)
+
+
+def blow(target, say, mode="out", n=1, result=None, sound=None):
+    """Hold to blow. mode: out (candle flames), spin, inflate, cool (steam), music (notes)."""
+    return step("blow", say, target=target, mode=mode, count=n, result=result or target, sound=sound)
+
+
+def steer(target, good, bad, n, say, sound=None):
+    """Three lanes: tap left/right to switch, collect [good], avoid [bad]."""
+    return step("steer", say, target=target, good=list(good), bad=list(bad), count=n, sound=sound)
+
+
+def connect(target, say, dots=6, shape="circle"):
+    """Dot-to-dot in number order; the picture appears at the end."""
+    return step("connect", say, target=target, dots=dots, shape=shape)
+
+
+def memory(items, say):
+    """Flip cards and find the pairs."""
+    return step("memory", say, items=list(items))
+
+
+def whack(target, n, say, distract=(), sound=None):
+    """Things pop out of holes; tap only the right ones."""
+    return step("whack", say, target=target, count=n, distract=list(distract), sound=sound)
 
 
 def use(need, spot, say, done, why):
@@ -466,7 +510,7 @@ item("magnet_fish", "ماهیگیری آهن‌ربایی", "magnet", S + "snap.
 def section(id, title, makes, mission, steps, target=120, secret=None):
     assert makes in ITEMS, makes
     return {"id": id, "title": title, "makes": makes, "mission": mission, "steps": steps,
-            "targetSec": target, "secret": secret}
+            "targetSec": max(target, 30 * len(steps)), "secret": secret}
 
 
 CHAPTERS = [
@@ -478,22 +522,31 @@ CHAPTERS = [
         "next": "بانی در باغ تشنه است... بیا برویم پیشش!",
         "sections": [
             section("c1s1", "آب‌پرتقال", "juice", "خاله خرسی تشنه است. بیا برایش آب‌پرتقال درست کنیم!", [
+                catch("orange", 4, "باد پرتقال‌ها را از درخت می‌اندازد! سبد را جابه‌جا کن و بگیرشان.", distract=["rotten_apple"]),
                 collect("orange", 4, "پرتقال‌های رسیده را از درخت بچین.", distract=["rotten_apple"]),
+                scrub("orange", "پرتقال‌ها خاکی‌اند. بشورشان تا تمیز شوند."),
                 cut("orange", "پرتقال را از وسط نصف کن. انگشتت را روی خط بکش.", result="orange_half"),
                 tap("juicer", 8, "پرتقال را روی آب‌گیری فشار بده! تند تند بزن.", S + "squeak.mp3", result="juice"),
                 pour("juice", "glass", "حالا آب‌میوه را در لیوان بریز. تا خط پر کن، نه بیشتر!", color="#FFA726"),
+                feed("bear", ["juice"], "آب‌پرتقال را به خاله خرسی بده تا بنوشد!", n=2, sound=S + "sip.mp3"),
             ], 100, secret="magnifier"),
             section("c1s2", "نان", "bread", "برای ناهار نان لازم داریم. بیا نان بپزیم!", [
+                memory(["flour", "egg", "milk", "water_jug"], "وسایل نان را به خاطر بسپار. جفت‌ها را پیدا کن!"),
                 pour("flour", "bowl_mix", "آرد را در کاسه بریز.", sound=S + "rustle.mp3", color="#FFF3E0"),
                 pour("water_jug", "bowl_mix", "کمی آب هم اضافه کن.", color="#4FC3F7"),
                 tap("dough", 10, "خمیر را ورز بده! با هر ضربه نرم‌تر می‌شود.", S + "thunk.mp3"),
+                cut("dough", "خمیر را چند تکه کن تا چند نان کوچک شود.", lines=2),
                 timing("oven", "نان را در فر گذاشتیم. وقتی طلایی شد، بزن!", sound=S + "kettle.mp3", result="bread"),
+                feed("bear", ["bread"], "نان گرم را به خاله خرسی بده.", n=2, sound=S + "crunch.mp3"),
             ], 110, secret="big_oven"),
             section("c1s3", "سوپ سبزیجات", "soup", "باد سرد می‌آید. یک سوپ گرم بپزیم!", [
+                catch("carrot", 4, "سبزی‌ها از قفسه می‌افتند! فقط سالم‌ها را بگیر.", distract=["rotten_apple", "old_shoe"]),
                 sort(["carrot", "potato", "tomato"], ["rotten_apple", "old_shoe"], "سبزی‌های سالم را در سبد بگذار و خراب‌ها را در سطل.", "سالم", "خراب"),
+                scrub("potato", "سیب‌زمینی گلی است. بشورش!"),
                 cut("carrot", "هویج را خرد کن.", lines=3),
                 count("carrot", 3, "pot", "سه تکه هویج در قابلمه بینداز.", sound=S + "splash.mp3"),
                 rotate("pot", 3, "سوپ را هم بزن. انگشتت را دور قابلمه بچرخان.", result="soup"),
+                blow("soup", "سوپ خیلی داغ است! نگه دار و فوت کن تا خنک شود.", mode="cool"),
             ], 120),
             section("c1s4", "کیک تولد", "cake", "امروز تولد خاله خرسی است! بیا کیک بپزیم.", [
                 tap("egg", 3, "تخم‌مرغ‌ها را بشکن. روی هر کدام بزن.", S + "snap.mp3", result="bowl_mix"),
@@ -501,6 +554,8 @@ CHAPTERS = [
                 rotate("bowl_mix", 3, "خوب هم بزن تا خمیر کیک صاف شود.", result="cake"),
                 paint("cake", "کیک را با رنگ‌های خوشمزه تزئین کن.", parts=4),
                 count("candle", 4, "cake", "چهار شمع روی کیک بگذار.", sound="audio/ui/chime.mp3"),
+                blow("candle", "تولدت مبارک خاله خرسی! شمع‌ها را فوت کن.", mode="out", n=4),
+                feed("bear", ["cake"], "یک تکه کیک به خاله خرسی بده.", n=2),
             ], 140),
         ],
     },
@@ -513,26 +568,36 @@ CHAPTERS = [
         "sections": [
             section("c2s1", "آب‌پاش", "watering_can", "بانی خیلی تشنه است و حرف نمی‌زند! اول یک چیزی برای نوشیدن بهش بده.", [
                 use("juice", "q_thirsty", "از کوله‌پشتی چیزی بده که تشنگی را برطرف کند.", "به به! بانی سرحال شد.", "این برای رفع تشنگی نیست."),
+                connect("watering_can", "نقطه‌ها را به ترتیب وصل کن تا ببینی چه می‌سازیم!", dots=6),
                 assemble("watering_can", [("can_body", .5, .6), ("can_spout", .2, .45), ("can_handle", .78, .38)], "تکه‌های آب‌پاش را سر جایشان بگذار.", "watering_can"),
                 rotate("well", 3, "دسته‌ی چاه را بچرخان تا آب بالا بیاید.", sound=S + "water_tap.mp3"),
                 pour("water_jug", "watering_can", "آب‌پاش را پر کن.", color="#4FC3F7"),
+                trace("watering_can", "آب‌پاش را روی ردیف گل‌ها ببر تا همه آب بخورند.", shape="wave"),
             ], 110, secret="magnifier"),
             section("c2s2", "گلدان گل", "flower_pot", "بانی می‌خواهد یک گل قشنگ بکارد.", [
+                catch("seed", 3, "باد دانه‌ها را می‌آورد! بگیرشان.", distract=["old_shoe"]),
                 tap("empty_pot", 5, "خاک را با بیلچه بکن.", S + "rustle.mp3"),
                 count("seed", 3, "empty_pot", "سه دانه در خاک بکار."),
                 use("watering_can", "empty_pot", "دانه‌ها تشنه‌اند! از کوله چیزی بیاور که با آن آب بدهیم.", "آفرین! دانه‌ها آب خوردند.", "با این نمی‌شود آب داد."),
                 timing("sprout", "جوانه دارد بزرگ می‌شود... وقتی گل باز شد بزن!", sound=S + "grow.mp3", result="flower_pot"),
+                paint("flower_pot", "گلدان را رنگ کن.", parts=3),
             ], 110),
             section("c2s3", "لانه‌ی مرغ", "eggs", "مرغ‌های بانی لانه ندارند و گم شده‌اند!", [
                 collect("hay", 5, "کاه جمع کن.", distract=["old_shoe"], sound=S + "rustle.mp3"),
                 count("hay", 4, "nest", "کاه‌ها را در لانه بگذار."),
-                collect("hen", 3, "مرغ‌های گم‌شده را پیدا کن. پشت بوته‌ها را ببین!", sound=S + "cluck.mp3"),
+                whack("hen", 4, "مرغ‌ها از پشت بوته‌ها سر می‌کشند! هر مرغ را بزن تا به لانه بیاید.", distract=["rotten_apple"], sound=S + "cluck.mp3"),
+                feed("hen", ["seed"], "مرغ‌ها گرسنه‌اند. بهشان دانه بده.", n=3, distract=["old_shoe"], sound=S + "cluck.mp3"),
+                catch("egg", 4, "مرغ‌ها تخم گذاشتند! تخم‌مرغ‌ها را آرام با سبد بگیر.", distract=["old_shoe"]),
+                count("egg", 3, "nest", "تخم‌مرغ‌ها را در لانه بشمار."),
             ], 100, secret="saw"),
             section("c2s4", "ساندویچ پیک‌نیک", "sandwich", "وقت پیک‌نیک است! یک ساندویچ خوشمزه درست کنیم.", [
                 tap("cow", 6, "گاو را آرام بدوش. با هر ضربه شیر می‌آید.", "audio/animals/cow.mp3", result="milk"),
                 rotate("bucket", 3, "شیر را هم بزن تا پنیر شود.", result="cheese"),
                 use("bread", "q_hungry", "برای ساندویچ نان لازم داریم! از کوله بیاور.", "نان رسید!", "این نان نیست."),
+                scrub("lettuce", "کاهو را بشور."),
+                cut("cheese", "پنیر را برش بزن.", lines=2),
                 order(["bread", "lettuce", "cheese", "bread"], "ساندویچ را لایه‌لایه بچین: نان، کاهو، پنیر، نان."),
+                feed("bunny", ["sandwich"], "ساندویچ را به بانی بده!", n=2, sound=S + "crunch.mp3"),
             ], 120),
         ],
     },
@@ -546,24 +611,35 @@ CHAPTERS = [
             section("c3s1", "چکش", "hammer", "آقا سنجاب چکشش را گم کرده. تکه‌هایش این‌جا پخش شده‌اند!", [
                 collect("hammer_head", 1, "سر چکش را در کارگاه شلوغ پیدا کن.", distract=["junk_spoon", "junk_sock"]),
                 collect("hammer_handle", 1, "دسته‌ی چوبی را هم پیدا کن.", distract=["junk_spoon", "junk_sock"]),
+                scrub("hammer_head", "سر چکش زنگ زده. تمیزش کن تا برق بزند."),
                 assemble("hammer", [("hammer_head", .5, .25), ("hammer_handle", .5, .65)], "سر و دسته را به هم وصل کن.", "hammer"),
                 rotate("screw", 2, "پیچ را سفت کن.", sound=S + "gear.mp3", result="hammer"),
+                whack("nail", 5, "میخ‌ها بیرون زده‌اند! با چکش بکوبشان. جوراب را نزن!", distract=["junk_sock"], sound=S + "hammer.mp3"),
             ], 100, secret="wrench"),
             section("c3s2", "چراغ‌قوه", "flashlight", "گوشه‌ی کارگاه خیلی تاریک است!", [
+                catch("battery", 3, "باتری‌ها از قفسه می‌افتند! بگیرشان.", distract=["junk_spoon"]),
+                memory(["battery", "bulb", "flashlight", "screw"], "قطعه‌های چراغ‌قوه را به خاطر بسپار و جفت کن."),
                 assemble("flashlight", [("battery", .35, .5), ("battery", .6, .5)], "باتری‌ها را در چراغ‌قوه بگذار.", "flashlight"),
                 rotate("bulb", 2, "لامپ را بپیچان.", sound=S + "gear.mp3"),
                 tap("flashlight", 1, "کلید را بزن!", S + "light_switch.mp3"),
                 dark("box", 3, "با نور، جعبه‌های گم‌شده را در تاریکی پیدا کن."),
             ], 100, secret="magnifier"),
             section("c3s3", "گاری", "cart", "جعبه‌ها خیلی سنگین‌اند. یک گاری لازم داریم!", [
+                connect("cart", "نقطه‌ها را وصل کن تا شکل گاری پیدا شود.", dots=6),
                 use("hammer", "q_nail", "تخته‌ها باید با میخ به هم وصل شوند. چه وسیله‌ای لازم است؟", "تق تق! تخته‌ها وصل شدند.", "با این نمی‌شود میخ زد."),
                 tap("nail", 4, "میخ‌ها را با چکش بکوب!", S + "hammer.mp3"),
                 count("wheel", 2, "cart", "دو چرخ به گاری وصل کن.", sound=S + "gear.mp3"),
+                paint("cart", "گاری را رنگ کن.", parts=3),
+                stack("box", 4, "جعبه‌ها را با جرثقیل روی گاری بچین. وقتی بالای خط سبز بود بزن!", sound=S + "thunk.mp3"),
+                steer("cart", ["box"], ["rock"], 4, "گاری را بران و جعبه‌ها را جمع کن. به سنگ‌ها نخور!"),
             ], 100, secret="drill"),
             section("c3s4", "ماشین اسباب‌بازی", "toy_car", "آقا سنجاب یک ماشین قدیمی دارد. بیا درستش کنیم!", [
+                puzzle("toy_car", "تکه‌های عکس ماشین را کنار هم بگذار."),
                 count("wheel", 4, "car_body", "چهار چرخ به ماشین وصل کن. بشمار!", sound=S + "gear.mp3"),
+                scrub("toy_car", "ماشین گلی است. بشورش!"),
                 paint("toy_car", "ماشین را رنگ کن.", parts=3),
                 rotate("car_key", 3, "کلید را بچرخان تا ماشین روشن شود!", sound=S + "engine.mp3", result="toy_car"),
+                steer("toy_car", ["star"], ["cone", "rock"], 5, "برووووم! ستاره‌ها را جمع کن و به مانع نخور.", sound="audio/ui/sparkle.mp3"),
             ], 110, secret="wrench"),
         ],
     },
@@ -576,23 +652,34 @@ CHAPTERS = [
         "sections": [
             section("c4s1", "رنگ‌ها", "paints", "اول یک قلم‌مو و رنگ می‌خواهیم!", [
                 assemble("brush", [("bristles", .5, .2), ("brush", .5, .6)], "موهای قلم‌مو را به دسته وصل کن.", "brush"),
+                memory(["paints", "brush", "paper", "bristles"], "کارت‌های رنگی کوکو را جفت کن."),
                 mix("#F44336", "#FFEB3B", "#FF9800", "نارنجی", "قرمز و زرد را با هم مخلوط کن. چه رنگی شد؟"),
                 mix("#2196F3", "#FFEB3B", "#4CAF50", "سبز", "حالا آبی و زرد!"),
+                mix("#F44336", "#2196F3", "#9C27B0", "بنفش", "قرمز و آبی چه می‌شود؟"),
+                paint("paper", "با رنگ‌های تازه روی کاغذ نقاشی کن.", parts=4),
             ], 90, secret="glue_gun"),
             section("c4s2", "کاسه‌ی گلی", "clay_bowl", "کوکو یک کاسه برای آب رنگ‌ها می‌خواهد.", [
                 use("watering_can", "clay", "گل رس خشک است! با چه خیسش کنیم؟", "شُر شُر! گل نرم شد.", "با این نمی‌شود خیس کرد."),
+                sort(["clay", "clay", "clay"], ["old_shoe", "junk_sock"], "گل رس را از آشغال‌ها جدا کن.", "گل", "آشغال"),
                 tap("clay", 6, "گل را ورز بده.", S + "thunk.mp3"),
                 rotate("pottery_wheel", 3, "چرخ سفالگری را بچرخان تا کاسه شکل بگیرد.", result="clay_bowl"),
+                blow("clay_bowl", "کاسه خیس است. فوت کن تا خشک شود!", mode="cool"),
                 paint("clay_bowl", "کاسه را رنگ کن.", parts=3),
             ], 120),
             section("c4s3", "فانوس", "lantern", "برای شب جشن فانوس رنگی لازم داریم.", [
+                connect("lantern", "نقطه‌ها را وصل کن تا شکل فانوس پیدا شود.", dots=6),
                 cut("paper", "کاغذ را روی خط‌ها ببُر.", lines=2),
+                tap("paper", 4, "کاغذ را تا بزن! هر بار بزن.", S + "rustle.mp3", result="lantern"),
                 paint("lantern", "فانوس را رنگ کن.", parts=4),
                 use("flashlight", "lantern", "فانوس نور ندارد! چه چیزی لامپ دارد؟", "روشن شد! چه قشنگ.", "این نور ندارد."),
+                count("lantern", 3, "bunting", "فانوس‌ها را به نخ آویزان کن.", sound="audio/ui/chime.mp3"),
             ], 110, secret="glue_gun"),
             section("c4s4", "ماسک و پرچم", "mask", "برای جشن ماسک و پرچم درست کنیم!", [
+                memory(["mask", "flag", "lantern", "paints"], "تزئین‌های جشن را جفت کن."),
                 cut("paper", "ماسک را با قیچی ببُر.", lines=2, result="mask"),
                 paint("mask", "ماسک را رنگ کن.", parts=4),
+                connect("mask", "نقطه‌ها را وصل کن تا لبه‌ی ماسک کشیده شود.", dots=8, shape="star"),
+                catch("flag", 4, "پرچم‌ها در باد پرواز می‌کنند! بگیرشان.", distract=["junk_sock"]),
                 count("flag", 5, "bunting", "پنج پرچم به نخ آویزان کن."),
             ], 110, secret="sewing_machine"),
         ],
@@ -605,23 +692,36 @@ CHAPTERS = [
         "next": "سازهای گروه میمی شکسته‌اند...",
         "sections": [
             section("c5s1", "نقشه‌ی جنگل", "map", "تکه‌های نقشه در باد پخش شده‌اند!", [
+                catch("map_piece", 3, "تکه‌های نقشه در باد می‌چرخند! بگیرشان.", distract=["junk_sock"]),
                 puzzle("map", "تکه‌های نقشه را کنار هم بچین."),
+                use("flashlight", "q_dark", "هوا تاریک است. برای خواندن نقشه چه لازم داریم؟", "حالا نقشه را می‌بینیم!", "این نور ندارد."),
+                dark("star", 3, "با نور، ستاره‌های راهنما را پیدا کن."),
+                connect("map", "ستاره‌ها را به ترتیب وصل کن تا راه پیدا شود.", dots=6, shape="star"),
                 trace("map", "با انگشت راه را از خانه‌ی جغد تا درخت بزرگ دنبال کن.", shape="wave"),
             ], 100, secret="magnifier"),
             section("c5s2", "چادر", "tent", "باران دارد می‌آید! یک چادر بزنیم.", [
+                sort(["tent_cloth", "pole", "peg"], ["old_shoe", "rotten_apple"], "وسایل چادر را از آشغال جدا کن.", "چادر", "آشغال"),
                 assemble("tent", [("tent_cloth", .5, .45), ("pole", .25, .6), ("pole", .75, .6)], "پارچه و ستون‌های چادر را سر جایشان بگذار.", "tent"),
                 use("hammer", "peg", "میخ‌های چادر را با چه بکوبیم؟", "تق تق! چادر محکم شد.", "با این نمی‌شود میخ زد."),
-                tap("peg", 4, "همه‌ی میخ‌ها را بکوب.", S + "hammer.mp3"),
+                whack("peg", 4, "میخ‌های چادر بالا می‌پرند! بکوبشان.", distract=["junk_sock"], sound=S + "hammer.mp3"),
+                blow("tent", "فوت کن تا چادر پر از هوا شود و بایستد!", mode="inflate"),
+                memory(["tent", "pole", "peg", "lantern"], "وسایل اردو را جفت کن."),
             ], 110),
             section("c5s3", "مسیر نورانی", "firefly_jar", "مسیر خیلی تاریک است و مادربزرگ سردش است.", [
                 use("flashlight", "q_dark", "با چه چیزی تاریکی را روشن کنیم؟", "روشن شد!", "این نور ندارد."),
-                dark("firefly", 4, "کرم‌های شب‌تاب را در تاریکی پیدا کن و در شیشه بگذار."),
+                catch("firefly", 4, "کرم‌های شب‌تاب پرواز می‌کنند! با شیشه بگیرشان.", distract=["ladybug"]),
+                dark("firefly", 4, "کرم‌های شب‌تاب پنهان را در تاریکی پیدا کن و در شیشه بگذار."),
+                connect("firefly_jar", "شب‌تاب‌ها را به ترتیب وصل کن تا شیشه روشن شود.", dots=5),
+                trace("firefly", "کرم شب‌تاب را تا خانه‌ی جغد راهنمایی کن.", shape="wave"),
                 use("soup", "q_cold", "مادربزرگ جغد سردش است. از کوله چیزی بده که گرمش کند.", "آخیش! گرم شدم، ممنون عزیزم.", "این گرم نمی‌کند."),
             ], 120),
             section("c5s4", "تلسکوپ", "telescope", "مادربزرگ جغد می‌خواهد ستاره‌ها را نشانت بدهد.", [
                 rotate("tube", 2, "مقوا را لوله کن.", sound=S + "rustle.mp3"),
+                scrub("lens", "عدسی گرد و خاکی است. پاکش کن."),
                 order(["lens", "lens", "lens"], "عدسی‌ها را از بزرگ به کوچک بگذار."),
                 rotate("telescope", 2, "تلسکوپ را تنظیم کن تا تصویر واضح شود.", sound=S + "gear.mp3"),
+                connect("star", "ستاره‌ها را به ترتیب وصل کن تا صورت فلکی پیدا شود.", dots=5, shape="star"),
+                memory(["moon", "star", "telescope", "lens"], "چیزهای آسمان شب را جفت کن."),
             ], 110, secret="magnet"),
         ],
     },
@@ -634,20 +734,34 @@ CHAPTERS = [
         "sections": [
             section("c6s1", "طبل", "drum", "اول یک طبل محکم بسازیم!", [
                 use("clay_bowl", "drum_skin", "برای بدنه‌ی طبل یک کاسه لازم داریم.", "این کاسه عالی است!", "این کاسه نیست."),
+                cut("drum_skin", "پوست طبل را گرد ببُر.", lines=1),
                 assemble("drum", [("drum_skin", .5, .3)], "پوست طبل را روی کاسه بکش.", "drum"),
                 tap("drum", 5, "طناب‌ها را سفت کن. هر بار بزن!", I + "drum_tom.mp3"),
+                paint("drum", "طبل را رنگ کن.", parts=4),
+                whack("note", 5, "نُت‌ها از طبل بیرون می‌پرند! بزنشان.", distract=["junk_sock"], sound=I + "drum_tom.mp3"),
             ], 90, secret="drill"),
             section("c6s2", "زایلوفون", "xylophone", "زایلوفون تیغه‌های رنگی دارد.", [
                 order(["bar_red", "bar_red", "bar_red", "bar_red"], "تیغه‌ها را از بلند به کوتاه بچین.", sound=I + "xylo_c4.mp3"),
                 use("hammer", "q_nail", "تیغه‌ها با میخ به پایه وصل می‌شوند. چه وسیله‌ای لازم است؟", "تق تق!", "با این نمی‌شود میخ زد."),
+                count("bar_red", 4, "xylophone", "تیغه‌ها را روی پایه بگذار.", sound=I + "xylo_e4.mp3"),
+                paint("xylophone", "تیغه‌ها را رنگی کن.", parts=4),
+                memory(["drum", "xylophone", "flute", "note"], "سازها را جفت کن."),
                 rhythm([("bar_red", I + "xylo_c4.mp3"), ("bar_red", I + "xylo_e4.mp3"), ("bar_red", I + "xylo_g4.mp3")], "آهنگ میمی را تکرار کن!", rounds=2),
             ], 110),
             section("c6s3", "نی", "flute", "نی صدای پرنده‌ها را دارد.", [
+                scrub("reed", "نی را تمیز کن."),
                 cut("reed", "نی را ببُر.", lines=1, result="flute"),
                 collect("flute", 4, "جای سوراخ‌ها را لمس کن.", sound="audio/ui/pop.mp3"),
+                blow("flute", "نگه دار و در نی فوت کن!", mode="music", sound=I + "flute.mp3"),
                 timing("flute", "فوت کن... حالا بزن!", sound=I + "flute.mp3"),
+                catch("note", 4, "نُت‌ها در هوا می‌رقصند! بگیرشان.", distract=["junk_sock"], sound=I + "xylo_g4.mp3"),
             ], 90, secret="saw"),
             section("c6s4", "آهنگ جشن", "song", "با سازهایی که ساختی آهنگ جشن را بسازیم!", [
+                whack("note", 6, "نُت‌های آهنگ سر بیرون می‌آورند! بزنشان.", distract=["junk_sock"], sound=I + "xylo_c5.mp3"),
+                memory(["drum", "xylophone", "flute", "note"], "سازهای گروه را جفت کن."),
+                count("note", 5, "song", "پنج نُت به آهنگ اضافه کن.", sound=I + "xylo_g4.mp3"),
+                connect("song", "نقطه‌ها را وصل کن تا نُت جشن پیدا شود.", dots=6, shape="star"),
+                blow("flute", "با نی بنواز! نگه دار و فوت کن.", mode="music", sound=I + "flute.mp3"),
                 rhythm([("drum", I + "drum_tom.mp3"), ("xylophone", I + "xylo_e4.mp3"), ("flute", I + "flute.mp3")], "آهنگ را تکرار کن. اول گوش کن!", rounds=3),
             ], 90),
         ],
@@ -661,22 +775,32 @@ CHAPTERS = [
         "sections": [
             section("c7s1", "تعمیر پل", "bridge", "پل شکسته! ماشین‌ها نمی‌توانند رد شوند.", [
                 use("cart", "plank", "تخته‌ها سنگین‌اند. با چه بیاوریمشان؟", "گاری تخته‌ها را آورد!", "این بار نمی‌برد."),
+                stack("plank", 4, "تخته‌ها را با جرثقیل روی هم بگذار تا پایه‌ی پل ساخته شود.", sound=S + "thunk.mp3"),
                 count("plank", 3, "bridge", "تخته‌ها را در جاهای خالی پل بگذار."),
                 use("hammer", "q_nail", "تخته‌ها را با چه محکم کنیم؟", "تق تق! پل محکم شد.", "با این نمی‌شود میخ زد."),
+                whack("nail", 5, "میخ‌های پل بالا آمده‌اند! بکوبشان.", distract=["junk_sock"], sound=S + "hammer.mp3"),
+                steer("toy_car", ["star"], ["rock", "cone"], 4, "ماشین را از روی پل تازه رد کن!", sound="audio/ui/sparkle.mp3"),
             ], 110, secret="drill"),
             section("c7s2", "چراغ راهنمایی", "traffic_light", "چراغ راهنمایی خاموش است و ماشین‌ها گیج شده‌اند.", [
                 order(["light_red", "light_yellow", "light_green"], "چراغ‌ها را به ترتیب بچین: قرمز، زرد، سبز."),
                 use("paints", "traffic_light", "رنگ چراغ‌ها رفته! چه چیزی رنگ دارد؟", "رنگی شد!", "این رنگ ندارد."),
+                connect("traffic_light", "نقطه‌ها را وصل کن تا قاب چراغ کشیده شود.", dots=6),
                 tap("traffic_light", 3, "چراغ را عوض کن: قرمز، زرد، سبز!", "audio/ui/toggle.mp3"),
+                memory(["light_red", "light_yellow", "light_green", "traffic_light"], "چراغ‌ها را جفت کن."),
+                whack("light_green", 5, "وقتی چراغ سبز شد بزن! قرمز را نزن.", distract=["light_red"], sound="audio/ui/toggle.mp3"),
             ], 100),
             section("c7s3", "تعمیر اتوبوس", "bus", "اتوبوس لاکی پنچر و کثیف و بی‌بنزین است!", [
+                blow("tire", "لاستیک پنچر است! نگه دار و بادش کن.", mode="inflate"),
                 rotate("tire", 2, "پیچ‌های لاستیک نو را ببند.", sound=S + "gear.mp3"),
                 scrub("bus", "اتوبوس را بشور. گل‌ها را پاک کن!"),
                 pour("fuel", "bus", "باک را پر کن.", color="#E53935"),
                 rotate("car_key", 2, "حالا روشنش کن!", sound=S + "engine.mp3", result="bus"),
+                steer("bus", ["star"], ["rock", "cone"], 5, "اتوبوس را بران! ستاره‌ها را جمع کن و به مانع نخور.", sound=S + "bus_horn.mp3"),
             ], 130, secret="wrench"),
             section("c7s4", "کارت دعوت", "invitation", "باید همه را به جشن دعوت کنیم!", [
                 puzzle("invitation", "عکس دوستان را روی کارت درست کن."),
+                paint("invitation", "کارت دعوت را رنگ کن.", parts=4),
+                catch("letter", 4, "نامه‌ها در باد پخش شدند! بگیرشان.", distract=["junk_sock"], sound="audio/ui/page.mp3"),
                 count("letter", 3, "mailbox", "نامه‌ها را در صندوق بینداز.", sound="audio/ui/page.mp3"),
                 use("toy_car", "q_travel", "خانه‌ها دورند. با چه نامه‌ها را برسانیم؟", "برووووم! نامه‌ها رسیدند.", "این حرکت نمی‌کند."),
                 trace("toy_car", "ماشین را در مسیر بران.", shape="zigzag"),
@@ -691,20 +815,36 @@ CHAPTERS = [
         "next": "",
         "sections": [
             section("c8s1", "میز جشن", "feast", "مهمان‌ها گرسنه‌اند! هر کدام غذای دلخواهش را می‌خواهد.", [
+                catch("cookie", 4, "کلوچه‌ها از سینی می‌افتند! بگیرشان.", distract=["old_shoe"]),
+                sort(["pizza", "cake", "cookie"], ["old_shoe", "junk_sock"], "غذاها را روی میز بگذار و آشغال‌ها را در سطل.", "میز", "سطل"),
+                memory(["cake", "juice", "soup", "sandwich"], "غذاهای جشن را جفت کن."),
                 serve([("bear", "cake"), ("bunny", "juice"), ("owl", "soup"), ("squirrel", "sandwich")], "به هر مهمان غذای دلخواهش را بده."),
+                feed("owl", ["soup", "bread"], "مادربزرگ جغد هنوز گرسنه است. بهش غذا بده.", n=3, distract=["old_shoe"]),
+                count("cookie", 4, "feast", "کلوچه‌ها را روی میز جشن بچین."),
             ], 90),
             section("c8s2", "تزئین میدان", "decorations", "میدان جشن را قشنگ کنیم!", [
+                memory(["lantern", "mask", "flag", "balloon"], "تزئین‌ها را جفت کن."),
                 serve([("parrot", "lantern"), ("cat", "mask"), ("bunny", "flower_pot")], "هر تزئین را به دوستی بده که می‌خواهد."),
+                blow("balloon", "بادکنک‌ها را باد کن! نگه دار و فوت کن.", mode="inflate", n=3),
+                stack("box", 5, "جعبه‌های هدیه را روی هم بچین!", sound=S + "thunk.mp3"),
                 count("flag", 4, "bunting", "پرچم‌ها را آویزان کن."),
+                paint("decorations", "میدان را رنگی کن.", parts=4),
             ], 100),
             section("c8s3", "کنسرت", "concert", "وقت کنسرت میمی است!", [
                 serve([("cat", "drum"), ("parrot", "xylophone"), ("owl", "flute")], "سازها را به نوازنده‌ها بده."),
+                connect("concert", "نقطه‌ها را وصل کن تا صحنه‌ی کنسرت پیدا شود.", dots=6),
+                blow("flute", "گرم کردن! نگه دار و در نی فوت کن.", mode="music", sound=I + "flute.mp3"),
                 rhythm([("drum", I + "drum_tom.mp3"), ("xylophone", I + "xylo_e4.mp3"), ("flute", I + "flute.mp3")], "با گروه بنواز!", rounds=3),
+                catch("note", 5, "نُت‌ها از صحنه می‌ریزند! بگیرشان.", distract=["junk_sock"], sound=I + "xylo_g4.mp3"),
+                feed("cat", ["juice"], "میمی بعد از آواز تشنه است. آب‌پرتقال بهش بده.", n=2, sound=S + "sip.mp3"),
             ], 110),
             section("c8s4", "جشن نهایی", "medal", "آخرین کار: مهمان‌ها را بیاوریم و آتش‌بازی کنیم!", [
                 use("bus", "q_travel", "مهمان‌ها دورند. با چه بیاوریمشان؟", "بوق بوق! همه رسیدند.", "این همه را نمی‌آورد."),
+                steer("bus", ["star"], ["rock", "cone"], 4, "مهمان‌ها را با اتوبوس بیاور. ستاره جمع کن!", sound=S + "bus_horn.mp3"),
                 use("telescope", "q_sky", "برای دیدن نمایش ستاره‌ها چه لازم است؟", "وای! ستاره‌ها!", "با این نمی‌شود دور را دید."),
-                collect("firework", 5, "آتش‌بازی کن! روی آسمان بزن.", sound="audio/ui/whoosh.mp3"),
+                whack("firework", 6, "آتش‌بازی‌ها از هر طرف بالا می‌آیند! بزنشان!", sound="audio/ui/whoosh.mp3"),
+                catch("star", 5, "ستاره‌ها از آسمان می‌بارند! بگیرشان.", sound="audio/ui/sparkle.mp3"),
+                connect("medal", "نقطه‌ها را وصل کن تا مدال قهرمانی پیدا شود!", dots=8, shape="star"),
             ], 120),
         ],
     },
@@ -715,25 +855,35 @@ KITS = [
     section("k_bubbles", "حباب‌ساز", "bubbles", "بیا یک حباب‌ساز بسازیم!", [
         pour("soap_bottle", "bowl_mix", "صابون را در کاسه بریز.", color="#B3E5FC"),
         rotate("bowl_mix", 2, "هم بزن.", result="bubbles"),
+        blow("bubbles", "در حباب‌ساز فوت کن!", mode="inflate", n=3),
         collect("bubbles", 6, "حباب‌ها را بترکان!", sound=S + "bloop.mp3"),
+        whack("bubbles", 6, "حباب‌ها همه جا پیدا می‌شوند. بترکانشان!", sound=S + "bloop.mp3"),
     ], 80),
     section("k_necklace", "گردنبند مهره‌ای", "necklace", "یک گردنبند رنگی بسازیم.", [
+        catch("bead", 5, "مهره‌ها می‌افتند. بگیرشان!", distract=["junk_sock"], sound="audio/ui/chime.mp3"),
+        order(["bead", "bead", "bead", "bead"], "مهره‌ها را از بزرگ به کوچک بچین."),
         count("bead", 6, "necklace", "مهره‌ها را به نخ بکش.", sound="audio/ui/chime.mp3"),
+        connect("necklace", "نقطه‌ها را وصل کن تا نخ گردنبند بسته شود.", dots=6),
         paint("necklace", "مهره‌ها را رنگ کن.", parts=4),
     ], 80),
     section("k_kite", "بادبادک", "kite", "روز بادی است! بادبادک بسازیم.", [
+        connect("kite", "چهار نقطه را وصل کن تا شکل بادبادک پیدا شود.", dots=4),
         cut("paper", "کاغذ بادبادک را ببُر.", lines=2),
         paint("kite", "بادبادک را رنگ کن.", parts=4),
+        blow("kite", "فوت کن تا باد بیاید و بادبادک بچرخد!", mode="spin"),
         trace("kite", "بادبادک را در باد بالا ببر.", shape="wave"),
     ], 100),
     section("k_robot", "ربات", "robot", "یک ربات دوست بسازیم!", [
+        memory(["robot", "robot_head", "robot_body", "battery"], "قطعه‌های ربات را جفت کن."),
         assemble("robot", [("robot_head", .5, .25), ("robot_body", .5, .6)], "سر و بدنه‌ی ربات را وصل کن.", "robot"),
         count("battery", 2, "robot", "باتری‌ها را بگذار.", sound=S + "gear.mp3"),
         paint("robot", "ربات را رنگ کن.", parts=4),
         trace("robot", "ربات را تا گل راه ببر.", shape="zigzag"),
     ], 120),
     section("k_dollhouse", "خانه‌ی عروسکی", "dollhouse", "یک خانه‌ی کوچک برای عروسک‌ها!", [
-        count("box", 4, "dollhouse", "اتاق‌ها را روی هم بچین.", sound=S + "thunk.mp3"),
+        stack("box", 4, "اتاق‌ها را با جرثقیل روی هم بگذار.", sound=S + "thunk.mp3"),
+        connect("dollhouse", "نقطه‌ها را وصل کن تا سقف خانه کشیده شود.", dots=5),
+        scrub("dollhouse", "خانه را تمیز کن."),
         paint("dollhouse", "دیوارها را رنگ کن.", parts=4),
         tap("bulb", 3, "چراغ اتاق‌ها را روشن کن.", S + "light_switch.mp3"),
     ], 110),
@@ -741,16 +891,20 @@ KITS = [
         assemble("rocket", [("tube", .5, .5)], "بدنه‌ی موشک را بگذار.", "rocket"),
         paint("rocket", "موشک را رنگ کن.", parts=4),
         order(["star", "star", "star", "star", "star"], "شمارش معکوس: ستاره‌ها را از بزرگ به کوچک بزن!"),
+        steer("rocket", ["star"], ["rock"], 5, "موشک را در فضا بران. ستاره جمع کن و به سنگ‌های فضایی نخور!", sound="audio/ui/sparkle.mp3"),
         collect("star", 5, "در فضا ستاره جمع کن.", sound="audio/ui/sparkle.mp3"),
     ], 130),
     section("k_submarine", "زیردریایی", "submarine", "زیر دریا چه خبر است؟", [
         assemble("submarine", [("lens", .62, .45)], "پنجره‌ی زیردریایی را بگذار.", "submarine"),
         paint("submarine", "زیردریایی را رنگ کن.", parts=3),
         dark("fish", 4, "با چراغ زیردریایی ماهی‌ها را پیدا کن."),
+        steer("submarine", ["fish"], ["rock"], 4, "زیردریایی را بران و به ماهی‌ها سلام کن. به سنگ نخور!"),
+        whack("fish", 5, "ماهی‌ها از لای جلبک‌ها سر بیرون می‌آورند! لمسشان کن.", distract=["old_shoe"], sound=S + "bloop.mp3"),
     ], 120),
     section("k_train", "قطار", "train", "چووو چووو! یک قطار بسازیم.", [
         count("rail", 5, "train", "ریل‌ها را بچین.", sound=S + "thunk.mp3"),
         count("wheel", 4, "train", "چرخ‌های قطار را بگذار.", sound=S + "gear.mp3"),
+        connect("train", "نقطه‌ها را وصل کن تا قطار پیدا شود.", dots=6),
         paint("train", "قطار را رنگ کن.", parts=4),
         trace("train", "قطار را روی ریل ببر.", shape="wave"),
     ], 130),
@@ -947,7 +1101,7 @@ def main():
             for k in ("target", "result", "base", "into", "source", "need", "spot"):
                 if isinstance(st.get(k), str) and not st[k].startswith("#"):
                     used.add(st[k])
-            for k in ("distract", "good", "bad", "items"):
+            for k in ("distract", "good", "bad", "items", "food"):
                 used.update(st.get(k, []))
             used.update(p["art"] for p in st.get("parts", []) + st.get("pads", []))
             used.update(p["item"] for p in st.get("pairs", []))

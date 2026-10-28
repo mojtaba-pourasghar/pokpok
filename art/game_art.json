@@ -161,7 +161,10 @@
   "q_cross": "children crossing the street",
   "q_eat": "a plate and a spoon",
   "q_wear": "a happy cat wearing a mask",
-  "q_water": "a water drop"
+  "q_water": "a water drop",
+  "rock": "a round grey rock with a little moss",
+  "cone": "an orange and white traffic cone",
+  "balloon": "a shiny red party balloon with a curly string"
  },
  "friends": {
   "bear": "a kind round mother bear wearing a white chef apron and a small chef hat",

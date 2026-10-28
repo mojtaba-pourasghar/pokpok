@@ -167,7 +167,7 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
     setState(() => phase = _Phase.made);
     _audio.ui(UiSound.sparkle);
     _fx.currentState?.burst(_stageCenter, Fx.confetti, count: 60);
-    ref.say('item.${item.id}.made');
+    unawaited(ref.say('item.${item.id}.made'));
   }
 
   Future<void> _finish() async {

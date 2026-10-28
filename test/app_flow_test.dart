@@ -14,6 +14,7 @@ import 'package:popo/app/router.dart';
 import 'package:popo/features/chapter/chapter_screen.dart';
 import 'package:popo/features/home/home_shell.dart';
 import 'package:popo/features/play/discover.dart';
+import 'package:popo/game/engines/action_engines.dart';
 import 'package:popo/game/engines/backpack_engines.dart';
 import 'package:popo/game/engines/drag_engines.dart';
 import 'package:popo/game/engines/tap_engines.dart';
@@ -151,13 +152,18 @@ void main() {
       await tester.tap(find.byType(TapEngine));
       await settle(tester, 2);
     }
-    await settle(tester, 10);
+    await settle(tester, 30);
     expect(find.text('آب‌پرتقال آماده شد!'), findsOneWidget);
     expect(env.audio.log, contains('play:audio/sfx/squeak.mp3'));
     await tester.tap(find.text('امتحانش کنیم!'));
     await settle(tester, 6);
-    await tester.tap(find.byType(ItemShowcase));
-    await settle(tester, 20);
+    // دو بار امتحان لازم است تا دکمه‌ی «فهمیدم!» فعال شود.
+    final food = find.descendant(of: find.byType(ItemShowcase), matching: find.byWidgetPredicate((w) => w is GameArt && w.id == 'juice'));
+    for (var i = 0; i < 2; i++) {
+      await tester.tap(food.first, warnIfMissed: false);
+      await settle(tester, 10);
+    }
+    await settle(tester, 10);
     expect(env.audio.log, contains('say:item.juice.taste'), reason: 'tasting food says how it tastes');
     await tester.tap(find.text('فهمیدم!'));
     await settle(tester, 6);
@@ -196,9 +202,9 @@ void main() {
     expect(env.audio.log, contains('say:c2s1.s1.why'));
     expect(env.audio.log, contains('say:item.hammer.use'));
     await tester.timedDragFrom(tester.getCenter(juice), spot - tester.getCenter(juice), const Duration(milliseconds: 400));
-    await settle(tester, 25);
+    await settle(tester, 45);
     expect(env.audio.log, contains('say:c2s1.s1.done'));
-    expect(find.byType(AssembleEngine), findsOneWidget, reason: 'next step');
+    expect(find.byType(ConnectEngine), findsOneWidget, reason: 'next step');
     expect(container.read(gameProvider).backpack, isEmpty, reason: 'nothing is finished yet');
     semantics.dispose();
     await finish(tester);

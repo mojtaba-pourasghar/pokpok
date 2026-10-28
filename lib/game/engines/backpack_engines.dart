@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/theme/theme.dart';
+import '../../core/audio/popo_audio.dart';
 import '../../core/narrator.dart';
 import '../../ui/clay.dart';
+import '../../ui/fx.dart';
 import '../scoring.dart';
 import 'engine.dart';
 
@@ -40,7 +42,11 @@ class BackpackTray extends StatelessWidget {
     this.used = const {},
     this.shakes = const {},
     this.borrowed = const {},
+    this.onTap,
   });
+
+  /// لمس یک چیز (به‌جای کشیدن): آن چیز به سمت هدف پرواز می‌کند.
+  final void Function(String id, BuildContext at)? onTap;
 
   final List<String> items;
   final EngineHost host;
@@ -79,30 +85,39 @@ class BackpackTray extends StatelessWidget {
               if (used.contains(id))
                 const SizedBox(width: 78, height: 78)
               else
-                Draggable<String>(
-                  data: id,
-                  onDragStarted: host.touch,
-                  feedback: GameArt(id, size: 96),
-                  childWhenDragging: const SizedBox(width: 78, height: 78),
-                  child: Shake(
-                    trigger: shakes[id] ?? 0,
-                    child: Stack(
-                      clipBehavior: Clip.none,
-                      children: [
-                        HintGlow(
-                          on: glow == id,
-                          child: GameArt(id, size: 78, label: host.data.items[id]?.title),
-                        ),
-                        if (borrowed.contains(id))
-                          const Positioned(
-                            top: -4,
-                            left: -4,
-                            child: Tooltip(
-                              message: 'قرضی از دوستان',
-                              child: Icon(Icons.volunteer_activism_rounded, color: G.pink, size: 24),
+                Builder(
+                  builder: (at) => GestureDetector(
+                    onTap: onTap == null ? null : () => onTap!(id, at),
+                    child: Draggable<String>(
+                      data: id,
+                      onDragStarted: host.touch,
+                      feedback: Transform.rotate(angle: -.08, child: GameArt(id, size: 100)),
+                      childWhenDragging: const SizedBox(width: 78, height: 78),
+                      child: Shake(
+                        trigger: shakes[id] ?? 0,
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            HintGlow(
+                              on: glow == id,
+                              child: Idle(
+                                seed: id.hashCode,
+                                amount: .4,
+                                child: GameArt(id, size: 78, label: host.data.items[id]?.title),
+                              ),
                             ),
-                          ),
-                      ],
+                            if (borrowed.contains(id))
+                              const Positioned(
+                                top: -4,
+                                left: -4,
+                                child: Tooltip(
+                                  message: 'قرضی از دوستان',
+                                  child: Icon(Icons.volunteer_activism_rounded, color: G.pink, size: 24),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -111,6 +126,14 @@ class BackpackTray extends StatelessWidget {
       ],
     ),
   );
+}
+
+/// [id] را از جای [at] تا [target] پرواز بده و بعد [then] (اگر لایه‌ی جلوه نباشد، فوری).
+void flyTo(BuildContext context, String id, BuildContext at, GlobalKey target, VoidCallback then) {
+  final fx = FxScope.of(context);
+  final to = target.currentContext?.globalCenter;
+  if (fx == null || to == null) return then();
+  fx.fly(id, at.globalCenter, to, size: 84, ms: 560, arc: 120, spin: .3, endScale: .8, onLand: then);
 }
 
 /// مانع: فقط با یکی از ساخته‌های قبلی حل می‌شود.
@@ -125,14 +148,19 @@ class _UseState extends ConsumerState<UseEngine> with EngineSounds {
   late final String need = widget.step.str('need');
   late final List<String> choices = backpackChoices(widget.host, [need]);
   final Map<String, int> shakes = {};
+  final _spot = GlobalKey();
   bool solved = false;
   bool firstTry = true;
+  int spotShake = 0;
 
   void _offer(String id) {
     if (solved) return;
     if (id != need) {
       firstTry = false;
-      setState(() => shakes[id] = (shakes[id] ?? 0) + 1);
+      setState(() {
+        shakes[id] = (shakes[id] ?? 0) + 1;
+        spotShake++;
+      });
       bad();
       // پوپو کاربرد واقعی آن وسیله را می‌گوید، تا اشتباه هم چیزی یاد بدهد.
       ref.say('${widget.step.p['_section']}.s${widget.step.p['_index']}.why').then((_) {
@@ -142,11 +170,15 @@ class _UseState extends ConsumerState<UseEngine> with EngineSounds {
     }
     setState(() => solved = true);
     sfx(widget.host.data.items[need]?.sound);
+    _spot.currentContext?.fx(Fx.sparkle, count: 20);
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (mounted) _spot.currentContext?.fx(Fx.confetti, count: 36);
+    });
     final borrowed = !widget.host.backpack.contains(need);
     widget.host.points(borrowed ? 0 : Scoring.useRight + (firstTry ? Scoring.useFirstTry : 0));
     widget.host.right();
     ref.say('${widget.step.p['_section']}.s${widget.step.p['_index']}.done');
-    Future.delayed(const Duration(milliseconds: 1600), widget.host.done);
+    Future.delayed(const Duration(milliseconds: 1700), widget.host.done);
   }
 
   @override
@@ -163,32 +195,68 @@ class _UseState extends ConsumerState<UseEngine> with EngineSounds {
                   child: Center(
                     child: DragTarget<String>(
                       onAcceptWithDetails: (d) => _offer(d.data),
-                      builder: (context, cand, _) => Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          AnimatedContainer(
-                            duration: const Duration(milliseconds: 200),
-                            width: spot * 1.1,
-                            height: spot * 1.1,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white.withValues(alpha: cand.isNotEmpty ? .9 : .6),
-                              border: Border.all(color: solved ? G.green : (hint >= 1 ? const Color(0xFFFFB300) : Colors.white), width: 6),
-                            ),
-                          ),
-                          GameArt(widget.step.str('spot'), size: spot),
-                          if (solved) Positioned(bottom: 0, right: 0, child: GameArt(need, size: spot * .55)),
-                          if (!solved)
-                            Positioned(
-                              top: 0,
-                              child: Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: const BoxDecoration(color: G.orange, shape: BoxShape.circle),
-                                child: const Icon(Icons.question_mark_rounded, color: Colors.white, size: 30),
+                      builder: (context, cand, _) => Shake(
+                        trigger: spotShake,
+                        child: Squash(
+                          key: _spot,
+                          trigger: solved ? 1 : 0,
+                          amount: .2,
+                          child: Stack(
+                            clipBehavior: Clip.none,
+                            alignment: Alignment.center,
+                            children: [
+                              AnimatedContainer(
+                                duration: const Duration(milliseconds: 200),
+                                width: spot * 1.1,
+                                height: spot * 1.1,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: solved ? G.tint(G.green, .75) : Colors.white.withValues(alpha: cand.isNotEmpty ? .9 : .55),
+                                  border: Border.all(
+                                    color: solved ? G.green : (hint >= 1 ? const Color(0xFFFFB300) : Colors.white),
+                                    width: 6,
+                                  ),
+                                ),
                               ),
-                            ),
-                          if (solved) const Positioned.fill(child: Sparkles(trigger: 1)),
-                        ],
+                              AnimatedScale(
+                                duration: const Duration(milliseconds: 200),
+                                scale: cand.isNotEmpty ? 1.06 : 1,
+                                child: Idle(
+                                  amount: solved ? 1.5 : .6,
+                                  child: GameArt(widget.step.str('spot'), size: spot),
+                                ),
+                              ),
+                              if (solved)
+                                Positioned(
+                                  bottom: -spot * .05,
+                                  right: -spot * .05,
+                                  child: PopIn(from: 1.6, child: GameArt(need, size: spot * .55)),
+                                ),
+                              if (!solved)
+                                Positioned(
+                                  top: 0,
+                                  child: Idle(
+                                    amount: 1.5,
+                                    child: Container(
+                                      padding: const EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        color: G.orange,
+                                        shape: BoxShape.circle,
+                                        border: Border.all(color: Colors.white, width: 4),
+                                        boxShadow: G.soft(),
+                                      ),
+                                      child: const Icon(Icons.question_mark_rounded, color: Colors.white, size: 30),
+                                    ),
+                                  ),
+                                ),
+                              if (solved)
+                                const Positioned(
+                                  top: 0,
+                                  child: PopIn(child: Icon(Icons.check_circle_rounded, color: G.green, size: 64)),
+                                ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -200,6 +268,13 @@ class _UseState extends ConsumerState<UseEngine> with EngineSounds {
                   used: solved ? {need} : const {},
                   shakes: shakes,
                   borrowed: {if (!widget.host.backpack.contains(need)) need},
+                  onTap: (id, at) {
+                    if (solved) return;
+                    widget.host.touch();
+                    flyTo(context, id, at, _spot, () {
+                      if (mounted) _offer(id);
+                    });
+                  },
                 ),
               ],
             ),
@@ -212,7 +287,7 @@ class _UseState extends ConsumerState<UseEngine> with EngineSounds {
   );
 }
 
-/// پذیرایی: به هر دوست همان چیزی را بده که می‌خواهد.
+/// پذیرایی: به هر دوست همان چیزی را بده که می‌خواهد؛ دوست می‌پرد و قلب می‌دهد.
 class ServeEngine extends EngineView {
   const ServeEngine({super.key, required super.step, required super.host});
 
@@ -223,6 +298,7 @@ class ServeEngine extends EngineView {
 class _ServeState extends ConsumerState<ServeEngine> with EngineSounds {
   late final pairs = widget.step.maps('pairs');
   late final List<String> choices = backpackChoices(widget.host, [for (final p in pairs) p['item'] as String], extra: 2);
+  late final List<GlobalKey> friends = [for (final _ in pairs) GlobalKey()];
   final Set<int> served = {};
   final Map<String, int> shakes = {};
   final Map<int, int> friendShake = {};
@@ -239,9 +315,25 @@ class _ServeState extends ConsumerState<ServeEngine> with EngineSounds {
     }
     setState(() => served.add(f));
     sfx(widget.host.data.items[id]?.sound);
+    friends[f].currentContext?.fx(Fx.hearts, count: 10);
+    friends[f].currentContext?.fx(Fx.sparkle, count: 8);
     widget.host.right();
     widget.host.points(widget.host.backpack.contains(id) ? Scoring.useRight : 0);
-    if (served.length == pairs.length) Future.delayed(const Duration(milliseconds: 900), widget.host.done);
+    if (served.length == pairs.length) {
+      ui(UiSound.success);
+      Future.delayed(const Duration(milliseconds: 1100), widget.host.done);
+    }
+  }
+
+  /// لمس در کوله: به اولین دوستی که آن را می‌خواهد (یا اولین دوست منتظر) پرواز می‌کند.
+  void _tapGive(String id, BuildContext at) {
+    final waiting = [for (var f = 0; f < pairs.length; f++) f].where((f) => !served.contains(f)).toList();
+    if (waiting.isEmpty) return;
+    final f = waiting.firstWhere((f) => pairs[f]['item'] == id, orElse: () => waiting.first);
+    widget.host.touch();
+    flyTo(context, id, at, friends[f], () {
+      if (mounted) _give(f, id);
+    });
   }
 
   @override
@@ -267,24 +359,43 @@ class _ServeState extends ConsumerState<ServeEngine> with EngineSounds {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               // حباب فکر: چیزی که می‌خواهد.
-                              Container(
-                                padding: const EdgeInsets.all(4),
-                                decoration: BoxDecoration(
-                                  color: served.contains(f) ? const Color(0xFFD7F5E1) : Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: G.soft(),
-                                  border: hint >= 1 && f == next ? Border.all(color: const Color(0xFFFFB300), width: 3) : null,
+                              PopIn(
+                                delay: Duration(milliseconds: 200 * f),
+                                child: Idle(
+                                  seed: f,
+                                  child: AnimatedContainer(
+                                    duration: const Duration(milliseconds: 250),
+                                    padding: const EdgeInsets.all(6),
+                                    decoration: BoxDecoration(
+                                      color: served.contains(f) ? const Color(0xFFD7F5E1) : Colors.white,
+                                      borderRadius: BorderRadius.circular(22),
+                                      boxShadow: G.soft(),
+                                      border: Border.all(color: hint >= 1 && f == next ? const Color(0xFFFFB300) : Colors.white, width: 3),
+                                    ),
+                                    child: served.contains(f)
+                                        ? PopIn(
+                                            child: Icon(Icons.favorite_rounded, color: G.pink, size: w * .34),
+                                          )
+                                        : GameArt(pairs[f]['item'] as String, size: w * .4),
+                                  ),
                                 ),
-                                child: served.contains(f)
-                                    ? Icon(Icons.favorite_rounded, color: G.pink, size: w * .32)
-                                    : GameArt(pairs[f]['item'] as String, size: w * .4),
                               ),
                               const SizedBox(height: 4),
-                              AnimatedScale(
-                                duration: const Duration(milliseconds: 300),
-                                scale: cand.isNotEmpty ? 1.08 : 1,
-                                child: GameArt(pairs[f]['friend'] as String, size: w),
+                              Squash(
+                                key: friends[f],
+                                trigger: served.contains(f) ? 1 : 0,
+                                amount: .3,
+                                child: AnimatedScale(
+                                  duration: const Duration(milliseconds: 300),
+                                  scale: cand.isNotEmpty ? 1.1 : 1,
+                                  child: Idle(
+                                    seed: f + 7,
+                                    amount: served.contains(f) ? 1.6 : .7,
+                                    child: GameArt(pairs[f]['friend'] as String, size: w),
+                                  ),
+                                ),
                               ),
+                              GroundShadow(width: w * .6),
                               Text(widget.host.data.friend(pairs[f]['friend'] as String).name, style: PText.label),
                             ],
                           ),
@@ -303,6 +414,7 @@ class _ServeState extends ConsumerState<ServeEngine> with EngineSounds {
                   for (final p in pairs)
                     if (!widget.host.backpack.contains(p['item'])) p['item'] as String,
                 },
+                onTap: _tapGive,
               ),
             ],
           );

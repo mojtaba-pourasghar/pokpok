@@ -420,6 +420,15 @@
    "sha256": "ef05e5a236362709c560b06b0ede303d40d48f9649c4b50cc32306a3ddf82fe2"
   },
   {
+   "id": "balloon",
+   "group": "items",
+   "path": "art/items/balloon.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 14780,
+   "sha256": "9c82afe92df0aaf5f936a917b37b868e195a0d725093f5a9b862a082e7e13bc7"
+  },
+  {
    "id": "bar_red",
    "group": "items",
    "path": "art/items/bar_red.webp",
@@ -706,6 +715,15 @@
    "version": 1,
    "bytes": 56442,
    "sha256": "ca4526e7392c248c33353b9e2d01d654118d01743e406e219d0dbcb198a08993"
+  },
+  {
+   "id": "cone",
+   "group": "items",
+   "path": "art/items/cone.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 30060,
+   "sha256": "87c6e7f7c1f3a903e3c1b5fd9a726dae48168554b5ce6835e680198a10ac41e3"
   },
   {
    "id": "cookie",
@@ -1599,6 +1617,15 @@
    "sha256": "08b8b5c4e0fa9bae3dd8831e401e9682aeb55bc22ec051f5ce5a8f5ef15ac498"
   },
   {
+   "id": "rock",
+   "group": "items",
+   "path": "art/items/rock.webp",
+   "type": "image/webp",
+   "version": 1,
+   "bytes": 78656,
+   "sha256": "4346a7a8df7fb0276e424b1a8b779a091c3059b804d6a25e54666fd5db79e3dd"
+  },
+  {
    "id": "rocket",
    "group": "items",
    "path": "art/items/rocket.webp",
@@ -1871,92 +1898,92 @@
   {
    "id": "ambient/farm",
    "group": "ambient",
-   "path": "audio/ambient/farm.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/ambient/farm.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 288750,
-   "sha256": "a6f3f5eebefc8dc9e5817dabcd9b30cfe1929c86068acf9156483b34a77bfd13"
+   "bytes": 205886,
+   "sha256": "fbf4ef901309d562809bc2b440875fce2c0580a189acc0eb60d670180c74c77d"
   },
   {
    "id": "ambient/festival",
    "group": "ambient",
-   "path": "audio/ambient/festival.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/ambient/festival.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 276838,
-   "sha256": "3a616fcd161b70a3a4f11c58f54e4d33bdc6f7a0f4d0ca5626ec23d5a434473b"
+   "bytes": 182290,
+   "sha256": "b86fae834e7ec544ed7dbad0ceec0cb99e8393cfdf6618d157529af8eff463d6"
   },
   {
    "id": "ambient/kitchen",
    "group": "ambient",
-   "path": "audio/ambient/kitchen.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/ambient/kitchen.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 252701,
-   "sha256": "3245031fe6e3d8c634a618fc3fac0b0d62c24154bce24b679677ae83bc42c206"
+   "bytes": 167096,
+   "sha256": "bea46f401696e0a4538196d51e5bf24186bf5f6ad643f7b88335c5be0c73f731"
   },
   {
    "id": "ambient/night",
    "group": "ambient",
-   "path": "audio/ambient/night.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/ambient/night.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 276838,
-   "sha256": "925b2f74e4b558311821278132769881befdf2f4fd7a94dd6f76ea672869a0d0"
+   "bytes": 189680,
+   "sha256": "78df8f4d8df0f382725cbcf1b622641c3cabfb15c72036c10e193847bf77a19a"
   },
   {
    "id": "ambient/rain",
    "group": "ambient",
-   "path": "audio/ambient/rain.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/ambient/rain.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 82799,
-   "sha256": "f9b7ddeda04453f00704c951c7d5fdf2d2b276fc5725d90b27756784c8010390"
+   "bytes": 25223,
+   "sha256": "20936ee019540d748529e85202d735cb935e638724578415e5e84cd2b2ad3c9e"
   },
   {
    "id": "ambient/stage",
    "group": "ambient",
-   "path": "audio/ambient/stage.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/ambient/stage.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 252701,
-   "sha256": "92e9d8691c5b65cd11da25e9e9c5b9d4a6d1fdc37dac73c53f6493630a2bf6ff"
+   "bytes": 166389,
+   "sha256": "93179229b77d116d8c4f01d5eb571707061c3253ff14f74f246573bdc5bd7823"
   },
   {
    "id": "ambient/street",
    "group": "ambient",
-   "path": "audio/ambient/street.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/ambient/street.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 288750,
-   "sha256": "b0abdf65efa598c7b8c4350a0dccb67239987cd0225c21603babb10c44ec09af"
+   "bytes": 185186,
+   "sha256": "13dbf62ff8e41e3aae2a13ea2ed424f2c9f0c8593b875e7114bc452508714ef6"
   },
   {
    "id": "ambient/studio",
    "group": "ambient",
-   "path": "audio/ambient/studio.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/ambient/studio.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 252701,
-   "sha256": "becbedc6970d49cd54fc6a9d63560191a45a6095fa38b015ad7bbc3a40ce84cf"
+   "bytes": 171377,
+   "sha256": "61670f9781c92fc3dfdeea947917c927e264a5f724004a30c5762e8adba6208d"
   },
   {
    "id": "ambient/wind",
    "group": "ambient",
-   "path": "audio/ambient/wind.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/ambient/wind.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 82799,
-   "sha256": "41cbc9a9e6ce6be61539595c58302e873b40b5159e3d98b7e698f88405a5f110"
+   "bytes": 28869,
+   "sha256": "3f5d85476ed94f30cd86d9249e43d2da97e905f6333856fd2d84a68cc92a1f5a"
   },
   {
    "id": "ambient/workshop",
    "group": "ambient",
-   "path": "audio/ambient/workshop.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/ambient/workshop.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 252701,
-   "sha256": "222ec13a1b0f3d23a8c4625dec241139335e68cd51096b98fb6d4b4cac5e8ce2"
+   "bytes": 166469,
+   "sha256": "056e8fa083bc291435de2c231fc79b4563d29a89ba20e311b3defbd507b8fc33"
   },
   {
    "id": "animals/bird",
@@ -1964,8 +1991,8 @@
    "path": "audio/animals/bird.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 82799,
-   "sha256": "936a75c13186ad41c8467e7a384fdd5d21dd43a167bea54a20e42b2f24e4b7dd"
+   "bytes": 62111,
+   "sha256": "79e44a60c592f7fceee1a2aa5efdba72af998b3276350258e439396489441ee5"
   },
   {
    "id": "animals/cow",
@@ -1973,8 +2000,8 @@
    "path": "audio/animals/cow.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 51453,
-   "sha256": "13384f110f7ed5d7601f23ea71dcc84edfe7f1ffb35d5f8f77eef2ef59aa9dd7"
+   "bytes": 38601,
+   "sha256": "d98514e614069c6c5c66d3181763cb0f9925e2f8e192cc50fe3b768139aed021"
   },
   {
    "id": "instruments/drum_tom",
@@ -1983,7 +2010,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 6941,
-   "sha256": "3f5d2a0c4f9989a36135aba06d8de21b5bcd95d2575122bf610176590d016077"
+   "sha256": "5b910fa18cd5833cb19fcf4db85d57c72512d85d260822131d6fda874a9da213"
   },
   {
    "id": "instruments/flute",
@@ -1991,8 +2018,8 @@
    "path": "audio/instruments/flute.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 114564,
-   "sha256": "f73f7c0f8767a5922d6ca430b5dc2497396c600cfa9518a2e9b35d096e14e3b0"
+   "bytes": 85935,
+   "sha256": "145b582dc99e1f5839f0c0f7722bcffef0f52f049025c399953ae354625ec248"
   },
   {
    "id": "instruments/xylo_c4",
@@ -2001,7 +2028,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 14151,
-   "sha256": "49bbe16c0296671da722b1a7da82165960812093da82fc069f9e158e667833cc"
+   "sha256": "78cee58240ecfa305a8281f5bc9fc55154bbcec768dc1f55d6e04e89fbc6f67a"
   },
   {
    "id": "instruments/xylo_c5",
@@ -2010,7 +2037,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 14151,
-   "sha256": "d1a4cbff830e3dce0415f73cc27035e293cd8b11cfeb1d32015caa526b006e31"
+   "sha256": "373dd4af003356365c6a191bbf6eee67d2d2f846a2b68c26478cc27decc708fd"
   },
   {
    "id": "instruments/xylo_e4",
@@ -2019,7 +2046,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 14151,
-   "sha256": "0fc6a4aebbe6bb9e14cc1fd4c6ad22c9097ba9ed8170db6ea40ab5ea0f4fe3f9"
+   "sha256": "c59a7c6e9930a3682ea7a855bc109ed853a00b56f7e3d47b14ee9ca54430a5eb"
   },
   {
    "id": "instruments/xylo_g4",
@@ -2028,16 +2055,16 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 14151,
-   "sha256": "a4c00c46f1b15d19573500db4c667b82571e14ecf65898a18b763eb96c15b5c0"
+   "sha256": "b5dc8eff951f69c9b596f48a218f632384faeaeeb6d53b89951bea94ef5d65de"
   },
   {
    "id": "music/menu_loop",
    "group": "music",
-   "path": "audio/music/menu_loop.mp3",
-   "type": "audio/mpeg",
+   "path": "audio/music/menu_loop.ogg",
+   "type": "audio/ogg",
    "version": 1,
-   "bytes": 366594,
-   "sha256": "e9f768ade1c0e720c8f93c2cefb8323783f313f895160de3cd2f94d16be30928"
+   "bytes": 103556,
+   "sha256": "6c706440ebfae9da15f7e626595986b6ca27c5497f018a07057d6d5a2a228ef4"
   },
   {
    "id": "sfx/bike_bell",
@@ -2046,7 +2073,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 12897,
-   "sha256": "dd038c9cbc2c650e11dc6535a8c3221cdf9f31870490ddbbe290df767408b50b"
+   "sha256": "a20870af8f24343b1a801b80c7a6b259b2992357b7a6aea312ad152649b3d1a2"
   },
   {
    "id": "sfx/bloop",
@@ -2055,7 +2082,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 5060,
-   "sha256": "a0830bc1a3319e157261348dc8139b732b23bfcebac8122308ef9d38ae200685"
+   "sha256": "048817ad59bef82dd854b24b187c262d44935142c1832c982aec6242007c6b2c"
   },
   {
    "id": "sfx/bubbles",
@@ -2064,7 +2091,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 12897,
-   "sha256": "f2db2c1bda4b4d2a7deaad98420144d2b77ed4412b38daf654768d6571ad7c43"
+   "sha256": "95f15e15f1025bcf1fbf1c48b6569a0704220577493ceb0a13dd53042d5ef51a"
   },
   {
    "id": "sfx/bus_horn",
@@ -2073,7 +2100,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 9135,
-   "sha256": "8a40439a51799e235e956a889ba934bee8f05c0796a5e3397440e1b4f4caa3ee"
+   "sha256": "aa85016184efc0a3a3f4d1f226de7a8ff4a0bdf389195fa96448be9992a3d33b"
   },
   {
    "id": "sfx/buzz",
@@ -2082,7 +2109,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 12897,
-   "sha256": "d9d221105b6b0dc380eb6861c10c8291af90973518e0d19bccdf2c9c95899c0b"
+   "sha256": "b2fc96b1ae2f2c21cc6405a1da10cc636ec140a306d070f4416107573ebb3545"
   },
   {
    "id": "sfx/car_horn",
@@ -2091,7 +2118,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 6314,
-   "sha256": "b30ee64d0ffae9fa04379a7a9b8a44e29309118731448ecaa6992e05b907ac40"
+   "sha256": "3d2e2755728adb1b0327b3aa25e2cb88d7e2873611949e117936ebc550edbbd7"
   },
   {
    "id": "sfx/cluck",
@@ -2100,7 +2127,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 12897,
-   "sha256": "5820d0ff4c294651831aca9578ccc7e89935c56330cee7092dfad1fa53758cf5"
+   "sha256": "c27610859db9ebe478b512e70ec37b623b43c4988bb459c6701beb95cd6d0b9c"
   },
   {
    "id": "sfx/crunch",
@@ -2109,7 +2136,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 7568,
-   "sha256": "4382fcb419f75012a9563d7fa7ebc5b56d15bb50a85b1f540e30e32958b2fde2"
+   "sha256": "5e02baaef38008805cfde8e68b0342dcf700a05df0ff11101c8b5d2fe216d674"
   },
   {
    "id": "sfx/door",
@@ -2117,8 +2144,8 @@
    "path": "audio/sfx/door.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 11328,
-   "sha256": "27985e38b470284269bff30989c2bdee424a07454351072ad537ed89493e7d17"
+   "bytes": 8508,
+   "sha256": "1cdde918f85a70d4b8a7403c6f3c920abeee5de3b04761e808e53d300dbc8b29"
   },
   {
    "id": "sfx/drill",
@@ -2127,7 +2154,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 17599,
-   "sha256": "4f8cabbc38ec18dc7c81f004d399e5eb7b2909bbd75084d9c67fee594e761d4d"
+   "sha256": "cd07d98cb9cf7a3f1306795beb7924aee2ab85b2245feaee7139f88c911195e7"
   },
   {
    "id": "sfx/engine",
@@ -2136,7 +2163,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 14151,
-   "sha256": "8ebbe6cb9d89cea1bc4d734903b822447c2e3398fa80a436083c9ca437c32408"
+   "sha256": "a6eeb5e5628bb6435974d54fc88b82479ae4bc92fda2bc0e52d500236257e419"
   },
   {
    "id": "sfx/gear",
@@ -2145,7 +2172,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 15091,
-   "sha256": "45a29b4d85c18eca9ba09f96f50c4ddef64be60b1c23cac51921a360c4b2aa7c"
+   "sha256": "ab5523801b5d9e3a0a86d3a6525cd1aac3d83dedb95919db7147146ccd493efa"
   },
   {
    "id": "sfx/giggle",
@@ -2154,7 +2181,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 10389,
-   "sha256": "2c600dc4b94275f006a2fa1e6eec0ee7a1ef7a8d34dc658496b38a7c2950682a"
+   "sha256": "6b77d9082b004f1475914ebb6dfc86d282381c82581bdee81b736d5a0b7e3273"
   },
   {
    "id": "sfx/grow",
@@ -2163,7 +2190,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 15091,
-   "sha256": "143622a0aaeb303a7214e3d9fc749c0ed9ac18abd784631206d0dada122c2653"
+   "sha256": "cf997f76fc836d6fc4adf61695d5585f8c7ddb8fbbf002445546ced2d0680f69"
   },
   {
    "id": "sfx/hammer",
@@ -2172,7 +2199,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 5687,
-   "sha256": "330a4ab33cab312fe289c1aba49fcac4c9d7ac959a7b3e3904580df1f22ec678"
+   "sha256": "d599a415a01fa31074258e1f094873e0e411d40aad5e023ddecd29afb534b47c"
   },
   {
    "id": "sfx/kettle",
@@ -2180,8 +2207,8 @@
    "path": "audio/sfx/kettle.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 82799,
-   "sha256": "ba7041be687db49c58ade14659493b2712e2da7c61054cddbe47120bb618edfe"
+   "bytes": 62111,
+   "sha256": "720819756b97be1c4f58df628efef5f6d96fd7f4db6d4573948814ecc20040a4"
   },
   {
    "id": "sfx/light_switch",
@@ -2190,7 +2217,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 1925,
-   "sha256": "caec0c0cb12bdb4f8139f24c85f0bf6ea609d13b0f65361e8507c4843aa268cc"
+   "sha256": "319fd404f9ec69573a630da91b436d214d910b4518572a51b5b01c9c16d8ef46"
   },
   {
    "id": "sfx/pour",
@@ -2199,7 +2226,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 17599,
-   "sha256": "591d04498386d8ac7f2c88b0e3276c2b176f21af7c8e5539ab572114af922a0f"
+   "sha256": "85ac1fbc80a17e4495bb8467410336928e3c1f3e75c9e2207ab808584f9d9775"
   },
   {
    "id": "sfx/robot",
@@ -2208,7 +2235,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 11643,
-   "sha256": "62c9514c75d708da55aad4a99e8057a5d6a1da0ea26da32db8104d5c5aaa90b6"
+   "sha256": "1b1c27e5e98275a12c5a2cc0f2ad93e38562af96af0fd11fd72d414e82eaedf7"
   },
   {
    "id": "sfx/rocket",
@@ -2217,7 +2244,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 29511,
-   "sha256": "0e44e222c7a86590d8eab9f798107f74aa8a493ccafbd4e883906ff041356bd5"
+   "sha256": "648852c0155241b456a7f8e52b6ea0892d4cdd762e3f9e43d76ab0a6f7213f64"
   },
   {
    "id": "sfx/rustle",
@@ -2226,7 +2253,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 12897,
-   "sha256": "fd92fa45ff194670a28c933e0878c64e9d8a55d76e7b9f18504168ab3053ad74"
+   "sha256": "d3c7ad94f8bf172473ded77a687e81e73027f6283f8c7e4510df8303a2d9002b"
   },
   {
    "id": "sfx/saw",
@@ -2235,7 +2262,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 20107,
-   "sha256": "46532e15e88cf3e1d3779f2d1139a588d8283a63e333797b655fcc10bba37f85"
+   "sha256": "e0545a4b77e8b834a8cae1528585d3b1337690b65f7ff41faf2a75333664caae"
   },
   {
    "id": "sfx/sewing",
@@ -2244,7 +2271,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 18853,
-   "sha256": "f24cc4bae92d7f64d197e6f89e6de78b6e8da21200daa6ea46b2a3e3efbbcacd"
+   "sha256": "2c385696101f0bdd036224717b04f2cece8cae421749b2dfca7c213017ce18fc"
   },
   {
    "id": "sfx/sip",
@@ -2253,7 +2280,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 7881,
-   "sha256": "5f302681e569eacb9f2f5dc36eab6a89a4258c726a15af684a5b070cb96542a5"
+   "sha256": "52b01c2c4e9158d02247a98e0b04613b78c66028787881e6db2a495ad09bd20c"
   },
   {
    "id": "sfx/sizzle",
@@ -2262,7 +2289,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 17599,
-   "sha256": "b6aaab1c5bdd30db0bc18dfe0742e19ef81763af01be72d539bfab14bfc4f4df"
+   "sha256": "59d823b41c42e8466d2100fe77e3bbb117bd5422c92f92568dcc093229321ce2"
   },
   {
    "id": "sfx/snap",
@@ -2271,7 +2298,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 3806,
-   "sha256": "45dc5e2c96912755b8d55e0b920e32dce9ec6c859bdd1f88e7cbe8ce9a4eaa2f"
+   "sha256": "1f20fa705ac491c4fb2af40fef06b1802cce365a797100fa888a1fb7da76f104"
   },
   {
    "id": "sfx/splash",
@@ -2280,7 +2307,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 9135,
-   "sha256": "d5dfbe7b8c5fb523d6264bcbee8ca5c8fa53aa1c6c61802e935ad1f1b4370ec0"
+   "sha256": "e51ebae4c6eba2a7e99a645e9de3cbf9130a97df6a55710814c76e551c1471b5"
   },
   {
    "id": "sfx/squeak",
@@ -2289,7 +2316,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 5060,
-   "sha256": "939f4949c5964f05d8b571c53114910d6cdfd70ed6818edbdffc1441f07ad97f"
+   "sha256": "7a70898b1d9602e1fade4ef1cfe07b31798b505d214d173629f900f53f63fe57"
   },
   {
    "id": "sfx/stir",
@@ -2298,7 +2325,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 12897,
-   "sha256": "ff6d8a1a647a7a44586a29f2269833685b2bf8a5c9446c92b40e794e1bd8fec8"
+   "sha256": "a5920fad982316c1f886f1376f86bee808f694dde72174291a219787ef73bdf2"
   },
   {
    "id": "sfx/thunk",
@@ -2307,7 +2334,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 3806,
-   "sha256": "e264f9ac9316649b7b1fd2d9166408a5949a16d23c87c165a67c1c4a1e2f4c07"
+   "sha256": "0cfc01d0ef93bc3f818bf9d8b7635fade5ff0517d136ad5e07080e80a1743b2e"
   },
   {
    "id": "sfx/train",
@@ -2316,7 +2343,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 27316,
-   "sha256": "8de954f1a6de235bec1e41ca0a0866a7dd1b5e6d360836a1972989ece17dd45e"
+   "sha256": "acdd539381407a5e888e022aa507763b2435c2f6514c42c5ce7d74c0abdeb3e8"
   },
   {
    "id": "sfx/water_tap",
@@ -2324,8 +2351,8 @@
    "path": "audio/sfx/water_tap.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 73604,
-   "sha256": "472779daec336479b693e37a4b865b5fc3dce5519251cb4b3646b986d50af780"
+   "bytes": 55215,
+   "sha256": "548c1833a3fc66cb2b4906f9e552d48cf1423c23bf5ead10fc74a1ebc3b3071f"
   },
   {
    "id": "ui/camera",
@@ -2334,7 +2361,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 3179,
-   "sha256": "55ea84440e9156916676bbfbda5eaa6c119832d6014840e3b26a89474637bef1"
+   "sha256": "f436aebd24526a756aedd439cde81439ed6ae79036cae385e541dca7b6b730fb"
   },
   {
    "id": "ui/chime",
@@ -2343,7 +2370,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 17599,
-   "sha256": "631f321fab7204d464442dfa0408d01469a7e078a7dbd5e7d440e843d5c9d09c"
+   "sha256": "9e1f2cd1b205912625c837f3628cc9e3240900d3a7ec2b6586ab53ca94fb42a3"
   },
   {
    "id": "ui/page",
@@ -2352,7 +2379,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 3806,
-   "sha256": "fa4bdddc43b121a25103d6452be92b635abad9c8c2aa8ee985863d765d31bdf5"
+   "sha256": "e732bd51f2abafc19be7513c034efdec211aea265e3faff0ecacb3add15232e9"
   },
   {
    "id": "ui/pop",
@@ -2361,7 +2388,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 2239,
-   "sha256": "8b7fe9d8f78b5f3920223f4e62f72c3fa80a791c34a022732e2e76114ba18163"
+   "sha256": "f3ee9a820c60a0619cc6b71a80b5c99ff69542549174f896320266dbbee08dcb"
   },
   {
    "id": "ui/soft_no",
@@ -2370,7 +2397,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 6314,
-   "sha256": "fb54d1bd33cf9fe287580b21cde4cd4815266391472e55b97048a8f1a8e1ad1b"
+   "sha256": "b45dadceaa681acb7f4c0cdc1fbeb4085bc8334a6daea0741787871d70c4d61b"
   },
   {
    "id": "ui/sparkle",
@@ -2379,7 +2406,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 14151,
-   "sha256": "2462a33d94f5fdb52144cccc796ab20ab7f1db1480408afb56ef4507adf649ea"
+   "sha256": "6499e29ccc7a15acee7840849e2cf91e3cd5b4aaadc51144fcf55a1144556308"
   },
   {
    "id": "ui/success",
@@ -2388,7 +2415,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 11643,
-   "sha256": "31cf9d9bd5e916b875a42ce047aa61caf1c851d92f6cbb812f1d1c9cfaff4f98"
+   "sha256": "bc499c948ec103bef956964bc25ab67a96b6e2aa89a3fe4f6e3c00554922f60c"
   },
   {
    "id": "ui/tap",
@@ -2397,7 +2424,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 1298,
-   "sha256": "662c786c60d45662233828b60ef07ff27f5cc9b0d68f29c9a779989bfae72b14"
+   "sha256": "eb3cb0048445cb41c2dc2d83be528a88007b540ee84fc6891c3107323700f06c"
   },
   {
    "id": "ui/toggle",
@@ -2406,7 +2433,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 2239,
-   "sha256": "c46eacaa351ce65eb3e749f8ed1fc456d3ef7bcfaacb981e7ee0ac59d949b838"
+   "sha256": "9fb280e1d02fac7dc3b3f1f1cf5cbc46eb0e0931ae0589b29efb279cc0d3957a"
   },
   {
    "id": "ui/whoosh",
@@ -2415,7 +2442,7 @@
    "type": "audio/mpeg",
    "version": 1,
    "bytes": 6941,
-   "sha256": "e1fd9a4883b030bab48672f2692eb25375ebaee907ceb25235405495159575ed"
+   "sha256": "b574555814cb9e619f72bd4fbe839bdfd16b921df8167e892a96b115750aced8"
   },
   {
    "id": "voice/app_intro_1",

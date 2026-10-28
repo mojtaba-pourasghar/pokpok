@@ -1330,6 +1330,27 @@
    "target": "assets/art/items/q_water.webp",
    "size": 512,
    "prompt": "a water drop. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+  },
+  {
+   "id": "rock",
+   "kind": "object",
+   "target": "assets/art/items/rock.webp",
+   "size": 512,
+   "prompt": "a round grey rock with a little moss. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+  },
+  {
+   "id": "cone",
+   "kind": "object",
+   "target": "assets/art/items/cone.webp",
+   "size": 512,
+   "prompt": "an orange and white traffic cone. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
+  },
+  {
+   "id": "balloon",
+   "kind": "object",
+   "target": "assets/art/items/balloon.webp",
+   "size": 512,
+   "prompt": "a shiny red party balloon with a curly string. Soft glossy Pixar-style 3D render, rounded soft shapes, bright saturated colors, cute children's game asset, single object, full view, centered, isolated on a plain pure white background, soft contact shadow, no text, no letters, no watermark"
   }
  ]
 }
