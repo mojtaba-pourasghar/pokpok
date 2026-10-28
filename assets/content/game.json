@@ -572,7 +572,7 @@
    "id": "tent",
    "title": "چادر",
    "kind": "shelter",
-   "sound": "audio/ambient/rain.mp3",
+   "sound": "audio/ambient/rain.ogg",
    "use": "چادر زیر باران ما را خشک و گرم نگه می‌دارد.",
    "taste": null,
    "target": null,
@@ -1106,7 +1106,7 @@
    "id": "kite",
    "title": "بادبادک",
    "kind": "kite",
-   "sound": "audio/ambient/wind.mp3",
+   "sound": "audio/ambient/wind.ogg",
    "use": "باد بادبادک را بالا می‌برد.",
    "taste": null,
    "target": null,
@@ -1485,7 +1485,7 @@
    "id": "windmill",
    "title": "آسیاب بادی",
    "kind": "windmill",
-   "sound": "audio/ambient/wind.mp3",
+   "sound": "audio/ambient/wind.ogg",
    "use": "باد پره‌ها را می‌چرخاند.",
    "taste": null,
    "target": null,
@@ -1583,7 +1583,7 @@
    "friend": "bear",
    "bg": "kitchen",
    "color": "#FF8A1F",
-   "ambient": "audio/ambient/kitchen.mp3",
+   "ambient": "audio/ambient/kitchen.ogg",
    "intro": "طوفان آشپزخانه‌ی خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده. بیا با هم آشپزی کنیم!",
    "film": [
     "آب‌پرتقال شیرین و ترش",
@@ -1785,7 +1785,7 @@
    "friend": "bunny",
    "bg": "farm",
    "color": "#2FBF71",
-   "ambient": "audio/ambient/farm.mp3",
+   "ambient": "audio/ambient/farm.ogg",
    "intro": "بانی تشنه است و باغش خشک شده. کمکش کنیم باغ دوباره سبز شود!",
    "film": [
     "آب‌پاش، گل‌ها را سیراب کرد",
@@ -1985,7 +1985,7 @@
    "friend": "squirrel",
    "bg": "workshop",
    "color": "#3B82F6",
-   "ambient": "audio/ambient/workshop.mp3",
+   "ambient": "audio/ambient/workshop.ogg",
    "intro": "طوفان کارگاه آقا سنجاب را خراب کرده و ابزارهایش پخش شده‌اند. بیا ابزار بسازیم!",
    "film": [
     "چکش، میخ را فرو کرد: تق تق!",
@@ -2179,7 +2179,7 @@
    "friend": "parrot",
    "bg": "studio",
    "color": "#E9478F",
-   "ambient": "audio/ambient/studio.mp3",
+   "ambient": "audio/ambient/studio.ogg",
    "intro": "کوکو همه‌ی رنگ‌هایش را در طوفان گم کرده و تزئینات جشن بی‌رنگ مانده‌اند.",
    "film": [
     "قرمز و زرد، نارنجی شد!",
@@ -2344,7 +2344,7 @@
    "friend": "owl",
    "bg": "night_forest",
    "color": "#5B2BC4",
-   "ambient": "audio/ambient/night.mp3",
+   "ambient": "audio/ambient/night.ogg",
    "intro": "مادربزرگ جغد راه خانه‌اش را در جنگلِ شب گم کرده. نترس، با هم پیدایش می‌کنیم!",
    "film": [
     "نقشه راه را نشان داد",
@@ -2501,7 +2501,7 @@
    "friend": "cat",
    "bg": "stage",
    "color": "#A855F7",
-   "ambient": "audio/ambient/stage.mp3",
+   "ambient": "audio/ambient/stage.ogg",
    "intro": "میمی می‌خواهد در جشن بخواند، اما سازهای گروه در طوفان شکسته‌اند.",
    "film": [
     "طبل: بوم بوم!",
@@ -2669,7 +2669,7 @@
    "friend": "turtle",
    "bg": "city",
    "color": "#F0524F",
-   "ambient": "audio/ambient/street.mp3",
+   "ambient": "audio/ambient/street.ogg",
    "intro": "پل شهر شکسته و اتوبوس لاکی خراب شده. هیچ‌کس نمی‌تواند به جشن برسد!",
    "film": [
     "پل دوباره ساخته شد",
@@ -2834,7 +2834,7 @@
    "friend": "bear",
    "bg": "festival",
    "color": "#FFC83D",
-   "ambient": "audio/ambient/festival.mp3",
+   "ambient": "audio/ambient/festival.ogg",
    "intro": "همه‌چیز آماده است! با چیزهایی که ساختی جشن بزرگ جنگل را برپا کنیم.",
    "film": [
     "میز جشن پر از غذاهای تو",
@@ -3538,7 +3538,7 @@
        "say": "فوت کن تا بچرخد!",
        "target": "windmill",
        "turns": 2,
-       "sound": "audio/ambient/wind.mp3",
+       "sound": "audio/ambient/wind.ogg",
        "result": "windmill"
       }
      ],

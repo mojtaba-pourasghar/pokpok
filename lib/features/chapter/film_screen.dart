@@ -12,6 +12,7 @@ import '../../game/engines/engine.dart';
 import '../../game/game_data.dart';
 import '../../game/game_state.dart';
 import '../../ui/clay.dart';
+import '../../ui/fx.dart';
 import '../mascot/popo_mascot.dart';
 import '../play/discover.dart';
 
@@ -83,51 +84,53 @@ class _FilmScreenState extends ConsumerState<FilmScreen> {
     final n = chapter.sections.length;
     final last = scene >= total - 1;
     return Scaffold(
-      body: SkyScene(
-        image: chapter.background,
-        night: chapter.night,
-        dim: .2,
-        child: SafeArea(
-          child: Column(
-            children: [
-              GameTopBar(
-                title: 'فیلم: ${chapter.title}',
-                light: true,
-                onBack: () => context.go('/chapter/${chapter.id}'),
-                trailing: const SizedBox.shrink(),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: StepDots(done: scene + 1, total: total),
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: _advance,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 500),
-                      child: KeyedSubtree(key: ValueKey(scene), child: _scene(n)),
+      body: FxLayer(
+        child: SkyScene(
+          image: chapter.background,
+          night: chapter.night,
+          dim: .2,
+          child: SafeArea(
+            child: Column(
+              children: [
+                GameTopBar(
+                  title: 'فیلم: ${chapter.title}',
+                  light: true,
+                  onBack: () => context.go('/chapter/${chapter.id}'),
+                  trailing: const SizedBox.shrink(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: StepDots(done: scene + 1, total: total),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: _advance,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 500),
+                        child: KeyedSubtree(key: ValueKey(scene), child: _scene(n)),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                child: last
-                    ? ClayButton(
-                        label: chapter.next.isEmpty ? 'تمام! برگردیم خانه' : 'برویم سراغ فصل بعد',
-                        icon: Icons.arrow_back_rounded,
-                        color: G.green,
-                        big: true,
-                        onTap: () {
-                          final i = chapter.index + 1;
-                          context.go(i < data.chapters.length ? '/chapter/${data.chapters[i].id}' : '/home');
-                        },
-                      )
-                    : ClayButton(label: 'بعدی', icon: Icons.skip_previous_rounded, color: G.purple, onTap: _advance),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  child: last
+                      ? ClayButton(
+                          label: chapter.next.isEmpty ? 'تمام! برگردیم خانه' : 'برویم سراغ فصل بعد',
+                          icon: Icons.arrow_back_rounded,
+                          color: G.green,
+                          big: true,
+                          onTap: () {
+                            final i = chapter.index + 1;
+                            context.go(i < data.chapters.length ? '/chapter/${data.chapters[i].id}' : '/home');
+                          },
+                        )
+                      : ClayButton(label: 'بعدی', icon: Icons.skip_previous_rounded, color: G.purple, onTap: _advance),
+                ),
+              ],
+            ),
           ),
         ),
       ),

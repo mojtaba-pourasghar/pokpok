@@ -103,7 +103,7 @@ void main() {
           friend: 'bear',
           bg: 'kitchen',
           color: '#FF8A1F',
-          ambient: 'audio/ambient/garden.mp3',
+          ambient: 'audio/ambient/garden.ogg',
           intro: 'آزمون',
           film: ['آب‌میوه'],
           next: '',

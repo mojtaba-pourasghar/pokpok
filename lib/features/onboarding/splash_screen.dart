@@ -24,7 +24,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref.read(audioProvider).startMusic('audio/music/menu_loop.mp3');
+      ref.read(audioProvider).startMusic('audio/music/menu_loop.ogg');
       ref.say('app.splash.welcome');
     });
   }

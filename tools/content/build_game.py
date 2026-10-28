@@ -378,7 +378,7 @@ item("mask", "ماسک", "craft", S + "giggle.mp3", "ماسک را برای با
 item("map", "نقشه‌ی جنگل", "map", "audio/ui/page.mp3", "نقشه راه را نشان می‌دهد تا گم نشویم.",
      ("نقشه به چه درد می‌خورد؟", [("q_lost", "پیدا کردن راه"), ("q_hungry", "غذا"), ("q_music", "آواز")], 0),
      tags=["find"])
-item("tent", "چادر", "shelter", "audio/ambient/rain.mp3", "چادر زیر باران ما را خشک و گرم نگه می‌دارد.",
+item("tent", "چادر", "shelter", "audio/ambient/rain.ogg", "چادر زیر باران ما را خشک و گرم نگه می‌دارد.",
      ("چادر کی به کار می‌آید؟", [("q_rain", "باران"), ("q_paint", "نقاشی"), ("q_cross", "خیابان")], 0),
      tags=["shelter"])
 item("firefly_jar", "شیشه‌ی کرم شب‌تاب", "light", "audio/ui/sparkle.mp3", "کرم‌های شب‌تاب خودشان نور دارند!",
@@ -428,7 +428,7 @@ item("bubbles", "حباب‌ساز", "bubbles", S + "bubbles.mp3", "با فوت�
      ("حباب چطور درست می‌شود؟", [("bubbles", "با فوت و صابون"), ("hammer", "با چکش"), ("bread", "با نان")], 0), tags=["play"])
 item("necklace", "گردنبند مهره‌ای", "craft", "audio/ui/chime.mp3", "مهره‌ها را به ترتیب رنگ به نخ می‌کشیم.",
      ("گردنبند را کجا می‌اندازیم؟", [("q_wear", "گردن"), ("q_flowers", "گل"), ("q_carry", "جعبه")], 0), tags=["pretty"])
-item("kite", "بادبادک", "kite", "audio/ambient/wind.mp3", "باد بادبادک را بالا می‌برد.",
+item("kite", "بادبادک", "kite", "audio/ambient/wind.ogg", "باد بادبادک را بالا می‌برد.",
      ("بادبادک با چه بالا می‌رود؟", [("q_sky", "باد"), ("q_water", "آب"), ("q_eat", "غذا")], 0), tags=["play", "sky"])
 item("robot", "ربات", "robot", S + "robot.mp3", "ربات با باتری روشن می‌شود و کارهایی را که بگوییم انجام می‌دهد.",
      ("ربات با چه روشن می‌شود؟", [("battery", "باتری"), ("water_jug", "آب"), ("bread", "نان")], 0), tags=["play", "machine"])
@@ -453,7 +453,7 @@ item("cookie", "کلوچه", "food", S + "crunch.mp3", "کلوچه‌ی تازه
      ("کلوچه چه مزه‌ای دارد؟", [("cake", "شیرین"), ("lettuce", "تلخ"), ("soup", "شور")], 0), taste="شیرین و ترد", tags=["food", "sweet"])
 item("rag_doll", "عروسک پارچه‌ای", "doll", S + "giggle.mp3", "عروسک نرم را بغل می‌کنیم.",
      ("با عروسک چه کار می‌کنیم؟", [("q_sleep", "بغل و بازی"), ("q_nail", "میخ"), ("q_travel", "رانندگی")], 0), tags=["play"])
-item("windmill", "آسیاب بادی", "windmill", "audio/ambient/wind.mp3", "باد پره‌ها را می‌چرخاند.",
+item("windmill", "آسیاب بادی", "windmill", "audio/ambient/wind.ogg", "باد پره‌ها را می‌چرخاند.",
      ("چه چیزی آسیاب بادی را می‌چرخاند؟", [("q_sky", "باد"), ("q_water", "آب"), ("q_hungry", "غذا")], 0), tags=["machine"])
 item("bicycle", "دوچرخه", "vehicle", S + "bike_bell.mp3", "دوچرخه با رکاب زدن حرکت می‌کند: زینگ زینگ!",
      ("دوچرخه چطور حرکت می‌کند؟", [("q_travel", "با رکاب زدن"), ("q_rain", "با باران"), ("q_music", "با آواز")], 0), tags=["vehicle"])
@@ -472,7 +472,7 @@ def section(id, title, makes, mission, steps, target=120, secret=None):
 CHAPTERS = [
     {
         "id": "c1", "title": "آشپزخانه‌ی خاله خرسی", "friend": "bear", "bg": "kitchen", "color": "#FF8A1F",
-        "ambient": "audio/ambient/kitchen.mp3",
+        "ambient": "audio/ambient/kitchen.ogg",
         "intro": "طوفان آشپزخانه‌ی خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده. بیا با هم آشپزی کنیم!",
         "film": ["آب‌پرتقال شیرین و ترش", "نان ترد و گرم", "سوپ داغ و خوشمزه", "و کیک تولد با شمع‌های روشن!"],
         "next": "بانی در باغ تشنه است... بیا برویم پیشش!",
@@ -506,7 +506,7 @@ CHAPTERS = [
     },
     {
         "id": "c2", "title": "باغ و مزرعه‌ی بانی", "friend": "bunny", "bg": "farm", "color": "#2FBF71",
-        "ambient": "audio/ambient/farm.mp3",
+        "ambient": "audio/ambient/farm.ogg",
         "intro": "بانی تشنه است و باغش خشک شده. کمکش کنیم باغ دوباره سبز شود!",
         "film": ["آب‌پاش، گل‌ها را سیراب کرد", "گلدان گل، زنبورها را آورد", "مرغ‌ها تخم گذاشتند", "و ساندویچ پنیر برای پیک‌نیک!"],
         "next": "کارگاه آقا سنجاب خراب شده... بیا کمکش کنیم!",
@@ -538,7 +538,7 @@ CHAPTERS = [
     },
     {
         "id": "c3", "title": "کارگاه آقا سنجاب", "friend": "squirrel", "bg": "workshop", "color": "#3B82F6",
-        "ambient": "audio/ambient/workshop.mp3",
+        "ambient": "audio/ambient/workshop.ogg",
         "intro": "طوفان کارگاه آقا سنجاب را خراب کرده و ابزارهایش پخش شده‌اند. بیا ابزار بسازیم!",
         "film": ["چکش، میخ را فرو کرد: تق تق!", "چراغ‌قوه تاریکی را روشن کرد", "گاری جعبه‌ها را برد", "و ماشین با کلید روشن شد: برووووم!"],
         "next": "کوکو همه‌ی رنگ‌هایش را گم کرده...",
@@ -569,7 +569,7 @@ CHAPTERS = [
     },
     {
         "id": "c4", "title": "آتلیه‌ی رنگی کوکو", "friend": "parrot", "bg": "studio", "color": "#E9478F",
-        "ambient": "audio/ambient/studio.mp3",
+        "ambient": "audio/ambient/studio.ogg",
         "intro": "کوکو همه‌ی رنگ‌هایش را در طوفان گم کرده و تزئینات جشن بی‌رنگ مانده‌اند.",
         "film": ["قرمز و زرد، نارنجی شد!", "کاسه‌ی گلی آب را نگه داشت", "فانوس با لامپ چراغ‌قوه روشن شد", "و ماسک‌ها و پرچم‌ها رنگی شدند!"],
         "next": "مادربزرگ جغد راه خانه‌اش را در شب گم کرده...",
@@ -599,7 +599,7 @@ CHAPTERS = [
     },
     {
         "id": "c5", "title": "شب جنگل و مادربزرگ جغد", "friend": "owl", "bg": "night_forest", "color": "#5B2BC4",
-        "ambient": "audio/ambient/night.mp3",
+        "ambient": "audio/ambient/night.ogg",
         "intro": "مادربزرگ جغد راه خانه‌اش را در جنگلِ شب گم کرده. نترس، با هم پیدایش می‌کنیم!",
         "film": ["نقشه راه را نشان داد", "چادر ما را از باران حفظ کرد", "کرم‌های شب‌تاب مسیر را روشن کردند", "و با تلسکوپ ماه را دیدیم!"],
         "next": "سازهای گروه میمی شکسته‌اند...",
@@ -627,7 +627,7 @@ CHAPTERS = [
     },
     {
         "id": "c6", "title": "گروه موسیقی میمی", "friend": "cat", "bg": "stage", "color": "#A855F7",
-        "ambient": "audio/ambient/stage.mp3",
+        "ambient": "audio/ambient/stage.ogg",
         "intro": "میمی می‌خواهد در جشن بخواند، اما سازهای گروه در طوفان شکسته‌اند.",
         "film": ["طبل: بوم بوم!", "زایلوفون: زیر و بم", "نی: فووو", "و آهنگ جشن با همه‌ی سازها!"],
         "next": "پل شهر شکسته و اتوبوس لاکی خراب است...",
@@ -654,7 +654,7 @@ CHAPTERS = [
     },
     {
         "id": "c7", "title": "شهر و راننده لاکی", "friend": "turtle", "bg": "city", "color": "#F0524F",
-        "ambient": "audio/ambient/street.mp3",
+        "ambient": "audio/ambient/street.ogg",
         "intro": "پل شهر شکسته و اتوبوس لاکی خراب شده. هیچ‌کس نمی‌تواند به جشن برسد!",
         "film": ["پل دوباره ساخته شد", "چراغ راهنمایی: قرمز بایست، سبز برو", "اتوبوس روشن شد: بوق بوق!", "و همه کارت دعوت گرفتند!"],
         "next": "همه آماده‌اند... وقت جشن بزرگ است!",
@@ -685,7 +685,7 @@ CHAPTERS = [
     },
     {
         "id": "c8", "title": "جشن بزرگ جنگل", "friend": "bear", "bg": "festival", "color": "#FFC83D",
-        "ambient": "audio/ambient/festival.mp3",
+        "ambient": "audio/ambient/festival.ogg",
         "intro": "همه‌چیز آماده است! با چیزهایی که ساختی جشن بزرگ جنگل را برپا کنیم.",
         "film": ["میز جشن پر از غذاهای تو", "میدان با فانوس و پرچم‌های تو", "کنسرت با سازهای تو", "و تو قهرمان جنگل شدی!"],
         "next": "",
@@ -802,7 +802,7 @@ TOOLS = [
      "recipes": [section("r_windmill", "آسیاب بادی", "windmill", "یک آسیاب بادی بسازیم.", [
          tap("drill", 3, "با دریل سوراخ کن.", S + "drill.mp3"),
          assemble("windmill", [("flag", .5, .3)], "پره‌ها را وصل کن.", "windmill"),
-         rotate("windmill", 2, "فوت کن تا بچرخد!", sound="audio/ambient/wind.mp3"),
+         rotate("windmill", 2, "فوت کن تا بچرخد!", sound="audio/ambient/wind.ogg"),
      ], 80)]},
     {"id": "wrench", "title": "آچار", "price": 90, "sound": S + "gear.mp3",
      "safety": "آچار را محکم و آرام می‌چرخانیم.",

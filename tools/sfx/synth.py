@@ -10,7 +10,8 @@ Narrator voice lines are not made here either: they are produced in tools/voice-
     python3 tools/sfx/synth.py           # write every sound
     python3 tools/sfx/synth.py pop boing # only these
 
-Needs numpy and ffmpeg (mono, 44.1 kHz, MP3, loudness-normalised).
+Needs numpy and ffmpeg (mono, 44.1 kHz, MP3, loudness-normalised). Afterwards run tools/sfx/balance.py:
+it turns ambient/music loops into gapless OGG and evens out the loudness of all effects.
 """
 
 from __future__ import annotations

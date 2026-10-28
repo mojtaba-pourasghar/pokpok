@@ -23,7 +23,11 @@ class EngineHost {
     required this.age,
     required this.data,
     this.backpack = const {},
+    this.onRight,
   });
+
+  /// هر کار درست (برای واکنش پوپو).
+  final VoidCallback? onRight;
 
   final VoidCallback onDone;
   final VoidCallback onMistake;
@@ -70,6 +74,7 @@ class EngineHost {
 
   void right() {
     _mistakesInRow = 0;
+    onRight?.call();
     touch();
   }
 

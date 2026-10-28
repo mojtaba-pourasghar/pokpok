@@ -8,6 +8,7 @@ import '../../core/narrator.dart';
 import '../../game/game_data.dart';
 import '../../game/game_state.dart';
 import '../../ui/clay.dart';
+import '../../ui/fx.dart';
 import '../mascot/popo_mascot.dart';
 import '../playroom/playroom_tab.dart';
 import '../workshop/workshop_tab.dart';
@@ -32,7 +33,7 @@ class _HomeShellState extends ConsumerState<HomeShell> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (!mounted) return;
-      ref.read(audioProvider).startMusic('audio/music/menu_loop.mp3');
+      ref.read(audioProvider).startMusic('audio/music/menu_loop.ogg');
       final bonus = await ref.read(gameProvider.notifier).dailyBonus();
       if (!mounted) return;
       if (bonus > 0) {
@@ -77,46 +78,48 @@ class _HomeShellState extends ConsumerState<HomeShell> {
     };
     final streak = ref.watch(gameProvider).streak;
     return Scaffold(
-      body: SkyScene(
-        child: SafeArea(
-          bottom: false,
-          child: Column(
-            children: [
-              if (bonus > 0)
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-                  child: GestureDetector(
-                    onTap: () => setState(() => bonus = 0),
-                    child: TweenAnimationBuilder<double>(
-                      tween: Tween(begin: 0, end: 1),
-                      duration: const Duration(milliseconds: 600),
-                      curve: Curves.elasticOut,
-                      builder: (context, v, child) => Transform.scale(scale: v, child: child),
-                      child: ClayCard(
-                        border: G.yellow,
-                        padding: const EdgeInsets.all(10),
-                        child: Row(
-                          children: [
-                            const PopoMascot(pose: PopoPose.happy, size: 64),
-                            const SizedBox(width: 8),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('جایزه‌ی امروز!', style: PText.heading.copyWith(color: G.purple)),
-                                  Text('روز ${fa(streak)} پشت سر هم؛ روز هفتم ۵۰ سکه!', style: PText.caption),
-                                ],
+      body: FxLayer(
+        child: SkyScene(
+          child: SafeArea(
+            bottom: false,
+            child: Column(
+              children: [
+                if (bonus > 0)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                    child: GestureDetector(
+                      onTap: () => setState(() => bonus = 0),
+                      child: TweenAnimationBuilder<double>(
+                        tween: Tween(begin: 0, end: 1),
+                        duration: const Duration(milliseconds: 600),
+                        curve: Curves.elasticOut,
+                        builder: (context, v, child) => Transform.scale(scale: v, child: child),
+                        child: ClayCard(
+                          border: G.yellow,
+                          padding: const EdgeInsets.all(10),
+                          child: Row(
+                            children: [
+                              const PopoMascot(pose: PopoPose.happy, size: 64),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('جایزه‌ی امروز!', style: PText.heading.copyWith(color: G.purple)),
+                                    Text('روز ${fa(streak)} پشت سر هم؛ روز هفتم ۵۰ سکه!', style: PText.caption),
+                                  ],
+                                ),
                               ),
-                            ),
-                            SectionPill('+${fa(bonus)} سکه', color: G.orange),
-                          ],
+                              SectionPill('+${fa(bonus)} سکه', color: G.orange),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              Expanded(child: body),
-            ],
+                Expanded(child: body),
+              ],
+            ),
           ),
         ),
       ),

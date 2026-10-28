@@ -23,13 +23,16 @@ abstract class PopoAudio {
 
   void ui(UiSound sound);
 
+  /// صداهایی که به‌زودی لازم می‌شوند از پیش بارگذاری می‌شوند تا اولین پخش هم بی‌تأخیر باشد.
+  void preload(Iterable<String> logicalPaths);
+
   void startMusic(String logicalPath);
   void stopMusic();
 
   void startAmbient(String logicalPath);
   void stopAmbient();
 
-  /// گوینده و جلوه‌ها را فوراً قطع می‌کند (موسیقی و صدای محیط می‌مانند).
+  /// گوینده را نرم قطع می‌کند. جلوه‌ها تا آخر پخش می‌شوند؛ موسیقی و صدای محیط می‌مانند.
   void stopAll();
 
   void dispose();
@@ -81,6 +84,8 @@ class SilentAudio implements PopoAudio {
 
   @override
   void ui(UiSound sound) => log.add('ui:${sound.name}');
+  @override
+  void preload(Iterable<String> logicalPaths) {}
   @override
   void startMusic(String logicalPath) => log.add('music:$logicalPath');
   @override
