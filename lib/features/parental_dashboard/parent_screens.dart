@@ -419,7 +419,7 @@ class PurchasesScreen extends ConsumerWidget {
   }
 }
 
-/// «بازی‌های دیگر ما» در کافه‌بازار (activities.json ← otherGames). اینجا بخش والدین است؛ باز کردن
+/// «بازی‌های دیگر ما» در کافه‌بازار (other_games.json). اینجا بخش والدین است؛ باز کردن
 /// بازار پیوند بیرونی است و جای دیگری برای کودک نشان داده نمی‌شود.
 class OtherGamesSection extends ConsumerWidget {
   const OtherGamesSection({super.key});

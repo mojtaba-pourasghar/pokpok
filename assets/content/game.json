@@ -35,7 +35,7 @@
    "id": "juice",
    "title": "آب‌پرتقال",
    "kind": "drink",
-   "sound": "audio/sfx/pour.mp3",
+   "sound": "audio/sfx/sip.mp3",
    "use": "آب‌میوه تشنگی را برطرف می‌کند و ویتامین دارد.",
    "taste": "شیرین و کمی ترش",
    "target": null,
@@ -68,7 +68,7 @@
    "id": "bread",
    "title": "نان",
    "kind": "food",
-   "sound": "audio/sfx/snap.mp3",
+   "sound": "audio/sfx/crunch.mp3",
    "use": "نان غذای هر روز ماست؛ با آن ساندویچ هم درست می‌کنیم.",
    "taste": "ترد و گرم",
    "target": null,
@@ -227,7 +227,7 @@
    "id": "eggs",
    "title": "تخم‌مرغ",
    "kind": "food",
-   "sound": "audio/animals/rooster.mp3",
+   "sound": "audio/sfx/cluck.mp3",
    "use": "مرغ تخم می‌گذارد؛ با تخم‌مرغ کیک و نیمرو درست می‌کنیم.",
    "taste": "پخته‌اش خوشمزه است",
    "target": null,
@@ -258,7 +258,7 @@
    "id": "sandwich",
    "title": "ساندویچ پنیر",
    "kind": "food",
-   "sound": "audio/sfx/snap.mp3",
+   "sound": "audio/sfx/crunch.mp3",
    "use": "ساندویچ یک غذای کامل و راحت برای پیک‌نیک است.",
    "taste": "نرم و شور",
    "target": null,
@@ -1138,7 +1138,7 @@
    "id": "robot",
    "title": "ربات",
    "kind": "robot",
-   "sound": "audio/sfx/gear.mp3",
+   "sound": "audio/sfx/robot.mp3",
    "use": "ربات با باتری روشن می‌شود و کارهایی را که بگوییم انجام می‌دهد.",
    "taste": null,
    "target": null,
@@ -1201,7 +1201,7 @@
    "id": "rocket",
    "title": "موشک",
    "kind": "rocket",
-   "sound": "audio/ui/whoosh.mp3",
+   "sound": "audio/sfx/rocket.mp3",
    "use": "موشک با موتورهای قوی به فضا می‌رود.",
    "taste": null,
    "target": null,
@@ -1266,7 +1266,7 @@
    "id": "train",
    "title": "قطار",
    "kind": "vehicle",
-   "sound": "audio/sfx/engine.mp3",
+   "sound": "audio/sfx/train.mp3",
    "use": "قطار روی ریل حرکت می‌کند و سوت می‌کشد: چوووو!",
    "taste": null,
    "target": null,
@@ -1422,7 +1422,7 @@
    "id": "cookie",
    "title": "کلوچه",
    "kind": "food",
-   "sound": "audio/sfx/snap.mp3",
+   "sound": "audio/sfx/crunch.mp3",
    "use": "کلوچه‌ی تازه ترد و شیرین است.",
    "taste": "شیرین و ترد",
    "target": null,
@@ -1583,7 +1583,7 @@
    "friend": "bear",
    "bg": "kitchen",
    "color": "#FF8A1F",
-   "ambient": "audio/ambient/garden.mp3",
+   "ambient": "audio/ambient/kitchen.mp3",
    "intro": "طوفان آشپزخانه‌ی خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده. بیا با هم آشپزی کنیم!",
    "film": [
     "آب‌پرتقال شیرین و ترش",
@@ -1925,7 +1925,7 @@
        "target": "hen",
        "count": 3,
        "distract": [],
-       "sound": "audio/animals/rooster.mp3"
+       "sound": "audio/sfx/cluck.mp3"
       }
      ],
      "targetSec": 100,
@@ -1985,7 +1985,7 @@
    "friend": "squirrel",
    "bg": "workshop",
    "color": "#3B82F6",
-   "ambient": "audio/ambient/wind.mp3",
+   "ambient": "audio/ambient/workshop.mp3",
    "intro": "طوفان کارگاه آقا سنجاب را خراب کرده و ابزارهایش پخش شده‌اند. بیا ابزار بسازیم!",
    "film": [
     "چکش، میخ را فرو کرد: تق تق!",
@@ -2179,7 +2179,7 @@
    "friend": "parrot",
    "bg": "studio",
    "color": "#E9478F",
-   "ambient": "audio/ambient/garden.mp3",
+   "ambient": "audio/ambient/studio.mp3",
    "intro": "کوکو همه‌ی رنگ‌هایش را در طوفان گم کرده و تزئینات جشن بی‌رنگ مانده‌اند.",
    "film": [
     "قرمز و زرد، نارنجی شد!",
@@ -2344,8 +2344,7 @@
    "friend": "owl",
    "bg": "night_forest",
    "color": "#5B2BC4",
-   "ambient": "audio/ambient/forest.mp3",
-   "night": true,
+   "ambient": "audio/ambient/night.mp3",
    "intro": "مادربزرگ جغد راه خانه‌اش را در جنگلِ شب گم کرده. نترس، با هم پیدایش می‌کنیم!",
    "film": [
     "نقشه راه را نشان داد",
@@ -2502,7 +2501,7 @@
    "friend": "cat",
    "bg": "stage",
    "color": "#A855F7",
-   "ambient": "audio/ambient/park.mp3",
+   "ambient": "audio/ambient/stage.mp3",
    "intro": "میمی می‌خواهد در جشن بخواند، اما سازهای گروه در طوفان شکسته‌اند.",
    "film": [
     "طبل: بوم بوم!",
@@ -2835,7 +2834,7 @@
    "friend": "bear",
    "bg": "festival",
    "color": "#FFC83D",
-   "ambient": "audio/ambient/park.mp3",
+   "ambient": "audio/ambient/festival.mp3",
    "intro": "همه‌چیز آماده است! با چیزهایی که ساختی جشن بزرگ جنگل را برپا کنیم.",
    "film": [
     "میز جشن پر از غذاهای تو",
@@ -3327,7 +3326,7 @@
    "id": "saw",
    "title": "اره",
    "price": 40,
-   "sound": "audio/sfx/rustle.mp3",
+   "sound": "audio/sfx/saw.mp3",
    "safety": "با اره همیشه با یک بزرگ‌تر کار می‌کنیم.",
    "recipes": [
     {
@@ -3469,7 +3468,7 @@
    "id": "sewing_machine",
    "title": "چرخ خیاطی",
    "price": 70,
-   "sound": "audio/sfx/gear.mp3",
+   "sound": "audio/sfx/sewing.mp3",
    "safety": "انگشت‌ها را از سوزن دور نگه می‌داریم.",
    "recipes": [
     {
@@ -3483,7 +3482,7 @@
        "say": "پدال را بزن تا چرخ بدوزد: تق تق تق!",
        "target": "sewing_machine",
        "count": 8,
-       "sound": "audio/sfx/gear.mp3",
+       "sound": "audio/sfx/sewing.mp3",
        "label": "",
        "result": "sewing_machine"
       },
@@ -3503,7 +3502,7 @@
    "id": "drill",
    "title": "دریل",
    "price": 80,
-   "sound": "audio/sfx/crane.mp3",
+   "sound": "audio/sfx/drill.mp3",
    "safety": "دریل را فقط بزرگ‌ترها روشن می‌کنند و ما کمک می‌کنیم.",
    "recipes": [
     {
@@ -3517,7 +3516,7 @@
        "say": "با دریل سوراخ کن.",
        "target": "drill",
        "count": 3,
-       "sound": "audio/sfx/crane.mp3",
+       "sound": "audio/sfx/drill.mp3",
        "label": "",
        "result": "drill"
       },

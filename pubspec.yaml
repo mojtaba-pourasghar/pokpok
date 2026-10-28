@@ -38,15 +38,7 @@ flutter:
 
   assets:
     - assets/content/
-    - assets/content/scenes/
     - assets/art/animals/
-    - assets/art/nature/
-    - assets/art/home/
-    - assets/art/city/
-    - assets/art/music/
-    - assets/art/art/
-    - assets/art/construction/
-    - assets/art/cards/
     - assets/art/backgrounds/
     - assets/art/character/
     - assets/art/characters/

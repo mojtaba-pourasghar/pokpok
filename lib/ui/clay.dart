@@ -356,8 +356,10 @@ class GameArt extends ConsumerWidget {
     final provider = path == null ? null : assets.image(path);
     final Widget img;
     if (provider != null) {
+      // درست به اندازه‌ی نمایش رمزگشایی می‌شود، نه ۵۱۲ یا ۷۶۸ پیکسل کامل: حافظه‌ی گوشی‌های ضعیف.
+      final px = (size * MediaQuery.devicePixelRatioOf(context)).round();
       img = Image(
-        image: provider,
+        image: ResizeImage.resizeIfNeeded(px, px, provider),
         width: size,
         height: size,
         fit: BoxFit.contain,
@@ -407,7 +409,18 @@ class SkyScene extends ConsumerWidget {
       fit: StackFit.expand,
       children: [
         if (img != null)
-          Image(image: img, fit: BoxFit.cover, filterQuality: FilterQuality.medium)
+          LayoutBuilder(
+            builder: (context, box) => Image(
+              // پس‌زمینه‌ی ۱۰۲۴ پیکسلی فقط به پهنای صفحه رمزگشایی می‌شود.
+              image: ResizeImage.resizeIfNeeded(
+                (math.max(box.maxWidth, box.maxHeight) * MediaQuery.devicePixelRatioOf(context)).round().clamp(1, 1024),
+                null,
+                img,
+              ),
+              fit: BoxFit.cover,
+              filterQuality: FilterQuality.medium,
+            ),
+          )
         else
           RepaintBoundary(
             child: CustomPaint(

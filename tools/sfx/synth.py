@@ -55,12 +55,17 @@ def sine_sweep(f0, f1, sec, curve="exp"):
 
 def onepole_lp(sig, cutoff):
     a = np.exp(-2 * np.pi * cutoff / SR)
-    out = np.empty_like(sig)
-    y = 0.0
-    for i, v in enumerate(sig):
-        y = (1 - a) * v + a * y
-        out[i] = y
-    return out
+    try:  # fast path for the long ambient loops
+        from scipy.signal import lfilter
+
+        return lfilter([1 - a], [1, -a], sig)
+    except ImportError:
+        out = np.empty_like(sig)
+        y = 0.0
+        for i, v in enumerate(sig):
+            y = (1 - a) * v + a * y
+            out[i] = y
+        return out
 
 
 def hp(sig, cutoff):
@@ -394,35 +399,209 @@ MELODY = [(0, 79, 1), (1, 76, 1), (2, 77, 1), (3, 74, 1), (4, 76, 2), (6, 72, 2)
           (24, 72, 1), (25, 74, 1), (26, 76, 1), (27, 74, 1), (28, 72, 4)]
 
 
+# ── game sounds: eating, animals, workshop tools, toys ─────────────────────
+def crunch():
+    """A bite of bread or a cookie: three short crackly bursts."""
+    out = np.zeros(int(.55 * SR))
+    for k, start in enumerate((0, .16, .3)):
+        b = bandpass(noise(.09), 1500, 6000) * env(int(.09 * SR), .002, .03) * (1 - k * .2)
+        out[int(start * SR): int(start * SR) + len(b)] += b
+    return out
+
+
+def sip():
+    """Drinking through a straw: a gurgly slurp rising in pitch."""
+    x = t(.6)
+    gurgle = np.sin(2 * np.pi * (300 + 500 * x) * x) * (0.5 + 0.5 * np.sin(2 * np.pi * 22 * x))
+    air = bandpass(noise(.6), 800, 3000) * .35
+    return (gurgle * .6 + air) * env(len(x), .03, .4, .3, .1)
+
+
+def cluck():
+    """A hen: three quick clucks and a longer «bawk»."""
+    def one(f, sec):
+        x = t(sec)
+        return saw(f * (1 + .1 * np.sin(2 * np.pi * 9 * x)), sec) * env(len(x), .005, sec * .5)
+    return mix(at(bandpass(one(420, .09), 300, 2500), 0, 1.0), at(bandpass(one(450, .09), 300, 2500), .15, 1.0),
+               at(bandpass(one(430, .09), 300, 2500), .3, 1.0), at(bandpass(one(520, .35), 300, 3000), .5, 1.0))
+
+
+def drill():
+    """A toy drill: motor whine up, steady, down."""
+    x = t(1.4)
+    f = 180 + 420 * np.minimum(x / .25, 1) * np.minimum((1.4 - x) / .25, 1)
+    motor = saw(f, 1.4) * .5 + square(f * 2, 1.4) * .15
+    return onepole_lp(motor, 3000) * env(len(x), .02, 2, .9, .1)
+
+
+def saw_cut():
+    """A hand saw: four back-and-forth strokes."""
+    out = np.zeros(int(1.6 * SR))
+    for k in range(4):
+        b = bandpass(noise(.32), 1200 if k % 2 else 900, 5000) * np.sin(np.linspace(0, np.pi, int(.32 * SR))) ** 2
+        out[int(k * .38 * SR): int(k * .38 * SR) + len(b)] += b
+    return out
+
+
+def sewing():
+    """A sewing machine: fast even «tak-tak-tak»."""
+    out = np.zeros(int(1.5 * SR))
+    for k in range(18):
+        b = bandpass(noise(.03), 1500, 7000) * env(int(.03 * SR), .001, .01) + np.sin(2 * np.pi * 180 * t(.03)) * env(int(.03 * SR), .001, .02) * .5
+        out[int(k * .08 * SR): int(k * .08 * SR) + len(b)] += b
+    return out
+
+
+def rocket():
+    """Countdown roar: rumble swelling into a whoosh."""
+    x = t(2.4)
+    rumble = onepole_lp(noise(2.4), 300) * 3
+    roar = bandpass(noise(2.4), 400, 4000) * np.clip((x - .4) / 1.2, 0, 1)
+    return (rumble + roar) * env(len(x), .3, 3, .9, .6)
+
+
+def train():
+    """A steam whistle (two notes together) and a few chuffs."""
+    x = t(1.0)
+    whistle = (np.sin(2 * np.pi * 520 * x) + np.sin(2 * np.pi * 650 * x) * .8 + bandpass(noise(1.0), 400, 2000) * .2) * env(len(x), .05, 2, .9, .2)
+    chuffs = np.zeros(int(1.2 * SR))
+    for k in range(4):
+        b = onepole_lp(noise(.18), 900) * 2 * env(int(.18 * SR), .005, .08)
+        chuffs[int(k * .28 * SR): int(k * .28 * SR) + len(b)] += b
+    return mix(whistle * .6, at(chuffs, 1.0, 2.2))
+
+
+def robot():
+    """Friendly beeps: «bip-bup-biiip»."""
+    out = np.zeros(int(.9 * SR))
+    for start, f, sec in ((0, 880, .09), (.13, 660, .09), (.28, 990, .35)):
+        b = square(f, sec, .3) * .4 * env(int(sec * SR), .003, sec, .7, .02)
+        out[int(start * SR): int(start * SR) + len(b)] += b
+    return onepole_lp(out, 5000)
+
+
+def owl():
+    """A soft «hoo-hoo»."""
+    def hoo(sec):
+        x = t(sec)
+        return np.sin(2 * np.pi * (390 - 30 * x / sec) * x) * np.sin(np.pi * x / sec) ** 2
+    return mix(hoo(.35), at(hoo(.6), .45, 1.1))
+
+
+# ── ambient loops (seamless) ───────────────────────────────────────────────
+def loop(sig, fade=1.0):
+    """Makes a loop that repeats without a click: the tail is cross-faded into the head."""
+    n = int(fade * SR)
+    head, body, tail = sig[:n], sig[n:-n], sig[-n:]
+    ramp = np.linspace(0, 1, n)
+    return np.concatenate([tail * (1 - ramp) + head * ramp, body])
+
+
+def scatter(total, events, every, jitter, gain=1.0):
+    """Places short sounds at irregular times across [total] seconds."""
+    out = np.zeros(int(total * SR))
+    tt = RNG.uniform(0, every)
+    while tt < total - 2:
+        e = events[RNG.integers(len(events))]() * gain * RNG.uniform(.5, 1)
+        i = int(tt * SR)
+        out[i: i + len(e)] += e[: len(out) - i]
+        tt += every + RNG.uniform(-jitter, jitter)
+    return out
+
+
+def bed(sec, lo, hi, gain):
+    return bandpass(noise(sec), lo, hi) * gain
+
+
+def amb_kitchen():
+    """A pot simmering, a few clinks of spoons and cups."""
+    sec = 22
+    bubbles_ = scatter(sec, [lambda: np.sin(2 * np.pi * RNG.uniform(300, 700) * t(.05)) * env(int(.05 * SR), .002, .02)], .25, .2, .25)
+    clink = scatter(sec, [lambda: bell(RNG.uniform(1800, 2600), .5, 1.2) * .25], 4.5, 2)
+    return loop(bed(sec, 200, 900, .15) + bubbles_ + clink)
+
+
+def amb_workshop():
+    """Warm room tone, distant tapping and the odd creak of wood."""
+    sec = 22
+    taps = scatter(sec, [lambda: hammer() * .2, lambda: thunk() * .25], 3.0, 1.5)
+    creak = scatter(sec, [lambda: squeak() * .08], 7, 3)
+    return loop(bed(sec, 100, 600, .12) + taps + creak)
+
+
+def amb_studio():
+    """Quiet room, brush strokes on paper, a clock-like soft tick."""
+    sec = 22
+    strokes = scatter(sec, [lambda: rustle() * .3], 2.2, 1)
+    return loop(bed(sec, 300, 1500, .06) + strokes)
+
+
+def amb_night():
+    """Crickets (rhythmic chirps), a soft breeze and now and then an owl."""
+    sec = 24
+    chirp = lambda: (np.sin(2 * np.pi * 4300 * t(.03)) * env(int(.03 * SR), .002, .01)) * .25
+    crickets = np.zeros(int(sec * SR))
+    for start in np.arange(0, sec - 1, .9):
+        for k in range(3):
+            c = chirp()
+            i = int((start + k * .05 + RNG.uniform(0, .02)) * SR)
+            crickets[i: i + len(c)] += c
+    owls = scatter(sec, [lambda: owl() * .35], 9, 3)
+    return loop(bed(sec, 150, 700, .1) + crickets + owls)
+
+
+def amb_stage():
+    """A small crowd murmuring before the show."""
+    sec = 22
+    x = t(sec)
+    murmur = bandpass(noise(sec), 250, 1800) * (0.6 + 0.4 * np.sin(2 * np.pi * .3 * x)) * .5
+    claps = scatter(sec, [lambda: snap() * .15], 1.5, 1)
+    return loop(murmur + claps)
+
+
+def amb_festival():
+    """Festival square: happy crowd, a far-away tune, a balloon pop now and then."""
+    sec = 24
+    tune = music_loop(112, lambda f, s: bell(f, s, .4))
+    tune = np.resize(tune, int(sec * SR)) * .12
+    crowd = bandpass(noise(sec), 250, 2000) * .35
+    pops = scatter(sec, [lambda: pop() * .3, lambda: giggle() * .2], 3.5, 2)
+    return loop(crowd + tune + pops)
+
+
 SOUNDS = {
     # ui
     "ui/tap": tap, "ui/pop": pop, "ui/success": success, "ui/sparkle": sparkle, "ui/whoosh": whoosh,
     "ui/toggle": toggle, "ui/soft_no": soft_no, "ui/chime": chime, "ui/page": page, "ui/camera": camera,
     # toys & home
-    "sfx/boing": boing, "sfx/squeak": squeak, "sfx/jump": jump, "sfx/light_switch": light_switch, "sfx/tv_on": tv_on,
-    "sfx/splash": splash, "sfx/bubbles": bubbles, "sfx/sizzle": sizzle, "sfx/stir": stir, "sfx/yawn": yawn,
+    "sfx/squeak": squeak, "sfx/light_switch": light_switch,
+    "sfx/splash": splash, "sfx/bubbles": bubbles, "sfx/sizzle": sizzle, "sfx/stir": stir,
     "sfx/giggle": giggle,
     # city
-    "sfx/car_horn": car_horn, "sfx/bus_horn": bus_horn, "sfx/truck_horn": truck_horn, "sfx/engine": engine,
-    "sfx/bike_bell": bike_bell, "sfx/cash": cash,
+    "sfx/car_horn": car_horn, "sfx/bus_horn": bus_horn, "sfx/engine": engine,
+    "sfx/bike_bell": bike_bell,
     # nature
     "sfx/buzz": buzz, "sfx/bloop": bloop, "sfx/rustle": rustle, "sfx/pour": pour, "sfx/grow": grow,
     # construction & art
-    "sfx/thunk": thunk, "sfx/gear": gear, "sfx/hammer": hammer, "sfx/crane": crane, "sfx/eraser": eraser, "sfx/snap": snap,
+    "sfx/thunk": thunk, "sfx/gear": gear, "sfx/hammer": hammer, "sfx/snap": snap,
+    # game: eating, animals, tools, toys
+    "sfx/crunch": crunch, "sfx/sip": sip, "sfx/cluck": cluck, "sfx/drill": drill, "sfx/saw": saw_cut,
+    "sfx/sewing": sewing, "sfx/rocket": rocket, "sfx/train": train, "sfx/robot": robot,
+    # ambient loops for chapters without a recording
+    "ambient/kitchen": amb_kitchen, "ambient/workshop": amb_workshop, "ambient/studio": amb_studio,
+    "ambient/night": amb_night, "ambient/stage": amb_stage, "ambient/festival": amb_festival,
     # drums
-    "instruments/drum_kick": kick, "instruments/drum_snare": snare, "instruments/drum_hihat": hihat,
-    "instruments/drum_tom": tom, "instruments/drum_cymbal": cymbal, "instruments/shaker": shaker,
+    "instruments/drum_tom": tom,
 }
 # piano and xylophone: C major scale, C4..E5 (10 notes)
 SCALE = [("c4", 60), ("d4", 62), ("e4", 64), ("f4", 65), ("g4", 67), ("a4", 69), ("b4", 71), ("c5", 72), ("d5", 74), ("e5", 76)]
+# only the xylophone notes the game plays (POPO's xylophone, Mimi's tune)
 for name, n in SCALE:
-    SOUNDS[f"instruments/piano_{name}"] = (lambda n=n: piano(midi(n)))
-    SOUNDS[f"instruments/xylo_{name}"] = (lambda n=n: xylophone(midi(n + 12)))
-    SOUNDS[f"instruments/bell_{name}"] = (lambda n=n: bell(midi(n + 12), 1.2, .7) * .8)
+    if name in ("c4", "e4", "g4", "c5"):
+        SOUNDS[f"instruments/xylo_{name}"] = (lambda n=n: xylophone(midi(n + 12)))
 SOUNDS["music/menu_loop"] = lambda: music_loop(84, xylophone, melody=MELODY)
-SOUNDS["music/play_loop"] = lambda: music_loop(108, lambda f, s: bell(f, s, .3), prog=((53, 57, 60), (55, 59, 62), (60, 64, 67), (57, 60, 64)))
 
-LOUDNESS = {"music": -24, "instruments": -16, "ui": -18, "sfx": -16}
+LOUDNESS = {"music": -24, "instruments": -16, "ui": -18, "sfx": -16, "ambient": -28}
 
 
 def write(name: str, sig: np.ndarray) -> Path:

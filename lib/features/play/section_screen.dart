@@ -62,7 +62,8 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       final audio = ref.read(audioProvider);
-      if (ch != null) audio.startAmbient(ch.ambient);
+      // کیت‌ها و دستورهای ساخت ابزار در کارگاه‌اند.
+      audio.startAmbient(ch?.ambient ?? 'audio/ambient/workshop.mp3');
       ref.say('${section.id}.mission');
     });
   }

@@ -134,7 +134,12 @@ class _PopoMascotState extends State<PopoMascot> with TickerProviderStateMixin {
                       child: Transform.scale(scaleY: 1 + b * .012, scaleX: 1 - b * .006, alignment: Alignment.bottomCenter, child: child),
                     );
                   },
-                  child: Image(image: img, fit: BoxFit.contain, gaplessPlayback: true, filterQuality: FilterQuality.medium),
+                  child: Image(
+                    image: ResizeImage.resizeIfNeeded((h * MediaQuery.devicePixelRatioOf(context)).round(), null, img),
+                    fit: BoxFit.contain,
+                    gaplessPlayback: true,
+                    filterQuality: FilterQuality.medium,
+                  ),
                 )
               : AnimatedBuilder(
                   animation: Listenable.merge([_breath, _wave, _blink]),

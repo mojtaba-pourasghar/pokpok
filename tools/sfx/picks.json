@@ -5,50 +5,9 @@
    "file": "File:Single Cow Moo.ogg",
    "seconds": 4
   },
-  "animals/dog": {
-   "file": "File:Barking of a dog 2.ogg",
-   "seconds": 4
-  },
-  "animals/cat": {
-   "file": "File:Felis silvestris catus meows.ogg",
-   "seconds": 4
-  },
   "animals/bird": {
    "file": "File:Arremon abeillei - Black-capped Sparrow XC250490.mp3",
    "seconds": 5
-  },
-  "animals/sheep": {
-   "file": "File:Sheep bleating.ogg",
-   "seconds": 4
-  },
-  "animals/horse": {
-   "file": "File:Wiehern.ogg",
-   "seconds": 4
-  },
-  "animals/duck": {
-   "file": "File:Domestic duck sound 01.wav",
-   "seconds": 4
-  },
-  "animals/frog": {
-   "file": "File:Edible frogs, sounds. May. The Village of Krzemienica, Łódź Voivodeship, Poland.ogg",
-   "seconds": 5
-  },
-  "animals/elephant": {
-   "file": "File:Elephant voice - trumpeting.ogg",
-   "seconds": 4
-  },
-  "animals/rooster": {
-   "file": "File:Rooster crowing.ogg",
-   "seconds": 5
-  },
-  "sfx/doorbell": {
-   "file": "File:Doorbell-classic-dingdong.ogg",
-   "seconds": 4,
-   "start": 0
-  },
-  "sfx/clock": {
-   "file": "File:Clock ticking.ogg",
-   "seconds": 4
   },
   "sfx/kettle": {
    "file": "File:Kettle whistle.ogg",
@@ -71,46 +30,10 @@
    "file": "File:Wind in Swedish pine forest at 25 mps.ogg",
    "seconds": 5
   },
-  "ambient/river": {
-   "file": "File:Hemlock stream.ogg",
-   "seconds": 5
-  },
-  "ambient/waterfall": {
-   "file": "File:Water fall.ogg",
-   "seconds": 5
-  },
-  "instruments/guitar": {
-   "file": "File:El Noi de la Mare (guitar).ogg",
-   "seconds": 7,
-   "start": 0
-  },
-  "instruments/violin": {
-   "file": "File:Violin chords.ogg",
-   "seconds": 6,
-   "start": 0
-  },
   "instruments/flute": {
    "file": "File:Bach - Partita For Solo Flute - Modern Flute - 4. Bouree.ogg",
    "seconds": 7,
    "start": 0
-  },
-  "ambient/forest": {
-   "file": "File:Birdsong Bourne Woods 2020-04-27 0722.mp3",
-   "seconds": 24,
-   "start": 2,
-   "loop": true
-  },
-  "ambient/garden": {
-   "file": "File:Birdsong volga st.ogg",
-   "seconds": 24,
-   "start": 5,
-   "loop": true
-  },
-  "ambient/park": {
-   "file": "File:209901 foongaz city-playground-boxhagenerplatz-berlin.wav",
-   "seconds": 24,
-   "start": 10,
-   "loop": true
   },
   "ambient/street": {
    "file": "File:Ambient sound Mauerstrasse Gransee birds and traffic 2026-05-22.oga",
@@ -118,22 +41,10 @@
    "start": 2,
    "loop": true
   },
-  "ambient/pond": {
-   "file": "File:Nature sounds ambience in a Dordogne pond.ogg",
-   "seconds": 24,
-   "start": 5,
-   "loop": true
-  },
   "ambient/farm": {
    "file": "File:Cowbells on Monte Baldo.ogg",
    "seconds": 24,
    "start": 4,
-   "loop": true
-  },
-  "ambient/bathroom": {
-   "file": "File:Water drops dripping.ogg",
-   "seconds": 14,
-   "start": 1,
    "loop": true
   }
  }

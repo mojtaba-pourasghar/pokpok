@@ -327,10 +327,10 @@ def item(id, title, kind, sound, use_text, quiz, *, taste=None, target=None, tag
 
 S = "audio/sfx/"
 I = "audio/instruments/"
-item("juice", "آب‌پرتقال", "drink", S + "pour.mp3", "آب‌میوه تشنگی را برطرف می‌کند و ویتامین دارد.",
+item("juice", "آب‌پرتقال", "drink", S + "sip.mp3", "آب‌میوه تشنگی را برطرف می‌کند و ویتامین دارد.",
      ("با آب‌میوه چه کار می‌کنیم؟", [("q_thirsty", "تشنگی"), ("q_sleep", "خواب"), ("q_paint", "نقاشی")], 0),
      taste="شیرین و کمی ترش", tags=["drink", "sweet", "food"])
-item("bread", "نان", "food", S + "snap.mp3", "نان غذای هر روز ماست؛ با آن ساندویچ هم درست می‌کنیم.",
+item("bread", "نان", "food", S + "crunch.mp3", "نان غذای هر روز ماست؛ با آن ساندویچ هم درست می‌کنیم.",
      ("نان را کی می‌خوریم؟", [("q_hungry", "وقتی گرسنه‌ایم"), ("q_cold", "وقتی سردمان است"), ("q_dark", "وقتی تاریک است")], 0),
      taste="ترد و گرم", tags=["food"])
 item("soup", "سوپ سبزیجات", "food", S + "sizzle.mp3", "سوپ گرم، وقتی سردمان است بدن را گرم می‌کند.",
@@ -345,10 +345,10 @@ item("watering_can", "آب‌پاش", "container", S + "splash.mp3", "با آب�
 item("flower_pot", "گلدان گل", "plant", S + "buzz.mp3", "گل بوی خوش دارد و زنبورها از آن شهد می‌گیرند.",
      ("کی سراغ گل می‌آید؟", [("bee", "زنبور"), ("fish", "ماهی"), ("moon", "ماه")], 0),
      taste="خوش‌بو", tags=["pretty", "plant"])
-item("eggs", "تخم‌مرغ", "food", "audio/animals/rooster.mp3", "مرغ تخم می‌گذارد؛ با تخم‌مرغ کیک و نیمرو درست می‌کنیم.",
+item("eggs", "تخم‌مرغ", "food", S + "cluck.mp3", "مرغ تخم می‌گذارد؛ با تخم‌مرغ کیک و نیمرو درست می‌کنیم.",
      ("تخم‌مرغ از کجا می‌آید؟", [("hen", "مرغ"), ("cow", "گاو"), ("bee", "زنبور")], 0),
      taste="پخته‌اش خوشمزه است", tags=["food"])
-item("sandwich", "ساندویچ پنیر", "food", S + "snap.mp3", "ساندویچ یک غذای کامل و راحت برای پیک‌نیک است.",
+item("sandwich", "ساندویچ پنیر", "food", S + "crunch.mp3", "ساندویچ یک غذای کامل و راحت برای پیک‌نیک است.",
      ("ساندویچ را با چه درست کردیم؟", [("bread", "نان و پنیر"), ("paints", "رنگ"), ("nail", "میخ")], 0),
      taste="نرم و شور", tags=["food"])
 item("hammer", "چکش", "tool", S + "hammer.mp3", "با چکش میخ را در چوب فرو می‌کنیم تا تکه‌ها به هم بچسبند.",
@@ -430,15 +430,15 @@ item("necklace", "گردنبند مهره‌ای", "craft", "audio/ui/chime.mp3"
      ("گردنبند را کجا می‌اندازیم؟", [("q_wear", "گردن"), ("q_flowers", "گل"), ("q_carry", "جعبه")], 0), tags=["pretty"])
 item("kite", "بادبادک", "kite", "audio/ambient/wind.mp3", "باد بادبادک را بالا می‌برد.",
      ("بادبادک با چه بالا می‌رود؟", [("q_sky", "باد"), ("q_water", "آب"), ("q_eat", "غذا")], 0), tags=["play", "sky"])
-item("robot", "ربات", "robot", S + "gear.mp3", "ربات با باتری روشن می‌شود و کارهایی را که بگوییم انجام می‌دهد.",
+item("robot", "ربات", "robot", S + "robot.mp3", "ربات با باتری روشن می‌شود و کارهایی را که بگوییم انجام می‌دهد.",
      ("ربات با چه روشن می‌شود؟", [("battery", "باتری"), ("water_jug", "آب"), ("bread", "نان")], 0), tags=["play", "machine"])
 item("dollhouse", "خانه‌ی عروسکی", "house", S + "door.mp3", "در خانه‌ی عروسکی چراغ‌ها روشن می‌شوند و شیر آب باز می‌شود.",
      ("خانه برای چیست؟", [("q_sleep", "زندگی و خواب"), ("q_swim", "شنا"), ("q_travel", "سفر")], 0), tags=["play"])
-item("rocket", "موشک", "rocket", "audio/ui/whoosh.mp3", "موشک با موتورهای قوی به فضا می‌رود.",
+item("rocket", "موشک", "rocket", S + "rocket.mp3", "موشک با موتورهای قوی به فضا می‌رود.",
      ("موشک کجا می‌رود؟", [("q_sky", "فضا"), ("q_swim", "استخر"), ("q_eat", "آشپزخانه")], 0), tags=["play", "sky", "vehicle"])
 item("submarine", "زیردریایی", "submarine", S + "bubbles.mp3", "زیردریایی زیر آب می‌رود و با چراغش ماهی‌ها را می‌بیند.",
      ("زیردریایی کجا می‌رود؟", [("fish", "زیر آب"), ("q_sky", "آسمان"), ("q_party", "جشن")], 0), tags=["play", "vehicle"])
-item("train", "قطار", "vehicle", S + "engine.mp3", "قطار روی ریل حرکت می‌کند و سوت می‌کشد: چوووو!",
+item("train", "قطار", "vehicle", S + "train.mp3", "قطار روی ریل حرکت می‌کند و سوت می‌کشد: چوووو!",
      ("قطار روی چه حرکت می‌کند؟", [("rail", "ریل"), ("q_water", "آب"), ("q_sky", "ابر")], 0), tags=["play", "vehicle"])
 # Tool-shop recipes
 item("bug_book", "دفترچه‌ی حشره‌ها", "find", "audio/ui/page.mp3", "با ذره‌بین حشره‌های کوچک را بزرگ می‌بینیم.",
@@ -449,7 +449,7 @@ item("photo_frame", "قاب عکس", "craft", "audio/ui/camera.mp3", "عکس ی�
      ("قاب عکس برای چیست؟", [("q_party", "نگه داشتن یادگاری"), ("q_hungry", "غذا"), ("q_rain", "باران")], 0), tags=["pretty"])
 item("pizza", "پیتزا", "food", S + "sizzle.mp3", "پیتزا را در فر می‌پزیم تا پنیرش آب شود.",
      ("پیتزا را کجا می‌پزیم؟", [("big_oven", "فر"), ("fridge", "یخچال"), ("bucket", "سطل")], 0), taste="شور و داغ", tags=["food"])
-item("cookie", "کلوچه", "food", S + "snap.mp3", "کلوچه‌ی تازه ترد و شیرین است.",
+item("cookie", "کلوچه", "food", S + "crunch.mp3", "کلوچه‌ی تازه ترد و شیرین است.",
      ("کلوچه چه مزه‌ای دارد؟", [("cake", "شیرین"), ("lettuce", "تلخ"), ("soup", "شور")], 0), taste="شیرین و ترد", tags=["food", "sweet"])
 item("rag_doll", "عروسک پارچه‌ای", "doll", S + "giggle.mp3", "عروسک نرم را بغل می‌کنیم.",
      ("با عروسک چه کار می‌کنیم؟", [("q_sleep", "بغل و بازی"), ("q_nail", "میخ"), ("q_travel", "رانندگی")], 0), tags=["play"])
@@ -472,7 +472,7 @@ def section(id, title, makes, mission, steps, target=120, secret=None):
 CHAPTERS = [
     {
         "id": "c1", "title": "آشپزخانه‌ی خاله خرسی", "friend": "bear", "bg": "kitchen", "color": "#FF8A1F",
-        "ambient": "audio/ambient/garden.mp3",
+        "ambient": "audio/ambient/kitchen.mp3",
         "intro": "طوفان آشپزخانه‌ی خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده. بیا با هم آشپزی کنیم!",
         "film": ["آب‌پرتقال شیرین و ترش", "نان ترد و گرم", "سوپ داغ و خوشمزه", "و کیک تولد با شمع‌های روشن!"],
         "next": "بانی در باغ تشنه است... بیا برویم پیشش!",
@@ -526,7 +526,7 @@ CHAPTERS = [
             section("c2s3", "لانه‌ی مرغ", "eggs", "مرغ‌های بانی لانه ندارند و گم شده‌اند!", [
                 collect("hay", 5, "کاه جمع کن.", distract=["old_shoe"], sound=S + "rustle.mp3"),
                 count("hay", 4, "nest", "کاه‌ها را در لانه بگذار."),
-                collect("hen", 3, "مرغ‌های گم‌شده را پیدا کن. پشت بوته‌ها را ببین!", sound="audio/animals/rooster.mp3"),
+                collect("hen", 3, "مرغ‌های گم‌شده را پیدا کن. پشت بوته‌ها را ببین!", sound=S + "cluck.mp3"),
             ], 100, secret="saw"),
             section("c2s4", "ساندویچ پیک‌نیک", "sandwich", "وقت پیک‌نیک است! یک ساندویچ خوشمزه درست کنیم.", [
                 tap("cow", 6, "گاو را آرام بدوش. با هر ضربه شیر می‌آید.", "audio/animals/cow.mp3", result="milk"),
@@ -538,7 +538,7 @@ CHAPTERS = [
     },
     {
         "id": "c3", "title": "کارگاه آقا سنجاب", "friend": "squirrel", "bg": "workshop", "color": "#3B82F6",
-        "ambient": "audio/ambient/wind.mp3",
+        "ambient": "audio/ambient/workshop.mp3",
         "intro": "طوفان کارگاه آقا سنجاب را خراب کرده و ابزارهایش پخش شده‌اند. بیا ابزار بسازیم!",
         "film": ["چکش، میخ را فرو کرد: تق تق!", "چراغ‌قوه تاریکی را روشن کرد", "گاری جعبه‌ها را برد", "و ماشین با کلید روشن شد: برووووم!"],
         "next": "کوکو همه‌ی رنگ‌هایش را گم کرده...",
@@ -569,7 +569,7 @@ CHAPTERS = [
     },
     {
         "id": "c4", "title": "آتلیه‌ی رنگی کوکو", "friend": "parrot", "bg": "studio", "color": "#E9478F",
-        "ambient": "audio/ambient/garden.mp3",
+        "ambient": "audio/ambient/studio.mp3",
         "intro": "کوکو همه‌ی رنگ‌هایش را در طوفان گم کرده و تزئینات جشن بی‌رنگ مانده‌اند.",
         "film": ["قرمز و زرد، نارنجی شد!", "کاسه‌ی گلی آب را نگه داشت", "فانوس با لامپ چراغ‌قوه روشن شد", "و ماسک‌ها و پرچم‌ها رنگی شدند!"],
         "next": "مادربزرگ جغد راه خانه‌اش را در شب گم کرده...",
@@ -599,7 +599,7 @@ CHAPTERS = [
     },
     {
         "id": "c5", "title": "شب جنگل و مادربزرگ جغد", "friend": "owl", "bg": "night_forest", "color": "#5B2BC4",
-        "ambient": "audio/ambient/forest.mp3", "night": True,
+        "ambient": "audio/ambient/night.mp3",
         "intro": "مادربزرگ جغد راه خانه‌اش را در جنگلِ شب گم کرده. نترس، با هم پیدایش می‌کنیم!",
         "film": ["نقشه راه را نشان داد", "چادر ما را از باران حفظ کرد", "کرم‌های شب‌تاب مسیر را روشن کردند", "و با تلسکوپ ماه را دیدیم!"],
         "next": "سازهای گروه میمی شکسته‌اند...",
@@ -627,7 +627,7 @@ CHAPTERS = [
     },
     {
         "id": "c6", "title": "گروه موسیقی میمی", "friend": "cat", "bg": "stage", "color": "#A855F7",
-        "ambient": "audio/ambient/park.mp3",
+        "ambient": "audio/ambient/stage.mp3",
         "intro": "میمی می‌خواهد در جشن بخواند، اما سازهای گروه در طوفان شکسته‌اند.",
         "film": ["طبل: بوم بوم!", "زایلوفون: زیر و بم", "نی: فووو", "و آهنگ جشن با همه‌ی سازها!"],
         "next": "پل شهر شکسته و اتوبوس لاکی خراب است...",
@@ -685,7 +685,7 @@ CHAPTERS = [
     },
     {
         "id": "c8", "title": "جشن بزرگ جنگل", "friend": "bear", "bg": "festival", "color": "#FFC83D",
-        "ambient": "audio/ambient/park.mp3",
+        "ambient": "audio/ambient/festival.mp3",
         "intro": "همه‌چیز آماده است! با چیزهایی که ساختی جشن بزرگ جنگل را برپا کنیم.",
         "film": ["میز جشن پر از غذاهای تو", "میدان با فانوس و پرچم‌های تو", "کنسرت با سازهای تو", "و تو قهرمان جنگل شدی!"],
         "next": "",
@@ -765,7 +765,7 @@ TOOLS = [
      "recipes": [section("r_bug_book", "دفترچه‌ی حشره‌ها", "bug_book", "با ذره‌بین حشره‌ها را پیدا کنیم!", [
          dark("ladybug", 4, "حشره‌های کوچک را با ذره‌بین پیدا کن."),
      ], 60)]},
-    {"id": "saw", "title": "اره", "price": 40, "sound": S + "rustle.mp3",
+    {"id": "saw", "title": "اره", "price": 40, "sound": S + "saw.mp3",
      "safety": "با اره همیشه با یک بزرگ‌تر کار می‌کنیم.",
      "recipes": [section("r_bird_house", "خانه‌ی پرنده", "bird_house", "برای پرنده‌ها خانه بسازیم.", [
          cut("plank", "تخته را با اره ببُر.", lines=2),
@@ -791,16 +791,16 @@ TOOLS = [
              timing("big_oven", "وقتی طلایی شد بزن!", sound=S + "kettle.mp3", result="cookie"),
          ], 70),
      ]},
-    {"id": "sewing_machine", "title": "چرخ خیاطی", "price": 70, "sound": S + "gear.mp3",
+    {"id": "sewing_machine", "title": "چرخ خیاطی", "price": 70, "sound": S + "sewing.mp3",
      "safety": "انگشت‌ها را از سوزن دور نگه می‌داریم.",
      "recipes": [section("r_rag_doll", "عروسک پارچه‌ای", "rag_doll", "یک عروسک نرم بدوزیم.", [
-         tap("sewing_machine", 8, "پدال را بزن تا چرخ بدوزد: تق تق تق!", S + "gear.mp3"),
+         tap("sewing_machine", 8, "پدال را بزن تا چرخ بدوزد: تق تق تق!", S + "sewing.mp3"),
          paint("rag_doll", "لباس عروسک را رنگ کن.", parts=4),
      ], 80)]},
-    {"id": "drill", "title": "دریل", "price": 80, "sound": S + "crane.mp3",
+    {"id": "drill", "title": "دریل", "price": 80, "sound": S + "drill.mp3",
      "safety": "دریل را فقط بزرگ‌ترها روشن می‌کنند و ما کمک می‌کنیم.",
      "recipes": [section("r_windmill", "آسیاب بادی", "windmill", "یک آسیاب بادی بسازیم.", [
-         tap("drill", 3, "با دریل سوراخ کن.", S + "crane.mp3"),
+         tap("drill", 3, "با دریل سوراخ کن.", S + "drill.mp3"),
          assemble("windmill", [("flag", .5, .3)], "پره‌ها را وصل کن.", "windmill"),
          rotate("windmill", 2, "فوت کن تا بچرخد!", sound="audio/ambient/wind.mp3"),
      ], 80)]},

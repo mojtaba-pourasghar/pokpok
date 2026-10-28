@@ -72,7 +72,7 @@ Cache Rules روی آن کار می‌کند و در صورت لزوم جابه�
 ## انتشار محتوا
 
 ```bash
-python3 tools/art/build_art.py                         # طرح‌های برداری + asset_manifest.json
+python3 tools/build_manifest.py                        # فهرست دارایی‌ها (asset_manifest.json)
 python3 tools/sfx/synth.py                             # صداهای عمومی
 python3 cloudflare/scripts/build_packs.py --version v1 \
     --voice-dir /path/to/recorded/voice  \              # صدای ضبط‌شده‌ی گوینده (اختیاری)

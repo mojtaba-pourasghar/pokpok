@@ -33,7 +33,8 @@ android {
 
     defaultConfig {
         applicationId = "com.pokpok.ir"
-        minSdk = flutter.minSdkVersion
+        // اندروید ۱۰ (API 29) به بالا.
+        minSdk = 29
         targetSdk = flutter.targetSdkVersion
         // Uses the version code from pubspec.yaml. When using split APKs, 1000 * ABI_VERSION
         // is added automatically by Flutter. (https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions)
@@ -42,6 +43,10 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
         manifestPlaceholders["bazaarRsa"] = bazaarRsa
+        // همه‌ی پردازنده‌ها: ARM ۳۲ و ۶۴ بیتی (تقریباً همه‌ی گوشی‌ها) و x86_64 (شبیه‌سازها و چند تبلت).
+        ndk {
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86_64")
+        }
     }
 
     signingConfigs {
