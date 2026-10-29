@@ -786,6 +786,24 @@
    "sha256": "14755f46dfdca704bf17c3d097f58951fcb2093b5a946589747b8e95df98756f"
   },
   {
+   "id": "voice/c1s3_mission",
+   "group": "voice",
+   "path": "audio/voice/c1s3_mission.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 68381,
+   "sha256": "3d102a20ad1faf719f496809570ba4851c71e0e0b7bc4ceafcb77cc1ea2895d3"
+  },
+  {
+   "id": "voice/c1s3_s1",
+   "group": "voice",
+   "path": "audio/voice/c1s3_s1.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 94712,
+   "sha256": "4f8576e0f369b8b57c1008d00c0e9aa8be12979f603c8957239ea66d6985b2dc"
+  },
+  {
    "id": "voice/c1s3_s2",
    "group": "voice",
    "path": "audio/voice/c1s3_s2.mp3",
@@ -795,6 +813,87 @@
    "sha256": "0669200ebbba13dfab1bfd0c1af224eb77d44d5ffbbb88d024ab91d0da577772"
   },
   {
+   "id": "voice/c1s3_s3",
+   "group": "voice",
+   "path": "audio/voice/c1s3_s3.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 85622,
+   "sha256": "cf82f6b07aea3e7fe887b99b0cc2f65b1347e46efa1f28fe6627cf55b204f083"
+  },
+  {
+   "id": "voice/c1s3_s4",
+   "group": "voice",
+   "path": "audio/voice/c1s3_s4.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 89383,
+   "sha256": "66b36b8e2faebd0fe72cb91d8c4c87fe3bb2191b2633f7ad939357b8494dab53"
+  },
+  {
+   "id": "voice/c1s3_s5",
+   "group": "voice",
+   "path": "audio/voice/c1s3_s5.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 109132,
+   "sha256": "47ff138d77e90898636a561311a1c13a22d0781c6d40fb50dcf7982207b9affc"
+  },
+  {
+   "id": "voice/c1s3_s6",
+   "group": "voice",
+   "path": "audio/voice/c1s3_s6.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 79979,
+   "sha256": "bd018f7aa683928040709a985126dae9cbefffd560076bb40bb89eccd324d99e"
+  },
+  {
+   "id": "voice/c1s3_s7",
+   "group": "voice",
+   "path": "audio/voice/c1s3_s7.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 78725,
+   "sha256": "21f85178200776a734568abdf061541b94aec0a25622f59ea207c2dba9559098"
+  },
+  {
+   "id": "voice/c1s4_mission",
+   "group": "voice",
+   "path": "audio/voice/c1s4_mission.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 85935,
+   "sha256": "c4374085f32d690e2ef3ca5f99abe553e9322a793e3ec78781f6fce5add8fd5e"
+  },
+  {
+   "id": "voice/c1s4_s1",
+   "group": "voice",
+   "path": "audio/voice/c1s4_s1.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 90324,
+   "sha256": "9a5115d1bf5a8fc4c2aac8b92c11110616940ced2c181ce4b436cbd21a63a1de"
+  },
+  {
+   "id": "voice/c1s4_s2",
+   "group": "voice",
+   "path": "audio/voice/c1s4_s2.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 98474,
+   "sha256": "36dfdafa6b93995f288371f31f6f3e57ef89cb43b62cfd84d3a91ebbd226838e"
+  },
+  {
+   "id": "voice/c1s4_s5",
+   "group": "voice",
+   "path": "audio/voice/c1s4_s5.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 66187,
+   "sha256": "a43d1a1d87a444445df40660db4e65c6000d2bafe29bf578376bfbefa4ada3e1"
+  },
+  {
    "id": "voice/full_locked",
    "group": "voice",
    "path": "audio/voice/full_locked.mp3",
@@ -802,6 +901,15 @@
    "version": 1,
    "bytes": 102549,
    "sha256": "2d1e8e4333e79944331225b2efde3a5418a90d6248e83b8fbb45819f96495768"
+  },
+  {
+   "id": "voice/item_bread_made",
+   "group": "voice",
+   "path": "audio/voice/item_bread_made.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 48632,
+   "sha256": "269b6d639859ac3196699e847ba6f3e890e40898bb1274663ae60edaef324048"
   },
   {
    "id": "voice/item_juice_made",
