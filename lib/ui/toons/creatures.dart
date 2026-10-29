@@ -21,16 +21,22 @@ void critter(
   void Function()? outfit,
   void Function()? snout,
   double headR = 23,
+  bool lashes = false,
+  bool tuft = false,
+  Color? pads,
 }) {
+  final paw = pads ?? tint(fur, .45);
   k.alive(
     p,
     () {
       back?.call();
-      // پاها
+      // پاها با کف پنجه‌ی صورتی
       final step = p.act ? p.wave(2) * 3 : 0.0;
-      k.oval(40, 89 - math.max(0.0, step), 8, 5, shade(fur, .1));
-      k.oval(60, 89 - math.max(0.0, -step), 8, 5, shade(fur, .1));
-      // دست‌ها
+      for (final (x, lift) in [(40.0, math.max(0.0, step)), (60.0, math.max(0.0, -step))]) {
+        k.oval(x, 88 - lift, 8.5, 5.5, shade(fur, .06));
+        k.oval(x, 89.5 - lift, 4.2, 2.4, paw, line: false);
+      }
+      // دست‌ها: کشیده و گرد، نوک روشن‌تر
       double arm(double side) {
         if (p.happy) return side * (2.2 + p.wave(3, side) * .3);
         if (p.act) return side > 0 ? 2.4 + p.wave(2.5) * .5 : .5;
@@ -39,21 +45,60 @@ void critter(
       }
 
       for (final side in <double>[-1, 1]) {
-        k.at(50 + side * 19, 64, () => k.oval(0, 10, 6, 11, fur), rot: arm(side));
+        k.at(50 + side * 18, 63, () {
+          k.rect(-5.5, -2, 11, 22, 5.5, fur);
+          k.oval(0, 17, 4, 3, paw, line: false);
+        }, rot: arm(side));
       }
-      k.oval(50, 72, 22, 19, fur);
-      if (belly != null) k.oval(50, 75, 13, 12, belly, line: false);
+      k.oval(50, 73, 21, 18, fur);
+      if (belly != null) k.oval(50, 76, 12.5, 11, belly, line: false);
       outfit?.call();
       // سر کمی تاب می‌خورد
       k.at(50, 38, () {
         k.c.translate(-50, -38);
         ears?.call();
-        k.circle(50, 38, headR, fur);
-        if (muzzle != null) k.oval(50, 47, 11, 8, muzzle, line: false);
+        k.oval(50, 38, headR + 1.5, headR, fur);
+        // دسته‌ی موی بالای سر
+        if (tuft) {
+          k.poly(
+            [const Offset(45, 17), const Offset(49, 10), const Offset(51, 16), const Offset(55, 11), const Offset(55, 18)],
+            fur,
+            line: false,
+          );
+        }
+        if (muzzle != null) k.oval(50, 47, 11.5, 8.5, muzzle, line: false);
         snout?.call();
-        if (muzzle != null) k.oval(50, 43, 3.6, 2.6, nose, line: false);
-        k.eyes(50, 34, 17, 5.4, p);
-        k.cheeks(50, 45, 28, 3.2);
+        if (muzzle != null) {
+          // بینی قلبی براق
+          k.c.drawPath(
+            Path()
+              ..moveTo(50, 46)
+              ..cubicTo(45, 43.5, 45.5, 40, 50, 41)
+              ..cubicTo(54.5, 40, 55, 43.5, 50, 46)
+              ..close(),
+            Paint()..color = nose,
+          );
+          k.c.drawCircle(const Offset(48.6, 42), .9, Paint()..color = Colors.white.withValues(alpha: .8));
+        }
+        k.eyes(50, 33, 18, 6.2, p);
+        if (lashes && !p.happy) {
+          for (final s in <double>[-1, 1]) {
+            final x = 50 + s * 9;
+            for (var i = 0; i < 3; i++) {
+              k.stroke(
+                [Offset(x + s * (3 + i * 1.6), 28.2 - i * .3), Offset(x + s * (5 + i * 2.2), 26 - i * .8)],
+                const Color(0xFF2A2250),
+                1,
+              );
+            }
+          }
+        }
+        // ابروها
+        for (final s in <double>[-1, 1]) {
+          final up = p.happy ? -1.5 : (p.sad ? 1 : 0);
+          k.stroke([Offset(50 + s * 6, 25 + up + (p.sad ? -s * 1.2 : 0)), Offset(50 + s * 12, 24.5 + up)], shade(fur, .5), 1.4);
+        }
+        k.cheeks(50, 44.5, 30, 3.6);
         k.mouth(50, 50, 8, p);
         hat?.call();
       }, rot: p.sad ? -.08 : p.wave(.35) * .05);
@@ -68,6 +113,7 @@ final Map<String, ToonPainter> creatureToons = {
   'bear': (k, p) => critter(
     k,
     p,
+    tuft: true,
     fur: const Color(0xFFA1704A),
     muzzle: const Color(0xFFE6C29A),
     ears: () {
@@ -90,6 +136,8 @@ final Map<String, ToonPainter> creatureToons = {
   'bunny': (k, p) => critter(
     k,
     p,
+    lashes: true,
+    pads: const Color(0xFFF8BBD0),
     fur: const Color(0xFFF7F3F0),
     muzzle: Colors.white,
     nose: const Color(0xFFF48FB1),
@@ -112,6 +160,7 @@ final Map<String, ToonPainter> creatureToons = {
   'squirrel': (k, p) => critter(
     k,
     p,
+    tuft: true,
     fur: const Color(0xFFB0703C),
     muzzle: const Color(0xFFF1D3B3),
     back: () => k.at(72, 80, () {
@@ -144,29 +193,58 @@ final Map<String, ToonPainter> creatureToons = {
     },
   ),
   'parrot': (k, p) {
-    final flap = p.act || p.happy ? p.wave(4) * .6 : p.wave(.5) * .08;
+    final flap = p.act || p.happy ? p.wave(4) * .7 : p.wave(.5) * .08;
     k.alive(p, () {
-      k.poly([const Offset(44, 82), const Offset(50, 98), const Offset(56, 82)], const Color(0xFF1E88E5));
+      // دم بلند رنگی
+      for (final (i, c) in [(0, const Color(0xFF1E88E5)), (1, const Color(0xFFFFB300)), (2, const Color(0xFF43A047))].indexed) {
+        k.at(50, 80, () => k.rect(-3.5, 0, 7, 20, 3.5, c.$2), rot: (i - 1) * .22 + p.wave(.8) * .05);
+      }
+      // پاهای روی میله
+      k.rect(26, 88, 48, 5, 2.5, const Color(0xFF8D6E63));
+      for (final x in <double>[44, 56]) {
+        k.oval(x, 87, 4, 3, const Color(0xFF9E9E9E));
+      }
+      // بال‌ها
       for (final side in <double>[-1, 1]) {
+        k.at(50 + side * 15, 58, () {
+          final wing = Path()
+            ..moveTo(0, -4)
+            ..quadraticBezierTo(side * 14, 4, side * 8, 26)
+            ..quadraticBezierTo(side * 2, 22, 0, 12)
+            ..close();
+          k.blob(wing, const Color(0xFF43A047));
+          k.stroke([Offset(side * 3, 14), Offset(side * 8, 22)], const Color(0xFF1E88E5), 3);
+        }, rot: side * (.15 + flap));
+      }
+      k.oval(50, 66, 17, 21, const Color(0xFFE53935));
+      k.oval(50, 72, 10, 12, const Color(0xFFFFCDD2), line: false);
+      // سر با تاج پر
+      for (final (i, r) in [-.4, 0.0, .4].indexed) {
         k.at(
-          50 + side * 18,
-          62,
-          () => k.oval(0, 10, 7, 16, side < 0 ? const Color(0xFF43A047) : const Color(0xFFFFB300)),
-          rot: side * (.3 + flap),
+          50,
+          22,
+          () => k.oval(0, -6, 3.5, 8, i == 1 ? const Color(0xFFFFB300) : const Color(0xFFE53935)),
+          rot: r + p.wave(1, i / 3) * .08,
         );
       }
-      k.oval(50, 68, 18, 20, const Color(0xFFE53935));
-      k.oval(50, 74, 10, 11, const Color(0xFFFFCDD2), line: false);
-      k.oval(42, 90, 4, 3, const Color(0xFFFFB300));
-      k.oval(58, 90, 4, 3, const Color(0xFFFFB300));
-      k.circle(50, 38, 20, const Color(0xFFE53935));
-      k.eyes(50, 34, 16, 5.4, p);
-      // منقار که با حرف زدن باز و بسته می‌شود
-      final open = p.act || p.happy ? (p.wave(3) + 1) * 1.6 : 0.0;
-      k.poly([const Offset(44, 42), const Offset(56, 42), const Offset(50, 50)], const Color(0xFFFFB300));
-      k.poly([Offset(46, 44 + open), Offset(54, 44 + open), Offset(50, 48 + open)], const Color(0xFFF57F17));
-      k.at(44, 20, () => k.oval(0, 0, 14, 5, const Color(0xFFC62828)), rot: -.25);
-      k.circle(36, 18, 2.5, const Color(0xFFC62828));
+      k.circle(50, 38, 18, const Color(0xFFE53935));
+      k.oval(50, 40, 12, 10, const Color(0xFFFFF3E0), line: false);
+      k.eyes(50, 35, 15, 5.2, p);
+      final open = p.act || p.happy ? (p.wave(3) + 1) * 1.4 : 0.0;
+      final beak = Path()
+        ..moveTo(44, 42)
+        ..quadraticBezierTo(50, 38, 56, 42)
+        ..quadraticBezierTo(56, 50, 50, 53)
+        ..quadraticBezierTo(49, 47, 44, 42)
+        ..close();
+      k.blob(beak, const Color(0xFFFFB300));
+      k.at(50, 47 + open, () => k.oval(0, 0, 4, 2.4, const Color(0xFFF57F17)));
+      k.cheeks(50, 42, 26, 3);
+      // کلاه بره
+      k.at(42, 22, () {
+        k.oval(0, 0, 14, 5, const Color(0xFFC62828));
+        k.circle(-11, -3, 2.4, const Color(0xFFC62828));
+      }, rot: -.25);
     }, shadowW: 46);
   },
   'owl': (k, p) => k.alive(p, () {
@@ -212,6 +290,8 @@ final Map<String, ToonPainter> creatureToons = {
   'cat': (k, p) => critter(
     k,
     p,
+    lashes: true,
+    pads: const Color(0xFFF8BBD0),
     fur: const Color(0xFFB0BEC5),
     muzzle: const Color(0xFFECEFF1),
     nose: const Color(0xFFF48FB1),
@@ -271,58 +351,90 @@ final Map<String, ToonPainter> creatureToons = {
   // ── حیوان‌های مزرعه و جنگل ──
   'hen': (k, p) {
     final peck = p.act ? math.max(0.0, p.wave(1.6)) : 0.0;
+    final flap = p.happy ? p.wave(4) * .5 : p.wave(.5) * .05;
     k.alive(p, () {
-      k.stroke([const Offset(44, 80), const Offset(44, 92)], const Color(0xFFFFB300), 2.4);
-      k.stroke([const Offset(56, 80), const Offset(56, 92)], const Color(0xFFFFB300), 2.4);
-      k.at(50, 70, () {
-        k.c.translate(-50, -70);
-        k.poly([
-          const Offset(78, 52),
-          const Offset(90, 44),
-          const Offset(86, 62),
-          const Offset(92, 66),
-          const Offset(80, 74),
-        ], Colors.white);
-        k.oval(54, 66, 26, 18, Colors.white);
-        k.at(56, 66, () => k.oval(0, 0, 12, 8, const Color(0xFFEEEEEE)), rot: p.happy ? p.wave(4) * .5 : 0);
-        k.circle(34, 46, 13, Colors.white);
-        for (final (x, y) in [(28.0, 33.0), (33.0, 30.0), (38.0, 33.0)]) {
-          k.circle(x, y, 3.6, const Color(0xFFE53935));
+      // پاها با سه انگشت
+      for (final x in <double>[44, 58]) {
+        k.stroke([Offset(x, 78), Offset(x, 90)], const Color(0xFFFFA000), 2.6);
+        for (final d in <double>[-4, 0, 4]) {
+          k.stroke([Offset(x, 90), Offset(x + d, 92.5)], const Color(0xFFFFA000), 2);
         }
-        k.poly([const Offset(20, 46), const Offset(24, 42), const Offset(24, 50)], const Color(0xFFFFB300));
-        k.oval(25, 54, 2.6, 4, const Color(0xFFE53935));
-        k.eyes(34, 43, 10, 3.4, p);
-      }, rot: -peck * .5);
-      if (peck > .8) k.c.drawCircle(const Offset(22, 92), 1.6, Paint()..color = const Color(0xFF8D6E63));
+      }
+      k.at(50, 72, () {
+        k.c.translate(-50, -72);
+        // دم: سه پر گرد رو به بالا
+        for (final (i, r) in [(0, -.5), (1, -.15), (2, .2)].indexed) {
+          k.at(76, 58, () => k.oval(0, -10, 6, 13, i == 1 ? const Color(0xFFFFF8E1) : Colors.white), rot: r.$2 + p.wave(.8, i / 3) * .05);
+        }
+        // بدن چاق
+        final body = Path()
+          ..moveTo(30, 50)
+          ..cubicTo(26, 70, 36, 84, 54, 84)
+          ..cubicTo(74, 84, 84, 72, 80, 56)
+          ..cubicTo(76, 46, 60, 46, 48, 52)
+          ..cubicTo(42, 44, 34, 42, 30, 50)
+          ..close();
+        k.blob(body, Colors.white);
+        // بال با لبه‌ی پرپر
+        k.at(58, 64, () {
+          final wing = Path()
+            ..moveTo(-12, -6)
+            ..quadraticBezierTo(4, -12, 14, -2)
+            ..quadraticBezierTo(14, 6, 8, 8)
+            ..quadraticBezierTo(5, 12, 0, 9)
+            ..quadraticBezierTo(-4, 13, -8, 8)
+            ..quadraticBezierTo(-14, 6, -12, -6)
+            ..close();
+          k.blob(wing, const Color(0xFFF3EEE6));
+        }, rot: -flap);
+        // سر
+        k.circle(34, 42, 13, Colors.white);
+        for (final (x, y, r) in [(27.0, 29.0, 4.0), (32.5, 26.5, 4.6), (38.0, 29.0, 4.0)]) {
+          k.circle(x, y, r, const Color(0xFFE53935));
+        }
+        k.poly([const Offset(21, 41), const Offset(14, 44), const Offset(21, 46)], const Color(0xFFFFB300));
+        k.poly([const Offset(21, 45), const Offset(16, 45), const Offset(21, 48)], const Color(0xFFF57F17));
+        k.oval(23, 52, 3, 4.6, const Color(0xFFE53935));
+        k.eyes(33, 40, 9, 3.8, p);
+        k.cheeks(33, 46, 13, 2.2);
+      }, rot: -peck * .45);
+      if (peck > .8) k.c.drawCircle(const Offset(20, 92), 1.6, Paint()..color = const Color(0xFF8D6E63));
     }, shadowW: 56);
   },
   'cow': (k, p) => k.alive(p, () {
-    for (final x in <double>[28, 40, 62, 74]) {
-      k.rect(x - 4, 70, 8, 22, 3, Colors.white);
-      k.rect(x - 4, 88, 8, 5, 2, const Color(0xFF5D4037));
+    const white = Color(0xFFFAFAFA);
+    // پاها با سم
+    for (final x in <double>[30, 42, 60, 72]) {
+      k.rect(x - 4.5, 70, 9, 20, 4, white);
+      k.rect(x - 4.5, 86, 9, 6, 2.5, const Color(0xFF5D4037));
     }
-    k.at(
-      84,
-      56,
-      () => k.stroke([Offset.zero, const Offset(6, 10), const Offset(4, 22)], const Color(0xFF9E9E9E), 2.4),
-      rot: p.wave(1) * .3,
-    );
-    k.oval(52, 62, 34, 18, Colors.white);
-    for (final (x, y, r) in [(40.0, 56.0, 7.0), (62.0, 64.0, 6.0), (70.0, 54.0, 4.0)]) {
-      k.oval(x, y, r * 1.3, r, const Color(0xFF3E3E3E), line: false);
+    k.at(86, 56, () {
+      k.stroke([Offset.zero, const Offset(5, 10), const Offset(4, 22)], const Color(0xFFBDBDBD), 2.4);
+      k.oval(4, 24, 3, 4, const Color(0xFF424242));
+    }, rot: p.wave(1) * .3);
+    final body = Path()..addRRect(RRect.fromRectAndRadius(const Rect.fromLTWH(20, 44, 66, 34), const Radius.circular(17)));
+    k.blob(body, white);
+    for (final (x, y, rx, ry) in [(44.0, 54.0, 8.0, 6.0), (66.0, 64.0, 7.0, 5.0), (74.0, 50.0, 5.0, 4.0), (32.0, 68.0, 4.0, 3.0)]) {
+      k.oval(x, y, rx, ry, const Color(0xFF3E3E3E), line: false);
     }
-    k.oval(48, 78, 7, 4, const Color(0xFFF8BBD0));
+    k.oval(56, 78, 7, 4, const Color(0xFFF8BBD0));
+    for (final x in <double>[53, 59]) {
+      k.c.drawCircle(Offset(x, 81), 1.2, Paint()..color = const Color(0xFFF48FB1));
+    }
     final chew = p.wave(1.5) * 1.2;
-    k.at(22, 42, () {
+    k.at(22, 44, () {
       for (final s in <double>[-1, 1]) {
-        k.oval(s * 13, -9, 6, 3, Colors.white);
-        k.poly([Offset(s * 6, -12), Offset(s * 10, -20), Offset(s * 8, -11)], const Color(0xFFFFE082));
+        k.at(s * 13, -10, () => k.oval(s * 4, 0, 7, 3.6, white), rot: s * (.3 + p.wave(.7, s) * .1));
+        k.poly([Offset(s * 5, -13), Offset(s * 9, -22), Offset(s * 9.5, -12)], const Color(0xFFFFE082));
       }
-      k.oval(0, 0, 14, 15, Colors.white);
-      k.oval(0, 9 + chew * .3, 11, 7, const Color(0xFFF8BBD0));
-      k.c.drawCircle(const Offset(-4, 9), 1.4, Paint()..color = const Color(0xFF8D6E63));
-      k.c.drawCircle(const Offset(4, 9), 1.4, Paint()..color = const Color(0xFF8D6E63));
-      k.eyes(0, -3, 12, 4, p);
+      k.oval(0, 0, 15, 16, white);
+      k.oval(3, -6, 5, 4, const Color(0xFF3E3E3E), line: false);
+      k.oval(0, 10 + chew * .3, 12, 8, const Color(0xFFF8BBD0));
+      for (final x in <double>[-4.0, 4.0]) {
+        k.oval(x, 10, 1.6, 2.2, const Color(0xFFAD5A6F), line: false);
+      }
+      k.eyes(0, -3, 13, 4.4, p);
+      k.cheeks(0, 3, 22, 2.4);
     }, rot: p.wave(.4) * .06);
   }, shadowW: 80),
   'bee': (k, p) => k.alive(p, () {
@@ -397,20 +509,22 @@ final Map<String, ToonPainter> creatureToons = {
   }, shadowW: 40),
   'firefly': (k, p) => k.alive(p, () {
     final glow = .5 + (p.wave(1.2) + 1) * .25;
-    k.at(50 + p.wave(.4) * 8, 50 + p.wave(.7) * 6, () {
-      k.glow(0, 12, 26, const Color(0xFFEEFF41), glow);
+    k.at(50 + p.wave(.4) * 6, 50 + p.wave(.7) * 4, () {
+      k.glow(0, 14, 40, const Color(0xFFEEFF41), glow);
       final flap = p.wave(14).abs();
       for (final s in <double>[-1, 1]) {
-        k.oval(s * 8, -10, 7, 9 * flap + 2, Colors.white.withValues(alpha: .7));
+        k.oval(s * 13, -14, 11, 14 * flap + 3, Colors.white.withValues(alpha: .7));
       }
-      k.oval(0, 10, 9, 11, Color.lerp(const Color(0xFFC6FF00), const Color(0xFFFFFF8D), glow)!);
-      k.oval(0, -2, 10, 9, const Color(0xFF5D4037));
-      k.eyes(0, -3, 8, 3, p);
+      k.oval(0, 16, 14, 17, Color.lerp(const Color(0xFFC6FF00), const Color(0xFFFFFF8D), glow)!);
+      k.oval(0, -4, 16, 14, const Color(0xFF6D4C41));
+      k.eyes(0, -5, 13, 4.6, p);
+      k.mouth(0, 3, 5, p);
       for (final s in <double>[-1, 1]) {
-        k.stroke([Offset(s * 3, -10), Offset(s * 6, -18)], const Color(0xFF3E2723), 1.4);
+        k.stroke([Offset(s * 5, -16), Offset(s * 10, -28)], const Color(0xFF3E2723), 1.8);
+        k.c.drawCircle(Offset(s * 10, -28), 2, Paint()..color = const Color(0xFF3E2723));
       }
     });
-  }, shadowW: 24),
+  }, shadowW: 30),
   'baby_owl': (k, p) => k.alive(p, () {
     k.oval(50, 64, 26, 28, const Color(0xFFD7CCC8));
     for (var i = 0; i < 10; i++) {
@@ -480,10 +594,18 @@ final Map<String, ToonPainter> creatureToons = {
     k.face(50, 76, 14, p);
   }),
   'seed': (k, p) => k.alive(p, () {
-    k.at(50, 66, () => k.oval(0, 0, 14, 20, const Color(0xFF8D6E63)), rot: .3 + p.wave(.5) * .08);
-    k.shine(44, 58, 3, 6);
-    k.face(50, 68, 11, p);
-  }, shadowW: 30),
+    k.at(50, 62, () {
+      final seed = Path()
+        ..moveTo(0, -28)
+        ..cubicTo(20, -18, 20, 18, 0, 26)
+        ..cubicTo(-20, 18, -20, -18, 0, -28)
+        ..close();
+      k.blob(seed, const Color(0xFFA1704A));
+      k.stroke([const Offset(0, -24), const Offset(-2, 0), const Offset(0, 22)], const Color(0xFF8D5524), 1.6);
+    }, rot: .25 + p.wave(.5) * .08);
+    if (p.act) k.at(52, 34, () => k.oval(6, -4, 7, 4, const Color(0xFF66BB6A)), rot: -.5);
+    k.face(50, 62, 14, p);
+  }, shadowW: 36),
   'sprout': (k, p) => k.alive(p, () {
     k.oval(50, 88, 26, 6, const Color(0xFF6D4C41));
     final sway = p.wave(.6) * .1;
@@ -536,24 +658,47 @@ final Map<String, ToonPainter> creatureToons = {
     k.face(50, 72, 15, p);
   }),
   'hay': (k, p) => k.alive(p, () {
-    for (var i = 0; i < 14; i++) {
-      final x = 24 + i * 4.0;
-      k.stroke(
-        [Offset(x, 90), Offset(x + (i - 7) * 1.5 + p.wave(.6, i / 14) * 2, 44 + (i % 3) * 4.0)],
-        i.isEven ? const Color(0xFFFFD54F) : const Color(0xFFFFB300),
-        3.4,
-      );
+    final bale = Path()..addRRect(RRect.fromRectAndRadius(const Rect.fromLTWH(16, 46, 68, 44), const Radius.circular(10)));
+    k.blob(bale, const Color(0xFFFFCA28));
+    k.c.save();
+    k.c.clipPath(bale);
+    for (var i = 0; i < 18; i++) {
+      final y = 50 + (i * 7) % 38.0;
+      final x = 18 + (i * 13) % 60.0;
+      k.stroke([Offset(x, y), Offset(x + 12, y + 2)], const Color(0xFFE0A100), 1.4);
     }
-    k.rect(22, 64, 56, 7, 3, const Color(0xFFA1887F));
-    k.face(50, 80, 12, p);
+    k.c.restore();
+    for (final x in <double>[32, 68]) {
+      k.rect(x - 2, 46, 4, 44, 1, const Color(0xFFB71C1C));
+    }
+    // ساقه‌های بیرون‌زده که در باد تکان می‌خورند
+    for (var i = 0; i < 6; i++) {
+      final x = 24 + i * 10.0;
+      k.stroke([Offset(x, 48), Offset(x - 2 + p.wave(.7, i / 6) * 2, 38 - (i % 2) * 4.0)], const Color(0xFFFFB300), 2);
+    }
+    k.face(50, 66, 14, p);
   }),
   'nest': (k, p) => k.alive(p, () {
-    k.oval(50, 74, 38, 16, const Color(0xFFC9A44C));
-    k.oval(50, 68, 28, 8, const Color(0xFF8D6E3C), line: false);
-    for (var i = 0; i < 12; i++) {
-      k.stroke([Offset(14 + i * 6.0, 68 + (i % 2) * 6), Offset(22 + i * 6.0, 84 - (i % 3) * 3)], const Color(0xFFB8860B), 1.6);
+    final bowl = Path()
+      ..moveTo(12, 62)
+      ..quadraticBezierTo(16, 92, 50, 92)
+      ..quadraticBezierTo(84, 92, 88, 62)
+      ..close();
+    k.oval(50, 62, 38, 11, const Color(0xFF6D4C41));
+    k.blob(bowl, const Color(0xFFC9A44C));
+    for (var i = 0; i < 16; i++) {
+      final x = 14 + i * 4.6;
+      k.stroke([Offset(x, 62 + (i % 3) * 6.0), Offset(x + 10, 70 + (i % 4) * 5.0)], const Color(0xFF9E7A2E), 1.6);
     }
-    k.face(50, 78, 11, p);
+    for (var i = 0; i < 10; i++) {
+      final a = i / 10 * math.pi;
+      k.stroke(
+        [Offset(50 + math.cos(a) * 38, 62 - math.sin(a) * 3), Offset(50 + math.cos(a + .3) * 34, 58 - math.sin(a) * 5)],
+        const Color(0xFFD7B66A),
+        1.6,
+      );
+    }
+    k.face(50, 78, 13, p);
   }),
   'bucket': (k, p) => k.alive(p, () {
     k.stroke([const Offset(26, 46), Offset(50, 16 + p.wave(.6) * 2), const Offset(74, 46)], const Color(0xFF78909C), 2.4);

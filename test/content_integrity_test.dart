@@ -152,7 +152,6 @@ void main() {
       expect(RegExp(r'[؀-ۿ]').hasMatch(l.text), isTrue, reason: l.id);
     }
     expect(c.pick('praise'), isNotNull);
-    expect(c.pick('idle'), isNotNull);
   });
 
   test('every voice id the code uses exists', () {
@@ -199,5 +198,20 @@ void main() {
     for (final id in ['meadow', 'playroom', 'shop', 'star_workshop']) {
       expect(backdrops.containsKey(id), isTrue, reason: id);
     }
+  });
+
+  test('every line Popo says has a fully vowelled form for the voice studio', () {
+    final v = jsonDecode(File('assets/content/voice_lines.json').readAsStringSync()) as Map;
+    final vowels = RegExp('[\u064E\u064F\u0650]');
+    String bare(String s) => s.replaceAll(RegExp('[\u064B-\u0652\u200c ]'), '').replaceAll('ی', '');
+    final lines = (v['lines'] as List).cast<Map>();
+    for (final l in lines) {
+      final spoken = l['spoken'] as String?;
+      expect(spoken, isNotNull, reason: '${l['id']} has no spoken form (tools/content/spoken_fa.json)');
+      expect(bare(spoken!), bare(l['text'] as String), reason: '${l['id']}: vowelled text differs from the written one');
+    }
+    // چند جمله‌ی کوتاه («هورا!»، «این نان نیست.») حرکت کوتاهی ندارند؛ بقیه باید اعراب داشته باشند.
+    final marked = lines.where((l) => vowels.hasMatch(l['spoken'] as String)).length;
+    expect(marked, greaterThan(lines.length - 5));
   });
 }

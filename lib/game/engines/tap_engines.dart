@@ -55,7 +55,7 @@ class _CollectState extends ConsumerState<CollectEngine> with EngineSounds {
   int bump = 0;
 
   /// درخت برای میوه؛ برای بقیه (مرغ، کاه، آتش‌بازی…) صحنه‌ی آزاد.
-  bool get tree => const {'orange', 'apple', 'flute'}.contains(target) || widget.step.say.contains('درخت');
+  bool get tree => const {'orange', 'apple'}.contains(target);
 
   @override
   void initState() {

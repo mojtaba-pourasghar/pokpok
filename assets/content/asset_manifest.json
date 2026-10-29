@@ -606,33 +606,6 @@
    "sha256": "1b24fcd7ade449075001e03a084eacbe775136707a6009ff80aa350889f9f17f"
   },
   {
-   "id": "voice/idle_1",
-   "group": "voice",
-   "path": "audio/voice/idle_1.mp3",
-   "type": "audio/mpeg",
-   "version": 1,
-   "bytes": 19480,
-   "sha256": "0f41bdeab7cc3b6e2f9f668542b2a21b6a472d21c203a3421ee6cedb9e03be98"
-  },
-  {
-   "id": "voice/idle_2",
-   "group": "voice",
-   "path": "audio/voice/idle_2.mp3",
-   "type": "audio/mpeg",
-   "version": 1,
-   "bytes": 19480,
-   "sha256": "43c7b3ea0a432caec51df7d8c66b487f71b84f76dda9f93fbbce76fc08d209a4"
-  },
-  {
-   "id": "voice/idle_3",
-   "group": "voice",
-   "path": "audio/voice/idle_3.mp3",
-   "type": "audio/mpeg",
-   "version": 1,
-   "bytes": 22928,
-   "sha256": "dbd9365b8825d674c145eb53b9d668889f667b681661965ed81aa3f38c51ae1a"
-  },
-  {
    "id": "voice/notice_new",
    "group": "voice",
    "path": "audio/voice/notice_new.mp3",
@@ -703,42 +676,6 @@
    "version": 1,
    "bytes": 11016,
    "sha256": "6fa384afabf7e8b0d5c03a44cafb9110f68873637fea50a997377af371002d44"
-  },
-  {
-   "id": "voice/session_bye",
-   "group": "voice",
-   "path": "audio/voice/session_bye.mp3",
-   "type": "audio/mpeg",
-   "version": 1,
-   "bytes": 26063,
-   "sha256": "efd0ccf6bc2cfe14ef677f641b6de3ba60e1ca67733e8ff96c287f73a00c3ba1"
-  },
-  {
-   "id": "voice/session_pause",
-   "group": "voice",
-   "path": "audio/voice/session_pause.mp3",
-   "type": "audio/mpeg",
-   "version": 1,
-   "bytes": 37034,
-   "sha256": "ffff61b96bbb29fe18657a136ab080c42fd2b696b7d60ac7dde4224e8f807a19"
-  },
-  {
-   "id": "voice/session_resume",
-   "group": "voice",
-   "path": "audio/voice/session_resume.mp3",
-   "type": "audio/mpeg",
-   "version": 1,
-   "bytes": 27630,
-   "sha256": "c7f5548bc3158a0df9e1c85d29e54f062c7849f4a28ff8e2b6bc6c45d4151782"
-  },
-  {
-   "id": "voice/session_sleepy",
-   "group": "voice",
-   "path": "audio/voice/session_sleepy.mp3",
-   "type": "audio/mpeg",
-   "version": 1,
-   "bytes": 46125,
-   "sha256": "c7a3d3245c488e06e6bba7641aee67e2214de98180e79dd92e074636a765147a"
   },
   {
    "id": "voice/sticker_new",

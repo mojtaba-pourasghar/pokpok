@@ -20,7 +20,8 @@
    "event": "splash.shown",
    "screen": "splash",
    "file": "voice/app_splash_welcome.mp3",
-   "delayMs": 500
+   "delayMs": 500,
+   "spoken": "سَلام! مَن پوپو هَستَم. بِبین، لَمس کُن، کَشف کُن!"
   },
   {
    "id": "app.intro.1",
@@ -28,7 +29,8 @@
    "event": "intro.page1",
    "screen": "intro",
    "file": "voice/app_intro_1.mp3",
-   "delayMs": 300
+   "delayMs": 300,
+   "spoken": "سَلام دوستِ کوچولو! مَن پوپو هَستَم، یِک روباهِ کوچولو کِه عاشِقِ بازی اَست."
   },
   {
    "id": "app.intro.2",
@@ -36,7 +38,8 @@
    "event": "intro.page2",
    "screen": "intro",
    "file": "voice/app_intro_2.mp3",
-   "delayMs": 300
+   "delayMs": 300,
+   "spoken": "هَر چیزی را کِه دوست داری لَمس کُن. بِبین چِه اِتِّفاقی می‌اُفتَد!"
   },
   {
    "id": "app.intro.3",
@@ -44,7 +47,8 @@
    "event": "intro.page3",
    "screen": "intro",
    "file": "voice/app_intro_3.mp3",
-   "delayMs": 300
+   "delayMs": 300,
+   "spoken": "می‌تَوانی چیزها را بِکِشی و جابِه‌جا کُنی. بیا با هَم دُنیا را کَشف کُنیم!"
   },
   {
    "id": "app.profiles.pick",
@@ -52,7 +56,8 @@
    "event": "profiles.shown",
    "screen": "profiles",
    "file": "voice/app_profiles_pick.mp3",
-   "delayMs": 300
+   "delayMs": 300,
+   "spoken": "کی می‌خواهَد بازی کُنَد؟ عَکسِ خودَت را لَمس کُن."
   },
   {
    "id": "praise.1",
@@ -60,7 +65,8 @@
    "event": "praise",
    "screen": "any",
    "file": "voice/praise_1.mp3",
-   "group": "praise"
+   "group": "praise",
+   "spoken": "آفَرین!"
   },
   {
    "id": "praise.2",
@@ -68,7 +74,8 @@
    "event": "praise",
    "screen": "any",
    "file": "voice/praise_2.mp3",
-   "group": "praise"
+   "group": "praise",
+   "spoken": "چِه عالی!"
   },
   {
    "id": "praise.3",
@@ -76,7 +83,8 @@
    "event": "praise",
    "screen": "any",
    "file": "voice/praise_3.mp3",
-   "group": "praise"
+   "group": "praise",
+   "spoken": "تو فُوقُ‌العاده‌ای!"
   },
   {
    "id": "praise.4",
@@ -84,7 +92,8 @@
    "event": "praise",
    "screen": "any",
    "file": "voice/praise_4.mp3",
-   "group": "praise"
+   "group": "praise",
+   "spoken": "هورا!"
   },
   {
    "id": "praise.5",
@@ -92,7 +101,8 @@
    "event": "praise",
    "screen": "any",
    "file": "voice/praise_5.mp3",
-   "group": "praise"
+   "group": "praise",
+   "spoken": "خِیلی خوب بود!"
   },
   {
    "id": "praise.6",
@@ -100,4455 +110,4896 @@
    "event": "praise",
    "screen": "any",
    "file": "voice/praise_6.mp3",
-   "group": "praise"
-  },
-  {
-   "id": "idle.1",
-   "text": "این چیه؟ لمسش کن!",
-   "event": "idle",
-   "screen": "scene",
-   "file": "voice/idle_1.mp3",
-   "group": "idle"
-  },
-  {
-   "id": "idle.2",
-   "text": "ببین اینجا چی هست!",
-   "event": "idle",
-   "screen": "scene",
-   "file": "voice/idle_2.mp3",
-   "group": "idle"
-  },
-  {
-   "id": "idle.3",
-   "text": "می‌خواهی این را جابه‌جا کنی؟",
-   "event": "idle",
-   "screen": "scene",
-   "file": "voice/idle_3.mp3",
-   "group": "idle"
+   "group": "praise",
+   "spoken": "باریکَلّا!"
   },
   {
    "id": "sticker.new",
    "text": "یک برچسب تازه گرفتی! در دفتر خاطره‌هایت است.",
    "event": "sticker.earned",
    "screen": "any",
-   "file": "voice/sticker_new.mp3"
-  },
-  {
-   "id": "session.pause",
-   "text": "بازی ایستاد. هر وقت خواستی ادامه بده.",
-   "event": "pause",
-   "screen": "any",
-   "file": "voice/session_pause.mp3"
-  },
-  {
-   "id": "session.resume",
-   "text": "برگشتی! بیا ادامه بدهیم.",
-   "event": "resume",
-   "screen": "any",
-   "file": "voice/session_resume.mp3"
-  },
-  {
-   "id": "session.bye",
-   "text": "خداحافظ! زود برگرد.",
-   "event": "exit",
-   "screen": "any",
-   "file": "voice/session_bye.mp3"
-  },
-  {
-   "id": "session.sleepy",
-   "text": "پوپو کمی خسته است... شاید وقت استراحت باشد.",
-   "event": "time.limit",
-   "screen": "any",
-   "file": "voice/session_sleepy.mp3"
+   "file": "voice/sticker_new.mp3",
+   "spoken": "یِک بَرچَسبِ تازه گِرِفتی! دَر دَفتَرِ خاطِره‌هایَت اَست."
   },
   {
    "id": "parent.ask",
    "text": "این بخش برای بزرگ‌ترهاست. از مامان یا بابا کمک بگیر.",
    "event": "parent.gate",
    "screen": "parent",
-   "file": "voice/parent_ask.mp3"
+   "file": "voice/parent_ask.mp3",
+   "spoken": "این بَخش بَرایِ بُزُرگ‌تَرهاست. اَز مامان یا بابا کُمَک بِگیر."
   },
   {
    "id": "full.locked",
    "text": "این‌جا مال نسخه‌ی کامله. از مامان یا بابا بخواه برات بازش کنن!",
    "event": "paywall.shown",
    "screen": "paywall",
-   "file": "voice/full_locked.mp3"
+   "file": "voice/full_locked.mp3",
+   "spoken": "این‌جا مالِ نُسخه‌یِ کامِلِه. اَز مامان یا بابا بِخواه بَرات بازَش کُنَن!"
   },
   {
    "id": "notice.new",
    "text": "یه خبر تازه داریم! بیا ببین.",
    "event": "notice.shown",
    "screen": "notice",
-   "file": "voice/notice_new.mp3"
-  },
-  {
-   "id": "c2s2.s3.done",
-   "text": "آفرین! دانه‌ها آب خوردند.",
-   "event": "c2s2.s3.done",
-   "screen": "c2",
-   "file": "voice/c2s2_s3_done.mp3"
-  },
-  {
-   "id": "c2s2.s3.why",
-   "text": "با این نمی‌شود آب داد.",
-   "event": "c2s2.s3.why",
-   "screen": "c2",
-   "file": "voice/c2s2_s3_why.mp3"
-  },
-  {
-   "id": "c3s3.s1.done",
-   "text": "تق تق! تخته‌ها وصل شدند.",
-   "event": "c3s3.s1.done",
-   "screen": "c3",
-   "file": "voice/c3s3_s1_done.mp3"
-  },
-  {
-   "id": "c3s3.s1.why",
-   "text": "با این نمی‌شود میخ زد.",
-   "event": "c3s3.s1.why",
-   "screen": "c3",
-   "file": "voice/c3s3_s1_why.mp3"
-  },
-  {
-   "id": "c4s3.s3.done",
-   "text": "روشن شد! چه قشنگ.",
-   "event": "c4s3.s3.done",
-   "screen": "c4",
-   "file": "voice/c4s3_s3_done.mp3"
-  },
-  {
-   "id": "c4s3.s3.why",
-   "text": "این نور ندارد.",
-   "event": "c4s3.s3.why",
-   "screen": "c4",
-   "file": "voice/c4s3_s3_why.mp3"
-  },
-  {
-   "id": "c5s2.s2.done",
-   "text": "تق تق! چادر محکم شد.",
-   "event": "c5s2.s2.done",
-   "screen": "c5",
-   "file": "voice/c5s2_s2_done.mp3"
-  },
-  {
-   "id": "c5s2.s2.why",
-   "text": "با این نمی‌شود میخ زد.",
-   "event": "c5s2.s2.why",
-   "screen": "c5",
-   "file": "voice/c5s2_s2_why.mp3"
-  },
-  {
-   "id": "c5s3.s3.done",
-   "text": "آخیش! گرم شدم، ممنون عزیزم.",
-   "event": "c5s3.s3.done",
-   "screen": "c5",
-   "file": "voice/c5s3_s3_done.mp3"
-  },
-  {
-   "id": "c5s3.s3.why",
-   "text": "این گرم نمی‌کند.",
-   "event": "c5s3.s3.why",
-   "screen": "c5",
-   "file": "voice/c5s3_s3_why.mp3"
-  },
-  {
-   "id": "c7s1.s3.done",
-   "text": "تق تق! پل محکم شد.",
-   "event": "c7s1.s3.done",
-   "screen": "c7",
-   "file": "voice/c7s1_s3_done.mp3"
-  },
-  {
-   "id": "c7s1.s3.why",
-   "text": "با این نمی‌شود میخ زد.",
-   "event": "c7s1.s3.why",
-   "screen": "c7",
-   "file": "voice/c7s1_s3_why.mp3"
-  },
-  {
-   "id": "c7s4.s3.done",
-   "text": "برووووم! نامه‌ها رسیدند.",
-   "event": "c7s4.s3.done",
-   "screen": "c7",
-   "file": "voice/c7s4_s3_done.mp3"
-  },
-  {
-   "id": "c7s4.s3.why",
-   "text": "این حرکت نمی‌کند.",
-   "event": "c7s4.s3.why",
-   "screen": "c7",
-   "file": "voice/c7s4_s3_why.mp3"
-  },
-  {
-   "id": "c8s4.s2.done",
-   "text": "وای! ستاره‌ها!",
-   "event": "c8s4.s2.done",
-   "screen": "c8",
-   "file": "voice/c8s4_s2_done.mp3"
-  },
-  {
-   "id": "c8s4.s2.why",
-   "text": "با این نمی‌شود دور را دید.",
-   "event": "c8s4.s2.why",
-   "screen": "c8",
-   "file": "voice/c8s4_s2_why.mp3"
+   "file": "voice/notice_new.mp3",
+   "spoken": "یه خَبَرِ تازه داریم! بیا بِبین."
   },
   {
    "id": "c1.intro",
    "text": "طوفان آشپزخانه‌ی خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده. بیا با هم آشپزی کنیم!",
    "event": "c1.intro",
    "screen": "chapter",
-   "file": "voice/c1_intro.mp3"
+   "file": "voice/c1_intro.mp3",
+   "spoken": "طوفان آشپَزخانه‌یِ خاله خِرسی را بِه هَم ریخته و بَرایِ جَشن هیچ غَذایی نَمانده. بیا با هَم آشپَزی کُنیم!"
   },
   {
    "id": "c1.film.1",
    "text": "آب‌پرتقال شیرین و ترش",
    "event": "c1.film.1",
    "screen": "film",
-   "file": "voice/c1_film_1.mp3"
+   "file": "voice/c1_film_1.mp3",
+   "spoken": "آبِ پُرتِقالِ شیرین و تُرش"
   },
   {
    "id": "c1.film.2",
    "text": "نان ترد و گرم",
    "event": "c1.film.2",
    "screen": "film",
-   "file": "voice/c1_film_2.mp3"
+   "file": "voice/c1_film_2.mp3",
+   "spoken": "نانِ تُرد و گَرم"
   },
   {
    "id": "c1.film.3",
    "text": "سوپ داغ و خوشمزه",
    "event": "c1.film.3",
    "screen": "film",
-   "file": "voice/c1_film_3.mp3"
+   "file": "voice/c1_film_3.mp3",
+   "spoken": "سوپِ داغ و خوشمَزه"
   },
   {
    "id": "c1.film.4",
    "text": "و کیک تولد با شمع‌های روشن!",
    "event": "c1.film.4",
    "screen": "film",
-   "file": "voice/c1_film_4.mp3"
+   "file": "voice/c1_film_4.mp3",
+   "spoken": "و کیکِ تَوَلُّد با شَمع‌هایِ رُوشَن!"
   },
   {
    "id": "c1.next",
    "text": "بانی در باغ تشنه است... بیا برویم پیشش!",
    "event": "c1.next",
    "screen": "film",
-   "file": "voice/c1_next.mp3"
+   "file": "voice/c1_next.mp3",
+   "spoken": "بانی دَر باغ تِشنه اَست... بیا بِرَویم پیشَش!"
   },
   {
    "id": "c1s1.mission",
    "text": "خاله خرسی تشنه است. بیا برایش آب‌پرتقال درست کنیم!",
    "event": "c1s1.mission",
    "screen": "c1",
-   "file": "voice/c1s1_mission.mp3"
+   "file": "voice/c1s1_mission.mp3",
+   "spoken": "خاله خِرسی تِشنه اَست. بیا بَرایَش آبِ پُرتِقال دُرُست کُنیم!"
   },
   {
    "id": "c1s1.s1",
-   "text": "باد پرتقال‌ها را از درخت می‌اندازد! سبد را جابه‌جا کن و بگیرشان.",
+   "text": "پرتقال‌ها از بالا می‌افتند! سبد را با انگشت زیرشان ببر. سیب خراب را نگیر!",
    "event": "c1s1.s1",
    "screen": "c1",
-   "file": "voice/c1s1_s1.mp3"
+   "file": "voice/c1s1_s1.mp3",
+   "spoken": "پُرتِقال‌ها اَز بالا می‌اُفتَند! سَبَد را با اَنگُشت زیرِشان بِبَر. سیبِ خَراب را نَگیر!"
   },
   {
    "id": "c1s1.s2",
-   "text": "پرتقال‌های رسیده را از درخت بچین.",
+   "text": "روی پرتقال‌های درخت بزن تا در سبد بپرند. سیب خراب را نچین!",
    "event": "c1s1.s2",
    "screen": "c1",
-   "file": "voice/c1s1_s2.mp3"
+   "file": "voice/c1s1_s2.mp3",
+   "spoken": "رویِ پُرتِقال‌هایِ دِرَخت بِزَن تا دَر سَبَد بِپَرَند. سیبِ خَراب را نَچین!"
   },
   {
    "id": "c1s1.s3",
-   "text": "پرتقال‌ها خاکی‌اند. بشورشان تا تمیز شوند.",
+   "text": "پرتقال خاکی است. انگشتت را رویش بکش تا تمیز شود.",
    "event": "c1s1.s3",
    "screen": "c1",
-   "file": "voice/c1s1_s3.mp3"
+   "file": "voice/c1s1_s3.mp3",
+   "spoken": "پُرتِقال خاکی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد."
   },
   {
    "id": "c1s1.s4",
-   "text": "پرتقال را از وسط نصف کن. انگشتت را روی خط بکش.",
+   "text": "انگشتت را روی خط‌چین بکش تا پرتقال نصف شود.",
    "event": "c1s1.s4",
    "screen": "c1",
-   "file": "voice/c1s1_s4.mp3"
+   "file": "voice/c1s1_s4.mp3",
+   "spoken": "اَنگُشتَت را رویِ خَطّ‌چین بِکِش تا پُرتِقال نِصف شَوَد."
   },
   {
    "id": "c1s1.s5",
-   "text": "پرتقال را روی آب‌گیری فشار بده! تند تند بزن.",
+   "text": "روی آب‌گیری تند تند بزن تا آب پرتقال دربیاید!",
    "event": "c1s1.s5",
    "screen": "c1",
-   "file": "voice/c1s1_s5.mp3"
+   "file": "voice/c1s1_s5.mp3",
+   "spoken": "رویِ آب‌گیری تُند تُند بِزَن تا آبِ پُرتِقال دَربیایَد!"
   },
   {
    "id": "c1s1.s6",
-   "text": "حالا آب‌میوه را در لیوان بریز. تا خط پر کن، نه بیشتر!",
+   "text": "پاکت آب‌میوه را نگه دار تا در لیوان بریزد. وقتی به پرچم رسید، ول کن!",
    "event": "c1s1.s6",
    "screen": "c1",
-   "file": "voice/c1s1_s6.mp3"
+   "file": "voice/c1s1_s6.mp3",
+   "spoken": "پاکَتِ آب‌میوه را نِگَه دار تا دَر لیوان بِریزَد. وَقتی بِه پَرچَم رِسید، وِل کُن!"
   },
   {
    "id": "c1s1.s7",
-   "text": "آب‌پرتقال را به خاله خرسی بده تا بنوشد!",
+   "text": "خاله خرسی آب‌پرتقال می‌خواهد. آب‌پرتقال را بکش و به دهانش ببر!",
    "event": "c1s1.s7",
    "screen": "c1",
-   "file": "voice/c1s1_s7.mp3"
+   "file": "voice/c1s1_s7.mp3",
+   "spoken": "خاله خِرسی آبِ پُرتِقال می‌خواهَد. آبِ پُرتِقال را بِکِش و بِه دَهانَش بِبَر!"
   },
   {
    "id": "item.juice.made",
    "text": "آفرین! آب‌پرتقال آماده شد!",
    "event": "item.juice.made",
    "screen": "c1",
-   "file": "voice/item_juice_made.mp3"
+   "file": "voice/item_juice_made.mp3",
+   "spoken": "آفَرین! آبِ پُرتِقال آماده شُد!"
   },
   {
    "id": "c1s2.mission",
    "text": "برای ناهار نان لازم داریم. بیا نان بپزیم!",
    "event": "c1s2.mission",
    "screen": "c1",
-   "file": "voice/c1s2_mission.mp3"
+   "file": "voice/c1s2_mission.mp3",
+   "spoken": "بَرایِ ناهار نان لازِم داریم. بیا نان بِپَزیم!"
   },
   {
    "id": "c1s2.s1",
-   "text": "وسایل نان را به خاطر بسپار. جفت‌ها را پیدا کن!",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c1s2.s1",
    "screen": "c1",
-   "file": "voice/c1s2_s1.mp3"
+   "file": "voice/c1s2_s1.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "c1s2.s2",
-   "text": "آرد را در کاسه بریز.",
+   "text": "کیسه‌ی آرد را نگه دار تا در کاسه بریزد. سر پرچم ول کن!",
    "event": "c1s2.s2",
    "screen": "c1",
-   "file": "voice/c1s2_s2.mp3"
+   "file": "voice/c1s2_s2.mp3",
+   "spoken": "کیسه‌یِ آرد را نِگَه دار تا دَر کاسه بِریزَد. سَرِ پَرچَم وِل کُن!"
   },
   {
    "id": "c1s2.s3",
-   "text": "کمی آب هم اضافه کن.",
+   "text": "حالا پارچ آب را نگه دار. وقتی آب به پرچم رسید، ول کن!",
    "event": "c1s2.s3",
    "screen": "c1",
-   "file": "voice/c1s2_s3.mp3"
+   "file": "voice/c1s2_s3.mp3",
+   "spoken": "حالا پارچِ آب را نِگَه دار. وَقتی آب بِه پَرچَم رِسید، وِل کُن!"
   },
   {
    "id": "c1s2.s4",
-   "text": "خمیر را ورز بده! با هر ضربه نرم‌تر می‌شود.",
+   "text": "روی خمیر بزن و ورزش بده! هر ضربه نرم‌ترش می‌کند.",
    "event": "c1s2.s4",
    "screen": "c1",
-   "file": "voice/c1s2_s4.mp3"
+   "file": "voice/c1s2_s4.mp3",
+   "spoken": "رویِ خَمیر بِزَن و وَرزَش بِدِه! هَر ضَربه نَرم‌تَرَش می‌کُنَد."
   },
   {
    "id": "c1s2.s5",
-   "text": "خمیر را چند تکه کن تا چند نان کوچک شود.",
+   "text": "انگشتت را روی خط‌چین‌ها بکش و خمیر را تکه‌تکه کن.",
    "event": "c1s2.s5",
    "screen": "c1",
-   "file": "voice/c1s2_s5.mp3"
+   "file": "voice/c1s2_s5.mp3",
+   "spoken": "اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش و خَمیر را تِکّه‌تِکّه کُن."
   },
   {
    "id": "c1s2.s6",
-   "text": "نان را در فر گذاشتیم. وقتی طلایی شد، بزن!",
+   "text": "نان در فر است. وقتی حلقه به جای طلایی رسید، بزن!",
    "event": "c1s2.s6",
    "screen": "c1",
-   "file": "voice/c1s2_s6.mp3"
+   "file": "voice/c1s2_s6.mp3",
+   "spoken": "نان دَر فِر اَست. وَقتی حَلقه بِه جایِ طَلایی رِسید، بِزَن!"
   },
   {
    "id": "c1s2.s7",
-   "text": "نان گرم را به خاله خرسی بده.",
+   "text": "خاله خرسی نان می‌خواهد. نان گرم را به دهانش ببر.",
    "event": "c1s2.s7",
    "screen": "c1",
-   "file": "voice/c1s2_s7.mp3"
+   "file": "voice/c1s2_s7.mp3",
+   "spoken": "خاله خِرسی نان می‌خواهَد. نانِ گَرم را بِه دَهانَش بِبَر."
   },
   {
    "id": "item.bread.made",
    "text": "آفرین! نان آماده شد!",
    "event": "item.bread.made",
    "screen": "c1",
-   "file": "voice/item_bread_made.mp3"
+   "file": "voice/item_bread_made.mp3",
+   "spoken": "آفَرین! نان آماده شُد!"
   },
   {
    "id": "c1s3.mission",
    "text": "باد سرد می‌آید. یک سوپ گرم بپزیم!",
    "event": "c1s3.mission",
    "screen": "c1",
-   "file": "voice/c1s3_mission.mp3"
+   "file": "voice/c1s3_mission.mp3",
+   "spoken": "بادِ سَرد می‌آیَد. یِک سوپِ گَرم بِپَزیم!"
   },
   {
    "id": "c1s3.s1",
-   "text": "سبزی‌ها از قفسه می‌افتند! فقط سالم‌ها را بگیر.",
+   "text": "هویج‌ها می‌افتند! سبد را زیرشان ببر. کفش و سیب خراب را نگیر!",
    "event": "c1s3.s1",
    "screen": "c1",
-   "file": "voice/c1s3_s1.mp3"
+   "file": "voice/c1s3_s1.mp3",
+   "spoken": "هَویج‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. کَفش و سیبِ خَراب را نَگیر!"
   },
   {
    "id": "c1s3.s2",
-   "text": "سبزی‌های سالم را در سبد بگذار و خراب‌ها را در سطل.",
+   "text": "هر چه روی نوار می‌آید را بکش: سالم‌ها در سبد سبز، خراب‌ها در سطل قرمز.",
    "event": "c1s3.s2",
    "screen": "c1",
-   "file": "voice/c1s3_s2.mp3"
+   "file": "voice/c1s3_s2.mp3",
+   "spoken": "هَر چِه رویِ نَوار می‌آیَد را بِکِش: سالِم‌ها دَر سَبَدِ سَبز، خَراب‌ها دَر سَطلِ قِرمِز."
   },
   {
    "id": "c1s3.s3",
-   "text": "سیب‌زمینی گلی است. بشورش!",
+   "text": "سیب‌زمینی گلی است. انگشتت را رویش بکش تا تمیز شود.",
    "event": "c1s3.s3",
    "screen": "c1",
-   "file": "voice/c1s3_s3.mp3"
+   "file": "voice/c1s3_s3.mp3",
+   "spoken": "سیب‌زَمینی گِلی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد."
   },
   {
    "id": "c1s3.s4",
-   "text": "هویج را خرد کن.",
+   "text": "انگشتت را روی هر خط‌چین بکش تا هویج خرد شود.",
    "event": "c1s3.s4",
    "screen": "c1",
-   "file": "voice/c1s3_s4.mp3"
+   "file": "voice/c1s3_s4.mp3",
+   "spoken": "اَنگُشتَت را رویِ هَر خَطّ‌چین بِکِش تا هَویج خُرد شَوَد."
   },
   {
    "id": "c1s3.s5",
-   "text": "سه تکه هویج در قابلمه بینداز.",
+   "text": "سه تا هویج در قابلمه بینداز. بشمار: یک، دو، سه!",
    "event": "c1s3.s5",
    "screen": "c1",
-   "file": "voice/c1s3_s5.mp3"
+   "file": "voice/c1s3_s5.mp3",
+   "spoken": "سه تا هَویج دَر قابلَمه بِیَنداز. بِشُمار: یِک، دو، سه!"
   },
   {
    "id": "c1s3.s6",
-   "text": "سوپ را هم بزن. انگشتت را دور قابلمه بچرخان.",
+   "text": "انگشتت را دور قابلمه بچرخان تا سوپ هم بخورد.",
    "event": "c1s3.s6",
    "screen": "c1",
-   "file": "voice/c1s3_s6.mp3"
+   "file": "voice/c1s3_s6.mp3",
+   "spoken": "اَنگُشتَت را دُورِ قابلَمه بِچَرخان تا سوپ هَم بُخورَد."
   },
   {
    "id": "c1s3.s7",
-   "text": "سوپ خیلی داغ است! نگه دار و فوت کن تا خنک شود.",
+   "text": "سوپ داغ است! دکمه‌ی فوت را نگه دار تا خنک شود.",
    "event": "c1s3.s7",
    "screen": "c1",
-   "file": "voice/c1s3_s7.mp3"
+   "file": "voice/c1s3_s7.mp3",
+   "spoken": "سوپ داغ اَست! دُکمه‌یِ فوت را نِگَه دار تا خُنَک شَوَد."
   },
   {
    "id": "item.soup.made",
    "text": "آفرین! سوپ سبزیجات آماده شد!",
    "event": "item.soup.made",
    "screen": "c1",
-   "file": "voice/item_soup_made.mp3"
+   "file": "voice/item_soup_made.mp3",
+   "spoken": "آفَرین! سوپِ سَبزیجات آماده شُد!"
   },
   {
    "id": "c1s4.mission",
    "text": "امروز تولد خاله خرسی است! بیا کیک بپزیم.",
    "event": "c1s4.mission",
    "screen": "c1",
-   "file": "voice/c1s4_mission.mp3"
+   "file": "voice/c1s4_mission.mp3",
+   "spoken": "اِمروز تَوَلُّدِ خاله خِرسی اَست! بیا کیک بِپَزیم."
   },
   {
    "id": "c1s4.s1",
-   "text": "تخم‌مرغ‌ها را بشکن. روی هر کدام بزن.",
+   "text": "روی تخم‌مرغ بزن تا بشکند و در کاسه بریزد.",
    "event": "c1s4.s1",
    "screen": "c1",
-   "file": "voice/c1s4_s1.mp3"
+   "file": "voice/c1s4_s1.mp3",
+   "spoken": "رویِ تُخمِ مُرغ بِزَن تا بِشکَنَد و دَر کاسه بِریزَد."
   },
   {
    "id": "c1s4.s2",
-   "text": "آرد را اضافه کن.",
+   "text": "کیسه‌ی آرد را نگه دار تا در کاسه بریزد. سر پرچم ول کن.",
    "event": "c1s4.s2",
    "screen": "c1",
-   "file": "voice/c1s4_s2.mp3"
+   "file": "voice/c1s4_s2.mp3",
+   "spoken": "کیسه‌یِ آرد را نِگَه دار تا دَر کاسه بِریزَد. سَرِ پَرچَم وِل کُن."
   },
   {
    "id": "c1s4.s3",
-   "text": "خوب هم بزن تا خمیر کیک صاف شود.",
+   "text": "انگشتت را دور کاسه بچرخان تا خمیر کیک درست شود.",
    "event": "c1s4.s3",
    "screen": "c1",
-   "file": "voice/c1s4_s3.mp3"
+   "file": "voice/c1s4_s3.mp3",
+   "spoken": "اَنگُشتَت را دُورِ کاسه بِچَرخان تا خَمیرِ کیک دُرُست شَوَد."
   },
   {
    "id": "c1s4.s4",
-   "text": "کیک را با رنگ‌های خوشمزه تزئین کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید کیک بزن.",
    "event": "c1s4.s4",
    "screen": "c1",
-   "file": "voice/c1s4_s4.mp3"
+   "file": "voice/c1s4_s4.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ کیک بِزَن."
   },
   {
    "id": "c1s4.s5",
-   "text": "چهار شمع روی کیک بگذار.",
+   "text": "چهار شمع روی کیک بگذار. بشمار!",
    "event": "c1s4.s5",
    "screen": "c1",
-   "file": "voice/c1s4_s5.mp3"
+   "file": "voice/c1s4_s5.mp3",
+   "spoken": "چَهار شَمع رویِ کیک بُگذار. بِشُمار!"
   },
   {
    "id": "c1s4.s6",
-   "text": "تولدت مبارک خاله خرسی! شمع‌ها را فوت کن.",
+   "text": "تولدت مبارک! دکمه‌ی فوت را نگه دار تا شمع‌ها خاموش شوند.",
    "event": "c1s4.s6",
    "screen": "c1",
-   "file": "voice/c1s4_s6.mp3"
+   "file": "voice/c1s4_s6.mp3",
+   "spoken": "تَوَلُّدَت مُبارَک! دُکمه‌یِ فوت را نِگَه دار تا شَمع‌ها خاموش شَوَند."
   },
   {
    "id": "c1s4.s7",
-   "text": "یک تکه کیک به خاله خرسی بده.",
+   "text": "خاله خرسی کیک می‌خواهد. کیک را به دهانش ببر.",
    "event": "c1s4.s7",
    "screen": "c1",
-   "file": "voice/c1s4_s7.mp3"
+   "file": "voice/c1s4_s7.mp3",
+   "spoken": "خاله خِرسی کیک می‌خواهَد. کیک را بِه دَهانَش بِبَر."
   },
   {
    "id": "item.cake.made",
    "text": "آفرین! کیک تولد آماده شد!",
    "event": "item.cake.made",
    "screen": "c1",
-   "file": "voice/item_cake_made.mp3"
+   "file": "voice/item_cake_made.mp3",
+   "spoken": "آفَرین! کیکِ تَوَلُّد آماده شُد!"
   },
   {
    "id": "c2.intro",
    "text": "بانی تشنه است و باغش خشک شده. کمکش کنیم باغ دوباره سبز شود!",
    "event": "c2.intro",
    "screen": "chapter",
-   "file": "voice/c2_intro.mp3"
+   "file": "voice/c2_intro.mp3",
+   "spoken": "بانی تِشنه اَست و باغَش خُشک شُده. کُمَکَش کُنیم باغ دُوباره سَبز شَوَد!"
   },
   {
    "id": "c2.film.1",
    "text": "آب‌پاش، گل‌ها را سیراب کرد",
    "event": "c2.film.1",
    "screen": "film",
-   "file": "voice/c2_film_1.mp3"
+   "file": "voice/c2_film_1.mp3",
+   "spoken": "آب‌پاش، گُل‌ها را سیراب کَرد"
   },
   {
    "id": "c2.film.2",
    "text": "گلدان گل، زنبورها را آورد",
    "event": "c2.film.2",
    "screen": "film",
-   "file": "voice/c2_film_2.mp3"
+   "file": "voice/c2_film_2.mp3",
+   "spoken": "گُلدانِ گُل، زَنبورها را آوَرد"
   },
   {
    "id": "c2.film.3",
    "text": "مرغ‌ها تخم گذاشتند",
    "event": "c2.film.3",
    "screen": "film",
-   "file": "voice/c2_film_3.mp3"
+   "file": "voice/c2_film_3.mp3",
+   "spoken": "مُرغ‌ها تُخم گُذاشتَند"
   },
   {
    "id": "c2.film.4",
    "text": "و ساندویچ پنیر برای پیک‌نیک!",
    "event": "c2.film.4",
    "screen": "film",
-   "file": "voice/c2_film_4.mp3"
+   "file": "voice/c2_film_4.mp3",
+   "spoken": "و ساندویچِ پَنیر بَرایِ پیک‌نیک!"
   },
   {
    "id": "c2.next",
    "text": "کارگاه آقا سنجاب خراب شده... بیا کمکش کنیم!",
    "event": "c2.next",
    "screen": "film",
-   "file": "voice/c2_next.mp3"
+   "file": "voice/c2_next.mp3",
+   "spoken": "کارگاهِ آقا سَنجاب خَراب شُده... بیا کُمَکَش کُنیم!"
   },
   {
    "id": "c2s1.mission",
    "text": "بانی خیلی تشنه است و حرف نمی‌زند! اول یک چیزی برای نوشیدن بهش بده.",
    "event": "c2s1.mission",
    "screen": "c2",
-   "file": "voice/c2s1_mission.mp3"
+   "file": "voice/c2s1_mission.mp3",
+   "spoken": "بانی خِیلی تِشنه اَست و حَرف نِمی‌زَنَد! اَوَّل یِک چیزی بَرایِ نوشیدَن بِهِش بِدِه."
   },
   {
    "id": "c2s1.s1",
-   "text": "از کوله‌پشتی چیزی بده که تشنگی را برطرف کند.",
+   "text": "بانی تشنه است. از کوله‌پشتی چیزی بکش که تشنگی را برطرف کند.",
    "event": "c2s1.s1",
    "screen": "c2",
-   "file": "voice/c2s1_s1.mp3"
+   "file": "voice/c2s1_s1.mp3",
+   "spoken": "بانی تِشنه اَست. اَز کوله‌پُشتی چیزی بِکِش کِه تِشنِگی را بَرطَرَف کُنَد."
   },
   {
    "id": "c2s1.s1.done",
    "text": "به به! بانی سرحال شد.",
    "event": "c2s1.s1.done",
    "screen": "c2",
-   "file": "voice/c2s1_s1_done.mp3"
+   "file": "voice/c2s1_s1_done.mp3",
+   "spoken": "بَه بَه! بانی سَرحال شُد."
   },
   {
    "id": "c2s1.s1.why",
    "text": "این برای رفع تشنگی نیست.",
    "event": "c2s1.s1.why",
    "screen": "c2",
-   "file": "voice/c2s1_s1_why.mp3"
+   "file": "voice/c2s1_s1_why.mp3",
+   "spoken": "این بَرایِ رَفعِ تِشنِگی نیست."
   },
   {
    "id": "c2s1.s2",
-   "text": "نقطه‌ها را به ترتیب وصل کن تا ببینی چه می‌سازیم!",
+   "text": "نقطه‌ها را به ترتیب بزن: یک، دو، سه… ببین چه پیدا می‌شود!",
    "event": "c2s1.s2",
    "screen": "c2",
-   "file": "voice/c2s1_s2.mp3"
+   "file": "voice/c2s1_s2.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن: یِک، دو، سه… بِبین چِه پِیدا می‌شَوَد!"
   },
   {
    "id": "c2s1.s3",
-   "text": "تکه‌های آب‌پاش را سر جایشان بگذار.",
+   "text": "تکه‌های آب‌پاش را بکش و روی جای کم‌رنگشان بگذار.",
    "event": "c2s1.s3",
    "screen": "c2",
-   "file": "voice/c2s1_s3.mp3"
+   "file": "voice/c2s1_s3.mp3",
+   "spoken": "تِکّه‌هایِ آب‌پاش را بِکِش و رویِ جایِ کَم‌رَنگِشان بُگذار."
   },
   {
    "id": "c2s1.s4",
-   "text": "دسته‌ی چاه را بچرخان تا آب بالا بیاید.",
+   "text": "انگشتت را دور چاه بچرخان تا سطل آب بالا بیاید.",
    "event": "c2s1.s4",
    "screen": "c2",
-   "file": "voice/c2s1_s4.mp3"
+   "file": "voice/c2s1_s4.mp3",
+   "spoken": "اَنگُشتَت را دُورِ چاه بِچَرخان تا سَطلِ آب بالا بیایَد."
   },
   {
    "id": "c2s1.s5",
-   "text": "آب‌پاش را پر کن.",
+   "text": "پارچ را نگه دار تا آب‌پاش پر شود. سر پرچم ول کن!",
    "event": "c2s1.s5",
    "screen": "c2",
-   "file": "voice/c2s1_s5.mp3"
+   "file": "voice/c2s1_s5.mp3",
+   "spoken": "پارچ را نِگَه دار تا آب‌پاش پُر شَوَد. سَرِ پَرچَم وِل کُن!"
   },
   {
    "id": "c2s1.s6",
-   "text": "آب‌پاش را روی ردیف گل‌ها ببر تا همه آب بخورند.",
+   "text": "آب‌پاش را با انگشت روی جاده تا پرچم ببر.",
    "event": "c2s1.s6",
    "screen": "c2",
-   "file": "voice/c2s1_s6.mp3"
+   "file": "voice/c2s1_s6.mp3",
+   "spoken": "آب‌پاش را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر."
   },
   {
    "id": "item.watering_can.made",
    "text": "آفرین! آب‌پاش آماده شد!",
    "event": "item.watering_can.made",
    "screen": "c2",
-   "file": "voice/item_watering_can_made.mp3"
+   "file": "voice/item_watering_can_made.mp3",
+   "spoken": "آفَرین! آب‌پاش آماده شُد!"
   },
   {
    "id": "c2s2.mission",
    "text": "بانی می‌خواهد یک گل قشنگ بکارد.",
    "event": "c2s2.mission",
    "screen": "c2",
-   "file": "voice/c2s2_mission.mp3"
+   "file": "voice/c2s2_mission.mp3",
+   "spoken": "بانی می‌خواهَد یِک گُلِ قَشَنگ بِکارَد."
   },
   {
    "id": "c2s2.s1",
-   "text": "باد دانه‌ها را می‌آورد! بگیرشان.",
+   "text": "دانه‌ها از بالا می‌افتند! سبد را زیرشان ببر. کفش را نگیر!",
    "event": "c2s2.s1",
    "screen": "c2",
-   "file": "voice/c2s2_s1.mp3"
+   "file": "voice/c2s2_s1.mp3",
+   "spoken": "دانه‌ها اَز بالا می‌اُفتَند! سَبَد را زیرِشان بِبَر. کَفش را نَگیر!"
   },
   {
    "id": "c2s2.s2",
-   "text": "خاک را با بیلچه بکن.",
+   "text": "روی گلدان بزن تا خاکش نرم شود.",
    "event": "c2s2.s2",
    "screen": "c2",
-   "file": "voice/c2s2_s2.mp3"
+   "file": "voice/c2s2_s2.mp3",
+   "spoken": "رویِ گُلدان بِزَن تا خاکَش نَرم شَوَد."
   },
   {
    "id": "c2s2.s3",
-   "text": "سه دانه در خاک بکار.",
+   "text": "سه دانه در گلدان بگذار. بشمار!",
    "event": "c2s2.s3",
    "screen": "c2",
-   "file": "voice/c2s2_s3.mp3"
+   "file": "voice/c2s2_s3.mp3",
+   "spoken": "سه دانه دَر گُلدان بُگذار. بِشُمار!"
   },
   {
    "id": "c2s2.s4",
-   "text": "دانه‌ها تشنه‌اند! از کوله چیزی بیاور که با آن آب بدهیم.",
+   "text": "دانه‌ها تشنه‌اند! از کوله‌پشتی چیزی بکش که با آن آب بدهیم.",
    "event": "c2s2.s4",
    "screen": "c2",
-   "file": "voice/c2s2_s4.mp3"
+   "file": "voice/c2s2_s4.mp3",
+   "spoken": "دانه‌ها تِشنه‌اَند! اَز کوله‌پُشتی چیزی بِکِش کِه با آن آب بِدَهیم."
   },
   {
    "id": "c2s2.s4.done",
    "text": "آفرین! دانه‌ها آب خوردند.",
    "event": "c2s2.s4.done",
    "screen": "c2",
-   "file": "voice/c2s2_s4_done.mp3"
+   "file": "voice/c2s2_s4_done.mp3",
+   "spoken": "آفَرین! دانه‌ها آب خوردَند."
   },
   {
    "id": "c2s2.s4.why",
    "text": "با این نمی‌شود آب داد.",
    "event": "c2s2.s4.why",
    "screen": "c2",
-   "file": "voice/c2s2_s4_why.mp3"
+   "file": "voice/c2s2_s4_why.mp3",
+   "spoken": "با این نِمی‌شَوَد آب داد."
   },
   {
    "id": "c2s2.s5",
-   "text": "جوانه دارد بزرگ می‌شود... وقتی گل باز شد بزن!",
+   "text": "جوانه دارد بزرگ می‌شود. وقتی حلقه به جای طلایی رسید، بزن!",
    "event": "c2s2.s5",
    "screen": "c2",
-   "file": "voice/c2s2_s5.mp3"
+   "file": "voice/c2s2_s5.mp3",
+   "spoken": "جَوانه دارَد بُزُرگ می‌شَوَد. وَقتی حَلقه بِه جایِ طَلایی رِسید، بِزَن!"
   },
   {
    "id": "c2s2.s6",
-   "text": "گلدان را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید گلدان بزن.",
    "event": "c2s2.s6",
    "screen": "c2",
-   "file": "voice/c2s2_s6.mp3"
+   "file": "voice/c2s2_s6.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ گُلدان بِزَن."
   },
   {
    "id": "item.flower_pot.made",
    "text": "آفرین! گلدان گل آماده شد!",
    "event": "item.flower_pot.made",
    "screen": "c2",
-   "file": "voice/item_flower_pot_made.mp3"
+   "file": "voice/item_flower_pot_made.mp3",
+   "spoken": "آفَرین! گُلدانِ گُل آماده شُد!"
   },
   {
    "id": "c2s3.mission",
    "text": "مرغ‌های بانی لانه ندارند و گم شده‌اند!",
    "event": "c2s3.mission",
    "screen": "c2",
-   "file": "voice/c2s3_mission.mp3"
+   "file": "voice/c2s3_mission.mp3",
+   "spoken": "مُرغ‌هایِ بانی لانه نَدارَند و گُم شُده‌اَند!"
   },
   {
    "id": "c2s3.s1",
-   "text": "کاه جمع کن.",
+   "text": "روی کاه‌ها بزن تا در سبد بپرند. کفش را برندار!",
    "event": "c2s3.s1",
    "screen": "c2",
-   "file": "voice/c2s3_s1.mp3"
+   "file": "voice/c2s3_s1.mp3",
+   "spoken": "رویِ کاه‌ها بِزَن تا دَر سَبَد بِپَرَند. کَفش را بَرنَدار!"
   },
   {
    "id": "c2s3.s2",
-   "text": "کاه‌ها را در لانه بگذار.",
+   "text": "چهار تا کاه در لانه بگذار. بشمار!",
    "event": "c2s3.s2",
    "screen": "c2",
-   "file": "voice/c2s3_s2.mp3"
+   "file": "voice/c2s3_s2.mp3",
+   "spoken": "چَهار تا کاه دَر لانه بُگذار. بِشُمار!"
   },
   {
    "id": "c2s3.s3",
-   "text": "مرغ‌ها از پشت بوته‌ها سر می‌کشند! هر مرغ را بزن تا به لانه بیاید.",
+   "text": "مرغ‌ها از سوراخ‌ها سر بیرون می‌آورند. زود رویشان بزن! سیب خراب را نزن.",
    "event": "c2s3.s3",
    "screen": "c2",
-   "file": "voice/c2s3_s3.mp3"
+   "file": "voice/c2s3_s3.mp3",
+   "spoken": "مُرغ‌ها اَز سوراخ‌ها سَر بیرون می‌آوَرَند. زود رویِشان بِزَن! سیبِ خَراب را نَزَن."
   },
   {
    "id": "c2s3.s4",
-   "text": "مرغ‌ها گرسنه‌اند. بهشان دانه بده.",
+   "text": "مرغ دانه می‌خواهد. دانه را به نوکش ببر. کفش نه!",
    "event": "c2s3.s4",
    "screen": "c2",
-   "file": "voice/c2s3_s4.mp3"
+   "file": "voice/c2s3_s4.mp3",
+   "spoken": "مُرغ دانه می‌خواهَد. دانه را بِه نوکَش بِبَر. کَفش نَه!"
   },
   {
    "id": "c2s3.s5",
-   "text": "مرغ‌ها تخم گذاشتند! تخم‌مرغ‌ها را آرام با سبد بگیر.",
+   "text": "تخم‌مرغ‌ها می‌افتند! سبد را زیرشان ببر. کفش را نگیر!",
    "event": "c2s3.s5",
    "screen": "c2",
-   "file": "voice/c2s3_s5.mp3"
+   "file": "voice/c2s3_s5.mp3",
+   "spoken": "تُخمِ مُرغ‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. کَفش را نَگیر!"
   },
   {
    "id": "c2s3.s6",
-   "text": "تخم‌مرغ‌ها را در لانه بشمار.",
+   "text": "سه تخم‌مرغ در لانه بگذار. بشمار!",
    "event": "c2s3.s6",
    "screen": "c2",
-   "file": "voice/c2s3_s6.mp3"
+   "file": "voice/c2s3_s6.mp3",
+   "spoken": "سه تُخمِ مُرغ دَر لانه بُگذار. بِشُمار!"
   },
   {
    "id": "item.eggs.made",
    "text": "آفرین! تخم‌مرغ آماده شد!",
    "event": "item.eggs.made",
    "screen": "c2",
-   "file": "voice/item_eggs_made.mp3"
+   "file": "voice/item_eggs_made.mp3",
+   "spoken": "آفَرین! تُخمِ مُرغ آماده شُد!"
   },
   {
    "id": "c2s4.mission",
    "text": "وقت پیک‌نیک است! یک ساندویچ خوشمزه درست کنیم.",
    "event": "c2s4.mission",
    "screen": "c2",
-   "file": "voice/c2s4_mission.mp3"
+   "file": "voice/c2s4_mission.mp3",
+   "spoken": "وَقتِ پیک‌نیک اَست! یِک ساندویچِ خوشمَزه دُرُست کُنیم."
   },
   {
    "id": "c2s4.s1",
-   "text": "گاو را آرام بدوش. با هر ضربه شیر می‌آید.",
+   "text": "روی گاو بزن تا شیر بدهد. هر ضربه، کمی شیر!",
    "event": "c2s4.s1",
    "screen": "c2",
-   "file": "voice/c2s4_s1.mp3"
+   "file": "voice/c2s4_s1.mp3",
+   "spoken": "رویِ گاو بِزَن تا شیر بِدَهَد. هَر ضَربه، کَمی شیر!"
   },
   {
    "id": "c2s4.s2",
-   "text": "شیر را هم بزن تا پنیر شود.",
+   "text": "انگشتت را دور سطل بچرخان تا شیر پنیر شود.",
    "event": "c2s4.s2",
    "screen": "c2",
-   "file": "voice/c2s4_s2.mp3"
+   "file": "voice/c2s4_s2.mp3",
+   "spoken": "اَنگُشتَت را دُورِ سَطل بِچَرخان تا شیر پَنیر شَوَد."
   },
   {
    "id": "c2s4.s3",
-   "text": "برای ساندویچ نان لازم داریم! از کوله بیاور.",
+   "text": "برای ساندویچ نان لازم داریم. نان را از کوله‌پشتی بکش.",
    "event": "c2s4.s3",
    "screen": "c2",
-   "file": "voice/c2s4_s3.mp3"
+   "file": "voice/c2s4_s3.mp3",
+   "spoken": "بَرایِ ساندویچ نان لازِم داریم. نان را اَز کوله‌پُشتی بِکِش."
   },
   {
    "id": "c2s4.s3.done",
    "text": "نان رسید!",
    "event": "c2s4.s3.done",
    "screen": "c2",
-   "file": "voice/c2s4_s3_done.mp3"
+   "file": "voice/c2s4_s3_done.mp3",
+   "spoken": "نان رِسید!"
   },
   {
    "id": "c2s4.s3.why",
    "text": "این نان نیست.",
    "event": "c2s4.s3.why",
    "screen": "c2",
-   "file": "voice/c2s4_s3_why.mp3"
+   "file": "voice/c2s4_s3_why.mp3",
+   "spoken": "این نان نیست."
   },
   {
    "id": "c2s4.s4",
-   "text": "کاهو را بشور.",
+   "text": "کاهو خاکی است. انگشتت را رویش بکش تا تمیز شود.",
    "event": "c2s4.s4",
    "screen": "c2",
-   "file": "voice/c2s4_s4.mp3"
+   "file": "voice/c2s4_s4.mp3",
+   "spoken": "کاهو خاکی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد."
   },
   {
    "id": "c2s4.s5",
-   "text": "پنیر را برش بزن.",
+   "text": "انگشتت را روی خط‌چین‌ها بکش تا پنیر برش بخورد.",
    "event": "c2s4.s5",
    "screen": "c2",
-   "file": "voice/c2s4_s5.mp3"
+   "file": "voice/c2s4_s5.mp3",
+   "spoken": "اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش تا پَنیر بُرِش بُخورَد."
   },
   {
    "id": "c2s4.s6",
-   "text": "ساندویچ را لایه‌لایه بچین: نان، کاهو، پنیر، نان.",
+   "text": "به ترتیب بزن: نان، کاهو، پنیر، نان.",
    "event": "c2s4.s6",
    "screen": "c2",
-   "file": "voice/c2s4_s6.mp3"
+   "file": "voice/c2s4_s6.mp3",
+   "spoken": "بِه تَرتیب بِزَن: نان، کاهو، پَنیر، نان."
   },
   {
    "id": "c2s4.s7",
-   "text": "ساندویچ را به بانی بده!",
+   "text": "بانی ساندویچ می‌خواهد. ساندویچ را به دهانش ببر.",
    "event": "c2s4.s7",
    "screen": "c2",
-   "file": "voice/c2s4_s7.mp3"
+   "file": "voice/c2s4_s7.mp3",
+   "spoken": "بانی ساندویچ می‌خواهَد. ساندویچ را بِه دَهانَش بِبَر."
   },
   {
    "id": "item.sandwich.made",
    "text": "آفرین! ساندویچ پنیر آماده شد!",
    "event": "item.sandwich.made",
    "screen": "c2",
-   "file": "voice/item_sandwich_made.mp3"
+   "file": "voice/item_sandwich_made.mp3",
+   "spoken": "آفَرین! ساندویچِ پَنیر آماده شُد!"
   },
   {
    "id": "c3.intro",
    "text": "طوفان کارگاه آقا سنجاب را خراب کرده و ابزارهایش پخش شده‌اند. بیا ابزار بسازیم!",
    "event": "c3.intro",
    "screen": "chapter",
-   "file": "voice/c3_intro.mp3"
+   "file": "voice/c3_intro.mp3",
+   "spoken": "طوفان کارگاهِ آقا سَنجاب را خَراب کَرده و اَبزارهایَش پَخش شُده‌اَند. بیا اَبزار بِسازیم!"
   },
   {
    "id": "c3.film.1",
    "text": "چکش، میخ را فرو کرد: تق تق!",
    "event": "c3.film.1",
    "screen": "film",
-   "file": "voice/c3_film_1.mp3"
+   "file": "voice/c3_film_1.mp3",
+   "spoken": "چَکُش، میخ را فُرو کَرد: تَق تَق!"
   },
   {
    "id": "c3.film.2",
    "text": "چراغ‌قوه تاریکی را روشن کرد",
    "event": "c3.film.2",
    "screen": "film",
-   "file": "voice/c3_film_2.mp3"
+   "file": "voice/c3_film_2.mp3",
+   "spoken": "چِراغ‌قُوّه تاریکی را رُوشَن کَرد"
   },
   {
    "id": "c3.film.3",
    "text": "گاری جعبه‌ها را برد",
    "event": "c3.film.3",
    "screen": "film",
-   "file": "voice/c3_film_3.mp3"
+   "file": "voice/c3_film_3.mp3",
+   "spoken": "گاری جَعبه‌ها را بُرد"
   },
   {
    "id": "c3.film.4",
    "text": "و ماشین با کلید روشن شد: برووووم!",
    "event": "c3.film.4",
    "screen": "film",
-   "file": "voice/c3_film_4.mp3"
+   "file": "voice/c3_film_4.mp3",
+   "spoken": "و ماشین با کِلید رُوشَن شُد: بِرووووم!"
   },
   {
    "id": "c3.next",
    "text": "کوکو همه‌ی رنگ‌هایش را گم کرده...",
    "event": "c3.next",
    "screen": "film",
-   "file": "voice/c3_next.mp3"
+   "file": "voice/c3_next.mp3",
+   "spoken": "کوکو هَمه‌یِ رَنگ‌هایَش را گُم کَرده..."
   },
   {
    "id": "c3s1.mission",
    "text": "آقا سنجاب چکشش را گم کرده. تکه‌هایش این‌جا پخش شده‌اند!",
    "event": "c3s1.mission",
    "screen": "c3",
-   "file": "voice/c3s1_mission.mp3"
+   "file": "voice/c3s1_mission.mp3",
+   "spoken": "آقا سَنجاب چَکُشَش را گُم کَرده. تِکّه‌هایَش این‌جا پَخش شُده‌اَند!"
   },
   {
    "id": "c3s1.s1",
-   "text": "سر چکش را در کارگاه شلوغ پیدا کن.",
+   "text": "سر چکش را پیدا کن و رویش بزن. قاشق و جوراب نه!",
    "event": "c3s1.s1",
    "screen": "c3",
-   "file": "voice/c3s1_s1.mp3"
+   "file": "voice/c3s1_s1.mp3",
+   "spoken": "سَرِ چَکُش را پِیدا کُن و رویَش بِزَن. قاشُق و جوراب نَه!"
   },
   {
    "id": "c3s1.s2",
-   "text": "دسته‌ی چوبی را هم پیدا کن.",
+   "text": "حالا دسته‌ی چوبی را پیدا کن و رویش بزن.",
    "event": "c3s1.s2",
    "screen": "c3",
-   "file": "voice/c3s1_s2.mp3"
+   "file": "voice/c3s1_s2.mp3",
+   "spoken": "حالا دَسته‌یِ چوبی را پِیدا کُن و رویَش بِزَن."
   },
   {
    "id": "c3s1.s3",
-   "text": "سر چکش زنگ زده. تمیزش کن تا برق بزند.",
+   "text": "سر چکش کثیف است. انگشتت را رویش بکش تا برق بزند.",
    "event": "c3s1.s3",
    "screen": "c3",
-   "file": "voice/c3s1_s3.mp3"
+   "file": "voice/c3s1_s3.mp3",
+   "spoken": "سَرِ چَکُش کَثیف اَست. اَنگُشتَت را رویَش بِکِش تا بَرق بِزَنَد."
   },
   {
    "id": "c3s1.s4",
-   "text": "سر و دسته را به هم وصل کن.",
+   "text": "سر و دسته را بکش و روی جای کم‌رنگشان بگذار.",
    "event": "c3s1.s4",
    "screen": "c3",
-   "file": "voice/c3s1_s4.mp3"
+   "file": "voice/c3s1_s4.mp3",
+   "spoken": "سَر و دَسته را بِکِش و رویِ جایِ کَم‌رَنگِشان بُگذار."
   },
   {
    "id": "c3s1.s5",
-   "text": "پیچ را سفت کن.",
+   "text": "انگشتت را دور پیچ بچرخان تا سفت شود.",
    "event": "c3s1.s5",
    "screen": "c3",
-   "file": "voice/c3s1_s5.mp3"
+   "file": "voice/c3s1_s5.mp3",
+   "spoken": "اَنگُشتَت را دُورِ پیچ بِچَرخان تا سِفت شَوَد."
   },
   {
    "id": "c3s1.s6",
-   "text": "میخ‌ها بیرون زده‌اند! با چکش بکوبشان. جوراب را نزن!",
+   "text": "میخ‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! جوراب را نزن.",
    "event": "c3s1.s6",
    "screen": "c3",
-   "file": "voice/c3s1_s6.mp3"
+   "file": "voice/c3s1_s6.mp3",
+   "spoken": "میخ‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! جوراب را نَزَن."
   },
   {
    "id": "item.hammer.made",
    "text": "آفرین! چکش آماده شد!",
    "event": "item.hammer.made",
    "screen": "c3",
-   "file": "voice/item_hammer_made.mp3"
+   "file": "voice/item_hammer_made.mp3",
+   "spoken": "آفَرین! چَکُش آماده شُد!"
   },
   {
    "id": "c3s2.mission",
    "text": "گوشه‌ی کارگاه خیلی تاریک است!",
    "event": "c3s2.mission",
    "screen": "c3",
-   "file": "voice/c3s2_mission.mp3"
+   "file": "voice/c3s2_mission.mp3",
+   "spoken": "گوشه‌یِ کارگاه خِیلی تاریک اَست!"
   },
   {
    "id": "c3s2.s1",
-   "text": "باتری‌ها از قفسه می‌افتند! بگیرشان.",
+   "text": "باتری‌ها می‌افتند! سبد را زیرشان ببر. قاشق را نگیر!",
    "event": "c3s2.s1",
    "screen": "c3",
-   "file": "voice/c3s2_s1.mp3"
+   "file": "voice/c3s2_s1.mp3",
+   "spoken": "باتری‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. قاشُق را نَگیر!"
   },
   {
    "id": "c3s2.s2",
-   "text": "قطعه‌های چراغ‌قوه را به خاطر بسپار و جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c3s2.s2",
    "screen": "c3",
-   "file": "voice/c3s2_s2.mp3"
+   "file": "voice/c3s2_s2.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "c3s2.s3",
-   "text": "باتری‌ها را در چراغ‌قوه بگذار.",
+   "text": "باتری‌ها را بکش و روی جای کم‌رنگشان در چراغ‌قوه بگذار.",
    "event": "c3s2.s3",
    "screen": "c3",
-   "file": "voice/c3s2_s3.mp3"
+   "file": "voice/c3s2_s3.mp3",
+   "spoken": "باتری‌ها را بِکِش و رویِ جایِ کَم‌رَنگِشان دَر چِراغ‌قُوّه بُگذار."
   },
   {
    "id": "c3s2.s4",
-   "text": "لامپ را بپیچان.",
+   "text": "انگشتت را دور لامپ بچرخان تا پیچ شود.",
    "event": "c3s2.s4",
    "screen": "c3",
-   "file": "voice/c3s2_s4.mp3"
+   "file": "voice/c3s2_s4.mp3",
+   "spoken": "اَنگُشتَت را دُورِ لامپ بِچَرخان تا پیچ شَوَد."
   },
   {
    "id": "c3s2.s5",
-   "text": "کلید را بزن!",
+   "text": "روی چراغ‌قوه بزن تا روشن شود!",
    "event": "c3s2.s5",
    "screen": "c3",
-   "file": "voice/c3s2_s5.mp3"
+   "file": "voice/c3s2_s5.mp3",
+   "spoken": "رویِ چِراغ‌قُوّه بِزَن تا رُوشَن شَوَد!"
   },
   {
    "id": "c3s2.s6",
-   "text": "با نور، جعبه‌های گم‌شده را در تاریکی پیدا کن.",
+   "text": "جایی تاریک است. انگشتت را بکش تا نور جعبه‌های گم‌شده را پیدا کند.",
    "event": "c3s2.s6",
    "screen": "c3",
-   "file": "voice/c3s2_s6.mp3"
+   "file": "voice/c3s2_s6.mp3",
+   "spoken": "جایی تاریک اَست. اَنگُشتَت را بِکِش تا نور جَعبه‌هایِ گُم‌شُده را پِیدا کُنَد."
   },
   {
    "id": "item.flashlight.made",
    "text": "آفرین! چراغ‌قوه آماده شد!",
    "event": "item.flashlight.made",
    "screen": "c3",
-   "file": "voice/item_flashlight_made.mp3"
+   "file": "voice/item_flashlight_made.mp3",
+   "spoken": "آفَرین! چِراغ‌قُوّه آماده شُد!"
   },
   {
    "id": "c3s3.mission",
    "text": "جعبه‌ها خیلی سنگین‌اند. یک گاری لازم داریم!",
    "event": "c3s3.mission",
    "screen": "c3",
-   "file": "voice/c3s3_mission.mp3"
+   "file": "voice/c3s3_mission.mp3",
+   "spoken": "جَعبه‌ها خِیلی سَنگین‌اَند. یِک گاری لازِم داریم!"
   },
   {
    "id": "c3s3.s1",
-   "text": "نقطه‌ها را وصل کن تا شکل گاری پیدا شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا گاری پیدا شود.",
    "event": "c3s3.s1",
    "screen": "c3",
-   "file": "voice/c3s3_s1.mp3"
+   "file": "voice/c3s3_s1.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا گاری پِیدا شَوَد."
   },
   {
    "id": "c3s3.s2",
-   "text": "تخته‌ها باید با میخ به هم وصل شوند. چه وسیله‌ای لازم است؟",
+   "text": "تخته‌ها باید میخ بخورند. از کوله‌پشتی وسیله‌ی درست را بکش.",
    "event": "c3s3.s2",
    "screen": "c3",
-   "file": "voice/c3s3_s2.mp3"
+   "file": "voice/c3s3_s2.mp3",
+   "spoken": "تَخته‌ها باید میخ بُخورَند. اَز کوله‌پُشتی وَسیله‌یِ دُرُست را بِکِش."
   },
   {
    "id": "c3s3.s2.done",
    "text": "تق تق! تخته‌ها وصل شدند.",
    "event": "c3s3.s2.done",
    "screen": "c3",
-   "file": "voice/c3s3_s2_done.mp3"
+   "file": "voice/c3s3_s2_done.mp3",
+   "spoken": "تَق تَق! تَخته‌ها وَصل شُدَند."
   },
   {
    "id": "c3s3.s2.why",
    "text": "با این نمی‌شود میخ زد.",
    "event": "c3s3.s2.why",
    "screen": "c3",
-   "file": "voice/c3s3_s2_why.mp3"
+   "file": "voice/c3s3_s2_why.mp3",
+   "spoken": "با این نِمی‌شَوَد میخ زَد."
   },
   {
    "id": "c3s3.s3",
-   "text": "میخ‌ها را با چکش بکوب!",
+   "text": "روی میخ تند تند بزن تا در چوب فرو برود!",
    "event": "c3s3.s3",
    "screen": "c3",
-   "file": "voice/c3s3_s3.mp3"
+   "file": "voice/c3s3_s3.mp3",
+   "spoken": "رویِ میخ تُند تُند بِزَن تا دَر چوب فُرو بِرَوَد!"
   },
   {
    "id": "c3s3.s4",
-   "text": "دو چرخ به گاری وصل کن.",
+   "text": "دو چرخ در گاری بگذار. بشمار!",
    "event": "c3s3.s4",
    "screen": "c3",
-   "file": "voice/c3s3_s4.mp3"
+   "file": "voice/c3s3_s4.mp3",
+   "spoken": "دو چَرخ دَر گاری بُگذار. بِشُمار!"
   },
   {
    "id": "c3s3.s5",
-   "text": "گاری را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید گاری بزن.",
    "event": "c3s3.s5",
    "screen": "c3",
-   "file": "voice/c3s3_s5.mp3"
+   "file": "voice/c3s3_s5.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ گاری بِزَن."
   },
   {
    "id": "c3s3.s6",
-   "text": "جعبه‌ها را با جرثقیل روی گاری بچین. وقتی بالای خط سبز بود بزن!",
+   "text": "جرثقیل جعبه را تکان می‌دهد. وقتی جعبه بالای خط سبز بود، بزن تا بیفتد!",
    "event": "c3s3.s6",
    "screen": "c3",
-   "file": "voice/c3s3_s6.mp3"
+   "file": "voice/c3s3_s6.mp3",
+   "spoken": "جَرثَقیل جَعبه را تِکان می‌دَهَد. وَقتی جَعبه بالایِ خَطِّ سَبز بود، بِزَن تا بِیُفتَد!"
   },
   {
    "id": "c3s3.s7",
-   "text": "گاری را بران و جعبه‌ها را جمع کن. به سنگ‌ها نخور!",
+   "text": "چپ یا راست صفحه را بزن تا گاری راهش را عوض کند. جعبه‌ها را بگیر، به سنگ نخور!",
    "event": "c3s3.s7",
    "screen": "c3",
-   "file": "voice/c3s3_s7.mp3"
+   "file": "voice/c3s3_s7.mp3",
+   "spoken": "چَپ یا راستِ صَفحه را بِزَن تا گاری راهَش را عَوَض کُنَد. جَعبه‌ها را بِگیر، بِه سَنگ نَخور!"
   },
   {
    "id": "item.cart.made",
    "text": "آفرین! گاری آماده شد!",
    "event": "item.cart.made",
    "screen": "c3",
-   "file": "voice/item_cart_made.mp3"
+   "file": "voice/item_cart_made.mp3",
+   "spoken": "آفَرین! گاری آماده شُد!"
   },
   {
    "id": "c3s4.mission",
    "text": "آقا سنجاب یک ماشین قدیمی دارد. بیا درستش کنیم!",
    "event": "c3s4.mission",
    "screen": "c3",
-   "file": "voice/c3s4_mission.mp3"
+   "file": "voice/c3s4_mission.mp3",
+   "spoken": "آقا سَنجاب یِک ماشینِ قَدیمی دارَد. بیا دُرُستَش کُنیم!"
   },
   {
    "id": "c3s4.s1",
-   "text": "تکه‌های عکس ماشین را کنار هم بگذار.",
+   "text": "تکه‌های عکس را بکش و سر جایشان بگذار.",
    "event": "c3s4.s1",
    "screen": "c3",
-   "file": "voice/c3s4_s1.mp3"
+   "file": "voice/c3s4_s1.mp3",
+   "spoken": "تِکّه‌هایِ عَکس را بِکِش و سَرِ جایِشان بُگذار."
   },
   {
    "id": "c3s4.s2",
-   "text": "چهار چرخ به ماشین وصل کن. بشمار!",
+   "text": "چهار چرخ به ماشین بده. بشمار: یک، دو، سه، چهار!",
    "event": "c3s4.s2",
    "screen": "c3",
-   "file": "voice/c3s4_s2.mp3"
+   "file": "voice/c3s4_s2.mp3",
+   "spoken": "چَهار چَرخ بِه ماشین بِدِه. بِشُمار: یِک، دو، سه، چَهار!"
   },
   {
    "id": "c3s4.s3",
-   "text": "ماشین گلی است. بشورش!",
+   "text": "ماشین گلی است. انگشتت را رویش بکش تا تمیز شود.",
    "event": "c3s4.s3",
    "screen": "c3",
-   "file": "voice/c3s4_s3.mp3"
+   "file": "voice/c3s4_s3.mp3",
+   "spoken": "ماشین گِلی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد."
   },
   {
    "id": "c3s4.s4",
-   "text": "ماشین را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید ماشین بزن.",
    "event": "c3s4.s4",
    "screen": "c3",
-   "file": "voice/c3s4_s4.mp3"
+   "file": "voice/c3s4_s4.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ ماشین بِزَن."
   },
   {
    "id": "c3s4.s5",
-   "text": "کلید را بچرخان تا ماشین روشن شود!",
+   "text": "انگشتت را دور کلید بچرخان تا ماشین روشن شود!",
    "event": "c3s4.s5",
    "screen": "c3",
-   "file": "voice/c3s4_s5.mp3"
+   "file": "voice/c3s4_s5.mp3",
+   "spoken": "اَنگُشتَت را دُورِ کِلید بِچَرخان تا ماشین رُوشَن شَوَد!"
   },
   {
    "id": "c3s4.s6",
-   "text": "برووووم! ستاره‌ها را جمع کن و به مانع نخور.",
+   "text": "برووووم! چپ یا راست صفحه را بزن. ستاره‌ها را بگیر، به سنگ و مخروط نخور!",
    "event": "c3s4.s6",
    "screen": "c3",
-   "file": "voice/c3s4_s6.mp3"
+   "file": "voice/c3s4_s6.mp3",
+   "spoken": "بِرووووم! چَپ یا راستِ صَفحه را بِزَن. سِتاره‌ها را بِگیر، بِه سَنگ و مَخروط نَخور!"
   },
   {
    "id": "item.toy_car.made",
    "text": "آفرین! ماشین اسباب‌بازی آماده شد!",
    "event": "item.toy_car.made",
    "screen": "c3",
-   "file": "voice/item_toy_car_made.mp3"
+   "file": "voice/item_toy_car_made.mp3",
+   "spoken": "آفَرین! ماشینِ اَسباب‌بازی آماده شُد!"
   },
   {
    "id": "c4.intro",
    "text": "کوکو همه‌ی رنگ‌هایش را در طوفان گم کرده و تزئینات جشن بی‌رنگ مانده‌اند.",
    "event": "c4.intro",
    "screen": "chapter",
-   "file": "voice/c4_intro.mp3"
+   "file": "voice/c4_intro.mp3",
+   "spoken": "کوکو هَمه‌یِ رَنگ‌هایَش را دَر طوفان گُم کَرده و تَزئیناتِ جَشن بی‌رَنگ مانده‌اَند."
   },
   {
    "id": "c4.film.1",
    "text": "قرمز و زرد، نارنجی شد!",
    "event": "c4.film.1",
    "screen": "film",
-   "file": "voice/c4_film_1.mp3"
+   "file": "voice/c4_film_1.mp3",
+   "spoken": "قِرمِز و زَرد، نارِنجی شُد!"
   },
   {
    "id": "c4.film.2",
    "text": "کاسه‌ی گلی آب را نگه داشت",
    "event": "c4.film.2",
    "screen": "film",
-   "file": "voice/c4_film_2.mp3"
+   "file": "voice/c4_film_2.mp3",
+   "spoken": "کاسه‌یِ گِلی آب را نِگَه داشت"
   },
   {
    "id": "c4.film.3",
    "text": "فانوس با لامپ چراغ‌قوه روشن شد",
    "event": "c4.film.3",
    "screen": "film",
-   "file": "voice/c4_film_3.mp3"
+   "file": "voice/c4_film_3.mp3",
+   "spoken": "فانوس با لامپِ چِراغ‌قُوّه رُوشَن شُد"
   },
   {
    "id": "c4.film.4",
    "text": "و ماسک‌ها و پرچم‌ها رنگی شدند!",
    "event": "c4.film.4",
    "screen": "film",
-   "file": "voice/c4_film_4.mp3"
+   "file": "voice/c4_film_4.mp3",
+   "spoken": "و ماسک‌ها و پَرچَم‌ها رَنگی شُدَند!"
   },
   {
    "id": "c4.next",
    "text": "مادربزرگ جغد راه خانه‌اش را در شب گم کرده...",
    "event": "c4.next",
    "screen": "film",
-   "file": "voice/c4_next.mp3"
+   "file": "voice/c4_next.mp3",
+   "spoken": "مادَربُزُرگ جُغد راهِ خانه‌اَش را دَر شَب گُم کَرده..."
   },
   {
    "id": "c4s1.mission",
    "text": "اول یک قلم‌مو و رنگ می‌خواهیم!",
    "event": "c4s1.mission",
    "screen": "c4",
-   "file": "voice/c4s1_mission.mp3"
+   "file": "voice/c4s1_mission.mp3",
+   "spoken": "اَوَّل یِک قَلَم‌مو و رَنگ می‌خواهیم!"
   },
   {
    "id": "c4s1.s1",
-   "text": "موهای قلم‌مو را به دسته وصل کن.",
+   "text": "موهای قلم‌مو را بکش و روی جای کم‌رنگش بگذار.",
    "event": "c4s1.s1",
    "screen": "c4",
-   "file": "voice/c4s1_s1.mp3"
+   "file": "voice/c4s1_s1.mp3",
+   "spoken": "موهایِ قَلَم‌مو را بِکِش و رویِ جایِ کَم‌رَنگَش بُگذار."
   },
   {
    "id": "c4s1.s2",
-   "text": "کارت‌های رنگی کوکو را جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c4s1.s2",
    "screen": "c4",
-   "file": "voice/c4s1_s2.mp3"
+   "file": "voice/c4s1_s2.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "c4s1.s3",
-   "text": "قرمز و زرد را با هم مخلوط کن. چه رنگی شد؟",
+   "text": "روی شیشه‌ی قرمز و زرد بزن، بعد با انگشت هم بزن. چه رنگی شد؟",
    "event": "c4s1.s3",
    "screen": "c4",
-   "file": "voice/c4s1_s3.mp3"
+   "file": "voice/c4s1_s3.mp3",
+   "spoken": "رویِ شیشه‌یِ قِرمِز و زَرد بِزَن، بَعد با اَنگُشت هَم بِزَن. چِه رَنگی شُد؟"
   },
   {
    "id": "c4s1.s4",
-   "text": "حالا آبی و زرد!",
+   "text": "حالا آبی و زرد را بریز و هم بزن!",
    "event": "c4s1.s4",
    "screen": "c4",
-   "file": "voice/c4s1_s4.mp3"
+   "file": "voice/c4s1_s4.mp3",
+   "spoken": "حالا آبی و زَرد را بِریز و هَم بِزَن!"
   },
   {
    "id": "c4s1.s5",
-   "text": "قرمز و آبی چه می‌شود؟",
+   "text": "قرمز و آبی را بریز و هم بزن. چه می‌شود؟",
    "event": "c4s1.s5",
    "screen": "c4",
-   "file": "voice/c4s1_s5.mp3"
+   "file": "voice/c4s1_s5.mp3",
+   "spoken": "قِرمِز و آبی را بِریز و هَم بِزَن. چِه می‌شَوَد؟"
   },
   {
    "id": "c4s1.s6",
-   "text": "با رنگ‌های تازه روی کاغذ نقاشی کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید کاغذ بزن.",
    "event": "c4s1.s6",
    "screen": "c4",
-   "file": "voice/c4s1_s6.mp3"
+   "file": "voice/c4s1_s6.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ کاغَذ بِزَن."
   },
   {
    "id": "item.paints.made",
    "text": "آفرین! رنگ‌ها آماده شد!",
    "event": "item.paints.made",
    "screen": "c4",
-   "file": "voice/item_paints_made.mp3"
+   "file": "voice/item_paints_made.mp3",
+   "spoken": "آفَرین! رَنگ‌ها آماده شُد!"
   },
   {
    "id": "c4s2.mission",
    "text": "کوکو یک کاسه برای آب رنگ‌ها می‌خواهد.",
    "event": "c4s2.mission",
    "screen": "c4",
-   "file": "voice/c4s2_mission.mp3"
+   "file": "voice/c4s2_mission.mp3",
+   "spoken": "کوکو یِک کاسه بَرایِ آبِ رَنگ‌ها می‌خواهَد."
   },
   {
    "id": "c4s2.s1",
-   "text": "گل رس خشک است! با چه خیسش کنیم؟",
+   "text": "گل رس خشک است! از کوله‌پشتی چیزی بکش که خیسش کند.",
    "event": "c4s2.s1",
    "screen": "c4",
-   "file": "voice/c4s2_s1.mp3"
+   "file": "voice/c4s2_s1.mp3",
+   "spoken": "گِلِ رُس خُشک اَست! اَز کوله‌پُشتی چیزی بِکِش کِه خیسَش کُنَد."
   },
   {
    "id": "c4s2.s1.done",
    "text": "شُر شُر! گل نرم شد.",
    "event": "c4s2.s1.done",
    "screen": "c4",
-   "file": "voice/c4s2_s1_done.mp3"
+   "file": "voice/c4s2_s1_done.mp3",
+   "spoken": "شُر شُر! گِل نَرم شُد."
   },
   {
    "id": "c4s2.s1.why",
    "text": "با این نمی‌شود خیس کرد.",
    "event": "c4s2.s1.why",
    "screen": "c4",
-   "file": "voice/c4s2_s1_why.mp3"
+   "file": "voice/c4s2_s1_why.mp3",
+   "spoken": "با این نِمی‌شَوَد خیس کَرد."
   },
   {
    "id": "c4s2.s2",
-   "text": "گل رس را از آشغال‌ها جدا کن.",
+   "text": "هر چه روی نوار می‌آید را بکش: گل در سبد سبز، آشغال در سطل قرمز.",
    "event": "c4s2.s2",
    "screen": "c4",
-   "file": "voice/c4s2_s2.mp3"
+   "file": "voice/c4s2_s2.mp3",
+   "spoken": "هَر چِه رویِ نَوار می‌آیَد را بِکِش: گِل دَر سَبَدِ سَبز، آشغال دَر سَطلِ قِرمِز."
   },
   {
    "id": "c4s2.s3",
-   "text": "گل را ورز بده.",
+   "text": "روی گل بزن و ورزش بده!",
    "event": "c4s2.s3",
    "screen": "c4",
-   "file": "voice/c4s2_s3.mp3"
+   "file": "voice/c4s2_s3.mp3",
+   "spoken": "رویِ گِل بِزَن و وَرزَش بِدِه!"
   },
   {
    "id": "c4s2.s4",
-   "text": "چرخ سفالگری را بچرخان تا کاسه شکل بگیرد.",
+   "text": "انگشتت را دور چرخ بچرخان تا کاسه درست شود.",
    "event": "c4s2.s4",
    "screen": "c4",
-   "file": "voice/c4s2_s4.mp3"
+   "file": "voice/c4s2_s4.mp3",
+   "spoken": "اَنگُشتَت را دُورِ چَرخ بِچَرخان تا کاسه دُرُست شَوَد."
   },
   {
    "id": "c4s2.s5",
-   "text": "کاسه خیس است. فوت کن تا خشک شود!",
+   "text": "کاسه خیس است. دکمه‌ی فوت را نگه دار تا خشک شود!",
    "event": "c4s2.s5",
    "screen": "c4",
-   "file": "voice/c4s2_s5.mp3"
+   "file": "voice/c4s2_s5.mp3",
+   "spoken": "کاسه خیس اَست. دُکمه‌یِ فوت را نِگَه دار تا خُشک شَوَد!"
   },
   {
    "id": "c4s2.s6",
-   "text": "کاسه را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید کاسه بزن.",
    "event": "c4s2.s6",
    "screen": "c4",
-   "file": "voice/c4s2_s6.mp3"
+   "file": "voice/c4s2_s6.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ کاسه بِزَن."
   },
   {
    "id": "item.clay_bowl.made",
    "text": "آفرین! کاسه‌ی گلی آماده شد!",
    "event": "item.clay_bowl.made",
    "screen": "c4",
-   "file": "voice/item_clay_bowl_made.mp3"
+   "file": "voice/item_clay_bowl_made.mp3",
+   "spoken": "آفَرین! کاسه‌یِ گِلی آماده شُد!"
   },
   {
    "id": "c4s3.mission",
    "text": "برای شب جشن فانوس رنگی لازم داریم.",
    "event": "c4s3.mission",
    "screen": "c4",
-   "file": "voice/c4s3_mission.mp3"
+   "file": "voice/c4s3_mission.mp3",
+   "spoken": "بَرایِ شَبِ جَشن فانوسِ رَنگی لازِم داریم."
   },
   {
    "id": "c4s3.s1",
-   "text": "نقطه‌ها را وصل کن تا شکل فانوس پیدا شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا فانوس پیدا شود.",
    "event": "c4s3.s1",
    "screen": "c4",
-   "file": "voice/c4s3_s1.mp3"
+   "file": "voice/c4s3_s1.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا فانوس پِیدا شَوَد."
   },
   {
    "id": "c4s3.s2",
-   "text": "کاغذ را روی خط‌ها ببُر.",
+   "text": "انگشتت را روی خط‌چین‌ها بکش تا کاغذ بریده شود.",
    "event": "c4s3.s2",
    "screen": "c4",
-   "file": "voice/c4s3_s2.mp3"
+   "file": "voice/c4s3_s2.mp3",
+   "spoken": "اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش تا کاغَذ بُریده شَوَد."
   },
   {
    "id": "c4s3.s3",
-   "text": "کاغذ را تا بزن! هر بار بزن.",
+   "text": "روی کاغذ بزن تا تا بخورد و فانوس شود!",
    "event": "c4s3.s3",
    "screen": "c4",
-   "file": "voice/c4s3_s3.mp3"
+   "file": "voice/c4s3_s3.mp3",
+   "spoken": "رویِ کاغَذ بِزَن تا تا بُخورَد و فانوس شَوَد!"
   },
   {
    "id": "c4s3.s4",
-   "text": "فانوس را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید فانوس بزن.",
    "event": "c4s3.s4",
    "screen": "c4",
-   "file": "voice/c4s3_s4.mp3"
+   "file": "voice/c4s3_s4.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ فانوس بِزَن."
   },
   {
    "id": "c4s3.s5",
-   "text": "فانوس نور ندارد! چه چیزی لامپ دارد؟",
+   "text": "فانوس خاموش است! از کوله‌پشتی چیزی بکش که لامپ دارد.",
    "event": "c4s3.s5",
    "screen": "c4",
-   "file": "voice/c4s3_s5.mp3"
+   "file": "voice/c4s3_s5.mp3",
+   "spoken": "فانوس خاموش اَست! اَز کوله‌پُشتی چیزی بِکِش کِه لامپ دارَد."
   },
   {
    "id": "c4s3.s5.done",
    "text": "روشن شد! چه قشنگ.",
    "event": "c4s3.s5.done",
    "screen": "c4",
-   "file": "voice/c4s3_s5_done.mp3"
+   "file": "voice/c4s3_s5_done.mp3",
+   "spoken": "رُوشَن شُد! چِه قَشَنگ."
   },
   {
    "id": "c4s3.s5.why",
    "text": "این نور ندارد.",
    "event": "c4s3.s5.why",
    "screen": "c4",
-   "file": "voice/c4s3_s5_why.mp3"
+   "file": "voice/c4s3_s5_why.mp3",
+   "spoken": "این نور نَدارَد."
   },
   {
    "id": "c4s3.s6",
-   "text": "فانوس‌ها را به نخ آویزان کن.",
+   "text": "سه فانوس به نخ بده. بشمار!",
    "event": "c4s3.s6",
    "screen": "c4",
-   "file": "voice/c4s3_s6.mp3"
+   "file": "voice/c4s3_s6.mp3",
+   "spoken": "سه فانوس بِه نَخ بِدِه. بِشُمار!"
   },
   {
    "id": "item.lantern.made",
    "text": "آفرین! فانوس آماده شد!",
    "event": "item.lantern.made",
    "screen": "c4",
-   "file": "voice/item_lantern_made.mp3"
+   "file": "voice/item_lantern_made.mp3",
+   "spoken": "آفَرین! فانوس آماده شُد!"
   },
   {
    "id": "c4s4.mission",
    "text": "برای جشن ماسک و پرچم درست کنیم!",
    "event": "c4s4.mission",
    "screen": "c4",
-   "file": "voice/c4s4_mission.mp3"
+   "file": "voice/c4s4_mission.mp3",
+   "spoken": "بَرایِ جَشن ماسک و پَرچَم دُرُست کُنیم!"
   },
   {
    "id": "c4s4.s1",
-   "text": "تزئین‌های جشن را جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c4s4.s1",
    "screen": "c4",
-   "file": "voice/c4s4_s1.mp3"
+   "file": "voice/c4s4_s1.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "c4s4.s2",
-   "text": "ماسک را با قیچی ببُر.",
+   "text": "انگشتت را روی خط‌چین‌ها بکش تا ماسک بریده شود.",
    "event": "c4s4.s2",
    "screen": "c4",
-   "file": "voice/c4s4_s2.mp3"
+   "file": "voice/c4s4_s2.mp3",
+   "spoken": "اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش تا ماسک بُریده شَوَد."
   },
   {
    "id": "c4s4.s3",
-   "text": "ماسک را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید ماسک بزن.",
    "event": "c4s4.s3",
    "screen": "c4",
-   "file": "voice/c4s4_s3.mp3"
+   "file": "voice/c4s4_s3.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ ماسک بِزَن."
   },
   {
    "id": "c4s4.s4",
-   "text": "نقطه‌ها را وصل کن تا لبه‌ی ماسک کشیده شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا ماسک پیدا شود.",
    "event": "c4s4.s4",
    "screen": "c4",
-   "file": "voice/c4s4_s4.mp3"
+   "file": "voice/c4s4_s4.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا ماسک پِیدا شَوَد."
   },
   {
    "id": "c4s4.s5",
-   "text": "پرچم‌ها در باد پرواز می‌کنند! بگیرشان.",
+   "text": "پرچم‌ها می‌افتند! سبد را زیرشان ببر. جوراب را نگیر!",
    "event": "c4s4.s5",
    "screen": "c4",
-   "file": "voice/c4s4_s5.mp3"
+   "file": "voice/c4s4_s5.mp3",
+   "spoken": "پَرچَم‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. جوراب را نَگیر!"
   },
   {
    "id": "c4s4.s6",
-   "text": "پنج پرچم به نخ آویزان کن.",
+   "text": "پنج پرچم به نخ بده. بشمار!",
    "event": "c4s4.s6",
    "screen": "c4",
-   "file": "voice/c4s4_s6.mp3"
+   "file": "voice/c4s4_s6.mp3",
+   "spoken": "پَنج پَرچَم بِه نَخ بِدِه. بِشُمار!"
   },
   {
    "id": "item.mask.made",
    "text": "آفرین! ماسک آماده شد!",
    "event": "item.mask.made",
    "screen": "c4",
-   "file": "voice/item_mask_made.mp3"
+   "file": "voice/item_mask_made.mp3",
+   "spoken": "آفَرین! ماسک آماده شُد!"
   },
   {
    "id": "c5.intro",
    "text": "مادربزرگ جغد راه خانه‌اش را در جنگلِ شب گم کرده. نترس، با هم پیدایش می‌کنیم!",
    "event": "c5.intro",
    "screen": "chapter",
-   "file": "voice/c5_intro.mp3"
+   "file": "voice/c5_intro.mp3",
+   "spoken": "مادَربُزُرگ جُغد راهِ خانه‌اَش را دَر جَنگَلِ شَب گُم کَرده. نَتَرس، با هَم پِیدایَش می‌کُنیم!"
   },
   {
    "id": "c5.film.1",
    "text": "نقشه راه را نشان داد",
    "event": "c5.film.1",
    "screen": "film",
-   "file": "voice/c5_film_1.mp3"
+   "file": "voice/c5_film_1.mp3",
+   "spoken": "نَقشه راه را نِشان داد"
   },
   {
    "id": "c5.film.2",
    "text": "چادر ما را از باران حفظ کرد",
    "event": "c5.film.2",
    "screen": "film",
-   "file": "voice/c5_film_2.mp3"
+   "file": "voice/c5_film_2.mp3",
+   "spoken": "چادُر ما را اَز باران حِفظ کَرد"
   },
   {
    "id": "c5.film.3",
    "text": "کرم‌های شب‌تاب مسیر را روشن کردند",
    "event": "c5.film.3",
    "screen": "film",
-   "file": "voice/c5_film_3.mp3"
+   "file": "voice/c5_film_3.mp3",
+   "spoken": "کِرم‌هایِ شَب‌تاب مَسیر را رُوشَن کَردَند"
   },
   {
    "id": "c5.film.4",
    "text": "و با تلسکوپ ماه را دیدیم!",
    "event": "c5.film.4",
    "screen": "film",
-   "file": "voice/c5_film_4.mp3"
+   "file": "voice/c5_film_4.mp3",
+   "spoken": "و با تِلِسکوپ ماه را دیدیم!"
   },
   {
    "id": "c5.next",
    "text": "سازهای گروه میمی شکسته‌اند...",
    "event": "c5.next",
    "screen": "film",
-   "file": "voice/c5_next.mp3"
+   "file": "voice/c5_next.mp3",
+   "spoken": "سازهایِ گُروهِ میمی شِکَسته‌اَند..."
   },
   {
    "id": "c5s1.mission",
    "text": "تکه‌های نقشه در باد پخش شده‌اند!",
    "event": "c5s1.mission",
    "screen": "c5",
-   "file": "voice/c5s1_mission.mp3"
+   "file": "voice/c5s1_mission.mp3",
+   "spoken": "تِکّه‌هایِ نَقشه دَر باد پَخش شُده‌اَند!"
   },
   {
    "id": "c5s1.s1",
-   "text": "تکه‌های نقشه در باد می‌چرخند! بگیرشان.",
+   "text": "تکه‌های نقشه می‌افتند! سبد را زیرشان ببر.",
    "event": "c5s1.s1",
    "screen": "c5",
-   "file": "voice/c5s1_s1.mp3"
+   "file": "voice/c5s1_s1.mp3",
+   "spoken": "تِکّه‌هایِ نَقشه می‌اُفتَند! سَبَد را زیرِشان بِبَر."
   },
   {
    "id": "c5s1.s2",
-   "text": "تکه‌های نقشه را کنار هم بچین.",
+   "text": "تکه‌های نقشه را بکش و سر جایشان بگذار.",
    "event": "c5s1.s2",
    "screen": "c5",
-   "file": "voice/c5s1_s2.mp3"
+   "file": "voice/c5s1_s2.mp3",
+   "spoken": "تِکّه‌هایِ نَقشه را بِکِش و سَرِ جایِشان بُگذار."
   },
   {
    "id": "c5s1.s3",
-   "text": "هوا تاریک است. برای خواندن نقشه چه لازم داریم؟",
+   "text": "هوا تاریک است. از کوله‌پشتی چیزی بکش که نور دارد.",
    "event": "c5s1.s3",
    "screen": "c5",
-   "file": "voice/c5s1_s3.mp3"
+   "file": "voice/c5s1_s3.mp3",
+   "spoken": "هَوا تاریک اَست. اَز کوله‌پُشتی چیزی بِکِش کِه نور دارَد."
   },
   {
    "id": "c5s1.s3.done",
    "text": "حالا نقشه را می‌بینیم!",
    "event": "c5s1.s3.done",
    "screen": "c5",
-   "file": "voice/c5s1_s3_done.mp3"
+   "file": "voice/c5s1_s3_done.mp3",
+   "spoken": "حالا نَقشه را می‌بینیم!"
   },
   {
    "id": "c5s1.s3.why",
    "text": "این نور ندارد.",
    "event": "c5s1.s3.why",
    "screen": "c5",
-   "file": "voice/c5s1_s3_why.mp3"
+   "file": "voice/c5s1_s3_why.mp3",
+   "spoken": "این نور نَدارَد."
   },
   {
    "id": "c5s1.s4",
-   "text": "با نور، ستاره‌های راهنما را پیدا کن.",
+   "text": "انگشتت را در تاریکی بکش تا نور ستاره‌ها را پیدا کند.",
    "event": "c5s1.s4",
    "screen": "c5",
-   "file": "voice/c5s1_s4.mp3"
+   "file": "voice/c5s1_s4.mp3",
+   "spoken": "اَنگُشتَت را دَر تاریکی بِکِش تا نور سِتاره‌ها را پِیدا کُنَد."
   },
   {
    "id": "c5s1.s5",
-   "text": "ستاره‌ها را به ترتیب وصل کن تا راه پیدا شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا نقشه پیدا شود.",
    "event": "c5s1.s5",
    "screen": "c5",
-   "file": "voice/c5s1_s5.mp3"
+   "file": "voice/c5s1_s5.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا نَقشه پِیدا شَوَد."
   },
   {
    "id": "c5s1.s6",
-   "text": "با انگشت راه را از خانه‌ی جغد تا درخت بزرگ دنبال کن.",
+   "text": "نقشه را با انگشت روی جاده تا پرچم ببر.",
    "event": "c5s1.s6",
    "screen": "c5",
-   "file": "voice/c5s1_s6.mp3"
+   "file": "voice/c5s1_s6.mp3",
+   "spoken": "نَقشه را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر."
   },
   {
    "id": "item.map.made",
    "text": "آفرین! نقشه‌ی جنگل آماده شد!",
    "event": "item.map.made",
    "screen": "c5",
-   "file": "voice/item_map_made.mp3"
+   "file": "voice/item_map_made.mp3",
+   "spoken": "آفَرین! نَقشه‌یِ جَنگَل آماده شُد!"
   },
   {
    "id": "c5s2.mission",
    "text": "باران دارد می‌آید! یک چادر بزنیم.",
    "event": "c5s2.mission",
    "screen": "c5",
-   "file": "voice/c5s2_mission.mp3"
+   "file": "voice/c5s2_mission.mp3",
+   "spoken": "باران دارَد می‌آیَد! یِک چادُر بِزَنیم."
   },
   {
    "id": "c5s2.s1",
-   "text": "وسایل چادر را از آشغال جدا کن.",
+   "text": "هر چه روی نوار می‌آید را بکش: وسایل چادر در سبد سبز، آشغال در سطل قرمز.",
    "event": "c5s2.s1",
    "screen": "c5",
-   "file": "voice/c5s2_s1.mp3"
+   "file": "voice/c5s2_s1.mp3",
+   "spoken": "هَر چِه رویِ نَوار می‌آیَد را بِکِش: وَسایِلِ چادُر دَر سَبَدِ سَبز، آشغال دَر سَطلِ قِرمِز."
   },
   {
    "id": "c5s2.s2",
-   "text": "پارچه و ستون‌های چادر را سر جایشان بگذار.",
+   "text": "پارچه و ستون‌ها را بکش و روی جای کم‌رنگشان بگذار.",
    "event": "c5s2.s2",
    "screen": "c5",
-   "file": "voice/c5s2_s2.mp3"
+   "file": "voice/c5s2_s2.mp3",
+   "spoken": "پارچه و سُتون‌ها را بِکِش و رویِ جایِ کَم‌رَنگِشان بُگذار."
   },
   {
    "id": "c5s2.s3",
-   "text": "میخ‌های چادر را با چه بکوبیم؟",
+   "text": "میخ‌های چادر را باید کوبید. از کوله‌پشتی وسیله‌ی درست را بکش.",
    "event": "c5s2.s3",
    "screen": "c5",
-   "file": "voice/c5s2_s3.mp3"
+   "file": "voice/c5s2_s3.mp3",
+   "spoken": "میخ‌هایِ چادُر را باید کوبید. اَز کوله‌پُشتی وَسیله‌یِ دُرُست را بِکِش."
   },
   {
    "id": "c5s2.s3.done",
    "text": "تق تق! چادر محکم شد.",
    "event": "c5s2.s3.done",
    "screen": "c5",
-   "file": "voice/c5s2_s3_done.mp3"
+   "file": "voice/c5s2_s3_done.mp3",
+   "spoken": "تَق تَق! چادُر مُحکَم شُد."
   },
   {
    "id": "c5s2.s3.why",
    "text": "با این نمی‌شود میخ زد.",
    "event": "c5s2.s3.why",
    "screen": "c5",
-   "file": "voice/c5s2_s3_why.mp3"
+   "file": "voice/c5s2_s3_why.mp3",
+   "spoken": "با این نِمی‌شَوَد میخ زَد."
   },
   {
    "id": "c5s2.s4",
-   "text": "میخ‌های چادر بالا می‌پرند! بکوبشان.",
+   "text": "میخ‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! جوراب نه.",
    "event": "c5s2.s4",
    "screen": "c5",
-   "file": "voice/c5s2_s4.mp3"
+   "file": "voice/c5s2_s4.mp3",
+   "spoken": "میخ‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! جوراب نَه."
   },
   {
    "id": "c5s2.s5",
-   "text": "فوت کن تا چادر پر از هوا شود و بایستد!",
+   "text": "دکمه‌ی فوت را نگه دار تا چادر بزرگ شود و بایستد!",
    "event": "c5s2.s5",
    "screen": "c5",
-   "file": "voice/c5s2_s5.mp3"
+   "file": "voice/c5s2_s5.mp3",
+   "spoken": "دُکمه‌یِ فوت را نِگَه دار تا چادُر بُزُرگ شَوَد و بِایستَد!"
   },
   {
    "id": "c5s2.s6",
-   "text": "وسایل اردو را جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c5s2.s6",
    "screen": "c5",
-   "file": "voice/c5s2_s6.mp3"
+   "file": "voice/c5s2_s6.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "item.tent.made",
    "text": "آفرین! چادر آماده شد!",
    "event": "item.tent.made",
    "screen": "c5",
-   "file": "voice/item_tent_made.mp3"
+   "file": "voice/item_tent_made.mp3",
+   "spoken": "آفَرین! چادُر آماده شُد!"
   },
   {
    "id": "c5s3.mission",
    "text": "مسیر خیلی تاریک است و مادربزرگ سردش است.",
    "event": "c5s3.mission",
    "screen": "c5",
-   "file": "voice/c5s3_mission.mp3"
+   "file": "voice/c5s3_mission.mp3",
+   "spoken": "مَسیر خِیلی تاریک اَست و مادَربُزُرگ سَردَش اَست."
   },
   {
    "id": "c5s3.s1",
-   "text": "با چه چیزی تاریکی را روشن کنیم؟",
+   "text": "خیلی تاریک است! از کوله‌پشتی چیزی بکش که نور دارد.",
    "event": "c5s3.s1",
    "screen": "c5",
-   "file": "voice/c5s3_s1.mp3"
+   "file": "voice/c5s3_s1.mp3",
+   "spoken": "خِیلی تاریک اَست! اَز کوله‌پُشتی چیزی بِکِش کِه نور دارَد."
   },
   {
    "id": "c5s3.s1.done",
    "text": "روشن شد!",
    "event": "c5s3.s1.done",
    "screen": "c5",
-   "file": "voice/c5s3_s1_done.mp3"
+   "file": "voice/c5s3_s1_done.mp3",
+   "spoken": "رُوشَن شُد!"
   },
   {
    "id": "c5s3.s1.why",
    "text": "این نور ندارد.",
    "event": "c5s3.s1.why",
    "screen": "c5",
-   "file": "voice/c5s3_s1_why.mp3"
+   "file": "voice/c5s3_s1_why.mp3",
+   "spoken": "این نور نَدارَد."
   },
   {
    "id": "c5s3.s2",
-   "text": "کرم‌های شب‌تاب پرواز می‌کنند! با شیشه بگیرشان.",
+   "text": "کرم‌های شب‌تاب پایین می‌آیند! سبد را زیرشان ببر. کفشدوزک را نگیر.",
    "event": "c5s3.s2",
    "screen": "c5",
-   "file": "voice/c5s3_s2.mp3"
+   "file": "voice/c5s3_s2.mp3",
+   "spoken": "کِرم‌هایِ شَب‌تاب پایین می‌آیَند! سَبَد را زیرِشان بِبَر. کَفشدوزَک را نَگیر."
   },
   {
    "id": "c5s3.s3",
-   "text": "کرم‌های شب‌تاب پنهان را در تاریکی پیدا کن و در شیشه بگذار.",
+   "text": "انگشتت را در تاریکی بکش تا نور کرم‌های شب‌تاب را پیدا کند.",
    "event": "c5s3.s3",
    "screen": "c5",
-   "file": "voice/c5s3_s3.mp3"
+   "file": "voice/c5s3_s3.mp3",
+   "spoken": "اَنگُشتَت را دَر تاریکی بِکِش تا نور کِرم‌هایِ شَب‌تاب را پِیدا کُنَد."
   },
   {
    "id": "c5s3.s4",
-   "text": "شب‌تاب‌ها را به ترتیب وصل کن تا شیشه روشن شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا شیشه‌ی شب‌تاب‌ها پیدا شود.",
    "event": "c5s3.s4",
    "screen": "c5",
-   "file": "voice/c5s3_s4.mp3"
+   "file": "voice/c5s3_s4.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا شیشه‌یِ شَب‌تاب‌ها پِیدا شَوَد."
   },
   {
    "id": "c5s3.s5",
-   "text": "کرم شب‌تاب را تا خانه‌ی جغد راهنمایی کن.",
+   "text": "کرم شب‌تاب را با انگشت روی جاده تا پرچم ببر.",
    "event": "c5s3.s5",
    "screen": "c5",
-   "file": "voice/c5s3_s5.mp3"
+   "file": "voice/c5s3_s5.mp3",
+   "spoken": "کِرمِ شَب‌تاب را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر."
   },
   {
    "id": "c5s3.s6",
-   "text": "مادربزرگ جغد سردش است. از کوله چیزی بده که گرمش کند.",
+   "text": "مادربزرگ جغد سردش است. از کوله‌پشتی چیزی بکش که گرمش کند.",
    "event": "c5s3.s6",
    "screen": "c5",
-   "file": "voice/c5s3_s6.mp3"
+   "file": "voice/c5s3_s6.mp3",
+   "spoken": "مادَربُزُرگ جُغد سَردَش اَست. اَز کوله‌پُشتی چیزی بِکِش کِه گَرمَش کُنَد."
   },
   {
    "id": "c5s3.s6.done",
    "text": "آخیش! گرم شدم، ممنون عزیزم.",
    "event": "c5s3.s6.done",
    "screen": "c5",
-   "file": "voice/c5s3_s6_done.mp3"
+   "file": "voice/c5s3_s6_done.mp3",
+   "spoken": "آخِیش! گَرم شُدَم، مَمنون عَزیزَم."
   },
   {
    "id": "c5s3.s6.why",
    "text": "این گرم نمی‌کند.",
    "event": "c5s3.s6.why",
    "screen": "c5",
-   "file": "voice/c5s3_s6_why.mp3"
+   "file": "voice/c5s3_s6_why.mp3",
+   "spoken": "این گَرم نِمی‌کُنَد."
   },
   {
    "id": "item.firefly_jar.made",
    "text": "آفرین! شیشه‌ی کرم شب‌تاب آماده شد!",
    "event": "item.firefly_jar.made",
    "screen": "c5",
-   "file": "voice/item_firefly_jar_made.mp3"
+   "file": "voice/item_firefly_jar_made.mp3",
+   "spoken": "آفَرین! شیشه‌یِ کِرمِ شَب‌تاب آماده شُد!"
   },
   {
    "id": "c5s4.mission",
    "text": "مادربزرگ جغد می‌خواهد ستاره‌ها را نشانت بدهد.",
    "event": "c5s4.mission",
    "screen": "c5",
-   "file": "voice/c5s4_mission.mp3"
+   "file": "voice/c5s4_mission.mp3",
+   "spoken": "مادَربُزُرگ جُغد می‌خواهَد سِتاره‌ها را نِشانَت بِدَهَد."
   },
   {
    "id": "c5s4.s1",
-   "text": "مقوا را لوله کن.",
+   "text": "انگشتت را دور مقوا بچرخان تا لوله شود.",
    "event": "c5s4.s1",
    "screen": "c5",
-   "file": "voice/c5s4_s1.mp3"
+   "file": "voice/c5s4_s1.mp3",
+   "spoken": "اَنگُشتَت را دُورِ مُقَوّا بِچَرخان تا لوله شَوَد."
   },
   {
    "id": "c5s4.s2",
-   "text": "عدسی گرد و خاکی است. پاکش کن.",
+   "text": "عدسی خاکی است. انگشتت را رویش بکش تا تمیز شود.",
    "event": "c5s4.s2",
    "screen": "c5",
-   "file": "voice/c5s4_s2.mp3"
+   "file": "voice/c5s4_s2.mp3",
+   "spoken": "عَدَسی خاکی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد."
   },
   {
    "id": "c5s4.s3",
-   "text": "عدسی‌ها را از بزرگ به کوچک بگذار.",
+   "text": "اول عدسی بزرگ را بزن، بعد کوچک‌تر، بعد از همه کوچک‌تر.",
    "event": "c5s4.s3",
    "screen": "c5",
-   "file": "voice/c5s4_s3.mp3"
+   "file": "voice/c5s4_s3.mp3",
+   "spoken": "اَوَّل عَدَسیِ بُزُرگ را بِزَن، بَعد کوچَک‌تَر، بَعد اَز هَمه کوچَک‌تَر."
   },
   {
    "id": "c5s4.s4",
-   "text": "تلسکوپ را تنظیم کن تا تصویر واضح شود.",
+   "text": "انگشتت را دور تلسکوپ بچرخان تا تنظیم شود.",
    "event": "c5s4.s4",
    "screen": "c5",
-   "file": "voice/c5s4_s4.mp3"
+   "file": "voice/c5s4_s4.mp3",
+   "spoken": "اَنگُشتَت را دُورِ تِلِسکوپ بِچَرخان تا تَنظیم شَوَد."
   },
   {
    "id": "c5s4.s5",
-   "text": "ستاره‌ها را به ترتیب وصل کن تا صورت فلکی پیدا شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا ستاره پیدا شود.",
    "event": "c5s4.s5",
    "screen": "c5",
-   "file": "voice/c5s4_s5.mp3"
+   "file": "voice/c5s4_s5.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا سِتاره پِیدا شَوَد."
   },
   {
    "id": "c5s4.s6",
-   "text": "چیزهای آسمان شب را جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c5s4.s6",
    "screen": "c5",
-   "file": "voice/c5s4_s6.mp3"
+   "file": "voice/c5s4_s6.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "item.telescope.made",
    "text": "آفرین! تلسکوپ آماده شد!",
    "event": "item.telescope.made",
    "screen": "c5",
-   "file": "voice/item_telescope_made.mp3"
+   "file": "voice/item_telescope_made.mp3",
+   "spoken": "آفَرین! تِلِسکوپ آماده شُد!"
   },
   {
    "id": "c6.intro",
    "text": "میمی می‌خواهد در جشن بخواند، اما سازهای گروه در طوفان شکسته‌اند.",
    "event": "c6.intro",
    "screen": "chapter",
-   "file": "voice/c6_intro.mp3"
+   "file": "voice/c6_intro.mp3",
+   "spoken": "میمی می‌خواهَد دَر جَشن بِخوانَد، اَمّا سازهایِ گُروه دَر طوفان شِکَسته‌اَند."
   },
   {
    "id": "c6.film.1",
    "text": "طبل: بوم بوم!",
    "event": "c6.film.1",
    "screen": "film",
-   "file": "voice/c6_film_1.mp3"
+   "file": "voice/c6_film_1.mp3",
+   "spoken": "طَبل: بوم بوم!"
   },
   {
    "id": "c6.film.2",
    "text": "زایلوفون: زیر و بم",
    "event": "c6.film.2",
    "screen": "film",
-   "file": "voice/c6_film_2.mp3"
+   "file": "voice/c6_film_2.mp3",
+   "spoken": "زایلوفون: زیر و بَم"
   },
   {
    "id": "c6.film.3",
    "text": "نی: فووو",
    "event": "c6.film.3",
    "screen": "film",
-   "file": "voice/c6_film_3.mp3"
+   "file": "voice/c6_film_3.mp3",
+   "spoken": "نِی: فووو"
   },
   {
    "id": "c6.film.4",
    "text": "و آهنگ جشن با همه‌ی سازها!",
    "event": "c6.film.4",
    "screen": "film",
-   "file": "voice/c6_film_4.mp3"
+   "file": "voice/c6_film_4.mp3",
+   "spoken": "و آهَنگِ جَشن با هَمه‌یِ سازها!"
   },
   {
    "id": "c6.next",
    "text": "پل شهر شکسته و اتوبوس لاکی خراب است...",
    "event": "c6.next",
    "screen": "film",
-   "file": "voice/c6_next.mp3"
+   "file": "voice/c6_next.mp3",
+   "spoken": "پُلِ شَهر شِکَسته و اُتوبوسِ لاکی خَراب اَست..."
   },
   {
    "id": "c6s1.mission",
    "text": "اول یک طبل محکم بسازیم!",
    "event": "c6s1.mission",
    "screen": "c6",
-   "file": "voice/c6s1_mission.mp3"
+   "file": "voice/c6s1_mission.mp3",
+   "spoken": "اَوَّل یِک طَبلِ مُحکَم بِسازیم!"
   },
   {
    "id": "c6s1.s1",
-   "text": "برای بدنه‌ی طبل یک کاسه لازم داریم.",
+   "text": "برای طبل یک کاسه لازم داریم. کاسه را از کوله‌پشتی بکش.",
    "event": "c6s1.s1",
    "screen": "c6",
-   "file": "voice/c6s1_s1.mp3"
+   "file": "voice/c6s1_s1.mp3",
+   "spoken": "بَرایِ طَبل یِک کاسه لازِم داریم. کاسه را اَز کوله‌پُشتی بِکِش."
   },
   {
    "id": "c6s1.s1.done",
    "text": "این کاسه عالی است!",
    "event": "c6s1.s1.done",
    "screen": "c6",
-   "file": "voice/c6s1_s1_done.mp3"
+   "file": "voice/c6s1_s1_done.mp3",
+   "spoken": "این کاسه عالی اَست!"
   },
   {
    "id": "c6s1.s1.why",
    "text": "این کاسه نیست.",
    "event": "c6s1.s1.why",
    "screen": "c6",
-   "file": "voice/c6s1_s1_why.mp3"
+   "file": "voice/c6s1_s1_why.mp3",
+   "spoken": "این کاسه نیست."
   },
   {
    "id": "c6s1.s2",
-   "text": "پوست طبل را گرد ببُر.",
+   "text": "انگشتت را روی خط‌چین بکش تا پوست طبل بریده شود.",
    "event": "c6s1.s2",
    "screen": "c6",
-   "file": "voice/c6s1_s2.mp3"
+   "file": "voice/c6s1_s2.mp3",
+   "spoken": "اَنگُشتَت را رویِ خَطّ‌چین بِکِش تا پوستِ طَبل بُریده شَوَد."
   },
   {
    "id": "c6s1.s3",
-   "text": "پوست طبل را روی کاسه بکش.",
+   "text": "پوست طبل را بکش و روی جای کم‌رنگش بگذار.",
    "event": "c6s1.s3",
    "screen": "c6",
-   "file": "voice/c6s1_s3.mp3"
+   "file": "voice/c6s1_s3.mp3",
+   "spoken": "پوستِ طَبل را بِکِش و رویِ جایِ کَم‌رَنگَش بُگذار."
   },
   {
    "id": "c6s1.s4",
-   "text": "طناب‌ها را سفت کن. هر بار بزن!",
+   "text": "روی طبل بزن تا طناب‌هایش سفت شود. بوم بوم!",
    "event": "c6s1.s4",
    "screen": "c6",
-   "file": "voice/c6s1_s4.mp3"
+   "file": "voice/c6s1_s4.mp3",
+   "spoken": "رویِ طَبل بِزَن تا طَناب‌هایَش سِفت شَوَد. بوم بوم!"
   },
   {
    "id": "c6s1.s5",
-   "text": "طبل را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید طبل بزن.",
    "event": "c6s1.s5",
    "screen": "c6",
-   "file": "voice/c6s1_s5.mp3"
+   "file": "voice/c6s1_s5.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ طَبل بِزَن."
   },
   {
    "id": "c6s1.s6",
-   "text": "نُت‌ها از طبل بیرون می‌پرند! بزنشان.",
+   "text": "نُت‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! جوراب نه.",
    "event": "c6s1.s6",
    "screen": "c6",
-   "file": "voice/c6s1_s6.mp3"
+   "file": "voice/c6s1_s6.mp3",
+   "spoken": "نُت‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! جوراب نَه."
   },
   {
    "id": "item.drum.made",
    "text": "آفرین! طبل آماده شد!",
    "event": "item.drum.made",
    "screen": "c6",
-   "file": "voice/item_drum_made.mp3"
+   "file": "voice/item_drum_made.mp3",
+   "spoken": "آفَرین! طَبل آماده شُد!"
   },
   {
    "id": "c6s2.mission",
    "text": "زایلوفون تیغه‌های رنگی دارد.",
    "event": "c6s2.mission",
    "screen": "c6",
-   "file": "voice/c6s2_mission.mp3"
+   "file": "voice/c6s2_mission.mp3",
+   "spoken": "زایلوفون تیغه‌هایِ رَنگی دارَد."
   },
   {
    "id": "c6s2.s1",
-   "text": "تیغه‌ها را از بلند به کوتاه بچین.",
+   "text": "اول تیغه‌ی بلند را بزن، بعد کوتاه‌تر و کوتاه‌تر.",
    "event": "c6s2.s1",
    "screen": "c6",
-   "file": "voice/c6s2_s1.mp3"
+   "file": "voice/c6s2_s1.mp3",
+   "spoken": "اَوَّل تیغه‌یِ بُلَند را بِزَن، بَعد کوتاه‌تَر و کوتاه‌تَر."
   },
   {
    "id": "c6s2.s2",
-   "text": "تیغه‌ها با میخ به پایه وصل می‌شوند. چه وسیله‌ای لازم است؟",
+   "text": "تیغه‌ها باید میخ بخورند. از کوله‌پشتی وسیله‌ی درست را بکش.",
    "event": "c6s2.s2",
    "screen": "c6",
-   "file": "voice/c6s2_s2.mp3"
+   "file": "voice/c6s2_s2.mp3",
+   "spoken": "تیغه‌ها باید میخ بُخورَند. اَز کوله‌پُشتی وَسیله‌یِ دُرُست را بِکِش."
   },
   {
    "id": "c6s2.s2.done",
    "text": "تق تق!",
    "event": "c6s2.s2.done",
    "screen": "c6",
-   "file": "voice/c6s2_s2_done.mp3"
+   "file": "voice/c6s2_s2_done.mp3",
+   "spoken": "تَق تَق!"
   },
   {
    "id": "c6s2.s2.why",
    "text": "با این نمی‌شود میخ زد.",
    "event": "c6s2.s2.why",
    "screen": "c6",
-   "file": "voice/c6s2_s2_why.mp3"
+   "file": "voice/c6s2_s2_why.mp3",
+   "spoken": "با این نِمی‌شَوَد میخ زَد."
   },
   {
    "id": "c6s2.s3",
-   "text": "تیغه‌ها را روی پایه بگذار.",
+   "text": "چهار تیغه روی زایلوفون بگذار. بشمار!",
    "event": "c6s2.s3",
    "screen": "c6",
-   "file": "voice/c6s2_s3.mp3"
+   "file": "voice/c6s2_s3.mp3",
+   "spoken": "چَهار تیغه رویِ زایلوفون بُگذار. بِشُمار!"
   },
   {
    "id": "c6s2.s4",
-   "text": "تیغه‌ها را رنگی کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید زایلوفون بزن.",
    "event": "c6s2.s4",
    "screen": "c6",
-   "file": "voice/c6s2_s4.mp3"
+   "file": "voice/c6s2_s4.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ زایلوفون بِزَن."
   },
   {
    "id": "c6s2.s5",
-   "text": "سازها را جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c6s2.s5",
    "screen": "c6",
-   "file": "voice/c6s2_s5.mp3"
+   "file": "voice/c6s2_s5.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "c6s2.s6",
-   "text": "آهنگ میمی را تکرار کن!",
+   "text": "اول گوش کن، بعد همان تیغه‌ها را به همان ترتیب بزن!",
    "event": "c6s2.s6",
    "screen": "c6",
-   "file": "voice/c6s2_s6.mp3"
+   "file": "voice/c6s2_s6.mp3",
+   "spoken": "اَوَّل گوش کُن، بَعد هَمان تیغه‌ها را بِه هَمان تَرتیب بِزَن!"
   },
   {
    "id": "item.xylophone.made",
    "text": "آفرین! زایلوفون آماده شد!",
    "event": "item.xylophone.made",
    "screen": "c6",
-   "file": "voice/item_xylophone_made.mp3"
+   "file": "voice/item_xylophone_made.mp3",
+   "spoken": "آفَرین! زایلوفون آماده شُد!"
   },
   {
    "id": "c6s3.mission",
    "text": "نی صدای پرنده‌ها را دارد.",
    "event": "c6s3.mission",
    "screen": "c6",
-   "file": "voice/c6s3_mission.mp3"
+   "file": "voice/c6s3_mission.mp3",
+   "spoken": "نِی صِدایِ پَرَنده‌ها را دارَد."
   },
   {
    "id": "c6s3.s1",
-   "text": "نی را تمیز کن.",
+   "text": "نی خاکی است. انگشتت را رویش بکش تا تمیز شود.",
    "event": "c6s3.s1",
    "screen": "c6",
-   "file": "voice/c6s3_s1.mp3"
+   "file": "voice/c6s3_s1.mp3",
+   "spoken": "نِی خاکی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد."
   },
   {
    "id": "c6s3.s2",
-   "text": "نی را ببُر.",
+   "text": "انگشتت را روی خط‌چین بکش تا نی بریده شود.",
    "event": "c6s3.s2",
    "screen": "c6",
-   "file": "voice/c6s3_s2.mp3"
+   "file": "voice/c6s3_s2.mp3",
+   "spoken": "اَنگُشتَت را رویِ خَطّ‌چین بِکِش تا نِی بُریده شَوَد."
   },
   {
    "id": "c6s3.s3",
-   "text": "جای سوراخ‌ها را لمس کن.",
+   "text": "روی نی بزن تا سوراخ‌هایش باز شود!",
    "event": "c6s3.s3",
    "screen": "c6",
-   "file": "voice/c6s3_s3.mp3"
+   "file": "voice/c6s3_s3.mp3",
+   "spoken": "رویِ نِی بِزَن تا سوراخ‌هایَش باز شَوَد!"
   },
   {
    "id": "c6s3.s4",
-   "text": "نگه دار و در نی فوت کن!",
+   "text": "دکمه‌ی فوت را نگه دار تا نی بنوازد!",
    "event": "c6s3.s4",
    "screen": "c6",
-   "file": "voice/c6s3_s4.mp3"
+   "file": "voice/c6s3_s4.mp3",
+   "spoken": "دُکمه‌یِ فوت را نِگَه دار تا نِی بِنَوازَد!"
   },
   {
    "id": "c6s3.s5",
-   "text": "فوت کن... حالا بزن!",
+   "text": "وقتی حلقه به جای طلایی رسید، بزن تا نی بلند بخواند!",
    "event": "c6s3.s5",
    "screen": "c6",
-   "file": "voice/c6s3_s5.mp3"
+   "file": "voice/c6s3_s5.mp3",
+   "spoken": "وَقتی حَلقه بِه جایِ طَلایی رِسید، بِزَن تا نِی بُلَند بِخوانَد!"
   },
   {
    "id": "c6s3.s6",
-   "text": "نُت‌ها در هوا می‌رقصند! بگیرشان.",
+   "text": "نُت‌ها می‌افتند! سبد را زیرشان ببر. جوراب را نگیر!",
    "event": "c6s3.s6",
    "screen": "c6",
-   "file": "voice/c6s3_s6.mp3"
+   "file": "voice/c6s3_s6.mp3",
+   "spoken": "نُت‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. جوراب را نَگیر!"
   },
   {
    "id": "item.flute.made",
    "text": "آفرین! نی آماده شد!",
    "event": "item.flute.made",
    "screen": "c6",
-   "file": "voice/item_flute_made.mp3"
+   "file": "voice/item_flute_made.mp3",
+   "spoken": "آفَرین! نِی آماده شُد!"
   },
   {
    "id": "c6s4.mission",
    "text": "با سازهایی که ساختی آهنگ جشن را بسازیم!",
    "event": "c6s4.mission",
    "screen": "c6",
-   "file": "voice/c6s4_mission.mp3"
+   "file": "voice/c6s4_mission.mp3",
+   "spoken": "با سازهایی کِه ساختی آهَنگِ جَشن را بِسازیم!"
   },
   {
    "id": "c6s4.s1",
-   "text": "نُت‌های آهنگ سر بیرون می‌آورند! بزنشان.",
+   "text": "نُت‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن!",
    "event": "c6s4.s1",
    "screen": "c6",
-   "file": "voice/c6s4_s1.mp3"
+   "file": "voice/c6s4_s1.mp3",
+   "spoken": "نُت‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن!"
   },
   {
    "id": "c6s4.s2",
-   "text": "سازهای گروه را جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c6s4.s2",
    "screen": "c6",
-   "file": "voice/c6s4_s2.mp3"
+   "file": "voice/c6s4_s2.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "c6s4.s3",
-   "text": "پنج نُت به آهنگ اضافه کن.",
+   "text": "پنج نُت به آهنگ بده. بشمار!",
    "event": "c6s4.s3",
    "screen": "c6",
-   "file": "voice/c6s4_s3.mp3"
+   "file": "voice/c6s4_s3.mp3",
+   "spoken": "پَنج نُت بِه آهَنگ بِدِه. بِشُمار!"
   },
   {
    "id": "c6s4.s4",
-   "text": "نقطه‌ها را وصل کن تا نُت جشن پیدا شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا آهنگ جشن پیدا شود.",
    "event": "c6s4.s4",
    "screen": "c6",
-   "file": "voice/c6s4_s4.mp3"
+   "file": "voice/c6s4_s4.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا آهَنگِ جَشن پِیدا شَوَد."
   },
   {
    "id": "c6s4.s5",
-   "text": "با نی بنواز! نگه دار و فوت کن.",
+   "text": "دکمه‌ی فوت را نگه دار و با نی بنواز!",
    "event": "c6s4.s5",
    "screen": "c6",
-   "file": "voice/c6s4_s5.mp3"
+   "file": "voice/c6s4_s5.mp3",
+   "spoken": "دُکمه‌یِ فوت را نِگَه دار و با نِی بِنَواز!"
   },
   {
    "id": "c6s4.s6",
-   "text": "آهنگ را تکرار کن. اول گوش کن!",
+   "text": "اول گوش کن، بعد طبل و زایلوفون و نی را به همان ترتیب بزن!",
    "event": "c6s4.s6",
    "screen": "c6",
-   "file": "voice/c6s4_s6.mp3"
+   "file": "voice/c6s4_s6.mp3",
+   "spoken": "اَوَّل گوش کُن، بَعد طَبل و زایلوفون و نِی را بِه هَمان تَرتیب بِزَن!"
   },
   {
    "id": "item.song.made",
    "text": "آفرین! آهنگ جشن آماده شد!",
    "event": "item.song.made",
    "screen": "c6",
-   "file": "voice/item_song_made.mp3"
+   "file": "voice/item_song_made.mp3",
+   "spoken": "آفَرین! آهَنگِ جَشن آماده شُد!"
   },
   {
    "id": "c7.intro",
    "text": "پل شهر شکسته و اتوبوس لاکی خراب شده. هیچ‌کس نمی‌تواند به جشن برسد!",
    "event": "c7.intro",
    "screen": "chapter",
-   "file": "voice/c7_intro.mp3"
+   "file": "voice/c7_intro.mp3",
+   "spoken": "پُلِ شَهر شِکَسته و اُتوبوسِ لاکی خَراب شُده. هیچ‌کَس نِمی‌تَوانَد بِه جَشن بِرِسَد!"
   },
   {
    "id": "c7.film.1",
    "text": "پل دوباره ساخته شد",
    "event": "c7.film.1",
    "screen": "film",
-   "file": "voice/c7_film_1.mp3"
+   "file": "voice/c7_film_1.mp3",
+   "spoken": "پُل دُوباره ساخته شُد"
   },
   {
    "id": "c7.film.2",
    "text": "چراغ راهنمایی: قرمز بایست، سبز برو",
    "event": "c7.film.2",
    "screen": "film",
-   "file": "voice/c7_film_2.mp3"
+   "file": "voice/c7_film_2.mp3",
+   "spoken": "چِراغِ راهنَمایی: قِرمِز بِایست، سَبز بُرو"
   },
   {
    "id": "c7.film.3",
    "text": "اتوبوس روشن شد: بوق بوق!",
    "event": "c7.film.3",
    "screen": "film",
-   "file": "voice/c7_film_3.mp3"
+   "file": "voice/c7_film_3.mp3",
+   "spoken": "اُتوبوس رُوشَن شُد: بوق بوق!"
   },
   {
    "id": "c7.film.4",
    "text": "و همه کارت دعوت گرفتند!",
    "event": "c7.film.4",
    "screen": "film",
-   "file": "voice/c7_film_4.mp3"
+   "file": "voice/c7_film_4.mp3",
+   "spoken": "و هَمه کارتِ دَعوَت گِرِفتَند!"
   },
   {
    "id": "c7.next",
    "text": "همه آماده‌اند... وقت جشن بزرگ است!",
    "event": "c7.next",
    "screen": "film",
-   "file": "voice/c7_next.mp3"
+   "file": "voice/c7_next.mp3",
+   "spoken": "هَمه آماده‌اَند... وَقتِ جَشنِ بُزُرگ اَست!"
   },
   {
    "id": "c7s1.mission",
    "text": "پل شکسته! ماشین‌ها نمی‌توانند رد شوند.",
    "event": "c7s1.mission",
    "screen": "c7",
-   "file": "voice/c7s1_mission.mp3"
+   "file": "voice/c7s1_mission.mp3",
+   "spoken": "پُل شِکَسته! ماشین‌ها نِمی‌تَوانَند رَد شَوَند."
   },
   {
    "id": "c7s1.s1",
-   "text": "تخته‌ها سنگین‌اند. با چه بیاوریمشان؟",
+   "text": "تخته‌ها سنگین‌اند. از کوله‌پشتی چیزی بکش که بار ببرد.",
    "event": "c7s1.s1",
    "screen": "c7",
-   "file": "voice/c7s1_s1.mp3"
+   "file": "voice/c7s1_s1.mp3",
+   "spoken": "تَخته‌ها سَنگین‌اَند. اَز کوله‌پُشتی چیزی بِکِش کِه بار بِبَرَد."
   },
   {
    "id": "c7s1.s1.done",
    "text": "گاری تخته‌ها را آورد!",
    "event": "c7s1.s1.done",
    "screen": "c7",
-   "file": "voice/c7s1_s1_done.mp3"
+   "file": "voice/c7s1_s1_done.mp3",
+   "spoken": "گاری تَخته‌ها را آوَرد!"
   },
   {
    "id": "c7s1.s1.why",
    "text": "این بار نمی‌برد.",
    "event": "c7s1.s1.why",
    "screen": "c7",
-   "file": "voice/c7s1_s1_why.mp3"
+   "file": "voice/c7s1_s1_why.mp3",
+   "spoken": "این بار نِمی‌بَرَد."
   },
   {
    "id": "c7s1.s2",
-   "text": "تخته‌ها را با جرثقیل روی هم بگذار تا پایه‌ی پل ساخته شود.",
+   "text": "جرثقیل تخته را تکان می‌دهد. وقتی بالای خط سبز بود، بزن تا بیفتد!",
    "event": "c7s1.s2",
    "screen": "c7",
-   "file": "voice/c7s1_s2.mp3"
+   "file": "voice/c7s1_s2.mp3",
+   "spoken": "جَرثَقیل تَخته را تِکان می‌دَهَد. وَقتی بالایِ خَطِّ سَبز بود، بِزَن تا بِیُفتَد!"
   },
   {
    "id": "c7s1.s3",
-   "text": "تخته‌ها را در جاهای خالی پل بگذار.",
+   "text": "سه تخته به پل بده. بشمار!",
    "event": "c7s1.s3",
    "screen": "c7",
-   "file": "voice/c7s1_s3.mp3"
+   "file": "voice/c7s1_s3.mp3",
+   "spoken": "سه تَخته بِه پُل بِدِه. بِشُمار!"
   },
   {
    "id": "c7s1.s4",
-   "text": "تخته‌ها را با چه محکم کنیم؟",
+   "text": "تخته‌های پل باید میخ بخورند. از کوله‌پشتی وسیله‌ی درست را بکش.",
    "event": "c7s1.s4",
    "screen": "c7",
-   "file": "voice/c7s1_s4.mp3"
+   "file": "voice/c7s1_s4.mp3",
+   "spoken": "تَخته‌هایِ پُل باید میخ بُخورَند. اَز کوله‌پُشتی وَسیله‌یِ دُرُست را بِکِش."
   },
   {
    "id": "c7s1.s4.done",
    "text": "تق تق! پل محکم شد.",
    "event": "c7s1.s4.done",
    "screen": "c7",
-   "file": "voice/c7s1_s4_done.mp3"
+   "file": "voice/c7s1_s4_done.mp3",
+   "spoken": "تَق تَق! پُل مُحکَم شُد."
   },
   {
    "id": "c7s1.s4.why",
    "text": "با این نمی‌شود میخ زد.",
    "event": "c7s1.s4.why",
    "screen": "c7",
-   "file": "voice/c7s1_s4_why.mp3"
+   "file": "voice/c7s1_s4_why.mp3",
+   "spoken": "با این نِمی‌شَوَد میخ زَد."
   },
   {
    "id": "c7s1.s5",
-   "text": "میخ‌های پل بالا آمده‌اند! بکوبشان.",
+   "text": "میخ‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! جوراب نه.",
    "event": "c7s1.s5",
    "screen": "c7",
-   "file": "voice/c7s1_s5.mp3"
+   "file": "voice/c7s1_s5.mp3",
+   "spoken": "میخ‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! جوراب نَه."
   },
   {
    "id": "c7s1.s6",
-   "text": "ماشین را از روی پل تازه رد کن!",
+   "text": "چپ یا راست صفحه را بزن تا ماشین راهش را عوض کند. ستاره‌ها را بگیر!",
    "event": "c7s1.s6",
    "screen": "c7",
-   "file": "voice/c7s1_s6.mp3"
+   "file": "voice/c7s1_s6.mp3",
+   "spoken": "چَپ یا راستِ صَفحه را بِزَن تا ماشین راهَش را عَوَض کُنَد. سِتاره‌ها را بِگیر!"
   },
   {
    "id": "item.bridge.made",
    "text": "آفرین! پل آماده شد!",
    "event": "item.bridge.made",
    "screen": "c7",
-   "file": "voice/item_bridge_made.mp3"
+   "file": "voice/item_bridge_made.mp3",
+   "spoken": "آفَرین! پُل آماده شُد!"
   },
   {
    "id": "c7s2.mission",
    "text": "چراغ راهنمایی خاموش است و ماشین‌ها گیج شده‌اند.",
    "event": "c7s2.mission",
    "screen": "c7",
-   "file": "voice/c7s2_mission.mp3"
+   "file": "voice/c7s2_mission.mp3",
+   "spoken": "چِراغِ راهنَمایی خاموش اَست و ماشین‌ها گیج شُده‌اَند."
   },
   {
    "id": "c7s2.s1",
-   "text": "چراغ‌ها را به ترتیب بچین: قرمز، زرد، سبز.",
+   "text": "به ترتیب بزن: قرمز، زرد، سبز.",
    "event": "c7s2.s1",
    "screen": "c7",
-   "file": "voice/c7s2_s1.mp3"
+   "file": "voice/c7s2_s1.mp3",
+   "spoken": "بِه تَرتیب بِزَن: قِرمِز، زَرد، سَبز."
   },
   {
    "id": "c7s2.s2",
-   "text": "رنگ چراغ‌ها رفته! چه چیزی رنگ دارد؟",
+   "text": "رنگ چراغ رفته! از کوله‌پشتی چیزی بکش که رنگ دارد.",
    "event": "c7s2.s2",
    "screen": "c7",
-   "file": "voice/c7s2_s2.mp3"
+   "file": "voice/c7s2_s2.mp3",
+   "spoken": "رَنگِ چِراغ رَفته! اَز کوله‌پُشتی چیزی بِکِش کِه رَنگ دارَد."
   },
   {
    "id": "c7s2.s2.done",
    "text": "رنگی شد!",
    "event": "c7s2.s2.done",
    "screen": "c7",
-   "file": "voice/c7s2_s2_done.mp3"
+   "file": "voice/c7s2_s2_done.mp3",
+   "spoken": "رَنگی شُد!"
   },
   {
    "id": "c7s2.s2.why",
    "text": "این رنگ ندارد.",
    "event": "c7s2.s2.why",
    "screen": "c7",
-   "file": "voice/c7s2_s2_why.mp3"
+   "file": "voice/c7s2_s2_why.mp3",
+   "spoken": "این رَنگ نَدارَد."
   },
   {
    "id": "c7s2.s3",
-   "text": "نقطه‌ها را وصل کن تا قاب چراغ کشیده شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا چراغ راهنمایی پیدا شود.",
    "event": "c7s2.s3",
    "screen": "c7",
-   "file": "voice/c7s2_s3.mp3"
+   "file": "voice/c7s2_s3.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا چِراغِ راهنَمایی پِیدا شَوَد."
   },
   {
    "id": "c7s2.s4",
-   "text": "چراغ را عوض کن: قرمز، زرد، سبز!",
+   "text": "روی چراغ بزن تا رنگش عوض شود: قرمز، زرد، سبز!",
    "event": "c7s2.s4",
    "screen": "c7",
-   "file": "voice/c7s2_s4.mp3"
+   "file": "voice/c7s2_s4.mp3",
+   "spoken": "رویِ چِراغ بِزَن تا رَنگَش عَوَض شَوَد: قِرمِز، زَرد، سَبز!"
   },
   {
    "id": "c7s2.s5",
-   "text": "چراغ‌ها را جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c7s2.s5",
    "screen": "c7",
-   "file": "voice/c7s2_s5.mp3"
+   "file": "voice/c7s2_s5.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "c7s2.s6",
-   "text": "وقتی چراغ سبز شد بزن! قرمز را نزن.",
+   "text": "هر وقت چراغ سبز بیرون آمد بزن! قرمز را نزن.",
    "event": "c7s2.s6",
    "screen": "c7",
-   "file": "voice/c7s2_s6.mp3"
+   "file": "voice/c7s2_s6.mp3",
+   "spoken": "هَر وَقت چِراغِ سَبز بیرون آمَد بِزَن! قِرمِز را نَزَن."
   },
   {
    "id": "item.traffic_light.made",
    "text": "آفرین! چراغ راهنمایی آماده شد!",
    "event": "item.traffic_light.made",
    "screen": "c7",
-   "file": "voice/item_traffic_light_made.mp3"
+   "file": "voice/item_traffic_light_made.mp3",
+   "spoken": "آفَرین! چِراغِ راهنَمایی آماده شُد!"
   },
   {
    "id": "c7s3.mission",
    "text": "اتوبوس لاکی پنچر و کثیف و بی‌بنزین است!",
    "event": "c7s3.mission",
    "screen": "c7",
-   "file": "voice/c7s3_mission.mp3"
+   "file": "voice/c7s3_mission.mp3",
+   "spoken": "اُتوبوسِ لاکی پَنچَر و کَثیف و بی‌بِنزین اَست!"
   },
   {
    "id": "c7s3.s1",
-   "text": "لاستیک پنچر است! نگه دار و بادش کن.",
+   "text": "لاستیک پنچر است! دکمه‌ی فوت را نگه دار تا باد شود.",
    "event": "c7s3.s1",
    "screen": "c7",
-   "file": "voice/c7s3_s1.mp3"
+   "file": "voice/c7s3_s1.mp3",
+   "spoken": "لاستیک پَنچَر اَست! دُکمه‌یِ فوت را نِگَه دار تا باد شَوَد."
   },
   {
    "id": "c7s3.s2",
-   "text": "پیچ‌های لاستیک نو را ببند.",
+   "text": "انگشتت را دور لاستیک بچرخان تا پیچ‌هایش بسته شود.",
    "event": "c7s3.s2",
    "screen": "c7",
-   "file": "voice/c7s3_s2.mp3"
+   "file": "voice/c7s3_s2.mp3",
+   "spoken": "اَنگُشتَت را دُورِ لاستیک بِچَرخان تا پیچ‌هایَش بَسته شَوَد."
   },
   {
    "id": "c7s3.s3",
-   "text": "اتوبوس را بشور. گل‌ها را پاک کن!",
+   "text": "اتوبوس گلی است. انگشتت را رویش بکش تا تمیز شود.",
    "event": "c7s3.s3",
    "screen": "c7",
-   "file": "voice/c7s3_s3.mp3"
+   "file": "voice/c7s3_s3.mp3",
+   "spoken": "اُتوبوس گِلی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد."
   },
   {
    "id": "c7s3.s4",
-   "text": "باک را پر کن.",
+   "text": "قوطی بنزین را نگه دار تا بریزد. سر پرچم ول کن!",
    "event": "c7s3.s4",
    "screen": "c7",
-   "file": "voice/c7s3_s4.mp3"
+   "file": "voice/c7s3_s4.mp3",
+   "spoken": "قوطیِ بِنزین را نِگَه دار تا بِریزَد. سَرِ پَرچَم وِل کُن!"
   },
   {
    "id": "c7s3.s5",
-   "text": "حالا روشنش کن!",
+   "text": "انگشتت را دور کلید بچرخان تا اتوبوس روشن شود!",
    "event": "c7s3.s5",
    "screen": "c7",
-   "file": "voice/c7s3_s5.mp3"
+   "file": "voice/c7s3_s5.mp3",
+   "spoken": "اَنگُشتَت را دُورِ کِلید بِچَرخان تا اُتوبوس رُوشَن شَوَد!"
   },
   {
    "id": "c7s3.s6",
-   "text": "اتوبوس را بران! ستاره‌ها را جمع کن و به مانع نخور.",
+   "text": "چپ یا راست صفحه را بزن. ستاره‌ها را بگیر، به سنگ و مخروط نخور!",
    "event": "c7s3.s6",
    "screen": "c7",
-   "file": "voice/c7s3_s6.mp3"
+   "file": "voice/c7s3_s6.mp3",
+   "spoken": "چَپ یا راستِ صَفحه را بِزَن. سِتاره‌ها را بِگیر، بِه سَنگ و مَخروط نَخور!"
   },
   {
    "id": "item.bus.made",
    "text": "آفرین! اتوبوس آماده شد!",
    "event": "item.bus.made",
    "screen": "c7",
-   "file": "voice/item_bus_made.mp3"
+   "file": "voice/item_bus_made.mp3",
+   "spoken": "آفَرین! اُتوبوس آماده شُد!"
   },
   {
    "id": "c7s4.mission",
    "text": "باید همه را به جشن دعوت کنیم!",
    "event": "c7s4.mission",
    "screen": "c7",
-   "file": "voice/c7s4_mission.mp3"
+   "file": "voice/c7s4_mission.mp3",
+   "spoken": "باید هَمه را بِه جَشن دَعوَت کُنیم!"
   },
   {
    "id": "c7s4.s1",
-   "text": "عکس دوستان را روی کارت درست کن.",
+   "text": "تکه‌های کارت را بکش و سر جایشان بگذار.",
    "event": "c7s4.s1",
    "screen": "c7",
-   "file": "voice/c7s4_s1.mp3"
+   "file": "voice/c7s4_s1.mp3",
+   "spoken": "تِکّه‌هایِ کارت را بِکِش و سَرِ جایِشان بُگذار."
   },
   {
    "id": "c7s4.s2",
-   "text": "کارت دعوت را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید کارت بزن.",
    "event": "c7s4.s2",
    "screen": "c7",
-   "file": "voice/c7s4_s2.mp3"
+   "file": "voice/c7s4_s2.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ کارت بِزَن."
   },
   {
    "id": "c7s4.s3",
-   "text": "نامه‌ها در باد پخش شدند! بگیرشان.",
+   "text": "نامه‌ها می‌افتند! سبد را زیرشان ببر. جوراب را نگیر!",
    "event": "c7s4.s3",
    "screen": "c7",
-   "file": "voice/c7s4_s3.mp3"
+   "file": "voice/c7s4_s3.mp3",
+   "spoken": "نامه‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. جوراب را نَگیر!"
   },
   {
    "id": "c7s4.s4",
-   "text": "نامه‌ها را در صندوق بینداز.",
+   "text": "سه نامه در صندوق بینداز. بشمار!",
    "event": "c7s4.s4",
    "screen": "c7",
-   "file": "voice/c7s4_s4.mp3"
+   "file": "voice/c7s4_s4.mp3",
+   "spoken": "سه نامه دَر صَندوق بِیَنداز. بِشُمار!"
   },
   {
    "id": "c7s4.s5",
-   "text": "خانه‌ها دورند. با چه نامه‌ها را برسانیم؟",
+   "text": "خانه‌ها دورند. از کوله‌پشتی چیزی بکش که حرکت می‌کند.",
    "event": "c7s4.s5",
    "screen": "c7",
-   "file": "voice/c7s4_s5.mp3"
+   "file": "voice/c7s4_s5.mp3",
+   "spoken": "خانه‌ها دورَند. اَز کوله‌پُشتی چیزی بِکِش کِه حَرَکَت می‌کُنَد."
   },
   {
    "id": "c7s4.s5.done",
    "text": "برووووم! نامه‌ها رسیدند.",
    "event": "c7s4.s5.done",
    "screen": "c7",
-   "file": "voice/c7s4_s5_done.mp3"
+   "file": "voice/c7s4_s5_done.mp3",
+   "spoken": "بِرووووم! نامه‌ها رِسیدَند."
   },
   {
    "id": "c7s4.s5.why",
    "text": "این حرکت نمی‌کند.",
    "event": "c7s4.s5.why",
    "screen": "c7",
-   "file": "voice/c7s4_s5_why.mp3"
+   "file": "voice/c7s4_s5_why.mp3",
+   "spoken": "این حَرَکَت نِمی‌کُنَد."
   },
   {
    "id": "c7s4.s6",
-   "text": "ماشین را در مسیر بران.",
+   "text": "ماشین را با انگشت روی جاده تا پرچم ببر.",
    "event": "c7s4.s6",
    "screen": "c7",
-   "file": "voice/c7s4_s6.mp3"
+   "file": "voice/c7s4_s6.mp3",
+   "spoken": "ماشین را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر."
   },
   {
    "id": "item.invitation.made",
    "text": "آفرین! کارت دعوت آماده شد!",
    "event": "item.invitation.made",
    "screen": "c7",
-   "file": "voice/item_invitation_made.mp3"
+   "file": "voice/item_invitation_made.mp3",
+   "spoken": "آفَرین! کارتِ دَعوَت آماده شُد!"
   },
   {
    "id": "c8.intro",
    "text": "همه‌چیز آماده است! با چیزهایی که ساختی جشن بزرگ جنگل را برپا کنیم.",
    "event": "c8.intro",
    "screen": "chapter",
-   "file": "voice/c8_intro.mp3"
+   "file": "voice/c8_intro.mp3",
+   "spoken": "هَمه‌چیز آماده اَست! با چیزهایی کِه ساختی جَشنِ بُزُرگِ جَنگَل را بَرپا کُنیم."
   },
   {
    "id": "c8.film.1",
    "text": "میز جشن پر از غذاهای تو",
    "event": "c8.film.1",
    "screen": "film",
-   "file": "voice/c8_film_1.mp3"
+   "file": "voice/c8_film_1.mp3",
+   "spoken": "میزِ جَشن پُر اَز غَذاهایِ تو"
   },
   {
    "id": "c8.film.2",
    "text": "میدان با فانوس و پرچم‌های تو",
    "event": "c8.film.2",
    "screen": "film",
-   "file": "voice/c8_film_2.mp3"
+   "file": "voice/c8_film_2.mp3",
+   "spoken": "مِیدان با فانوس و پَرچَم‌هایِ تو"
   },
   {
    "id": "c8.film.3",
    "text": "کنسرت با سازهای تو",
    "event": "c8.film.3",
    "screen": "film",
-   "file": "voice/c8_film_3.mp3"
+   "file": "voice/c8_film_3.mp3",
+   "spoken": "کُنسِرت با سازهایِ تو"
   },
   {
    "id": "c8.film.4",
    "text": "و تو قهرمان جنگل شدی!",
    "event": "c8.film.4",
    "screen": "film",
-   "file": "voice/c8_film_4.mp3"
+   "file": "voice/c8_film_4.mp3",
+   "spoken": "و تو قَهرَمانِ جَنگَل شُدی!"
   },
   {
    "id": "c8s1.mission",
    "text": "مهمان‌ها گرسنه‌اند! هر کدام غذای دلخواهش را می‌خواهد.",
    "event": "c8s1.mission",
    "screen": "c8",
-   "file": "voice/c8s1_mission.mp3"
+   "file": "voice/c8s1_mission.mp3",
+   "spoken": "مِهمان‌ها گُرُسنه‌اَند! هَر کُدام غَذایِ دِلخواهَش را می‌خواهَد."
   },
   {
    "id": "c8s1.s1",
-   "text": "کلوچه‌ها از سینی می‌افتند! بگیرشان.",
+   "text": "کلوچه‌ها می‌افتند! سبد را زیرشان ببر. کفش را نگیر!",
    "event": "c8s1.s1",
    "screen": "c8",
-   "file": "voice/c8s1_s1.mp3"
+   "file": "voice/c8s1_s1.mp3",
+   "spoken": "کُلوچه‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. کَفش را نَگیر!"
   },
   {
    "id": "c8s1.s2",
-   "text": "غذاها را روی میز بگذار و آشغال‌ها را در سطل.",
+   "text": "هر چه روی نوار می‌آید را بکش: غذا روی میز سبز، آشغال در سطل قرمز.",
    "event": "c8s1.s2",
    "screen": "c8",
-   "file": "voice/c8s1_s2.mp3"
+   "file": "voice/c8s1_s2.mp3",
+   "spoken": "هَر چِه رویِ نَوار می‌آیَد را بِکِش: غَذا رویِ میزِ سَبز، آشغال دَر سَطلِ قِرمِز."
   },
   {
    "id": "c8s1.s3",
-   "text": "غذاهای جشن را جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c8s1.s3",
    "screen": "c8",
-   "file": "voice/c8s1_s3.mp3"
+   "file": "voice/c8s1_s3.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "c8s1.s4",
-   "text": "به هر مهمان غذای دلخواهش را بده.",
+   "text": "ببین هر مهمان چه می‌خواهد و همان را از کوله‌پشتی برایش بکش.",
    "event": "c8s1.s4",
    "screen": "c8",
-   "file": "voice/c8s1_s4.mp3"
+   "file": "voice/c8s1_s4.mp3",
+   "spoken": "بِبین هَر مِهمان چِه می‌خواهَد و هَمان را اَز کوله‌پُشتی بَرایَش بِکِش."
   },
   {
    "id": "c8s1.s5",
-   "text": "مادربزرگ جغد هنوز گرسنه است. بهش غذا بده.",
+   "text": "مادربزرگ جغد گرسنه است. هر چه خواست، به دهانش ببر. کفش نه!",
    "event": "c8s1.s5",
    "screen": "c8",
-   "file": "voice/c8s1_s5.mp3"
+   "file": "voice/c8s1_s5.mp3",
+   "spoken": "مادَربُزُرگ جُغد گُرُسنه اَست. هَر چِه خواست، بِه دَهانَش بِبَر. کَفش نَه!"
   },
   {
    "id": "c8s1.s6",
-   "text": "کلوچه‌ها را روی میز جشن بچین.",
+   "text": "چهار کلوچه روی میز جشن بگذار. بشمار!",
    "event": "c8s1.s6",
    "screen": "c8",
-   "file": "voice/c8s1_s6.mp3"
+   "file": "voice/c8s1_s6.mp3",
+   "spoken": "چَهار کُلوچه رویِ میزِ جَشن بُگذار. بِشُمار!"
   },
   {
    "id": "item.feast.made",
    "text": "آفرین! میز جشن آماده شد!",
    "event": "item.feast.made",
    "screen": "c8",
-   "file": "voice/item_feast_made.mp3"
+   "file": "voice/item_feast_made.mp3",
+   "spoken": "آفَرین! میزِ جَشن آماده شُد!"
   },
   {
    "id": "c8s2.mission",
    "text": "میدان جشن را قشنگ کنیم!",
    "event": "c8s2.mission",
    "screen": "c8",
-   "file": "voice/c8s2_mission.mp3"
+   "file": "voice/c8s2_mission.mp3",
+   "spoken": "مِیدانِ جَشن را قَشَنگ کُنیم!"
   },
   {
    "id": "c8s2.s1",
-   "text": "تزئین‌ها را جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "c8s2.s1",
    "screen": "c8",
-   "file": "voice/c8s2_s1.mp3"
+   "file": "voice/c8s2_s1.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "c8s2.s2",
-   "text": "هر تزئین را به دوستی بده که می‌خواهد.",
+   "text": "ببین هر دوست چه می‌خواهد و همان را از کوله‌پشتی برایش بکش.",
    "event": "c8s2.s2",
    "screen": "c8",
-   "file": "voice/c8s2_s2.mp3"
+   "file": "voice/c8s2_s2.mp3",
+   "spoken": "بِبین هَر دوست چِه می‌خواهَد و هَمان را اَز کوله‌پُشتی بَرایَش بِکِش."
   },
   {
    "id": "c8s2.s3",
-   "text": "بادکنک‌ها را باد کن! نگه دار و فوت کن.",
+   "text": "دکمه‌ی فوت را نگه دار تا بادکنک‌ها باد شوند!",
    "event": "c8s2.s3",
    "screen": "c8",
-   "file": "voice/c8s2_s3.mp3"
+   "file": "voice/c8s2_s3.mp3",
+   "spoken": "دُکمه‌یِ فوت را نِگَه دار تا بادکُنَک‌ها باد شَوَند!"
   },
   {
    "id": "c8s2.s4",
-   "text": "جعبه‌های هدیه را روی هم بچین!",
+   "text": "وقتی جعبه بالای خط سبز بود، بزن تا روی برج بیفتد!",
    "event": "c8s2.s4",
    "screen": "c8",
-   "file": "voice/c8s2_s4.mp3"
+   "file": "voice/c8s2_s4.mp3",
+   "spoken": "وَقتی جَعبه بالایِ خَطِّ سَبز بود، بِزَن تا رویِ بُرج بِیُفتَد!"
   },
   {
    "id": "c8s2.s5",
-   "text": "پرچم‌ها را آویزان کن.",
+   "text": "چهار پرچم به نخ بده. بشمار!",
    "event": "c8s2.s5",
    "screen": "c8",
-   "file": "voice/c8s2_s5.mp3"
+   "file": "voice/c8s2_s5.mp3",
+   "spoken": "چَهار پَرچَم بِه نَخ بِدِه. بِشُمار!"
   },
   {
    "id": "c8s2.s6",
-   "text": "میدان را رنگی کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید بزن.",
    "event": "c8s2.s6",
    "screen": "c8",
-   "file": "voice/c8s2_s6.mp3"
+   "file": "voice/c8s2_s6.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفید بِزَن."
   },
   {
    "id": "item.decorations.made",
    "text": "آفرین! تزئینات جشن آماده شد!",
    "event": "item.decorations.made",
    "screen": "c8",
-   "file": "voice/item_decorations_made.mp3"
+   "file": "voice/item_decorations_made.mp3",
+   "spoken": "آفَرین! تَزئیناتِ جَشن آماده شُد!"
   },
   {
    "id": "c8s3.mission",
    "text": "وقت کنسرت میمی است!",
    "event": "c8s3.mission",
    "screen": "c8",
-   "file": "voice/c8s3_mission.mp3"
+   "file": "voice/c8s3_mission.mp3",
+   "spoken": "وَقتِ کُنسِرتِ میمی اَست!"
   },
   {
    "id": "c8s3.s1",
-   "text": "سازها را به نوازنده‌ها بده.",
+   "text": "ببین هر نوازنده چه سازی می‌خواهد و همان را برایش بکش.",
    "event": "c8s3.s1",
    "screen": "c8",
-   "file": "voice/c8s3_s1.mp3"
+   "file": "voice/c8s3_s1.mp3",
+   "spoken": "بِبین هَر نَوازَنده چِه سازی می‌خواهَد و هَمان را بَرایَش بِکِش."
   },
   {
    "id": "c8s3.s2",
-   "text": "نقطه‌ها را وصل کن تا صحنه‌ی کنسرت پیدا شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا صحنه‌ی کنسرت پیدا شود.",
    "event": "c8s3.s2",
    "screen": "c8",
-   "file": "voice/c8s3_s2.mp3"
+   "file": "voice/c8s3_s2.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا صَحنه‌یِ کُنسِرت پِیدا شَوَد."
   },
   {
    "id": "c8s3.s3",
-   "text": "گرم کردن! نگه دار و در نی فوت کن.",
+   "text": "دکمه‌ی فوت را نگه دار و با نی بنواز!",
    "event": "c8s3.s3",
    "screen": "c8",
-   "file": "voice/c8s3_s3.mp3"
+   "file": "voice/c8s3_s3.mp3",
+   "spoken": "دُکمه‌یِ فوت را نِگَه دار و با نِی بِنَواز!"
   },
   {
    "id": "c8s3.s4",
-   "text": "با گروه بنواز!",
+   "text": "اول گوش کن، بعد سازها را به همان ترتیب بزن!",
    "event": "c8s3.s4",
    "screen": "c8",
-   "file": "voice/c8s3_s4.mp3"
+   "file": "voice/c8s3_s4.mp3",
+   "spoken": "اَوَّل گوش کُن، بَعد سازها را بِه هَمان تَرتیب بِزَن!"
   },
   {
    "id": "c8s3.s5",
-   "text": "نُت‌ها از صحنه می‌ریزند! بگیرشان.",
+   "text": "نُت‌ها می‌افتند! سبد را زیرشان ببر. جوراب را نگیر!",
    "event": "c8s3.s5",
    "screen": "c8",
-   "file": "voice/c8s3_s5.mp3"
+   "file": "voice/c8s3_s5.mp3",
+   "spoken": "نُت‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. جوراب را نَگیر!"
   },
   {
    "id": "c8s3.s6",
-   "text": "میمی بعد از آواز تشنه است. آب‌پرتقال بهش بده.",
+   "text": "میمی تشنه است. آب‌پرتقال را به دهانش ببر.",
    "event": "c8s3.s6",
    "screen": "c8",
-   "file": "voice/c8s3_s6.mp3"
+   "file": "voice/c8s3_s6.mp3",
+   "spoken": "میمی تِشنه اَست. آبِ پُرتِقال را بِه دَهانَش بِبَر."
   },
   {
    "id": "item.concert.made",
    "text": "آفرین! کنسرت جشن آماده شد!",
    "event": "item.concert.made",
    "screen": "c8",
-   "file": "voice/item_concert_made.mp3"
+   "file": "voice/item_concert_made.mp3",
+   "spoken": "آفَرین! کُنسِرتِ جَشن آماده شُد!"
   },
   {
    "id": "c8s4.mission",
    "text": "آخرین کار: مهمان‌ها را بیاوریم و آتش‌بازی کنیم!",
    "event": "c8s4.mission",
    "screen": "c8",
-   "file": "voice/c8s4_mission.mp3"
+   "file": "voice/c8s4_mission.mp3",
+   "spoken": "آخَرین کار: مِهمان‌ها را بیاوَریم و آتَش‌بازی کُنیم!"
   },
   {
    "id": "c8s4.s1",
-   "text": "مهمان‌ها دورند. با چه بیاوریمشان؟",
+   "text": "مهمان‌ها دورند. از کوله‌پشتی چیزی بکش که همه را بیاورد.",
    "event": "c8s4.s1",
    "screen": "c8",
-   "file": "voice/c8s4_s1.mp3"
+   "file": "voice/c8s4_s1.mp3",
+   "spoken": "مِهمان‌ها دورَند. اَز کوله‌پُشتی چیزی بِکِش کِه هَمه را بیاوَرَد."
   },
   {
    "id": "c8s4.s1.done",
    "text": "بوق بوق! همه رسیدند.",
    "event": "c8s4.s1.done",
    "screen": "c8",
-   "file": "voice/c8s4_s1_done.mp3"
+   "file": "voice/c8s4_s1_done.mp3",
+   "spoken": "بوق بوق! هَمه رِسیدَند."
   },
   {
    "id": "c8s4.s1.why",
    "text": "این همه را نمی‌آورد.",
    "event": "c8s4.s1.why",
    "screen": "c8",
-   "file": "voice/c8s4_s1_why.mp3"
+   "file": "voice/c8s4_s1_why.mp3",
+   "spoken": "این هَمه را نِمی‌آوَرَد."
   },
   {
    "id": "c8s4.s2",
-   "text": "مهمان‌ها را با اتوبوس بیاور. ستاره جمع کن!",
+   "text": "چپ یا راست صفحه را بزن. ستاره‌ها را بگیر، به سنگ و مخروط نخور!",
    "event": "c8s4.s2",
    "screen": "c8",
-   "file": "voice/c8s4_s2.mp3"
+   "file": "voice/c8s4_s2.mp3",
+   "spoken": "چَپ یا راستِ صَفحه را بِزَن. سِتاره‌ها را بِگیر، بِه سَنگ و مَخروط نَخور!"
   },
   {
    "id": "c8s4.s3",
-   "text": "برای دیدن نمایش ستاره‌ها چه لازم است؟",
+   "text": "می‌خواهیم ستاره‌ها را از نزدیک ببینیم. از کوله‌پشتی وسیله‌ی درست را بکش.",
    "event": "c8s4.s3",
    "screen": "c8",
-   "file": "voice/c8s4_s3.mp3"
+   "file": "voice/c8s4_s3.mp3",
+   "spoken": "می‌خواهیم سِتاره‌ها را اَز نَزدیک بِبینیم. اَز کوله‌پُشتی وَسیله‌یِ دُرُست را بِکِش."
   },
   {
    "id": "c8s4.s3.done",
    "text": "وای! ستاره‌ها!",
    "event": "c8s4.s3.done",
    "screen": "c8",
-   "file": "voice/c8s4_s3_done.mp3"
+   "file": "voice/c8s4_s3_done.mp3",
+   "spoken": "وای! سِتاره‌ها!"
   },
   {
    "id": "c8s4.s3.why",
    "text": "با این نمی‌شود دور را دید.",
    "event": "c8s4.s3.why",
    "screen": "c8",
-   "file": "voice/c8s4_s3_why.mp3"
+   "file": "voice/c8s4_s3_why.mp3",
+   "spoken": "با این نِمی‌شَوَد دور را دید."
   },
   {
    "id": "c8s4.s4",
-   "text": "آتش‌بازی‌ها از هر طرف بالا می‌آیند! بزنشان!",
+   "text": "آتش‌بازی‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن!",
    "event": "c8s4.s4",
    "screen": "c8",
-   "file": "voice/c8s4_s4.mp3"
+   "file": "voice/c8s4_s4.mp3",
+   "spoken": "آتَش‌بازی‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن!"
   },
   {
    "id": "c8s4.s5",
-   "text": "ستاره‌ها از آسمان می‌بارند! بگیرشان.",
+   "text": "ستاره‌ها می‌افتند! سبد را زیرشان ببر.",
    "event": "c8s4.s5",
    "screen": "c8",
-   "file": "voice/c8s4_s5.mp3"
+   "file": "voice/c8s4_s5.mp3",
+   "spoken": "سِتاره‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر."
   },
   {
    "id": "c8s4.s6",
-   "text": "نقطه‌ها را وصل کن تا مدال قهرمانی پیدا شود!",
+   "text": "نقطه‌ها را به ترتیب بزن تا مدال قهرمانی پیدا شود!",
    "event": "c8s4.s6",
    "screen": "c8",
-   "file": "voice/c8s4_s6.mp3"
+   "file": "voice/c8s4_s6.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا مِدالِ قَهرَمانی پِیدا شَوَد!"
   },
   {
    "id": "item.medal.made",
    "text": "آفرین! مدال قهرمان جنگل آماده شد!",
    "event": "item.medal.made",
    "screen": "c8",
-   "file": "voice/item_medal_made.mp3"
+   "file": "voice/item_medal_made.mp3",
+   "spoken": "آفَرین! مِدالِ قَهرَمانِ جَنگَل آماده شُد!"
   },
   {
    "id": "k_bubbles.mission",
    "text": "بیا یک حباب‌ساز بسازیم!",
    "event": "k_bubbles.mission",
    "screen": "workshop",
-   "file": "voice/k_bubbles_mission.mp3"
+   "file": "voice/k_bubbles_mission.mp3",
+   "spoken": "بیا یِک حُباب‌ساز بِسازیم!"
   },
   {
    "id": "k_bubbles.s1",
-   "text": "صابون را در کاسه بریز.",
+   "text": "شیشه‌ی صابون را نگه دار تا در کاسه بریزد. سر پرچم ول کن!",
    "event": "k_bubbles.s1",
    "screen": "workshop",
-   "file": "voice/k_bubbles_s1.mp3"
+   "file": "voice/k_bubbles_s1.mp3",
+   "spoken": "شیشه‌یِ صابون را نِگَه دار تا دَر کاسه بِریزَد. سَرِ پَرچَم وِل کُن!"
   },
   {
    "id": "k_bubbles.s2",
-   "text": "هم بزن.",
+   "text": "انگشتت را دور کاسه بچرخان تا کف کند.",
    "event": "k_bubbles.s2",
    "screen": "workshop",
-   "file": "voice/k_bubbles_s2.mp3"
+   "file": "voice/k_bubbles_s2.mp3",
+   "spoken": "اَنگُشتَت را دُورِ کاسه بِچَرخان تا کَف کُنَد."
   },
   {
    "id": "k_bubbles.s3",
-   "text": "در حباب‌ساز فوت کن!",
+   "text": "دکمه‌ی فوت را نگه دار تا حباب درست شود!",
    "event": "k_bubbles.s3",
    "screen": "workshop",
-   "file": "voice/k_bubbles_s3.mp3"
+   "file": "voice/k_bubbles_s3.mp3",
+   "spoken": "دُکمه‌یِ فوت را نِگَه دار تا حُباب دُرُست شَوَد!"
   },
   {
    "id": "k_bubbles.s4",
-   "text": "حباب‌ها را بترکان!",
+   "text": "روی حباب‌ها بزن تا بترکند!",
    "event": "k_bubbles.s4",
    "screen": "workshop",
-   "file": "voice/k_bubbles_s4.mp3"
+   "file": "voice/k_bubbles_s4.mp3",
+   "spoken": "رویِ حُباب‌ها بِزَن تا بِتَرکَند!"
   },
   {
    "id": "k_bubbles.s5",
-   "text": "حباب‌ها همه جا پیدا می‌شوند. بترکانشان!",
+   "text": "حباب‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن!",
    "event": "k_bubbles.s5",
    "screen": "workshop",
-   "file": "voice/k_bubbles_s5.mp3"
+   "file": "voice/k_bubbles_s5.mp3",
+   "spoken": "حُباب‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن!"
   },
   {
    "id": "item.bubbles.made",
    "text": "آفرین! حباب‌ساز آماده شد!",
    "event": "item.bubbles.made",
    "screen": "workshop",
-   "file": "voice/item_bubbles_made.mp3"
+   "file": "voice/item_bubbles_made.mp3",
+   "spoken": "آفَرین! حُباب‌ساز آماده شُد!"
   },
   {
    "id": "k_necklace.mission",
    "text": "یک گردنبند رنگی بسازیم.",
    "event": "k_necklace.mission",
    "screen": "workshop",
-   "file": "voice/k_necklace_mission.mp3"
+   "file": "voice/k_necklace_mission.mp3",
+   "spoken": "یِک گَردَنبَندِ رَنگی بِسازیم."
   },
   {
    "id": "k_necklace.s1",
-   "text": "مهره‌ها می‌افتند. بگیرشان!",
+   "text": "مهره‌ها می‌افتند! سبد را زیرشان ببر. جوراب را نگیر!",
    "event": "k_necklace.s1",
    "screen": "workshop",
-   "file": "voice/k_necklace_s1.mp3"
+   "file": "voice/k_necklace_s1.mp3",
+   "spoken": "مُهره‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. جوراب را نَگیر!"
   },
   {
    "id": "k_necklace.s2",
-   "text": "مهره‌ها را از بزرگ به کوچک بچین.",
+   "text": "اول مهره‌ی بزرگ را بزن، بعد کوچک‌تر و کوچک‌تر.",
    "event": "k_necklace.s2",
    "screen": "workshop",
-   "file": "voice/k_necklace_s2.mp3"
+   "file": "voice/k_necklace_s2.mp3",
+   "spoken": "اَوَّل مُهره‌یِ بُزُرگ را بِزَن، بَعد کوچَک‌تَر و کوچَک‌تَر."
   },
   {
    "id": "k_necklace.s3",
-   "text": "مهره‌ها را به نخ بکش.",
+   "text": "شش مهره به گردنبند بده. بشمار!",
    "event": "k_necklace.s3",
    "screen": "workshop",
-   "file": "voice/k_necklace_s3.mp3"
+   "file": "voice/k_necklace_s3.mp3",
+   "spoken": "شِش مُهره بِه گَردَنبَند بِدِه. بِشُمار!"
   },
   {
    "id": "k_necklace.s4",
-   "text": "نقطه‌ها را وصل کن تا نخ گردنبند بسته شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا گردنبند پیدا شود.",
    "event": "k_necklace.s4",
    "screen": "workshop",
-   "file": "voice/k_necklace_s4.mp3"
+   "file": "voice/k_necklace_s4.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا گَردَنبَند پِیدا شَوَد."
   },
   {
    "id": "k_necklace.s5",
-   "text": "مهره‌ها را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید بزن.",
    "event": "k_necklace.s5",
    "screen": "workshop",
-   "file": "voice/k_necklace_s5.mp3"
+   "file": "voice/k_necklace_s5.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفید بِزَن."
   },
   {
    "id": "item.necklace.made",
    "text": "آفرین! گردنبند مهره‌ای آماده شد!",
    "event": "item.necklace.made",
    "screen": "workshop",
-   "file": "voice/item_necklace_made.mp3"
+   "file": "voice/item_necklace_made.mp3",
+   "spoken": "آفَرین! گَردَنبَندِ مُهره‌ای آماده شُد!"
   },
   {
    "id": "k_kite.mission",
    "text": "روز بادی است! بادبادک بسازیم.",
    "event": "k_kite.mission",
    "screen": "workshop",
-   "file": "voice/k_kite_mission.mp3"
+   "file": "voice/k_kite_mission.mp3",
+   "spoken": "روزِ بادی اَست! بادبادَک بِسازیم."
   },
   {
    "id": "k_kite.s1",
-   "text": "چهار نقطه را وصل کن تا شکل بادبادک پیدا شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا بادبادک پیدا شود.",
    "event": "k_kite.s1",
    "screen": "workshop",
-   "file": "voice/k_kite_s1.mp3"
+   "file": "voice/k_kite_s1.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا بادبادَک پِیدا شَوَد."
   },
   {
    "id": "k_kite.s2",
-   "text": "کاغذ بادبادک را ببُر.",
+   "text": "انگشتت را روی خط‌چین‌ها بکش تا کاغذ بریده شود.",
    "event": "k_kite.s2",
    "screen": "workshop",
-   "file": "voice/k_kite_s2.mp3"
+   "file": "voice/k_kite_s2.mp3",
+   "spoken": "اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش تا کاغَذ بُریده شَوَد."
   },
   {
    "id": "k_kite.s3",
-   "text": "بادبادک را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید بادبادک بزن.",
    "event": "k_kite.s3",
    "screen": "workshop",
-   "file": "voice/k_kite_s3.mp3"
+   "file": "voice/k_kite_s3.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ بادبادَک بِزَن."
   },
   {
    "id": "k_kite.s4",
-   "text": "فوت کن تا باد بیاید و بادبادک بچرخد!",
+   "text": "دکمه‌ی فوت را نگه دار تا بادبادک بچرخد!",
    "event": "k_kite.s4",
    "screen": "workshop",
-   "file": "voice/k_kite_s4.mp3"
+   "file": "voice/k_kite_s4.mp3",
+   "spoken": "دُکمه‌یِ فوت را نِگَه دار تا بادبادَک بِچَرخَد!"
   },
   {
    "id": "k_kite.s5",
-   "text": "بادبادک را در باد بالا ببر.",
+   "text": "بادبادک را با انگشت روی جاده تا پرچم ببر.",
    "event": "k_kite.s5",
    "screen": "workshop",
-   "file": "voice/k_kite_s5.mp3"
+   "file": "voice/k_kite_s5.mp3",
+   "spoken": "بادبادَک را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر."
   },
   {
    "id": "item.kite.made",
    "text": "آفرین! بادبادک آماده شد!",
    "event": "item.kite.made",
    "screen": "workshop",
-   "file": "voice/item_kite_made.mp3"
+   "file": "voice/item_kite_made.mp3",
+   "spoken": "آفَرین! بادبادَک آماده شُد!"
   },
   {
    "id": "k_robot.mission",
    "text": "یک ربات دوست بسازیم!",
    "event": "k_robot.mission",
    "screen": "workshop",
-   "file": "voice/k_robot_mission.mp3"
+   "file": "voice/k_robot_mission.mp3",
+   "spoken": "یِک رُباتِ دوست بِسازیم!"
   },
   {
    "id": "k_robot.s1",
-   "text": "قطعه‌های ربات را جفت کن.",
+   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
    "event": "k_robot.s1",
    "screen": "workshop",
-   "file": "voice/k_robot_s1.mp3"
+   "file": "voice/k_robot_s1.mp3",
+   "spoken": "کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن."
   },
   {
    "id": "k_robot.s2",
-   "text": "سر و بدنه‌ی ربات را وصل کن.",
+   "text": "سر و بدنه را بکش و روی جای کم‌رنگشان بگذار.",
    "event": "k_robot.s2",
    "screen": "workshop",
-   "file": "voice/k_robot_s2.mp3"
+   "file": "voice/k_robot_s2.mp3",
+   "spoken": "سَر و بَدَنه را بِکِش و رویِ جایِ کَم‌رَنگِشان بُگذار."
   },
   {
    "id": "k_robot.s3",
-   "text": "باتری‌ها را بگذار.",
+   "text": "دو باتری به ربات بده. بشمار!",
    "event": "k_robot.s3",
    "screen": "workshop",
-   "file": "voice/k_robot_s3.mp3"
+   "file": "voice/k_robot_s3.mp3",
+   "spoken": "دو باتری بِه رُبات بِدِه. بِشُمار!"
   },
   {
    "id": "k_robot.s4",
-   "text": "ربات را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید ربات بزن.",
    "event": "k_robot.s4",
    "screen": "workshop",
-   "file": "voice/k_robot_s4.mp3"
+   "file": "voice/k_robot_s4.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ رُبات بِزَن."
   },
   {
    "id": "k_robot.s5",
-   "text": "ربات را تا گل راه ببر.",
+   "text": "ربات را با انگشت روی جاده تا پرچم ببر.",
    "event": "k_robot.s5",
    "screen": "workshop",
-   "file": "voice/k_robot_s5.mp3"
+   "file": "voice/k_robot_s5.mp3",
+   "spoken": "رُبات را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر."
   },
   {
    "id": "item.robot.made",
    "text": "آفرین! ربات آماده شد!",
    "event": "item.robot.made",
    "screen": "workshop",
-   "file": "voice/item_robot_made.mp3"
+   "file": "voice/item_robot_made.mp3",
+   "spoken": "آفَرین! رُبات آماده شُد!"
   },
   {
    "id": "k_dollhouse.mission",
    "text": "یک خانه‌ی کوچک برای عروسک‌ها!",
    "event": "k_dollhouse.mission",
    "screen": "workshop",
-   "file": "voice/k_dollhouse_mission.mp3"
+   "file": "voice/k_dollhouse_mission.mp3",
+   "spoken": "یِک خانه‌یِ کوچَک بَرایِ عَروسَک‌ها!"
   },
   {
    "id": "k_dollhouse.s1",
-   "text": "اتاق‌ها را با جرثقیل روی هم بگذار.",
+   "text": "وقتی جعبه بالای خط سبز بود، بزن تا روی برج بیفتد!",
    "event": "k_dollhouse.s1",
    "screen": "workshop",
-   "file": "voice/k_dollhouse_s1.mp3"
+   "file": "voice/k_dollhouse_s1.mp3",
+   "spoken": "وَقتی جَعبه بالایِ خَطِّ سَبز بود، بِزَن تا رویِ بُرج بِیُفتَد!"
   },
   {
    "id": "k_dollhouse.s2",
-   "text": "نقطه‌ها را وصل کن تا سقف خانه کشیده شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا خانه پیدا شود.",
    "event": "k_dollhouse.s2",
    "screen": "workshop",
-   "file": "voice/k_dollhouse_s2.mp3"
+   "file": "voice/k_dollhouse_s2.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا خانه پِیدا شَوَد."
   },
   {
    "id": "k_dollhouse.s3",
-   "text": "خانه را تمیز کن.",
+   "text": "خانه خاکی است. انگشتت را رویش بکش تا تمیز شود.",
    "event": "k_dollhouse.s3",
    "screen": "workshop",
-   "file": "voice/k_dollhouse_s3.mp3"
+   "file": "voice/k_dollhouse_s3.mp3",
+   "spoken": "خانه خاکی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد."
   },
   {
    "id": "k_dollhouse.s4",
-   "text": "دیوارها را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید خانه بزن.",
    "event": "k_dollhouse.s4",
    "screen": "workshop",
-   "file": "voice/k_dollhouse_s4.mp3"
+   "file": "voice/k_dollhouse_s4.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ خانه بِزَن."
   },
   {
    "id": "k_dollhouse.s5",
-   "text": "چراغ اتاق‌ها را روشن کن.",
+   "text": "روی لامپ بزن تا روشن شود!",
    "event": "k_dollhouse.s5",
    "screen": "workshop",
-   "file": "voice/k_dollhouse_s5.mp3"
+   "file": "voice/k_dollhouse_s5.mp3",
+   "spoken": "رویِ لامپ بِزَن تا رُوشَن شَوَد!"
   },
   {
    "id": "item.dollhouse.made",
    "text": "آفرین! خانه‌ی عروسکی آماده شد!",
    "event": "item.dollhouse.made",
    "screen": "workshop",
-   "file": "voice/item_dollhouse_made.mp3"
+   "file": "voice/item_dollhouse_made.mp3",
+   "spoken": "آفَرین! خانه‌یِ عَروسَکی آماده شُد!"
   },
   {
    "id": "k_rocket.mission",
    "text": "به فضا برویم!",
    "event": "k_rocket.mission",
    "screen": "workshop",
-   "file": "voice/k_rocket_mission.mp3"
+   "file": "voice/k_rocket_mission.mp3",
+   "spoken": "بِه فَضا بِرَویم!"
   },
   {
    "id": "k_rocket.s1",
-   "text": "بدنه‌ی موشک را بگذار.",
+   "text": "بدنه‌ی موشک را بکش و روی جای کم‌رنگش بگذار.",
    "event": "k_rocket.s1",
    "screen": "workshop",
-   "file": "voice/k_rocket_s1.mp3"
+   "file": "voice/k_rocket_s1.mp3",
+   "spoken": "بَدَنه‌یِ موشَک را بِکِش و رویِ جایِ کَم‌رَنگَش بُگذار."
   },
   {
    "id": "k_rocket.s2",
-   "text": "موشک را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید موشک بزن.",
    "event": "k_rocket.s2",
    "screen": "workshop",
-   "file": "voice/k_rocket_s2.mp3"
+   "file": "voice/k_rocket_s2.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ موشَک بِزَن."
   },
   {
    "id": "k_rocket.s3",
-   "text": "شمارش معکوس: ستاره‌ها را از بزرگ به کوچک بزن!",
+   "text": "اول ستاره‌ی بزرگ را بزن، بعد کوچک‌تر و کوچک‌تر!",
    "event": "k_rocket.s3",
    "screen": "workshop",
-   "file": "voice/k_rocket_s3.mp3"
+   "file": "voice/k_rocket_s3.mp3",
+   "spoken": "اَوَّل سِتاره‌یِ بُزُرگ را بِزَن، بَعد کوچَک‌تَر و کوچَک‌تَر!"
   },
   {
    "id": "k_rocket.s4",
-   "text": "موشک را در فضا بران. ستاره جمع کن و به سنگ‌های فضایی نخور!",
+   "text": "چپ یا راست صفحه را بزن. ستاره‌ها را بگیر، به سنگ نخور!",
    "event": "k_rocket.s4",
    "screen": "workshop",
-   "file": "voice/k_rocket_s4.mp3"
+   "file": "voice/k_rocket_s4.mp3",
+   "spoken": "چَپ یا راستِ صَفحه را بِزَن. سِتاره‌ها را بِگیر، بِه سَنگ نَخور!"
   },
   {
    "id": "k_rocket.s5",
-   "text": "در فضا ستاره جمع کن.",
+   "text": "روی ستاره‌ها بزن تا در سبد بپرند!",
    "event": "k_rocket.s5",
    "screen": "workshop",
-   "file": "voice/k_rocket_s5.mp3"
+   "file": "voice/k_rocket_s5.mp3",
+   "spoken": "رویِ سِتاره‌ها بِزَن تا دَر سَبَد بِپَرَند!"
   },
   {
    "id": "item.rocket.made",
    "text": "آفرین! موشک آماده شد!",
    "event": "item.rocket.made",
    "screen": "workshop",
-   "file": "voice/item_rocket_made.mp3"
+   "file": "voice/item_rocket_made.mp3",
+   "spoken": "آفَرین! موشَک آماده شُد!"
   },
   {
    "id": "k_submarine.mission",
    "text": "زیر دریا چه خبر است؟",
    "event": "k_submarine.mission",
    "screen": "workshop",
-   "file": "voice/k_submarine_mission.mp3"
+   "file": "voice/k_submarine_mission.mp3",
+   "spoken": "زیرِ دَریا چِه خَبَر اَست؟"
   },
   {
    "id": "k_submarine.s1",
-   "text": "پنجره‌ی زیردریایی را بگذار.",
+   "text": "پنجره را بکش و روی جای کم‌رنگش بگذار.",
    "event": "k_submarine.s1",
    "screen": "workshop",
-   "file": "voice/k_submarine_s1.mp3"
+   "file": "voice/k_submarine_s1.mp3",
+   "spoken": "پَنجَره را بِکِش و رویِ جایِ کَم‌رَنگَش بُگذار."
   },
   {
    "id": "k_submarine.s2",
-   "text": "زیردریایی را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید زیردریایی بزن.",
    "event": "k_submarine.s2",
    "screen": "workshop",
-   "file": "voice/k_submarine_s2.mp3"
+   "file": "voice/k_submarine_s2.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ زیرِدَریایی بِزَن."
   },
   {
    "id": "k_submarine.s3",
-   "text": "با چراغ زیردریایی ماهی‌ها را پیدا کن.",
+   "text": "انگشتت را در تاریکی بکش تا نور ماهی‌ها را پیدا کند.",
    "event": "k_submarine.s3",
    "screen": "workshop",
-   "file": "voice/k_submarine_s3.mp3"
+   "file": "voice/k_submarine_s3.mp3",
+   "spoken": "اَنگُشتَت را دَر تاریکی بِکِش تا نور ماهی‌ها را پِیدا کُنَد."
   },
   {
    "id": "k_submarine.s4",
-   "text": "زیردریایی را بران و به ماهی‌ها سلام کن. به سنگ نخور!",
+   "text": "چپ یا راست صفحه را بزن. ماهی‌ها را بگیر، به سنگ نخور!",
    "event": "k_submarine.s4",
    "screen": "workshop",
-   "file": "voice/k_submarine_s4.mp3"
+   "file": "voice/k_submarine_s4.mp3",
+   "spoken": "چَپ یا راستِ صَفحه را بِزَن. ماهی‌ها را بِگیر، بِه سَنگ نَخور!"
   },
   {
    "id": "k_submarine.s5",
-   "text": "ماهی‌ها از لای جلبک‌ها سر بیرون می‌آورند! لمسشان کن.",
+   "text": "ماهی‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! کفش نه.",
    "event": "k_submarine.s5",
    "screen": "workshop",
-   "file": "voice/k_submarine_s5.mp3"
+   "file": "voice/k_submarine_s5.mp3",
+   "spoken": "ماهی‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! کَفش نَه."
   },
   {
    "id": "item.submarine.made",
    "text": "آفرین! زیردریایی آماده شد!",
    "event": "item.submarine.made",
    "screen": "workshop",
-   "file": "voice/item_submarine_made.mp3"
+   "file": "voice/item_submarine_made.mp3",
+   "spoken": "آفَرین! زیرِدَریایی آماده شُد!"
   },
   {
    "id": "k_train.mission",
    "text": "چووو چووو! یک قطار بسازیم.",
    "event": "k_train.mission",
    "screen": "workshop",
-   "file": "voice/k_train_mission.mp3"
+   "file": "voice/k_train_mission.mp3",
+   "spoken": "چووو چووو! یِک قَطار بِسازیم."
   },
   {
    "id": "k_train.s1",
-   "text": "ریل‌ها را بچین.",
+   "text": "پنج ریل به قطار بده. بشمار!",
    "event": "k_train.s1",
    "screen": "workshop",
-   "file": "voice/k_train_s1.mp3"
+   "file": "voice/k_train_s1.mp3",
+   "spoken": "پَنج رِیل بِه قَطار بِدِه. بِشُمار!"
   },
   {
    "id": "k_train.s2",
-   "text": "چرخ‌های قطار را بگذار.",
+   "text": "چهار چرخ به قطار بده. بشمار!",
    "event": "k_train.s2",
    "screen": "workshop",
-   "file": "voice/k_train_s2.mp3"
+   "file": "voice/k_train_s2.mp3",
+   "spoken": "چَهار چَرخ بِه قَطار بِدِه. بِشُمار!"
   },
   {
    "id": "k_train.s3",
-   "text": "نقطه‌ها را وصل کن تا قطار پیدا شود.",
+   "text": "نقطه‌ها را به ترتیب بزن تا قطار پیدا شود.",
    "event": "k_train.s3",
    "screen": "workshop",
-   "file": "voice/k_train_s3.mp3"
+   "file": "voice/k_train_s3.mp3",
+   "spoken": "نُقطه‌ها را بِه تَرتیب بِزَن تا قَطار پِیدا شَوَد."
   },
   {
    "id": "k_train.s4",
-   "text": "قطار را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید قطار بزن.",
    "event": "k_train.s4",
    "screen": "workshop",
-   "file": "voice/k_train_s4.mp3"
+   "file": "voice/k_train_s4.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ قَطار بِزَن."
   },
   {
    "id": "k_train.s5",
-   "text": "قطار را روی ریل ببر.",
+   "text": "قطار را با انگشت روی جاده تا پرچم ببر.",
    "event": "k_train.s5",
    "screen": "workshop",
-   "file": "voice/k_train_s5.mp3"
+   "file": "voice/k_train_s5.mp3",
+   "spoken": "قَطار را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر."
   },
   {
    "id": "item.train.made",
    "text": "آفرین! قطار آماده شد!",
    "event": "item.train.made",
    "screen": "workshop",
-   "file": "voice/item_train_made.mp3"
+   "file": "voice/item_train_made.mp3",
+   "spoken": "آفَرین! قَطار آماده شُد!"
   },
   {
    "id": "tool.magnifier.safety",
    "text": "ذره‌بین را هیچ‌وقت رو به خورشید نگیر.",
    "event": "tool.magnifier.safety",
    "screen": "shop",
-   "file": "voice/tool_magnifier_safety.mp3"
+   "file": "voice/tool_magnifier_safety.mp3",
+   "spoken": "ذَرّه‌بین را هیچ‌وَقت رو بِه خورشید نَگیر."
   },
   {
    "id": "r_bug_book.mission",
    "text": "با ذره‌بین حشره‌ها را پیدا کنیم!",
    "event": "r_bug_book.mission",
    "screen": "shop",
-   "file": "voice/r_bug_book_mission.mp3"
+   "file": "voice/r_bug_book_mission.mp3",
+   "spoken": "با ذَرّه‌بین حَشَره‌ها را پِیدا کُنیم!"
   },
   {
    "id": "r_bug_book.s1",
-   "text": "حشره‌های کوچک را با ذره‌بین پیدا کن.",
+   "text": "انگشتت را بکش تا ذره‌بین کفشدوزک‌های پنهان را پیدا کند.",
    "event": "r_bug_book.s1",
    "screen": "shop",
-   "file": "voice/r_bug_book_s1.mp3"
+   "file": "voice/r_bug_book_s1.mp3",
+   "spoken": "اَنگُشتَت را بِکِش تا ذَرّه‌بین کَفشدوزَک‌هایِ پِنهان را پِیدا کُنَد."
   },
   {
    "id": "item.bug_book.made",
    "text": "آفرین! دفترچه‌ی حشره‌ها آماده شد!",
    "event": "item.bug_book.made",
    "screen": "shop",
-   "file": "voice/item_bug_book_made.mp3"
+   "file": "voice/item_bug_book_made.mp3",
+   "spoken": "آفَرین! دَفتَرچه‌یِ حَشَره‌ها آماده شُد!"
   },
   {
    "id": "tool.saw.safety",
    "text": "با اره همیشه با یک بزرگ‌تر کار می‌کنیم.",
    "event": "tool.saw.safety",
    "screen": "shop",
-   "file": "voice/tool_saw_safety.mp3"
+   "file": "voice/tool_saw_safety.mp3",
+   "spoken": "با اَرّه هَمیشه با یِک بُزُرگ‌تَر کار می‌کُنیم."
   },
   {
    "id": "r_bird_house.mission",
    "text": "برای پرنده‌ها خانه بسازیم.",
    "event": "r_bird_house.mission",
    "screen": "shop",
-   "file": "voice/r_bird_house_mission.mp3"
+   "file": "voice/r_bird_house_mission.mp3",
+   "spoken": "بَرایِ پَرَنده‌ها خانه بِسازیم."
   },
   {
    "id": "r_bird_house.s1",
-   "text": "تخته را با اره ببُر.",
+   "text": "انگشتت را روی خط‌چین‌ها بکش تا تخته بریده شود.",
    "event": "r_bird_house.s1",
    "screen": "shop",
-   "file": "voice/r_bird_house_s1.mp3"
+   "file": "voice/r_bird_house_s1.mp3",
+   "spoken": "اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش تا تَخته بُریده شَوَد."
   },
   {
    "id": "r_bird_house.s2",
-   "text": "دیوارها را بچین.",
+   "text": "سه تخته به خانه‌ی پرنده بده. بشمار!",
    "event": "r_bird_house.s2",
    "screen": "shop",
-   "file": "voice/r_bird_house_s2.mp3"
+   "file": "voice/r_bird_house_s2.mp3",
+   "spoken": "سه تَخته بِه خانه‌یِ پَرَنده بِدِه. بِشُمار!"
   },
   {
    "id": "r_bird_house.s3",
-   "text": "خانه را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید خانه بزن.",
    "event": "r_bird_house.s3",
    "screen": "shop",
-   "file": "voice/r_bird_house_s3.mp3"
+   "file": "voice/r_bird_house_s3.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ خانه بِزَن."
   },
   {
    "id": "item.bird_house.made",
    "text": "آفرین! خانه‌ی پرنده آماده شد!",
    "event": "item.bird_house.made",
    "screen": "shop",
-   "file": "voice/item_bird_house_made.mp3"
+   "file": "voice/item_bird_house_made.mp3",
+   "spoken": "آفَرین! خانه‌یِ پَرَنده آماده شُد!"
   },
   {
    "id": "tool.glue_gun.safety",
    "text": "سر چسب‌تفنگی داغ است؛ به آن دست نمی‌زنیم.",
    "event": "tool.glue_gun.safety",
    "screen": "shop",
-   "file": "voice/tool_glue_gun_safety.mp3"
+   "file": "voice/tool_glue_gun_safety.mp3",
+   "spoken": "سَرِ چَسب‌تُفَنگی داغ اَست؛ بِه آن دَست نِمی‌زَنیم."
   },
   {
    "id": "r_photo_frame.mission",
    "text": "یک قاب برای عکس یادگاری!",
    "event": "r_photo_frame.mission",
    "screen": "shop",
-   "file": "voice/r_photo_frame_mission.mp3"
+   "file": "voice/r_photo_frame_mission.mp3",
+   "spoken": "یِک قاب بَرایِ عَکسِ یادگاری!"
   },
   {
    "id": "r_photo_frame.s1",
-   "text": "ستاره‌ها را دور قاب بچسبان.",
+   "text": "چهار ستاره به قاب بده. بشمار!",
    "event": "r_photo_frame.s1",
    "screen": "shop",
-   "file": "voice/r_photo_frame_s1.mp3"
+   "file": "voice/r_photo_frame_s1.mp3",
+   "spoken": "چَهار سِتاره بِه قاب بِدِه. بِشُمار!"
   },
   {
    "id": "r_photo_frame.s2",
-   "text": "قاب را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید قاب بزن.",
    "event": "r_photo_frame.s2",
    "screen": "shop",
-   "file": "voice/r_photo_frame_s2.mp3"
+   "file": "voice/r_photo_frame_s2.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ قاب بِزَن."
   },
   {
    "id": "item.photo_frame.made",
    "text": "آفرین! قاب عکس آماده شد!",
    "event": "item.photo_frame.made",
    "screen": "shop",
-   "file": "voice/item_photo_frame_made.mp3"
+   "file": "voice/item_photo_frame_made.mp3",
+   "spoken": "آفَرین! قابِ عَکس آماده شُد!"
   },
   {
    "id": "tool.big_oven.safety",
    "text": "در فر داغ است؛ با دستکش بازش می‌کنیم.",
    "event": "tool.big_oven.safety",
    "screen": "shop",
-   "file": "voice/tool_big_oven_safety.mp3"
+   "file": "voice/tool_big_oven_safety.mp3",
+   "spoken": "دَرِ فِر داغ اَست؛ با دَستکِش بازَش می‌کُنیم."
   },
   {
    "id": "r_pizza.mission",
    "text": "بیا پیتزا بپزیم!",
    "event": "r_pizza.mission",
    "screen": "shop",
-   "file": "voice/r_pizza_mission.mp3"
+   "file": "voice/r_pizza_mission.mp3",
+   "spoken": "بیا پیتزا بِپَزیم!"
   },
   {
    "id": "r_pizza.s1",
-   "text": "گوجه‌ها را روی خمیر بگذار.",
+   "text": "سه گوجه روی خمیر بگذار. بشمار!",
    "event": "r_pizza.s1",
    "screen": "shop",
-   "file": "voice/r_pizza_s1.mp3"
+   "file": "voice/r_pizza_s1.mp3",
+   "spoken": "سه گوجه رویِ خَمیر بُگذار. بِشُمار!"
   },
   {
    "id": "r_pizza.s2",
-   "text": "پنیر بریز.",
+   "text": "دو تکه پنیر روی خمیر بگذار.",
    "event": "r_pizza.s2",
    "screen": "shop",
-   "file": "voice/r_pizza_s2.mp3"
+   "file": "voice/r_pizza_s2.mp3",
+   "spoken": "دو تِکّه پَنیر رویِ خَمیر بُگذار."
   },
   {
    "id": "r_pizza.s3",
-   "text": "وقتی پنیر آب شد بزن!",
+   "text": "پیتزا در فر است. وقتی حلقه به جای طلایی رسید، بزن!",
    "event": "r_pizza.s3",
    "screen": "shop",
-   "file": "voice/r_pizza_s3.mp3"
+   "file": "voice/r_pizza_s3.mp3",
+   "spoken": "پیتزا دَر فِر اَست. وَقتی حَلقه بِه جایِ طَلایی رِسید، بِزَن!"
   },
   {
    "id": "item.pizza.made",
    "text": "آفرین! پیتزا آماده شد!",
    "event": "item.pizza.made",
    "screen": "shop",
-   "file": "voice/item_pizza_made.mp3"
+   "file": "voice/item_pizza_made.mp3",
+   "spoken": "آفَرین! پیتزا آماده شُد!"
   },
   {
    "id": "r_cookie.mission",
    "text": "کلوچه‌ی تازه!",
    "event": "r_cookie.mission",
    "screen": "shop",
-   "file": "voice/r_cookie_mission.mp3"
+   "file": "voice/r_cookie_mission.mp3",
+   "spoken": "کُلوچه‌یِ تازه!"
   },
   {
    "id": "r_cookie.s1",
-   "text": "خمیر کلوچه را هم بزن.",
+   "text": "انگشتت را دور کاسه بچرخان تا خمیر کلوچه درست شود.",
    "event": "r_cookie.s1",
    "screen": "shop",
-   "file": "voice/r_cookie_s1.mp3"
+   "file": "voice/r_cookie_s1.mp3",
+   "spoken": "اَنگُشتَت را دُورِ کاسه بِچَرخان تا خَمیرِ کُلوچه دُرُست شَوَد."
   },
   {
    "id": "r_cookie.s2",
-   "text": "وقتی طلایی شد بزن!",
+   "text": "کلوچه در فر است. وقتی حلقه به جای طلایی رسید، بزن!",
    "event": "r_cookie.s2",
    "screen": "shop",
-   "file": "voice/r_cookie_s2.mp3"
+   "file": "voice/r_cookie_s2.mp3",
+   "spoken": "کُلوچه دَر فِر اَست. وَقتی حَلقه بِه جایِ طَلایی رِسید، بِزَن!"
   },
   {
    "id": "item.cookie.made",
    "text": "آفرین! کلوچه آماده شد!",
    "event": "item.cookie.made",
    "screen": "shop",
-   "file": "voice/item_cookie_made.mp3"
+   "file": "voice/item_cookie_made.mp3",
+   "spoken": "آفَرین! کُلوچه آماده شُد!"
   },
   {
    "id": "tool.sewing_machine.safety",
    "text": "انگشت‌ها را از سوزن دور نگه می‌داریم.",
    "event": "tool.sewing_machine.safety",
    "screen": "shop",
-   "file": "voice/tool_sewing_machine_safety.mp3"
+   "file": "voice/tool_sewing_machine_safety.mp3",
+   "spoken": "اَنگُشت‌ها را اَز سوزَن دور نِگَه می‌داریم."
   },
   {
    "id": "r_rag_doll.mission",
    "text": "یک عروسک نرم بدوزیم.",
    "event": "r_rag_doll.mission",
    "screen": "shop",
-   "file": "voice/r_rag_doll_mission.mp3"
+   "file": "voice/r_rag_doll_mission.mp3",
+   "spoken": "یِک عَروسَکِ نَرم بِدوزیم."
   },
   {
    "id": "r_rag_doll.s1",
-   "text": "پدال را بزن تا چرخ بدوزد: تق تق تق!",
+   "text": "روی چرخ خیاطی تند تند بزن تا بدوزد: تق تق تق!",
    "event": "r_rag_doll.s1",
    "screen": "shop",
-   "file": "voice/r_rag_doll_s1.mp3"
+   "file": "voice/r_rag_doll_s1.mp3",
+   "spoken": "رویِ چَرخِ خَیّاطی تُند تُند بِزَن تا بِدوزَد: تَق تَق تَق!"
   },
   {
    "id": "r_rag_doll.s2",
-   "text": "لباس عروسک را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید عروسک بزن.",
    "event": "r_rag_doll.s2",
    "screen": "shop",
-   "file": "voice/r_rag_doll_s2.mp3"
+   "file": "voice/r_rag_doll_s2.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ عَروسَک بِزَن."
   },
   {
    "id": "item.rag_doll.made",
    "text": "آفرین! عروسک پارچه‌ای آماده شد!",
    "event": "item.rag_doll.made",
    "screen": "shop",
-   "file": "voice/item_rag_doll_made.mp3"
+   "file": "voice/item_rag_doll_made.mp3",
+   "spoken": "آفَرین! عَروسَکِ پارچه‌ای آماده شُد!"
   },
   {
    "id": "tool.drill.safety",
    "text": "دریل را فقط بزرگ‌ترها روشن می‌کنند و ما کمک می‌کنیم.",
    "event": "tool.drill.safety",
    "screen": "shop",
-   "file": "voice/tool_drill_safety.mp3"
+   "file": "voice/tool_drill_safety.mp3",
+   "spoken": "دریل را فَقَط بُزُرگ‌تَرها رُوشَن می‌کُنَند و ما کُمَک می‌کُنیم."
   },
   {
    "id": "r_windmill.mission",
    "text": "یک آسیاب بادی بسازیم.",
    "event": "r_windmill.mission",
    "screen": "shop",
-   "file": "voice/r_windmill_mission.mp3"
+   "file": "voice/r_windmill_mission.mp3",
+   "spoken": "یِک آسیابِ بادی بِسازیم."
   },
   {
    "id": "r_windmill.s1",
-   "text": "با دریل سوراخ کن.",
+   "text": "روی دریل بزن تا سوراخ کند!",
    "event": "r_windmill.s1",
    "screen": "shop",
-   "file": "voice/r_windmill_s1.mp3"
+   "file": "voice/r_windmill_s1.mp3",
+   "spoken": "رویِ دریل بِزَن تا سوراخ کُنَد!"
   },
   {
    "id": "r_windmill.s2",
-   "text": "پره‌ها را وصل کن.",
+   "text": "پره را بکش و روی جای کم‌رنگش بگذار.",
    "event": "r_windmill.s2",
    "screen": "shop",
-   "file": "voice/r_windmill_s2.mp3"
+   "file": "voice/r_windmill_s2.mp3",
+   "spoken": "پَرّه را بِکِش و رویِ جایِ کَم‌رَنگَش بُگذار."
   },
   {
    "id": "r_windmill.s3",
-   "text": "فوت کن تا بچرخد!",
+   "text": "انگشتت را دور آسیاب بچرخان تا پره‌هایش بچرخند!",
    "event": "r_windmill.s3",
    "screen": "shop",
-   "file": "voice/r_windmill_s3.mp3"
+   "file": "voice/r_windmill_s3.mp3",
+   "spoken": "اَنگُشتَت را دُورِ آسیاب بِچَرخان تا پَرّه‌هایَش بِچَرخَند!"
   },
   {
    "id": "item.windmill.made",
    "text": "آفرین! آسیاب بادی آماده شد!",
    "event": "item.windmill.made",
    "screen": "shop",
-   "file": "voice/item_windmill_made.mp3"
+   "file": "voice/item_windmill_made.mp3",
+   "spoken": "آفَرین! آسیابِ بادی آماده شُد!"
   },
   {
    "id": "tool.wrench.safety",
    "text": "آچار را محکم و آرام می‌چرخانیم.",
    "event": "tool.wrench.safety",
    "screen": "shop",
-   "file": "voice/tool_wrench_safety.mp3"
+   "file": "voice/tool_wrench_safety.mp3",
+   "spoken": "آچار را مُحکَم و آرام می‌چَرخانیم."
   },
   {
    "id": "r_bicycle.mission",
    "text": "یک دوچرخه برای پوپو!",
    "event": "r_bicycle.mission",
    "screen": "shop",
-   "file": "voice/r_bicycle_mission.mp3"
+   "file": "voice/r_bicycle_mission.mp3",
+   "spoken": "یِک دوچَرخه بَرایِ پوپو!"
   },
   {
    "id": "r_bicycle.s1",
-   "text": "چرخ‌ها را وصل کن.",
+   "text": "دو چرخ به دوچرخه بده. بشمار!",
    "event": "r_bicycle.s1",
    "screen": "shop",
-   "file": "voice/r_bicycle_s1.mp3"
+   "file": "voice/r_bicycle_s1.mp3",
+   "spoken": "دو چَرخ بِه دوچَرخه بِدِه. بِشُمار!"
   },
   {
    "id": "r_bicycle.s2",
-   "text": "پیچ‌ها را با آچار سفت کن.",
+   "text": "انگشتت را دور آچار بچرخان تا پیچ‌ها سفت شوند.",
    "event": "r_bicycle.s2",
    "screen": "shop",
-   "file": "voice/r_bicycle_s2.mp3"
+   "file": "voice/r_bicycle_s2.mp3",
+   "spoken": "اَنگُشتَت را دُورِ آچار بِچَرخان تا پیچ‌ها سِفت شَوَند."
   },
   {
    "id": "r_bicycle.s3",
-   "text": "دوچرخه را رنگ کن.",
+   "text": "یک رنگ بردار و روی دایره‌های سفید دوچرخه بزن.",
    "event": "r_bicycle.s3",
    "screen": "shop",
-   "file": "voice/r_bicycle_s3.mp3"
+   "file": "voice/r_bicycle_s3.mp3",
+   "spoken": "یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ دوچَرخه بِزَن."
   },
   {
    "id": "item.bicycle.made",
    "text": "آفرین! دوچرخه آماده شد!",
    "event": "item.bicycle.made",
    "screen": "shop",
-   "file": "voice/item_bicycle_made.mp3"
+   "file": "voice/item_bicycle_made.mp3",
+   "spoken": "آفَرین! دوچَرخه آماده شُد!"
   },
   {
    "id": "tool.magnet.safety",
    "text": "آهن‌ربا را نزدیک گوشی و تلویزیون نمی‌بریم.",
    "event": "tool.magnet.safety",
    "screen": "shop",
-   "file": "voice/tool_magnet_safety.mp3"
+   "file": "voice/tool_magnet_safety.mp3",
+   "spoken": "آهَن‌رُبا را نَزدیکِ گوشی و تِلِویزیون نِمی‌بَریم."
   },
   {
    "id": "r_magnet_fish.mission",
    "text": "بیا ماهیگیری کنیم!",
    "event": "r_magnet_fish.mission",
    "screen": "shop",
-   "file": "voice/r_magnet_fish_mission.mp3"
+   "file": "voice/r_magnet_fish_mission.mp3",
+   "spoken": "بیا ماهیگیری کُنیم!"
   },
   {
    "id": "r_magnet_fish.s1",
-   "text": "چیزهایی که آهن‌ربا می‌کشد را جدا کن.",
+   "text": "هر چه روی نوار می‌آید را بکش: آهنی‌ها در سبد سبز، بقیه در سطل قرمز.",
    "event": "r_magnet_fish.s1",
    "screen": "shop",
-   "file": "voice/r_magnet_fish_s1.mp3"
+   "file": "voice/r_magnet_fish_s1.mp3",
+   "spoken": "هَر چِه رویِ نَوار می‌آیَد را بِکِش: آهَنی‌ها دَر سَبَدِ سَبز، بَقیّه دَر سَطلِ قِرمِز."
   },
   {
    "id": "r_magnet_fish.s2",
-   "text": "ماهی‌های آهنی را بگیر!",
+   "text": "روی ماهی‌ها بزن تا با آهن‌ربا در سبد بپرند!",
    "event": "r_magnet_fish.s2",
    "screen": "shop",
-   "file": "voice/r_magnet_fish_s2.mp3"
+   "file": "voice/r_magnet_fish_s2.mp3",
+   "spoken": "رویِ ماهی‌ها بِزَن تا با آهَن‌رُبا دَر سَبَد بِپَرَند!"
   },
   {
    "id": "item.magnet_fish.made",
    "text": "آفرین! ماهیگیری آهن‌ربایی آماده شد!",
    "event": "item.magnet_fish.made",
    "screen": "shop",
-   "file": "voice/item_magnet_fish_made.mp3"
+   "file": "voice/item_magnet_fish_made.mp3",
+   "spoken": "آفَرین! ماهیگیریِ آهَن‌رُبایی آماده شُد!"
   },
   {
    "id": "item.juice.use",
    "text": "آب‌میوه تشنگی را برطرف می‌کند و ویتامین دارد.",
    "event": "item.juice.use",
    "screen": "discover",
-   "file": "voice/item_juice_use.mp3"
+   "file": "voice/item_juice_use.mp3",
+   "spoken": "آب‌میوه تِشنِگی را بَرطَرَف می‌کُنَد و ویتامین دارَد."
   },
   {
    "id": "item.juice.quiz",
    "text": "با آب‌میوه چه کار می‌کنیم؟",
    "event": "item.juice.quiz",
    "screen": "discover",
-   "file": "voice/item_juice_quiz.mp3"
+   "file": "voice/item_juice_quiz.mp3",
+   "spoken": "با آب‌میوه چِه کار می‌کُنیم؟"
   },
   {
    "id": "item.juice.taste",
    "text": "مزه‌اش شیرین و کمی ترش است!",
    "event": "item.juice.taste",
    "screen": "discover",
-   "file": "voice/item_juice_taste.mp3"
+   "file": "voice/item_juice_taste.mp3",
+   "spoken": "مَزه‌اَش شیرین و کَمی تُرش اَست!"
   },
   {
    "id": "item.bread.use",
    "text": "نان غذای هر روز ماست؛ با آن ساندویچ هم درست می‌کنیم.",
    "event": "item.bread.use",
    "screen": "discover",
-   "file": "voice/item_bread_use.mp3"
+   "file": "voice/item_bread_use.mp3",
+   "spoken": "نان غَذایِ هَر روزِ ماست؛ با آن ساندویچ هَم دُرُست می‌کُنیم."
   },
   {
    "id": "item.bread.quiz",
    "text": "نان را کی می‌خوریم؟",
    "event": "item.bread.quiz",
    "screen": "discover",
-   "file": "voice/item_bread_quiz.mp3"
+   "file": "voice/item_bread_quiz.mp3",
+   "spoken": "نان را کِی می‌خوریم؟"
   },
   {
    "id": "item.bread.taste",
    "text": "مزه‌اش ترد و گرم است!",
    "event": "item.bread.taste",
    "screen": "discover",
-   "file": "voice/item_bread_taste.mp3"
+   "file": "voice/item_bread_taste.mp3",
+   "spoken": "مَزه‌اَش تُرد و گَرم اَست!"
   },
   {
    "id": "item.soup.use",
    "text": "سوپ گرم، وقتی سردمان است بدن را گرم می‌کند.",
    "event": "item.soup.use",
    "screen": "discover",
-   "file": "voice/item_soup_use.mp3"
+   "file": "voice/item_soup_use.mp3",
+   "spoken": "سوپِ گَرم، وَقتی سَردِمان اَست بَدَن را گَرم می‌کُنَد."
   },
   {
    "id": "item.soup.quiz",
    "text": "سوپ گرم به درد کی می‌خورد؟",
    "event": "item.soup.quiz",
    "screen": "discover",
-   "file": "voice/item_soup_quiz.mp3"
+   "file": "voice/item_soup_quiz.mp3",
+   "spoken": "سوپِ گَرم بِه دَردِ کی می‌خورَد؟"
   },
   {
    "id": "item.soup.taste",
    "text": "مزه‌اش شور و داغ است!",
    "event": "item.soup.taste",
    "screen": "discover",
-   "file": "voice/item_soup_taste.mp3"
+   "file": "voice/item_soup_taste.mp3",
+   "spoken": "مَزه‌اَش شور و داغ اَست!"
   },
   {
    "id": "item.cake.use",
    "text": "کیک برای جشن و تولد است؛ شمع‌ها را فوت می‌کنیم.",
    "event": "item.cake.use",
    "screen": "discover",
-   "file": "voice/item_cake_use.mp3"
+   "file": "voice/item_cake_use.mp3",
+   "spoken": "کیک بَرایِ جَشن و تَوَلُّد اَست؛ شَمع‌ها را فوت می‌کُنیم."
   },
   {
    "id": "item.cake.quiz",
    "text": "کیک تولد برای چیست؟",
    "event": "item.cake.quiz",
    "screen": "discover",
-   "file": "voice/item_cake_quiz.mp3"
+   "file": "voice/item_cake_quiz.mp3",
+   "spoken": "کیکِ تَوَلُّد بَرایِ چیست؟"
   },
   {
    "id": "item.cake.taste",
    "text": "مزه‌اش شیرین است!",
    "event": "item.cake.taste",
    "screen": "discover",
-   "file": "voice/item_cake_taste.mp3"
+   "file": "voice/item_cake_taste.mp3",
+   "spoken": "مَزه‌اَش شیرین اَست!"
   },
   {
    "id": "item.watering_can.use",
    "text": "با آب‌پاش به گل‌ها و گیاه‌ها آب می‌دهیم.",
    "event": "item.watering_can.use",
    "screen": "discover",
-   "file": "voice/item_watering_can_use.mp3"
+   "file": "voice/item_watering_can_use.mp3",
+   "spoken": "با آب‌پاش بِه گُل‌ها و گیاه‌ها آب می‌دَهیم."
   },
   {
    "id": "item.watering_can.quiz",
    "text": "با آب‌پاش چه کار می‌کنیم؟",
    "event": "item.watering_can.quiz",
    "screen": "discover",
-   "file": "voice/item_watering_can_quiz.mp3"
+   "file": "voice/item_watering_can_quiz.mp3",
+   "spoken": "با آب‌پاش چِه کار می‌کُنیم؟"
   },
   {
    "id": "item.flower_pot.use",
    "text": "گل بوی خوش دارد و زنبورها از آن شهد می‌گیرند.",
    "event": "item.flower_pot.use",
    "screen": "discover",
-   "file": "voice/item_flower_pot_use.mp3"
+   "file": "voice/item_flower_pot_use.mp3",
+   "spoken": "گُل بویِ خوش دارَد و زَنبورها اَز آن شَهد می‌گیرَند."
   },
   {
    "id": "item.flower_pot.quiz",
    "text": "کی سراغ گل می‌آید؟",
    "event": "item.flower_pot.quiz",
    "screen": "discover",
-   "file": "voice/item_flower_pot_quiz.mp3"
-  },
-  {
-   "id": "item.flower_pot.taste",
-   "text": "مزه‌اش خوش‌بو است!",
-   "event": "item.flower_pot.taste",
-   "screen": "discover",
-   "file": "voice/item_flower_pot_taste.mp3"
+   "file": "voice/item_flower_pot_quiz.mp3",
+   "spoken": "کی سُراغِ گُل می‌آیَد؟"
   },
   {
    "id": "item.eggs.use",
    "text": "مرغ تخم می‌گذارد؛ با تخم‌مرغ کیک و نیمرو درست می‌کنیم.",
    "event": "item.eggs.use",
    "screen": "discover",
-   "file": "voice/item_eggs_use.mp3"
+   "file": "voice/item_eggs_use.mp3",
+   "spoken": "مُرغ تُخم می‌گُذارَد؛ با تُخمِ مُرغ کیک و نیمرو دُرُست می‌کُنیم."
   },
   {
    "id": "item.eggs.quiz",
    "text": "تخم‌مرغ از کجا می‌آید؟",
    "event": "item.eggs.quiz",
    "screen": "discover",
-   "file": "voice/item_eggs_quiz.mp3"
+   "file": "voice/item_eggs_quiz.mp3",
+   "spoken": "تُخمِ مُرغ اَز کُجا می‌آیَد؟"
   },
   {
    "id": "item.eggs.taste",
-   "text": "مزه‌اش پخته‌اش خوشمزه است است!",
+   "text": "مزه‌اش نرم و خوشمزه است!",
    "event": "item.eggs.taste",
    "screen": "discover",
-   "file": "voice/item_eggs_taste.mp3"
+   "file": "voice/item_eggs_taste.mp3",
+   "spoken": "مَزه‌اَش نَرم و خوشمَزه اَست!"
   },
   {
    "id": "item.sandwich.use",
    "text": "ساندویچ یک غذای کامل و راحت برای پیک‌نیک است.",
    "event": "item.sandwich.use",
    "screen": "discover",
-   "file": "voice/item_sandwich_use.mp3"
+   "file": "voice/item_sandwich_use.mp3",
+   "spoken": "ساندویچ یِک غَذایِ کامِل و راحَت بَرایِ پیک‌نیک اَست."
   },
   {
    "id": "item.sandwich.quiz",
    "text": "ساندویچ را با چه درست کردیم؟",
    "event": "item.sandwich.quiz",
    "screen": "discover",
-   "file": "voice/item_sandwich_quiz.mp3"
+   "file": "voice/item_sandwich_quiz.mp3",
+   "spoken": "ساندویچ را با چِه دُرُست کَردیم؟"
   },
   {
    "id": "item.sandwich.taste",
    "text": "مزه‌اش نرم و شور است!",
    "event": "item.sandwich.taste",
    "screen": "discover",
-   "file": "voice/item_sandwich_taste.mp3"
+   "file": "voice/item_sandwich_taste.mp3",
+   "spoken": "مَزه‌اَش نَرم و شور اَست!"
   },
   {
    "id": "item.hammer.use",
    "text": "با چکش میخ را در چوب فرو می‌کنیم تا تکه‌ها به هم بچسبند.",
    "event": "item.hammer.use",
    "screen": "discover",
-   "file": "voice/item_hammer_use.mp3"
+   "file": "voice/item_hammer_use.mp3",
+   "spoken": "با چَکُش میخ را دَر چوب فُرو می‌کُنیم تا تِکّه‌ها بِه هَم بِچَسبَند."
   },
   {
    "id": "item.hammer.quiz",
    "text": "با چکش چه کار می‌کنیم؟",
    "event": "item.hammer.quiz",
    "screen": "discover",
-   "file": "voice/item_hammer_quiz.mp3"
+   "file": "voice/item_hammer_quiz.mp3",
+   "spoken": "با چَکُش چِه کار می‌کُنیم؟"
   },
   {
    "id": "item.flashlight.use",
    "text": "چراغ‌قوه در تاریکی راه را روشن می‌کند.",
    "event": "item.flashlight.use",
    "screen": "discover",
-   "file": "voice/item_flashlight_use.mp3"
+   "file": "voice/item_flashlight_use.mp3",
+   "spoken": "چِراغ‌قُوّه دَر تاریکی راه را رُوشَن می‌کُنَد."
   },
   {
    "id": "item.flashlight.quiz",
    "text": "چراغ‌قوه کجا به کار می‌آید؟",
    "event": "item.flashlight.quiz",
    "screen": "discover",
-   "file": "voice/item_flashlight_quiz.mp3"
+   "file": "voice/item_flashlight_quiz.mp3",
+   "spoken": "چِراغ‌قُوّه کُجا بِه کار می‌آیَد؟"
   },
   {
    "id": "item.cart.use",
    "text": "با گاری بارهای سنگین را راحت جابه‌جا می‌کنیم.",
    "event": "item.cart.use",
    "screen": "discover",
-   "file": "voice/item_cart_use.mp3"
+   "file": "voice/item_cart_use.mp3",
+   "spoken": "با گاری بارهایِ سَنگین را راحَت جابِه‌جا می‌کُنیم."
   },
   {
    "id": "item.cart.quiz",
    "text": "گاری به چه کاری می‌آید؟",
    "event": "item.cart.quiz",
    "screen": "discover",
-   "file": "voice/item_cart_quiz.mp3"
+   "file": "voice/item_cart_quiz.mp3",
+   "spoken": "گاری بِه چِه کاری می‌آیَد؟"
   },
   {
    "id": "item.toy_car.use",
    "text": "ماشین با موتور روشن می‌شود و ما را به جاهای دور می‌برد.",
    "event": "item.toy_car.use",
    "screen": "discover",
-   "file": "voice/item_toy_car_use.mp3"
+   "file": "voice/item_toy_car_use.mp3",
+   "spoken": "ماشین با موتور رُوشَن می‌شَوَد و ما را بِه جاهایِ دور می‌بَرَد."
   },
   {
    "id": "item.toy_car.quiz",
    "text": "ماشین چطور راه می‌افتد؟",
    "event": "item.toy_car.quiz",
    "screen": "discover",
-   "file": "voice/item_toy_car_quiz.mp3"
+   "file": "voice/item_toy_car_quiz.mp3",
+   "spoken": "ماشین چِطُور راه می‌اُفتَد؟"
   },
   {
    "id": "item.paints.use",
    "text": "قرمز و زرد با هم نارنجی می‌شوند؛ آبی و زرد سبز!",
    "event": "item.paints.use",
    "screen": "discover",
-   "file": "voice/item_paints_use.mp3"
+   "file": "voice/item_paints_use.mp3",
+   "spoken": "قِرمِز و زَرد با هَم نارِنجی می‌شَوَند؛ آبی و زَرد سَبز!"
   },
   {
    "id": "item.paints.quiz",
    "text": "قرمز و زرد با هم چه رنگی می‌شوند؟",
    "event": "item.paints.quiz",
    "screen": "discover",
-   "file": "voice/item_paints_quiz.mp3"
+   "file": "voice/item_paints_quiz.mp3",
+   "spoken": "قِرمِز و زَرد با هَم چِه رَنگی می‌شَوَند؟"
   },
   {
    "id": "item.clay_bowl.use",
    "text": "کاسه‌ی خوب آب را نگه می‌دارد و چیزی نمی‌ریزد.",
    "event": "item.clay_bowl.use",
    "screen": "discover",
-   "file": "voice/item_clay_bowl_use.mp3"
+   "file": "voice/item_clay_bowl_use.mp3",
+   "spoken": "کاسه‌یِ خوب آب را نِگَه می‌دارَد و چیزی نِمی‌ریزَد."
   },
   {
    "id": "item.clay_bowl.quiz",
    "text": "کاسه را برای چه می‌سازیم؟",
    "event": "item.clay_bowl.quiz",
    "screen": "discover",
-   "file": "voice/item_clay_bowl_quiz.mp3"
+   "file": "voice/item_clay_bowl_quiz.mp3",
+   "spoken": "کاسه را بَرایِ چِه می‌سازیم؟"
   },
   {
    "id": "item.lantern.use",
    "text": "فانوس با نور رنگی، شب را قشنگ و روشن می‌کند.",
    "event": "item.lantern.use",
    "screen": "discover",
-   "file": "voice/item_lantern_use.mp3"
+   "file": "voice/item_lantern_use.mp3",
+   "spoken": "فانوس با نورِ رَنگی، شَب را قَشَنگ و رُوشَن می‌کُنَد."
   },
   {
    "id": "item.lantern.quiz",
    "text": "فانوس کی روشن می‌شود؟",
    "event": "item.lantern.quiz",
    "screen": "discover",
-   "file": "voice/item_lantern_quiz.mp3"
+   "file": "voice/item_lantern_quiz.mp3",
+   "spoken": "فانوس کِی رُوشَن می‌شَوَد؟"
   },
   {
    "id": "item.mask.use",
    "text": "ماسک را برای بازی و جشن به صورت می‌زنیم.",
    "event": "item.mask.use",
    "screen": "discover",
-   "file": "voice/item_mask_use.mp3"
+   "file": "voice/item_mask_use.mp3",
+   "spoken": "ماسک را بَرایِ بازی و جَشن بِه صورَت می‌زَنیم."
   },
   {
    "id": "item.mask.quiz",
    "text": "ماسک را کجا می‌زنیم؟",
    "event": "item.mask.quiz",
    "screen": "discover",
-   "file": "voice/item_mask_quiz.mp3"
+   "file": "voice/item_mask_quiz.mp3",
+   "spoken": "ماسک را کُجا می‌زَنیم؟"
   },
   {
    "id": "item.map.use",
    "text": "نقشه راه را نشان می‌دهد تا گم نشویم.",
    "event": "item.map.use",
    "screen": "discover",
-   "file": "voice/item_map_use.mp3"
+   "file": "voice/item_map_use.mp3",
+   "spoken": "نَقشه راه را نِشان می‌دَهَد تا گُم نَشَویم."
   },
   {
    "id": "item.map.quiz",
    "text": "نقشه به چه درد می‌خورد؟",
    "event": "item.map.quiz",
    "screen": "discover",
-   "file": "voice/item_map_quiz.mp3"
+   "file": "voice/item_map_quiz.mp3",
+   "spoken": "نَقشه بِه چِه دَرد می‌خورَد؟"
   },
   {
    "id": "item.tent.use",
    "text": "چادر زیر باران ما را خشک و گرم نگه می‌دارد.",
    "event": "item.tent.use",
    "screen": "discover",
-   "file": "voice/item_tent_use.mp3"
+   "file": "voice/item_tent_use.mp3",
+   "spoken": "چادُر زیرِ باران ما را خُشک و گَرم نِگَه می‌دارَد."
   },
   {
    "id": "item.tent.quiz",
    "text": "چادر کی به کار می‌آید؟",
    "event": "item.tent.quiz",
    "screen": "discover",
-   "file": "voice/item_tent_quiz.mp3"
+   "file": "voice/item_tent_quiz.mp3",
+   "spoken": "چادُر کِی بِه کار می‌آیَد؟"
   },
   {
    "id": "item.firefly_jar.use",
    "text": "کرم‌های شب‌تاب خودشان نور دارند!",
    "event": "item.firefly_jar.use",
    "screen": "discover",
-   "file": "voice/item_firefly_jar_use.mp3"
+   "file": "voice/item_firefly_jar_use.mp3",
+   "spoken": "کِرم‌هایِ شَب‌تاب خودِشان نور دارَند!"
   },
   {
    "id": "item.firefly_jar.quiz",
    "text": "کرم شب‌تاب کی می‌درخشد؟",
    "event": "item.firefly_jar.quiz",
    "screen": "discover",
-   "file": "voice/item_firefly_jar_quiz.mp3"
+   "file": "voice/item_firefly_jar_quiz.mp3",
+   "spoken": "کِرمِ شَب‌تاب کِی می‌دِرَخشَد؟"
   },
   {
    "id": "item.telescope.use",
    "text": "با تلسکوپ چیزهای خیلی دور مثل ماه و ستاره‌ها را نزدیک می‌بینیم.",
    "event": "item.telescope.use",
    "screen": "discover",
-   "file": "voice/item_telescope_use.mp3"
+   "file": "voice/item_telescope_use.mp3",
+   "spoken": "با تِلِسکوپ چیزهایِ خِیلی دور مِثلِ ماه و سِتاره‌ها را نَزدیک می‌بینیم."
   },
   {
    "id": "item.telescope.quiz",
    "text": "با تلسکوپ چه می‌بینیم؟",
    "event": "item.telescope.quiz",
    "screen": "discover",
-   "file": "voice/item_telescope_quiz.mp3"
+   "file": "voice/item_telescope_quiz.mp3",
+   "spoken": "با تِلِسکوپ چِه می‌بینیم؟"
   },
   {
    "id": "item.drum.use",
    "text": "طبل با ضربه صدا می‌دهد؛ ضربه‌ی محکم بلند، ضربه‌ی آرام آهسته.",
    "event": "item.drum.use",
    "screen": "discover",
-   "file": "voice/item_drum_use.mp3"
+   "file": "voice/item_drum_use.mp3",
+   "spoken": "طَبل با ضَربه صِدا می‌دَهَد؛ ضَربه‌یِ مُحکَم بُلَند، ضَربه‌یِ آرام آهِسته."
   },
   {
    "id": "item.drum.quiz",
    "text": "طبل را چطور می‌نوازیم؟",
    "event": "item.drum.quiz",
    "screen": "discover",
-   "file": "voice/item_drum_quiz.mp3"
+   "file": "voice/item_drum_quiz.mp3",
+   "spoken": "طَبل را چِطُور می‌نَوازیم؟"
   },
   {
    "id": "item.xylophone.use",
    "text": "تیغه‌ی بلند صدای بم دارد و تیغه‌ی کوتاه صدای زیر.",
    "event": "item.xylophone.use",
    "screen": "discover",
-   "file": "voice/item_xylophone_use.mp3"
+   "file": "voice/item_xylophone_use.mp3",
+   "spoken": "تیغه‌یِ بُلَند صِدایِ بَم دارَد و تیغه‌یِ کوتاه صِدایِ زیر."
   },
   {
    "id": "item.xylophone.quiz",
    "text": "تیغه‌ی کوتاه چه صدایی دارد؟",
    "event": "item.xylophone.quiz",
    "screen": "discover",
-   "file": "voice/item_xylophone_quiz.mp3"
+   "file": "voice/item_xylophone_quiz.mp3",
+   "spoken": "تیغه‌یِ کوتاه چِه صِدایی دارَد؟"
   },
   {
    "id": "item.flute.use",
    "text": "نی را با فوت می‌نوازیم؛ سوراخ‌ها نت را عوض می‌کنند.",
    "event": "item.flute.use",
    "screen": "discover",
-   "file": "voice/item_flute_use.mp3"
+   "file": "voice/item_flute_use.mp3",
+   "spoken": "نِی را با فوت می‌نَوازیم؛ سوراخ‌ها نُت را عَوَض می‌کُنَند."
   },
   {
    "id": "item.flute.quiz",
    "text": "نی را چطور می‌نوازیم؟",
    "event": "item.flute.quiz",
    "screen": "discover",
-   "file": "voice/item_flute_quiz.mp3"
+   "file": "voice/item_flute_quiz.mp3",
+   "spoken": "نِی را چِطُور می‌نَوازیم؟"
   },
   {
    "id": "item.song.use",
    "text": "آهنگ را با چند ساز با هم می‌نوازیم.",
    "event": "item.song.use",
    "screen": "discover",
-   "file": "voice/item_song_use.mp3"
+   "file": "voice/item_song_use.mp3",
+   "spoken": "آهَنگ را با چَند ساز با هَم می‌نَوازیم."
   },
   {
    "id": "item.song.quiz",
    "text": "آهنگ را با چه ساختیم؟",
    "event": "item.song.quiz",
    "screen": "discover",
-   "file": "voice/item_song_quiz.mp3"
+   "file": "voice/item_song_quiz.mp3",
+   "spoken": "آهَنگ را با چِه ساختیم؟"
   },
   {
    "id": "item.bridge.use",
    "text": "پل دو طرف رودخانه را به هم وصل می‌کند.",
    "event": "item.bridge.use",
    "screen": "discover",
-   "file": "voice/item_bridge_use.mp3"
+   "file": "voice/item_bridge_use.mp3",
+   "spoken": "پُل دو طَرَفِ رودخانه را بِه هَم وَصل می‌کُنَد."
   },
   {
    "id": "item.bridge.quiz",
    "text": "پل به چه درد می‌خورد؟",
    "event": "item.bridge.quiz",
    "screen": "discover",
-   "file": "voice/item_bridge_quiz.mp3"
+   "file": "voice/item_bridge_quiz.mp3",
+   "spoken": "پُل بِه چِه دَرد می‌خورَد؟"
   },
   {
    "id": "item.traffic_light.use",
    "text": "قرمز یعنی بایست، سبز یعنی برو.",
    "event": "item.traffic_light.use",
    "screen": "discover",
-   "file": "voice/item_traffic_light_use.mp3"
+   "file": "voice/item_traffic_light_use.mp3",
+   "spoken": "قِرمِز یَعنی بِایست، سَبز یَعنی بُرو."
   },
   {
    "id": "item.traffic_light.quiz",
    "text": "چراغ قرمز یعنی چه؟",
    "event": "item.traffic_light.quiz",
    "screen": "discover",
-   "file": "voice/item_traffic_light_quiz.mp3"
+   "file": "voice/item_traffic_light_quiz.mp3",
+   "spoken": "چِراغِ قِرمِز یَعنی چِه؟"
   },
   {
    "id": "item.bus.use",
    "text": "اتوبوس خیلی‌ها را با هم جابه‌جا می‌کند.",
    "event": "item.bus.use",
    "screen": "discover",
-   "file": "voice/item_bus_use.mp3"
+   "file": "voice/item_bus_use.mp3",
+   "spoken": "اُتوبوس خِیلی‌ها را با هَم جابِه‌جا می‌کُنَد."
   },
   {
    "id": "item.bus.quiz",
    "text": "اتوبوس برای چیست؟",
    "event": "item.bus.quiz",
    "screen": "discover",
-   "file": "voice/item_bus_quiz.mp3"
+   "file": "voice/item_bus_quiz.mp3",
+   "spoken": "اُتوبوس بَرایِ چیست؟"
   },
   {
    "id": "item.invitation.use",
    "text": "با کارت دعوت دوستانمان را به جشن خبر می‌کنیم.",
    "event": "item.invitation.use",
    "screen": "discover",
-   "file": "voice/item_invitation_use.mp3"
+   "file": "voice/item_invitation_use.mp3",
+   "spoken": "با کارتِ دَعوَت دوستانِمان را بِه جَشن خَبَر می‌کُنیم."
   },
   {
    "id": "item.invitation.quiz",
    "text": "کارت دعوت برای چیست؟",
    "event": "item.invitation.quiz",
    "screen": "discover",
-   "file": "voice/item_invitation_quiz.mp3"
+   "file": "voice/item_invitation_quiz.mp3",
+   "spoken": "کارتِ دَعوَت بَرایِ چیست؟"
   },
   {
    "id": "item.feast.use",
    "text": "همه‌ی غذاهایی که ساختی روی یک میز!",
    "event": "item.feast.use",
    "screen": "discover",
-   "file": "voice/item_feast_use.mp3"
+   "file": "voice/item_feast_use.mp3",
+   "spoken": "هَمه‌یِ غَذاهایی کِه ساختی رویِ یِک میز!"
   },
   {
    "id": "item.feast.quiz",
    "text": "روی میز جشن چه گذاشتیم؟",
    "event": "item.feast.quiz",
    "screen": "discover",
-   "file": "voice/item_feast_quiz.mp3"
+   "file": "voice/item_feast_quiz.mp3",
+   "spoken": "رویِ میزِ جَشن چِه گُذاشتیم؟"
   },
   {
    "id": "item.feast.taste",
-   "text": "مزه‌اش خوشمزه است!",
+   "text": "مزه‌اش جورواجور و خوشمزه است!",
    "event": "item.feast.taste",
    "screen": "discover",
-   "file": "voice/item_feast_taste.mp3"
+   "file": "voice/item_feast_taste.mp3",
+   "spoken": "مَزه‌اَش جورواجور و خوشمَزه اَست!"
   },
   {
    "id": "item.decorations.use",
    "text": "تزئینات میدان را رنگی و شاد می‌کند.",
    "event": "item.decorations.use",
    "screen": "discover",
-   "file": "voice/item_decorations_use.mp3"
+   "file": "voice/item_decorations_use.mp3",
+   "spoken": "تَزئینات مِیدان را رَنگی و شاد می‌کُنَد."
   },
   {
    "id": "item.decorations.quiz",
    "text": "تزئینات برای چیست؟",
    "event": "item.decorations.quiz",
    "screen": "discover",
-   "file": "voice/item_decorations_quiz.mp3"
+   "file": "voice/item_decorations_quiz.mp3",
+   "spoken": "تَزئینات بَرایِ چیست؟"
   },
   {
    "id": "item.concert.use",
    "text": "گروه میمی آهنگ تو را می‌نوازد!",
    "event": "item.concert.use",
    "screen": "discover",
-   "file": "voice/item_concert_use.mp3"
+   "file": "voice/item_concert_use.mp3",
+   "spoken": "گُروهِ میمی آهَنگِ تو را می‌نَوازَد!"
   },
   {
    "id": "item.concert.quiz",
    "text": "در کنسرت چه می‌شنویم؟",
    "event": "item.concert.quiz",
    "screen": "discover",
-   "file": "voice/item_concert_quiz.mp3"
+   "file": "voice/item_concert_quiz.mp3",
+   "spoken": "دَر کُنسِرت چِه می‌شِنَویم؟"
   },
   {
    "id": "item.medal.use",
    "text": "تو با ساخته‌هایت جشن جنگل را نجات دادی!",
    "event": "item.medal.use",
    "screen": "discover",
-   "file": "voice/item_medal_use.mp3"
+   "file": "voice/item_medal_use.mp3",
+   "spoken": "تو با ساخته‌هایَت جَشنِ جَنگَل را نِجات دادی!"
   },
   {
    "id": "item.medal.quiz",
    "text": "چه کسی جشن را نجات داد؟",
    "event": "item.medal.quiz",
    "screen": "discover",
-   "file": "voice/item_medal_quiz.mp3"
+   "file": "voice/item_medal_quiz.mp3",
+   "spoken": "چِه کَسی جَشن را نِجات داد؟"
   },
   {
    "id": "item.bubbles.use",
    "text": "با فوت، صابون حباب‌های رنگی می‌شود.",
    "event": "item.bubbles.use",
    "screen": "discover",
-   "file": "voice/item_bubbles_use.mp3"
+   "file": "voice/item_bubbles_use.mp3",
+   "spoken": "با فوت، صابون حُباب‌هایِ رَنگی می‌شَوَد."
   },
   {
    "id": "item.bubbles.quiz",
    "text": "حباب چطور درست می‌شود؟",
    "event": "item.bubbles.quiz",
    "screen": "discover",
-   "file": "voice/item_bubbles_quiz.mp3"
+   "file": "voice/item_bubbles_quiz.mp3",
+   "spoken": "حُباب چِطُور دُرُست می‌شَوَد؟"
   },
   {
    "id": "item.necklace.use",
    "text": "مهره‌ها را به ترتیب رنگ به نخ می‌کشیم.",
    "event": "item.necklace.use",
    "screen": "discover",
-   "file": "voice/item_necklace_use.mp3"
+   "file": "voice/item_necklace_use.mp3",
+   "spoken": "مُهره‌ها را بِه تَرتیبِ رَنگ بِه نَخ می‌کِشیم."
   },
   {
    "id": "item.necklace.quiz",
    "text": "گردنبند را کجا می‌اندازیم؟",
    "event": "item.necklace.quiz",
    "screen": "discover",
-   "file": "voice/item_necklace_quiz.mp3"
+   "file": "voice/item_necklace_quiz.mp3",
+   "spoken": "گَردَنبَند را کُجا می‌اَندازیم؟"
   },
   {
    "id": "item.kite.use",
    "text": "باد بادبادک را بالا می‌برد.",
    "event": "item.kite.use",
    "screen": "discover",
-   "file": "voice/item_kite_use.mp3"
+   "file": "voice/item_kite_use.mp3",
+   "spoken": "باد بادبادَک را بالا می‌بَرَد."
   },
   {
    "id": "item.kite.quiz",
    "text": "بادبادک با چه بالا می‌رود؟",
    "event": "item.kite.quiz",
    "screen": "discover",
-   "file": "voice/item_kite_quiz.mp3"
+   "file": "voice/item_kite_quiz.mp3",
+   "spoken": "بادبادَک با چِه بالا می‌رَوَد؟"
   },
   {
    "id": "item.robot.use",
    "text": "ربات با باتری روشن می‌شود و کارهایی را که بگوییم انجام می‌دهد.",
    "event": "item.robot.use",
    "screen": "discover",
-   "file": "voice/item_robot_use.mp3"
+   "file": "voice/item_robot_use.mp3",
+   "spoken": "رُبات با باتری رُوشَن می‌شَوَد و کارهایی را کِه بِگوییم اَنجام می‌دَهَد."
   },
   {
    "id": "item.robot.quiz",
    "text": "ربات با چه روشن می‌شود؟",
    "event": "item.robot.quiz",
    "screen": "discover",
-   "file": "voice/item_robot_quiz.mp3"
+   "file": "voice/item_robot_quiz.mp3",
+   "spoken": "رُبات با چِه رُوشَن می‌شَوَد؟"
   },
   {
    "id": "item.dollhouse.use",
    "text": "در خانه‌ی عروسکی چراغ‌ها روشن می‌شوند و شیر آب باز می‌شود.",
    "event": "item.dollhouse.use",
    "screen": "discover",
-   "file": "voice/item_dollhouse_use.mp3"
+   "file": "voice/item_dollhouse_use.mp3",
+   "spoken": "دَر خانه‌یِ عَروسَکی چِراغ‌ها رُوشَن می‌شَوَند و شیرِ آب باز می‌شَوَد."
   },
   {
    "id": "item.dollhouse.quiz",
    "text": "خانه برای چیست؟",
    "event": "item.dollhouse.quiz",
    "screen": "discover",
-   "file": "voice/item_dollhouse_quiz.mp3"
+   "file": "voice/item_dollhouse_quiz.mp3",
+   "spoken": "خانه بَرایِ چیست؟"
   },
   {
    "id": "item.rocket.use",
    "text": "موشک با موتورهای قوی به فضا می‌رود.",
    "event": "item.rocket.use",
    "screen": "discover",
-   "file": "voice/item_rocket_use.mp3"
+   "file": "voice/item_rocket_use.mp3",
+   "spoken": "موشَک با موتورهایِ قَوی بِه فَضا می‌رَوَد."
   },
   {
    "id": "item.rocket.quiz",
    "text": "موشک کجا می‌رود؟",
    "event": "item.rocket.quiz",
    "screen": "discover",
-   "file": "voice/item_rocket_quiz.mp3"
+   "file": "voice/item_rocket_quiz.mp3",
+   "spoken": "موشَک کُجا می‌رَوَد؟"
   },
   {
    "id": "item.submarine.use",
    "text": "زیردریایی زیر آب می‌رود و با چراغش ماهی‌ها را می‌بیند.",
    "event": "item.submarine.use",
    "screen": "discover",
-   "file": "voice/item_submarine_use.mp3"
+   "file": "voice/item_submarine_use.mp3",
+   "spoken": "زیرِدَریایی زیرِ آب می‌رَوَد و با چِراغَش ماهی‌ها را می‌بینَد."
   },
   {
    "id": "item.submarine.quiz",
    "text": "زیردریایی کجا می‌رود؟",
    "event": "item.submarine.quiz",
    "screen": "discover",
-   "file": "voice/item_submarine_quiz.mp3"
+   "file": "voice/item_submarine_quiz.mp3",
+   "spoken": "زیرِدَریایی کُجا می‌رَوَد؟"
   },
   {
    "id": "item.train.use",
    "text": "قطار روی ریل حرکت می‌کند و سوت می‌کشد: چوووو!",
    "event": "item.train.use",
    "screen": "discover",
-   "file": "voice/item_train_use.mp3"
+   "file": "voice/item_train_use.mp3",
+   "spoken": "قَطار رویِ رِیل حَرَکَت می‌کُنَد و سوت می‌کِشَد: چوووو!"
   },
   {
    "id": "item.train.quiz",
    "text": "قطار روی چه حرکت می‌کند؟",
    "event": "item.train.quiz",
    "screen": "discover",
-   "file": "voice/item_train_quiz.mp3"
+   "file": "voice/item_train_quiz.mp3",
+   "spoken": "قَطار رویِ چِه حَرَکَت می‌کُنَد؟"
   },
   {
    "id": "item.bug_book.use",
    "text": "با ذره‌بین حشره‌های کوچک را بزرگ می‌بینیم.",
    "event": "item.bug_book.use",
    "screen": "discover",
-   "file": "voice/item_bug_book_use.mp3"
+   "file": "voice/item_bug_book_use.mp3",
+   "spoken": "با ذَرّه‌بین حَشَره‌هایِ کوچَک را بُزُرگ می‌بینیم."
   },
   {
    "id": "item.bug_book.quiz",
    "text": "ذره‌بین چه کار می‌کند؟",
    "event": "item.bug_book.quiz",
    "screen": "discover",
-   "file": "voice/item_bug_book_quiz.mp3"
+   "file": "voice/item_bug_book_quiz.mp3",
+   "spoken": "ذَرّه‌بین چِه کار می‌کُنَد؟"
   },
   {
    "id": "item.bird_house.use",
    "text": "پرنده در خانه‌اش لانه می‌سازد.",
    "event": "item.bird_house.use",
    "screen": "discover",
-   "file": "voice/item_bird_house_use.mp3"
+   "file": "voice/item_bird_house_use.mp3",
+   "spoken": "پَرَنده دَر خانه‌اَش لانه می‌سازَد."
   },
   {
    "id": "item.bird_house.quiz",
    "text": "خانه‌ی پرنده برای کیست؟",
    "event": "item.bird_house.quiz",
    "screen": "discover",
-   "file": "voice/item_bird_house_quiz.mp3"
+   "file": "voice/item_bird_house_quiz.mp3",
+   "spoken": "خانه‌یِ پَرَنده بَرایِ کیست؟"
   },
   {
    "id": "item.photo_frame.use",
    "text": "عکس یادگاری را در قاب می‌گذاریم و به دیوار می‌زنیم.",
    "event": "item.photo_frame.use",
    "screen": "discover",
-   "file": "voice/item_photo_frame_use.mp3"
+   "file": "voice/item_photo_frame_use.mp3",
+   "spoken": "عَکسِ یادگاری را دَر قاب می‌گُذاریم و بِه دیوار می‌زَنیم."
   },
   {
    "id": "item.photo_frame.quiz",
    "text": "قاب عکس برای چیست؟",
    "event": "item.photo_frame.quiz",
    "screen": "discover",
-   "file": "voice/item_photo_frame_quiz.mp3"
+   "file": "voice/item_photo_frame_quiz.mp3",
+   "spoken": "قابِ عَکس بَرایِ چیست؟"
   },
   {
    "id": "item.pizza.use",
    "text": "پیتزا را در فر می‌پزیم تا پنیرش آب شود.",
    "event": "item.pizza.use",
    "screen": "discover",
-   "file": "voice/item_pizza_use.mp3"
+   "file": "voice/item_pizza_use.mp3",
+   "spoken": "پیتزا را دَر فِر می‌پَزیم تا پَنیرَش آب شَوَد."
   },
   {
    "id": "item.pizza.quiz",
    "text": "پیتزا را کجا می‌پزیم؟",
    "event": "item.pizza.quiz",
    "screen": "discover",
-   "file": "voice/item_pizza_quiz.mp3"
+   "file": "voice/item_pizza_quiz.mp3",
+   "spoken": "پیتزا را کُجا می‌پَزیم؟"
   },
   {
    "id": "item.pizza.taste",
    "text": "مزه‌اش شور و داغ است!",
    "event": "item.pizza.taste",
    "screen": "discover",
-   "file": "voice/item_pizza_taste.mp3"
+   "file": "voice/item_pizza_taste.mp3",
+   "spoken": "مَزه‌اَش شور و داغ اَست!"
   },
   {
    "id": "item.cookie.use",
    "text": "کلوچه‌ی تازه ترد و شیرین است.",
    "event": "item.cookie.use",
    "screen": "discover",
-   "file": "voice/item_cookie_use.mp3"
+   "file": "voice/item_cookie_use.mp3",
+   "spoken": "کُلوچه‌یِ تازه تُرد و شیرین اَست."
   },
   {
    "id": "item.cookie.quiz",
    "text": "کلوچه چه مزه‌ای دارد؟",
    "event": "item.cookie.quiz",
    "screen": "discover",
-   "file": "voice/item_cookie_quiz.mp3"
+   "file": "voice/item_cookie_quiz.mp3",
+   "spoken": "کُلوچه چِه مَزه‌ای دارَد؟"
   },
   {
    "id": "item.cookie.taste",
    "text": "مزه‌اش شیرین و ترد است!",
    "event": "item.cookie.taste",
    "screen": "discover",
-   "file": "voice/item_cookie_taste.mp3"
+   "file": "voice/item_cookie_taste.mp3",
+   "spoken": "مَزه‌اَش شیرین و تُرد اَست!"
   },
   {
    "id": "item.rag_doll.use",
    "text": "عروسک نرم را بغل می‌کنیم.",
    "event": "item.rag_doll.use",
    "screen": "discover",
-   "file": "voice/item_rag_doll_use.mp3"
+   "file": "voice/item_rag_doll_use.mp3",
+   "spoken": "عَروسَکِ نَرم را بَغَل می‌کُنیم."
   },
   {
    "id": "item.rag_doll.quiz",
    "text": "با عروسک چه کار می‌کنیم؟",
    "event": "item.rag_doll.quiz",
    "screen": "discover",
-   "file": "voice/item_rag_doll_quiz.mp3"
+   "file": "voice/item_rag_doll_quiz.mp3",
+   "spoken": "با عَروسَک چِه کار می‌کُنیم؟"
   },
   {
    "id": "item.windmill.use",
    "text": "باد پره‌ها را می‌چرخاند.",
    "event": "item.windmill.use",
    "screen": "discover",
-   "file": "voice/item_windmill_use.mp3"
+   "file": "voice/item_windmill_use.mp3",
+   "spoken": "باد پَرّه‌ها را می‌چَرخانَد."
   },
   {
    "id": "item.windmill.quiz",
    "text": "چه چیزی آسیاب بادی را می‌چرخاند؟",
    "event": "item.windmill.quiz",
    "screen": "discover",
-   "file": "voice/item_windmill_quiz.mp3"
+   "file": "voice/item_windmill_quiz.mp3",
+   "spoken": "چِه چیزی آسیابِ بادی را می‌چَرخانَد؟"
   },
   {
    "id": "item.bicycle.use",
    "text": "دوچرخه با رکاب زدن حرکت می‌کند: زینگ زینگ!",
    "event": "item.bicycle.use",
    "screen": "discover",
-   "file": "voice/item_bicycle_use.mp3"
+   "file": "voice/item_bicycle_use.mp3",
+   "spoken": "دوچَرخه با رِکاب زَدَن حَرَکَت می‌کُنَد: زینگ زینگ!"
   },
   {
    "id": "item.bicycle.quiz",
    "text": "دوچرخه چطور حرکت می‌کند؟",
    "event": "item.bicycle.quiz",
    "screen": "discover",
-   "file": "voice/item_bicycle_quiz.mp3"
+   "file": "voice/item_bicycle_quiz.mp3",
+   "spoken": "دوچَرخه چِطُور حَرَکَت می‌کُنَد؟"
   },
   {
    "id": "item.magnet_fish.use",
    "text": "آهن‌ربا چیزهای آهنی را به خودش می‌کشد.",
    "event": "item.magnet_fish.use",
    "screen": "discover",
-   "file": "voice/item_magnet_fish_use.mp3"
+   "file": "voice/item_magnet_fish_use.mp3",
+   "spoken": "آهَن‌رُبا چیزهایِ آهَنی را بِه خودَش می‌کِشَد."
   },
   {
    "id": "item.magnet_fish.quiz",
    "text": "آهن‌ربا چه چیزی را می‌کشد؟",
    "event": "item.magnet_fish.quiz",
    "screen": "discover",
-   "file": "voice/item_magnet_fish_quiz.mp3"
+   "file": "voice/item_magnet_fish_quiz.mp3",
+   "spoken": "آهَن‌رُبا چِه چیزی را می‌کِشَد؟"
   },
   {
    "id": "order.1",
    "text": "بانی تشنه است. چی بهش بدیم؟",
    "event": "order.1",
    "screen": "playroom",
-   "file": "voice/order_1.mp3"
+   "file": "voice/order_1.mp3",
+   "spoken": "بانی تِشنه اَست. چی بِهِش بِدیم؟"
   },
   {
    "id": "order.2",
    "text": "خاله خرسی یک چیز شیرین می‌خواهد.",
    "event": "order.2",
    "screen": "playroom",
-   "file": "voice/order_2.mp3"
+   "file": "voice/order_2.mp3",
+   "spoken": "خاله خِرسی یِک چیزِ شیرین می‌خواهَد."
   },
   {
    "id": "order.3",
    "text": "مادربزرگ جغد سردش است.",
    "event": "order.3",
    "screen": "playroom",
-   "file": "voice/order_3.mp3"
+   "file": "voice/order_3.mp3",
+   "spoken": "مادَربُزُرگ جُغد سَردَش اَست."
   },
   {
    "id": "order.4",
    "text": "میمی یک ساز با صدای بم می‌خواهد.",
    "event": "order.4",
    "screen": "playroom",
-   "file": "voice/order_4.mp3"
+   "file": "voice/order_4.mp3",
+   "spoken": "میمی یِک ساز با صِدایِ بَم می‌خواهَد."
   },
   {
    "id": "order.5",
    "text": "میمی یک ساز با صدای زیر می‌خواهد.",
    "event": "order.5",
    "screen": "playroom",
-   "file": "voice/order_5.mp3"
+   "file": "voice/order_5.mp3",
+   "spoken": "میمی یِک ساز با صِدایِ زیر می‌خواهَد."
   },
   {
    "id": "order.6",
    "text": "آقا سنجاب در تاریکی چیزی را گم کرده.",
    "event": "order.6",
    "screen": "playroom",
-   "file": "voice/order_6.mp3"
+   "file": "voice/order_6.mp3",
+   "spoken": "آقا سَنجاب دَر تاریکی چیزی را گُم کَرده."
   },
   {
    "id": "order.7",
    "text": "لاکی یک وسیله‌ی نقلیه می‌خواهد.",
    "event": "order.7",
    "screen": "playroom",
-   "file": "voice/order_7.mp3"
+   "file": "voice/order_7.mp3",
+   "spoken": "لاکی یِک وَسیله‌یِ نَقلیه می‌خواهَد."
   },
   {
    "id": "order.8",
    "text": "کوکو یک چیز قشنگ برای تزئین می‌خواهد.",
    "event": "order.8",
    "screen": "playroom",
-   "file": "voice/order_8.mp3"
+   "file": "voice/order_8.mp3",
+   "spoken": "کوکو یِک چیزِ قَشَنگ بَرایِ تَزئین می‌خواهَد."
   },
   {
    "id": "order.9",
    "text": "آقا سنجاب باید میخ بزند.",
    "event": "order.9",
    "screen": "playroom",
-   "file": "voice/order_9.mp3"
+   "file": "voice/order_9.mp3",
+   "spoken": "آقا سَنجاب باید میخ بِزَنَد."
   },
   {
    "id": "order.10",
    "text": "گل‌های بانی تشنه‌اند.",
    "event": "order.10",
    "screen": "playroom",
-   "file": "voice/order_10.mp3"
+   "file": "voice/order_10.mp3",
+   "spoken": "گُل‌هایِ بانی تِشنه‌اَند."
   },
   {
    "id": "order.11",
    "text": "خاله خرسی گرسنه است.",
    "event": "order.11",
    "screen": "playroom",
-   "file": "voice/order_11.mp3"
+   "file": "voice/order_11.mp3",
+   "spoken": "خاله خِرسی گُرُسنه اَست."
   },
   {
    "id": "order.12",
    "text": "مادربزرگ جغد راه را گم کرده.",
    "event": "order.12",
    "screen": "playroom",
-   "file": "voice/order_12.mp3"
+   "file": "voice/order_12.mp3",
+   "spoken": "مادَربُزُرگ جُغد راه را گُم کَرده."
   },
   {
    "id": "order.13",
    "text": "کوکو دلش موسیقی می‌خواهد.",
    "event": "order.13",
    "screen": "playroom",
-   "file": "voice/order_13.mp3"
+   "file": "voice/order_13.mp3",
+   "spoken": "کوکو دِلَش موسیقی می‌خواهَد."
   },
   {
    "id": "combo.1",
    "text": "مهمانی کوچک! دوستان آمدند.",
    "event": "combo.1",
    "screen": "playroom",
-   "file": "voice/combo_1.mp3"
+   "file": "voice/combo_1.mp3",
+   "spoken": "مِهمانیِ کوچَک! دوستان آمَدَند."
   },
   {
    "id": "combo.2",
    "text": "ربات گل‌ها را آب داد!",
    "event": "combo.2",
    "screen": "playroom",
-   "file": "voice/combo_2.mp3"
+   "file": "voice/combo_2.mp3",
+   "spoken": "رُبات گُل‌ها را آب داد!"
   },
   {
    "id": "combo.3",
    "text": "یک آهنگ دونفره!",
    "event": "combo.3",
    "screen": "playroom",
-   "file": "voice/combo_3.mp3"
+   "file": "voice/combo_3.mp3",
+   "spoken": "یِک آهَنگِ دونَفَره!"
   },
   {
    "id": "combo.4",
    "text": "چادر شب روشن شد.",
    "event": "combo.4",
    "screen": "playroom",
-   "file": "voice/combo_4.mp3"
+   "file": "voice/combo_4.mp3",
+   "spoken": "چادُرِ شَب رُوشَن شُد."
   },
   {
    "id": "combo.5",
    "text": "ماشین نامه‌ها را رساند.",
    "event": "combo.5",
    "screen": "playroom",
-   "file": "voice/combo_5.mp3"
+   "file": "voice/combo_5.mp3",
+   "spoken": "ماشین نامه‌ها را رَساند."
   },
   {
    "id": "combo.6",
    "text": "تماشای شب پرستاره!",
    "event": "combo.6",
    "screen": "playroom",
-   "file": "voice/combo_6.mp3"
+   "file": "voice/combo_6.mp3",
+   "spoken": "تَماشایِ شَبِ پُرسِتاره!"
   },
   {
    "id": "combo.7",
    "text": "باد هر دو را چرخاند!",
    "event": "combo.7",
    "screen": "playroom",
-   "file": "voice/combo_7.mp3"
+   "file": "voice/combo_7.mp3",
+   "spoken": "باد هَر دو را چَرخاند!"
   },
   {
    "id": "combo.8",
    "text": "ماهی‌گیری زیر آب!",
    "event": "combo.8",
    "screen": "playroom",
-   "file": "voice/combo_8.mp3"
+   "file": "voice/combo_8.mp3",
+   "spoken": "ماهی‌گیری زیرِ آب!"
   },
   {
    "id": "combo.9",
    "text": "ناهار گرم و خوشمزه!",
    "event": "combo.9",
    "screen": "playroom",
-   "file": "voice/combo_9.mp3"
+   "file": "voice/combo_9.mp3",
+   "spoken": "ناهارِ گَرم و خوشمَزه!"
   },
   {
    "id": "combo.10",
    "text": "رقص با ماسک!",
    "event": "combo.10",
    "screen": "playroom",
-   "file": "voice/combo_10.mp3"
+   "file": "voice/combo_10.mp3",
+   "spoken": "رَقص با ماسک!"
   },
   {
    "id": "combo.11",
    "text": "موشک در آسمان دیده شد!",
    "event": "combo.11",
    "screen": "playroom",
-   "file": "voice/combo_11.mp3"
+   "file": "voice/combo_11.mp3",
+   "spoken": "موشَک دَر آسمان دیده شُد!"
   },
   {
    "id": "combo.12",
    "text": "پرنده‌ها در باغ لانه ساختند.",
    "event": "combo.12",
    "screen": "playroom",
-   "file": "voice/combo_12.mp3"
+   "file": "voice/combo_12.mp3",
+   "spoken": "پَرَنده‌ها دَر باغ لانه ساختَند."
   },
   {
    "id": "combo.13",
    "text": "یک نقاشی قاب‌شده!",
    "event": "combo.13",
    "screen": "playroom",
-   "file": "voice/combo_13.mp3"
+   "file": "voice/combo_13.mp3",
+   "spoken": "یِک نَقّاشیِ قاب‌شُده!"
   },
   {
    "id": "combo.14",
    "text": "گردش با دوچرخه در جنگل!",
    "event": "combo.14",
    "screen": "playroom",
-   "file": "voice/combo_14.mp3"
+   "file": "voice/combo_14.mp3",
+   "spoken": "گَردِش با دوچَرخه دَر جَنگَل!"
   },
   {
    "id": "game.hint.1",
    "text": "این‌جا را ببین...",
    "event": "game.hint.1",
    "screen": "game",
-   "file": "voice/game_hint_1.mp3"
+   "file": "voice/game_hint_1.mp3",
+   "spoken": "این‌جا را بِبین..."
   },
   {
    "id": "game.hint.2",
    "text": "بیا با هم انجامش بدهیم.",
    "event": "game.hint.2",
    "screen": "game",
-   "file": "voice/game_hint_2.mp3"
+   "file": "voice/game_hint_2.mp3",
+   "spoken": "بیا با هَم اَنجامَش بِدَهیم."
   },
   {
    "id": "game.wrong",
    "text": "نه این یکی نه؛ دوباره امتحان کن!",
    "event": "game.wrong",
    "screen": "game",
-   "file": "voice/game_wrong.mp3"
+   "file": "voice/game_wrong.mp3",
+   "spoken": "نَه این یِکی نَه؛ دُوباره اِمتِحان کُن!"
   },
   {
    "id": "game.quiz.right",
    "text": "درست گفتی!",
    "event": "game.quiz.right",
    "screen": "game",
-   "file": "voice/game_quiz_right.mp3"
+   "file": "voice/game_quiz_right.mp3",
+   "spoken": "دُرُست گُفتی!"
   },
   {
    "id": "game.quiz.wrong",
    "text": "نه عزیزم، به این دقت کن.",
    "event": "game.quiz.wrong",
    "screen": "game",
-   "file": "voice/game_quiz_wrong.mp3"
+   "file": "voice/game_quiz_wrong.mp3",
+   "spoken": "نَه عَزیزَم، بِه این دِقَّت کُن."
   },
   {
    "id": "game.play",
    "text": "حالا باهاش بازی کن!",
    "event": "game.play",
    "screen": "game",
-   "file": "voice/game_play.mp3"
+   "file": "voice/game_play.mp3",
+   "spoken": "حالا باهاش بازی کُن!"
   },
   {
    "id": "game.backpack",
    "text": "گذاشتمش در کوله‌پشتی.",
    "event": "game.backpack",
    "screen": "game",
-   "file": "voice/game_backpack.mp3"
+   "file": "voice/game_backpack.mp3",
+   "spoken": "گُذاشتَمَش دَر کوله‌پُشتی."
   },
   {
    "id": "game.stars.3",
    "text": "عالی بود! سه ستاره!",
    "event": "game.stars.3",
    "screen": "game",
-   "file": "voice/game_stars_3.mp3"
+   "file": "voice/game_stars_3.mp3",
+   "spoken": "عالی بود! سه سِتاره!"
   },
   {
    "id": "game.stars.2",
    "text": "خیلی خوب بود!",
    "event": "game.stars.2",
    "screen": "game",
-   "file": "voice/game_stars_2.mp3"
+   "file": "voice/game_stars_2.mp3",
+   "spoken": "خِیلی خوب بود!"
   },
   {
    "id": "game.stars.1",
    "text": "تمامش کردی، آفرین!",
    "event": "game.stars.1",
    "screen": "game",
-   "file": "voice/game_stars_1.mp3"
+   "file": "voice/game_stars_1.mp3",
+   "spoken": "تَمامَش کَردی، آفَرین!"
   },
   {
    "id": "game.fast",
    "text": "چه سریع!",
    "event": "game.fast",
    "screen": "game",
-   "file": "voice/game_fast.mp3"
+   "file": "voice/game_fast.mp3",
+   "spoken": "چِه سَریع!"
   },
   {
    "id": "game.locked",
    "text": "این بخش برای بعد است. اول بخش قبلی را تمام کن.",
    "event": "game.locked",
    "screen": "game",
-   "file": "voice/game_locked.mp3"
+   "file": "voice/game_locked.mp3",
+   "spoken": "این بَخش بَرایِ بَعد اَست. اَوَّل بَخشِ قَبلی را تَمام کُن."
   },
   {
    "id": "game.coins.low",
    "text": "سکه‌هایت کم است. بیا یک بخش را دوباره بازی کنیم!",
    "event": "game.coins.low",
    "screen": "game",
-   "file": "voice/game_coins_low.mp3"
+   "file": "voice/game_coins_low.mp3",
+   "spoken": "سِکّه‌هایَت کَم اَست. بیا یِک بَخش را دُوباره بازی کُنیم!"
   },
   {
    "id": "game.secret",
    "text": "یک چیز پنهان پیدا کردی!",
    "event": "game.secret",
    "screen": "game",
-   "file": "voice/game_secret.mp3"
+   "file": "voice/game_secret.mp3",
+   "spoken": "یِک چیزِ پِنهان پِیدا کَردی!"
   },
   {
    "id": "game.daily",
    "text": "جایزه‌ی امروز! سکه گرفتی.",
    "event": "game.daily",
    "screen": "game",
-   "file": "voice/game_daily.mp3"
+   "file": "voice/game_daily.mp3",
+   "spoken": "جایِزه‌یِ اِمروز! سِکّه گِرِفتی."
   },
   {
    "id": "home.hello",
    "text": "سلام! امروز چی بسازیم؟",
    "event": "home.hello",
    "screen": "game",
-   "file": "voice/home_hello.mp3"
+   "file": "voice/home_hello.mp3",
+   "spoken": "سَلام! اِمروز چی بِسازیم؟"
   },
   {
    "id": "workshop.hello",
    "text": "به کارگاه ستاره خوش آمدی! با ستاره‌هایت کیت‌های تازه باز می‌شوند.",
    "event": "workshop.hello",
    "screen": "game",
-   "file": "voice/workshop_hello.mp3"
+   "file": "voice/workshop_hello.mp3",
+   "spoken": "بِه کارگاهِ سِتاره خوش آمَدی! با سِتاره‌هایَت کیت‌هایِ تازه باز می‌شَوَند."
   },
   {
    "id": "shop.hello",
    "text": "این‌جا با سکه ابزار می‌خری و چیزهای تازه می‌سازی.",
    "event": "shop.hello",
    "screen": "game",
-   "file": "voice/shop_hello.mp3"
+   "file": "voice/shop_hello.mp3",
+   "spoken": "این‌جا با سِکّه اَبزار می‌خَری و چیزهایِ تازه می‌سازی."
   },
   {
    "id": "shop.bought",
    "text": "ابزار تازه! بیا ببینیم چطور کار می‌کند.",
    "event": "shop.bought",
    "screen": "game",
-   "file": "voice/shop_bought.mp3"
+   "file": "voice/shop_bought.mp3",
+   "spoken": "اَبزارِ تازه! بیا بِبینیم چِطُور کار می‌کُنَد."
   },
   {
    "id": "playroom.hello",
    "text": "این اتاق بازی توست. همه‌ی ساخته‌هایت این‌جاست!",
    "event": "playroom.hello",
    "screen": "game",
-   "file": "voice/playroom_hello.mp3"
+   "file": "voice/playroom_hello.mp3",
+   "spoken": "این اُتاقِ بازیِ توست. هَمه‌یِ ساخته‌هایَت این‌جاست!"
   },
   {
    "id": "playroom.combo",
    "text": "یک ترکیب تازه کشف کردی!",
    "event": "playroom.combo",
    "screen": "game",
-   "file": "voice/playroom_combo.mp3"
+   "file": "voice/playroom_combo.mp3",
+   "spoken": "یِک تَرکیبِ تازه کَشف کَردی!"
   },
   {
    "id": "playroom.order.done",
    "text": "دقیقاً همین را می‌خواستم! ممنون!",
    "event": "playroom.order.done",
    "screen": "game",
-   "file": "voice/playroom_order_done.mp3"
+   "file": "voice/playroom_order_done.mp3",
+   "spoken": "دَقیقاً هَمین را می‌خواستَم! مَمنون!"
   },
   {
    "id": "playroom.order.wrong",
    "text": "این را نمی‌خواهم؛ یک چیز دیگر بده.",
    "event": "playroom.order.wrong",
    "screen": "game",
-   "file": "voice/playroom_order_wrong.mp3"
+   "file": "voice/playroom_order_wrong.mp3",
+   "spoken": "این را نِمی‌خواهَم؛ یِک چیزِ دیگَر بِدِه."
   },
   {
    "id": "film.end",
    "text": "یک تکه‌ی تازه از نقشه‌ی جشن روشن شد!",
    "event": "film.end",
    "screen": "game",
-   "file": "voice/film_end.mp3"
+   "file": "voice/film_end.mp3",
+   "spoken": "یِک تِکّه‌یِ تازه اَز نَقشه‌یِ جَشن رُوشَن شُد!"
   },
   {
    "id": "kit.open",
    "text": "یک کیت تازه باز شد!",
    "event": "kit.open",
    "screen": "game",
-   "file": "voice/kit_open.mp3"
+   "file": "voice/kit_open.mp3",
+   "spoken": "یِک کیتِ تازه باز شُد!"
   }
  ]
 }

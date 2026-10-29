@@ -69,12 +69,13 @@ final Map<String, ToonPainter> workshopToons = {
   }),
   'hammer_handle': (k, p) => k.alive(p, () {
     k.at(50, 90, () {
-      k.rect(-6, -70, 12, 70, 5, _wood);
-      for (var y = -60.0; y < 0; y += 14) {
-        k.stroke([Offset(-4, y), Offset(4, y + 4)], const Color(0xFFA0683A), 1.4);
+      k.rect(-8, -78, 16, 78, 7, const Color(0xFFC68B4E));
+      k.rect(-9, -20, 18, 20, 6, const Color(0xFF8D5524));
+      for (var y = -70.0; y < -24; y += 12) {
+        k.stroke([Offset(-5, y), Offset(5, y + 5)], const Color(0xFFA0683A), 1.4);
       }
-      k.face(0, -40, 9, p);
-    }, rot: .15 + p.wave(.4) * .05);
+      k.face(0, -48, 11, p);
+    }, rot: .12 + p.wave(.4) * .05);
   }),
   'screw': (k, p) => k.alive(p, () {
     final turn = p.act ? p.t * 6 : 0.0;
@@ -102,14 +103,15 @@ final Map<String, ToonPainter> workshopToons = {
     k.face(50, 50, 9, p);
   }, shadowW: 24),
   'plank': (k, p) => k.alive(p, () {
-    k.at(50, 70, () {
-      k.rect(-40, -9, 80, 18, 4, _wood);
-      for (final x in <double>[-24, 2, 22]) {
-        k.stroke([Offset(x, -5), Offset(x + 8, -3), Offset(x + 14, -6)], const Color(0xFFA0683A), 1.4);
+    k.at(50, 66, () {
+      k.rect(-44, -13, 88, 26, 5, const Color(0xFFC68B4E));
+      for (final x in <double>[-30, -2, 22]) {
+        k.stroke([Offset(x, -7), Offset(x + 10, -4), Offset(x + 18, -8)], const Color(0xFFA0683A), 1.6);
+        k.stroke([Offset(x + 4, 6), Offset(x + 14, 8)], const Color(0xFFA0683A), 1.2);
       }
-      k.c.drawCircle(const Offset(-30, 0), 2.4, Paint()..color = const Color(0xFF8D5A2B));
-      k.face(0, 0, 10, p);
-    }, rot: -.08 + p.wave(.4) * .03);
+      k.oval(-32, 0, 4, 3, const Color(0xFF8D5A2B));
+      k.face(6, 0, 13, p);
+    }, rot: -.06 + p.wave(.4) * .03);
   }),
   'flashlight': (k, p) => k.alive(p, () {
     final on = p.act || p.happy;
@@ -211,12 +213,13 @@ final Map<String, ToonPainter> workshopToons = {
     );
   }, shadowW: 40),
   'junk_spoon': (k, p) => k.alive(p, () {
-    k.at(50, 64, () {
-      k.oval(0, -24, 10, 14, _metal);
-      k.rect(-3, -12, 6, 42, 3, _metal);
-      k.shine(-3, -28, 3, 6);
-    }, rot: .5 + p.wave(.4) * .06);
-  }, shadowW: 30),
+    k.at(50, 60, () {
+      k.oval(0, -26, 14, 19, const Color(0xFFCFD8DC));
+      k.oval(0, -24, 9, 13, const Color(0xFFB0BEC5), line: false);
+      k.rect(-4, -8, 8, 46, 4, const Color(0xFFCFD8DC));
+      k.face(0, -24, 9, p);
+    }, rot: .45 + p.wave(.4) * .06);
+  }, shadowW: 36),
   'junk_sock': (k, p) => k.alive(p, () {
     k.at(50, 60, () {
       final sock = Path()
@@ -279,15 +282,20 @@ final Map<String, ToonPainter> workshopToons = {
     if (p.act) k.stroke([const Offset(96, 40), const Offset(98, 36)], const Color(0xFFFFEB3B), 1.6);
   }),
   'wrench': (k, p) => k.alive(p, () {
-    k.at(50, 60, () {
-      k.rect(-5, -6, 10, 42, 4, _metal);
-      final head = Path()..addOval(Rect.fromCircle(center: const Offset(0, -16), radius: 14));
-      k.blob(head, _metal);
-      k.c.drawRect(const Rect.fromLTWH(-5, -32, 10, 14), Paint()..color = const Color(0xFFF4FAFF).withValues(alpha: 0));
-      k.rect(-5, -32, 10, 12, 2, const Color(0xFFF5F5F5), line: false);
-      k.face(0, 18, 7, p);
-    }, rot: p.act ? p.wave(1.5) * .6 : .5 + p.wave(.4) * .05);
-  }, shadowW: 36),
+    k.at(50, 58, () {
+      k.rect(-5, -8, 10, 46, 5, const Color(0xFF90A4AE));
+      // سر آچار با دهانه‌ی باز
+      final jaw = Path.combine(
+        PathOperation.difference,
+        Path()..addOval(Rect.fromCircle(center: const Offset(0, -18), radius: 15)),
+        Path()..addRect(const Rect.fromLTWH(-5, -36, 10, 16)),
+      );
+      k.blob(jaw, const Color(0xFF90A4AE));
+      k.circle(0, 32, 5, const Color(0xFF78909C));
+      k.c.drawCircle(const Offset(0, 32), 2.4, Paint()..color = const Color(0xFFECEFF1));
+      k.at(0, 10, () => k.face(0, 0, 8, p));
+    }, rot: p.act ? p.wave(1.5) * .6 : .45 + p.wave(.4) * .05);
+  }, shadowW: 40),
   'glue_gun': (k, p) => k.alive(p, () {
     k.rect(30, 56, 16, 32, 6, const Color(0xFFFFA726));
     k.rect(18, 36, 60, 24, 10, const Color(0xFFFF7043));
@@ -311,24 +319,26 @@ final Map<String, ToonPainter> workshopToons = {
   'magnet': (k, p) => k.alive(p, () {
     final pull = p.act ? p.cycle(1.2) : 0.0;
     final m = Path()
-      ..addArc(Rect.fromCircle(center: const Offset(50, 50), radius: 26), math.pi, math.pi)
-      ..lineTo(76, 78)
-      ..lineTo(62, 78)
-      ..lineTo(62, 50)
-      ..arcTo(Rect.fromCircle(center: const Offset(50, 50), radius: 12), 0, -math.pi, false)
-      ..lineTo(38, 78)
-      ..lineTo(24, 78)
+      ..moveTo(18, 48)
+      ..addArc(Rect.fromCircle(center: const Offset(50, 48), radius: 32), math.pi, math.pi)
+      ..lineTo(82, 82)
+      ..lineTo(64, 82)
+      ..lineTo(64, 48)
+      ..arcTo(Rect.fromCircle(center: const Offset(50, 48), radius: 14), 0, -math.pi, false)
+      ..lineTo(36, 82)
+      ..lineTo(18, 82)
       ..close();
     k.blob(m, const Color(0xFFE53935));
-    k.rect(24, 70, 14, 10, 1, _metal);
-    k.rect(62, 70, 14, 10, 1, _metal);
+    k.rect(18, 72, 18, 12, 2, const Color(0xFFCFD8DC));
+    k.rect(64, 72, 18, 12, 2, const Color(0xFFCFD8DC));
     if (p.act) {
-      for (final x in <double>[31, 69]) {
-        k.stroke([Offset(x - 4, 86 + (1 - pull) * 4), Offset(x + 4, 86 + (1 - pull) * 4)], const Color(0xFFFFEB3B), 1.6);
+      for (final x in <double>[27, 73]) {
+        for (var i = 0; i < 2; i++) {
+          k.stroke([Offset(x - 5, 88 + i * 4 + (1 - pull) * 3), Offset(x + 5, 88 + i * 4 + (1 - pull) * 3)], const Color(0xFFFFEB3B), 1.6);
+        }
       }
-      k.rect(44, 96 - pull * 12, 12, 3, 1, const Color(0xFF78909C));
     }
-    k.face(50, 34, 9, p);
+    k.face(50, 30, 11, p);
   }),
   'magnet_fish': (k, p) => k.alive(p, () {
     k.stroke([const Offset(20, 90), const Offset(40, 40), const Offset(76, 14)], const Color(0xFF8D6E63), 4);
@@ -342,33 +352,63 @@ final Map<String, ToonPainter> workshopToons = {
     }, rot: p.wave(1) * .15);
   }),
   'scissors': (k, p) {
-    final snip = p.act ? (p.wave(3) + 1) * .25 : .15;
+    final snip = p.act ? (p.wave(3) + 1) * .22 : .14;
     k.alive(p, () {
       for (final s in <double>[-1, 1]) {
-        k.at(50, 56, () {
-          k.poly([const Offset(-3, 0), const Offset(3, 0), const Offset(2, -36), const Offset(0, -40)], _metal);
-          k.c.drawCircle(
-            Offset(s * 4, 18),
-            11,
-            Paint()
-              ..color = const Color(0xFFE91E63)
-              ..style = PaintingStyle.stroke
-              ..strokeWidth = 5,
-          );
+        k.at(50, 54, () {
+          final blade = Path()
+            ..moveTo(-3, 0)
+            ..lineTo(3, 0)
+            ..lineTo(1.5, -38)
+            ..quadraticBezierTo(0, -42, -1, -38)
+            ..close();
+          k.blob(blade, const Color(0xFFCFD8DC));
+          k.c.save();
+          k.c.translate(s * 7, 20);
+          final ring = Path()
+            ..addOval(Rect.fromCenter(center: Offset.zero, width: 22, height: 18))
+            ..addOval(Rect.fromCenter(center: Offset.zero, width: 12, height: 9))
+            ..fillType = PathFillType.evenOdd;
+          k.blob(ring, s < 0 ? const Color(0xFFE91E63) : const Color(0xFF29B6F6));
+          k.c.restore();
+          k.stroke([Offset(s * 2, 2), Offset(s * 6, 12)], s < 0 ? const Color(0xFFE91E63) : const Color(0xFF29B6F6), 5);
         }, rot: s * snip);
       }
-      k.circle(50, 56, 2.6, const Color(0xFF616161));
+      k.circle(50, 54, 3, const Color(0xFF616161));
+      k.at(50, 30, () => k.eyes(0, 0, 0, 3.4, p));
     });
   },
   'sewing_machine': (k, p) => k.alive(p, () {
     final needle = p.act ? p.wave(4).abs() * 6 : 0.0;
-    k.rect(12, 78, 76, 12, 4, const Color(0xFF8D6E63));
-    k.rect(18, 30, 18, 50, 6, const Color(0xFFF06292));
-    k.rect(18, 26, 64, 18, 8, const Color(0xFFF06292));
-    k.rect(70, 42, 8, 14 + needle, 2, _metal);
-    k.circle(28, 34, 6, const Color(0xFFFFF59D));
-    k.at(28, 34, () => k.stroke([const Offset(-5, 0), const Offset(5, 0)], const Color(0xFF8D6E63), 1.4), rot: p.act ? p.t * 8 : 0);
-    k.face(50, 35, 8, p);
+    k.rect(8, 80, 84, 10, 4, const Color(0xFF8D6E63));
+    // پایه و بازوی دستگاه
+    final body = Path()
+      ..moveTo(14, 80)
+      ..lineTo(14, 30)
+      ..quadraticBezierTo(14, 22, 22, 22)
+      ..lineTo(76, 22)
+      ..quadraticBezierTo(84, 22, 84, 30)
+      ..lineTo(84, 46)
+      ..lineTo(34, 46)
+      ..lineTo(34, 80)
+      ..close();
+    k.blob(body, const Color(0xFFF06292));
+    k.rect(36, 70, 52, 10, 3, const Color(0xFFF8BBD0));
+    // سوزن و نخ
+    k.rect(74, 46, 6, 8, 1.5, const Color(0xFFB0BEC5));
+    k.stroke([const Offset(77, 54), Offset(77, 60 + needle)], const Color(0xFF78909C), 1.6);
+    k.stroke([const Offset(30, 18), const Offset(50, 14), const Offset(77, 54)], const Color(0xFFE53935), .8);
+    // قرقره‌ی نخ روی سر دستگاه
+    k.rect(26, 10, 8, 12, 2, const Color(0xFFE53935));
+    // چرخ دستی کنار
+    k.at(10, 38, () {
+      k.circle(0, 0, 8, const Color(0xFFB0BEC5));
+      k.stroke([const Offset(-6, 0), const Offset(6, 0)], const Color(0xFF78909C), 1.6);
+    }, rot: p.act ? p.t * 8 : 0);
+    // پارچه‌ای که زیر سوزن رد می‌شود
+    final shift = p.act ? p.cycle(.5) * 10 : 0.0;
+    k.rect(54 - shift, 64, 30, 6, 1, const Color(0xFF81D4FA));
+    k.at(50, 34, () => k.face(0, 0, 9, p));
   }),
   'tire': (k, p) {
     final puff = p.act ? .85 + p.cycle(.6) * .25 : 1.0;
@@ -432,47 +472,92 @@ final Map<String, ToonPainter> workshopToons = {
   'bus': (k, p) => _vehicle(
     k,
     p,
-    wheels: [(24, 82), (76, 82)],
+    wheels: [(26, 82), (74, 82)],
     wheelR: 10,
-    exhaustX: 8,
+    exhaustX: 6,
     body: (b) {
-      k.rect(8, 30, 86, 50, 12, const Color(0xFFFFCA28));
-      k.rect(8, 64, 86, 8, 0, const Color(0xFFFFA000), line: false);
-      for (var i = 0; i < 4; i++) {
-        k.rect(14 + i * 16.0, 38, 12, 14, 3, const Color(0xFF81D4FA));
-        // مسافرها که سر تکان می‌دهند
-        final c = [const Color(0xFFA1704A), const Color(0xFFF7F3F0), const Color(0xFFB0BEC5), const Color(0xFFB0703C)][i];
-        k.circle(20 + i * 16.0, 50 + p.wave(1.2, i / 4) * 1.2, 4.2, c, line: false);
+      final body = Path()
+        ..addRRect(
+          RRect.fromRectAndCorners(
+            const Rect.fromLTWH(6, 28, 88, 52),
+            topLeft: const Radius.circular(12),
+            topRight: const Radius.circular(20),
+            bottomLeft: const Radius.circular(8),
+            bottomRight: const Radius.circular(10),
+          ),
+        );
+      k.blob(body, const Color(0xFFFFC928));
+      k.rect(6, 64, 88, 6, 0, const Color(0xFFFF9F1C), line: false);
+      // گلگیرها
+      for (final x in <double>[26, 74]) {
+        k.c.drawCircle(Offset(x, 82), 13, Paint()..color = shade(const Color(0xFFFFC928), .45));
       }
-      k.rect(78, 36, 12, 28, 3, const Color(0xFF81D4FA));
-      _headlight(k, p, 92, 68);
-      k.at(84, 46, () => k.eyes(0, 0, 7, 2.8, p));
-      k.mouth(84, 56, 5, p);
+      // پنجره‌ها و مسافرها
+      for (var i = 0; i < 3; i++) {
+        final x = 12 + i * 17.0;
+        k.rect(x, 36, 14, 16, 3, const Color(0xFFB3E5FC));
+        final c = [const Color(0xFFA1704A), const Color(0xFFF7F3F0), const Color(0xFFB0BEC5)][i];
+        final bob = p.wave(1.2, i / 3) * 1.2;
+        k.circle(x + 7, 49 + bob, 5, c);
+        k.c.drawCircle(Offset(x + 5.4, 48 + bob), .9, Paint()..color = Colors.black);
+        k.c.drawCircle(Offset(x + 8.6, 48 + bob), .9, Paint()..color = Colors.black);
+        k.shine(x + 4, 39, 2, 4, rot: .2);
+      }
+      // در
+      k.rect(63, 36, 10, 30, 2, const Color(0xFF90CAF9));
+      k.stroke([const Offset(68, 36), const Offset(68, 66)], const Color(0xFF5C9BD5), 1.2);
+      // شیشه‌ی جلو با چشم‌ها
+      k.rect(77, 34, 14, 22, 5, const Color(0xFFB3E5FC));
+      k.at(84, 44, () => k.eyes(0, 0, 7, 2.8, p));
+      k.mouth(84, 60, 6, p);
+      k.rect(88, 70, 8, 6, 2, const Color(0xFFB0BEC5));
+      _headlight(k, p, 92, 64);
+      k.rect(4, 66, 5, 7, 2, const Color(0xFFE53935));
+      k.rect(14, 26, 60, 4, 2, const Color(0xFFFFE082));
     },
   ),
-  'train': (k, p) => _vehicle(
-    k,
-    p,
-    smoke: false,
-    wheels: [(26, 84), (48, 84), (74, 84)],
-    wheelR: 9,
-    body: (b) {
-      if (p.act || p.happy) {
-        for (var i = 0; i < 4; i++) {
-          final d = p.cycle(1.4, i / 4);
-          k.c.drawCircle(Offset(72 - d * 30, 16 - d * 12), 4 + d * 6, Paint()..color = Colors.white.withValues(alpha: .8 * (1 - d)));
-        }
+  'train': (k, p) {
+    final turn = p.act ? p.t * 8 : (p.happy ? p.t * 3 : 0.0);
+    k.shadow(50, 86);
+    final bounce = p.act ? p.wave(5).abs() * 1.6 : p.breath * .6;
+    if (p.act || p.happy) {
+      for (var i = 0; i < 5; i++) {
+        final d = p.cycle(1.4, i / 5);
+        k.c.drawCircle(
+          Offset(68 - d * 34, 14 - d * 12 - bounce),
+          4 + d * 7,
+          Paint()..color = Colors.white.withValues(alpha: .85 * (1 - d)),
+        );
       }
-      k.rect(14, 36, 34, 40, 6, const Color(0xFFE53935));
-      k.rect(18, 42, 26, 16, 3, const Color(0xFF81D4FA));
-      k.rect(10, 30, 42, 8, 3, const Color(0xFFB71C1C));
-      k.rect(46, 50, 42, 26, 10, const Color(0xFF1E88E5));
-      k.rect(66, 30, 10, 22, 2, const Color(0xFF424242));
-      k.rect(84, 70, 10, 8, 2, const Color(0xFFFFCA28));
-      _headlight(k, p, 88, 58);
-      k.face(66, 62, 9, p);
-    },
-  ),
+    }
+    k.at(0, -bounce, () {
+      // کابین
+      k.rect(10, 34, 32, 44, 5, const Color(0xFFE53935));
+      k.rect(6, 28, 40, 8, 3, const Color(0xFFB71C1C));
+      k.rect(16, 42, 20, 16, 4, const Color(0xFFB3E5FC));
+      k.at(26, 50, () => k.eyes(0, 0, 9, 3, p));
+      k.mouth(26, 55, 5, p);
+      // دیگ بخار با حلقه‌ها
+      final boiler = Path()..addRRect(RRect.fromRectAndRadius(const Rect.fromLTWH(40, 48, 46, 26), const Radius.circular(13)));
+      k.blob(boiler, const Color(0xFF1E88E5));
+      for (final x in <double>[52, 66]) {
+        k.rect(x, 48, 3, 26, 1, const Color(0xFFFFC928), line: false);
+      }
+      k.rect(64, 30, 10, 20, 3, const Color(0xFF424242));
+      k.rect(61, 26, 16, 6, 3, const Color(0xFF616161));
+      k.circle(52, 46, 4, const Color(0xFFFFC928));
+      // دماغه و جلو
+      k.poly([const Offset(86, 66), const Offset(96, 82), const Offset(86, 82)], const Color(0xFF9E9E9E));
+      _headlight(k, p, 88, 56);
+    });
+    // چرخ‌ها و میله‌ی رابط که با هم می‌چرخند
+    final pts = <Offset>[];
+    for (final (x, r) in [(22.0, 9.0), (48.0, 11.0), (74.0, 11.0)]) {
+      k.wheel(x, 82, r, turn, tire: const Color(0xFFC62828), hub: const Color(0xFFFFE082));
+      pts.add(Offset(x + math.cos(turn) * r * .5, 82 + math.sin(turn) * r * .5));
+    }
+    k.stroke([pts[1], pts[2]], const Color(0xFF9E9E9E), 2.4, smooth: false);
+  },
   'rail': (k, p) => k.alive(p, () {
     for (var i = 0; i < 6; i++) {
       k.rect(14 + i * 13.0, 56, 7, 32, 2, _wood);
@@ -589,31 +674,46 @@ void _toyCar(Pen k, ToonPose p, {required bool wheels}) => _vehicle(
   p,
   wheels: wheels ? [(28, 80), (72, 80)] : const [],
   wheelR: 11,
-  exhaustX: 10,
+  exhaustX: 8,
   body: (b) {
+    const red = Color(0xFFE53935);
+    // کابین با دو شیشه
     final roof = Path()
-      ..moveTo(28, 50)
-      ..quadraticBezierTo(34, 26, 54, 26)
-      ..quadraticBezierTo(72, 26, 76, 50)
+      ..moveTo(26, 52)
+      ..quadraticBezierTo(30, 28, 50, 27)
+      ..quadraticBezierTo(70, 27, 76, 52)
       ..close();
-    k.blob(roof, const Color(0xFFE53935));
-    k.poly([const Offset(36, 48), const Offset(40, 32), const Offset(52, 32), const Offset(52, 48)], const Color(0xFF81D4FA), line: false);
-    k.rect(8, 46, 84, 28, 13, const Color(0xFFE53935));
-    k.shine(26, 52, 12, 3, rot: 0);
-    _headlight(k, p, 88, 58);
+    k.blob(roof, red);
+    k.poly([const Offset(33, 50), const Offset(37, 34), const Offset(49, 32), const Offset(49, 50)], const Color(0xFFB3E5FC), line: false);
+    k.poly([const Offset(53, 50), const Offset(53, 32), const Offset(64, 34), const Offset(70, 50)], const Color(0xFFB3E5FC), line: false);
+    k.shine(40, 38, 2, 5, rot: .3);
+    // چشم‌ها پشت شیشه‌ی جلو
+    k.at(61, 42, () => k.eyes(0, 0, 8, 3, p));
+    // بدنه با گلگیرها
+    final body = Path()..addRRect(RRect.fromRectAndRadius(const Rect.fromLTWH(6, 48, 88, 26), const Radius.circular(13)));
+    k.blob(body, red);
+    for (final x in <double>[28, 72]) {
+      k.c.drawCircle(Offset(x, 80), 14, Paint()..color = shade(red, .5));
+    }
+    k.stroke([const Offset(50, 52), const Offset(50, 70)], shade(red, .3), 1.2);
+    k.rect(53, 58, 6, 2, 1, Colors.white, line: false);
+    k.rect(90, 64, 7, 6, 2, const Color(0xFFB0BEC5));
+    k.rect(3, 64, 7, 6, 2, const Color(0xFFB0BEC5));
+    k.mouth(84, 60, 6, p);
+    _headlight(k, p, 88, 55);
+    k.rect(6, 53, 4, 6, 2, const Color(0xFFFF8A80), line: false);
     // کلید کوکی پشت ماشین می‌چرخد
-    k.at(6, 52, () {
+    k.at(4, 50, () {
       k.rect(-6, -2, 6, 4, 1, const Color(0xFFFFC107));
       k.oval(-8, 0, 3, 8, const Color(0xFFFFD54F));
     }, sy: wheels ? math.cos(p.t * (p.act ? 10 : 1.5)).abs() * .7 + .3 : 1);
-    k.at(66, 58, () => k.face(0, 0, 9, p));
     if (!wheels) {
       for (final x in <double>[28, 72]) {
         k.c.drawCircle(
-          Offset(x, 76),
-          9,
+          Offset(x, 78),
+          10,
           Paint()
-            ..color = const Color(0x55000000)
+            ..color = Colors.white.withValues(alpha: .6)
             ..style = PaintingStyle.stroke
             ..strokeWidth = 2,
         );

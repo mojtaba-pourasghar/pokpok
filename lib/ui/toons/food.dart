@@ -96,24 +96,44 @@ final Map<String, ToonPainter> foodToons = {
     k.face(50, 68, 18, p);
   }),
   'flour': (k, p) => k.alive(p, () {
-    k.poly(
-      [const Offset(26, 90), const Offset(22, 50), const Offset(32, 26), const Offset(68, 26), const Offset(78, 50), const Offset(74, 90)],
-      const Color(0xFFF5E6CC),
-      smooth: true,
-    );
-    k.stroke([const Offset(34, 32), const Offset(50, 36), const Offset(66, 32)], const Color(0xFFBCAAA4), 3);
-    k.oval(50, 24, 14, 5, const Color(0xFFFFFFFF));
+    final sack = Path()
+      ..moveTo(30, 34)
+      ..quadraticBezierTo(18, 60, 22, 86)
+      ..quadraticBezierTo(50, 94, 78, 86)
+      ..quadraticBezierTo(82, 60, 70, 34)
+      ..close();
+    k.blob(sack, const Color(0xFFF3E5C8));
+    // سر کیسه که با طناب بسته شده
+    k.poly([
+      const Offset(32, 36),
+      const Offset(26, 18),
+      const Offset(40, 24),
+      const Offset(50, 14),
+      const Offset(60, 24),
+      const Offset(74, 18),
+      const Offset(68, 36),
+    ], const Color(0xFFF3E5C8));
+    k.rect(30, 32, 40, 6, 3, const Color(0xFFA1704A));
+    // نشان گندم
+    k.at(50, 54, () {
+      k.stroke([const Offset(0, 12), const Offset(0, -10)], const Color(0xFFD4A84F), 2);
+      for (var i = 0; i < 3; i++) {
+        for (final s in <double>[-1, 1]) {
+          k.at(0, -6 + i * 6.0, () => k.oval(s * 3.5, 0, 3.4, 1.8, const Color(0xFFD4A84F), line: false), rot: s * -.6);
+        }
+      }
+    });
     if (p.act) {
       for (var i = 0; i < 5; i++) {
         final d = p.cycle(1.2, i / 5);
         k.c.drawCircle(
-          Offset(50 + (i - 2) * 6 + math.sin(d * 6) * 3, 22 - d * 18),
+          Offset(50 + (i - 2) * 6 + math.sin(d * 6) * 3, 14 - d * 14),
           2 + d * 3,
-          Paint()..color = Colors.white.withValues(alpha: .7 * (1 - d)),
+          Paint()..color = Colors.white.withValues(alpha: .8 * (1 - d)),
         );
       }
     }
-    k.face(50, 62, 20, p);
+    k.face(50, 74, 13, p);
   }),
   'water_jug': (k, p) {
     final tilt = p.act ? -.5 + p.wave(.5) * .05 : 0.0;
@@ -173,10 +193,17 @@ final Map<String, ToonPainter> foodToons = {
   'dough': (k, p) {
     final knead = p.act ? (p.wave(2) + 1) / 2 : 0.0;
     k.alive(p, () {
-      k.rect(10, 76, 80, 14, 6, const Color(0xFFC68B4E));
-      k.oval(50, 70 + knead * 3, 30 + knead * 6, 14 - knead * 4, const Color(0xFFF5DEB3));
-      k.shine(40, 64, 7, 3);
-      k.face(50, 70 + knead * 3, 12, p);
+      k.rect(8, 76, 84, 14, 6, const Color(0xFFC68B4E));
+      for (final x in <double>[20.0, 46, 72]) {
+        k.stroke([Offset(x, 80), Offset(x + 8, 86)], const Color(0xFFA0683A), 1.2);
+      }
+      k.oval(50, 62 + knead * 4, 30 + knead * 8, 18 - knead * 5, const Color(0xFFF5DEB3));
+      for (final o in const [Offset(36, 58), Offset(60, 60), Offset(48, 68)]) {
+        k.c.drawCircle(o + Offset(0, knead * 4), 1.4, Paint()..color = const Color(0xFFE6C89A));
+      }
+      k.c.drawCircle(const Offset(80, 70), 2, Paint()..color = Colors.white.withValues(alpha: .8));
+      k.c.drawCircle(const Offset(22, 72), 1.6, Paint()..color = Colors.white.withValues(alpha: .8));
+      k.face(50, 60 + knead * 4, 15, p);
     }, squash: .06);
   },
   'oven': (k, p) => _oven(k, p, 1),
@@ -233,19 +260,29 @@ final Map<String, ToonPainter> foodToons = {
     k.face(50, 68, 16, p);
   }),
   'rotten_apple': (k, p) => k.alive(p, () {
-    k.circle(50, 60, 28, const Color(0xFF8D6E63));
-    for (final o in const [Offset(38, 52), Offset(62, 70), Offset(58, 48)]) {
-      k.c.drawCircle(o, 5, Paint()..color = const Color(0xFF5D4037));
+    final apple = Path()
+      ..moveTo(50, 36)
+      ..cubicTo(62, 26, 84, 34, 80, 60)
+      ..cubicTo(78, 82, 60, 92, 50, 86)
+      ..cubicTo(40, 92, 22, 82, 20, 60)
+      ..cubicTo(16, 34, 38, 26, 50, 36)
+      ..close();
+    k.blob(apple, const Color(0xFFA1887F));
+    for (final (x, y, r) in [(34.0, 56.0, 6.0), (64.0, 72.0, 7.0), (60.0, 48.0, 4.0)]) {
+      k.oval(x, y, r, r * .8, const Color(0xFF6D4C41), line: false);
     }
-    k.stroke([const Offset(50, 32), const Offset(48, 24)], const Color(0xFF4E342E), 3);
+    k.stroke([const Offset(50, 36), const Offset(48, 24)], const Color(0xFF4E342E), 3);
+    k.at(50, 27, () => k.oval(-7, 0, 7, 3.4, const Color(0xFF9E9D24)), rot: .4);
     // کرم که از سوراخ سرک می‌کشد
     final w = (p.wave(.6) + 1) / 2;
-    k.at(74, 54 - w * 8, () {
+    k.c.drawCircle(const Offset(72, 54), 5, Paint()..color = const Color(0xFF4E342E));
+    k.at(72, 52 - w * 8, () {
       k.oval(0, 0, 5, 7, const Color(0xFFF48FB1));
-      k.c.drawCircle(const Offset(-1.6, -2), 1.1, Paint()..color = Colors.black);
-      k.c.drawCircle(const Offset(1.6, -2), 1.1, Paint()..color = Colors.black);
+      k.c.drawCircle(const Offset(-1.8, -2), 1.1, Paint()..color = Colors.black);
+      k.c.drawCircle(const Offset(1.8, -2), 1.1, Paint()..color = Colors.black);
+      k.stroke([const Offset(-1.5, 2), const Offset(1.5, 2)], const Color(0xFF7A2E2E), .8);
     }, rot: p.wave(1.2) * .3);
-    k.face(46, 62, 16, p.mood == ToonMood.idle ? ToonPose(p.t, mood: ToonMood.sad, seed: p.seed) : p);
+    k.face(44, 64, 15, p.mood == ToonMood.idle ? ToonPose(p.t, mood: ToonMood.sad, seed: p.seed) : p);
   }),
   'pot': (k, p) => _pot(k, p, soup: false),
   'soup': (k, p) => k.alive(p, () {

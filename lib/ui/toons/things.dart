@@ -83,28 +83,30 @@ final Map<String, ToonPainter> thingToons = {
   'pottery_wheel': (k, p) {
     final spin = p.act ? p.t * 8 : p.t * .5;
     k.alive(p, () {
-      k.rect(30, 74, 40, 18, 5, const Color(0xFF8D6E63));
-      k.oval(50, 72, 34, 8, const Color(0xFFB0BEC5));
-      k.at(50, 72, () {
-        for (var i = 0; i < 4; i++) {
-          final a = spin + i * math.pi / 2;
-          k.c.drawCircle(Offset(math.cos(a) * 26, math.sin(a) * 5), 1.6, Paint()..color = const Color(0xFF78909C));
+      k.poly([const Offset(30, 92), const Offset(36, 72), const Offset(64, 72), const Offset(70, 92)], const Color(0xFF8D6E63));
+      k.oval(50, 72, 36, 9, const Color(0xFF90A4AE));
+      k.oval(50, 70, 32, 7, const Color(0xFFB0BEC5), line: false);
+      k.at(50, 70, () {
+        for (var i = 0; i < 6; i++) {
+          final a = spin + i * math.pi / 3;
+          if (math.sin(a) > 0) k.c.drawCircle(Offset(math.cos(a) * 28, math.sin(a) * 6), 1.6, Paint()..color = const Color(0xFF607D8B));
         }
       });
-      final w = 16 + math.sin(spin * 2) * 1.2;
+      final w = 15 + math.sin(spin * 2) * 1.2;
       final pot = Path()
         ..moveTo(50 - w, 70)
-        ..quadraticBezierTo(50 - w - 6, 52, 50 - w * .5, 40)
-        ..lineTo(50 + w * .5, 40)
-        ..quadraticBezierTo(50 + w + 6, 52, 50 + w, 70)
+        ..cubicTo(50 - w - 10, 56, 50 - w + 2, 42, 50 - w * .45, 36)
+        ..lineTo(50 + w * .45, 36)
+        ..cubicTo(50 + w - 2, 42, 50 + w + 10, 56, 50 + w, 70)
         ..close();
       k.blob(pot, const Color(0xFFE0855A));
+      k.oval(50, 36, w * .45, 3, const Color(0xFFBF6A42));
       for (var i = 0; i < 3; i++) {
         final y = 46 + i * 8.0;
-        final x = math.sin(spin + i) * 8;
+        final x = math.sin(spin + i) * 9;
         k.stroke([Offset(50 + x - 4, y), Offset(50 + x + 4, y)], const Color(0xFFBF6A42), 1.4);
       }
-      k.face(50, 56, 9, p);
+      k.face(50, 56, 10, p);
     });
   },
   'paper': (k, p) => k.alive(p, () {
@@ -383,9 +385,9 @@ final Map<String, ToonPainter> thingToons = {
     }, rot: p.wave(.5) * .08);
   }, shadowW: 24),
   'song': (k, p) => k.alive(p, () {
-    for (var i = 0; i < 5; i++) {
-      final d = p.cycle(.35, i / 5);
-      _note(k, 18 + i * 16.0 + math.sin(d * 6) * 3, 84 - d * 60, 5, _rainbow[i], rot: math.sin(d * 4) * .3);
+    for (var i = 0; i < 4; i++) {
+      final d = p.cycle(.3, i / 4);
+      _note(k, 22 + i * 18.0 + math.sin(d * 6) * 4, 88 - d * 58, 8, _rainbow[i + 1], rot: math.sin(d * 4) * .3);
     }
   }, shadowW: 0),
   'note': (k, p) => k.alive(p, () {
@@ -469,18 +471,22 @@ final Map<String, ToonPainter> thingToons = {
     k.face(50, 52, 12, p);
   }),
   'invitation': (k, p) => k.alive(p, () {
-    final open = p.act ? .2 + p.cycle(.4) * .8 : .25;
-    k.at(50, 90, () {
-      k.rect(-34, -60, 34, 60, 4, const Color(0xFFFFF59D));
-      k.at(0, 0, () => k.rect(0, -60, 34, 60, 4, const Color(0xFF81D4FA)), sx: math.cos(open * math.pi * .45));
-    });
+    final open = p.act ? .2 + p.cycle(.4) * .8 : .3;
+    // کارت تاشده: نیمه‌ی پشت و نیمه‌ی جلو که باز و بسته می‌شود
+    k.rect(18, 34, 64, 54, 5, const Color(0xFFFFF59D));
+    for (var i = 0; i < 8; i++) {
+      k.c.drawCircle(Offset(24 + (i * 23) % 56.0, 40 + (i * 17) % 44.0), 1.8, Paint()..color = _rainbow[i % 6]);
+    }
+    k.at(50, 34, () => k.rect(0, 0, 32, 54, 5, const Color(0xFF81D4FA)), sx: math.cos(open * math.pi * .45));
+    k.heart(66, 62, 9, const Color(0xFFE91E63));
     for (var i = 0; i < 3; i++) {
-      k.at(24 + i * 12.0, 30 + p.wave(.6, i / 3) * 3, () {
-        k.oval(0, 0, 5, 6, _rainbow[i * 2]);
-        k.stroke([const Offset(0, 6), const Offset(1, 16)], const Color(0xFF8D6E63), .8);
+      k.at(28 + i * 11.0, 24 + p.wave(.6, i / 3) * 3, () {
+        k.stroke([const Offset(0, 7), const Offset(1, 16)], const Color(0xFF8D6E63), .8);
+        k.oval(0, 0, 5.5, 7, _rainbow[i * 2]);
+        k.shine(-2, -3, 1.6, 2.6);
       });
     }
-    k.face(32, 64, 10, p);
+    k.face(34, 66, 11, p);
   }),
   'feast': (k, p) => k.alive(p, () {
     k.rect(8, 66, 84, 10, 4, const Color(0xFFC68B4E));
@@ -550,25 +556,26 @@ final Map<String, ToonPainter> thingToons = {
     () {
       for (var b = 0; b < 3; b++) {
         final d = p.cycle(.5, b / 3);
-        final o = Offset(26 + b * 24.0, 30 + (b % 2) * 18.0);
-        for (var i = 0; i < 10; i++) {
-          final a = i / 10 * math.pi * 2;
-          final r = d * 20;
-          k.c.drawCircle(
-            o + Offset(math.cos(a), math.sin(a)) * r,
-            2.4 * (1 - d) + .5,
-            Paint()..color = _rainbow[(i + b * 2) % 6].withValues(alpha: 1 - d * .8),
+        final o = Offset(28 + b * 22.0, 30 + (b % 2) * 18.0);
+        k.glow(o.dx, o.dy, 22 * d + 6, _rainbow[b * 2], .4 * (1 - d));
+        for (var i = 0; i < 12; i++) {
+          final a = i / 12 * math.pi * 2;
+          final r = d * 24;
+          k.stroke(
+            [o + Offset(math.cos(a), math.sin(a)) * r * .6, o + Offset(math.cos(a), math.sin(a)) * r],
+            _rainbow[(i + b * 2) % 6].withValues(alpha: 1 - d * .7),
+            2.6 * (1 - d) + .6,
           );
         }
-        k.star(o.dx, o.dy, 3 * (1 - d), Colors.white, line: false);
+        k.star(o.dx, o.dy, 5 * (1 - d) + 1, Colors.white, line: false);
       }
       final up = p.cycle(.8);
-      k.stroke([Offset(50, 96 - up * 30), Offset(50, 100 - up * 30)], const Color(0xFFFFEB3B), 2);
+      k.glow(50, 96 - up * 34, 6, const Color(0xFFFFEB3B), .9);
+      k.stroke([Offset(50, 96 - up * 34), Offset(50, 102 - up * 34)], const Color(0xFFFFEB3B), 2.4);
     },
     shadowW: 0,
     squash: 0,
   ),
-
   // ── اسباب‌بازی‌ها ──
   'bubbles': (k, p) => k.alive(p, () {
     k.at(30, 70, () {
@@ -693,9 +700,10 @@ final Map<String, ToonPainter> thingToons = {
       k.circle(50 + math.cos(a) * 18, 36 + math.sin(a) * 18 + 4, 6, const Color(0xFFFF8F00));
     }
     k.circle(50, 38, 16, const Color(0xFFFFE0B2));
+    // چشم‌های دکمه‌ای براق
     for (final s in <double>[-1, 1]) {
-      k.stroke([Offset(50 + s * 6 - 2, 34), Offset(50 + s * 6 + 2, 38)], const Color(0xFF3E2723), 1.4);
-      k.stroke([Offset(50 + s * 6 + 2, 34), Offset(50 + s * 6 - 2, 38)], const Color(0xFF3E2723), 1.4);
+      k.c.drawCircle(Offset(50 + s * 6, 36), 3.2 * (1 - p.blink * .85), Paint()..color = const Color(0xFF3E2723));
+      k.c.drawCircle(Offset(50 + s * 6 - 1, 35), .9, Paint()..color = Colors.white);
     }
     k.cheeks(50, 43, 20, 2.6);
     k.mouth(50, 46, 6, p);

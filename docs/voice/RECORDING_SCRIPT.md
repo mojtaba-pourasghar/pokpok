@@ -6,7 +6,7 @@
 
 - **شخصیت:** پوپو — روباه کوچولوی دختر؛ صدای دخترانه‌ی گرم، شاد و آرام، مناسب کودک ۲ تا ۸ سال
 - **مخاطب:** کودکان ۳ تا ۸ سال. آهسته‌تر از گفت‌وگوی معمولی، با مکث کوتاه بعد از هر جمله.
-- **تلفظ:** فارسی معیار و روشن، بدون لهجه‌ی غلیظ.
+- **تلفظ:** فارسی معیار و روشن، بدون لهجه‌ی غلیظ. ستون «با اعراب» تلفظ درست هر کلمه را نشان می‌دهد (کسره‌ی اضافه هم نوشته شده)؛ همان را بخوانید.
 - **ممنوع:** نام پاسخ درست را در پرسش‌ها با تأکید نگویید؛ در دلگرمی‌ها هیچ لحن سرزنش‌آمیزی نباشد.
 
 ## مشخصات فنی
@@ -16,543 +16,731 @@
 - تحویل نهایی (اسکریپت `tools/voice/import_recordings.sh` خودش می‌سازد): MP3 مونو 96 kbps، بلندی -16 LUFS، 80 میلی‌ثانیه سکوت اول و 150 میلی‌ثانیه آخر.
 - از هر جمله‌ی مهم دو برداشت ضبط کنید؛ بهترین را با همان نام تحویل دهید.
 
-تعداد کل جمله‌ها: **518**
+تعداد کل جمله‌ها: **622**
 
 ## صفحه‌ها و خوشامد
 
 *لحن:* گرم و صمیمی، با لبخند. آرام شروع کنید و انتهای جمله را بالا ببرید.
 
-| # | فایل | متن | کجا پخش می‌شود |
-|---|---|---|---|
-| 1 | `app_splash_welcome.mp3` | سلام! من پوپو هستم. ببین، لمس کن، کشف کن! | splash.shown |
-| 2 | `app_intro_1.mp3` | سلام دوست کوچولو! من پوپو هستم، یک روباه کوچولو که عاشق بازی است. | intro.page1 |
-| 3 | `app_intro_2.mp3` | هر چیزی را که دوست داری لمس کن. ببین چه اتفاقی می‌افتد! | intro.page2 |
-| 4 | `app_intro_3.mp3` | می‌توانی چیزها را بکشی و جابه‌جا کنی. بیا با هم دنیا را کشف کنیم! | intro.page3 |
-| 5 | `app_profiles_pick.mp3` | کی می‌خواهد بازی کند؟ عکس خودت را لمس کن. | profiles.shown |
-| 6 | `praise_1.mp3` | آفرین! | praise |
-| 7 | `praise_2.mp3` | چه عالی! | praise |
-| 8 | `praise_3.mp3` | تو فوق‌العاده‌ای! | praise |
-| 9 | `praise_4.mp3` | هورا! | praise |
-| 10 | `praise_5.mp3` | خیلی خوب بود! | praise |
-| 11 | `praise_6.mp3` | باریکلا! | praise |
-| 12 | `sticker_new.mp3` | یک برچسب تازه گرفتی! در دفتر خاطره‌هایت است. | sticker.earned |
-| 13 | `parent_ask.mp3` | این بخش برای بزرگ‌ترهاست. از مامان یا بابا کمک بگیر. | parent.gate |
-| 14 | `full_locked.mp3` | این‌جا مال نسخه‌ی کامله. از مامان یا بابا بخواه برات بازش کنن! | paywall.shown |
-| 15 | `notice_new.mp3` | یه خبر تازه داریم! بیا ببین. | notice.shown |
-| 16 | `c1_intro.mp3` | طوفان آشپزخانه‌ی خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده. بیا با هم آشپزی کنیم! | c1.intro |
-| 17 | `c1_film_1.mp3` | آب‌پرتقال شیرین و ترش | c1.film.1 |
-| 18 | `c1_film_2.mp3` | نان ترد و گرم | c1.film.2 |
-| 19 | `c1_film_3.mp3` | سوپ داغ و خوشمزه | c1.film.3 |
-| 20 | `c1_film_4.mp3` | و کیک تولد با شمع‌های روشن! | c1.film.4 |
-| 21 | `c1_next.mp3` | بانی در باغ تشنه است... بیا برویم پیشش! | c1.next |
-| 22 | `c1s1_mission.mp3` | خاله خرسی تشنه است. بیا برایش آب‌پرتقال درست کنیم! | c1s1.mission |
-| 23 | `c1s1_s1.mp3` | پرتقال‌های رسیده را از درخت بچین. | c1s1.s1 |
-| 24 | `c1s1_s2.mp3` | پرتقال را از وسط نصف کن. انگشتت را روی خط بکش. | c1s1.s2 |
-| 25 | `c1s1_s3.mp3` | پرتقال را روی آب‌گیری فشار بده! تند تند بزن. | c1s1.s3 |
-| 26 | `c1s1_s4.mp3` | حالا آب‌میوه را در لیوان بریز. تا خط پر کن، نه بیشتر! | c1s1.s4 |
-| 27 | `item_juice_made.mp3` | آفرین! آب‌پرتقال آماده شد! | item.juice.made |
-| 28 | `c1s2_mission.mp3` | برای ناهار نان لازم داریم. بیا نان بپزیم! | c1s2.mission |
-| 29 | `c1s2_s1.mp3` | آرد را در کاسه بریز. | c1s2.s1 |
-| 30 | `c1s2_s2.mp3` | کمی آب هم اضافه کن. | c1s2.s2 |
-| 31 | `c1s2_s3.mp3` | خمیر را ورز بده! با هر ضربه نرم‌تر می‌شود. | c1s2.s3 |
-| 32 | `c1s2_s4.mp3` | نان را در فر گذاشتیم. وقتی طلایی شد، بزن! | c1s2.s4 |
-| 33 | `item_bread_made.mp3` | آفرین! نان آماده شد! | item.bread.made |
-| 34 | `c1s3_mission.mp3` | باد سرد می‌آید. یک سوپ گرم بپزیم! | c1s3.mission |
-| 35 | `c1s3_s1.mp3` | سبزی‌های سالم را در سبد بگذار و خراب‌ها را در سطل. | c1s3.s1 |
-| 36 | `c1s3_s2.mp3` | هویج را خرد کن. | c1s3.s2 |
-| 37 | `c1s3_s3.mp3` | سه تکه هویج در قابلمه بینداز. | c1s3.s3 |
-| 38 | `c1s3_s4.mp3` | سوپ را هم بزن. انگشتت را دور قابلمه بچرخان. | c1s3.s4 |
-| 39 | `item_soup_made.mp3` | آفرین! سوپ سبزیجات آماده شد! | item.soup.made |
-| 40 | `c1s4_mission.mp3` | امروز تولد خاله خرسی است! بیا کیک بپزیم. | c1s4.mission |
-| 41 | `c1s4_s1.mp3` | تخم‌مرغ‌ها را بشکن. روی هر کدام بزن. | c1s4.s1 |
-| 42 | `c1s4_s2.mp3` | آرد را اضافه کن. | c1s4.s2 |
-| 43 | `c1s4_s3.mp3` | خوب هم بزن تا خمیر کیک صاف شود. | c1s4.s3 |
-| 44 | `c1s4_s4.mp3` | کیک را با رنگ‌های خوشمزه تزئین کن. | c1s4.s4 |
-| 45 | `c1s4_s5.mp3` | چهار شمع روی کیک بگذار. | c1s4.s5 |
-| 46 | `item_cake_made.mp3` | آفرین! کیک تولد آماده شد! | item.cake.made |
-| 47 | `c2_intro.mp3` | بانی تشنه است و باغش خشک شده. کمکش کنیم باغ دوباره سبز شود! | c2.intro |
-| 48 | `c2_film_1.mp3` | آب‌پاش، گل‌ها را سیراب کرد | c2.film.1 |
-| 49 | `c2_film_2.mp3` | گلدان گل، زنبورها را آورد | c2.film.2 |
-| 50 | `c2_film_3.mp3` | مرغ‌ها تخم گذاشتند | c2.film.3 |
-| 51 | `c2_film_4.mp3` | و ساندویچ پنیر برای پیک‌نیک! | c2.film.4 |
-| 52 | `c2_next.mp3` | کارگاه آقا سنجاب خراب شده... بیا کمکش کنیم! | c2.next |
-| 53 | `c2s1_mission.mp3` | بانی خیلی تشنه است و حرف نمی‌زند! اول یک چیزی برای نوشیدن بهش بده. | c2s1.mission |
-| 54 | `c2s1_s1.mp3` | از کوله‌پشتی چیزی بده که تشنگی را برطرف کند. | c2s1.s1 |
-| 55 | `c2s1_s1_done.mp3` | به به! بانی سرحال شد. | c2s1.s1.done |
-| 56 | `c2s1_s1_why.mp3` | این برای رفع تشنگی نیست. | c2s1.s1.why |
-| 57 | `c2s1_s2.mp3` | تکه‌های آب‌پاش را سر جایشان بگذار. | c2s1.s2 |
-| 58 | `c2s1_s3.mp3` | دسته‌ی چاه را بچرخان تا آب بالا بیاید. | c2s1.s3 |
-| 59 | `c2s1_s4.mp3` | آب‌پاش را پر کن. | c2s1.s4 |
-| 60 | `item_watering_can_made.mp3` | آفرین! آب‌پاش آماده شد! | item.watering_can.made |
-| 61 | `c2s2_mission.mp3` | بانی می‌خواهد یک گل قشنگ بکارد. | c2s2.mission |
-| 62 | `c2s2_s1.mp3` | خاک را با بیلچه بکن. | c2s2.s1 |
-| 63 | `c2s2_s2.mp3` | سه دانه در خاک بکار. | c2s2.s2 |
-| 64 | `c2s2_s3.mp3` | دانه‌ها تشنه‌اند! از کوله چیزی بیاور که با آن آب بدهیم. | c2s2.s3 |
-| 65 | `c2s2_s3_done.mp3` | آفرین! دانه‌ها آب خوردند. | c2s2.s3.done |
-| 66 | `c2s2_s3_why.mp3` | با این نمی‌شود آب داد. | c2s2.s3.why |
-| 67 | `c2s2_s4.mp3` | جوانه دارد بزرگ می‌شود... وقتی گل باز شد بزن! | c2s2.s4 |
-| 68 | `item_flower_pot_made.mp3` | آفرین! گلدان گل آماده شد! | item.flower_pot.made |
-| 69 | `c2s3_mission.mp3` | مرغ‌های بانی لانه ندارند و گم شده‌اند! | c2s3.mission |
-| 70 | `c2s3_s1.mp3` | کاه جمع کن. | c2s3.s1 |
-| 71 | `c2s3_s2.mp3` | کاه‌ها را در لانه بگذار. | c2s3.s2 |
-| 72 | `c2s3_s3.mp3` | مرغ‌های گم‌شده را پیدا کن. پشت بوته‌ها را ببین! | c2s3.s3 |
-| 73 | `item_eggs_made.mp3` | آفرین! تخم‌مرغ آماده شد! | item.eggs.made |
-| 74 | `c2s4_mission.mp3` | وقت پیک‌نیک است! یک ساندویچ خوشمزه درست کنیم. | c2s4.mission |
-| 75 | `c2s4_s1.mp3` | گاو را آرام بدوش. با هر ضربه شیر می‌آید. | c2s4.s1 |
-| 76 | `c2s4_s2.mp3` | شیر را هم بزن تا پنیر شود. | c2s4.s2 |
-| 77 | `c2s4_s3.mp3` | برای ساندویچ نان لازم داریم! از کوله بیاور. | c2s4.s3 |
-| 78 | `c2s4_s3_done.mp3` | نان رسید! | c2s4.s3.done |
-| 79 | `c2s4_s3_why.mp3` | این نان نیست. | c2s4.s3.why |
-| 80 | `c2s4_s4.mp3` | ساندویچ را لایه‌لایه بچین: نان، کاهو، پنیر، نان. | c2s4.s4 |
-| 81 | `item_sandwich_made.mp3` | آفرین! ساندویچ پنیر آماده شد! | item.sandwich.made |
-| 82 | `c3_intro.mp3` | طوفان کارگاه آقا سنجاب را خراب کرده و ابزارهایش پخش شده‌اند. بیا ابزار بسازیم! | c3.intro |
-| 83 | `c3_film_1.mp3` | چکش، میخ را فرو کرد: تق تق! | c3.film.1 |
-| 84 | `c3_film_2.mp3` | چراغ‌قوه تاریکی را روشن کرد | c3.film.2 |
-| 85 | `c3_film_3.mp3` | گاری جعبه‌ها را برد | c3.film.3 |
-| 86 | `c3_film_4.mp3` | و ماشین با کلید روشن شد: برووووم! | c3.film.4 |
-| 87 | `c3_next.mp3` | کوکو همه‌ی رنگ‌هایش را گم کرده... | c3.next |
-| 88 | `c3s1_mission.mp3` | آقا سنجاب چکشش را گم کرده. تکه‌هایش این‌جا پخش شده‌اند! | c3s1.mission |
-| 89 | `c3s1_s1.mp3` | سر چکش را در کارگاه شلوغ پیدا کن. | c3s1.s1 |
-| 90 | `c3s1_s2.mp3` | دسته‌ی چوبی را هم پیدا کن. | c3s1.s2 |
-| 91 | `c3s1_s3.mp3` | سر و دسته را به هم وصل کن. | c3s1.s3 |
-| 92 | `c3s1_s4.mp3` | پیچ را سفت کن. | c3s1.s4 |
-| 93 | `item_hammer_made.mp3` | آفرین! چکش آماده شد! | item.hammer.made |
-| 94 | `c3s2_mission.mp3` | گوشه‌ی کارگاه خیلی تاریک است! | c3s2.mission |
-| 95 | `c3s2_s1.mp3` | باتری‌ها را در چراغ‌قوه بگذار. | c3s2.s1 |
-| 96 | `c3s2_s2.mp3` | لامپ را بپیچان. | c3s2.s2 |
-| 97 | `c3s2_s3.mp3` | کلید را بزن! | c3s2.s3 |
-| 98 | `c3s2_s4.mp3` | با نور، جعبه‌های گم‌شده را در تاریکی پیدا کن. | c3s2.s4 |
-| 99 | `item_flashlight_made.mp3` | آفرین! چراغ‌قوه آماده شد! | item.flashlight.made |
-| 100 | `c3s3_mission.mp3` | جعبه‌ها خیلی سنگین‌اند. یک گاری لازم داریم! | c3s3.mission |
-| 101 | `c3s3_s1.mp3` | تخته‌ها باید با میخ به هم وصل شوند. چه وسیله‌ای لازم است؟ | c3s3.s1 |
-| 102 | `c3s3_s1_done.mp3` | تق تق! تخته‌ها وصل شدند. | c3s3.s1.done |
-| 103 | `c3s3_s1_why.mp3` | با این نمی‌شود میخ زد. | c3s3.s1.why |
-| 104 | `c3s3_s2.mp3` | میخ‌ها را با چکش بکوب! | c3s3.s2 |
-| 105 | `c3s3_s3.mp3` | دو چرخ به گاری وصل کن. | c3s3.s3 |
-| 106 | `item_cart_made.mp3` | آفرین! گاری آماده شد! | item.cart.made |
-| 107 | `c3s4_mission.mp3` | آقا سنجاب یک ماشین قدیمی دارد. بیا درستش کنیم! | c3s4.mission |
-| 108 | `c3s4_s1.mp3` | چهار چرخ به ماشین وصل کن. بشمار! | c3s4.s1 |
-| 109 | `c3s4_s2.mp3` | ماشین را رنگ کن. | c3s4.s2 |
-| 110 | `c3s4_s3.mp3` | کلید را بچرخان تا ماشین روشن شود! | c3s4.s3 |
-| 111 | `item_toy_car_made.mp3` | آفرین! ماشین اسباب‌بازی آماده شد! | item.toy_car.made |
-| 112 | `c4_intro.mp3` | کوکو همه‌ی رنگ‌هایش را در طوفان گم کرده و تزئینات جشن بی‌رنگ مانده‌اند. | c4.intro |
-| 113 | `c4_film_1.mp3` | قرمز و زرد، نارنجی شد! | c4.film.1 |
-| 114 | `c4_film_2.mp3` | کاسه‌ی گلی آب را نگه داشت | c4.film.2 |
-| 115 | `c4_film_3.mp3` | فانوس با لامپ چراغ‌قوه روشن شد | c4.film.3 |
-| 116 | `c4_film_4.mp3` | و ماسک‌ها و پرچم‌ها رنگی شدند! | c4.film.4 |
-| 117 | `c4_next.mp3` | مادربزرگ جغد راه خانه‌اش را در شب گم کرده... | c4.next |
-| 118 | `c4s1_mission.mp3` | اول یک قلم‌مو و رنگ می‌خواهیم! | c4s1.mission |
-| 119 | `c4s1_s1.mp3` | موهای قلم‌مو را به دسته وصل کن. | c4s1.s1 |
-| 120 | `c4s1_s2.mp3` | قرمز و زرد را با هم مخلوط کن. چه رنگی شد؟ | c4s1.s2 |
-| 121 | `c4s1_s3.mp3` | حالا آبی و زرد! | c4s1.s3 |
-| 122 | `item_paints_made.mp3` | آفرین! رنگ‌ها آماده شد! | item.paints.made |
-| 123 | `c4s2_mission.mp3` | کوکو یک کاسه برای آب رنگ‌ها می‌خواهد. | c4s2.mission |
-| 124 | `c4s2_s1.mp3` | گل رس خشک است! با چه خیسش کنیم؟ | c4s2.s1 |
-| 125 | `c4s2_s1_done.mp3` | شُر شُر! گل نرم شد. | c4s2.s1.done |
-| 126 | `c4s2_s1_why.mp3` | با این نمی‌شود خیس کرد. | c4s2.s1.why |
-| 127 | `c4s2_s2.mp3` | گل را ورز بده. | c4s2.s2 |
-| 128 | `c4s2_s3.mp3` | چرخ سفالگری را بچرخان تا کاسه شکل بگیرد. | c4s2.s3 |
-| 129 | `c4s2_s4.mp3` | کاسه را رنگ کن. | c4s2.s4 |
-| 130 | `item_clay_bowl_made.mp3` | آفرین! کاسه‌ی گلی آماده شد! | item.clay_bowl.made |
-| 131 | `c4s3_mission.mp3` | برای شب جشن فانوس رنگی لازم داریم. | c4s3.mission |
-| 132 | `c4s3_s1.mp3` | کاغذ را روی خط‌ها ببُر. | c4s3.s1 |
-| 133 | `c4s3_s2.mp3` | فانوس را رنگ کن. | c4s3.s2 |
-| 134 | `c4s3_s3.mp3` | فانوس نور ندارد! چه چیزی لامپ دارد؟ | c4s3.s3 |
-| 135 | `c4s3_s3_done.mp3` | روشن شد! چه قشنگ. | c4s3.s3.done |
-| 136 | `c4s3_s3_why.mp3` | این نور ندارد. | c4s3.s3.why |
-| 137 | `item_lantern_made.mp3` | آفرین! فانوس آماده شد! | item.lantern.made |
-| 138 | `c4s4_mission.mp3` | برای جشن ماسک و پرچم درست کنیم! | c4s4.mission |
-| 139 | `c4s4_s1.mp3` | ماسک را با قیچی ببُر. | c4s4.s1 |
-| 140 | `c4s4_s2.mp3` | ماسک را رنگ کن. | c4s4.s2 |
-| 141 | `c4s4_s3.mp3` | پنج پرچم به نخ آویزان کن. | c4s4.s3 |
-| 142 | `item_mask_made.mp3` | آفرین! ماسک آماده شد! | item.mask.made |
-| 143 | `c5_intro.mp3` | مادربزرگ جغد راه خانه‌اش را در جنگلِ شب گم کرده. نترس، با هم پیدایش می‌کنیم! | c5.intro |
-| 144 | `c5_film_1.mp3` | نقشه راه را نشان داد | c5.film.1 |
-| 145 | `c5_film_2.mp3` | چادر ما را از باران حفظ کرد | c5.film.2 |
-| 146 | `c5_film_3.mp3` | کرم‌های شب‌تاب مسیر را روشن کردند | c5.film.3 |
-| 147 | `c5_film_4.mp3` | و با تلسکوپ ماه را دیدیم! | c5.film.4 |
-| 148 | `c5_next.mp3` | سازهای گروه میمی شکسته‌اند... | c5.next |
-| 149 | `c5s1_mission.mp3` | تکه‌های نقشه در باد پخش شده‌اند! | c5s1.mission |
-| 150 | `c5s1_s1.mp3` | تکه‌های نقشه را کنار هم بچین. | c5s1.s1 |
-| 151 | `c5s1_s2.mp3` | با انگشت راه را از خانه‌ی جغد تا درخت بزرگ دنبال کن. | c5s1.s2 |
-| 152 | `item_map_made.mp3` | آفرین! نقشه‌ی جنگل آماده شد! | item.map.made |
-| 153 | `c5s2_mission.mp3` | باران دارد می‌آید! یک چادر بزنیم. | c5s2.mission |
-| 154 | `c5s2_s1.mp3` | پارچه و ستون‌های چادر را سر جایشان بگذار. | c5s2.s1 |
-| 155 | `c5s2_s2.mp3` | میخ‌های چادر را با چه بکوبیم؟ | c5s2.s2 |
-| 156 | `c5s2_s2_done.mp3` | تق تق! چادر محکم شد. | c5s2.s2.done |
-| 157 | `c5s2_s2_why.mp3` | با این نمی‌شود میخ زد. | c5s2.s2.why |
-| 158 | `c5s2_s3.mp3` | همه‌ی میخ‌ها را بکوب. | c5s2.s3 |
-| 159 | `item_tent_made.mp3` | آفرین! چادر آماده شد! | item.tent.made |
-| 160 | `c5s3_mission.mp3` | مسیر خیلی تاریک است و مادربزرگ سردش است. | c5s3.mission |
-| 161 | `c5s3_s1.mp3` | با چه چیزی تاریکی را روشن کنیم؟ | c5s3.s1 |
-| 162 | `c5s3_s1_done.mp3` | روشن شد! | c5s3.s1.done |
-| 163 | `c5s3_s1_why.mp3` | این نور ندارد. | c5s3.s1.why |
-| 164 | `c5s3_s2.mp3` | کرم‌های شب‌تاب را در تاریکی پیدا کن و در شیشه بگذار. | c5s3.s2 |
-| 165 | `c5s3_s3.mp3` | مادربزرگ جغد سردش است. از کوله چیزی بده که گرمش کند. | c5s3.s3 |
-| 166 | `c5s3_s3_done.mp3` | آخیش! گرم شدم، ممنون عزیزم. | c5s3.s3.done |
-| 167 | `c5s3_s3_why.mp3` | این گرم نمی‌کند. | c5s3.s3.why |
-| 168 | `item_firefly_jar_made.mp3` | آفرین! شیشه‌ی کرم شب‌تاب آماده شد! | item.firefly_jar.made |
-| 169 | `c5s4_mission.mp3` | مادربزرگ جغد می‌خواهد ستاره‌ها را نشانت بدهد. | c5s4.mission |
-| 170 | `c5s4_s1.mp3` | مقوا را لوله کن. | c5s4.s1 |
-| 171 | `c5s4_s2.mp3` | عدسی‌ها را از بزرگ به کوچک بگذار. | c5s4.s2 |
-| 172 | `c5s4_s3.mp3` | تلسکوپ را تنظیم کن تا تصویر واضح شود. | c5s4.s3 |
-| 173 | `item_telescope_made.mp3` | آفرین! تلسکوپ آماده شد! | item.telescope.made |
-| 174 | `c6_intro.mp3` | میمی می‌خواهد در جشن بخواند، اما سازهای گروه در طوفان شکسته‌اند. | c6.intro |
-| 175 | `c6_film_1.mp3` | طبل: بوم بوم! | c6.film.1 |
-| 176 | `c6_film_2.mp3` | زایلوفون: زیر و بم | c6.film.2 |
-| 177 | `c6_film_3.mp3` | نی: فووو | c6.film.3 |
-| 178 | `c6_film_4.mp3` | و آهنگ جشن با همه‌ی سازها! | c6.film.4 |
-| 179 | `c6_next.mp3` | پل شهر شکسته و اتوبوس لاکی خراب است... | c6.next |
-| 180 | `c6s1_mission.mp3` | اول یک طبل محکم بسازیم! | c6s1.mission |
-| 181 | `c6s1_s1.mp3` | برای بدنه‌ی طبل یک کاسه لازم داریم. | c6s1.s1 |
-| 182 | `c6s1_s1_done.mp3` | این کاسه عالی است! | c6s1.s1.done |
-| 183 | `c6s1_s1_why.mp3` | این کاسه نیست. | c6s1.s1.why |
-| 184 | `c6s1_s2.mp3` | پوست طبل را روی کاسه بکش. | c6s1.s2 |
-| 185 | `c6s1_s3.mp3` | طناب‌ها را سفت کن. هر بار بزن! | c6s1.s3 |
-| 186 | `item_drum_made.mp3` | آفرین! طبل آماده شد! | item.drum.made |
-| 187 | `c6s2_mission.mp3` | زایلوفون تیغه‌های رنگی دارد. | c6s2.mission |
-| 188 | `c6s2_s1.mp3` | تیغه‌ها را از بلند به کوتاه بچین. | c6s2.s1 |
-| 189 | `c6s2_s2.mp3` | تیغه‌ها با میخ به پایه وصل می‌شوند. چه وسیله‌ای لازم است؟ | c6s2.s2 |
-| 190 | `c6s2_s2_done.mp3` | تق تق! | c6s2.s2.done |
-| 191 | `c6s2_s2_why.mp3` | با این نمی‌شود میخ زد. | c6s2.s2.why |
-| 192 | `c6s2_s3.mp3` | آهنگ میمی را تکرار کن! | c6s2.s3 |
-| 193 | `item_xylophone_made.mp3` | آفرین! زایلوفون آماده شد! | item.xylophone.made |
-| 194 | `c6s3_mission.mp3` | نی صدای پرنده‌ها را دارد. | c6s3.mission |
-| 195 | `c6s3_s1.mp3` | نی را ببُر. | c6s3.s1 |
-| 196 | `c6s3_s2.mp3` | جای سوراخ‌ها را لمس کن. | c6s3.s2 |
-| 197 | `c6s3_s3.mp3` | فوت کن... حالا بزن! | c6s3.s3 |
-| 198 | `item_flute_made.mp3` | آفرین! نی آماده شد! | item.flute.made |
-| 199 | `c6s4_mission.mp3` | با سازهایی که ساختی آهنگ جشن را بسازیم! | c6s4.mission |
-| 200 | `c6s4_s1.mp3` | آهنگ را تکرار کن. اول گوش کن! | c6s4.s1 |
-| 201 | `item_song_made.mp3` | آفرین! آهنگ جشن آماده شد! | item.song.made |
-| 202 | `c7_intro.mp3` | پل شهر شکسته و اتوبوس لاکی خراب شده. هیچ‌کس نمی‌تواند به جشن برسد! | c7.intro |
-| 203 | `c7_film_1.mp3` | پل دوباره ساخته شد | c7.film.1 |
-| 204 | `c7_film_2.mp3` | چراغ راهنمایی: قرمز بایست، سبز برو | c7.film.2 |
-| 205 | `c7_film_3.mp3` | اتوبوس روشن شد: بوق بوق! | c7.film.3 |
-| 206 | `c7_film_4.mp3` | و همه کارت دعوت گرفتند! | c7.film.4 |
-| 207 | `c7_next.mp3` | همه آماده‌اند... وقت جشن بزرگ است! | c7.next |
-| 208 | `c7s1_mission.mp3` | پل شکسته! ماشین‌ها نمی‌توانند رد شوند. | c7s1.mission |
-| 209 | `c7s1_s1.mp3` | تخته‌ها سنگین‌اند. با چه بیاوریمشان؟ | c7s1.s1 |
-| 210 | `c7s1_s1_done.mp3` | گاری تخته‌ها را آورد! | c7s1.s1.done |
-| 211 | `c7s1_s1_why.mp3` | این بار نمی‌برد. | c7s1.s1.why |
-| 212 | `c7s1_s2.mp3` | تخته‌ها را در جاهای خالی پل بگذار. | c7s1.s2 |
-| 213 | `c7s1_s3.mp3` | تخته‌ها را با چه محکم کنیم؟ | c7s1.s3 |
-| 214 | `c7s1_s3_done.mp3` | تق تق! پل محکم شد. | c7s1.s3.done |
-| 215 | `c7s1_s3_why.mp3` | با این نمی‌شود میخ زد. | c7s1.s3.why |
-| 216 | `item_bridge_made.mp3` | آفرین! پل آماده شد! | item.bridge.made |
-| 217 | `c7s2_mission.mp3` | چراغ راهنمایی خاموش است و ماشین‌ها گیج شده‌اند. | c7s2.mission |
-| 218 | `c7s2_s1.mp3` | چراغ‌ها را به ترتیب بچین: قرمز، زرد، سبز. | c7s2.s1 |
-| 219 | `c7s2_s2.mp3` | رنگ چراغ‌ها رفته! چه چیزی رنگ دارد؟ | c7s2.s2 |
-| 220 | `c7s2_s2_done.mp3` | رنگی شد! | c7s2.s2.done |
-| 221 | `c7s2_s2_why.mp3` | این رنگ ندارد. | c7s2.s2.why |
-| 222 | `c7s2_s3.mp3` | چراغ را عوض کن: قرمز، زرد، سبز! | c7s2.s3 |
-| 223 | `item_traffic_light_made.mp3` | آفرین! چراغ راهنمایی آماده شد! | item.traffic_light.made |
-| 224 | `c7s3_mission.mp3` | اتوبوس لاکی پنچر و کثیف و بی‌بنزین است! | c7s3.mission |
-| 225 | `c7s3_s1.mp3` | پیچ‌های لاستیک نو را ببند. | c7s3.s1 |
-| 226 | `c7s3_s2.mp3` | اتوبوس را بشور. گل‌ها را پاک کن! | c7s3.s2 |
-| 227 | `c7s3_s3.mp3` | باک را پر کن. | c7s3.s3 |
-| 228 | `c7s3_s4.mp3` | حالا روشنش کن! | c7s3.s4 |
-| 229 | `item_bus_made.mp3` | آفرین! اتوبوس آماده شد! | item.bus.made |
-| 230 | `c7s4_mission.mp3` | باید همه را به جشن دعوت کنیم! | c7s4.mission |
-| 231 | `c7s4_s1.mp3` | عکس دوستان را روی کارت درست کن. | c7s4.s1 |
-| 232 | `c7s4_s2.mp3` | نامه‌ها را در صندوق بینداز. | c7s4.s2 |
-| 233 | `c7s4_s3.mp3` | خانه‌ها دورند. با چه نامه‌ها را برسانیم؟ | c7s4.s3 |
-| 234 | `c7s4_s3_done.mp3` | برووووم! نامه‌ها رسیدند. | c7s4.s3.done |
-| 235 | `c7s4_s3_why.mp3` | این حرکت نمی‌کند. | c7s4.s3.why |
-| 236 | `c7s4_s4.mp3` | ماشین را در مسیر بران. | c7s4.s4 |
-| 237 | `item_invitation_made.mp3` | آفرین! کارت دعوت آماده شد! | item.invitation.made |
-| 238 | `c8_intro.mp3` | همه‌چیز آماده است! با چیزهایی که ساختی جشن بزرگ جنگل را برپا کنیم. | c8.intro |
-| 239 | `c8_film_1.mp3` | میز جشن پر از غذاهای تو | c8.film.1 |
-| 240 | `c8_film_2.mp3` | میدان با فانوس و پرچم‌های تو | c8.film.2 |
-| 241 | `c8_film_3.mp3` | کنسرت با سازهای تو | c8.film.3 |
-| 242 | `c8_film_4.mp3` | و تو قهرمان جنگل شدی! | c8.film.4 |
-| 243 | `c8s1_mission.mp3` | مهمان‌ها گرسنه‌اند! هر کدام غذای دلخواهش را می‌خواهد. | c8s1.mission |
-| 244 | `c8s1_s1.mp3` | به هر مهمان غذای دلخواهش را بده. | c8s1.s1 |
-| 245 | `item_feast_made.mp3` | آفرین! میز جشن آماده شد! | item.feast.made |
-| 246 | `c8s2_mission.mp3` | میدان جشن را قشنگ کنیم! | c8s2.mission |
-| 247 | `c8s2_s1.mp3` | هر تزئین را به دوستی بده که می‌خواهد. | c8s2.s1 |
-| 248 | `c8s2_s2.mp3` | پرچم‌ها را آویزان کن. | c8s2.s2 |
-| 249 | `item_decorations_made.mp3` | آفرین! تزئینات جشن آماده شد! | item.decorations.made |
-| 250 | `c8s3_mission.mp3` | وقت کنسرت میمی است! | c8s3.mission |
-| 251 | `c8s3_s1.mp3` | سازها را به نوازنده‌ها بده. | c8s3.s1 |
-| 252 | `c8s3_s2.mp3` | با گروه بنواز! | c8s3.s2 |
-| 253 | `item_concert_made.mp3` | آفرین! کنسرت جشن آماده شد! | item.concert.made |
-| 254 | `c8s4_mission.mp3` | آخرین کار: مهمان‌ها را بیاوریم و آتش‌بازی کنیم! | c8s4.mission |
-| 255 | `c8s4_s1.mp3` | مهمان‌ها دورند. با چه بیاوریمشان؟ | c8s4.s1 |
-| 256 | `c8s4_s1_done.mp3` | بوق بوق! همه رسیدند. | c8s4.s1.done |
-| 257 | `c8s4_s1_why.mp3` | این همه را نمی‌آورد. | c8s4.s1.why |
-| 258 | `c8s4_s2.mp3` | برای دیدن نمایش ستاره‌ها چه لازم است؟ | c8s4.s2 |
-| 259 | `c8s4_s2_done.mp3` | وای! ستاره‌ها! | c8s4.s2.done |
-| 260 | `c8s4_s2_why.mp3` | با این نمی‌شود دور را دید. | c8s4.s2.why |
-| 261 | `c8s4_s3.mp3` | آتش‌بازی کن! روی آسمان بزن. | c8s4.s3 |
-| 262 | `item_medal_made.mp3` | آفرین! مدال قهرمان جنگل آماده شد! | item.medal.made |
-| 263 | `k_bubbles_mission.mp3` | بیا یک حباب‌ساز بسازیم! | k_bubbles.mission |
-| 264 | `k_bubbles_s1.mp3` | صابون را در کاسه بریز. | k_bubbles.s1 |
-| 265 | `k_bubbles_s2.mp3` | هم بزن. | k_bubbles.s2 |
-| 266 | `k_bubbles_s3.mp3` | حباب‌ها را بترکان! | k_bubbles.s3 |
-| 267 | `item_bubbles_made.mp3` | آفرین! حباب‌ساز آماده شد! | item.bubbles.made |
-| 268 | `k_necklace_mission.mp3` | یک گردنبند رنگی بسازیم. | k_necklace.mission |
-| 269 | `k_necklace_s1.mp3` | مهره‌ها را به نخ بکش. | k_necklace.s1 |
-| 270 | `k_necklace_s2.mp3` | مهره‌ها را رنگ کن. | k_necklace.s2 |
-| 271 | `item_necklace_made.mp3` | آفرین! گردنبند مهره‌ای آماده شد! | item.necklace.made |
-| 272 | `k_kite_mission.mp3` | روز بادی است! بادبادک بسازیم. | k_kite.mission |
-| 273 | `k_kite_s1.mp3` | کاغذ بادبادک را ببُر. | k_kite.s1 |
-| 274 | `k_kite_s2.mp3` | بادبادک را رنگ کن. | k_kite.s2 |
-| 275 | `k_kite_s3.mp3` | بادبادک را در باد بالا ببر. | k_kite.s3 |
-| 276 | `item_kite_made.mp3` | آفرین! بادبادک آماده شد! | item.kite.made |
-| 277 | `k_robot_mission.mp3` | یک ربات دوست بسازیم! | k_robot.mission |
-| 278 | `k_robot_s1.mp3` | سر و بدنه‌ی ربات را وصل کن. | k_robot.s1 |
-| 279 | `k_robot_s2.mp3` | باتری‌ها را بگذار. | k_robot.s2 |
-| 280 | `k_robot_s3.mp3` | ربات را رنگ کن. | k_robot.s3 |
-| 281 | `k_robot_s4.mp3` | ربات را تا گل راه ببر. | k_robot.s4 |
-| 282 | `item_robot_made.mp3` | آفرین! ربات آماده شد! | item.robot.made |
-| 283 | `k_dollhouse_mission.mp3` | یک خانه‌ی کوچک برای عروسک‌ها! | k_dollhouse.mission |
-| 284 | `k_dollhouse_s1.mp3` | اتاق‌ها را روی هم بچین. | k_dollhouse.s1 |
-| 285 | `k_dollhouse_s2.mp3` | دیوارها را رنگ کن. | k_dollhouse.s2 |
-| 286 | `k_dollhouse_s3.mp3` | چراغ اتاق‌ها را روشن کن. | k_dollhouse.s3 |
-| 287 | `item_dollhouse_made.mp3` | آفرین! خانه‌ی عروسکی آماده شد! | item.dollhouse.made |
-| 288 | `k_rocket_mission.mp3` | به فضا برویم! | k_rocket.mission |
-| 289 | `k_rocket_s1.mp3` | بدنه‌ی موشک را بگذار. | k_rocket.s1 |
-| 290 | `k_rocket_s2.mp3` | موشک را رنگ کن. | k_rocket.s2 |
-| 291 | `k_rocket_s3.mp3` | شمارش معکوس: ستاره‌ها را از بزرگ به کوچک بزن! | k_rocket.s3 |
-| 292 | `k_rocket_s4.mp3` | در فضا ستاره جمع کن. | k_rocket.s4 |
-| 293 | `item_rocket_made.mp3` | آفرین! موشک آماده شد! | item.rocket.made |
-| 294 | `k_submarine_mission.mp3` | زیر دریا چه خبر است؟ | k_submarine.mission |
-| 295 | `k_submarine_s1.mp3` | پنجره‌ی زیردریایی را بگذار. | k_submarine.s1 |
-| 296 | `k_submarine_s2.mp3` | زیردریایی را رنگ کن. | k_submarine.s2 |
-| 297 | `k_submarine_s3.mp3` | با چراغ زیردریایی ماهی‌ها را پیدا کن. | k_submarine.s3 |
-| 298 | `item_submarine_made.mp3` | آفرین! زیردریایی آماده شد! | item.submarine.made |
-| 299 | `k_train_mission.mp3` | چووو چووو! یک قطار بسازیم. | k_train.mission |
-| 300 | `k_train_s1.mp3` | ریل‌ها را بچین. | k_train.s1 |
-| 301 | `k_train_s2.mp3` | چرخ‌های قطار را بگذار. | k_train.s2 |
-| 302 | `k_train_s3.mp3` | قطار را رنگ کن. | k_train.s3 |
-| 303 | `k_train_s4.mp3` | قطار را روی ریل ببر. | k_train.s4 |
-| 304 | `item_train_made.mp3` | آفرین! قطار آماده شد! | item.train.made |
-| 305 | `tool_magnifier_safety.mp3` | ذره‌بین را هیچ‌وقت رو به خورشید نگیر. | tool.magnifier.safety |
-| 306 | `r_bug_book_mission.mp3` | با ذره‌بین حشره‌ها را پیدا کنیم! | r_bug_book.mission |
-| 307 | `r_bug_book_s1.mp3` | حشره‌های کوچک را با ذره‌بین پیدا کن. | r_bug_book.s1 |
-| 308 | `item_bug_book_made.mp3` | آفرین! دفترچه‌ی حشره‌ها آماده شد! | item.bug_book.made |
-| 309 | `tool_saw_safety.mp3` | با اره همیشه با یک بزرگ‌تر کار می‌کنیم. | tool.saw.safety |
-| 310 | `r_bird_house_mission.mp3` | برای پرنده‌ها خانه بسازیم. | r_bird_house.mission |
-| 311 | `r_bird_house_s1.mp3` | تخته را با اره ببُر. | r_bird_house.s1 |
-| 312 | `r_bird_house_s2.mp3` | دیوارها را بچین. | r_bird_house.s2 |
-| 313 | `r_bird_house_s3.mp3` | خانه را رنگ کن. | r_bird_house.s3 |
-| 314 | `item_bird_house_made.mp3` | آفرین! خانه‌ی پرنده آماده شد! | item.bird_house.made |
-| 315 | `tool_glue_gun_safety.mp3` | سر چسب‌تفنگی داغ است؛ به آن دست نمی‌زنیم. | tool.glue_gun.safety |
-| 316 | `r_photo_frame_mission.mp3` | یک قاب برای عکس یادگاری! | r_photo_frame.mission |
-| 317 | `r_photo_frame_s1.mp3` | ستاره‌ها را دور قاب بچسبان. | r_photo_frame.s1 |
-| 318 | `r_photo_frame_s2.mp3` | قاب را رنگ کن. | r_photo_frame.s2 |
-| 319 | `item_photo_frame_made.mp3` | آفرین! قاب عکس آماده شد! | item.photo_frame.made |
-| 320 | `tool_big_oven_safety.mp3` | در فر داغ است؛ با دستکش بازش می‌کنیم. | tool.big_oven.safety |
-| 321 | `r_pizza_mission.mp3` | بیا پیتزا بپزیم! | r_pizza.mission |
-| 322 | `r_pizza_s1.mp3` | گوجه‌ها را روی خمیر بگذار. | r_pizza.s1 |
-| 323 | `r_pizza_s2.mp3` | پنیر بریز. | r_pizza.s2 |
-| 324 | `r_pizza_s3.mp3` | وقتی پنیر آب شد بزن! | r_pizza.s3 |
-| 325 | `item_pizza_made.mp3` | آفرین! پیتزا آماده شد! | item.pizza.made |
-| 326 | `r_cookie_mission.mp3` | کلوچه‌ی تازه! | r_cookie.mission |
-| 327 | `r_cookie_s1.mp3` | خمیر کلوچه را هم بزن. | r_cookie.s1 |
-| 328 | `r_cookie_s2.mp3` | وقتی طلایی شد بزن! | r_cookie.s2 |
-| 329 | `item_cookie_made.mp3` | آفرین! کلوچه آماده شد! | item.cookie.made |
-| 330 | `tool_sewing_machine_safety.mp3` | انگشت‌ها را از سوزن دور نگه می‌داریم. | tool.sewing_machine.safety |
-| 331 | `r_rag_doll_mission.mp3` | یک عروسک نرم بدوزیم. | r_rag_doll.mission |
-| 332 | `r_rag_doll_s1.mp3` | پدال را بزن تا چرخ بدوزد: تق تق تق! | r_rag_doll.s1 |
-| 333 | `r_rag_doll_s2.mp3` | لباس عروسک را رنگ کن. | r_rag_doll.s2 |
-| 334 | `item_rag_doll_made.mp3` | آفرین! عروسک پارچه‌ای آماده شد! | item.rag_doll.made |
-| 335 | `tool_drill_safety.mp3` | دریل را فقط بزرگ‌ترها روشن می‌کنند و ما کمک می‌کنیم. | tool.drill.safety |
-| 336 | `r_windmill_mission.mp3` | یک آسیاب بادی بسازیم. | r_windmill.mission |
-| 337 | `r_windmill_s1.mp3` | با دریل سوراخ کن. | r_windmill.s1 |
-| 338 | `r_windmill_s2.mp3` | پره‌ها را وصل کن. | r_windmill.s2 |
-| 339 | `r_windmill_s3.mp3` | فوت کن تا بچرخد! | r_windmill.s3 |
-| 340 | `item_windmill_made.mp3` | آفرین! آسیاب بادی آماده شد! | item.windmill.made |
-| 341 | `tool_wrench_safety.mp3` | آچار را محکم و آرام می‌چرخانیم. | tool.wrench.safety |
-| 342 | `r_bicycle_mission.mp3` | یک دوچرخه برای پوپو! | r_bicycle.mission |
-| 343 | `r_bicycle_s1.mp3` | چرخ‌ها را وصل کن. | r_bicycle.s1 |
-| 344 | `r_bicycle_s2.mp3` | پیچ‌ها را با آچار سفت کن. | r_bicycle.s2 |
-| 345 | `r_bicycle_s3.mp3` | دوچرخه را رنگ کن. | r_bicycle.s3 |
-| 346 | `item_bicycle_made.mp3` | آفرین! دوچرخه آماده شد! | item.bicycle.made |
-| 347 | `tool_magnet_safety.mp3` | آهن‌ربا را نزدیک گوشی و تلویزیون نمی‌بریم. | tool.magnet.safety |
-| 348 | `r_magnet_fish_mission.mp3` | بیا ماهیگیری کنیم! | r_magnet_fish.mission |
-| 349 | `r_magnet_fish_s1.mp3` | چیزهایی که آهن‌ربا می‌کشد را جدا کن. | r_magnet_fish.s1 |
-| 350 | `r_magnet_fish_s2.mp3` | ماهی‌های آهنی را بگیر! | r_magnet_fish.s2 |
-| 351 | `item_magnet_fish_made.mp3` | آفرین! ماهیگیری آهن‌ربایی آماده شد! | item.magnet_fish.made |
-| 352 | `item_juice_use.mp3` | آب‌میوه تشنگی را برطرف می‌کند و ویتامین دارد. | item.juice.use |
-| 353 | `item_juice_quiz.mp3` | با آب‌میوه چه کار می‌کنیم؟ | item.juice.quiz |
-| 354 | `item_juice_taste.mp3` | مزه‌اش شیرین و کمی ترش است! | item.juice.taste |
-| 355 | `item_bread_use.mp3` | نان غذای هر روز ماست؛ با آن ساندویچ هم درست می‌کنیم. | item.bread.use |
-| 356 | `item_bread_quiz.mp3` | نان را کی می‌خوریم؟ | item.bread.quiz |
-| 357 | `item_bread_taste.mp3` | مزه‌اش ترد و گرم است! | item.bread.taste |
-| 358 | `item_soup_use.mp3` | سوپ گرم، وقتی سردمان است بدن را گرم می‌کند. | item.soup.use |
-| 359 | `item_soup_quiz.mp3` | سوپ گرم به درد کی می‌خورد؟ | item.soup.quiz |
-| 360 | `item_soup_taste.mp3` | مزه‌اش شور و داغ است! | item.soup.taste |
-| 361 | `item_cake_use.mp3` | کیک برای جشن و تولد است؛ شمع‌ها را فوت می‌کنیم. | item.cake.use |
-| 362 | `item_cake_quiz.mp3` | کیک تولد برای چیست؟ | item.cake.quiz |
-| 363 | `item_cake_taste.mp3` | مزه‌اش شیرین است! | item.cake.taste |
-| 364 | `item_watering_can_use.mp3` | با آب‌پاش به گل‌ها و گیاه‌ها آب می‌دهیم. | item.watering_can.use |
-| 365 | `item_watering_can_quiz.mp3` | با آب‌پاش چه کار می‌کنیم؟ | item.watering_can.quiz |
-| 366 | `item_flower_pot_use.mp3` | گل بوی خوش دارد و زنبورها از آن شهد می‌گیرند. | item.flower_pot.use |
-| 367 | `item_flower_pot_quiz.mp3` | کی سراغ گل می‌آید؟ | item.flower_pot.quiz |
-| 368 | `item_flower_pot_taste.mp3` | مزه‌اش خوش‌بو است! | item.flower_pot.taste |
-| 369 | `item_eggs_use.mp3` | مرغ تخم می‌گذارد؛ با تخم‌مرغ کیک و نیمرو درست می‌کنیم. | item.eggs.use |
-| 370 | `item_eggs_quiz.mp3` | تخم‌مرغ از کجا می‌آید؟ | item.eggs.quiz |
-| 371 | `item_eggs_taste.mp3` | مزه‌اش پخته‌اش خوشمزه است است! | item.eggs.taste |
-| 372 | `item_sandwich_use.mp3` | ساندویچ یک غذای کامل و راحت برای پیک‌نیک است. | item.sandwich.use |
-| 373 | `item_sandwich_quiz.mp3` | ساندویچ را با چه درست کردیم؟ | item.sandwich.quiz |
-| 374 | `item_sandwich_taste.mp3` | مزه‌اش نرم و شور است! | item.sandwich.taste |
-| 375 | `item_hammer_use.mp3` | با چکش میخ را در چوب فرو می‌کنیم تا تکه‌ها به هم بچسبند. | item.hammer.use |
-| 376 | `item_hammer_quiz.mp3` | با چکش چه کار می‌کنیم؟ | item.hammer.quiz |
-| 377 | `item_flashlight_use.mp3` | چراغ‌قوه در تاریکی راه را روشن می‌کند. | item.flashlight.use |
-| 378 | `item_flashlight_quiz.mp3` | چراغ‌قوه کجا به کار می‌آید؟ | item.flashlight.quiz |
-| 379 | `item_cart_use.mp3` | با گاری بارهای سنگین را راحت جابه‌جا می‌کنیم. | item.cart.use |
-| 380 | `item_cart_quiz.mp3` | گاری به چه کاری می‌آید؟ | item.cart.quiz |
-| 381 | `item_toy_car_use.mp3` | ماشین با موتور روشن می‌شود و ما را به جاهای دور می‌برد. | item.toy_car.use |
-| 382 | `item_toy_car_quiz.mp3` | ماشین چطور راه می‌افتد؟ | item.toy_car.quiz |
-| 383 | `item_paints_use.mp3` | قرمز و زرد با هم نارنجی می‌شوند؛ آبی و زرد سبز! | item.paints.use |
-| 384 | `item_paints_quiz.mp3` | قرمز و زرد با هم چه رنگی می‌شوند؟ | item.paints.quiz |
-| 385 | `item_clay_bowl_use.mp3` | کاسه‌ی خوب آب را نگه می‌دارد و چیزی نمی‌ریزد. | item.clay_bowl.use |
-| 386 | `item_clay_bowl_quiz.mp3` | کاسه را برای چه می‌سازیم؟ | item.clay_bowl.quiz |
-| 387 | `item_lantern_use.mp3` | فانوس با نور رنگی، شب را قشنگ و روشن می‌کند. | item.lantern.use |
-| 388 | `item_lantern_quiz.mp3` | فانوس کی روشن می‌شود؟ | item.lantern.quiz |
-| 389 | `item_mask_use.mp3` | ماسک را برای بازی و جشن به صورت می‌زنیم. | item.mask.use |
-| 390 | `item_mask_quiz.mp3` | ماسک را کجا می‌زنیم؟ | item.mask.quiz |
-| 391 | `item_map_use.mp3` | نقشه راه را نشان می‌دهد تا گم نشویم. | item.map.use |
-| 392 | `item_map_quiz.mp3` | نقشه به چه درد می‌خورد؟ | item.map.quiz |
-| 393 | `item_tent_use.mp3` | چادر زیر باران ما را خشک و گرم نگه می‌دارد. | item.tent.use |
-| 394 | `item_tent_quiz.mp3` | چادر کی به کار می‌آید؟ | item.tent.quiz |
-| 395 | `item_firefly_jar_use.mp3` | کرم‌های شب‌تاب خودشان نور دارند! | item.firefly_jar.use |
-| 396 | `item_firefly_jar_quiz.mp3` | کرم شب‌تاب کی می‌درخشد؟ | item.firefly_jar.quiz |
-| 397 | `item_telescope_use.mp3` | با تلسکوپ چیزهای خیلی دور مثل ماه و ستاره‌ها را نزدیک می‌بینیم. | item.telescope.use |
-| 398 | `item_telescope_quiz.mp3` | با تلسکوپ چه می‌بینیم؟ | item.telescope.quiz |
-| 399 | `item_drum_use.mp3` | طبل با ضربه صدا می‌دهد؛ ضربه‌ی محکم بلند، ضربه‌ی آرام آهسته. | item.drum.use |
-| 400 | `item_drum_quiz.mp3` | طبل را چطور می‌نوازیم؟ | item.drum.quiz |
-| 401 | `item_xylophone_use.mp3` | تیغه‌ی بلند صدای بم دارد و تیغه‌ی کوتاه صدای زیر. | item.xylophone.use |
-| 402 | `item_xylophone_quiz.mp3` | تیغه‌ی کوتاه چه صدایی دارد؟ | item.xylophone.quiz |
-| 403 | `item_flute_use.mp3` | نی را با فوت می‌نوازیم؛ سوراخ‌ها نت را عوض می‌کنند. | item.flute.use |
-| 404 | `item_flute_quiz.mp3` | نی را چطور می‌نوازیم؟ | item.flute.quiz |
-| 405 | `item_song_use.mp3` | آهنگ را با چند ساز با هم می‌نوازیم. | item.song.use |
-| 406 | `item_song_quiz.mp3` | آهنگ را با چه ساختیم؟ | item.song.quiz |
-| 407 | `item_bridge_use.mp3` | پل دو طرف رودخانه را به هم وصل می‌کند. | item.bridge.use |
-| 408 | `item_bridge_quiz.mp3` | پل به چه درد می‌خورد؟ | item.bridge.quiz |
-| 409 | `item_traffic_light_use.mp3` | قرمز یعنی بایست، سبز یعنی برو. | item.traffic_light.use |
-| 410 | `item_traffic_light_quiz.mp3` | چراغ قرمز یعنی چه؟ | item.traffic_light.quiz |
-| 411 | `item_bus_use.mp3` | اتوبوس خیلی‌ها را با هم جابه‌جا می‌کند. | item.bus.use |
-| 412 | `item_bus_quiz.mp3` | اتوبوس برای چیست؟ | item.bus.quiz |
-| 413 | `item_invitation_use.mp3` | با کارت دعوت دوستانمان را به جشن خبر می‌کنیم. | item.invitation.use |
-| 414 | `item_invitation_quiz.mp3` | کارت دعوت برای چیست؟ | item.invitation.quiz |
-| 415 | `item_feast_use.mp3` | همه‌ی غذاهایی که ساختی روی یک میز! | item.feast.use |
-| 416 | `item_feast_quiz.mp3` | روی میز جشن چه گذاشتیم؟ | item.feast.quiz |
-| 417 | `item_feast_taste.mp3` | مزه‌اش خوشمزه است! | item.feast.taste |
-| 418 | `item_decorations_use.mp3` | تزئینات میدان را رنگی و شاد می‌کند. | item.decorations.use |
-| 419 | `item_decorations_quiz.mp3` | تزئینات برای چیست؟ | item.decorations.quiz |
-| 420 | `item_concert_use.mp3` | گروه میمی آهنگ تو را می‌نوازد! | item.concert.use |
-| 421 | `item_concert_quiz.mp3` | در کنسرت چه می‌شنویم؟ | item.concert.quiz |
-| 422 | `item_medal_use.mp3` | تو با ساخته‌هایت جشن جنگل را نجات دادی! | item.medal.use |
-| 423 | `item_medal_quiz.mp3` | چه کسی جشن را نجات داد؟ | item.medal.quiz |
-| 424 | `item_bubbles_use.mp3` | با فوت، صابون حباب‌های رنگی می‌شود. | item.bubbles.use |
-| 425 | `item_bubbles_quiz.mp3` | حباب چطور درست می‌شود؟ | item.bubbles.quiz |
-| 426 | `item_necklace_use.mp3` | مهره‌ها را به ترتیب رنگ به نخ می‌کشیم. | item.necklace.use |
-| 427 | `item_necklace_quiz.mp3` | گردنبند را کجا می‌اندازیم؟ | item.necklace.quiz |
-| 428 | `item_kite_use.mp3` | باد بادبادک را بالا می‌برد. | item.kite.use |
-| 429 | `item_kite_quiz.mp3` | بادبادک با چه بالا می‌رود؟ | item.kite.quiz |
-| 430 | `item_robot_use.mp3` | ربات با باتری روشن می‌شود و کارهایی را که بگوییم انجام می‌دهد. | item.robot.use |
-| 431 | `item_robot_quiz.mp3` | ربات با چه روشن می‌شود؟ | item.robot.quiz |
-| 432 | `item_dollhouse_use.mp3` | در خانه‌ی عروسکی چراغ‌ها روشن می‌شوند و شیر آب باز می‌شود. | item.dollhouse.use |
-| 433 | `item_dollhouse_quiz.mp3` | خانه برای چیست؟ | item.dollhouse.quiz |
-| 434 | `item_rocket_use.mp3` | موشک با موتورهای قوی به فضا می‌رود. | item.rocket.use |
-| 435 | `item_rocket_quiz.mp3` | موشک کجا می‌رود؟ | item.rocket.quiz |
-| 436 | `item_submarine_use.mp3` | زیردریایی زیر آب می‌رود و با چراغش ماهی‌ها را می‌بیند. | item.submarine.use |
-| 437 | `item_submarine_quiz.mp3` | زیردریایی کجا می‌رود؟ | item.submarine.quiz |
-| 438 | `item_train_use.mp3` | قطار روی ریل حرکت می‌کند و سوت می‌کشد: چوووو! | item.train.use |
-| 439 | `item_train_quiz.mp3` | قطار روی چه حرکت می‌کند؟ | item.train.quiz |
-| 440 | `item_bug_book_use.mp3` | با ذره‌بین حشره‌های کوچک را بزرگ می‌بینیم. | item.bug_book.use |
-| 441 | `item_bug_book_quiz.mp3` | ذره‌بین چه کار می‌کند؟ | item.bug_book.quiz |
-| 442 | `item_bird_house_use.mp3` | پرنده در خانه‌اش لانه می‌سازد. | item.bird_house.use |
-| 443 | `item_bird_house_quiz.mp3` | خانه‌ی پرنده برای کیست؟ | item.bird_house.quiz |
-| 444 | `item_photo_frame_use.mp3` | عکس یادگاری را در قاب می‌گذاریم و به دیوار می‌زنیم. | item.photo_frame.use |
-| 445 | `item_photo_frame_quiz.mp3` | قاب عکس برای چیست؟ | item.photo_frame.quiz |
-| 446 | `item_pizza_use.mp3` | پیتزا را در فر می‌پزیم تا پنیرش آب شود. | item.pizza.use |
-| 447 | `item_pizza_quiz.mp3` | پیتزا را کجا می‌پزیم؟ | item.pizza.quiz |
-| 448 | `item_pizza_taste.mp3` | مزه‌اش شور و داغ است! | item.pizza.taste |
-| 449 | `item_cookie_use.mp3` | کلوچه‌ی تازه ترد و شیرین است. | item.cookie.use |
-| 450 | `item_cookie_quiz.mp3` | کلوچه چه مزه‌ای دارد؟ | item.cookie.quiz |
-| 451 | `item_cookie_taste.mp3` | مزه‌اش شیرین و ترد است! | item.cookie.taste |
-| 452 | `item_rag_doll_use.mp3` | عروسک نرم را بغل می‌کنیم. | item.rag_doll.use |
-| 453 | `item_rag_doll_quiz.mp3` | با عروسک چه کار می‌کنیم؟ | item.rag_doll.quiz |
-| 454 | `item_windmill_use.mp3` | باد پره‌ها را می‌چرخاند. | item.windmill.use |
-| 455 | `item_windmill_quiz.mp3` | چه چیزی آسیاب بادی را می‌چرخاند؟ | item.windmill.quiz |
-| 456 | `item_bicycle_use.mp3` | دوچرخه با رکاب زدن حرکت می‌کند: زینگ زینگ! | item.bicycle.use |
-| 457 | `item_bicycle_quiz.mp3` | دوچرخه چطور حرکت می‌کند؟ | item.bicycle.quiz |
-| 458 | `item_magnet_fish_use.mp3` | آهن‌ربا چیزهای آهنی را به خودش می‌کشد. | item.magnet_fish.use |
-| 459 | `item_magnet_fish_quiz.mp3` | آهن‌ربا چه چیزی را می‌کشد؟ | item.magnet_fish.quiz |
-| 460 | `order_1.mp3` | بانی تشنه است. چی بهش بدیم؟ | order.1 |
-| 461 | `order_2.mp3` | خاله خرسی یک چیز شیرین می‌خواهد. | order.2 |
-| 462 | `order_3.mp3` | مادربزرگ جغد سردش است. | order.3 |
-| 463 | `order_4.mp3` | میمی یک ساز با صدای بم می‌خواهد. | order.4 |
-| 464 | `order_5.mp3` | میمی یک ساز با صدای زیر می‌خواهد. | order.5 |
-| 465 | `order_6.mp3` | آقا سنجاب در تاریکی چیزی را گم کرده. | order.6 |
-| 466 | `order_7.mp3` | لاکی یک وسیله‌ی نقلیه می‌خواهد. | order.7 |
-| 467 | `order_8.mp3` | کوکو یک چیز قشنگ برای تزئین می‌خواهد. | order.8 |
-| 468 | `order_9.mp3` | آقا سنجاب باید میخ بزند. | order.9 |
-| 469 | `order_10.mp3` | گل‌های بانی تشنه‌اند. | order.10 |
-| 470 | `order_11.mp3` | خاله خرسی گرسنه است. | order.11 |
-| 471 | `order_12.mp3` | مادربزرگ جغد راه را گم کرده. | order.12 |
-| 472 | `order_13.mp3` | کوکو دلش موسیقی می‌خواهد. | order.13 |
-| 473 | `combo_1.mp3` | مهمانی کوچک! دوستان آمدند. | combo.1 |
-| 474 | `combo_2.mp3` | ربات گل‌ها را آب داد! | combo.2 |
-| 475 | `combo_3.mp3` | یک آهنگ دونفره! | combo.3 |
-| 476 | `combo_4.mp3` | چادر شب روشن شد. | combo.4 |
-| 477 | `combo_5.mp3` | ماشین نامه‌ها را رساند. | combo.5 |
-| 478 | `combo_6.mp3` | تماشای شب پرستاره! | combo.6 |
-| 479 | `combo_7.mp3` | باد هر دو را چرخاند! | combo.7 |
-| 480 | `combo_8.mp3` | ماهی‌گیری زیر آب! | combo.8 |
-| 481 | `combo_9.mp3` | ناهار گرم و خوشمزه! | combo.9 |
-| 482 | `combo_10.mp3` | رقص با ماسک! | combo.10 |
-| 483 | `combo_11.mp3` | موشک در آسمان دیده شد! | combo.11 |
-| 484 | `combo_12.mp3` | پرنده‌ها در باغ لانه ساختند. | combo.12 |
-| 485 | `combo_13.mp3` | یک نقاشی قاب‌شده! | combo.13 |
-| 486 | `combo_14.mp3` | گردش با دوچرخه در جنگل! | combo.14 |
-| 487 | `game_hint_1.mp3` | این‌جا را ببین... | game.hint.1 |
-| 488 | `game_hint_2.mp3` | بیا با هم انجامش بدهیم. | game.hint.2 |
-| 489 | `game_wrong.mp3` | نه این یکی نه؛ دوباره امتحان کن! | game.wrong |
-| 490 | `game_quiz_right.mp3` | درست گفتی! | game.quiz.right |
-| 491 | `game_quiz_wrong.mp3` | نه عزیزم، به این دقت کن. | game.quiz.wrong |
-| 492 | `game_play.mp3` | حالا باهاش بازی کن! | game.play |
-| 493 | `game_backpack.mp3` | گذاشتمش در کوله‌پشتی. | game.backpack |
-| 494 | `game_stars_3.mp3` | عالی بود! سه ستاره! | game.stars.3 |
-| 495 | `game_stars_2.mp3` | خیلی خوب بود! | game.stars.2 |
-| 496 | `game_stars_1.mp3` | تمامش کردی، آفرین! | game.stars.1 |
-| 497 | `game_fast.mp3` | چه سریع! | game.fast |
-| 498 | `game_locked.mp3` | این بخش برای بعد است. اول بخش قبلی را تمام کن. | game.locked |
-| 499 | `game_coins_low.mp3` | سکه‌هایت کم است. بیا یک بخش را دوباره بازی کنیم! | game.coins.low |
-| 500 | `game_secret.mp3` | یک چیز پنهان پیدا کردی! | game.secret |
-| 501 | `game_daily.mp3` | جایزه‌ی امروز! سکه گرفتی. | game.daily |
-| 502 | `home_hello.mp3` | سلام! امروز چی بسازیم؟ | home.hello |
-| 503 | `workshop_hello.mp3` | به کارگاه ستاره خوش آمدی! با ستاره‌هایت کیت‌های تازه باز می‌شوند. | workshop.hello |
-| 504 | `shop_hello.mp3` | این‌جا با سکه ابزار می‌خری و چیزهای تازه می‌سازی. | shop.hello |
-| 505 | `shop_bought.mp3` | ابزار تازه! بیا ببینیم چطور کار می‌کند. | shop.bought |
-| 506 | `playroom_hello.mp3` | این اتاق بازی توست. همه‌ی ساخته‌هایت این‌جاست! | playroom.hello |
-| 507 | `playroom_combo.mp3` | یک ترکیب تازه کشف کردی! | playroom.combo |
-| 508 | `playroom_order_done.mp3` | دقیقاً همین را می‌خواستم! ممنون! | playroom.order.done |
-| 509 | `playroom_order_wrong.mp3` | این را نمی‌خواهم؛ یک چیز دیگر بده. | playroom.order.wrong |
-| 510 | `film_end.mp3` | یک تکه‌ی تازه از نقشه‌ی جشن روشن شد! | film.end |
-| 511 | `kit_open.mp3` | یک کیت تازه باز شد! | kit.open |
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `app_splash_welcome.mp3` | سلام! من پوپو هستم. ببین، لمس کن، کشف کن! | سَلام! مَن پوپو هَستَم. بِبین، لَمس کُن، کَشف کُن! | splash.shown |
+| 2 | `app_intro_1.mp3` | سلام دوست کوچولو! من پوپو هستم، یک روباه کوچولو که عاشق بازی است. | سَلام دوستِ کوچولو! مَن پوپو هَستَم، یِک روباهِ کوچولو کِه عاشِقِ بازی اَست. | intro.page1 |
+| 3 | `app_intro_2.mp3` | هر چیزی را که دوست داری لمس کن. ببین چه اتفاقی می‌افتد! | هَر چیزی را کِه دوست داری لَمس کُن. بِبین چِه اِتِّفاقی می‌اُفتَد! | intro.page2 |
+| 4 | `app_intro_3.mp3` | می‌توانی چیزها را بکشی و جابه‌جا کنی. بیا با هم دنیا را کشف کنیم! | می‌تَوانی چیزها را بِکِشی و جابِه‌جا کُنی. بیا با هَم دُنیا را کَشف کُنیم! | intro.page3 |
+| 5 | `app_profiles_pick.mp3` | کی می‌خواهد بازی کند؟ عکس خودت را لمس کن. | کی می‌خواهَد بازی کُنَد؟ عَکسِ خودَت را لَمس کُن. | profiles.shown |
+| 6 | `sticker_new.mp3` | یک برچسب تازه گرفتی! در دفتر خاطره‌هایت است. | یِک بَرچَسبِ تازه گِرِفتی! دَر دَفتَرِ خاطِره‌هایَت اَست. | sticker.earned |
+| 7 | `parent_ask.mp3` | این بخش برای بزرگ‌ترهاست. از مامان یا بابا کمک بگیر. | این بَخش بَرایِ بُزُرگ‌تَرهاست. اَز مامان یا بابا کُمَک بِگیر. | parent.gate |
+| 8 | `full_locked.mp3` | این‌جا مال نسخه‌ی کامله. از مامان یا بابا بخواه برات بازش کنن! | این‌جا مالِ نُسخه‌یِ کامِلِه. اَز مامان یا بابا بِخواه بَرات بازَش کُنَن! | paywall.shown |
+| 9 | `notice_new.mp3` | یه خبر تازه داریم! بیا ببین. | یه خَبَرِ تازه داریم! بیا بِبین. | notice.shown |
 
-## وقتی کودک مکث می‌کند
+## تشویق
 
-*لحن:* صبور و نرم.
+*لحن:* پرانرژی و واقعی، نه اغراق‌آمیز. هر کدام را با رنگ کمی متفاوت بخوانید.
 
-| # | فایل | متن | کجا پخش می‌شود |
-|---|---|---|---|
-| 1 | `idle_1.mp3` | این چیه؟ لمسش کن! | idle |
-| 2 | `idle_2.mp3` | ببین اینجا چی هست! | idle |
-| 3 | `idle_3.mp3` | می‌خواهی این را جابه‌جا کنی؟ | idle |
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `praise_1.mp3` | آفرین! | آفَرین! | praise |
+| 2 | `praise_2.mp3` | چه عالی! | چِه عالی! | praise |
+| 3 | `praise_3.mp3` | تو فوق‌العاده‌ای! | تو فُوقُ‌العاده‌ای! | praise |
+| 4 | `praise_4.mp3` | هورا! | هورا! | praise |
+| 5 | `praise_5.mp3` | خیلی خوب بود! | خِیلی خوب بود! | praise |
+| 6 | `praise_6.mp3` | باریکلا! | باریکَلّا! | praise |
 
-## توقف، ادامه، خروج
+## فصل 1 — آشپزخانه‌ی خاله خرسی
 
-*لحن:* آرام و ساده.
+*لحن:* راهنمای هر گام را شمرده و روشن بگویید (کودک همان لحظه باید کاری بکند)؛ داستان و فیلم را گرم و قصه‌گو.
 
-| # | فایل | متن | کجا پخش می‌شود |
-|---|---|---|---|
-| 1 | `session_pause.mp3` | بازی ایستاد. هر وقت خواستی ادامه بده. | pause |
-| 2 | `session_resume.mp3` | برگشتی! بیا ادامه بدهیم. | resume |
-| 3 | `session_bye.mp3` | خداحافظ! زود برگرد. | exit |
-| 4 | `session_sleepy.mp3` | پوپو کمی خسته است... شاید وقت استراحت باشد. | time.limit |
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `c1_intro.mp3` | طوفان آشپزخانه‌ی خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده. بیا با هم آشپزی کنیم! | طوفان آشپَزخانه‌یِ خاله خِرسی را بِه هَم ریخته و بَرایِ جَشن هیچ غَذایی نَمانده. بیا با هَم آشپَزی کُنیم! | c1.intro |
+| 2 | `c1_film_1.mp3` | آب‌پرتقال شیرین و ترش | آبِ پُرتِقالِ شیرین و تُرش | c1.film.1 |
+| 3 | `c1_film_2.mp3` | نان ترد و گرم | نانِ تُرد و گَرم | c1.film.2 |
+| 4 | `c1_film_3.mp3` | سوپ داغ و خوشمزه | سوپِ داغ و خوشمَزه | c1.film.3 |
+| 5 | `c1_film_4.mp3` | و کیک تولد با شمع‌های روشن! | و کیکِ تَوَلُّد با شَمع‌هایِ رُوشَن! | c1.film.4 |
+| 6 | `c1_next.mp3` | بانی در باغ تشنه است... بیا برویم پیشش! | بانی دَر باغ تِشنه اَست... بیا بِرَویم پیشَش! | c1.next |
+| 7 | `c1s1_mission.mp3` | خاله خرسی تشنه است. بیا برایش آب‌پرتقال درست کنیم! | خاله خِرسی تِشنه اَست. بیا بَرایَش آبِ پُرتِقال دُرُست کُنیم! | c1s1.mission |
+| 8 | `c1s1_s1.mp3` | پرتقال‌ها از بالا می‌افتند! سبد را با انگشت زیرشان ببر. سیب خراب را نگیر! | پُرتِقال‌ها اَز بالا می‌اُفتَند! سَبَد را با اَنگُشت زیرِشان بِبَر. سیبِ خَراب را نَگیر! | c1s1.s1 |
+| 9 | `c1s1_s2.mp3` | روی پرتقال‌های درخت بزن تا در سبد بپرند. سیب خراب را نچین! | رویِ پُرتِقال‌هایِ دِرَخت بِزَن تا دَر سَبَد بِپَرَند. سیبِ خَراب را نَچین! | c1s1.s2 |
+| 10 | `c1s1_s3.mp3` | پرتقال خاکی است. انگشتت را رویش بکش تا تمیز شود. | پُرتِقال خاکی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد. | c1s1.s3 |
+| 11 | `c1s1_s4.mp3` | انگشتت را روی خط‌چین بکش تا پرتقال نصف شود. | اَنگُشتَت را رویِ خَطّ‌چین بِکِش تا پُرتِقال نِصف شَوَد. | c1s1.s4 |
+| 12 | `c1s1_s5.mp3` | روی آب‌گیری تند تند بزن تا آب پرتقال دربیاید! | رویِ آب‌گیری تُند تُند بِزَن تا آبِ پُرتِقال دَربیایَد! | c1s1.s5 |
+| 13 | `c1s1_s6.mp3` | پاکت آب‌میوه را نگه دار تا در لیوان بریزد. وقتی به پرچم رسید، ول کن! | پاکَتِ آب‌میوه را نِگَه دار تا دَر لیوان بِریزَد. وَقتی بِه پَرچَم رِسید، وِل کُن! | c1s1.s6 |
+| 14 | `c1s1_s7.mp3` | خاله خرسی آب‌پرتقال می‌خواهد. آب‌پرتقال را بکش و به دهانش ببر! | خاله خِرسی آبِ پُرتِقال می‌خواهَد. آبِ پُرتِقال را بِکِش و بِه دَهانَش بِبَر! | c1s1.s7 |
+| 15 | `c1s2_mission.mp3` | برای ناهار نان لازم داریم. بیا نان بپزیم! | بَرایِ ناهار نان لازِم داریم. بیا نان بِپَزیم! | c1s2.mission |
+| 16 | `c1s2_s1.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c1s2.s1 |
+| 17 | `c1s2_s2.mp3` | کیسه‌ی آرد را نگه دار تا در کاسه بریزد. سر پرچم ول کن! | کیسه‌یِ آرد را نِگَه دار تا دَر کاسه بِریزَد. سَرِ پَرچَم وِل کُن! | c1s2.s2 |
+| 18 | `c1s2_s3.mp3` | حالا پارچ آب را نگه دار. وقتی آب به پرچم رسید، ول کن! | حالا پارچِ آب را نِگَه دار. وَقتی آب بِه پَرچَم رِسید، وِل کُن! | c1s2.s3 |
+| 19 | `c1s2_s4.mp3` | روی خمیر بزن و ورزش بده! هر ضربه نرم‌ترش می‌کند. | رویِ خَمیر بِزَن و وَرزَش بِدِه! هَر ضَربه نَرم‌تَرَش می‌کُنَد. | c1s2.s4 |
+| 20 | `c1s2_s5.mp3` | انگشتت را روی خط‌چین‌ها بکش و خمیر را تکه‌تکه کن. | اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش و خَمیر را تِکّه‌تِکّه کُن. | c1s2.s5 |
+| 21 | `c1s2_s6.mp3` | نان در فر است. وقتی حلقه به جای طلایی رسید، بزن! | نان دَر فِر اَست. وَقتی حَلقه بِه جایِ طَلایی رِسید، بِزَن! | c1s2.s6 |
+| 22 | `c1s2_s7.mp3` | خاله خرسی نان می‌خواهد. نان گرم را به دهانش ببر. | خاله خِرسی نان می‌خواهَد. نانِ گَرم را بِه دَهانَش بِبَر. | c1s2.s7 |
+| 23 | `c1s3_mission.mp3` | باد سرد می‌آید. یک سوپ گرم بپزیم! | بادِ سَرد می‌آیَد. یِک سوپِ گَرم بِپَزیم! | c1s3.mission |
+| 24 | `c1s3_s1.mp3` | هویج‌ها می‌افتند! سبد را زیرشان ببر. کفش و سیب خراب را نگیر! | هَویج‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. کَفش و سیبِ خَراب را نَگیر! | c1s3.s1 |
+| 25 | `c1s3_s2.mp3` | هر چه روی نوار می‌آید را بکش: سالم‌ها در سبد سبز، خراب‌ها در سطل قرمز. | هَر چِه رویِ نَوار می‌آیَد را بِکِش: سالِم‌ها دَر سَبَدِ سَبز، خَراب‌ها دَر سَطلِ قِرمِز. | c1s3.s2 |
+| 26 | `c1s3_s3.mp3` | سیب‌زمینی گلی است. انگشتت را رویش بکش تا تمیز شود. | سیب‌زَمینی گِلی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد. | c1s3.s3 |
+| 27 | `c1s3_s4.mp3` | انگشتت را روی هر خط‌چین بکش تا هویج خرد شود. | اَنگُشتَت را رویِ هَر خَطّ‌چین بِکِش تا هَویج خُرد شَوَد. | c1s3.s4 |
+| 28 | `c1s3_s5.mp3` | سه تا هویج در قابلمه بینداز. بشمار: یک، دو، سه! | سه تا هَویج دَر قابلَمه بِیَنداز. بِشُمار: یِک، دو، سه! | c1s3.s5 |
+| 29 | `c1s3_s6.mp3` | انگشتت را دور قابلمه بچرخان تا سوپ هم بخورد. | اَنگُشتَت را دُورِ قابلَمه بِچَرخان تا سوپ هَم بُخورَد. | c1s3.s6 |
+| 30 | `c1s3_s7.mp3` | سوپ داغ است! دکمه‌ی فوت را نگه دار تا خنک شود. | سوپ داغ اَست! دُکمه‌یِ فوت را نِگَه دار تا خُنَک شَوَد. | c1s3.s7 |
+| 31 | `c1s4_mission.mp3` | امروز تولد خاله خرسی است! بیا کیک بپزیم. | اِمروز تَوَلُّدِ خاله خِرسی اَست! بیا کیک بِپَزیم. | c1s4.mission |
+| 32 | `c1s4_s1.mp3` | روی تخم‌مرغ بزن تا بشکند و در کاسه بریزد. | رویِ تُخمِ مُرغ بِزَن تا بِشکَنَد و دَر کاسه بِریزَد. | c1s4.s1 |
+| 33 | `c1s4_s2.mp3` | کیسه‌ی آرد را نگه دار تا در کاسه بریزد. سر پرچم ول کن. | کیسه‌یِ آرد را نِگَه دار تا دَر کاسه بِریزَد. سَرِ پَرچَم وِل کُن. | c1s4.s2 |
+| 34 | `c1s4_s3.mp3` | انگشتت را دور کاسه بچرخان تا خمیر کیک درست شود. | اَنگُشتَت را دُورِ کاسه بِچَرخان تا خَمیرِ کیک دُرُست شَوَد. | c1s4.s3 |
+| 35 | `c1s4_s4.mp3` | یک رنگ بردار و روی دایره‌های سفید کیک بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ کیک بِزَن. | c1s4.s4 |
+| 36 | `c1s4_s5.mp3` | چهار شمع روی کیک بگذار. بشمار! | چَهار شَمع رویِ کیک بُگذار. بِشُمار! | c1s4.s5 |
+| 37 | `c1s4_s6.mp3` | تولدت مبارک! دکمه‌ی فوت را نگه دار تا شمع‌ها خاموش شوند. | تَوَلُّدَت مُبارَک! دُکمه‌یِ فوت را نِگَه دار تا شَمع‌ها خاموش شَوَند. | c1s4.s6 |
+| 38 | `c1s4_s7.mp3` | خاله خرسی کیک می‌خواهد. کیک را به دهانش ببر. | خاله خِرسی کیک می‌خواهَد. کیک را بِه دَهانَش بِبَر. | c1s4.s7 |
+
+## فصل 2 — باغ و مزرعه‌ی بانی
+
+*لحن:* راهنمای هر گام را شمرده و روشن بگویید (کودک همان لحظه باید کاری بکند)؛ داستان و فیلم را گرم و قصه‌گو.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `c2_intro.mp3` | بانی تشنه است و باغش خشک شده. کمکش کنیم باغ دوباره سبز شود! | بانی تِشنه اَست و باغَش خُشک شُده. کُمَکَش کُنیم باغ دُوباره سَبز شَوَد! | c2.intro |
+| 2 | `c2_film_1.mp3` | آب‌پاش، گل‌ها را سیراب کرد | آب‌پاش، گُل‌ها را سیراب کَرد | c2.film.1 |
+| 3 | `c2_film_2.mp3` | گلدان گل، زنبورها را آورد | گُلدانِ گُل، زَنبورها را آوَرد | c2.film.2 |
+| 4 | `c2_film_3.mp3` | مرغ‌ها تخم گذاشتند | مُرغ‌ها تُخم گُذاشتَند | c2.film.3 |
+| 5 | `c2_film_4.mp3` | و ساندویچ پنیر برای پیک‌نیک! | و ساندویچِ پَنیر بَرایِ پیک‌نیک! | c2.film.4 |
+| 6 | `c2_next.mp3` | کارگاه آقا سنجاب خراب شده... بیا کمکش کنیم! | کارگاهِ آقا سَنجاب خَراب شُده... بیا کُمَکَش کُنیم! | c2.next |
+| 7 | `c2s1_mission.mp3` | بانی خیلی تشنه است و حرف نمی‌زند! اول یک چیزی برای نوشیدن بهش بده. | بانی خِیلی تِشنه اَست و حَرف نِمی‌زَنَد! اَوَّل یِک چیزی بَرایِ نوشیدَن بِهِش بِدِه. | c2s1.mission |
+| 8 | `c2s1_s1.mp3` | بانی تشنه است. از کوله‌پشتی چیزی بکش که تشنگی را برطرف کند. | بانی تِشنه اَست. اَز کوله‌پُشتی چیزی بِکِش کِه تِشنِگی را بَرطَرَف کُنَد. | c2s1.s1 |
+| 9 | `c2s1_s1_done.mp3` | به به! بانی سرحال شد. | بَه بَه! بانی سَرحال شُد. | c2s1.s1.done |
+| 10 | `c2s1_s1_why.mp3` | این برای رفع تشنگی نیست. | این بَرایِ رَفعِ تِشنِگی نیست. | c2s1.s1.why |
+| 11 | `c2s1_s2.mp3` | نقطه‌ها را به ترتیب بزن: یک، دو، سه… ببین چه پیدا می‌شود! | نُقطه‌ها را بِه تَرتیب بِزَن: یِک، دو، سه… بِبین چِه پِیدا می‌شَوَد! | c2s1.s2 |
+| 12 | `c2s1_s3.mp3` | تکه‌های آب‌پاش را بکش و روی جای کم‌رنگشان بگذار. | تِکّه‌هایِ آب‌پاش را بِکِش و رویِ جایِ کَم‌رَنگِشان بُگذار. | c2s1.s3 |
+| 13 | `c2s1_s4.mp3` | انگشتت را دور چاه بچرخان تا سطل آب بالا بیاید. | اَنگُشتَت را دُورِ چاه بِچَرخان تا سَطلِ آب بالا بیایَد. | c2s1.s4 |
+| 14 | `c2s1_s5.mp3` | پارچ را نگه دار تا آب‌پاش پر شود. سر پرچم ول کن! | پارچ را نِگَه دار تا آب‌پاش پُر شَوَد. سَرِ پَرچَم وِل کُن! | c2s1.s5 |
+| 15 | `c2s1_s6.mp3` | آب‌پاش را با انگشت روی جاده تا پرچم ببر. | آب‌پاش را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر. | c2s1.s6 |
+| 16 | `c2s2_mission.mp3` | بانی می‌خواهد یک گل قشنگ بکارد. | بانی می‌خواهَد یِک گُلِ قَشَنگ بِکارَد. | c2s2.mission |
+| 17 | `c2s2_s1.mp3` | دانه‌ها از بالا می‌افتند! سبد را زیرشان ببر. کفش را نگیر! | دانه‌ها اَز بالا می‌اُفتَند! سَبَد را زیرِشان بِبَر. کَفش را نَگیر! | c2s2.s1 |
+| 18 | `c2s2_s2.mp3` | روی گلدان بزن تا خاکش نرم شود. | رویِ گُلدان بِزَن تا خاکَش نَرم شَوَد. | c2s2.s2 |
+| 19 | `c2s2_s3.mp3` | سه دانه در گلدان بگذار. بشمار! | سه دانه دَر گُلدان بُگذار. بِشُمار! | c2s2.s3 |
+| 20 | `c2s2_s4.mp3` | دانه‌ها تشنه‌اند! از کوله‌پشتی چیزی بکش که با آن آب بدهیم. | دانه‌ها تِشنه‌اَند! اَز کوله‌پُشتی چیزی بِکِش کِه با آن آب بِدَهیم. | c2s2.s4 |
+| 21 | `c2s2_s4_done.mp3` | آفرین! دانه‌ها آب خوردند. | آفَرین! دانه‌ها آب خوردَند. | c2s2.s4.done |
+| 22 | `c2s2_s4_why.mp3` | با این نمی‌شود آب داد. | با این نِمی‌شَوَد آب داد. | c2s2.s4.why |
+| 23 | `c2s2_s5.mp3` | جوانه دارد بزرگ می‌شود. وقتی حلقه به جای طلایی رسید، بزن! | جَوانه دارَد بُزُرگ می‌شَوَد. وَقتی حَلقه بِه جایِ طَلایی رِسید، بِزَن! | c2s2.s5 |
+| 24 | `c2s2_s6.mp3` | یک رنگ بردار و روی دایره‌های سفید گلدان بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ گُلدان بِزَن. | c2s2.s6 |
+| 25 | `c2s3_mission.mp3` | مرغ‌های بانی لانه ندارند و گم شده‌اند! | مُرغ‌هایِ بانی لانه نَدارَند و گُم شُده‌اَند! | c2s3.mission |
+| 26 | `c2s3_s1.mp3` | روی کاه‌ها بزن تا در سبد بپرند. کفش را برندار! | رویِ کاه‌ها بِزَن تا دَر سَبَد بِپَرَند. کَفش را بَرنَدار! | c2s3.s1 |
+| 27 | `c2s3_s2.mp3` | چهار تا کاه در لانه بگذار. بشمار! | چَهار تا کاه دَر لانه بُگذار. بِشُمار! | c2s3.s2 |
+| 28 | `c2s3_s3.mp3` | مرغ‌ها از سوراخ‌ها سر بیرون می‌آورند. زود رویشان بزن! سیب خراب را نزن. | مُرغ‌ها اَز سوراخ‌ها سَر بیرون می‌آوَرَند. زود رویِشان بِزَن! سیبِ خَراب را نَزَن. | c2s3.s3 |
+| 29 | `c2s3_s4.mp3` | مرغ دانه می‌خواهد. دانه را به نوکش ببر. کفش نه! | مُرغ دانه می‌خواهَد. دانه را بِه نوکَش بِبَر. کَفش نَه! | c2s3.s4 |
+| 30 | `c2s3_s5.mp3` | تخم‌مرغ‌ها می‌افتند! سبد را زیرشان ببر. کفش را نگیر! | تُخمِ مُرغ‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. کَفش را نَگیر! | c2s3.s5 |
+| 31 | `c2s3_s6.mp3` | سه تخم‌مرغ در لانه بگذار. بشمار! | سه تُخمِ مُرغ دَر لانه بُگذار. بِشُمار! | c2s3.s6 |
+| 32 | `c2s4_mission.mp3` | وقت پیک‌نیک است! یک ساندویچ خوشمزه درست کنیم. | وَقتِ پیک‌نیک اَست! یِک ساندویچِ خوشمَزه دُرُست کُنیم. | c2s4.mission |
+| 33 | `c2s4_s1.mp3` | روی گاو بزن تا شیر بدهد. هر ضربه، کمی شیر! | رویِ گاو بِزَن تا شیر بِدَهَد. هَر ضَربه، کَمی شیر! | c2s4.s1 |
+| 34 | `c2s4_s2.mp3` | انگشتت را دور سطل بچرخان تا شیر پنیر شود. | اَنگُشتَت را دُورِ سَطل بِچَرخان تا شیر پَنیر شَوَد. | c2s4.s2 |
+| 35 | `c2s4_s3.mp3` | برای ساندویچ نان لازم داریم. نان را از کوله‌پشتی بکش. | بَرایِ ساندویچ نان لازِم داریم. نان را اَز کوله‌پُشتی بِکِش. | c2s4.s3 |
+| 36 | `c2s4_s3_done.mp3` | نان رسید! | نان رِسید! | c2s4.s3.done |
+| 37 | `c2s4_s3_why.mp3` | این نان نیست. | این نان نیست. | c2s4.s3.why |
+| 38 | `c2s4_s4.mp3` | کاهو خاکی است. انگشتت را رویش بکش تا تمیز شود. | کاهو خاکی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد. | c2s4.s4 |
+| 39 | `c2s4_s5.mp3` | انگشتت را روی خط‌چین‌ها بکش تا پنیر برش بخورد. | اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش تا پَنیر بُرِش بُخورَد. | c2s4.s5 |
+| 40 | `c2s4_s6.mp3` | به ترتیب بزن: نان، کاهو، پنیر، نان. | بِه تَرتیب بِزَن: نان، کاهو، پَنیر، نان. | c2s4.s6 |
+| 41 | `c2s4_s7.mp3` | بانی ساندویچ می‌خواهد. ساندویچ را به دهانش ببر. | بانی ساندویچ می‌خواهَد. ساندویچ را بِه دَهانَش بِبَر. | c2s4.s7 |
+
+## فصل 3 — کارگاه آقا سنجاب
+
+*لحن:* راهنمای هر گام را شمرده و روشن بگویید (کودک همان لحظه باید کاری بکند)؛ داستان و فیلم را گرم و قصه‌گو.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `c3_intro.mp3` | طوفان کارگاه آقا سنجاب را خراب کرده و ابزارهایش پخش شده‌اند. بیا ابزار بسازیم! | طوفان کارگاهِ آقا سَنجاب را خَراب کَرده و اَبزارهایَش پَخش شُده‌اَند. بیا اَبزار بِسازیم! | c3.intro |
+| 2 | `c3_film_1.mp3` | چکش، میخ را فرو کرد: تق تق! | چَکُش، میخ را فُرو کَرد: تَق تَق! | c3.film.1 |
+| 3 | `c3_film_2.mp3` | چراغ‌قوه تاریکی را روشن کرد | چِراغ‌قُوّه تاریکی را رُوشَن کَرد | c3.film.2 |
+| 4 | `c3_film_3.mp3` | گاری جعبه‌ها را برد | گاری جَعبه‌ها را بُرد | c3.film.3 |
+| 5 | `c3_film_4.mp3` | و ماشین با کلید روشن شد: برووووم! | و ماشین با کِلید رُوشَن شُد: بِرووووم! | c3.film.4 |
+| 6 | `c3_next.mp3` | کوکو همه‌ی رنگ‌هایش را گم کرده... | کوکو هَمه‌یِ رَنگ‌هایَش را گُم کَرده... | c3.next |
+| 7 | `c3s1_mission.mp3` | آقا سنجاب چکشش را گم کرده. تکه‌هایش این‌جا پخش شده‌اند! | آقا سَنجاب چَکُشَش را گُم کَرده. تِکّه‌هایَش این‌جا پَخش شُده‌اَند! | c3s1.mission |
+| 8 | `c3s1_s1.mp3` | سر چکش را پیدا کن و رویش بزن. قاشق و جوراب نه! | سَرِ چَکُش را پِیدا کُن و رویَش بِزَن. قاشُق و جوراب نَه! | c3s1.s1 |
+| 9 | `c3s1_s2.mp3` | حالا دسته‌ی چوبی را پیدا کن و رویش بزن. | حالا دَسته‌یِ چوبی را پِیدا کُن و رویَش بِزَن. | c3s1.s2 |
+| 10 | `c3s1_s3.mp3` | سر چکش کثیف است. انگشتت را رویش بکش تا برق بزند. | سَرِ چَکُش کَثیف اَست. اَنگُشتَت را رویَش بِکِش تا بَرق بِزَنَد. | c3s1.s3 |
+| 11 | `c3s1_s4.mp3` | سر و دسته را بکش و روی جای کم‌رنگشان بگذار. | سَر و دَسته را بِکِش و رویِ جایِ کَم‌رَنگِشان بُگذار. | c3s1.s4 |
+| 12 | `c3s1_s5.mp3` | انگشتت را دور پیچ بچرخان تا سفت شود. | اَنگُشتَت را دُورِ پیچ بِچَرخان تا سِفت شَوَد. | c3s1.s5 |
+| 13 | `c3s1_s6.mp3` | میخ‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! جوراب را نزن. | میخ‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! جوراب را نَزَن. | c3s1.s6 |
+| 14 | `c3s2_mission.mp3` | گوشه‌ی کارگاه خیلی تاریک است! | گوشه‌یِ کارگاه خِیلی تاریک اَست! | c3s2.mission |
+| 15 | `c3s2_s1.mp3` | باتری‌ها می‌افتند! سبد را زیرشان ببر. قاشق را نگیر! | باتری‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. قاشُق را نَگیر! | c3s2.s1 |
+| 16 | `c3s2_s2.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c3s2.s2 |
+| 17 | `c3s2_s3.mp3` | باتری‌ها را بکش و روی جای کم‌رنگشان در چراغ‌قوه بگذار. | باتری‌ها را بِکِش و رویِ جایِ کَم‌رَنگِشان دَر چِراغ‌قُوّه بُگذار. | c3s2.s3 |
+| 18 | `c3s2_s4.mp3` | انگشتت را دور لامپ بچرخان تا پیچ شود. | اَنگُشتَت را دُورِ لامپ بِچَرخان تا پیچ شَوَد. | c3s2.s4 |
+| 19 | `c3s2_s5.mp3` | روی چراغ‌قوه بزن تا روشن شود! | رویِ چِراغ‌قُوّه بِزَن تا رُوشَن شَوَد! | c3s2.s5 |
+| 20 | `c3s2_s6.mp3` | جایی تاریک است. انگشتت را بکش تا نور جعبه‌های گم‌شده را پیدا کند. | جایی تاریک اَست. اَنگُشتَت را بِکِش تا نور جَعبه‌هایِ گُم‌شُده را پِیدا کُنَد. | c3s2.s6 |
+| 21 | `c3s3_mission.mp3` | جعبه‌ها خیلی سنگین‌اند. یک گاری لازم داریم! | جَعبه‌ها خِیلی سَنگین‌اَند. یِک گاری لازِم داریم! | c3s3.mission |
+| 22 | `c3s3_s1.mp3` | نقطه‌ها را به ترتیب بزن تا گاری پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا گاری پِیدا شَوَد. | c3s3.s1 |
+| 23 | `c3s3_s2.mp3` | تخته‌ها باید میخ بخورند. از کوله‌پشتی وسیله‌ی درست را بکش. | تَخته‌ها باید میخ بُخورَند. اَز کوله‌پُشتی وَسیله‌یِ دُرُست را بِکِش. | c3s3.s2 |
+| 24 | `c3s3_s2_done.mp3` | تق تق! تخته‌ها وصل شدند. | تَق تَق! تَخته‌ها وَصل شُدَند. | c3s3.s2.done |
+| 25 | `c3s3_s2_why.mp3` | با این نمی‌شود میخ زد. | با این نِمی‌شَوَد میخ زَد. | c3s3.s2.why |
+| 26 | `c3s3_s3.mp3` | روی میخ تند تند بزن تا در چوب فرو برود! | رویِ میخ تُند تُند بِزَن تا دَر چوب فُرو بِرَوَد! | c3s3.s3 |
+| 27 | `c3s3_s4.mp3` | دو چرخ در گاری بگذار. بشمار! | دو چَرخ دَر گاری بُگذار. بِشُمار! | c3s3.s4 |
+| 28 | `c3s3_s5.mp3` | یک رنگ بردار و روی دایره‌های سفید گاری بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ گاری بِزَن. | c3s3.s5 |
+| 29 | `c3s3_s6.mp3` | جرثقیل جعبه را تکان می‌دهد. وقتی جعبه بالای خط سبز بود، بزن تا بیفتد! | جَرثَقیل جَعبه را تِکان می‌دَهَد. وَقتی جَعبه بالایِ خَطِّ سَبز بود، بِزَن تا بِیُفتَد! | c3s3.s6 |
+| 30 | `c3s3_s7.mp3` | چپ یا راست صفحه را بزن تا گاری راهش را عوض کند. جعبه‌ها را بگیر، به سنگ نخور! | چَپ یا راستِ صَفحه را بِزَن تا گاری راهَش را عَوَض کُنَد. جَعبه‌ها را بِگیر، بِه سَنگ نَخور! | c3s3.s7 |
+| 31 | `c3s4_mission.mp3` | آقا سنجاب یک ماشین قدیمی دارد. بیا درستش کنیم! | آقا سَنجاب یِک ماشینِ قَدیمی دارَد. بیا دُرُستَش کُنیم! | c3s4.mission |
+| 32 | `c3s4_s1.mp3` | تکه‌های عکس را بکش و سر جایشان بگذار. | تِکّه‌هایِ عَکس را بِکِش و سَرِ جایِشان بُگذار. | c3s4.s1 |
+| 33 | `c3s4_s2.mp3` | چهار چرخ به ماشین بده. بشمار: یک، دو، سه، چهار! | چَهار چَرخ بِه ماشین بِدِه. بِشُمار: یِک، دو، سه، چَهار! | c3s4.s2 |
+| 34 | `c3s4_s3.mp3` | ماشین گلی است. انگشتت را رویش بکش تا تمیز شود. | ماشین گِلی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد. | c3s4.s3 |
+| 35 | `c3s4_s4.mp3` | یک رنگ بردار و روی دایره‌های سفید ماشین بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ ماشین بِزَن. | c3s4.s4 |
+| 36 | `c3s4_s5.mp3` | انگشتت را دور کلید بچرخان تا ماشین روشن شود! | اَنگُشتَت را دُورِ کِلید بِچَرخان تا ماشین رُوشَن شَوَد! | c3s4.s5 |
+| 37 | `c3s4_s6.mp3` | برووووم! چپ یا راست صفحه را بزن. ستاره‌ها را بگیر، به سنگ و مخروط نخور! | بِرووووم! چَپ یا راستِ صَفحه را بِزَن. سِتاره‌ها را بِگیر، بِه سَنگ و مَخروط نَخور! | c3s4.s6 |
+
+## فصل 4 — آتلیه‌ی رنگی کوکو
+
+*لحن:* راهنمای هر گام را شمرده و روشن بگویید (کودک همان لحظه باید کاری بکند)؛ داستان و فیلم را گرم و قصه‌گو.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `c4_intro.mp3` | کوکو همه‌ی رنگ‌هایش را در طوفان گم کرده و تزئینات جشن بی‌رنگ مانده‌اند. | کوکو هَمه‌یِ رَنگ‌هایَش را دَر طوفان گُم کَرده و تَزئیناتِ جَشن بی‌رَنگ مانده‌اَند. | c4.intro |
+| 2 | `c4_film_1.mp3` | قرمز و زرد، نارنجی شد! | قِرمِز و زَرد، نارِنجی شُد! | c4.film.1 |
+| 3 | `c4_film_2.mp3` | کاسه‌ی گلی آب را نگه داشت | کاسه‌یِ گِلی آب را نِگَه داشت | c4.film.2 |
+| 4 | `c4_film_3.mp3` | فانوس با لامپ چراغ‌قوه روشن شد | فانوس با لامپِ چِراغ‌قُوّه رُوشَن شُد | c4.film.3 |
+| 5 | `c4_film_4.mp3` | و ماسک‌ها و پرچم‌ها رنگی شدند! | و ماسک‌ها و پَرچَم‌ها رَنگی شُدَند! | c4.film.4 |
+| 6 | `c4_next.mp3` | مادربزرگ جغد راه خانه‌اش را در شب گم کرده... | مادَربُزُرگ جُغد راهِ خانه‌اَش را دَر شَب گُم کَرده... | c4.next |
+| 7 | `c4s1_mission.mp3` | اول یک قلم‌مو و رنگ می‌خواهیم! | اَوَّل یِک قَلَم‌مو و رَنگ می‌خواهیم! | c4s1.mission |
+| 8 | `c4s1_s1.mp3` | موهای قلم‌مو را بکش و روی جای کم‌رنگش بگذار. | موهایِ قَلَم‌مو را بِکِش و رویِ جایِ کَم‌رَنگَش بُگذار. | c4s1.s1 |
+| 9 | `c4s1_s2.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c4s1.s2 |
+| 10 | `c4s1_s3.mp3` | روی شیشه‌ی قرمز و زرد بزن، بعد با انگشت هم بزن. چه رنگی شد؟ | رویِ شیشه‌یِ قِرمِز و زَرد بِزَن، بَعد با اَنگُشت هَم بِزَن. چِه رَنگی شُد؟ | c4s1.s3 |
+| 11 | `c4s1_s4.mp3` | حالا آبی و زرد را بریز و هم بزن! | حالا آبی و زَرد را بِریز و هَم بِزَن! | c4s1.s4 |
+| 12 | `c4s1_s5.mp3` | قرمز و آبی را بریز و هم بزن. چه می‌شود؟ | قِرمِز و آبی را بِریز و هَم بِزَن. چِه می‌شَوَد؟ | c4s1.s5 |
+| 13 | `c4s1_s6.mp3` | یک رنگ بردار و روی دایره‌های سفید کاغذ بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ کاغَذ بِزَن. | c4s1.s6 |
+| 14 | `c4s2_mission.mp3` | کوکو یک کاسه برای آب رنگ‌ها می‌خواهد. | کوکو یِک کاسه بَرایِ آبِ رَنگ‌ها می‌خواهَد. | c4s2.mission |
+| 15 | `c4s2_s1.mp3` | گل رس خشک است! از کوله‌پشتی چیزی بکش که خیسش کند. | گِلِ رُس خُشک اَست! اَز کوله‌پُشتی چیزی بِکِش کِه خیسَش کُنَد. | c4s2.s1 |
+| 16 | `c4s2_s1_done.mp3` | شُر شُر! گل نرم شد. | شُر شُر! گِل نَرم شُد. | c4s2.s1.done |
+| 17 | `c4s2_s1_why.mp3` | با این نمی‌شود خیس کرد. | با این نِمی‌شَوَد خیس کَرد. | c4s2.s1.why |
+| 18 | `c4s2_s2.mp3` | هر چه روی نوار می‌آید را بکش: گل در سبد سبز، آشغال در سطل قرمز. | هَر چِه رویِ نَوار می‌آیَد را بِکِش: گِل دَر سَبَدِ سَبز، آشغال دَر سَطلِ قِرمِز. | c4s2.s2 |
+| 19 | `c4s2_s3.mp3` | روی گل بزن و ورزش بده! | رویِ گِل بِزَن و وَرزَش بِدِه! | c4s2.s3 |
+| 20 | `c4s2_s4.mp3` | انگشتت را دور چرخ بچرخان تا کاسه درست شود. | اَنگُشتَت را دُورِ چَرخ بِچَرخان تا کاسه دُرُست شَوَد. | c4s2.s4 |
+| 21 | `c4s2_s5.mp3` | کاسه خیس است. دکمه‌ی فوت را نگه دار تا خشک شود! | کاسه خیس اَست. دُکمه‌یِ فوت را نِگَه دار تا خُشک شَوَد! | c4s2.s5 |
+| 22 | `c4s2_s6.mp3` | یک رنگ بردار و روی دایره‌های سفید کاسه بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ کاسه بِزَن. | c4s2.s6 |
+| 23 | `c4s3_mission.mp3` | برای شب جشن فانوس رنگی لازم داریم. | بَرایِ شَبِ جَشن فانوسِ رَنگی لازِم داریم. | c4s3.mission |
+| 24 | `c4s3_s1.mp3` | نقطه‌ها را به ترتیب بزن تا فانوس پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا فانوس پِیدا شَوَد. | c4s3.s1 |
+| 25 | `c4s3_s2.mp3` | انگشتت را روی خط‌چین‌ها بکش تا کاغذ بریده شود. | اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش تا کاغَذ بُریده شَوَد. | c4s3.s2 |
+| 26 | `c4s3_s3.mp3` | روی کاغذ بزن تا تا بخورد و فانوس شود! | رویِ کاغَذ بِزَن تا تا بُخورَد و فانوس شَوَد! | c4s3.s3 |
+| 27 | `c4s3_s4.mp3` | یک رنگ بردار و روی دایره‌های سفید فانوس بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ فانوس بِزَن. | c4s3.s4 |
+| 28 | `c4s3_s5.mp3` | فانوس خاموش است! از کوله‌پشتی چیزی بکش که لامپ دارد. | فانوس خاموش اَست! اَز کوله‌پُشتی چیزی بِکِش کِه لامپ دارَد. | c4s3.s5 |
+| 29 | `c4s3_s5_done.mp3` | روشن شد! چه قشنگ. | رُوشَن شُد! چِه قَشَنگ. | c4s3.s5.done |
+| 30 | `c4s3_s5_why.mp3` | این نور ندارد. | این نور نَدارَد. | c4s3.s5.why |
+| 31 | `c4s3_s6.mp3` | سه فانوس به نخ بده. بشمار! | سه فانوس بِه نَخ بِدِه. بِشُمار! | c4s3.s6 |
+| 32 | `c4s4_mission.mp3` | برای جشن ماسک و پرچم درست کنیم! | بَرایِ جَشن ماسک و پَرچَم دُرُست کُنیم! | c4s4.mission |
+| 33 | `c4s4_s1.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c4s4.s1 |
+| 34 | `c4s4_s2.mp3` | انگشتت را روی خط‌چین‌ها بکش تا ماسک بریده شود. | اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش تا ماسک بُریده شَوَد. | c4s4.s2 |
+| 35 | `c4s4_s3.mp3` | یک رنگ بردار و روی دایره‌های سفید ماسک بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ ماسک بِزَن. | c4s4.s3 |
+| 36 | `c4s4_s4.mp3` | نقطه‌ها را به ترتیب بزن تا ماسک پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا ماسک پِیدا شَوَد. | c4s4.s4 |
+| 37 | `c4s4_s5.mp3` | پرچم‌ها می‌افتند! سبد را زیرشان ببر. جوراب را نگیر! | پَرچَم‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. جوراب را نَگیر! | c4s4.s5 |
+| 38 | `c4s4_s6.mp3` | پنج پرچم به نخ بده. بشمار! | پَنج پَرچَم بِه نَخ بِدِه. بِشُمار! | c4s4.s6 |
+
+## فصل 5 — شب جنگل و مادربزرگ جغد
+
+*لحن:* راهنمای هر گام را شمرده و روشن بگویید (کودک همان لحظه باید کاری بکند)؛ داستان و فیلم را گرم و قصه‌گو.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `c5_intro.mp3` | مادربزرگ جغد راه خانه‌اش را در جنگلِ شب گم کرده. نترس، با هم پیدایش می‌کنیم! | مادَربُزُرگ جُغد راهِ خانه‌اَش را دَر جَنگَلِ شَب گُم کَرده. نَتَرس، با هَم پِیدایَش می‌کُنیم! | c5.intro |
+| 2 | `c5_film_1.mp3` | نقشه راه را نشان داد | نَقشه راه را نِشان داد | c5.film.1 |
+| 3 | `c5_film_2.mp3` | چادر ما را از باران حفظ کرد | چادُر ما را اَز باران حِفظ کَرد | c5.film.2 |
+| 4 | `c5_film_3.mp3` | کرم‌های شب‌تاب مسیر را روشن کردند | کِرم‌هایِ شَب‌تاب مَسیر را رُوشَن کَردَند | c5.film.3 |
+| 5 | `c5_film_4.mp3` | و با تلسکوپ ماه را دیدیم! | و با تِلِسکوپ ماه را دیدیم! | c5.film.4 |
+| 6 | `c5_next.mp3` | سازهای گروه میمی شکسته‌اند... | سازهایِ گُروهِ میمی شِکَسته‌اَند... | c5.next |
+| 7 | `c5s1_mission.mp3` | تکه‌های نقشه در باد پخش شده‌اند! | تِکّه‌هایِ نَقشه دَر باد پَخش شُده‌اَند! | c5s1.mission |
+| 8 | `c5s1_s1.mp3` | تکه‌های نقشه می‌افتند! سبد را زیرشان ببر. | تِکّه‌هایِ نَقشه می‌اُفتَند! سَبَد را زیرِشان بِبَر. | c5s1.s1 |
+| 9 | `c5s1_s2.mp3` | تکه‌های نقشه را بکش و سر جایشان بگذار. | تِکّه‌هایِ نَقشه را بِکِش و سَرِ جایِشان بُگذار. | c5s1.s2 |
+| 10 | `c5s1_s3.mp3` | هوا تاریک است. از کوله‌پشتی چیزی بکش که نور دارد. | هَوا تاریک اَست. اَز کوله‌پُشتی چیزی بِکِش کِه نور دارَد. | c5s1.s3 |
+| 11 | `c5s1_s3_done.mp3` | حالا نقشه را می‌بینیم! | حالا نَقشه را می‌بینیم! | c5s1.s3.done |
+| 12 | `c5s1_s3_why.mp3` | این نور ندارد. | این نور نَدارَد. | c5s1.s3.why |
+| 13 | `c5s1_s4.mp3` | انگشتت را در تاریکی بکش تا نور ستاره‌ها را پیدا کند. | اَنگُشتَت را دَر تاریکی بِکِش تا نور سِتاره‌ها را پِیدا کُنَد. | c5s1.s4 |
+| 14 | `c5s1_s5.mp3` | نقطه‌ها را به ترتیب بزن تا نقشه پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا نَقشه پِیدا شَوَد. | c5s1.s5 |
+| 15 | `c5s1_s6.mp3` | نقشه را با انگشت روی جاده تا پرچم ببر. | نَقشه را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر. | c5s1.s6 |
+| 16 | `c5s2_mission.mp3` | باران دارد می‌آید! یک چادر بزنیم. | باران دارَد می‌آیَد! یِک چادُر بِزَنیم. | c5s2.mission |
+| 17 | `c5s2_s1.mp3` | هر چه روی نوار می‌آید را بکش: وسایل چادر در سبد سبز، آشغال در سطل قرمز. | هَر چِه رویِ نَوار می‌آیَد را بِکِش: وَسایِلِ چادُر دَر سَبَدِ سَبز، آشغال دَر سَطلِ قِرمِز. | c5s2.s1 |
+| 18 | `c5s2_s2.mp3` | پارچه و ستون‌ها را بکش و روی جای کم‌رنگشان بگذار. | پارچه و سُتون‌ها را بِکِش و رویِ جایِ کَم‌رَنگِشان بُگذار. | c5s2.s2 |
+| 19 | `c5s2_s3.mp3` | میخ‌های چادر را باید کوبید. از کوله‌پشتی وسیله‌ی درست را بکش. | میخ‌هایِ چادُر را باید کوبید. اَز کوله‌پُشتی وَسیله‌یِ دُرُست را بِکِش. | c5s2.s3 |
+| 20 | `c5s2_s3_done.mp3` | تق تق! چادر محکم شد. | تَق تَق! چادُر مُحکَم شُد. | c5s2.s3.done |
+| 21 | `c5s2_s3_why.mp3` | با این نمی‌شود میخ زد. | با این نِمی‌شَوَد میخ زَد. | c5s2.s3.why |
+| 22 | `c5s2_s4.mp3` | میخ‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! جوراب نه. | میخ‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! جوراب نَه. | c5s2.s4 |
+| 23 | `c5s2_s5.mp3` | دکمه‌ی فوت را نگه دار تا چادر بزرگ شود و بایستد! | دُکمه‌یِ فوت را نِگَه دار تا چادُر بُزُرگ شَوَد و بِایستَد! | c5s2.s5 |
+| 24 | `c5s2_s6.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c5s2.s6 |
+| 25 | `c5s3_mission.mp3` | مسیر خیلی تاریک است و مادربزرگ سردش است. | مَسیر خِیلی تاریک اَست و مادَربُزُرگ سَردَش اَست. | c5s3.mission |
+| 26 | `c5s3_s1.mp3` | خیلی تاریک است! از کوله‌پشتی چیزی بکش که نور دارد. | خِیلی تاریک اَست! اَز کوله‌پُشتی چیزی بِکِش کِه نور دارَد. | c5s3.s1 |
+| 27 | `c5s3_s1_done.mp3` | روشن شد! | رُوشَن شُد! | c5s3.s1.done |
+| 28 | `c5s3_s1_why.mp3` | این نور ندارد. | این نور نَدارَد. | c5s3.s1.why |
+| 29 | `c5s3_s2.mp3` | کرم‌های شب‌تاب پایین می‌آیند! سبد را زیرشان ببر. کفشدوزک را نگیر. | کِرم‌هایِ شَب‌تاب پایین می‌آیَند! سَبَد را زیرِشان بِبَر. کَفشدوزَک را نَگیر. | c5s3.s2 |
+| 30 | `c5s3_s3.mp3` | انگشتت را در تاریکی بکش تا نور کرم‌های شب‌تاب را پیدا کند. | اَنگُشتَت را دَر تاریکی بِکِش تا نور کِرم‌هایِ شَب‌تاب را پِیدا کُنَد. | c5s3.s3 |
+| 31 | `c5s3_s4.mp3` | نقطه‌ها را به ترتیب بزن تا شیشه‌ی شب‌تاب‌ها پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا شیشه‌یِ شَب‌تاب‌ها پِیدا شَوَد. | c5s3.s4 |
+| 32 | `c5s3_s5.mp3` | کرم شب‌تاب را با انگشت روی جاده تا پرچم ببر. | کِرمِ شَب‌تاب را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر. | c5s3.s5 |
+| 33 | `c5s3_s6.mp3` | مادربزرگ جغد سردش است. از کوله‌پشتی چیزی بکش که گرمش کند. | مادَربُزُرگ جُغد سَردَش اَست. اَز کوله‌پُشتی چیزی بِکِش کِه گَرمَش کُنَد. | c5s3.s6 |
+| 34 | `c5s3_s6_done.mp3` | آخیش! گرم شدم، ممنون عزیزم. | آخِیش! گَرم شُدَم، مَمنون عَزیزَم. | c5s3.s6.done |
+| 35 | `c5s3_s6_why.mp3` | این گرم نمی‌کند. | این گَرم نِمی‌کُنَد. | c5s3.s6.why |
+| 36 | `c5s4_mission.mp3` | مادربزرگ جغد می‌خواهد ستاره‌ها را نشانت بدهد. | مادَربُزُرگ جُغد می‌خواهَد سِتاره‌ها را نِشانَت بِدَهَد. | c5s4.mission |
+| 37 | `c5s4_s1.mp3` | انگشتت را دور مقوا بچرخان تا لوله شود. | اَنگُشتَت را دُورِ مُقَوّا بِچَرخان تا لوله شَوَد. | c5s4.s1 |
+| 38 | `c5s4_s2.mp3` | عدسی خاکی است. انگشتت را رویش بکش تا تمیز شود. | عَدَسی خاکی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد. | c5s4.s2 |
+| 39 | `c5s4_s3.mp3` | اول عدسی بزرگ را بزن، بعد کوچک‌تر، بعد از همه کوچک‌تر. | اَوَّل عَدَسیِ بُزُرگ را بِزَن، بَعد کوچَک‌تَر، بَعد اَز هَمه کوچَک‌تَر. | c5s4.s3 |
+| 40 | `c5s4_s4.mp3` | انگشتت را دور تلسکوپ بچرخان تا تنظیم شود. | اَنگُشتَت را دُورِ تِلِسکوپ بِچَرخان تا تَنظیم شَوَد. | c5s4.s4 |
+| 41 | `c5s4_s5.mp3` | نقطه‌ها را به ترتیب بزن تا ستاره پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا سِتاره پِیدا شَوَد. | c5s4.s5 |
+| 42 | `c5s4_s6.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c5s4.s6 |
+
+## فصل 6 — گروه موسیقی میمی
+
+*لحن:* راهنمای هر گام را شمرده و روشن بگویید (کودک همان لحظه باید کاری بکند)؛ داستان و فیلم را گرم و قصه‌گو.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `c6_intro.mp3` | میمی می‌خواهد در جشن بخواند، اما سازهای گروه در طوفان شکسته‌اند. | میمی می‌خواهَد دَر جَشن بِخوانَد، اَمّا سازهایِ گُروه دَر طوفان شِکَسته‌اَند. | c6.intro |
+| 2 | `c6_film_1.mp3` | طبل: بوم بوم! | طَبل: بوم بوم! | c6.film.1 |
+| 3 | `c6_film_2.mp3` | زایلوفون: زیر و بم | زایلوفون: زیر و بَم | c6.film.2 |
+| 4 | `c6_film_3.mp3` | نی: فووو | نِی: فووو | c6.film.3 |
+| 5 | `c6_film_4.mp3` | و آهنگ جشن با همه‌ی سازها! | و آهَنگِ جَشن با هَمه‌یِ سازها! | c6.film.4 |
+| 6 | `c6_next.mp3` | پل شهر شکسته و اتوبوس لاکی خراب است... | پُلِ شَهر شِکَسته و اُتوبوسِ لاکی خَراب اَست... | c6.next |
+| 7 | `c6s1_mission.mp3` | اول یک طبل محکم بسازیم! | اَوَّل یِک طَبلِ مُحکَم بِسازیم! | c6s1.mission |
+| 8 | `c6s1_s1.mp3` | برای طبل یک کاسه لازم داریم. کاسه را از کوله‌پشتی بکش. | بَرایِ طَبل یِک کاسه لازِم داریم. کاسه را اَز کوله‌پُشتی بِکِش. | c6s1.s1 |
+| 9 | `c6s1_s1_done.mp3` | این کاسه عالی است! | این کاسه عالی اَست! | c6s1.s1.done |
+| 10 | `c6s1_s1_why.mp3` | این کاسه نیست. | این کاسه نیست. | c6s1.s1.why |
+| 11 | `c6s1_s2.mp3` | انگشتت را روی خط‌چین بکش تا پوست طبل بریده شود. | اَنگُشتَت را رویِ خَطّ‌چین بِکِش تا پوستِ طَبل بُریده شَوَد. | c6s1.s2 |
+| 12 | `c6s1_s3.mp3` | پوست طبل را بکش و روی جای کم‌رنگش بگذار. | پوستِ طَبل را بِکِش و رویِ جایِ کَم‌رَنگَش بُگذار. | c6s1.s3 |
+| 13 | `c6s1_s4.mp3` | روی طبل بزن تا طناب‌هایش سفت شود. بوم بوم! | رویِ طَبل بِزَن تا طَناب‌هایَش سِفت شَوَد. بوم بوم! | c6s1.s4 |
+| 14 | `c6s1_s5.mp3` | یک رنگ بردار و روی دایره‌های سفید طبل بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ طَبل بِزَن. | c6s1.s5 |
+| 15 | `c6s1_s6.mp3` | نُت‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! جوراب نه. | نُت‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! جوراب نَه. | c6s1.s6 |
+| 16 | `c6s2_mission.mp3` | زایلوفون تیغه‌های رنگی دارد. | زایلوفون تیغه‌هایِ رَنگی دارَد. | c6s2.mission |
+| 17 | `c6s2_s1.mp3` | اول تیغه‌ی بلند را بزن، بعد کوتاه‌تر و کوتاه‌تر. | اَوَّل تیغه‌یِ بُلَند را بِزَن، بَعد کوتاه‌تَر و کوتاه‌تَر. | c6s2.s1 |
+| 18 | `c6s2_s2.mp3` | تیغه‌ها باید میخ بخورند. از کوله‌پشتی وسیله‌ی درست را بکش. | تیغه‌ها باید میخ بُخورَند. اَز کوله‌پُشتی وَسیله‌یِ دُرُست را بِکِش. | c6s2.s2 |
+| 19 | `c6s2_s2_done.mp3` | تق تق! | تَق تَق! | c6s2.s2.done |
+| 20 | `c6s2_s2_why.mp3` | با این نمی‌شود میخ زد. | با این نِمی‌شَوَد میخ زَد. | c6s2.s2.why |
+| 21 | `c6s2_s3.mp3` | چهار تیغه روی زایلوفون بگذار. بشمار! | چَهار تیغه رویِ زایلوفون بُگذار. بِشُمار! | c6s2.s3 |
+| 22 | `c6s2_s4.mp3` | یک رنگ بردار و روی دایره‌های سفید زایلوفون بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ زایلوفون بِزَن. | c6s2.s4 |
+| 23 | `c6s2_s5.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c6s2.s5 |
+| 24 | `c6s2_s6.mp3` | اول گوش کن، بعد همان تیغه‌ها را به همان ترتیب بزن! | اَوَّل گوش کُن، بَعد هَمان تیغه‌ها را بِه هَمان تَرتیب بِزَن! | c6s2.s6 |
+| 25 | `c6s3_mission.mp3` | نی صدای پرنده‌ها را دارد. | نِی صِدایِ پَرَنده‌ها را دارَد. | c6s3.mission |
+| 26 | `c6s3_s1.mp3` | نی خاکی است. انگشتت را رویش بکش تا تمیز شود. | نِی خاکی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد. | c6s3.s1 |
+| 27 | `c6s3_s2.mp3` | انگشتت را روی خط‌چین بکش تا نی بریده شود. | اَنگُشتَت را رویِ خَطّ‌چین بِکِش تا نِی بُریده شَوَد. | c6s3.s2 |
+| 28 | `c6s3_s3.mp3` | روی نی بزن تا سوراخ‌هایش باز شود! | رویِ نِی بِزَن تا سوراخ‌هایَش باز شَوَد! | c6s3.s3 |
+| 29 | `c6s3_s4.mp3` | دکمه‌ی فوت را نگه دار تا نی بنوازد! | دُکمه‌یِ فوت را نِگَه دار تا نِی بِنَوازَد! | c6s3.s4 |
+| 30 | `c6s3_s5.mp3` | وقتی حلقه به جای طلایی رسید، بزن تا نی بلند بخواند! | وَقتی حَلقه بِه جایِ طَلایی رِسید، بِزَن تا نِی بُلَند بِخوانَد! | c6s3.s5 |
+| 31 | `c6s3_s6.mp3` | نُت‌ها می‌افتند! سبد را زیرشان ببر. جوراب را نگیر! | نُت‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. جوراب را نَگیر! | c6s3.s6 |
+| 32 | `c6s4_mission.mp3` | با سازهایی که ساختی آهنگ جشن را بسازیم! | با سازهایی کِه ساختی آهَنگِ جَشن را بِسازیم! | c6s4.mission |
+| 33 | `c6s4_s1.mp3` | نُت‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! | نُت‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! | c6s4.s1 |
+| 34 | `c6s4_s2.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c6s4.s2 |
+| 35 | `c6s4_s3.mp3` | پنج نُت به آهنگ بده. بشمار! | پَنج نُت بِه آهَنگ بِدِه. بِشُمار! | c6s4.s3 |
+| 36 | `c6s4_s4.mp3` | نقطه‌ها را به ترتیب بزن تا آهنگ جشن پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا آهَنگِ جَشن پِیدا شَوَد. | c6s4.s4 |
+| 37 | `c6s4_s5.mp3` | دکمه‌ی فوت را نگه دار و با نی بنواز! | دُکمه‌یِ فوت را نِگَه دار و با نِی بِنَواز! | c6s4.s5 |
+| 38 | `c6s4_s6.mp3` | اول گوش کن، بعد طبل و زایلوفون و نی را به همان ترتیب بزن! | اَوَّل گوش کُن، بَعد طَبل و زایلوفون و نِی را بِه هَمان تَرتیب بِزَن! | c6s4.s6 |
+
+## فصل 7 — شهر و راننده لاکی
+
+*لحن:* راهنمای هر گام را شمرده و روشن بگویید (کودک همان لحظه باید کاری بکند)؛ داستان و فیلم را گرم و قصه‌گو.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `c7_intro.mp3` | پل شهر شکسته و اتوبوس لاکی خراب شده. هیچ‌کس نمی‌تواند به جشن برسد! | پُلِ شَهر شِکَسته و اُتوبوسِ لاکی خَراب شُده. هیچ‌کَس نِمی‌تَوانَد بِه جَشن بِرِسَد! | c7.intro |
+| 2 | `c7_film_1.mp3` | پل دوباره ساخته شد | پُل دُوباره ساخته شُد | c7.film.1 |
+| 3 | `c7_film_2.mp3` | چراغ راهنمایی: قرمز بایست، سبز برو | چِراغِ راهنَمایی: قِرمِز بِایست، سَبز بُرو | c7.film.2 |
+| 4 | `c7_film_3.mp3` | اتوبوس روشن شد: بوق بوق! | اُتوبوس رُوشَن شُد: بوق بوق! | c7.film.3 |
+| 5 | `c7_film_4.mp3` | و همه کارت دعوت گرفتند! | و هَمه کارتِ دَعوَت گِرِفتَند! | c7.film.4 |
+| 6 | `c7_next.mp3` | همه آماده‌اند... وقت جشن بزرگ است! | هَمه آماده‌اَند... وَقتِ جَشنِ بُزُرگ اَست! | c7.next |
+| 7 | `c7s1_mission.mp3` | پل شکسته! ماشین‌ها نمی‌توانند رد شوند. | پُل شِکَسته! ماشین‌ها نِمی‌تَوانَند رَد شَوَند. | c7s1.mission |
+| 8 | `c7s1_s1.mp3` | تخته‌ها سنگین‌اند. از کوله‌پشتی چیزی بکش که بار ببرد. | تَخته‌ها سَنگین‌اَند. اَز کوله‌پُشتی چیزی بِکِش کِه بار بِبَرَد. | c7s1.s1 |
+| 9 | `c7s1_s1_done.mp3` | گاری تخته‌ها را آورد! | گاری تَخته‌ها را آوَرد! | c7s1.s1.done |
+| 10 | `c7s1_s1_why.mp3` | این بار نمی‌برد. | این بار نِمی‌بَرَد. | c7s1.s1.why |
+| 11 | `c7s1_s2.mp3` | جرثقیل تخته را تکان می‌دهد. وقتی بالای خط سبز بود، بزن تا بیفتد! | جَرثَقیل تَخته را تِکان می‌دَهَد. وَقتی بالایِ خَطِّ سَبز بود، بِزَن تا بِیُفتَد! | c7s1.s2 |
+| 12 | `c7s1_s3.mp3` | سه تخته به پل بده. بشمار! | سه تَخته بِه پُل بِدِه. بِشُمار! | c7s1.s3 |
+| 13 | `c7s1_s4.mp3` | تخته‌های پل باید میخ بخورند. از کوله‌پشتی وسیله‌ی درست را بکش. | تَخته‌هایِ پُل باید میخ بُخورَند. اَز کوله‌پُشتی وَسیله‌یِ دُرُست را بِکِش. | c7s1.s4 |
+| 14 | `c7s1_s4_done.mp3` | تق تق! پل محکم شد. | تَق تَق! پُل مُحکَم شُد. | c7s1.s4.done |
+| 15 | `c7s1_s4_why.mp3` | با این نمی‌شود میخ زد. | با این نِمی‌شَوَد میخ زَد. | c7s1.s4.why |
+| 16 | `c7s1_s5.mp3` | میخ‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! جوراب نه. | میخ‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! جوراب نَه. | c7s1.s5 |
+| 17 | `c7s1_s6.mp3` | چپ یا راست صفحه را بزن تا ماشین راهش را عوض کند. ستاره‌ها را بگیر! | چَپ یا راستِ صَفحه را بِزَن تا ماشین راهَش را عَوَض کُنَد. سِتاره‌ها را بِگیر! | c7s1.s6 |
+| 18 | `c7s2_mission.mp3` | چراغ راهنمایی خاموش است و ماشین‌ها گیج شده‌اند. | چِراغِ راهنَمایی خاموش اَست و ماشین‌ها گیج شُده‌اَند. | c7s2.mission |
+| 19 | `c7s2_s1.mp3` | به ترتیب بزن: قرمز، زرد، سبز. | بِه تَرتیب بِزَن: قِرمِز، زَرد، سَبز. | c7s2.s1 |
+| 20 | `c7s2_s2.mp3` | رنگ چراغ رفته! از کوله‌پشتی چیزی بکش که رنگ دارد. | رَنگِ چِراغ رَفته! اَز کوله‌پُشتی چیزی بِکِش کِه رَنگ دارَد. | c7s2.s2 |
+| 21 | `c7s2_s2_done.mp3` | رنگی شد! | رَنگی شُد! | c7s2.s2.done |
+| 22 | `c7s2_s2_why.mp3` | این رنگ ندارد. | این رَنگ نَدارَد. | c7s2.s2.why |
+| 23 | `c7s2_s3.mp3` | نقطه‌ها را به ترتیب بزن تا چراغ راهنمایی پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا چِراغِ راهنَمایی پِیدا شَوَد. | c7s2.s3 |
+| 24 | `c7s2_s4.mp3` | روی چراغ بزن تا رنگش عوض شود: قرمز، زرد، سبز! | رویِ چِراغ بِزَن تا رَنگَش عَوَض شَوَد: قِرمِز، زَرد، سَبز! | c7s2.s4 |
+| 25 | `c7s2_s5.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c7s2.s5 |
+| 26 | `c7s2_s6.mp3` | هر وقت چراغ سبز بیرون آمد بزن! قرمز را نزن. | هَر وَقت چِراغِ سَبز بیرون آمَد بِزَن! قِرمِز را نَزَن. | c7s2.s6 |
+| 27 | `c7s3_mission.mp3` | اتوبوس لاکی پنچر و کثیف و بی‌بنزین است! | اُتوبوسِ لاکی پَنچَر و کَثیف و بی‌بِنزین اَست! | c7s3.mission |
+| 28 | `c7s3_s1.mp3` | لاستیک پنچر است! دکمه‌ی فوت را نگه دار تا باد شود. | لاستیک پَنچَر اَست! دُکمه‌یِ فوت را نِگَه دار تا باد شَوَد. | c7s3.s1 |
+| 29 | `c7s3_s2.mp3` | انگشتت را دور لاستیک بچرخان تا پیچ‌هایش بسته شود. | اَنگُشتَت را دُورِ لاستیک بِچَرخان تا پیچ‌هایَش بَسته شَوَد. | c7s3.s2 |
+| 30 | `c7s3_s3.mp3` | اتوبوس گلی است. انگشتت را رویش بکش تا تمیز شود. | اُتوبوس گِلی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد. | c7s3.s3 |
+| 31 | `c7s3_s4.mp3` | قوطی بنزین را نگه دار تا بریزد. سر پرچم ول کن! | قوطیِ بِنزین را نِگَه دار تا بِریزَد. سَرِ پَرچَم وِل کُن! | c7s3.s4 |
+| 32 | `c7s3_s5.mp3` | انگشتت را دور کلید بچرخان تا اتوبوس روشن شود! | اَنگُشتَت را دُورِ کِلید بِچَرخان تا اُتوبوس رُوشَن شَوَد! | c7s3.s5 |
+| 33 | `c7s3_s6.mp3` | چپ یا راست صفحه را بزن. ستاره‌ها را بگیر، به سنگ و مخروط نخور! | چَپ یا راستِ صَفحه را بِزَن. سِتاره‌ها را بِگیر، بِه سَنگ و مَخروط نَخور! | c7s3.s6 |
+| 34 | `c7s4_mission.mp3` | باید همه را به جشن دعوت کنیم! | باید هَمه را بِه جَشن دَعوَت کُنیم! | c7s4.mission |
+| 35 | `c7s4_s1.mp3` | تکه‌های کارت را بکش و سر جایشان بگذار. | تِکّه‌هایِ کارت را بِکِش و سَرِ جایِشان بُگذار. | c7s4.s1 |
+| 36 | `c7s4_s2.mp3` | یک رنگ بردار و روی دایره‌های سفید کارت بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ کارت بِزَن. | c7s4.s2 |
+| 37 | `c7s4_s3.mp3` | نامه‌ها می‌افتند! سبد را زیرشان ببر. جوراب را نگیر! | نامه‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. جوراب را نَگیر! | c7s4.s3 |
+| 38 | `c7s4_s4.mp3` | سه نامه در صندوق بینداز. بشمار! | سه نامه دَر صَندوق بِیَنداز. بِشُمار! | c7s4.s4 |
+| 39 | `c7s4_s5.mp3` | خانه‌ها دورند. از کوله‌پشتی چیزی بکش که حرکت می‌کند. | خانه‌ها دورَند. اَز کوله‌پُشتی چیزی بِکِش کِه حَرَکَت می‌کُنَد. | c7s4.s5 |
+| 40 | `c7s4_s5_done.mp3` | برووووم! نامه‌ها رسیدند. | بِرووووم! نامه‌ها رِسیدَند. | c7s4.s5.done |
+| 41 | `c7s4_s5_why.mp3` | این حرکت نمی‌کند. | این حَرَکَت نِمی‌کُنَد. | c7s4.s5.why |
+| 42 | `c7s4_s6.mp3` | ماشین را با انگشت روی جاده تا پرچم ببر. | ماشین را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر. | c7s4.s6 |
+
+## فصل 8 — جشن بزرگ جنگل
+
+*لحن:* راهنمای هر گام را شمرده و روشن بگویید (کودک همان لحظه باید کاری بکند)؛ داستان و فیلم را گرم و قصه‌گو.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `c8_intro.mp3` | همه‌چیز آماده است! با چیزهایی که ساختی جشن بزرگ جنگل را برپا کنیم. | هَمه‌چیز آماده اَست! با چیزهایی کِه ساختی جَشنِ بُزُرگِ جَنگَل را بَرپا کُنیم. | c8.intro |
+| 2 | `c8_film_1.mp3` | میز جشن پر از غذاهای تو | میزِ جَشن پُر اَز غَذاهایِ تو | c8.film.1 |
+| 3 | `c8_film_2.mp3` | میدان با فانوس و پرچم‌های تو | مِیدان با فانوس و پَرچَم‌هایِ تو | c8.film.2 |
+| 4 | `c8_film_3.mp3` | کنسرت با سازهای تو | کُنسِرت با سازهایِ تو | c8.film.3 |
+| 5 | `c8_film_4.mp3` | و تو قهرمان جنگل شدی! | و تو قَهرَمانِ جَنگَل شُدی! | c8.film.4 |
+| 6 | `c8s1_mission.mp3` | مهمان‌ها گرسنه‌اند! هر کدام غذای دلخواهش را می‌خواهد. | مِهمان‌ها گُرُسنه‌اَند! هَر کُدام غَذایِ دِلخواهَش را می‌خواهَد. | c8s1.mission |
+| 7 | `c8s1_s1.mp3` | کلوچه‌ها می‌افتند! سبد را زیرشان ببر. کفش را نگیر! | کُلوچه‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. کَفش را نَگیر! | c8s1.s1 |
+| 8 | `c8s1_s2.mp3` | هر چه روی نوار می‌آید را بکش: غذا روی میز سبز، آشغال در سطل قرمز. | هَر چِه رویِ نَوار می‌آیَد را بِکِش: غَذا رویِ میزِ سَبز، آشغال دَر سَطلِ قِرمِز. | c8s1.s2 |
+| 9 | `c8s1_s3.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c8s1.s3 |
+| 10 | `c8s1_s4.mp3` | ببین هر مهمان چه می‌خواهد و همان را از کوله‌پشتی برایش بکش. | بِبین هَر مِهمان چِه می‌خواهَد و هَمان را اَز کوله‌پُشتی بَرایَش بِکِش. | c8s1.s4 |
+| 11 | `c8s1_s5.mp3` | مادربزرگ جغد گرسنه است. هر چه خواست، به دهانش ببر. کفش نه! | مادَربُزُرگ جُغد گُرُسنه اَست. هَر چِه خواست، بِه دَهانَش بِبَر. کَفش نَه! | c8s1.s5 |
+| 12 | `c8s1_s6.mp3` | چهار کلوچه روی میز جشن بگذار. بشمار! | چَهار کُلوچه رویِ میزِ جَشن بُگذار. بِشُمار! | c8s1.s6 |
+| 13 | `c8s2_mission.mp3` | میدان جشن را قشنگ کنیم! | مِیدانِ جَشن را قَشَنگ کُنیم! | c8s2.mission |
+| 14 | `c8s2_s1.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | c8s2.s1 |
+| 15 | `c8s2_s2.mp3` | ببین هر دوست چه می‌خواهد و همان را از کوله‌پشتی برایش بکش. | بِبین هَر دوست چِه می‌خواهَد و هَمان را اَز کوله‌پُشتی بَرایَش بِکِش. | c8s2.s2 |
+| 16 | `c8s2_s3.mp3` | دکمه‌ی فوت را نگه دار تا بادکنک‌ها باد شوند! | دُکمه‌یِ فوت را نِگَه دار تا بادکُنَک‌ها باد شَوَند! | c8s2.s3 |
+| 17 | `c8s2_s4.mp3` | وقتی جعبه بالای خط سبز بود، بزن تا روی برج بیفتد! | وَقتی جَعبه بالایِ خَطِّ سَبز بود، بِزَن تا رویِ بُرج بِیُفتَد! | c8s2.s4 |
+| 18 | `c8s2_s5.mp3` | چهار پرچم به نخ بده. بشمار! | چَهار پَرچَم بِه نَخ بِدِه. بِشُمار! | c8s2.s5 |
+| 19 | `c8s2_s6.mp3` | یک رنگ بردار و روی دایره‌های سفید بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفید بِزَن. | c8s2.s6 |
+| 20 | `c8s3_mission.mp3` | وقت کنسرت میمی است! | وَقتِ کُنسِرتِ میمی اَست! | c8s3.mission |
+| 21 | `c8s3_s1.mp3` | ببین هر نوازنده چه سازی می‌خواهد و همان را برایش بکش. | بِبین هَر نَوازَنده چِه سازی می‌خواهَد و هَمان را بَرایَش بِکِش. | c8s3.s1 |
+| 22 | `c8s3_s2.mp3` | نقطه‌ها را به ترتیب بزن تا صحنه‌ی کنسرت پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا صَحنه‌یِ کُنسِرت پِیدا شَوَد. | c8s3.s2 |
+| 23 | `c8s3_s3.mp3` | دکمه‌ی فوت را نگه دار و با نی بنواز! | دُکمه‌یِ فوت را نِگَه دار و با نِی بِنَواز! | c8s3.s3 |
+| 24 | `c8s3_s4.mp3` | اول گوش کن، بعد سازها را به همان ترتیب بزن! | اَوَّل گوش کُن، بَعد سازها را بِه هَمان تَرتیب بِزَن! | c8s3.s4 |
+| 25 | `c8s3_s5.mp3` | نُت‌ها می‌افتند! سبد را زیرشان ببر. جوراب را نگیر! | نُت‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. جوراب را نَگیر! | c8s3.s5 |
+| 26 | `c8s3_s6.mp3` | میمی تشنه است. آب‌پرتقال را به دهانش ببر. | میمی تِشنه اَست. آبِ پُرتِقال را بِه دَهانَش بِبَر. | c8s3.s6 |
+| 27 | `c8s4_mission.mp3` | آخرین کار: مهمان‌ها را بیاوریم و آتش‌بازی کنیم! | آخَرین کار: مِهمان‌ها را بیاوَریم و آتَش‌بازی کُنیم! | c8s4.mission |
+| 28 | `c8s4_s1.mp3` | مهمان‌ها دورند. از کوله‌پشتی چیزی بکش که همه را بیاورد. | مِهمان‌ها دورَند. اَز کوله‌پُشتی چیزی بِکِش کِه هَمه را بیاوَرَد. | c8s4.s1 |
+| 29 | `c8s4_s1_done.mp3` | بوق بوق! همه رسیدند. | بوق بوق! هَمه رِسیدَند. | c8s4.s1.done |
+| 30 | `c8s4_s1_why.mp3` | این همه را نمی‌آورد. | این هَمه را نِمی‌آوَرَد. | c8s4.s1.why |
+| 31 | `c8s4_s2.mp3` | چپ یا راست صفحه را بزن. ستاره‌ها را بگیر، به سنگ و مخروط نخور! | چَپ یا راستِ صَفحه را بِزَن. سِتاره‌ها را بِگیر، بِه سَنگ و مَخروط نَخور! | c8s4.s2 |
+| 32 | `c8s4_s3.mp3` | می‌خواهیم ستاره‌ها را از نزدیک ببینیم. از کوله‌پشتی وسیله‌ی درست را بکش. | می‌خواهیم سِتاره‌ها را اَز نَزدیک بِبینیم. اَز کوله‌پُشتی وَسیله‌یِ دُرُست را بِکِش. | c8s4.s3 |
+| 33 | `c8s4_s3_done.mp3` | وای! ستاره‌ها! | وای! سِتاره‌ها! | c8s4.s3.done |
+| 34 | `c8s4_s3_why.mp3` | با این نمی‌شود دور را دید. | با این نِمی‌شَوَد دور را دید. | c8s4.s3.why |
+| 35 | `c8s4_s4.mp3` | آتش‌بازی‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! | آتَش‌بازی‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! | c8s4.s4 |
+| 36 | `c8s4_s5.mp3` | ستاره‌ها می‌افتند! سبد را زیرشان ببر. | سِتاره‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. | c8s4.s5 |
+| 37 | `c8s4_s6.mp3` | نقطه‌ها را به ترتیب بزن تا مدال قهرمانی پیدا شود! | نُقطه‌ها را بِه تَرتیب بِزَن تا مِدالِ قَهرَمانی پِیدا شَوَد! | c8s4.s6 |
+
+## ساخته‌ها: کاربرد، مزه، پرسش
+
+*لحن:* آموزشی و کنجکاو؛ پرسش‌ها با آهنگ پرسشی روشن و بدون تأکید روی پاسخ.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `item_juice_made.mp3` | آفرین! آب‌پرتقال آماده شد! | آفَرین! آبِ پُرتِقال آماده شُد! | item.juice.made |
+| 2 | `item_bread_made.mp3` | آفرین! نان آماده شد! | آفَرین! نان آماده شُد! | item.bread.made |
+| 3 | `item_soup_made.mp3` | آفرین! سوپ سبزیجات آماده شد! | آفَرین! سوپِ سَبزیجات آماده شُد! | item.soup.made |
+| 4 | `item_cake_made.mp3` | آفرین! کیک تولد آماده شد! | آفَرین! کیکِ تَوَلُّد آماده شُد! | item.cake.made |
+| 5 | `item_watering_can_made.mp3` | آفرین! آب‌پاش آماده شد! | آفَرین! آب‌پاش آماده شُد! | item.watering_can.made |
+| 6 | `item_flower_pot_made.mp3` | آفرین! گلدان گل آماده شد! | آفَرین! گُلدانِ گُل آماده شُد! | item.flower_pot.made |
+| 7 | `item_eggs_made.mp3` | آفرین! تخم‌مرغ آماده شد! | آفَرین! تُخمِ مُرغ آماده شُد! | item.eggs.made |
+| 8 | `item_sandwich_made.mp3` | آفرین! ساندویچ پنیر آماده شد! | آفَرین! ساندویچِ پَنیر آماده شُد! | item.sandwich.made |
+| 9 | `item_hammer_made.mp3` | آفرین! چکش آماده شد! | آفَرین! چَکُش آماده شُد! | item.hammer.made |
+| 10 | `item_flashlight_made.mp3` | آفرین! چراغ‌قوه آماده شد! | آفَرین! چِراغ‌قُوّه آماده شُد! | item.flashlight.made |
+| 11 | `item_cart_made.mp3` | آفرین! گاری آماده شد! | آفَرین! گاری آماده شُد! | item.cart.made |
+| 12 | `item_toy_car_made.mp3` | آفرین! ماشین اسباب‌بازی آماده شد! | آفَرین! ماشینِ اَسباب‌بازی آماده شُد! | item.toy_car.made |
+| 13 | `item_paints_made.mp3` | آفرین! رنگ‌ها آماده شد! | آفَرین! رَنگ‌ها آماده شُد! | item.paints.made |
+| 14 | `item_clay_bowl_made.mp3` | آفرین! کاسه‌ی گلی آماده شد! | آفَرین! کاسه‌یِ گِلی آماده شُد! | item.clay_bowl.made |
+| 15 | `item_lantern_made.mp3` | آفرین! فانوس آماده شد! | آفَرین! فانوس آماده شُد! | item.lantern.made |
+| 16 | `item_mask_made.mp3` | آفرین! ماسک آماده شد! | آفَرین! ماسک آماده شُد! | item.mask.made |
+| 17 | `item_map_made.mp3` | آفرین! نقشه‌ی جنگل آماده شد! | آفَرین! نَقشه‌یِ جَنگَل آماده شُد! | item.map.made |
+| 18 | `item_tent_made.mp3` | آفرین! چادر آماده شد! | آفَرین! چادُر آماده شُد! | item.tent.made |
+| 19 | `item_firefly_jar_made.mp3` | آفرین! شیشه‌ی کرم شب‌تاب آماده شد! | آفَرین! شیشه‌یِ کِرمِ شَب‌تاب آماده شُد! | item.firefly_jar.made |
+| 20 | `item_telescope_made.mp3` | آفرین! تلسکوپ آماده شد! | آفَرین! تِلِسکوپ آماده شُد! | item.telescope.made |
+| 21 | `item_drum_made.mp3` | آفرین! طبل آماده شد! | آفَرین! طَبل آماده شُد! | item.drum.made |
+| 22 | `item_xylophone_made.mp3` | آفرین! زایلوفون آماده شد! | آفَرین! زایلوفون آماده شُد! | item.xylophone.made |
+| 23 | `item_flute_made.mp3` | آفرین! نی آماده شد! | آفَرین! نِی آماده شُد! | item.flute.made |
+| 24 | `item_song_made.mp3` | آفرین! آهنگ جشن آماده شد! | آفَرین! آهَنگِ جَشن آماده شُد! | item.song.made |
+| 25 | `item_bridge_made.mp3` | آفرین! پل آماده شد! | آفَرین! پُل آماده شُد! | item.bridge.made |
+| 26 | `item_traffic_light_made.mp3` | آفرین! چراغ راهنمایی آماده شد! | آفَرین! چِراغِ راهنَمایی آماده شُد! | item.traffic_light.made |
+| 27 | `item_bus_made.mp3` | آفرین! اتوبوس آماده شد! | آفَرین! اُتوبوس آماده شُد! | item.bus.made |
+| 28 | `item_invitation_made.mp3` | آفرین! کارت دعوت آماده شد! | آفَرین! کارتِ دَعوَت آماده شُد! | item.invitation.made |
+| 29 | `item_feast_made.mp3` | آفرین! میز جشن آماده شد! | آفَرین! میزِ جَشن آماده شُد! | item.feast.made |
+| 30 | `item_decorations_made.mp3` | آفرین! تزئینات جشن آماده شد! | آفَرین! تَزئیناتِ جَشن آماده شُد! | item.decorations.made |
+| 31 | `item_concert_made.mp3` | آفرین! کنسرت جشن آماده شد! | آفَرین! کُنسِرتِ جَشن آماده شُد! | item.concert.made |
+| 32 | `item_medal_made.mp3` | آفرین! مدال قهرمان جنگل آماده شد! | آفَرین! مِدالِ قَهرَمانِ جَنگَل آماده شُد! | item.medal.made |
+| 33 | `item_bubbles_made.mp3` | آفرین! حباب‌ساز آماده شد! | آفَرین! حُباب‌ساز آماده شُد! | item.bubbles.made |
+| 34 | `item_necklace_made.mp3` | آفرین! گردنبند مهره‌ای آماده شد! | آفَرین! گَردَنبَندِ مُهره‌ای آماده شُد! | item.necklace.made |
+| 35 | `item_kite_made.mp3` | آفرین! بادبادک آماده شد! | آفَرین! بادبادَک آماده شُد! | item.kite.made |
+| 36 | `item_robot_made.mp3` | آفرین! ربات آماده شد! | آفَرین! رُبات آماده شُد! | item.robot.made |
+| 37 | `item_dollhouse_made.mp3` | آفرین! خانه‌ی عروسکی آماده شد! | آفَرین! خانه‌یِ عَروسَکی آماده شُد! | item.dollhouse.made |
+| 38 | `item_rocket_made.mp3` | آفرین! موشک آماده شد! | آفَرین! موشَک آماده شُد! | item.rocket.made |
+| 39 | `item_submarine_made.mp3` | آفرین! زیردریایی آماده شد! | آفَرین! زیرِدَریایی آماده شُد! | item.submarine.made |
+| 40 | `item_train_made.mp3` | آفرین! قطار آماده شد! | آفَرین! قَطار آماده شُد! | item.train.made |
+| 41 | `item_bug_book_made.mp3` | آفرین! دفترچه‌ی حشره‌ها آماده شد! | آفَرین! دَفتَرچه‌یِ حَشَره‌ها آماده شُد! | item.bug_book.made |
+| 42 | `item_bird_house_made.mp3` | آفرین! خانه‌ی پرنده آماده شد! | آفَرین! خانه‌یِ پَرَنده آماده شُد! | item.bird_house.made |
+| 43 | `item_photo_frame_made.mp3` | آفرین! قاب عکس آماده شد! | آفَرین! قابِ عَکس آماده شُد! | item.photo_frame.made |
+| 44 | `item_pizza_made.mp3` | آفرین! پیتزا آماده شد! | آفَرین! پیتزا آماده شُد! | item.pizza.made |
+| 45 | `item_cookie_made.mp3` | آفرین! کلوچه آماده شد! | آفَرین! کُلوچه آماده شُد! | item.cookie.made |
+| 46 | `item_rag_doll_made.mp3` | آفرین! عروسک پارچه‌ای آماده شد! | آفَرین! عَروسَکِ پارچه‌ای آماده شُد! | item.rag_doll.made |
+| 47 | `item_windmill_made.mp3` | آفرین! آسیاب بادی آماده شد! | آفَرین! آسیابِ بادی آماده شُد! | item.windmill.made |
+| 48 | `item_bicycle_made.mp3` | آفرین! دوچرخه آماده شد! | آفَرین! دوچَرخه آماده شُد! | item.bicycle.made |
+| 49 | `item_magnet_fish_made.mp3` | آفرین! ماهیگیری آهن‌ربایی آماده شد! | آفَرین! ماهیگیریِ آهَن‌رُبایی آماده شُد! | item.magnet_fish.made |
+| 50 | `item_juice_use.mp3` | آب‌میوه تشنگی را برطرف می‌کند و ویتامین دارد. | آب‌میوه تِشنِگی را بَرطَرَف می‌کُنَد و ویتامین دارَد. | item.juice.use |
+| 51 | `item_juice_quiz.mp3` | با آب‌میوه چه کار می‌کنیم؟ | با آب‌میوه چِه کار می‌کُنیم؟ | item.juice.quiz |
+| 52 | `item_juice_taste.mp3` | مزه‌اش شیرین و کمی ترش است! | مَزه‌اَش شیرین و کَمی تُرش اَست! | item.juice.taste |
+| 53 | `item_bread_use.mp3` | نان غذای هر روز ماست؛ با آن ساندویچ هم درست می‌کنیم. | نان غَذایِ هَر روزِ ماست؛ با آن ساندویچ هَم دُرُست می‌کُنیم. | item.bread.use |
+| 54 | `item_bread_quiz.mp3` | نان را کی می‌خوریم؟ | نان را کِی می‌خوریم؟ | item.bread.quiz |
+| 55 | `item_bread_taste.mp3` | مزه‌اش ترد و گرم است! | مَزه‌اَش تُرد و گَرم اَست! | item.bread.taste |
+| 56 | `item_soup_use.mp3` | سوپ گرم، وقتی سردمان است بدن را گرم می‌کند. | سوپِ گَرم، وَقتی سَردِمان اَست بَدَن را گَرم می‌کُنَد. | item.soup.use |
+| 57 | `item_soup_quiz.mp3` | سوپ گرم به درد کی می‌خورد؟ | سوپِ گَرم بِه دَردِ کی می‌خورَد؟ | item.soup.quiz |
+| 58 | `item_soup_taste.mp3` | مزه‌اش شور و داغ است! | مَزه‌اَش شور و داغ اَست! | item.soup.taste |
+| 59 | `item_cake_use.mp3` | کیک برای جشن و تولد است؛ شمع‌ها را فوت می‌کنیم. | کیک بَرایِ جَشن و تَوَلُّد اَست؛ شَمع‌ها را فوت می‌کُنیم. | item.cake.use |
+| 60 | `item_cake_quiz.mp3` | کیک تولد برای چیست؟ | کیکِ تَوَلُّد بَرایِ چیست؟ | item.cake.quiz |
+| 61 | `item_cake_taste.mp3` | مزه‌اش شیرین است! | مَزه‌اَش شیرین اَست! | item.cake.taste |
+| 62 | `item_watering_can_use.mp3` | با آب‌پاش به گل‌ها و گیاه‌ها آب می‌دهیم. | با آب‌پاش بِه گُل‌ها و گیاه‌ها آب می‌دَهیم. | item.watering_can.use |
+| 63 | `item_watering_can_quiz.mp3` | با آب‌پاش چه کار می‌کنیم؟ | با آب‌پاش چِه کار می‌کُنیم؟ | item.watering_can.quiz |
+| 64 | `item_flower_pot_use.mp3` | گل بوی خوش دارد و زنبورها از آن شهد می‌گیرند. | گُل بویِ خوش دارَد و زَنبورها اَز آن شَهد می‌گیرَند. | item.flower_pot.use |
+| 65 | `item_flower_pot_quiz.mp3` | کی سراغ گل می‌آید؟ | کی سُراغِ گُل می‌آیَد؟ | item.flower_pot.quiz |
+| 66 | `item_eggs_use.mp3` | مرغ تخم می‌گذارد؛ با تخم‌مرغ کیک و نیمرو درست می‌کنیم. | مُرغ تُخم می‌گُذارَد؛ با تُخمِ مُرغ کیک و نیمرو دُرُست می‌کُنیم. | item.eggs.use |
+| 67 | `item_eggs_quiz.mp3` | تخم‌مرغ از کجا می‌آید؟ | تُخمِ مُرغ اَز کُجا می‌آیَد؟ | item.eggs.quiz |
+| 68 | `item_eggs_taste.mp3` | مزه‌اش نرم و خوشمزه است! | مَزه‌اَش نَرم و خوشمَزه اَست! | item.eggs.taste |
+| 69 | `item_sandwich_use.mp3` | ساندویچ یک غذای کامل و راحت برای پیک‌نیک است. | ساندویچ یِک غَذایِ کامِل و راحَت بَرایِ پیک‌نیک اَست. | item.sandwich.use |
+| 70 | `item_sandwich_quiz.mp3` | ساندویچ را با چه درست کردیم؟ | ساندویچ را با چِه دُرُست کَردیم؟ | item.sandwich.quiz |
+| 71 | `item_sandwich_taste.mp3` | مزه‌اش نرم و شور است! | مَزه‌اَش نَرم و شور اَست! | item.sandwich.taste |
+| 72 | `item_hammer_use.mp3` | با چکش میخ را در چوب فرو می‌کنیم تا تکه‌ها به هم بچسبند. | با چَکُش میخ را دَر چوب فُرو می‌کُنیم تا تِکّه‌ها بِه هَم بِچَسبَند. | item.hammer.use |
+| 73 | `item_hammer_quiz.mp3` | با چکش چه کار می‌کنیم؟ | با چَکُش چِه کار می‌کُنیم؟ | item.hammer.quiz |
+| 74 | `item_flashlight_use.mp3` | چراغ‌قوه در تاریکی راه را روشن می‌کند. | چِراغ‌قُوّه دَر تاریکی راه را رُوشَن می‌کُنَد. | item.flashlight.use |
+| 75 | `item_flashlight_quiz.mp3` | چراغ‌قوه کجا به کار می‌آید؟ | چِراغ‌قُوّه کُجا بِه کار می‌آیَد؟ | item.flashlight.quiz |
+| 76 | `item_cart_use.mp3` | با گاری بارهای سنگین را راحت جابه‌جا می‌کنیم. | با گاری بارهایِ سَنگین را راحَت جابِه‌جا می‌کُنیم. | item.cart.use |
+| 77 | `item_cart_quiz.mp3` | گاری به چه کاری می‌آید؟ | گاری بِه چِه کاری می‌آیَد؟ | item.cart.quiz |
+| 78 | `item_toy_car_use.mp3` | ماشین با موتور روشن می‌شود و ما را به جاهای دور می‌برد. | ماشین با موتور رُوشَن می‌شَوَد و ما را بِه جاهایِ دور می‌بَرَد. | item.toy_car.use |
+| 79 | `item_toy_car_quiz.mp3` | ماشین چطور راه می‌افتد؟ | ماشین چِطُور راه می‌اُفتَد؟ | item.toy_car.quiz |
+| 80 | `item_paints_use.mp3` | قرمز و زرد با هم نارنجی می‌شوند؛ آبی و زرد سبز! | قِرمِز و زَرد با هَم نارِنجی می‌شَوَند؛ آبی و زَرد سَبز! | item.paints.use |
+| 81 | `item_paints_quiz.mp3` | قرمز و زرد با هم چه رنگی می‌شوند؟ | قِرمِز و زَرد با هَم چِه رَنگی می‌شَوَند؟ | item.paints.quiz |
+| 82 | `item_clay_bowl_use.mp3` | کاسه‌ی خوب آب را نگه می‌دارد و چیزی نمی‌ریزد. | کاسه‌یِ خوب آب را نِگَه می‌دارَد و چیزی نِمی‌ریزَد. | item.clay_bowl.use |
+| 83 | `item_clay_bowl_quiz.mp3` | کاسه را برای چه می‌سازیم؟ | کاسه را بَرایِ چِه می‌سازیم؟ | item.clay_bowl.quiz |
+| 84 | `item_lantern_use.mp3` | فانوس با نور رنگی، شب را قشنگ و روشن می‌کند. | فانوس با نورِ رَنگی، شَب را قَشَنگ و رُوشَن می‌کُنَد. | item.lantern.use |
+| 85 | `item_lantern_quiz.mp3` | فانوس کی روشن می‌شود؟ | فانوس کِی رُوشَن می‌شَوَد؟ | item.lantern.quiz |
+| 86 | `item_mask_use.mp3` | ماسک را برای بازی و جشن به صورت می‌زنیم. | ماسک را بَرایِ بازی و جَشن بِه صورَت می‌زَنیم. | item.mask.use |
+| 87 | `item_mask_quiz.mp3` | ماسک را کجا می‌زنیم؟ | ماسک را کُجا می‌زَنیم؟ | item.mask.quiz |
+| 88 | `item_map_use.mp3` | نقشه راه را نشان می‌دهد تا گم نشویم. | نَقشه راه را نِشان می‌دَهَد تا گُم نَشَویم. | item.map.use |
+| 89 | `item_map_quiz.mp3` | نقشه به چه درد می‌خورد؟ | نَقشه بِه چِه دَرد می‌خورَد؟ | item.map.quiz |
+| 90 | `item_tent_use.mp3` | چادر زیر باران ما را خشک و گرم نگه می‌دارد. | چادُر زیرِ باران ما را خُشک و گَرم نِگَه می‌دارَد. | item.tent.use |
+| 91 | `item_tent_quiz.mp3` | چادر کی به کار می‌آید؟ | چادُر کِی بِه کار می‌آیَد؟ | item.tent.quiz |
+| 92 | `item_firefly_jar_use.mp3` | کرم‌های شب‌تاب خودشان نور دارند! | کِرم‌هایِ شَب‌تاب خودِشان نور دارَند! | item.firefly_jar.use |
+| 93 | `item_firefly_jar_quiz.mp3` | کرم شب‌تاب کی می‌درخشد؟ | کِرمِ شَب‌تاب کِی می‌دِرَخشَد؟ | item.firefly_jar.quiz |
+| 94 | `item_telescope_use.mp3` | با تلسکوپ چیزهای خیلی دور مثل ماه و ستاره‌ها را نزدیک می‌بینیم. | با تِلِسکوپ چیزهایِ خِیلی دور مِثلِ ماه و سِتاره‌ها را نَزدیک می‌بینیم. | item.telescope.use |
+| 95 | `item_telescope_quiz.mp3` | با تلسکوپ چه می‌بینیم؟ | با تِلِسکوپ چِه می‌بینیم؟ | item.telescope.quiz |
+| 96 | `item_drum_use.mp3` | طبل با ضربه صدا می‌دهد؛ ضربه‌ی محکم بلند، ضربه‌ی آرام آهسته. | طَبل با ضَربه صِدا می‌دَهَد؛ ضَربه‌یِ مُحکَم بُلَند، ضَربه‌یِ آرام آهِسته. | item.drum.use |
+| 97 | `item_drum_quiz.mp3` | طبل را چطور می‌نوازیم؟ | طَبل را چِطُور می‌نَوازیم؟ | item.drum.quiz |
+| 98 | `item_xylophone_use.mp3` | تیغه‌ی بلند صدای بم دارد و تیغه‌ی کوتاه صدای زیر. | تیغه‌یِ بُلَند صِدایِ بَم دارَد و تیغه‌یِ کوتاه صِدایِ زیر. | item.xylophone.use |
+| 99 | `item_xylophone_quiz.mp3` | تیغه‌ی کوتاه چه صدایی دارد؟ | تیغه‌یِ کوتاه چِه صِدایی دارَد؟ | item.xylophone.quiz |
+| 100 | `item_flute_use.mp3` | نی را با فوت می‌نوازیم؛ سوراخ‌ها نت را عوض می‌کنند. | نِی را با فوت می‌نَوازیم؛ سوراخ‌ها نُت را عَوَض می‌کُنَند. | item.flute.use |
+| 101 | `item_flute_quiz.mp3` | نی را چطور می‌نوازیم؟ | نِی را چِطُور می‌نَوازیم؟ | item.flute.quiz |
+| 102 | `item_song_use.mp3` | آهنگ را با چند ساز با هم می‌نوازیم. | آهَنگ را با چَند ساز با هَم می‌نَوازیم. | item.song.use |
+| 103 | `item_song_quiz.mp3` | آهنگ را با چه ساختیم؟ | آهَنگ را با چِه ساختیم؟ | item.song.quiz |
+| 104 | `item_bridge_use.mp3` | پل دو طرف رودخانه را به هم وصل می‌کند. | پُل دو طَرَفِ رودخانه را بِه هَم وَصل می‌کُنَد. | item.bridge.use |
+| 105 | `item_bridge_quiz.mp3` | پل به چه درد می‌خورد؟ | پُل بِه چِه دَرد می‌خورَد؟ | item.bridge.quiz |
+| 106 | `item_traffic_light_use.mp3` | قرمز یعنی بایست، سبز یعنی برو. | قِرمِز یَعنی بِایست، سَبز یَعنی بُرو. | item.traffic_light.use |
+| 107 | `item_traffic_light_quiz.mp3` | چراغ قرمز یعنی چه؟ | چِراغِ قِرمِز یَعنی چِه؟ | item.traffic_light.quiz |
+| 108 | `item_bus_use.mp3` | اتوبوس خیلی‌ها را با هم جابه‌جا می‌کند. | اُتوبوس خِیلی‌ها را با هَم جابِه‌جا می‌کُنَد. | item.bus.use |
+| 109 | `item_bus_quiz.mp3` | اتوبوس برای چیست؟ | اُتوبوس بَرایِ چیست؟ | item.bus.quiz |
+| 110 | `item_invitation_use.mp3` | با کارت دعوت دوستانمان را به جشن خبر می‌کنیم. | با کارتِ دَعوَت دوستانِمان را بِه جَشن خَبَر می‌کُنیم. | item.invitation.use |
+| 111 | `item_invitation_quiz.mp3` | کارت دعوت برای چیست؟ | کارتِ دَعوَت بَرایِ چیست؟ | item.invitation.quiz |
+| 112 | `item_feast_use.mp3` | همه‌ی غذاهایی که ساختی روی یک میز! | هَمه‌یِ غَذاهایی کِه ساختی رویِ یِک میز! | item.feast.use |
+| 113 | `item_feast_quiz.mp3` | روی میز جشن چه گذاشتیم؟ | رویِ میزِ جَشن چِه گُذاشتیم؟ | item.feast.quiz |
+| 114 | `item_feast_taste.mp3` | مزه‌اش جورواجور و خوشمزه است! | مَزه‌اَش جورواجور و خوشمَزه اَست! | item.feast.taste |
+| 115 | `item_decorations_use.mp3` | تزئینات میدان را رنگی و شاد می‌کند. | تَزئینات مِیدان را رَنگی و شاد می‌کُنَد. | item.decorations.use |
+| 116 | `item_decorations_quiz.mp3` | تزئینات برای چیست؟ | تَزئینات بَرایِ چیست؟ | item.decorations.quiz |
+| 117 | `item_concert_use.mp3` | گروه میمی آهنگ تو را می‌نوازد! | گُروهِ میمی آهَنگِ تو را می‌نَوازَد! | item.concert.use |
+| 118 | `item_concert_quiz.mp3` | در کنسرت چه می‌شنویم؟ | دَر کُنسِرت چِه می‌شِنَویم؟ | item.concert.quiz |
+| 119 | `item_medal_use.mp3` | تو با ساخته‌هایت جشن جنگل را نجات دادی! | تو با ساخته‌هایَت جَشنِ جَنگَل را نِجات دادی! | item.medal.use |
+| 120 | `item_medal_quiz.mp3` | چه کسی جشن را نجات داد؟ | چِه کَسی جَشن را نِجات داد؟ | item.medal.quiz |
+| 121 | `item_bubbles_use.mp3` | با فوت، صابون حباب‌های رنگی می‌شود. | با فوت، صابون حُباب‌هایِ رَنگی می‌شَوَد. | item.bubbles.use |
+| 122 | `item_bubbles_quiz.mp3` | حباب چطور درست می‌شود؟ | حُباب چِطُور دُرُست می‌شَوَد؟ | item.bubbles.quiz |
+| 123 | `item_necklace_use.mp3` | مهره‌ها را به ترتیب رنگ به نخ می‌کشیم. | مُهره‌ها را بِه تَرتیبِ رَنگ بِه نَخ می‌کِشیم. | item.necklace.use |
+| 124 | `item_necklace_quiz.mp3` | گردنبند را کجا می‌اندازیم؟ | گَردَنبَند را کُجا می‌اَندازیم؟ | item.necklace.quiz |
+| 125 | `item_kite_use.mp3` | باد بادبادک را بالا می‌برد. | باد بادبادَک را بالا می‌بَرَد. | item.kite.use |
+| 126 | `item_kite_quiz.mp3` | بادبادک با چه بالا می‌رود؟ | بادبادَک با چِه بالا می‌رَوَد؟ | item.kite.quiz |
+| 127 | `item_robot_use.mp3` | ربات با باتری روشن می‌شود و کارهایی را که بگوییم انجام می‌دهد. | رُبات با باتری رُوشَن می‌شَوَد و کارهایی را کِه بِگوییم اَنجام می‌دَهَد. | item.robot.use |
+| 128 | `item_robot_quiz.mp3` | ربات با چه روشن می‌شود؟ | رُبات با چِه رُوشَن می‌شَوَد؟ | item.robot.quiz |
+| 129 | `item_dollhouse_use.mp3` | در خانه‌ی عروسکی چراغ‌ها روشن می‌شوند و شیر آب باز می‌شود. | دَر خانه‌یِ عَروسَکی چِراغ‌ها رُوشَن می‌شَوَند و شیرِ آب باز می‌شَوَد. | item.dollhouse.use |
+| 130 | `item_dollhouse_quiz.mp3` | خانه برای چیست؟ | خانه بَرایِ چیست؟ | item.dollhouse.quiz |
+| 131 | `item_rocket_use.mp3` | موشک با موتورهای قوی به فضا می‌رود. | موشَک با موتورهایِ قَوی بِه فَضا می‌رَوَد. | item.rocket.use |
+| 132 | `item_rocket_quiz.mp3` | موشک کجا می‌رود؟ | موشَک کُجا می‌رَوَد؟ | item.rocket.quiz |
+| 133 | `item_submarine_use.mp3` | زیردریایی زیر آب می‌رود و با چراغش ماهی‌ها را می‌بیند. | زیرِدَریایی زیرِ آب می‌رَوَد و با چِراغَش ماهی‌ها را می‌بینَد. | item.submarine.use |
+| 134 | `item_submarine_quiz.mp3` | زیردریایی کجا می‌رود؟ | زیرِدَریایی کُجا می‌رَوَد؟ | item.submarine.quiz |
+| 135 | `item_train_use.mp3` | قطار روی ریل حرکت می‌کند و سوت می‌کشد: چوووو! | قَطار رویِ رِیل حَرَکَت می‌کُنَد و سوت می‌کِشَد: چوووو! | item.train.use |
+| 136 | `item_train_quiz.mp3` | قطار روی چه حرکت می‌کند؟ | قَطار رویِ چِه حَرَکَت می‌کُنَد؟ | item.train.quiz |
+| 137 | `item_bug_book_use.mp3` | با ذره‌بین حشره‌های کوچک را بزرگ می‌بینیم. | با ذَرّه‌بین حَشَره‌هایِ کوچَک را بُزُرگ می‌بینیم. | item.bug_book.use |
+| 138 | `item_bug_book_quiz.mp3` | ذره‌بین چه کار می‌کند؟ | ذَرّه‌بین چِه کار می‌کُنَد؟ | item.bug_book.quiz |
+| 139 | `item_bird_house_use.mp3` | پرنده در خانه‌اش لانه می‌سازد. | پَرَنده دَر خانه‌اَش لانه می‌سازَد. | item.bird_house.use |
+| 140 | `item_bird_house_quiz.mp3` | خانه‌ی پرنده برای کیست؟ | خانه‌یِ پَرَنده بَرایِ کیست؟ | item.bird_house.quiz |
+| 141 | `item_photo_frame_use.mp3` | عکس یادگاری را در قاب می‌گذاریم و به دیوار می‌زنیم. | عَکسِ یادگاری را دَر قاب می‌گُذاریم و بِه دیوار می‌زَنیم. | item.photo_frame.use |
+| 142 | `item_photo_frame_quiz.mp3` | قاب عکس برای چیست؟ | قابِ عَکس بَرایِ چیست؟ | item.photo_frame.quiz |
+| 143 | `item_pizza_use.mp3` | پیتزا را در فر می‌پزیم تا پنیرش آب شود. | پیتزا را دَر فِر می‌پَزیم تا پَنیرَش آب شَوَد. | item.pizza.use |
+| 144 | `item_pizza_quiz.mp3` | پیتزا را کجا می‌پزیم؟ | پیتزا را کُجا می‌پَزیم؟ | item.pizza.quiz |
+| 145 | `item_pizza_taste.mp3` | مزه‌اش شور و داغ است! | مَزه‌اَش شور و داغ اَست! | item.pizza.taste |
+| 146 | `item_cookie_use.mp3` | کلوچه‌ی تازه ترد و شیرین است. | کُلوچه‌یِ تازه تُرد و شیرین اَست. | item.cookie.use |
+| 147 | `item_cookie_quiz.mp3` | کلوچه چه مزه‌ای دارد؟ | کُلوچه چِه مَزه‌ای دارَد؟ | item.cookie.quiz |
+| 148 | `item_cookie_taste.mp3` | مزه‌اش شیرین و ترد است! | مَزه‌اَش شیرین و تُرد اَست! | item.cookie.taste |
+| 149 | `item_rag_doll_use.mp3` | عروسک نرم را بغل می‌کنیم. | عَروسَکِ نَرم را بَغَل می‌کُنیم. | item.rag_doll.use |
+| 150 | `item_rag_doll_quiz.mp3` | با عروسک چه کار می‌کنیم؟ | با عَروسَک چِه کار می‌کُنیم؟ | item.rag_doll.quiz |
+| 151 | `item_windmill_use.mp3` | باد پره‌ها را می‌چرخاند. | باد پَرّه‌ها را می‌چَرخانَد. | item.windmill.use |
+| 152 | `item_windmill_quiz.mp3` | چه چیزی آسیاب بادی را می‌چرخاند؟ | چِه چیزی آسیابِ بادی را می‌چَرخانَد؟ | item.windmill.quiz |
+| 153 | `item_bicycle_use.mp3` | دوچرخه با رکاب زدن حرکت می‌کند: زینگ زینگ! | دوچَرخه با رِکاب زَدَن حَرَکَت می‌کُنَد: زینگ زینگ! | item.bicycle.use |
+| 154 | `item_bicycle_quiz.mp3` | دوچرخه چطور حرکت می‌کند؟ | دوچَرخه چِطُور حَرَکَت می‌کُنَد؟ | item.bicycle.quiz |
+| 155 | `item_magnet_fish_use.mp3` | آهن‌ربا چیزهای آهنی را به خودش می‌کشد. | آهَن‌رُبا چیزهایِ آهَنی را بِه خودَش می‌کِشَد. | item.magnet_fish.use |
+| 156 | `item_magnet_fish_quiz.mp3` | آهن‌ربا چه چیزی را می‌کشد؟ | آهَن‌رُبا چِه چیزی را می‌کِشَد؟ | item.magnet_fish.quiz |
+
+## کارگاه ستاره (کیت‌ها)
+
+*لحن:* شاد و پرانرژی.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `k_bubbles_mission.mp3` | بیا یک حباب‌ساز بسازیم! | بیا یِک حُباب‌ساز بِسازیم! | k_bubbles.mission |
+| 2 | `k_bubbles_s1.mp3` | شیشه‌ی صابون را نگه دار تا در کاسه بریزد. سر پرچم ول کن! | شیشه‌یِ صابون را نِگَه دار تا دَر کاسه بِریزَد. سَرِ پَرچَم وِل کُن! | k_bubbles.s1 |
+| 3 | `k_bubbles_s2.mp3` | انگشتت را دور کاسه بچرخان تا کف کند. | اَنگُشتَت را دُورِ کاسه بِچَرخان تا کَف کُنَد. | k_bubbles.s2 |
+| 4 | `k_bubbles_s3.mp3` | دکمه‌ی فوت را نگه دار تا حباب درست شود! | دُکمه‌یِ فوت را نِگَه دار تا حُباب دُرُست شَوَد! | k_bubbles.s3 |
+| 5 | `k_bubbles_s4.mp3` | روی حباب‌ها بزن تا بترکند! | رویِ حُباب‌ها بِزَن تا بِتَرکَند! | k_bubbles.s4 |
+| 6 | `k_bubbles_s5.mp3` | حباب‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! | حُباب‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! | k_bubbles.s5 |
+| 7 | `k_necklace_mission.mp3` | یک گردنبند رنگی بسازیم. | یِک گَردَنبَندِ رَنگی بِسازیم. | k_necklace.mission |
+| 8 | `k_necklace_s1.mp3` | مهره‌ها می‌افتند! سبد را زیرشان ببر. جوراب را نگیر! | مُهره‌ها می‌اُفتَند! سَبَد را زیرِشان بِبَر. جوراب را نَگیر! | k_necklace.s1 |
+| 9 | `k_necklace_s2.mp3` | اول مهره‌ی بزرگ را بزن، بعد کوچک‌تر و کوچک‌تر. | اَوَّل مُهره‌یِ بُزُرگ را بِزَن، بَعد کوچَک‌تَر و کوچَک‌تَر. | k_necklace.s2 |
+| 10 | `k_necklace_s3.mp3` | شش مهره به گردنبند بده. بشمار! | شِش مُهره بِه گَردَنبَند بِدِه. بِشُمار! | k_necklace.s3 |
+| 11 | `k_necklace_s4.mp3` | نقطه‌ها را به ترتیب بزن تا گردنبند پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا گَردَنبَند پِیدا شَوَد. | k_necklace.s4 |
+| 12 | `k_necklace_s5.mp3` | یک رنگ بردار و روی دایره‌های سفید بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفید بِزَن. | k_necklace.s5 |
+| 13 | `k_kite_mission.mp3` | روز بادی است! بادبادک بسازیم. | روزِ بادی اَست! بادبادَک بِسازیم. | k_kite.mission |
+| 14 | `k_kite_s1.mp3` | نقطه‌ها را به ترتیب بزن تا بادبادک پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا بادبادَک پِیدا شَوَد. | k_kite.s1 |
+| 15 | `k_kite_s2.mp3` | انگشتت را روی خط‌چین‌ها بکش تا کاغذ بریده شود. | اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش تا کاغَذ بُریده شَوَد. | k_kite.s2 |
+| 16 | `k_kite_s3.mp3` | یک رنگ بردار و روی دایره‌های سفید بادبادک بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ بادبادَک بِزَن. | k_kite.s3 |
+| 17 | `k_kite_s4.mp3` | دکمه‌ی فوت را نگه دار تا بادبادک بچرخد! | دُکمه‌یِ فوت را نِگَه دار تا بادبادَک بِچَرخَد! | k_kite.s4 |
+| 18 | `k_kite_s5.mp3` | بادبادک را با انگشت روی جاده تا پرچم ببر. | بادبادَک را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر. | k_kite.s5 |
+| 19 | `k_robot_mission.mp3` | یک ربات دوست بسازیم! | یِک رُباتِ دوست بِسازیم! | k_robot.mission |
+| 20 | `k_robot_s1.mp3` | کارت‌ها را برگردان و دو تای مثل هم را پیدا کن. | کارت‌ها را بَرگَردان و دو تایِ مِثلِ هَم را پِیدا کُن. | k_robot.s1 |
+| 21 | `k_robot_s2.mp3` | سر و بدنه را بکش و روی جای کم‌رنگشان بگذار. | سَر و بَدَنه را بِکِش و رویِ جایِ کَم‌رَنگِشان بُگذار. | k_robot.s2 |
+| 22 | `k_robot_s3.mp3` | دو باتری به ربات بده. بشمار! | دو باتری بِه رُبات بِدِه. بِشُمار! | k_robot.s3 |
+| 23 | `k_robot_s4.mp3` | یک رنگ بردار و روی دایره‌های سفید ربات بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ رُبات بِزَن. | k_robot.s4 |
+| 24 | `k_robot_s5.mp3` | ربات را با انگشت روی جاده تا پرچم ببر. | رُبات را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر. | k_robot.s5 |
+| 25 | `k_dollhouse_mission.mp3` | یک خانه‌ی کوچک برای عروسک‌ها! | یِک خانه‌یِ کوچَک بَرایِ عَروسَک‌ها! | k_dollhouse.mission |
+| 26 | `k_dollhouse_s1.mp3` | وقتی جعبه بالای خط سبز بود، بزن تا روی برج بیفتد! | وَقتی جَعبه بالایِ خَطِّ سَبز بود، بِزَن تا رویِ بُرج بِیُفتَد! | k_dollhouse.s1 |
+| 27 | `k_dollhouse_s2.mp3` | نقطه‌ها را به ترتیب بزن تا خانه پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا خانه پِیدا شَوَد. | k_dollhouse.s2 |
+| 28 | `k_dollhouse_s3.mp3` | خانه خاکی است. انگشتت را رویش بکش تا تمیز شود. | خانه خاکی اَست. اَنگُشتَت را رویَش بِکِش تا تَمیز شَوَد. | k_dollhouse.s3 |
+| 29 | `k_dollhouse_s4.mp3` | یک رنگ بردار و روی دایره‌های سفید خانه بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ خانه بِزَن. | k_dollhouse.s4 |
+| 30 | `k_dollhouse_s5.mp3` | روی لامپ بزن تا روشن شود! | رویِ لامپ بِزَن تا رُوشَن شَوَد! | k_dollhouse.s5 |
+| 31 | `k_rocket_mission.mp3` | به فضا برویم! | بِه فَضا بِرَویم! | k_rocket.mission |
+| 32 | `k_rocket_s1.mp3` | بدنه‌ی موشک را بکش و روی جای کم‌رنگش بگذار. | بَدَنه‌یِ موشَک را بِکِش و رویِ جایِ کَم‌رَنگَش بُگذار. | k_rocket.s1 |
+| 33 | `k_rocket_s2.mp3` | یک رنگ بردار و روی دایره‌های سفید موشک بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ موشَک بِزَن. | k_rocket.s2 |
+| 34 | `k_rocket_s3.mp3` | اول ستاره‌ی بزرگ را بزن، بعد کوچک‌تر و کوچک‌تر! | اَوَّل سِتاره‌یِ بُزُرگ را بِزَن، بَعد کوچَک‌تَر و کوچَک‌تَر! | k_rocket.s3 |
+| 35 | `k_rocket_s4.mp3` | چپ یا راست صفحه را بزن. ستاره‌ها را بگیر، به سنگ نخور! | چَپ یا راستِ صَفحه را بِزَن. سِتاره‌ها را بِگیر، بِه سَنگ نَخور! | k_rocket.s4 |
+| 36 | `k_rocket_s5.mp3` | روی ستاره‌ها بزن تا در سبد بپرند! | رویِ سِتاره‌ها بِزَن تا دَر سَبَد بِپَرَند! | k_rocket.s5 |
+| 37 | `k_submarine_mission.mp3` | زیر دریا چه خبر است؟ | زیرِ دَریا چِه خَبَر اَست؟ | k_submarine.mission |
+| 38 | `k_submarine_s1.mp3` | پنجره را بکش و روی جای کم‌رنگش بگذار. | پَنجَره را بِکِش و رویِ جایِ کَم‌رَنگَش بُگذار. | k_submarine.s1 |
+| 39 | `k_submarine_s2.mp3` | یک رنگ بردار و روی دایره‌های سفید زیردریایی بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ زیرِدَریایی بِزَن. | k_submarine.s2 |
+| 40 | `k_submarine_s3.mp3` | انگشتت را در تاریکی بکش تا نور ماهی‌ها را پیدا کند. | اَنگُشتَت را دَر تاریکی بِکِش تا نور ماهی‌ها را پِیدا کُنَد. | k_submarine.s3 |
+| 41 | `k_submarine_s4.mp3` | چپ یا راست صفحه را بزن. ماهی‌ها را بگیر، به سنگ نخور! | چَپ یا راستِ صَفحه را بِزَن. ماهی‌ها را بِگیر، بِه سَنگ نَخور! | k_submarine.s4 |
+| 42 | `k_submarine_s5.mp3` | ماهی‌ها از سوراخ‌ها بیرون می‌آیند. زود رویشان بزن! کفش نه. | ماهی‌ها اَز سوراخ‌ها بیرون می‌آیَند. زود رویِشان بِزَن! کَفش نَه. | k_submarine.s5 |
+| 43 | `k_train_mission.mp3` | چووو چووو! یک قطار بسازیم. | چووو چووو! یِک قَطار بِسازیم. | k_train.mission |
+| 44 | `k_train_s1.mp3` | پنج ریل به قطار بده. بشمار! | پَنج رِیل بِه قَطار بِدِه. بِشُمار! | k_train.s1 |
+| 45 | `k_train_s2.mp3` | چهار چرخ به قطار بده. بشمار! | چَهار چَرخ بِه قَطار بِدِه. بِشُمار! | k_train.s2 |
+| 46 | `k_train_s3.mp3` | نقطه‌ها را به ترتیب بزن تا قطار پیدا شود. | نُقطه‌ها را بِه تَرتیب بِزَن تا قَطار پِیدا شَوَد. | k_train.s3 |
+| 47 | `k_train_s4.mp3` | یک رنگ بردار و روی دایره‌های سفید قطار بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ قَطار بِزَن. | k_train.s4 |
+| 48 | `k_train_s5.mp3` | قطار را با انگشت روی جاده تا پرچم ببر. | قَطار را با اَنگُشت رویِ جادّه تا پَرچَم بِبَر. | k_train.s5 |
+| 49 | `workshop_hello.mp3` | به کارگاه ستاره خوش آمدی! با ستاره‌هایت کیت‌های تازه باز می‌شوند. | بِه کارگاهِ سِتاره خوش آمَدی! با سِتاره‌هایَت کیت‌هایِ تازه باز می‌شَوَند. | workshop.hello |
+| 50 | `kit_open.mp3` | یک کیت تازه باز شد! | یِک کیتِ تازه باز شُد! | kit.open |
+
+## فروشگاه ابزار و دستورهای ساخت
+
+*لحن:* هشدارهای ایمنی آرام و جدی، بقیه شاد.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `tool_magnifier_safety.mp3` | ذره‌بین را هیچ‌وقت رو به خورشید نگیر. | ذَرّه‌بین را هیچ‌وَقت رو بِه خورشید نَگیر. | tool.magnifier.safety |
+| 2 | `r_bug_book_mission.mp3` | با ذره‌بین حشره‌ها را پیدا کنیم! | با ذَرّه‌بین حَشَره‌ها را پِیدا کُنیم! | r_bug_book.mission |
+| 3 | `r_bug_book_s1.mp3` | انگشتت را بکش تا ذره‌بین کفشدوزک‌های پنهان را پیدا کند. | اَنگُشتَت را بِکِش تا ذَرّه‌بین کَفشدوزَک‌هایِ پِنهان را پِیدا کُنَد. | r_bug_book.s1 |
+| 4 | `tool_saw_safety.mp3` | با اره همیشه با یک بزرگ‌تر کار می‌کنیم. | با اَرّه هَمیشه با یِک بُزُرگ‌تَر کار می‌کُنیم. | tool.saw.safety |
+| 5 | `r_bird_house_mission.mp3` | برای پرنده‌ها خانه بسازیم. | بَرایِ پَرَنده‌ها خانه بِسازیم. | r_bird_house.mission |
+| 6 | `r_bird_house_s1.mp3` | انگشتت را روی خط‌چین‌ها بکش تا تخته بریده شود. | اَنگُشتَت را رویِ خَطّ‌چین‌ها بِکِش تا تَخته بُریده شَوَد. | r_bird_house.s1 |
+| 7 | `r_bird_house_s2.mp3` | سه تخته به خانه‌ی پرنده بده. بشمار! | سه تَخته بِه خانه‌یِ پَرَنده بِدِه. بِشُمار! | r_bird_house.s2 |
+| 8 | `r_bird_house_s3.mp3` | یک رنگ بردار و روی دایره‌های سفید خانه بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ خانه بِزَن. | r_bird_house.s3 |
+| 9 | `tool_glue_gun_safety.mp3` | سر چسب‌تفنگی داغ است؛ به آن دست نمی‌زنیم. | سَرِ چَسب‌تُفَنگی داغ اَست؛ بِه آن دَست نِمی‌زَنیم. | tool.glue_gun.safety |
+| 10 | `r_photo_frame_mission.mp3` | یک قاب برای عکس یادگاری! | یِک قاب بَرایِ عَکسِ یادگاری! | r_photo_frame.mission |
+| 11 | `r_photo_frame_s1.mp3` | چهار ستاره به قاب بده. بشمار! | چَهار سِتاره بِه قاب بِدِه. بِشُمار! | r_photo_frame.s1 |
+| 12 | `r_photo_frame_s2.mp3` | یک رنگ بردار و روی دایره‌های سفید قاب بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ قاب بِزَن. | r_photo_frame.s2 |
+| 13 | `tool_big_oven_safety.mp3` | در فر داغ است؛ با دستکش بازش می‌کنیم. | دَرِ فِر داغ اَست؛ با دَستکِش بازَش می‌کُنیم. | tool.big_oven.safety |
+| 14 | `r_pizza_mission.mp3` | بیا پیتزا بپزیم! | بیا پیتزا بِپَزیم! | r_pizza.mission |
+| 15 | `r_pizza_s1.mp3` | سه گوجه روی خمیر بگذار. بشمار! | سه گوجه رویِ خَمیر بُگذار. بِشُمار! | r_pizza.s1 |
+| 16 | `r_pizza_s2.mp3` | دو تکه پنیر روی خمیر بگذار. | دو تِکّه پَنیر رویِ خَمیر بُگذار. | r_pizza.s2 |
+| 17 | `r_pizza_s3.mp3` | پیتزا در فر است. وقتی حلقه به جای طلایی رسید، بزن! | پیتزا دَر فِر اَست. وَقتی حَلقه بِه جایِ طَلایی رِسید، بِزَن! | r_pizza.s3 |
+| 18 | `r_cookie_mission.mp3` | کلوچه‌ی تازه! | کُلوچه‌یِ تازه! | r_cookie.mission |
+| 19 | `r_cookie_s1.mp3` | انگشتت را دور کاسه بچرخان تا خمیر کلوچه درست شود. | اَنگُشتَت را دُورِ کاسه بِچَرخان تا خَمیرِ کُلوچه دُرُست شَوَد. | r_cookie.s1 |
+| 20 | `r_cookie_s2.mp3` | کلوچه در فر است. وقتی حلقه به جای طلایی رسید، بزن! | کُلوچه دَر فِر اَست. وَقتی حَلقه بِه جایِ طَلایی رِسید، بِزَن! | r_cookie.s2 |
+| 21 | `tool_sewing_machine_safety.mp3` | انگشت‌ها را از سوزن دور نگه می‌داریم. | اَنگُشت‌ها را اَز سوزَن دور نِگَه می‌داریم. | tool.sewing_machine.safety |
+| 22 | `r_rag_doll_mission.mp3` | یک عروسک نرم بدوزیم. | یِک عَروسَکِ نَرم بِدوزیم. | r_rag_doll.mission |
+| 23 | `r_rag_doll_s1.mp3` | روی چرخ خیاطی تند تند بزن تا بدوزد: تق تق تق! | رویِ چَرخِ خَیّاطی تُند تُند بِزَن تا بِدوزَد: تَق تَق تَق! | r_rag_doll.s1 |
+| 24 | `r_rag_doll_s2.mp3` | یک رنگ بردار و روی دایره‌های سفید عروسک بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ عَروسَک بِزَن. | r_rag_doll.s2 |
+| 25 | `tool_drill_safety.mp3` | دریل را فقط بزرگ‌ترها روشن می‌کنند و ما کمک می‌کنیم. | دریل را فَقَط بُزُرگ‌تَرها رُوشَن می‌کُنَند و ما کُمَک می‌کُنیم. | tool.drill.safety |
+| 26 | `r_windmill_mission.mp3` | یک آسیاب بادی بسازیم. | یِک آسیابِ بادی بِسازیم. | r_windmill.mission |
+| 27 | `r_windmill_s1.mp3` | روی دریل بزن تا سوراخ کند! | رویِ دریل بِزَن تا سوراخ کُنَد! | r_windmill.s1 |
+| 28 | `r_windmill_s2.mp3` | پره را بکش و روی جای کم‌رنگش بگذار. | پَرّه را بِکِش و رویِ جایِ کَم‌رَنگَش بُگذار. | r_windmill.s2 |
+| 29 | `r_windmill_s3.mp3` | انگشتت را دور آسیاب بچرخان تا پره‌هایش بچرخند! | اَنگُشتَت را دُورِ آسیاب بِچَرخان تا پَرّه‌هایَش بِچَرخَند! | r_windmill.s3 |
+| 30 | `tool_wrench_safety.mp3` | آچار را محکم و آرام می‌چرخانیم. | آچار را مُحکَم و آرام می‌چَرخانیم. | tool.wrench.safety |
+| 31 | `r_bicycle_mission.mp3` | یک دوچرخه برای پوپو! | یِک دوچَرخه بَرایِ پوپو! | r_bicycle.mission |
+| 32 | `r_bicycle_s1.mp3` | دو چرخ به دوچرخه بده. بشمار! | دو چَرخ بِه دوچَرخه بِدِه. بِشُمار! | r_bicycle.s1 |
+| 33 | `r_bicycle_s2.mp3` | انگشتت را دور آچار بچرخان تا پیچ‌ها سفت شوند. | اَنگُشتَت را دُورِ آچار بِچَرخان تا پیچ‌ها سِفت شَوَند. | r_bicycle.s2 |
+| 34 | `r_bicycle_s3.mp3` | یک رنگ بردار و روی دایره‌های سفید دوچرخه بزن. | یِک رَنگ بَردار و رویِ دایِره‌هایِ سِفیدِ دوچَرخه بِزَن. | r_bicycle.s3 |
+| 35 | `tool_magnet_safety.mp3` | آهن‌ربا را نزدیک گوشی و تلویزیون نمی‌بریم. | آهَن‌رُبا را نَزدیکِ گوشی و تِلِویزیون نِمی‌بَریم. | tool.magnet.safety |
+| 36 | `r_magnet_fish_mission.mp3` | بیا ماهیگیری کنیم! | بیا ماهیگیری کُنیم! | r_magnet_fish.mission |
+| 37 | `r_magnet_fish_s1.mp3` | هر چه روی نوار می‌آید را بکش: آهنی‌ها در سبد سبز، بقیه در سطل قرمز. | هَر چِه رویِ نَوار می‌آیَد را بِکِش: آهَنی‌ها دَر سَبَدِ سَبز، بَقیّه دَر سَطلِ قِرمِز. | r_magnet_fish.s1 |
+| 38 | `r_magnet_fish_s2.mp3` | روی ماهی‌ها بزن تا با آهن‌ربا در سبد بپرند! | رویِ ماهی‌ها بِزَن تا با آهَن‌رُبا دَر سَبَد بِپَرَند! | r_magnet_fish.s2 |
+| 39 | `shop_hello.mp3` | این‌جا با سکه ابزار می‌خری و چیزهای تازه می‌سازی. | این‌جا با سِکّه اَبزار می‌خَری و چیزهایِ تازه می‌سازی. | shop.hello |
+| 40 | `shop_bought.mp3` | ابزار تازه! بیا ببینیم چطور کار می‌کند. | اَبزارِ تازه! بیا بِبینیم چِطُور کار می‌کُنَد. | shop.bought |
+
+## اتاق بازی، سفارش‌ها و ترکیب‌ها
+
+*لحن:* بازیگوش و صمیمی.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `order_1.mp3` | بانی تشنه است. چی بهش بدیم؟ | بانی تِشنه اَست. چی بِهِش بِدیم؟ | order.1 |
+| 2 | `order_2.mp3` | خاله خرسی یک چیز شیرین می‌خواهد. | خاله خِرسی یِک چیزِ شیرین می‌خواهَد. | order.2 |
+| 3 | `order_3.mp3` | مادربزرگ جغد سردش است. | مادَربُزُرگ جُغد سَردَش اَست. | order.3 |
+| 4 | `order_4.mp3` | میمی یک ساز با صدای بم می‌خواهد. | میمی یِک ساز با صِدایِ بَم می‌خواهَد. | order.4 |
+| 5 | `order_5.mp3` | میمی یک ساز با صدای زیر می‌خواهد. | میمی یِک ساز با صِدایِ زیر می‌خواهَد. | order.5 |
+| 6 | `order_6.mp3` | آقا سنجاب در تاریکی چیزی را گم کرده. | آقا سَنجاب دَر تاریکی چیزی را گُم کَرده. | order.6 |
+| 7 | `order_7.mp3` | لاکی یک وسیله‌ی نقلیه می‌خواهد. | لاکی یِک وَسیله‌یِ نَقلیه می‌خواهَد. | order.7 |
+| 8 | `order_8.mp3` | کوکو یک چیز قشنگ برای تزئین می‌خواهد. | کوکو یِک چیزِ قَشَنگ بَرایِ تَزئین می‌خواهَد. | order.8 |
+| 9 | `order_9.mp3` | آقا سنجاب باید میخ بزند. | آقا سَنجاب باید میخ بِزَنَد. | order.9 |
+| 10 | `order_10.mp3` | گل‌های بانی تشنه‌اند. | گُل‌هایِ بانی تِشنه‌اَند. | order.10 |
+| 11 | `order_11.mp3` | خاله خرسی گرسنه است. | خاله خِرسی گُرُسنه اَست. | order.11 |
+| 12 | `order_12.mp3` | مادربزرگ جغد راه را گم کرده. | مادَربُزُرگ جُغد راه را گُم کَرده. | order.12 |
+| 13 | `order_13.mp3` | کوکو دلش موسیقی می‌خواهد. | کوکو دِلَش موسیقی می‌خواهَد. | order.13 |
+| 14 | `combo_1.mp3` | مهمانی کوچک! دوستان آمدند. | مِهمانیِ کوچَک! دوستان آمَدَند. | combo.1 |
+| 15 | `combo_2.mp3` | ربات گل‌ها را آب داد! | رُبات گُل‌ها را آب داد! | combo.2 |
+| 16 | `combo_3.mp3` | یک آهنگ دونفره! | یِک آهَنگِ دونَفَره! | combo.3 |
+| 17 | `combo_4.mp3` | چادر شب روشن شد. | چادُرِ شَب رُوشَن شُد. | combo.4 |
+| 18 | `combo_5.mp3` | ماشین نامه‌ها را رساند. | ماشین نامه‌ها را رَساند. | combo.5 |
+| 19 | `combo_6.mp3` | تماشای شب پرستاره! | تَماشایِ شَبِ پُرسِتاره! | combo.6 |
+| 20 | `combo_7.mp3` | باد هر دو را چرخاند! | باد هَر دو را چَرخاند! | combo.7 |
+| 21 | `combo_8.mp3` | ماهی‌گیری زیر آب! | ماهی‌گیری زیرِ آب! | combo.8 |
+| 22 | `combo_9.mp3` | ناهار گرم و خوشمزه! | ناهارِ گَرم و خوشمَزه! | combo.9 |
+| 23 | `combo_10.mp3` | رقص با ماسک! | رَقص با ماسک! | combo.10 |
+| 24 | `combo_11.mp3` | موشک در آسمان دیده شد! | موشَک دَر آسمان دیده شُد! | combo.11 |
+| 25 | `combo_12.mp3` | پرنده‌ها در باغ لانه ساختند. | پَرَنده‌ها دَر باغ لانه ساختَند. | combo.12 |
+| 26 | `combo_13.mp3` | یک نقاشی قاب‌شده! | یِک نَقّاشیِ قاب‌شُده! | combo.13 |
+| 27 | `combo_14.mp3` | گردش با دوچرخه در جنگل! | گَردِش با دوچَرخه دَر جَنگَل! | combo.14 |
+| 28 | `playroom_hello.mp3` | این اتاق بازی توست. همه‌ی ساخته‌هایت این‌جاست! | این اُتاقِ بازیِ توست. هَمه‌یِ ساخته‌هایَت این‌جاست! | playroom.hello |
+| 29 | `playroom_combo.mp3` | یک ترکیب تازه کشف کردی! | یِک تَرکیبِ تازه کَشف کَردی! | playroom.combo |
+| 30 | `playroom_order_done.mp3` | دقیقاً همین را می‌خواستم! ممنون! | دَقیقاً هَمین را می‌خواستَم! مَمنون! | playroom.order.done |
+| 31 | `playroom_order_wrong.mp3` | این را نمی‌خواهم؛ یک چیز دیگر بده. | این را نِمی‌خواهَم؛ یِک چیزِ دیگَر بِدِه. | playroom.order.wrong |
+
+## راهنما، ستاره، جایزه
+
+*لحن:* مهربان؛ در دلگرمی‌ها هیچ لحن سرزنش‌آمیزی نباشد.
+
+| # | فایل | متن | با اعراب (برای خواندن) | کجا پخش می‌شود |
+|---|---|---|---|---|
+| 1 | `game_hint_1.mp3` | این‌جا را ببین... | این‌جا را بِبین... | game.hint.1 |
+| 2 | `game_hint_2.mp3` | بیا با هم انجامش بدهیم. | بیا با هَم اَنجامَش بِدَهیم. | game.hint.2 |
+| 3 | `game_wrong.mp3` | نه این یکی نه؛ دوباره امتحان کن! | نَه این یِکی نَه؛ دُوباره اِمتِحان کُن! | game.wrong |
+| 4 | `game_quiz_right.mp3` | درست گفتی! | دُرُست گُفتی! | game.quiz.right |
+| 5 | `game_quiz_wrong.mp3` | نه عزیزم، به این دقت کن. | نَه عَزیزَم، بِه این دِقَّت کُن. | game.quiz.wrong |
+| 6 | `game_play.mp3` | حالا باهاش بازی کن! | حالا باهاش بازی کُن! | game.play |
+| 7 | `game_backpack.mp3` | گذاشتمش در کوله‌پشتی. | گُذاشتَمَش دَر کوله‌پُشتی. | game.backpack |
+| 8 | `game_stars_3.mp3` | عالی بود! سه ستاره! | عالی بود! سه سِتاره! | game.stars.3 |
+| 9 | `game_stars_2.mp3` | خیلی خوب بود! | خِیلی خوب بود! | game.stars.2 |
+| 10 | `game_stars_1.mp3` | تمامش کردی، آفرین! | تَمامَش کَردی، آفَرین! | game.stars.1 |
+| 11 | `game_fast.mp3` | چه سریع! | چِه سَریع! | game.fast |
+| 12 | `game_locked.mp3` | این بخش برای بعد است. اول بخش قبلی را تمام کن. | این بَخش بَرایِ بَعد اَست. اَوَّل بَخشِ قَبلی را تَمام کُن. | game.locked |
+| 13 | `game_coins_low.mp3` | سکه‌هایت کم است. بیا یک بخش را دوباره بازی کنیم! | سِکّه‌هایَت کَم اَست. بیا یِک بَخش را دُوباره بازی کُنیم! | game.coins.low |
+| 14 | `game_secret.mp3` | یک چیز پنهان پیدا کردی! | یِک چیزِ پِنهان پِیدا کَردی! | game.secret |
+| 15 | `game_daily.mp3` | جایزه‌ی امروز! سکه گرفتی. | جایِزه‌یِ اِمروز! سِکّه گِرِفتی. | game.daily |
+| 16 | `home_hello.mp3` | سلام! امروز چی بسازیم؟ | سَلام! اِمروز چی بِسازیم؟ | home.hello |
+| 17 | `film_end.mp3` | یک تکه‌ی تازه از نقشه‌ی جشن روشن شد! | یِک تِکّه‌یِ تازه اَز نَقشه‌یِ جَشن رُوشَن شُد! | film.end |

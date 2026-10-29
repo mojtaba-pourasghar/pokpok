@@ -69,27 +69,56 @@ class Pen {
 
   final Canvas c;
 
-  static const outline = 2.2;
+  static const outline = 1.9;
 
   Paint _fill(Rect r, Color color) => Paint()
     ..shader = LinearGradient(
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-      colors: [tint(color, .32), color, shade(color, .12)],
-      stops: const [0, .55, 1],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [tint(color, .22), color, shade(color, .06)],
+      stops: const [0, .5, 1],
     ).createShader(r);
 
   Paint _line(Color color, [double w = outline]) => Paint()
-    ..color = shade(color, .45)
+    ..color = shade(color, .55).withValues(alpha: .9)
     ..style = PaintingStyle.stroke
     ..strokeWidth = w
     ..strokeJoin = StrokeJoin.round
     ..strokeCap = StrokeCap.round;
 
-  /// شکل پر با سایه‌روشن و خط دور.
+  /// شکل پر با حجم: رنگ پایه، سایه‌ی نرم لبه‌ی پایین و کنار (مثل نور از بالا-چپ)، برق نرم بالا،
+  /// و خط دور تیره‌تر از همان رنگ.
   void blob(Path p, Color color, {bool line = true, bool flat = false, double lineWidth = outline}) {
     final r = p.getBounds();
-    c.drawPath(p, flat ? (Paint()..color = color) : _fill(r, color));
+    if (flat || r.isEmpty) {
+      c.drawPath(p, Paint()..color = color);
+    } else {
+      c.drawPath(p, _fill(r, color));
+      final big = r.longestSide;
+      c.save();
+      c.clipPath(p);
+      // سایه‌ی هسته: از مرکز روشن بالا-چپ به لبه‌ی تیره
+      final core = Offset(r.left + r.width * .38, r.top + r.height * .32);
+      c.drawRect(
+        r.inflate(2),
+        Paint()
+          ..shader = RadialGradient(
+            center: Alignment.center,
+            radius: .5,
+            colors: [Colors.transparent, Colors.transparent, shade(color, .42).withValues(alpha: .75)],
+            stops: const [0, .42, 1],
+          ).createShader(Rect.fromCircle(center: core, radius: big * .8)),
+      );
+      // برق نرم
+      c.drawOval(
+        Rect.fromCenter(center: Offset(r.left + r.width * .34, r.top + r.height * .24), width: r.width * .5, height: r.height * .32),
+        Paint()
+          ..shader = RadialGradient(colors: [Colors.white.withValues(alpha: .55), Colors.white.withValues(alpha: 0)]).createShader(
+            Rect.fromCenter(center: Offset(r.left + r.width * .34, r.top + r.height * .24), width: r.width * .5, height: r.height * .32),
+          ),
+      );
+      c.restore();
+    }
     if (line) c.drawPath(p, _line(color, lineWidth));
   }
 
