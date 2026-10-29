@@ -14,7 +14,7 @@ import path from "node:path";
 
 const AUDIO_EXT = /\.(mp3|wav|ogg|oga|m4a|aac|flac|webm|opus|aif|aiff|wma|mp4)$/i;
 
-export function createSfx({ app, normalize, say }) {
+export function createSfx({ app, normalize, say, onWrite = () => {} }) {
   const manifestFile = path.join(app, "assets/content/asset_manifest.json");
   const CATEGORIES = [
     { id: "animals", title: "حیوان‌ها" },
@@ -68,6 +68,8 @@ export function createSfx({ app, normalize, say }) {
 
   return {
     sourcesFile,
+    /** Ambient sounds and music are loops (.ogg), cleaned differently from one-shot effects. */
+    isLoop: (id) => soundOf(id).audio.endsWith(".ogg"),
     fileOf,
 
     list() {
@@ -103,10 +105,11 @@ export function createSfx({ app, normalize, say }) {
       const target = path.join(app, "assets", sound.audio);
       const temp = fs.mkdtempSync(path.join(os.tmpdir(), "popo-sfx-"));
       const input = path.join(temp, "in" + (path.extname(name) || ".bin"));
-      const output = path.join(temp, "out.mp3");
+      const loop = sound.audio.endsWith(".ogg");
+      const output = path.join(temp, loop ? "out.ogg" : "out.mp3");
       try {
         fs.writeFileSync(input, buffer);
-        const done = await normalize(input, output, maxSeconds);
+        const done = await normalize(input, output, maxSeconds, { loop });
         if (!done.ok) throw new Error(`ffmpeg نتوانست فایل را بخواند: ${done.error || "؟"}`);
         if (fs.statSync(output).size < 1024) throw new Error("خروجی تقریباً خالی است — فایل صدا دارد؟");
         fs.mkdirSync(path.dirname(target), { recursive: true });
@@ -125,6 +128,7 @@ export function createSfx({ app, normalize, say }) {
       };
       writeSources(data);
       const size = fs.statSync(target).size;
+      onWrite();
       say("ok", `صدای «${sound.title}» جایگزین شد ← ${sound.audio} (${Math.round(size / 1024)} کیلوبایت)`);
       return { ok: true, id, file: sound.audio, size };
     },

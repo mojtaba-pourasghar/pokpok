@@ -60,7 +60,8 @@ export default function SfxPanel({ ffmpeg }) {
     try {
       const m = meta[sound.id] || {};
       const q = new URLSearchParams({
-        name: file.name, max: String(maxSeconds),
+        // صدای محیط حلقه است: ۲۴ ثانیه نگه داشته می‌شود و انتها در ابتدا محو می‌شود (server/index.js)
+        name: file.name, max: String(sound.file.endsWith(".ogg") ? 24 : maxSeconds),
         source: m.source ?? sound.source?.source ?? "", license: m.license ?? sound.source?.license ?? "",
       });
       await json(await fetch(`/api/sfx/${sound.id}?${q}`, {
@@ -123,7 +124,7 @@ export default function SfxPanel({ ffmpeg }) {
           فقط سنتزی‌ها
         </label>
         <label className="check" style={{ marginTop: 0 }}>
-          حداکثر طول (ثانیه)
+          حداکثر طول جلوه (ثانیه؛ صدای محیط همیشه ۲۴)
           <input type="number" min="1" max="15" value={maxSeconds} style={{ width: 64 }}
                  onChange={(e) => setMaxSeconds(Number(e.target.value) || 6)} />
         </label>

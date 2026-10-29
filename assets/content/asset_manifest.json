@@ -921,6 +921,15 @@
    "sha256": "e55f0c16322f14ddd92d450e348cf4e6c62ccc27c8e81fd6d0b99b25112d3d0c"
   },
   {
+   "id": "voice/item_soup_made",
+   "group": "voice",
+   "path": "audio/voice/item_soup_made.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 57723,
+   "sha256": "38357ac69ca5bec3e822ab6a8a330a50bbbe9036bf1b0f07c6660e60f9ac23a1"
+  },
+  {
    "id": "voice/notice_new",
    "group": "voice",
    "path": "audio/voice/notice_new.mp3",
