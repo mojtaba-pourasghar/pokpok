@@ -15,7 +15,6 @@ import 'core/billing/billing.dart';
 import 'core/content/content.dart';
 import 'core/notices/notices_store.dart';
 import 'core/storage/local_store.dart';
-import 'features/mascot/popo_mascot.dart';
 import 'game/game_data.dart';
 import 'game/game_state.dart';
 
@@ -30,8 +29,8 @@ Future<void> main() async {
   final game = await GameData.load(rootBundle);
   final assets = AssetResolver();
   await assets.init(rootBundle);
-  // حالت‌های رستری پوپو، اگر با tools/art/generate_cf.py ساخته شده باشند.
-  MascotArt.resolve = (path) => assets.exists(path) ? assets.image(path) : null;
+  // پوپو با کد کشیده می‌شود تا مثل بقیه‌ی کارتون‌ها زنده باشد (پلک، نفس، دست تکان دادن)؛
+  // حالت‌های رستری قدیمی (MascotArt) دیگر به کار نمی‌روند.
 
   // نسخه‌ی کامل: خرید قبلی و قیمت از کافه‌بازار؛ منتظرش نمی‌مانیم تا شروع برنامه کند نشود.
   final access = AccessStore(prefs, const BazaarBilling());

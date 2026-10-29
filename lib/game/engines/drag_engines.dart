@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../app/theme/theme.dart';
 import '../../core/audio/popo_audio.dart';
 import '../../ui/clay.dart';
+import '../../ui/toons/toon.dart';
 import '../../ui/fx.dart';
 import 'engine.dart';
 import 'props.dart';
@@ -318,7 +319,7 @@ class _AssembleState extends ConsumerState<AssembleEngine> with EngineSounds {
                               ? Idle(
                                   key: const ValueKey('r'),
                                   amount: 1.4,
-                                  child: GameArt(widget.step.str('result'), size: base),
+                                  child: GameArt(widget.step.str('result'), size: base, mood: ToonMood.happy),
                                 )
                               : Opacity(
                                   key: const ValueKey('b'),
@@ -474,7 +475,7 @@ class _CountState extends ConsumerState<CountEngine> with EngineSounds {
                               scale: cand.isNotEmpty ? 1.08 : 1,
                               child: HintGlow(
                                 on: hint >= 1,
-                                child: GameArt(widget.step.str('into'), size: big),
+                                child: GameArt(widget.step.str('into'), size: big, mood: landed >= need ? ToonMood.happy : ToonMood.idle),
                               ),
                             ),
                           ),
@@ -1236,7 +1237,7 @@ class _PaintState extends ConsumerState<PaintEngine> with EngineSounds {
                             child: Idle(
                               enabled: painted.length == areas,
                               amount: 1.5,
-                              child: GameArt(widget.step.str('target'), size: s * .72),
+                              child: GameArt(widget.step.str('target'), size: s * .72, mood: painted.length == areas ? ToonMood.happy : ToonMood.idle),
                             ),
                           ),
                         ),
@@ -1617,7 +1618,7 @@ class _TraceState extends ConsumerState<TraceEngine> with EngineSounds {
                   child: AnimatedRotation(
                     duration: const Duration(milliseconds: 120),
                     turns: (heading.clamp(-.6, .6)) / (math.pi * 2),
-                    child: Idle(amount: .6, child: GameArt(widget.step.str('target'), size: size)),
+                    child: Idle(amount: .6, child: GameArt(widget.step.str('target'), size: size, mood: finished ? ToonMood.happy : (progress > 0 ? ToonMood.act : ToonMood.idle))),
                   ),
                 ),
               ),

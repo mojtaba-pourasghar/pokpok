@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../app/theme/theme.dart';
 import '../../core/audio/popo_audio.dart';
 import '../../ui/clay.dart';
+import '../../ui/toons/toon.dart';
 import '../../ui/fx.dart';
 import 'engine.dart';
 import 'props.dart';
@@ -216,13 +217,13 @@ class _TapState extends ConsumerState<TapEngine> with EngineSounds {
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 350),
                     transitionBuilder: (c, a) => ScaleTransition(scale: CurvedAnimation(parent: a, curve: Curves.elasticOut), child: c),
-                    child: GameArt(art, key: ValueKey(art), size: size),
+                    child: GameArt(art, key: ValueKey(art), size: size, mood: n >= need ? ToonMood.happy : (n > 0 ? ToonMood.act : ToonMood.idle)),
                   ),
                 ),
               ),
             ),
             Positioned(bottom: 4, left: 24, right: 24, child: _Meter(value: n / need)),
-            if (n == 0) Positioned(top: 4, child: _Bubble(widget.step.str('label', 'بزن، بزن، بزن!'))),
+            if (n == 0) Positioned(top: 4, child: _Bubble(widget.step.str('label').isEmpty ? 'بزن، بزن، بزن!' : widget.step.str('label'))),
             if (hint >= 3) HintHand(from: Offset(box.maxWidth / 2, box.maxHeight / 2)),
           ],
         ),
@@ -345,7 +346,7 @@ class _RotateState extends ConsumerState<RotateEngine> with EngineSounds {
               Transform.rotate(
                 key: _art,
                 angle: vessel ? math.sin(spin * 2) * .05 : spin,
-                child: GameArt(art, size: r * 1.25),
+                child: GameArt(art, size: r * 1.25, mood: finished ? ToonMood.happy : (progress > 0 ? ToonMood.act : ToonMood.idle)),
               ),
               if (vessel && !finished)
                 IgnorePointer(

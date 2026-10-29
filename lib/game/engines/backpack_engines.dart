@@ -7,6 +7,7 @@ import '../../app/theme/theme.dart';
 import '../../core/audio/popo_audio.dart';
 import '../../core/narrator.dart';
 import '../../ui/clay.dart';
+import '../../ui/toons/toon.dart';
 import '../../ui/fx.dart';
 import '../scoring.dart';
 import 'engine.dart';
@@ -223,14 +224,14 @@ class _UseState extends ConsumerState<UseEngine> with EngineSounds {
                                 scale: cand.isNotEmpty ? 1.06 : 1,
                                 child: Idle(
                                   amount: solved ? 1.5 : .6,
-                                  child: GameArt(widget.step.str('spot'), size: spot),
+                                  child: GameArt(widget.step.str('spot'), size: spot, mood: solved ? ToonMood.happy : ToonMood.sad),
                                 ),
                               ),
                               if (solved)
                                 Positioned(
                                   bottom: -spot * .05,
                                   right: -spot * .05,
-                                  child: PopIn(from: 1.6, child: GameArt(need, size: spot * .55)),
+                                  child: PopIn(from: 1.6, child: GameArt(need, size: spot * .55, mood: ToonMood.act)),
                                 ),
                               if (!solved)
                                 Positioned(
@@ -391,7 +392,7 @@ class _ServeState extends ConsumerState<ServeEngine> with EngineSounds {
                                   child: Idle(
                                     seed: f + 7,
                                     amount: served.contains(f) ? 1.6 : .7,
-                                    child: GameArt(pairs[f]['friend'] as String, size: w),
+                                    child: GameArt(pairs[f]['friend'] as String, size: w, mood: served.contains(f) ? ToonMood.happy : ToonMood.idle),
                                   ),
                                 ),
                               ),

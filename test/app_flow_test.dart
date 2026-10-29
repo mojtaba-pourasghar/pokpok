@@ -16,7 +16,6 @@ import 'package:popo/features/home/home_shell.dart';
 import 'package:popo/features/play/discover.dart';
 import 'package:popo/game/engines/action_engines.dart';
 import 'package:popo/game/engines/backpack_engines.dart';
-import 'package:popo/game/engines/drag_engines.dart';
 import 'package:popo/game/engines/tap_engines.dart';
 import 'package:popo/game/game_data.dart';
 import 'package:popo/game/game_state.dart';

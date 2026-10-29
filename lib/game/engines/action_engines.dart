@@ -7,6 +7,7 @@ import '../../app/theme/theme.dart';
 import '../../core/audio/popo_audio.dart';
 import '../../data/models/models.dart';
 import '../../ui/clay.dart';
+import '../../ui/toons/toon.dart';
 import '../../ui/fx.dart';
 import 'engine.dart';
 import 'props.dart';
@@ -322,7 +323,7 @@ class _FeedState extends ConsumerState<FeedEngine> with EngineSounds {
                                 clipBehavior: Clip.none,
                                 alignment: Alignment.topCenter,
                                 children: [
-                                  Idle(amount: .8, child: GameArt(friend, size: s * .46)),
+                                  Idle(amount: .8, child: GameArt(friend, size: s * .46, mood: want == null ? ToonMood.happy : (open || cand.isNotEmpty ? ToonMood.act : ToonMood.idle))),
                                   if (open || cand.isNotEmpty)
                                     const Positioned(
                                       top: -10,
@@ -717,7 +718,12 @@ class _BlowState extends ConsumerState<BlowEngine> with EngineSounds, TickerProv
     final art = GameArt(
       doneSet.contains(i) && mode == 'inflate' ? widget.step.str('result', widget.step.str('target')) : widget.step.str('target'),
       size: size,
+      mood: doneSet.contains(i)
+          ? (mode == 'out' ? ToonMood.sad : ToonMood.happy)
+          : (holding && i == current ? ToonMood.act : ToonMood.idle),
     );
+    // شمع خودش شعله دارد؛ شعله‌ی جدا فقط برای چیزهایی که ندارند.
+    final ownFlame = widget.step.str('target') == 'candle';
     final p = i == current ? power : (doneSet.contains(i) ? 1.0 : 0.0);
     return switch (mode) {
       'spin' => Transform.rotate(angle: spin, child: art),
@@ -734,7 +740,7 @@ class _BlowState extends ConsumerState<BlowEngine> with EngineSounds, TickerProv
         alignment: Alignment.topCenter,
         children: [
           art,
-          if (!doneSet.contains(i))
+          if (!doneSet.contains(i) && !ownFlame)
             Positioned(
               top: -size * .32,
               child: CustomPaint(
@@ -954,7 +960,9 @@ class _SteerState extends ConsumerState<SteerEngine> with EngineSounds, TickerPr
   Widget build(BuildContext context) => LayoutBuilder(
     builder: (context, box) {
       final w = box.maxWidth, h = box.maxHeight;
-      final laneW = w / 3;
+      // کنار جاده چمن و درخت است؛ سه خط وسط.
+      final side = w * _RoadPainter.verge;
+      final laneW = (w - side * 2) / 3;
       final item = math.min(laneW * .62, h * .16);
       final car = math.min(laneW * .82, h * .22);
       final nextGood = things.where((t) => t.good).fold<_Thing?>(null, (a, t) => a == null || t.y > a.y ? t : a);
@@ -973,7 +981,7 @@ class _SteerState extends ConsumerState<SteerEngine> with EngineSounds, TickerPr
                 Positioned.fill(child: CustomPaint(painter: _RoadPainter(road))),
                 for (final th in things)
                   Positioned(
-                    left: (th.lane + .5) * laneW - item / 2,
+                    left: side + (th.lane + .5) * laneW - item / 2,
                     top: th.y * h - item / 2,
                     child: HintGlow(
                       on: hint >= 1 && th == nextGood,
@@ -981,13 +989,13 @@ class _SteerState extends ConsumerState<SteerEngine> with EngineSounds, TickerPr
                     ),
                   ),
                 Positioned(
-                  left: (carX + .5) * laneW - car / 2,
+                  left: side + (carX + .5) * laneW - car / 2,
                   top: carY * h - car / 2,
                   child: Squash(
                     trigger: bump,
                     child: Transform.rotate(
                       angle: (lane - carX) * .25,
-                      child: GameArt(widget.step.str('target'), size: car),
+                      child: GameArt(widget.step.str('target'), size: car, mood: finished ? ToonMood.happy : ToonMood.act),
                     ),
                   ),
                 ),
@@ -1016,22 +1024,54 @@ class _SteerState extends ConsumerState<SteerEngine> with EngineSounds, TickerPr
 class _RoadPainter extends CustomPainter {
   _RoadPainter(this.t);
 
+  /// پهنای چمن کنار جاده نسبت به کل.
+  static const verge = .13;
+
   final double t;
 
   @override
   void paint(Canvas canvas, Size s) {
-    canvas.drawRRect(RRect.fromRectAndRadius(Offset.zero & s, const Radius.circular(24)), Paint()..color = const Color(0xFF7E7B93));
+    final k = Pen(canvas);
+    final v = s.width * verge;
+    final clip = RRect.fromRectAndRadius(Offset.zero & s, const Radius.circular(24));
+    canvas.save();
+    canvas.clipRRect(clip);
+    canvas.drawRect(Offset.zero & s, Paint()..color = const Color(0xFF8BC34A));
+    canvas.drawRect(Rect.fromLTWH(v, 0, s.width - v * 2, s.height), Paint()..color = const Color(0xFF7E7B93));
     final edge = Paint()..color = Colors.white;
-    canvas.drawRect(Rect.fromLTWH(4, 0, 6, s.height), edge);
-    canvas.drawRect(Rect.fromLTWH(s.width - 10, 0, 6, s.height), edge);
+    canvas.drawRect(Rect.fromLTWH(v + 4, 0, 6, s.height), edge);
+    canvas.drawRect(Rect.fromLTWH(s.width - v - 10, 0, 6, s.height), edge);
     final dash = Paint()..color = const Color(0xFFFFE082);
     final step = s.height / 5;
     final off = (t * s.height) % step;
-    for (final x in [s.width / 3, s.width * 2 / 3]) {
+    final lane = (s.width - v * 2) / 3;
+    for (final x in [v + lane, v + lane * 2]) {
       for (var y = -step + off; y < s.height; y += step) {
         canvas.drawRRect(RRect.fromRectAndRadius(Rect.fromLTWH(x - 4, y, 8, step * .5), const Radius.circular(4)), dash);
       }
     }
+    // درخت‌ها، بوته‌ها و گل‌های کنار جاده که با سرعت ماشین رد می‌شوند
+    final gap = s.height / 3.2;
+    final off2 = (t * s.height) % gap;
+    for (var i = -1; i < 5; i++) {
+      final y = i * gap + off2;
+      for (final (side, x) in [(0, v / 2), (1, s.width - v / 2)]) {
+        final kind = (i + side * 2 + ((t * s.height) ~/ gap)) % 3;
+        switch (kind) {
+          case 0:
+            k.circle(x, y, v * .42, const Color(0xFF388E3C));
+            k.circle(x - v * .12, y - v * .12, v * .2, const Color(0xFF66BB6A), line: false);
+          case 1:
+            k.circle(x, y, v * .26, const Color(0xFF43A047));
+            k.c.drawCircle(Offset(x + v * .1, y - v * .08), v * .07, Paint()..color = const Color(0xFFE91E63));
+          default:
+            for (var j = 0; j < 3; j++) {
+              k.c.drawCircle(Offset(x - v * .2 + j * v * .2, y + (j.isOdd ? -4 : 4)), v * .08, Paint()..color = const [Color(0xFFFFEB3B), Color(0xFFFFFFFF), Color(0xFFFF7043)][j]);
+            }
+        }
+      }
+    }
+    canvas.restore();
   }
 
   @override
@@ -1115,7 +1155,7 @@ class _ConnectState extends ConsumerState<ConnectEngine> with EngineSounds {
                         child: Idle(
                           enabled: finished,
                           amount: 1.5,
-                          child: GameArt(widget.step.str('target'), size: side * .62),
+                          child: GameArt(widget.step.str('target'), size: side * .62, mood: finished ? ToonMood.happy : ToonMood.idle),
                         ),
                       ),
                     ),
@@ -1546,7 +1586,7 @@ class _WhackState extends ConsumerState<WhackEngine> with EngineSounds, TickerPr
                           amount: .4,
                           child: HintGlow(
                             on: glow,
-                            child: GameArt(p.art, size: art),
+                            child: GameArt(p.art, size: art, mood: p.hit ? ToonMood.happy : ToonMood.idle),
                           ),
                         ),
                       ),

@@ -6,6 +6,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:popo/core/content/content.dart';
 import 'package:popo/game/engines/engines.dart';
 import 'package:popo/game/game_data.dart';
+import 'package:popo/ui/toons/backdrops.dart';
+import 'package:popo/ui/toons/toons.dart';
 
 /// سلامت محتوا: هر ارجاع در JSONها به چیزی واقعی اشاره می‌کند.
 void main() {
@@ -184,6 +186,19 @@ void main() {
       expect(File('assets/${v['file']}').existsSync(), isTrue, reason: e.key);
       expect((v['license'] as String).isNotEmpty, isTrue, reason: e.key);
       expect((v['source'] as String).startsWith('https://'), isTrue, reason: e.key);
+    }
+  });
+
+  test('every picture and friend is a living cartoon, every scene a living backdrop', () {
+    final art = jsonDecode(File('art/game_art.json').readAsStringSync()) as Map;
+    final ids = {...(art['objects'] as Map).keys, ...(art['friends'] as Map).keys};
+    expect(ids.where((id) => !toons.containsKey(id)).toList(), isEmpty);
+    final game = jsonDecode(File('assets/content/game.json').readAsStringSync()) as Map;
+    for (final ch in (game['chapters'] as List).cast<Map>()) {
+      expect(backdrops.containsKey(ch['bg']), isTrue, reason: '${ch['id']} ${ch['bg']}');
+    }
+    for (final id in ['meadow', 'playroom', 'shop', 'star_workshop']) {
+      expect(backdrops.containsKey(id), isTrue, reason: id);
     }
   });
 }

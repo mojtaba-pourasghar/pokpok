@@ -9,6 +9,8 @@ import '../app/theme/theme.dart';
 import '../core/audio/popo_audio.dart';
 import '../features/mascot/popo_mascot.dart';
 import '../game/game_state.dart';
+import 'toons/backdrops.dart';
+import 'toons/toons.dart';
 
 /// رنگ‌های بازی، هم‌خانواده‌ی گوش‌یار: بنفش عمیق برای عنوان‌ها و دکمه‌های اصلی، نارنجی گرم،
 /// آبی، سبز و صورتی شاد روی آسمان روشن.
@@ -335,11 +337,14 @@ String fa(int n) {
 /// تصویر یک شیء یا شخصیت: نسخه‌ی رستری اگر هست (art/items، art/characters)، وگرنه شکلک
 /// روی دایره‌ی رنگی تا بازی همیشه قابل بازی باشد.
 class GameArt extends ConsumerWidget {
-  const GameArt(this.id, {super.key, this.size = 96, this.label});
+  const GameArt(this.id, {super.key, this.size = 96, this.label, this.mood = ToonMood.idle});
 
   final String id;
   final double size;
   final String? label;
+
+  /// حال کارتون زنده: آرام، مشغول کار، خوشحال یا ناراحت.
+  final ToonMood mood;
 
   static String? pathOf(WidgetRef ref, String id) {
     final assets = ref.read(assetsProvider);
@@ -351,6 +356,12 @@ class GameArt extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // هر چیزی که کارتون زنده دارد با کد کشیده می‌شود و همیشه جان دارد.
+    final toon = toons[id];
+    if (toon != null) {
+      final view = ToonView(toon, size: size, mood: mood, seed: id.hashCode % 7);
+      return label == null ? ExcludeSemantics(child: view) : Semantics(label: label, image: true, child: view);
+    }
     final assets = ref.watch(assetsProvider);
     final path = pathOf(ref, id);
     final provider = path == null ? null : assets.image(path);
@@ -403,12 +414,16 @@ class SkyScene extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // پس‌زمینه‌ی زنده‌ی کشیده‌شده با کد، اگر برای این صحنه باشد (art/backgrounds/<id>.webp → <id>).
+    final live = image == null ? (night ? 'night_forest' : 'meadow') : image!.split('/').last.split('.').first;
     final assets = ref.watch(assetsProvider);
-    final img = image != null && assets.exists(image!) ? assets.image(image!) : null;
+    final img = backdrops.containsKey(live) || image == null || !assets.exists(image!) ? null : assets.image(image!);
     return Stack(
       fit: StackFit.expand,
       children: [
-        if (img != null)
+        if (backdrops.containsKey(live))
+          LiveBackdrop(live)
+        else if (img != null)
           LayoutBuilder(
             builder: (context, box) => Image(
               // پس‌زمینه‌ی ۱۰۲۴ پیکسلی فقط به پهنای صفحه رمزگشایی می‌شود.

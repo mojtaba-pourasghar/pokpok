@@ -7,6 +7,7 @@ import 'package:flutter/scheduler.dart';
 import '../../../app/theme/theme.dart';
 import '../../../core/audio/popo_audio.dart';
 import '../../../ui/clay.dart';
+import '../../../ui/toons/toon.dart';
 import '../../../ui/fx.dart';
 import 'scene_base.dart';
 
@@ -157,7 +158,7 @@ class _DriveSceneState extends ConsumerState<DriveScene> with SceneBase, SingleT
                       top: size * .82,
                       child: _Flame(width: size * .24, power: speed),
                     ),
-                  GameArt(widget.item.id, size: size, label: widget.item.title),
+                  GameArt(widget.item.id, size: size, label: widget.item.title, mood: speed > .05 ? ToonMood.act : (started ? ToonMood.happy : ToonMood.idle)),
                   if (started && !rocket && !underwater)
                     // چراغ جلو
                     Positioned(
