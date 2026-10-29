@@ -280,7 +280,7 @@ def apply(sid: str, pick: dict, sound: dict, m: dict, sources: dict, *, patience
     }
     SOURCES.parent.mkdir(parents=True, exist_ok=True)
     SOURCES.write_text(json.dumps({**sources, "files": dict(sorted(sources["files"].items()))},
-                                  ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                                  ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"   ✓ {m['licence']} · {m['author'][:40]} → {sound['audio']} ({length:.1f}s)", flush=True)
     time.sleep(1)
     return "ok"

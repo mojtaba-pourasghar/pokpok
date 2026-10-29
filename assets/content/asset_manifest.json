@@ -17,8 +17,8 @@
    "path": "audio/ambient/festival.ogg",
    "type": "audio/ogg",
    "version": 1,
-   "bytes": 182290,
-   "sha256": "b86fae834e7ec544ed7dbad0ceec0cb99e8393cfdf6618d157529af8eff463d6"
+   "bytes": 186385,
+   "sha256": "ad17f478c0e11060052de346e6868b9734cbd524e188b1dfae2bb125c637155c"
   },
   {
    "id": "ambient/kitchen",
@@ -26,8 +26,8 @@
    "path": "audio/ambient/kitchen.ogg",
    "type": "audio/ogg",
    "version": 1,
-   "bytes": 167096,
-   "sha256": "bea46f401696e0a4538196d51e5bf24186bf5f6ad643f7b88335c5be0c73f731"
+   "bytes": 194101,
+   "sha256": "b286da79764ef26b9be3a641ac1b5e308ccc947592089e35a2a5603960e6edc9"
   },
   {
    "id": "ambient/night",
@@ -35,8 +35,8 @@
    "path": "audio/ambient/night.ogg",
    "type": "audio/ogg",
    "version": 1,
-   "bytes": 189680,
-   "sha256": "78df8f4d8df0f382725cbcf1b622641c3cabfb15c72036c10e193847bf77a19a"
+   "bytes": 175172,
+   "sha256": "d70726cfc2f9f505b0194eb2525eb1e54858702985123d27d5ffbc5350d7f28e"
   },
   {
    "id": "ambient/rain",
@@ -53,8 +53,8 @@
    "path": "audio/ambient/stage.ogg",
    "type": "audio/ogg",
    "version": 1,
-   "bytes": 166389,
-   "sha256": "93179229b77d116d8c4f01d5eb571707061c3253ff14f74f246573bdc5bd7823"
+   "bytes": 187887,
+   "sha256": "7ee2bdc3791f8b719fb01f7c557eb6237b1d8a7c22fdce9e90123b6803879741"
   },
   {
    "id": "ambient/street",
@@ -71,8 +71,8 @@
    "path": "audio/ambient/studio.ogg",
    "type": "audio/ogg",
    "version": 1,
-   "bytes": 171377,
-   "sha256": "61670f9781c92fc3dfdeea947917c927e264a5f724004a30c5762e8adba6208d"
+   "bytes": 192299,
+   "sha256": "c9c596efa7e13e0f122aa90422c76aed09331e5ec96f704e6bfac8ef9ef1c6b3"
   },
   {
    "id": "ambient/wind",
@@ -89,8 +89,8 @@
    "path": "audio/ambient/workshop.ogg",
    "type": "audio/ogg",
    "version": 1,
-   "bytes": 166469,
-   "sha256": "056e8fa083bc291435de2c231fc79b4563d29a89ba20e311b3defbd507b8fc33"
+   "bytes": 199953,
+   "sha256": "e21d79e6c5eb3163e85a0dfeadbb2afc1282574d0d19b5811a14329567114e64"
   },
   {
    "id": "animals/bird",

@@ -46,6 +46,42 @@
    "seconds": 24,
    "start": 4,
    "loop": true
+  },
+  "ambient/kitchen": {
+   "file": "File:Ambient Kitchen Sounds.wav",
+   "seconds": 24,
+   "start": 1,
+   "loop": true
+  },
+  "ambient/workshop": {
+   "file": "File:Birds singing in garden.ogg",
+   "seconds": 24,
+   "start": 1,
+   "loop": true
+  },
+  "ambient/studio": {
+   "file": "File:20190711-0502 mukteswar morning.ogg",
+   "seconds": 24,
+   "start": 1,
+   "loop": true
+  },
+  "ambient/night": {
+   "file": "File:Nature sounds ambience in a Dordogne pond.ogg",
+   "seconds": 24,
+   "start": 2,
+   "loop": true
+  },
+  "ambient/stage": {
+   "file": "File:Festival concert people crowd.ogg",
+   "seconds": 24,
+   "start": 2,
+   "loop": true
+  },
+  "ambient/festival": {
+   "file": "File:Ambient sound children playing in a park 2026-05-19.oga",
+   "seconds": 24,
+   "start": 2,
+   "loop": true
   }
  }
 }

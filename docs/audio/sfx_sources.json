@@ -13,6 +13,42 @@
    "at": "2026-10-15T05:19:31+00:00",
    "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
   },
+  "ambient/festival": {
+   "file": "audio/ambient/festival.ogg",
+   "commons": "File:Ambient sound children playing in a park 2026-05-19.oga",
+   "source": "https://commons.wikimedia.org/wiki/File:Ambient_sound_children_playing_in_a_park_2026-05-19.oga",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "SchlurcherBot",
+   "kept": "2s + 24.0s",
+   "via": "tools/sfx/fetch_sounds.py",
+   "at": "2026-10-29T15:55:23+00:00",
+   "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
+  },
+  "ambient/kitchen": {
+   "file": "audio/ambient/kitchen.ogg",
+   "commons": "File:Ambient Kitchen Sounds.wav",
+   "source": "https://commons.wikimedia.org/wiki/File:Ambient_Kitchen_Sounds.wav",
+   "license": "CC0",
+   "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "author": "Wilfredor",
+   "kept": "1s + 24.0s",
+   "via": "tools/sfx/fetch_sounds.py",
+   "at": "2026-10-29T15:54:19+00:00",
+   "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
+  },
+  "ambient/night": {
+   "file": "audio/ambient/night.ogg",
+   "commons": "File:Nature sounds ambience in a Dordogne pond.ogg",
+   "source": "https://commons.wikimedia.org/wiki/File:Nature_sounds_ambience_in_a_Dordogne_pond.ogg",
+   "license": "CC BY 3.0",
+   "license_url": "https://creativecommons.org/licenses/by/3.0",
+   "author": "Glaneur de sons.",
+   "kept": "2s + 24.0s",
+   "via": "tools/sfx/fetch_sounds.py",
+   "at": "2026-10-29T15:54:40+00:00",
+   "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
+  },
   "ambient/rain": {
    "file": "audio/ambient/rain.ogg",
    "commons": "File:Heavy Rain in Summer.ogg",
@@ -23,6 +59,18 @@
    "kept": "3.1s + 5.0s",
    "via": "goshyar_game tools/sfx/fetch_sounds.py (same recording, copied)",
    "at": "2026-10-14T09:41:20+00:00",
+   "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
+  },
+  "ambient/stage": {
+   "file": "audio/ambient/stage.ogg",
+   "commons": "File:Festival concert people crowd.ogg",
+   "source": "https://commons.wikimedia.org/wiki/File:Festival_concert_people_crowd.ogg",
+   "license": "Public domain",
+   "license_url": "",
+   "author": "stephan",
+   "kept": "2s + 24.0s",
+   "via": "tools/sfx/fetch_sounds.py",
+   "at": "2026-10-29T15:54:43+00:00",
    "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
   },
   "ambient/street": {
@@ -37,6 +85,18 @@
    "at": "2026-10-15T05:19:14+00:00",
    "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
   },
+  "ambient/studio": {
+   "file": "audio/ambient/studio.ogg",
+   "commons": "File:20190711-0502 mukteswar morning.ogg",
+   "source": "https://commons.wikimedia.org/wiki/File:20190711-0502_mukteswar_morning.ogg",
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Shyamal L.",
+   "kept": "1s + 24.0s",
+   "via": "tools/sfx/fetch_sounds.py",
+   "at": "2026-10-29T15:54:37+00:00",
+   "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
+  },
   "ambient/wind": {
    "file": "audio/ambient/wind.ogg",
    "commons": "File:Wind in Swedish pine forest at 25 mps.ogg",
@@ -47,6 +107,18 @@
    "kept": "42.6s + 5.0s",
    "via": "goshyar_game tools/sfx/fetch_sounds.py (same recording, copied)",
    "at": "2026-10-14T09:48:21+00:00",
+   "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
+  },
+  "ambient/workshop": {
+   "file": "audio/ambient/workshop.ogg",
+   "commons": "File:Birds singing in garden.ogg",
+   "source": "https://commons.wikimedia.org/wiki/File:Birds_singing_in_garden.ogg",
+   "license": "Public domain",
+   "license_url": "",
+   "author": "ezwa",
+   "kept": "1s + 24.0s",
+   "via": "tools/sfx/fetch_sounds.py",
+   "at": "2026-10-29T15:54:22+00:00",
    "note": "looped seamlessly and loudness-balanced by tools/sfx/balance.py"
   },
   "animals/bird": {

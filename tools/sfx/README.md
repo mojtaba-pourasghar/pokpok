@@ -3,7 +3,7 @@
 | چه | چطور ساخته می‌شود | کجا |
 |---|---|---|
 | صداهای رابط، سازها (پیانو، زایلوفون، زنگوله، درام، شیکر)، ماشین‌ها، آشپزخانه، آب، باغ، ساخت‌وساز، دو موسیقی پس‌زمینه | با کد: `python3 tools/sfx/synth.py` (numpy + ffmpeg). اصلی و بدون مجوز بیرونی. | `assets/audio/{ui,sfx,instruments,music}` |
-| حیوان‌ها، رود و باد و باران، زنگ در، ساعت، کتری، شیر آب، گیتار، فلوت، ویولن | ضبط واقعی از Wikimedia Commons: `python3 tools/sfx/fetch_sounds.py` (انتخاب‌ها در `picks.json`) | `assets/audio/{animals,ambient,sfx,instruments}` + منبع و مجوز در `docs/audio/sfx_sources.json` |
+| حیوان‌ها، صدای محیط هر فصل (آشپزخانه، مزرعه، کارگاه، آتلیه، شب، صحنه، شهر، جشن)، باد و باران، زنگ در، ساعت، کتری، شیر آب، گیتار، فلوت، ویولن | ضبط واقعی از Wikimedia Commons: `python3 tools/sfx/fetch_sounds.py` (انتخاب‌ها در `picks.json`) | `assets/audio/{animals,ambient,sfx,instruments}` + منبع و مجوز در `docs/audio/sfx_sources.json` |
 | صدای گوینده (پوپو) | `tools/voice-studio` (موقت با آواشو) یا ضبط استودیو + `tools/voice/import_recordings.sh` | `assets/audio/voice` |
 
 - `python3 tools/sfx/synth.py pop boing` فقط همین دو را دوباره می‌سازد.
