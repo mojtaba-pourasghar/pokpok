@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../app/theme/theme.dart';
 import '../../../ui/clay.dart';
 import '../../../ui/fx.dart';
+import '../../../ui/toons/toon.dart';
 import '../../mascot/popo_mascot.dart';
 import 'scene_base.dart';
 
@@ -20,11 +21,9 @@ class EatScene extends ShowcaseScene {
 class _EatSceneState extends ConsumerState<EatScene> with SceneBase {
   static const bitesPerServing = 3;
   final _popo = GlobalKey();
-  final _friend = GlobalKey();
   final _plate = GlobalKey();
   int bites = 0;
   int chew = 0;
-  int friendChew = 0;
   bool showTaste = false;
   final List<Offset> _bitePoints = [];
   final _rnd = math.Random(4);
@@ -34,20 +33,16 @@ class _EatSceneState extends ConsumerState<EatScene> with SceneBase {
   @override
   void initState() {
     super.initState();
-    autoPlay(() => _eat(toFriend: false));
+    autoPlay(_eat);
   }
 
-  void _eat({required bool toFriend}) {
+  void _eat() {
     sfx(widget.item.sound);
-    final target = toFriend ? _friend : _popo;
+    final target = _popo;
     // خرده یا حباب از دهان
     burstAt(target, drink ? Fx.bubbles : Fx.crumbs, offset: const Offset(0, -10), count: drink ? 8 : 12);
     setState(() {
-      if (toFriend) {
-        friendChew++;
-      } else {
-        chew++;
-      }
+      chew++;
       bites++;
       _bitePoints.add(Offset(_rnd.nextDouble() * .6 + .2, _rnd.nextDouble() * .5 + .1));
     });
@@ -73,60 +68,37 @@ class _EatSceneState extends ConsumerState<EatScene> with SceneBase {
       final s = math.min(box.maxWidth, box.maxHeight);
       final left = bitesPerServing - bites % bitesPerServing;
       final food = _Bitten(id: widget.item.id, size: s * .36, drink: drink, level: left / bitesPerServing, bites: _bitePoints);
+      // کسی که می‌خورد: دوستِ فصل (اگر هست)، وگرنه پوپو. پوپوی گوشه‌ی صفحه جدا واکنش نشان می‌دهد.
       final friend = widget.friend;
+      final eater = Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Squash(
+            key: _popo,
+            trigger: chew,
+            child: friend != null
+                ? GameArt(friend, size: s * .5, mood: chew > 0 ? ToonMood.happy : ToonMood.idle)
+                : PopoMascot(pose: chew > 0 ? PopoPose.happy : PopoPose.curious, size: s * .5),
+          ),
+          GroundShadow(width: s * .3),
+        ],
+      );
       return Stack(
         children: [
-          // پوپو
+          // کسی که غذا را می‌گیرد: پایین، سمت چپ
           Positioned(
-            left: 0,
+            left: box.maxWidth * .06,
             bottom: 0,
             child: DragTarget<String>(
-              onAcceptWithDetails: (_) => _eat(toFriend: false),
-              builder: (context, cand, _) => Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Squash(
-                    key: _popo,
-                    trigger: chew,
-                    child: AnimatedScale(
-                      duration: const Duration(milliseconds: 200),
-                      scale: cand.isNotEmpty ? 1.08 : 1,
-                      child: PopoMascot(pose: chew > 0 ? PopoPose.happy : PopoPose.curious, size: s * .5),
-                    ),
-                  ),
-                  GroundShadow(width: s * .3),
-                ],
-              ),
+              onAcceptWithDetails: (_) => _eat(),
+              builder: (context, cand, _) =>
+                  AnimatedScale(duration: const Duration(milliseconds: 200), scale: cand.isNotEmpty ? 1.08 : 1, child: eater),
             ),
           ),
-          // دوست (در بازی آزاد)
-          if (friend != null && widget.play)
-            Positioned(
-              right: 0,
-              bottom: 0,
-              child: DragTarget<String>(
-                onAcceptWithDetails: (_) => _eat(toFriend: true),
-                builder: (context, cand, _) => Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Squash(
-                      key: _friend,
-                      trigger: friendChew,
-                      child: AnimatedScale(
-                        duration: const Duration(milliseconds: 200),
-                        scale: cand.isNotEmpty ? 1.08 : 1,
-                        child: GameArt(friend, size: s * .42),
-                      ),
-                    ),
-                    GroundShadow(width: s * .26),
-                  ],
-                ),
-              ),
-            ),
-          // بشقاب و غذا
+          // بشقاب و غذا: بالا، سمت راست
           Positioned(
-            right: friend != null && widget.play ? box.maxWidth * .32 : box.maxWidth * .08,
-            top: box.maxHeight * .12,
+            right: box.maxWidth * .06,
+            top: box.maxHeight * .06,
             child: Column(
               key: _plate,
               mainAxisSize: MainAxisSize.min,
@@ -136,7 +108,7 @@ class _EatSceneState extends ConsumerState<EatScene> with SceneBase {
                   feedback: Transform.scale(scale: 1.1, child: food),
                   childWhenDragging: Opacity(opacity: .25, child: food),
                   child: GestureDetector(
-                    onTap: () => _eat(toFriend: false),
+                    onTap: () => _eat(),
                     child: Idle(seed: 5, amount: .5, child: food),
                   ),
                 ),
@@ -174,9 +146,11 @@ class _EatSceneState extends ConsumerState<EatScene> with SceneBase {
             ),
           if (bites == 0 && !widget.auto)
             Positioned(
-              right: box.maxWidth * .3,
-              top: box.maxHeight * .45,
-              child: IgnorePointer(child: HandHint(dx: -box.maxWidth * .35)),
+              right: box.maxWidth * .16,
+              top: box.maxHeight * .2,
+              child: IgnorePointer(
+                child: HandHint(dx: -box.maxWidth * .45, dy: box.maxHeight * .4),
+              ),
             ),
         ],
       );

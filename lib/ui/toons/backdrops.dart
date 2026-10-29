@@ -341,7 +341,7 @@ final Map<String, BackdropPainter> backdrops = {
     _room(k, s, const Color(0xFFFFF3E0), const Color(0xFFFFE8CC), const Color(0xFFD7A86E));
     _window(k, s, t, Rect.fromCenter(center: Offset(s.width * .5, s.height * .2), width: s.width * .42, height: s.height * .2));
     _shelf(k, s.width * .04, s.height * .4, s.width * .26, const [Color(0xFFFFB74D), Color(0xFF81C784), Color(0xFFE57373)], t);
-    _shelf(k, s.width * .7, s.height * .4, s.width * .26, const [Color(0xFF64B5F6), Color(0xFFFFD54F), Color(0xFFBA68C8)], t);
+    _shelf(k, s.width * .7, s.height * .4, s.width * .26, const [Color(0xFF64B5F6), Color(0xFFFFD54F)], t);
     // ملاقه‌های آویزان که تاب می‌خورند
     for (var i = 0; i < 3; i++) {
       final x = s.width * (.08 + i * .07);
@@ -350,11 +350,12 @@ final Map<String, BackdropPainter> backdrops = {
         k.oval(0, 48, 9, 9, const Color(0xFFB0BEC5));
       }, rot: math.sin(t * 1.2 + i) * .08);
     }
-    // بخار کتری روی اجاق
-    final kx = s.width * .86, ky = s.height * .66;
-    k.rect(kx - 40, ky, 80, s.height * .06, 6, const Color(0xFFEEEEEE));
-    k.circle(kx, ky - 14, 18, const Color(0xFFE53935));
-    k.steam(kx + 16, ky - 30, ToonPose(t), h: 40);
+    // کتری روی قفسه‌ی راست، بالای سر شخصیت‌ها، که بخار می‌کند
+    final kx = s.width * .9, ky = s.height * .4;
+    k.circle(kx, ky - 14, 14, const Color(0xFFE53935));
+    k.rect(kx - 4, ky - 32, 8, 6, 3, const Color(0xFF424242));
+    k.stroke([Offset(kx + 12, ky - 18), Offset(kx + 22, ky - 26)], const Color(0xFFE53935), 4);
+    k.steam(kx + 22, ky - 30, ToonPose(t), h: 30);
   },
   'workshop': (k, s, t) {
     _room(k, s, const Color(0xFFD7B98E), const Color(0xFFCBA978), const Color(0xFF8D6E63));

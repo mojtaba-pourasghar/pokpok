@@ -8,8 +8,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../app/theme/theme.dart';
 import '../../core/audio/popo_audio.dart';
 import '../../ui/clay.dart';
-import '../../ui/toons/toon.dart';
 import '../../ui/fx.dart';
+import '../../ui/toons/toons.dart';
 import 'engine.dart';
 import 'props.dart';
 
@@ -71,7 +71,9 @@ class _CollectState extends ConsumerState<CollectEngine> with EngineSounds {
     var guard = 0;
     while (out.length < arts.length && guard++ < 600) {
       final a = rnd.nextDouble() * math.pi * 2, r = math.sqrt(rnd.nextDouble());
-      final o = tree ? Offset(.5 + math.cos(a) * r * .36, .3 + math.sin(a) * r * .2) : Offset(.12 + rnd.nextDouble() * .76, .1 + rnd.nextDouble() * .45);
+      final o = tree
+          ? Offset(.5 + math.cos(a) * r * .36, .3 + math.sin(a) * r * .2)
+          : Offset(.12 + rnd.nextDouble() * .76, .1 + rnd.nextDouble() * .45);
       if (out.every((q) => (q - o).distance > .17)) out.add(o);
     }
     while (out.length < arts.length) {
@@ -147,7 +149,13 @@ class _CollectState extends ConsumerState<CollectEngine> with EngineSounds {
                         child: Idle(
                           seed: i,
                           amount: .8,
-                          child: HintGlow(on: hint >= 1 && i == firstGood, child: PopIn(delay: Duration(milliseconds: 80 * i), child: GameArt(s.art, size: size))),
+                          child: HintGlow(
+                            on: hint >= 1 && i == firstGood,
+                            child: PopIn(
+                              delay: Duration(milliseconds: 80 * i),
+                              child: GameArt(s.art, size: size),
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -205,7 +213,10 @@ class _TapState extends ConsumerState<TapEngine> with EngineSounds {
         builder: (context, hint, _) => Stack(
           alignment: Alignment.center,
           children: [
-            Positioned(bottom: box.maxHeight * .14, child: GroundShadow(width: size * .7)),
+            Positioned(
+              bottom: box.maxHeight * .14,
+              child: GroundShadow(width: size * .7),
+            ),
             GestureDetector(
               onTap: _tap,
               child: Squash(
@@ -216,8 +227,16 @@ class _TapState extends ConsumerState<TapEngine> with EngineSounds {
                   on: hint >= 1,
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 350),
-                    transitionBuilder: (c, a) => ScaleTransition(scale: CurvedAnimation(parent: a, curve: Curves.elasticOut), child: c),
-                    child: GameArt(art, key: ValueKey(art), size: size, mood: n >= need ? ToonMood.happy : (n > 0 ? ToonMood.act : ToonMood.idle)),
+                    transitionBuilder: (c, a) => ScaleTransition(
+                      scale: CurvedAnimation(parent: a, curve: Curves.elasticOut),
+                      child: c,
+                    ),
+                    child: GameArt(
+                      art,
+                      key: ValueKey(art),
+                      size: size,
+                      mood: n >= need ? ToonMood.happy : (n > 0 ? ToonMood.act : ToonMood.idle),
+                    ),
                   ),
                 ),
               ),
@@ -342,7 +361,10 @@ class _RotateState extends ConsumerState<RotateEngine> with EngineSounds {
             alignment: Alignment.center,
             children: [
               Container(color: Colors.transparent),
-              CustomPaint(size: size, painter: _RingPainter(r: r, progress: progress, glow: hint >= 1)),
+              CustomPaint(
+                size: size,
+                painter: _RingPainter(r: r, progress: progress, glow: hint >= 1),
+              ),
               Transform.rotate(
                 key: _art,
                 angle: vessel ? math.sin(spin * 2) * .05 : spin,
@@ -352,7 +374,11 @@ class _RotateState extends ConsumerState<RotateEngine> with EngineSounds {
                 IgnorePointer(
                   child: CustomPaint(
                     size: Size(r * .9, r * .9),
-                    painter: SwirlPainter(angle: spin * 2, color: juiceColor(target) == Colors.white ? const Color(0xFFBDBDBD) : juiceColor(target), strength: (angle / 6).clamp(0.2, 1.0)),
+                    painter: SwirlPainter(
+                      angle: spin * 2,
+                      color: juiceColor(target) == Colors.white ? const Color(0xFFBDBDBD) : juiceColor(target),
+                      strength: (angle / 6).clamp(0.2, 1.0),
+                    ),
                   ),
                 ),
               Positioned(
@@ -361,7 +387,12 @@ class _RotateState extends ConsumerState<RotateEngine> with EngineSounds {
                 child: Container(
                   width: 52,
                   height: 52,
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: G.orange, border: Border.all(color: Colors.white, width: 5), boxShadow: G.soft()),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: G.orange,
+                    border: Border.all(color: Colors.white, width: 5),
+                    boxShadow: G.soft(),
+                  ),
                   child: const Icon(Icons.rotate_right_rounded, color: Colors.white, size: 28),
                 ),
               ),
@@ -464,7 +495,10 @@ class TimingEngine extends EngineView {
 }
 
 class _TimingState extends ConsumerState<TimingEngine> with EngineSounds, SingleTickerProviderStateMixin {
-  late final AnimationController _c = AnimationController(vsync: this, duration: Duration(milliseconds: widget.host.age.minAge <= 2 ? 4400 : 3400))..repeat();
+  late final AnimationController _c = AnimationController(
+    vsync: this,
+    duration: Duration(milliseconds: widget.host.age.minAge <= 2 ? 4400 : 3400),
+  )..repeat();
   final _art = GlobalKey();
   bool finished = false;
   int shake = 0;
@@ -526,7 +560,10 @@ class _TimingState extends ConsumerState<TimingEngine> with EngineSounds, Single
                 alignment: Alignment.center,
                 children: [
                   Container(color: Colors.transparent),
-                  CustomPaint(size: Size.square(size * 1.45), painter: _ClockRing(v: v, lo: lo, hi: hi, glow: hint >= 1)),
+                  CustomPaint(
+                    size: Size.square(size * 1.45),
+                    painter: _ClockRing(v: v, lo: lo, hi: hi, glow: hint >= 1),
+                  ),
                   Shake(
                     trigger: shake,
                     child: Transform.scale(
@@ -550,12 +587,19 @@ class _TimingState extends ConsumerState<TimingEngine> with EngineSounds, Single
                         color: inZone || finished ? G.green : G.orange,
                         borderRadius: BorderRadius.circular(999),
                         border: Border.all(color: Colors.white, width: 4),
-                        boxShadow: [...G.soft(), if (inZone && hint >= 1) const BoxShadow(color: Color(0xEEFFE066), blurRadius: 22, spreadRadius: 4)],
+                        boxShadow: [
+                          ...G.soft(),
+                          if (inZone && hint >= 1) const BoxShadow(color: Color(0xEEFFE066), blurRadius: 22, spreadRadius: 4),
+                        ],
                       ),
                       child: Text(inZone ? 'حالا! بزن!' : 'صبر کن...', style: PText.button.copyWith(fontSize: 22)),
                     ),
                   ),
-                  if (hint >= 3 && inZone) const Positioned(bottom: 30, child: IgnorePointer(child: Text('👆', style: TextStyle(fontSize: 48)))),
+                  if (hint >= 3 && inZone)
+                    const Positioned(
+                      bottom: 30,
+                      child: IgnorePointer(child: Text('👆', style: TextStyle(fontSize: 48))),
+                    ),
                 ],
               ),
             );
@@ -625,7 +669,20 @@ class _CutState extends ConsumerState<CutEngine> with EngineSounds {
   final List<Offset> trail = [];
   double _minX = 1e9, _maxX = -1e9;
 
-  double lineY(int i, Size s) => s.height * (lines == 1 ? .48 : .3 + .36 * i / (lines - 1));
+  /// اندازه‌ی شیء و جای خط‌های برش: روی خود شیء (نه سراسر صفحه)، به فاصله‌ی برابر.
+  double artSize(Size s) => math.min(s.width, s.height) * .8;
+
+  Rect content(Size s) {
+    final size = artSize(s);
+    final b = toonBoundsOf(widget.step.str('target'));
+    final o = Offset((s.width - size) / 2, (s.height - size) / 2);
+    return Rect.fromLTRB(o.dx + b.left / 100 * size, o.dy + b.top / 100 * size, o.dx + b.right / 100 * size, o.dy + b.bottom / 100 * size);
+  }
+
+  double lineY(int i, Size s) {
+    final r = content(s);
+    return r.top + r.height * (i + 1) / (lines + 1);
+  }
 
   void _end(Size s) {
     if (_start == null || cut >= lines) {
@@ -634,7 +691,7 @@ class _CutState extends ConsumerState<CutEngine> with EngineSounds {
     }
     final y = lineY(cut, s);
     final width = _maxX - _minX;
-    if ((_start!.dy - y).abs() < 80 && width > s.width * .38) {
+    if ((_start!.dy - y).abs() < 70 && width > content(s).width * .6) {
       setState(() => cut++);
       good('audio/sfx/snap.mp3');
       final id = widget.step.str('target');
@@ -654,10 +711,9 @@ class _CutState extends ConsumerState<CutEngine> with EngineSounds {
   Widget build(BuildContext context) => LayoutBuilder(
     builder: (context, box) {
       final s = Size(box.maxWidth, box.maxHeight);
-      final size = math.min(s.width, s.height) * .66;
+      final size = artSize(s);
       final finished = cut >= lines;
       final id = widget.step.str('target');
-      final gap = finished ? 1.0 : cut / lines * .4;
       return GestureDetector(
         onPanStart: (d) {
           _start = d.localPosition;
@@ -678,53 +734,79 @@ class _CutState extends ConsumerState<CutEngine> with EngineSounds {
             alignment: Alignment.center,
             children: [
               Container(color: Colors.transparent),
-              Positioned(bottom: s.height * .12, child: GroundShadow(width: size * .8)),
-              // دو نیمه: بالا و پایین، که با هر برش کمی از هم دور می‌شوند
+              Positioned(
+                bottom: s.height * .12,
+                child: GroundShadow(width: size * .8),
+              ),
+              // تکه‌ها: نوارهایی از خود شیء که با هر برش از هم دور می‌شوند
               SizedBox(
                 key: _art,
                 width: size,
                 height: size,
-                child: Stack(
-                  children: [
-                    TweenAnimationBuilder<double>(
-                      tween: Tween(end: gap),
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeOutBack,
-                      builder: (context, g, _) => Stack(
+                child: finished && widget.step.str('result', id) != id
+                    ? PopIn(
+                        child: GameArt(widget.step.str('result', id), size: size, mood: ToonMood.happy),
+                      )
+                    : Stack(
+                        clipBehavior: Clip.none,
                         children: [
-                          Transform.translate(
-                            offset: Offset(-g * 18, -g * 22),
-                            child: Transform.rotate(angle: -g * .12, child: ClipRect(child: Align(alignment: Alignment.topCenter, heightFactor: .5, child: GameArt(finished ? widget.step.str('result', id) : id, size: size)))),
-                          ),
-                          Positioned(
-                            top: size / 2,
-                            child: Transform.translate(
-                              offset: Offset(g * 18, g * 22),
-                              child: Transform.rotate(angle: g * .12, child: ClipRect(child: Align(alignment: Alignment.bottomCenter, heightFactor: .5, child: GameArt(finished ? widget.step.str('result', id) : id, size: size)))),
+                          for (var k = 0; k <= lines; k++)
+                            TweenAnimationBuilder<double>(
+                              tween: Tween(end: k == 0 ? (cut > 0 ? 1.0 : 0) : (cut >= k ? 1.0 : 0)),
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.easeOutBack,
+                              builder: (context, g, child) => Transform.translate(
+                                offset: Offset((k.isEven ? -1 : 1) * g * 8, (k - lines / 2) * g * 14),
+                                child: Transform.rotate(angle: (k - lines / 2) * g * .06, child: child),
+                              ),
+                              child: ClipRect(
+                                clipper: _Band(
+                                  k == 0 ? 0 : (lineY(k - 1, s) - (s.height - size) / 2) / size,
+                                  k == lines ? 1 : (lineY(k, s) - (s.height - size) / 2) / size,
+                                ),
+                                child: GameArt(id, size: size, mood: cut > 0 ? ToonMood.happy : ToonMood.idle),
+                              ),
                             ),
-                          ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
               ),
               if (!finished)
                 for (var i = cut; i < lines; i++)
                   Positioned(
                     top: lineY(i, s) - 4,
-                    left: s.width * .06,
-                    right: s.width * .06,
-                    child: CustomPaint(size: Size(s.width * .88, 8), painter: _DashPainter(glow: hint >= 1 && i == cut)),
+                    left: content(s).left - 18,
+                    width: content(s).width + 36,
+                    child: CustomPaint(
+                      size: Size(content(s).width + 36, 8),
+                      painter: _DashPainter(glow: hint >= 1 && i == cut),
+                    ),
                   ),
-              if (trail.length > 1) IgnorePointer(child: CustomPaint(size: s, painter: _TrailPainter(trail))),
-              if (hint >= 3 && !finished) HintHand(from: Offset(s.width * .1, lineY(cut, s)), to: Offset(s.width * .88, lineY(cut, s))),
+              if (trail.length > 1)
+                IgnorePointer(
+                  child: CustomPaint(size: s, painter: _TrailPainter(trail)),
+                ),
+              if (hint >= 3 && !finished)
+                HintHand(from: Offset(content(s).left - 10, lineY(cut, s)), to: Offset(content(s).right + 10, lineY(cut, s))),
             ],
           ),
         ),
       );
     },
   );
+}
+
+/// نوار افقی [top] تا [bottom] (نسبت به ارتفاع) از یک شکل.
+class _Band extends CustomClipper<Rect> {
+  _Band(this.top, this.bottom);
+
+  final double top;
+  final double bottom;
+
+  @override
+  Rect getClip(Size s) => Rect.fromLTRB(-s.width, top * s.height, s.width * 2, bottom * s.height);
+
+  @override
+  bool shouldReclip(_Band old) => old.top != top || old.bottom != bottom;
 }
 
 class _DashPainter extends CustomPainter {
@@ -849,8 +931,16 @@ class _ScrubState extends ConsumerState<ScrubEngine> with EngineSounds {
             alignment: Alignment.center,
             children: [
               Container(color: Colors.transparent),
-              SizedBox(key: _art, child: GameArt(widget.step.str('target'), size: math.min(s.width, s.height) * .8)),
-              IgnorePointer(child: CustomPaint(size: s, painter: _MudPainter(mud: mud, clean: clean, grid: grid, foam: foam))),
+              SizedBox(
+                key: _art,
+                child: GameArt(widget.step.str('target'), size: math.min(s.width, s.height) * .8),
+              ),
+              IgnorePointer(
+                child: CustomPaint(
+                  size: s,
+                  painter: _MudPainter(mud: mud, clean: clean, grid: grid, foam: foam),
+                ),
+              ),
               if (hint >= 3) HintHand(from: Offset(s.width * .2, s.height * .3), to: Offset(s.width * .8, s.height * .7)),
             ],
           ),
@@ -956,12 +1046,17 @@ class _DarkState extends ConsumerState<DarkEngine> with EngineSounds {
                       top: o.dy * s.height - size / 2,
                       child: Builder(
                         builder: (c) => GestureDetector(
-                          onTap: found.contains(i) || (lp - Offset(o.dx * s.width, o.dy * s.height)).distance < radius * 1.1 ? () => _tap(i, c) : null,
+                          onTap: found.contains(i) || (lp - Offset(o.dx * s.width, o.dy * s.height)).distance < radius * 1.1
+                              ? () => _tap(i, c)
+                              : null,
                           child: AnimatedScale(
                             duration: const Duration(milliseconds: 400),
                             curve: Curves.elasticOut,
                             scale: found.contains(i) ? 1.3 : 1,
-                            child: Idle(seed: i, child: GameArt(widget.step.str('target'), size: size)),
+                            child: Idle(
+                              seed: i,
+                              child: GameArt(widget.step.str('target'), size: size),
+                            ),
                           ),
                         ),
                       ),
@@ -969,10 +1064,19 @@ class _DarkState extends ConsumerState<DarkEngine> with EngineSounds {
                   IgnorePointer(
                     child: CustomPaint(
                       size: s,
-                      painter: _DarkPainter(light: lp, r: radius, found: [for (final i in found) Offset(at[i].dx * s.width, at[i].dy * s.height)], hint: hint >= 1 && next != null ? Offset(at[next].dx * s.width, at[next].dy * s.height) : null),
+                      painter: _DarkPainter(
+                        light: lp,
+                        r: radius,
+                        found: [for (final i in found) Offset(at[i].dx * s.width, at[i].dy * s.height)],
+                        hint: hint >= 1 && next != null ? Offset(at[next].dx * s.width, at[next].dy * s.height) : null,
+                      ),
                     ),
                   ),
-                  Positioned(top: 8, left: 8, child: CountChip(icon: Icons.flashlight_on_rounded, value: found.length, color: G.yellow, label: 'پیدا شده')),
+                  Positioned(
+                    top: 8,
+                    left: 8,
+                    child: CountChip(icon: Icons.flashlight_on_rounded, value: found.length, color: G.yellow, label: 'پیدا شده'),
+                  ),
                   if (hint >= 3 && next != null) HintHand(from: lp, to: Offset(at[next].dx * s.width, at[next].dy * s.height)),
                 ],
               ),
@@ -998,7 +1102,10 @@ class _DarkPainter extends CustomPainter {
     canvas.drawRect(Offset.zero & s, Paint()..color = const Color(0xF0101438));
     final clear = Paint()..blendMode = BlendMode.dstOut;
     void hole(Offset c, double radius) {
-      clear.shader = const RadialGradient(colors: [Colors.black, Colors.black, Colors.transparent], stops: [0, .6, 1]).createShader(Rect.fromCircle(center: c, radius: radius));
+      clear.shader = const RadialGradient(
+        colors: [Colors.black, Colors.black, Colors.transparent],
+        stops: [0, .6, 1],
+      ).createShader(Rect.fromCircle(center: c, radius: radius));
       canvas.drawCircle(c, radius, clear);
     }
 
@@ -1008,7 +1115,13 @@ class _DarkPainter extends CustomPainter {
       hole(f, r * .45);
     }
     canvas.restore();
-    canvas.drawCircle(light, r, Paint()..shader = const RadialGradient(colors: [Color(0x33FFF3B0), Color(0x00FFF3B0)]).createShader(Rect.fromCircle(center: light, radius: r)));
+    canvas.drawCircle(
+      light,
+      r,
+      Paint()
+        ..shader = const RadialGradient(colors: [Color(0x33FFF3B0), Color(0x00FFF3B0)])
+            .createShader(Rect.fromCircle(center: light, radius: r)),
+    );
     if (hint != null) canvas.drawCircle(hint!, 28, Paint()..color = const Color(0x66FFE066));
   }
 
@@ -1143,7 +1256,8 @@ class _RhythmState extends ConsumerState<RhythmEngine> with EngineSounds {
                           boxShadow: [
                             ...G.soft(),
                             if (lit == i) const BoxShadow(color: Color(0xCCFFE066), blurRadius: 30, spreadRadius: 8),
-                            if (hint >= 1 && listening && pos < pattern.length && pattern[pos] == i) BoxShadow(color: const Color(0xFFFFE066).withValues(alpha: .9), blurRadius: 24, spreadRadius: 6),
+                            if (hint >= 1 && listening && pos < pattern.length && pattern[pos] == i)
+                              BoxShadow(color: const Color(0xFFFFE066).withValues(alpha: .9), blurRadius: 24, spreadRadius: 6),
                           ],
                         ),
                         child: GameArt(pads[i]['art'] as String, size: size),
