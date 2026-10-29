@@ -557,8 +557,8 @@
    "path": "audio/voice/app_intro_1.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 68694,
-   "sha256": "5abe444927b82fa2d5d209611253057744a8de1c26628f2eace2d752aa59f6ce"
+   "bytes": 115088,
+   "sha256": "b0b20423e2ce530817bab0221d88a426b2442a8a7e4057f5114a574dee22e6b3"
   },
   {
    "id": "voice/app_intro_2",
@@ -566,8 +566,8 @@
    "path": "audio/voice/app_intro_2.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 52707,
-   "sha256": "50f6d56f078ac415b4770f71ce0dab69ef930d04cc3bc3cf0047a881839fa7ee"
+   "bytes": 69008,
+   "sha256": "d56b5797e180cb492be6728899f816c4af8aa65042446cbe665db85818e2748a"
   },
   {
    "id": "voice/app_intro_3",
@@ -575,8 +575,8 @@
    "path": "audio/voice/app_intro_3.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 60544,
-   "sha256": "7f686ff96d6778030a0b8fdcae11fd70a60d0b1785f7021723b17b3f32ecf833"
+   "bytes": 104116,
+   "sha256": "a48c7aa14eafa153155c952bb5ab36224d0cdeca54f9c18400c58758a19a22f6"
   },
   {
    "id": "voice/app_profiles_pick",
@@ -584,8 +584,8 @@
    "path": "audio/voice/app_profiles_pick.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 43303,
-   "sha256": "58604ebbd9787c2b3d439c4b39859eecd66d0c9eda85887e3c283502f347a778"
+   "bytes": 71202,
+   "sha256": "b23ec390601a14ca16901a8c378e66ae30683a6ee02f7cd95e705c9c7c19d4a3"
   },
   {
    "id": "voice/app_splash_welcome",
@@ -593,8 +593,8 @@
    "path": "audio/voice/app_splash_welcome.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 48319,
-   "sha256": "ba02c4ced24514c33c0bbbea33bc73f580bb3256a8654498f48248860ecef776"
+   "bytes": 84368,
+   "sha256": "eba9d0f92a059fbca6742abd9f2320dfe7a41f63f82c25577c7b8260ccbdcac3"
   },
   {
    "id": "voice/full_locked",
@@ -638,8 +638,8 @@
    "path": "audio/voice/praise_2.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 10389,
-   "sha256": "0fe3a9e44c1c8b08c23ca034051789949baa5bd3b4f469b167970251d7491581"
+   "bytes": 21674,
+   "sha256": "c74bb8ff1cb89b7df8d06418a89589acb76a398958b4b0535cae8f4cf336733e"
   },
   {
    "id": "voice/praise_3",
@@ -647,8 +647,8 @@
    "path": "audio/voice/praise_3.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 14464,
-   "sha256": "c355580c5b0a72c33c675712c25315c7fedd1d3c066c87877f791834442c13d2"
+   "bytes": 34213,
+   "sha256": "098a64c78c09c78e67061cf530161de152bc0eba8b9e35b1b97f880b57910f34"
   },
   {
    "id": "voice/praise_4",
@@ -656,8 +656,8 @@
    "path": "audio/voice/praise_4.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 5060,
-   "sha256": "0ee7f39370c07b157b00fa1cf1ab5d54ebf8e5189b073e8b86401e97c5f6678a"
+   "bytes": 17285,
+   "sha256": "f1fc9cea64d4a33f32e7a85d3d625932d4acc1d4ce54493f421b3f5cbd217722"
   },
   {
    "id": "voice/praise_5",
@@ -665,8 +665,8 @@
    "path": "audio/voice/praise_5.mp3",
    "type": "audio/mpeg",
    "version": 1,
-   "bytes": 14151,
-   "sha256": "5c4a4ba79c9d291fe82cbe68a30d56931b64e0a0392703ff1d48667a49a2685d"
+   "bytes": 22928,
+   "sha256": "71ca3105aa14e4036b629e8a9fde2940f6da8ceeda4b6ca270dd37a16f3971b6"
   },
   {
    "id": "voice/praise_6",
