@@ -723,6 +723,51 @@
    "sha256": "a999d2fb787f466f472665ee785f111b6bc3f40fc8c52f16fcead393d849ff1e"
   },
   {
+   "id": "voice/c1s2_s2",
+   "group": "voice",
+   "path": "audio/voice/c1s2_s2.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 94399,
+   "sha256": "650e39fc2ab7b9563a8bbbcde43280e215fcfbddc4a13552ba95b247c18b9421"
+  },
+  {
+   "id": "voice/c1s2_s3",
+   "group": "voice",
+   "path": "audio/voice/c1s2_s3.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 105370,
+   "sha256": "4010bfe27d2cd56675601d0e45bd1ee9d4379b1d90c7266dcaaf9b262008e79e"
+  },
+  {
+   "id": "voice/c1s2_s4",
+   "group": "voice",
+   "path": "audio/voice/c1s2_s4.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 100982,
+   "sha256": "644074d67523536b02ae8ad83babf50334a3a45b04dd5c28cebe34a8340bc424"
+  },
+  {
+   "id": "voice/c1s2_s5",
+   "group": "voice",
+   "path": "audio/voice/c1s2_s5.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 92518,
+   "sha256": "2a67fe80cb9272262174fd239779f6c6bf48d711d5f20421e2a78afb8c62998a"
+  },
+  {
+   "id": "voice/c1s2_s6",
+   "group": "voice",
+   "path": "audio/voice/c1s2_s6.mp3",
+   "type": "audio/mpeg",
+   "version": 1,
+   "bytes": 99101,
+   "sha256": "660b17474cfe825a192280bbedac8f46601d8ca4f25982f5278754ee4aaeaf13"
+  },
+  {
    "id": "voice/full_locked",
    "group": "voice",
    "path": "audio/voice/full_locked.mp3",
