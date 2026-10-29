@@ -127,8 +127,13 @@ def speak(pool: Keys, text: str, voice: str) -> bytes:
         "contents": [{"parts": [{"text": STYLE.format(text=text)}]}],
         "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}},
     }
-    d = call(pool, TTS_MODEL, body)
-    return base64.b64decode(d["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
+    for _ in range(4):
+        d = call(pool, TTS_MODEL, body)
+        try:
+            return base64.b64decode(d["candidates"][0]["content"]["parts"][0]["inlineData"]["data"])
+        except (KeyError, IndexError):
+            continue  # sometimes an answer comes back with no audio; ask again
+    raise RuntimeError("no audio in the answer after four tries")
 
 
 def hear(pool: Keys, mp3: bytes) -> str:
