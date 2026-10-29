@@ -47,7 +47,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          const Positioned.fill(child: SkyScene(image: 'art/backgrounds/meadow.webp')),
+          const Positioned.fill(child: SkyScene(scene: 'meadow')),
           SafeArea(
             child: LayoutBuilder(
               builder: (context, box) {

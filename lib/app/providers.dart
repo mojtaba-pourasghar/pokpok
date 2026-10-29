@@ -111,7 +111,7 @@ class ProfilesNotifier extends Notifier<ProfilesState> {
   Future<ChildProfile> ensureOne() async {
     final a = state.active;
     if (a != null) return a;
-    return create(name: 'کوچولو', avatar: 'rabbit', ageBand: AgeBand.preschool);
+    return create(name: 'کوچولو', avatar: 'bunny', ageBand: AgeBand.preschool);
   }
 
   Future<ChildProfile> create({required String name, required String avatar, required AgeBand ageBand}) async {

@@ -29,8 +29,6 @@ Future<void> main() async {
   final game = await GameData.load(rootBundle);
   final assets = AssetResolver();
   await assets.init(rootBundle);
-  // پوپو با کد کشیده می‌شود تا مثل بقیه‌ی کارتون‌ها زنده باشد (پلک، نفس، دست تکان دادن)؛
-  // حالت‌های رستری قدیمی (MascotArt) دیگر به کار نمی‌روند.
 
   // نسخه‌ی کامل: خرید قبلی و قیمت از کافه‌بازار؛ منتظرش نمی‌مانیم تا شروع برنامه کند نشود.
   final access = AccessStore(prefs, const BazaarBilling());

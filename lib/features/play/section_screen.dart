@@ -238,7 +238,7 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
         key: _fx,
         reduced: reduced,
         child: SkyScene(
-          image: ch?.background ?? (section.id.startsWith('k_') ? 'art/backgrounds/star_workshop.webp' : 'art/backgrounds/shop.webp'),
+          scene: ch?.bg ?? (section.id.startsWith('k_') ? 'star_workshop' : 'shop'),
           night: ch?.night ?? false,
           child: Stack(
             fit: StackFit.expand,

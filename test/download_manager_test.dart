@@ -116,18 +116,15 @@ void main() {
 
   test('an interrupted download resumes with a Range request from the partial file', () async {
     final data = bytes(10000, 4);
-    cdn.addPack('art', {'art/animals/cow.webp': data});
+    cdn.addPack('ambient', {'audio/ambient/rain.ogg': data});
     await dm.refresh();
-    final part = File('${resolver.cacheDir!.path}/art/animals/cow.webp.part');
+    final part = File('${resolver.cacheDir!.path}/audio/ambient/rain.ogg.part');
     await part.parent.create(recursive: true);
     await part.writeAsBytes(data.sublist(0, 4000));
     await dm.download(dm.packs.single);
     expect(cdn.rangeRequests, ['bytes=4000-']);
     expect(dm.status(dm.packs.single), PackStatus.ready);
-    expect(await File('${resolver.cacheDir!.path}/art/animals/cow.webp').readAsBytes(), data);
-    // تصویر رستری دانلودشده جای طرح برداری هم‌نام را می‌گیرد.
-    expect(resolver.rasterOverride('art/animals/cow.svg'), 'art/animals/cow.webp');
-    expect(resolver.rasterOverride('art/animals/sheep.svg'), isNull);
+    expect(await File('${resolver.cacheDir!.path}/audio/ambient/rain.ogg').readAsBytes(), data);
   });
 
   test('pause stops mid-file; resume finishes it', () async {

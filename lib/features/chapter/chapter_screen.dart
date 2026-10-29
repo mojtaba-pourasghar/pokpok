@@ -69,7 +69,7 @@ class _ChapterScreenState extends ConsumerState<ChapterScreen> {
     final done = gate.chapterDone(chapter);
     return Scaffold(
       body: SkyScene(
-        image: chapter.background,
+        scene: chapter.bg,
         night: chapter.night,
         dim: .12,
         child: SafeArea(

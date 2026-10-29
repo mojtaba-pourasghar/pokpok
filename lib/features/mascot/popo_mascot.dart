@@ -7,14 +7,6 @@ import 'popo_painter.dart';
 
 export 'popo_painter.dart' show PopoPose;
 
-/// حالت‌های رستری پوپو (`assets/art/character/popo_<pose>.webp`، ساخته با tools/art/generate_cf.py).
-/// main.dart این را به AssetResolver وصل می‌کند؛ اگر تصویری نباشد (یا در آزمون‌ها) نقاش برداری کشیده می‌شود.
-abstract final class MascotArt {
-  static ImageProvider? Function(String logicalPath)? resolve;
-
-  static ImageProvider? forPose(PopoPose pose) => resolve?.call('art/character/popo_${pose.name}.webp');
-}
-
 /// پوپوی زنده: نفس آرام، پلک زدن گاه‌به‌گاه، تکان دادن دست در حالت خوشامد.
 ///
 /// حرکت‌ها آرام و کم‌دامنه‌اند تا حواس کودک را از بازی پرت نکنند. با [reducedMotion]
@@ -114,7 +106,6 @@ class _PopoMascotState extends State<PopoMascot> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     final h = widget.size;
     final w = h * PopoPainter.designSize.width / PopoPainter.designSize.height;
-    final img = MascotArt.forPose(widget.pose);
     return Semantics(
       label: widget.semanticLabel,
       image: true,
@@ -122,38 +113,19 @@ class _PopoMascotState extends State<PopoMascot> with TickerProviderStateMixin {
         width: w,
         height: h,
         child: RepaintBoundary(
-          child: img != null
-              ? AnimatedBuilder(
-                  animation: Listenable.merge([_breath, _wave]),
-                  builder: (context, child) {
-                    // تصویر رستری: نفس آرام و برای شادی یک جهش کوچک
-                    final b = math.sin(_breath.value * math.pi * 2);
-                    final hop = widget.pose == PopoPose.happy ? -math.sin(_wave.value * math.pi * 2).abs() * h * .03 : 0.0;
-                    return Transform.translate(
-                      offset: Offset(0, hop),
-                      child: Transform.scale(scaleY: 1 + b * .012, scaleX: 1 - b * .006, alignment: Alignment.bottomCenter, child: child),
-                    );
-                  },
-                  child: Image(
-                    image: ResizeImage.resizeIfNeeded((h * MediaQuery.devicePixelRatioOf(context)).round(), null, img),
-                    fit: BoxFit.contain,
-                    gaplessPlayback: true,
-                    filterQuality: FilterQuality.medium,
-                  ),
-                )
-              : AnimatedBuilder(
-                  animation: Listenable.merge([_breath, _wave, _blink]),
-                  builder: (context, _) => CustomPaint(
-                    painter: PopoPainter(
-                      pose: widget.pose,
-                      breath: _breath.value,
-                      wave: _wave.value,
-                      blink: _blink.value,
-                      look: widget.look,
-                      pointRight: widget.pointRight,
-                    ),
-                  ),
-                ),
+          child: AnimatedBuilder(
+            animation: Listenable.merge([_breath, _wave, _blink]),
+            builder: (context, _) => CustomPaint(
+              painter: PopoPainter(
+                pose: widget.pose,
+                breath: _breath.value,
+                wave: _wave.value,
+                blink: _blink.value,
+                look: widget.look,
+                pointRight: widget.pointRight,
+              ),
+            ),
+          ),
         ),
       ),
     );

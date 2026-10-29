@@ -76,9 +76,6 @@ class Friend {
   final String name;
   final String emoji;
 
-  /// تصویر رستری شخصیت.
-  String get art => 'art/characters/$id.webp';
-
   factory Friend.fromJson(String id, Map<String, dynamic> j) => Friend(id: id, name: j['name'] as String, emoji: j['emoji'] as String);
 }
 
@@ -236,8 +233,6 @@ class ChapterDef {
   final String next;
   final List<SectionDef> sections;
   final bool night;
-
-  String get background => 'art/backgrounds/$bg.webp';
 
   factory ChapterDef.fromJson(Map<String, dynamic> j, int index) => ChapterDef(
     id: j['id'] as String,

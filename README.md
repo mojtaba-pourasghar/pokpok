@@ -11,9 +11,8 @@
 
 ![صفحه‌های پوپو](docs/screenshots/overview.jpg)
 
-*تصویرها از نسخه‌ی وب همین کد در Chromium (۴۱۲×۸۷۰): خانه، نقشه‌ی فصل، مأموریت، چیدن، جدا کردن،
-کوله‌پشتی، کارگاه ستاره، فروشگاه ابزار، اتاق بازی، فیلم پایان فصل. همه‌ی شکل‌ها کارتون زنده‌ی کشیده‌شده با کد
-هستند (پایین‌تر: کارتون‌های زنده).*
+*از نسخه‌ی وب همین کد در Chromium (۴۱۲×۸۷۰): خانه، نقشه‌ی فصل، مأموریت، گرفتن، دوشیدن، ضربه‌ی سریع، میز جشن.
+همه‌ی شکل‌ها و پس‌زمینه‌ها کارتون زنده‌ی کشیده‌شده با کدند (پایین‌تر: کارتون‌های زنده).*
 
 این پروژه از الگوی [goshyar_game](https://github.com/mojtaba-pourasghar/goshyar_game) پیروی می‌کند
 (سیستم طراحی، لایه‌ی دارایی‌ها و CDN، جمله‌های گوینده در JSON، استودیوی صداگذاری، Cloudflare R2) و
@@ -45,8 +44,8 @@ flutter build apk --release \
 
 **گوشی‌ها:** اندروید ۱۰ (API 29) به بالا، همه‌ی پردازنده‌ها: `armeabi-v7a` (ARM ۳۲ بیتی، گوشی‌های ارزان)،
 `arm64-v8a` و `x86_64`. `flutter build apk --release` یک APK برای همه می‌سازد؛ برای حجم کمتر در فروشگاه‌هایی که
-چند APK می‌پذیرند: `flutter build apk --release --split-per-abi`. تصویرها به اندازه‌ی نمایش رمزگشایی می‌شوند تا
-گوشی‌های کم‌حافظه هم روان بمانند.
+چند APK می‌پذیرند: `flutter build apk --release --split-per-abi`. هیچ تصویر رستری‌ای در برنامه نیست؛ همه‌چیز با کد
+کشیده می‌شود و هر کارتون لایه‌ی رنگ خودش را دارد (RepaintBoundary) تا گوشی‌های ضعیف هم روان بمانند.
 
 **امضا:** `android/key.properties.example` را به `android/key.properties` کپی و پر کنید. بدون آن، نسخه‌ی
 release با کلید debug امضا می‌شود که فقط برای آزمایش است. شناسه‌ی بسته: `com.pokpok.ir`.
@@ -91,11 +90,9 @@ lib/
 assets/
   content/game.json            کل داستان (ساخته‌ی tools/content/build_game.py)
   content/voice_lines.json     همه‌ی جمله‌های پوپو (استودیو همین را می‌خواند)
-  art/character/               ۸ حالت پوپو؛ art/characters/ هفت دوست؛ art/backgrounds/ صحنه‌ها؛ art/items/ اشیا
   audio/                       ui، sfx، animals، ambient، instruments، music، voice
 tools/
-  content/build_game.py        داستان، گام‌ها، اشیا، کیت‌ها، ابزارها، جمله‌ها و prompt تصویرها در یک جا
-  art/prompts.py + generate_cf.py   ساخت تصویرها با Cloudflare
+  content/build_game.py        داستان، گام‌ها، اشیا، کیت‌ها، ابزارها و جمله‌ها در یک جا
   voice-studio/                استودیوی صداگذاری (جمله‌ها بر اساس فصل گروه‌بندی شده‌اند) و خبرها
 ```
 
@@ -111,9 +108,8 @@ tools/
 خط)، `connect` (وصل کردن نقطه‌ها)، `memory` (کارت حافظه)، `whack` (ضربه‌ی سریع). هر بخش ۶ تا ۷ گام دارد. بعد:
 
 ```bash
-python3 tools/content/build_game.py   # game.json، جمله‌های تازه در voice_lines.json، prompt تصویرها
-python3 tools/art/prompts.py && python3 tools/art/generate_cf.py --steps 4
-flutter test                          # آزمون سلامت محتوا ارجاع شکسته یا کوله‌ی ناممکن را پیدا می‌کند
+python3 tools/content/build_game.py   # game.json و جمله‌های تازه در voice_lines.json
+flutter test                          # آزمون محتوا ارجاع شکسته، کوله‌ی ناممکن یا شناسه‌ی بی‌کارتون را پیدا می‌کند
 ```
 
 ## کارتون‌های زنده (بدون تصویر ثابت)
@@ -127,28 +123,9 @@ flutter test                          # آزمون سلامت محتوا ارج�
 برگه‌ی بازبینی همه‌ی کارتون‌ها در چهار حال و همه‌ی پس‌زمینه‌ها:
 
 ```bash
-TOON_SHEET=1 flutter test test/tools/toon_sheet_test.dart test/tools/backdrop_sheet_test.dart test/tools/popo_sheet_test.dart
+TOON_SHEET=1 flutter test test/tools/toon_sheet_test.dart test/tools/backdrop_sheet_test.dart
 # → build/toon_sheets/*.png
 ```
-
-## تصویرهای رستری قدیمی با Cloudflare (level 3، فقط پشتیبان)
-
-تصویرهای رستری زیر دیگر نشان داده نمی‌شوند (هر شناسه کارتون زنده دارد) و فقط به‌عنوان پشتیبان مانده‌اند.
-
-
-همه‌ی تصویرها (۸ حالت پوپو، ۷ دوست، ۱۲ پس‌زمینه و ۱۶۲ شیء) یک prompt با سبک یکسان رندر سه‌بعدی
-(همان سبک گوش‌یار) در `art/art_manifest.json` دارند و با Cloudflare Workers AI (flux-1-schnell، همان مهارت
-`.claude/skills/level-3-image-generator`) ساخته می‌شوند:
-
-```bash
-cp .env.example .env          # CF_ACCOUNT_ID (۳۲ نویسه) و CF_API_TOKEN؛ .env در گیت نیست
-python3 tools/art/generate_cf.py --steps 4           # همه‌ی تصویرهای کم؛ حساب‌ها (CF_ACCOUNT_ID، CF_ACCOUNT_ID_2 …) به نوبت
-python3 tools/art/generate_cf.py --kind character    # فقط شخصیت‌ها
-```
-
-سهم رایگان روزانه‌ی Cloudflare حدود ۵۵ تصویر است؛ اسکریپت فقط تصویرهای کم را می‌سازد، پس هر روز یک بار اجرا
-کافی است. پس‌زمینه‌ی سفید اشیا خودکار برداشته می‌شود و WebP در `assets/art/...` قرار می‌گیرد. تا وقتی تصویر
-چیزی ساخته نشده، برنامه شکلک آن را روی دایره نشان می‌دهد. رندرهای خام (`art/generated/`) فقط محلی‌اند.
 
 ## صدا
 
@@ -187,7 +164,7 @@ python3 tools/art/generate_cf.py --kind character    # فقط شخصیت‌ها
 
 خلاصه در [docs/STATUS.md](docs/STATUS.md). مهم‌ترین‌ها:
 
-- **تصویرها:** هر ۱۸۹ تصویر (پوپو، هفت دوست، ۱۲ پس‌زمینه، ۱۶۲ شیء) رندر سه‌بعدی شده‌اند.
+- **تصویرها:** ۱۷۳ کارتون زنده (پوپو، هفت دوست، ۱۶۵ شیء و کارت صحنه) و ۱۲ پس‌زمینه‌ی زنده، همه با کد.
 - **صدای گوینده:** جمله‌های تازه هنوز صدا ندارند؛ در استودیو (گروه‌های فصل ۱ تا ۸) ساخته می‌شوند. تا آن زمان
   حرف‌های پوپو در حباب نوشته می‌شود.
 - **ساخت اندروید/iOS در این محیط اجرا نشد** (Android SDK نبود). نسخه‌ی وب ساخته و در Chromium بررسی شد و همه‌ی

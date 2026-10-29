@@ -86,7 +86,7 @@ class _FilmScreenState extends ConsumerState<FilmScreen> {
     return Scaffold(
       body: FxLayer(
         child: SkyScene(
-          image: chapter.background,
+          scene: chapter.bg,
           night: chapter.night,
           dim: .2,
           child: SafeArea(

@@ -19,13 +19,11 @@ class ResolvedAsset {
   final String key;
 }
 
-/// لایه‌ی مرکزی دسترسی به دارایی‌ها با مسیر منطقی (مثل art/animals/cow.svg).
+/// لایه‌ی مرکزی دسترسی به دارایی‌ها (صداها) با مسیر منطقی (مثل audio/sfx/pop.mp3).
 ///
 /// ترتیب جست‌وجو:
 ///   ۱. فایل دانلودشده از CDN (نسخه‌ی تازه‌تر یا بسته‌ی اضافه)
 ///   ۲. فایل داخل خود برنامه (همیشه بدون اینترنت در دسترس)
-/// برای تصویرها، اگر نسخه‌ی WebP با همان نام (art/animals/cow.webp) دانلود شده باشد، به‌جای SVG
-/// استفاده می‌شود؛ پس تصویرسازی نهایی بدون تغییر کد جایگزین طرح برداری می‌شود.
 class AssetResolver extends ChangeNotifier {
   AssetResolver({this.config = const AssetConfig()});
 
@@ -87,21 +85,5 @@ class AssetResolver extends ChangeNotifier {
     if (isDownloaded(logicalPath)) return ResolvedAsset.file('${_cacheDir!.path}/$logicalPath');
     if (isBundled(logicalPath)) return ResolvedAsset.bundled('assets/$logicalPath');
     return null;
-  }
-
-  /// اگر برای یک تصویر SVG نسخه‌ی رستری (WebP یا PNG) هم‌نام باشد (دانلودی یا داخلی)، مسیر آن را می‌دهد.
-  String? rasterOverride(String svgPath) {
-    if (!svgPath.endsWith('.svg')) return null;
-    final base = svgPath.substring(0, svgPath.length - 4);
-    for (final ext in const ['.webp', '.png']) {
-      if (exists('$base$ext')) return '$base$ext';
-    }
-    return null;
-  }
-
-  ImageProvider? image(String logicalPath) {
-    final r = resolve(logicalPath);
-    if (r == null) return null;
-    return r.source == AssetSource.downloaded ? FileImage(File(r.key)) : AssetImage(r.key);
   }
 }

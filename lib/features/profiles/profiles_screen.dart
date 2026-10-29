@@ -11,7 +11,7 @@ import '../../core/widgets/common.dart';
 import '../../data/models/models.dart';
 
 /// نمادهایی که کودک می‌تواند برای نمایه‌اش داشته باشد (از تصویرهای خود برنامه).
-const profileAvatars = ['rabbit', 'cat', 'dog', 'chick', 'frog', 'fish', 'butterfly', 'bee', 'sheep', 'duck'];
+const profileAvatars = ['bunny', 'cat', 'bear', 'hen', 'turtle', 'fish', 'ladybug', 'bee', 'owl', 'parrot', 'squirrel', 'baby_owl'];
 const avatarColors = [PColors.pink, PColors.yellow, PColors.turquoise, PColors.green, PColors.purple, PColors.orange];
 
 Color avatarColor(String avatar) => avatarColors[profileAvatars.indexOf(avatar).clamp(0, 99) % avatarColors.length];

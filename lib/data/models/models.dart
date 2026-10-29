@@ -38,7 +38,7 @@ class ChildProfile {
   factory ChildProfile.fromJson(Map<String, dynamic> j) => ChildProfile(
     id: j['id'] as String,
     name: (j['name'] ?? '') as String,
-    avatar: (j['avatar'] ?? 'rabbit') as String,
+    avatar: (j['avatar'] ?? 'bunny') as String,
     ageBand: AgeBand.parse(j['ageBand'] as String?),
     createdAt: DateTime.tryParse((j['createdAt'] ?? '') as String) ?? DateTime.now(),
   );

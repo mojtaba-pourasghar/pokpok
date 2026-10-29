@@ -190,10 +190,9 @@ void main() {
   });
 
   test('every picture and friend is a living cartoon, every scene a living backdrop', () {
-    final art = jsonDecode(File('art/game_art.json').readAsStringSync()) as Map;
-    final ids = {...(art['objects'] as Map).keys, ...(art['friends'] as Map).keys};
-    expect(ids.where((id) => !toons.containsKey(id)).toList(), isEmpty);
     final game = jsonDecode(File('assets/content/game.json').readAsStringSync()) as Map;
+    final ids = {...(game['art'] as Map).keys, ...(game['friends'] as Map).keys};
+    expect(ids.where((id) => !toons.containsKey(id)).toList(), isEmpty);
     for (final ch in (game['chapters'] as List).cast<Map>()) {
       expect(backdrops.containsKey(ch['bg']), isTrue, reason: '${ch['id']} ${ch['bg']}');
     }

@@ -63,7 +63,7 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          const Positioned.fill(child: SkyScene(image: 'art/backgrounds/meadow.webp')),
+          const Positioned.fill(child: SkyScene(scene: 'meadow')),
           SafeArea(
             child: LayoutBuilder(
               builder: (context, box) {

@@ -1,53 +1,46 @@
-import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../app/theme/theme.dart';
 import '../../app/theme/tokens.dart';
 import '../../features/mascot/popo_mascot.dart';
-import '../assets/asset_resolver.dart';
+import '../../ui/clay.dart';
 import '../content/content.dart';
 import 'buttons.dart';
 
-final _svgCache = <String, String>{};
+/// نام‌های قدیمی آواتار (طرح‌های SVG حذف‌شده) ← کارتون زنده‌ی همسان.
+const _legacyAvatars = {
+  'rabbit': 'bunny',
+  'dog': 'bear',
+  'chick': 'hen',
+  'frog': 'turtle',
+  'butterfly': 'ladybug',
+  'sheep': 'owl',
+  'duck': 'parrot',
+};
 
-/// SVG دانلودشده یک بار از دیسک خوانده و نگه داشته می‌شود.
-String _downloadedSvg(String path) => _svgCache[path] ??= File(path).readAsStringSync();
-
-/// تصویر یک شیء با شناسه‌ی art_manifest. اگر نسخه‌ی رستری دانلودشده باشد همان نشان داده
-/// می‌شود؛ وگرنه طرح برداری داخلی.
-class ArtImage extends ConsumerWidget {
-  const ArtImage(this.id, {super.key, this.size, this.fit = BoxFit.contain, this.semanticLabel});
+/// کارتون زنده‌ی [id] که فضای موجود را پر می‌کند (آواتار، توپ مقدمه…).
+class ArtImage extends StatelessWidget {
+  const ArtImage(this.id, {super.key, this.size, this.semanticLabel});
 
   final String id;
   final double? size;
-  final BoxFit fit;
   final String? semanticLabel;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final content = ref.watch(contentProvider);
-    final assets = ref.watch(assetsProvider);
-    final path = content.artPath(id);
-    final raster = path.endsWith('.svg') ? assets.rasterOverride(path) : path;
-    Widget img;
-    if (raster != null) {
-      final provider = assets.image(raster);
-      img = provider == null
-          ? SizedBox(width: size, height: size)
-          : Image(image: provider, width: size, height: size, fit: fit, gaplessPlayback: true, filterQuality: FilterQuality.medium);
-    } else {
-      final r = assets.resolve(path);
-      img = r != null && r.source == AssetSource.downloaded
-          ? SvgPicture.string(_downloadedSvg(r.key), width: size, height: size, fit: fit)
-          : SvgPicture.asset('assets/$path', width: size, height: size, fit: fit);
-    }
-    return semanticLabel == null ? ExcludeSemantics(child: img) : Semantics(label: semanticLabel, image: true, child: img);
+  Widget build(BuildContext context) {
+    final toon = _legacyAvatars[id] ?? id;
+    if (size != null) return GameArt(toon, size: size!, label: semanticLabel);
+    return LayoutBuilder(
+      builder: (context, box) {
+        final s = math.min(box.maxWidth, box.maxHeight);
+        return GameArt(toon, size: s.isFinite ? s : 96, label: semanticLabel);
+      },
+    );
   }
 }
 

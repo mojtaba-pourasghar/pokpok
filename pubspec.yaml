@@ -21,7 +21,6 @@ dependencies:
   path_provider: ^2.1.6
   http: ^1.6.0
   crypto: ^3.0.7
-  flutter_svg: ^2.3.0
   flutter_localizations:
     sdk: flutter
 
@@ -38,11 +37,6 @@ flutter:
 
   assets:
     - assets/content/
-    - assets/art/animals/
-    - assets/art/backgrounds/
-    - assets/art/character/
-    - assets/art/characters/
-    - assets/art/items/
     - assets/audio/ui/
     - assets/audio/sfx/
     - assets/audio/animals/

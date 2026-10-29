@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -334,8 +332,8 @@ String fa(int n) {
   return n.toString().split('').map((c) => int.tryParse(c) == null ? c : d[int.parse(c)]).join();
 }
 
-/// تصویر یک شیء یا شخصیت: نسخه‌ی رستری اگر هست (art/items، art/characters)، وگرنه شکلک
-/// روی دایره‌ی رنگی تا بازی همیشه قابل بازی باشد.
+/// یک شیء یا شخصیت به شکل کارتون زنده (lib/ui/toons)؛ اگر شناسه‌ای کارتون نداشته باشد شکلکش
+/// روی دایره‌ی رنگی نشان داده می‌شود تا بازی همیشه قابل بازی باشد.
 class GameArt extends ConsumerWidget {
   const GameArt(this.id, {super.key, this.size = 96, this.label, this.mood = ToonMood.idle});
 
@@ -346,41 +344,17 @@ class GameArt extends ConsumerWidget {
   /// حال کارتون زنده: آرام، مشغول کار، خوشحال یا ناراحت.
   final ToonMood mood;
 
-  static String? pathOf(WidgetRef ref, String id) {
-    final assets = ref.read(assetsProvider);
-    for (final p in ['art/items/$id.webp', 'art/characters/$id.webp']) {
-      if (assets.exists(p)) return p;
-    }
-    return null;
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // هر چیزی که کارتون زنده دارد با کد کشیده می‌شود و همیشه جان دارد.
+    // هر چیز با کد کشیده می‌شود و همیشه جان دارد؛ شناسه‌ی ناشناخته شکلکش را روی دایره نشان می‌دهد.
     final toon = toons[id];
+    final Widget view;
     if (toon != null) {
-      final view = ToonView(toon, size: size, mood: mood, seed: id.hashCode % 7);
-      return label == null ? ExcludeSemantics(child: view) : Semantics(label: label, image: true, child: view);
-    }
-    final assets = ref.watch(assetsProvider);
-    final path = pathOf(ref, id);
-    final provider = path == null ? null : assets.image(path);
-    final Widget img;
-    if (provider != null) {
-      // درست به اندازه‌ی نمایش رمزگشایی می‌شود، نه ۵۱۲ یا ۷۶۸ پیکسل کامل: حافظه‌ی گوشی‌های ضعیف.
-      final px = (size * MediaQuery.devicePixelRatioOf(context)).round();
-      img = Image(
-        image: ResizeImage.resizeIfNeeded(px, px, provider),
-        width: size,
-        height: size,
-        fit: BoxFit.contain,
-        gaplessPlayback: true,
-        filterQuality: FilterQuality.medium,
-      );
+      view = ToonView(toon, size: size, mood: mood, seed: id.hashCode % 7);
     } else {
       final data = ref.watch(gameDataProvider);
       final emoji = data.emoji[id] ?? data.friends[id]?.emoji ?? '✨';
-      img = SizedBox(
+      view = SizedBox(
         width: size,
         height: size,
         child: Center(
@@ -398,120 +372,31 @@ class GameArt extends ConsumerWidget {
         ),
       );
     }
-    return label == null ? ExcludeSemantics(child: img) : Semantics(label: label, image: true, child: img);
+    return label == null ? ExcludeSemantics(child: view) : Semantics(label: label, image: true, child: view);
   }
 }
 
-/// آسمان و تپه‌های نقاشی‌شده (مثل گوش‌یار)؛ زیر همه‌ی صفحه‌ها. [image] اگر باشد روی آن.
-class SkyScene extends ConsumerWidget {
-  const SkyScene({super.key, this.image, this.night = false, this.child, this.dim = 0, this.hills = true});
+/// پس‌زمینه‌ی زنده‌ی یک صحنه زیر همه‌ی صفحه‌ها ([scene] یکی از backdrops: kitchen، farm، …).
+class SkyScene extends StatelessWidget {
+  const SkyScene({super.key, this.scene, this.night = false, this.child, this.dim = 0});
 
-  final String? image;
+  final String? scene;
   final bool night;
   final Widget? child;
   final double dim;
-  final bool hills;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // پس‌زمینه‌ی زنده‌ی کشیده‌شده با کد، اگر برای این صحنه باشد (art/backgrounds/<id>.webp → <id>).
-    final live = image == null ? (night ? 'night_forest' : 'meadow') : image!.split('/').last.split('.').first;
-    final assets = ref.watch(assetsProvider);
-    final img = backdrops.containsKey(live) || image == null || !assets.exists(image!) ? null : assets.image(image!);
+  Widget build(BuildContext context) {
+    final id = scene != null && backdrops.containsKey(scene) ? scene! : (night ? 'night_forest' : 'meadow');
     return Stack(
       fit: StackFit.expand,
       children: [
-        if (backdrops.containsKey(live))
-          LiveBackdrop(live)
-        else if (img != null)
-          LayoutBuilder(
-            builder: (context, box) => Image(
-              // پس‌زمینه‌ی ۱۰۲۴ پیکسلی فقط به پهنای صفحه رمزگشایی می‌شود.
-              image: ResizeImage.resizeIfNeeded(
-                (math.max(box.maxWidth, box.maxHeight) * MediaQuery.devicePixelRatioOf(context)).round().clamp(1, 1024),
-                null,
-                img,
-              ),
-              fit: BoxFit.cover,
-              filterQuality: FilterQuality.medium,
-            ),
-          )
-        else
-          RepaintBoundary(
-            child: CustomPaint(
-              painter: _SkyPainter(night: night, hills: hills),
-            ),
-          ),
+        LiveBackdrop(id),
         if (dim > 0) ColoredBox(color: Colors.black.withValues(alpha: dim)),
         ?child,
       ],
     );
   }
-}
-
-class _SkyPainter extends CustomPainter {
-  _SkyPainter({required this.night, required this.hills});
-
-  final bool night;
-  final bool hills;
-
-  @override
-  void paint(Canvas canvas, Size s) {
-    final sky = night
-        ? const [Color(0xFF1B2470), Color(0xFF3549B8), Color(0xFF4F6BD8)]
-        : const [Color(0xFF7CC8FF), Color(0xFFB9E3FF), Color(0xFFE8F6FF)];
-    canvas.drawRect(
-      Offset.zero & s,
-      Paint()..shader = LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: sky).createShader(Offset.zero & s),
-    );
-    final rnd = math.Random(7);
-    if (night) {
-      final star = Paint()..color = Colors.white.withValues(alpha: .85);
-      for (var i = 0; i < 40; i++) {
-        canvas.drawCircle(Offset(rnd.nextDouble() * s.width, rnd.nextDouble() * s.height * .5), rnd.nextDouble() * 1.8 + .6, star);
-      }
-      final c = Offset(s.width * .2, s.height * .12);
-      final r = s.shortestSide * .085;
-      canvas.drawCircle(c, r * 1.8, Paint()..color = const Color(0x33FFF3B0));
-      canvas.drawCircle(c, r, Paint()..color = const Color(0xFFFFE27A));
-      canvas.drawCircle(c + Offset(r * .45, -r * .2), r * .85, Paint()..color = const Color(0xFF26318A));
-    } else {
-      final sun = Offset(s.width * .16, s.height * .14);
-      final r = s.shortestSide * .07;
-      canvas.drawCircle(sun, r * 2, Paint()..color = const Color(0x33FFE066));
-      canvas.drawCircle(sun, r, Paint()..color = const Color(0xFFFFD43B));
-      final cloud = Paint()..color = Colors.white.withValues(alpha: .95);
-      for (final (x, y, k) in [(.72, .1, 1.0), (.42, .2, .7), (.9, .27, .6)]) {
-        final o = Offset(s.width * x, s.height * y);
-        final u = s.shortestSide * .05 * k;
-        canvas.drawCircle(o, u, cloud);
-        canvas.drawCircle(o + Offset(u * 1.1, u * .2), u * .8, cloud);
-        canvas.drawCircle(o + Offset(-u * 1.1, u * .3), u * .7, cloud);
-        canvas.drawRRect(
-          RRect.fromRectAndRadius(Rect.fromCenter(center: o + Offset(0, u * .55), width: u * 3.4, height: u * .9), Radius.circular(u)),
-          cloud,
-        );
-      }
-    }
-    if (!hills) return;
-    void hill(double top, Color c, double phase) {
-      final p = Path()..moveTo(0, s.height);
-      for (var x = 0.0; x <= s.width; x += 8) {
-        p.lineTo(x, s.height * top + math.sin(x / s.width * math.pi * 2 + phase) * s.height * .035);
-      }
-      p
-        ..lineTo(s.width, s.height)
-        ..close();
-      canvas.drawPath(p, Paint()..color = c);
-    }
-
-    hill(.62, night ? const Color(0xFF2E7D5B) : const Color(0xFF9BE07A), 0);
-    hill(.72, night ? const Color(0xFF256B4D) : const Color(0xFF7BD162), 2);
-    hill(.84, night ? const Color(0xFF1E5A40) : const Color(0xFF5DC04A), 4);
-  }
-
-  @override
-  bool shouldRepaint(_SkyPainter old) => old.night != night || old.hills != hills;
 }
 
 /// حباب حرف پوپو کنار تصویرش (مثل گوش‌یار). متن همان زیرنویس گوینده است.

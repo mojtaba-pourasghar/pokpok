@@ -155,7 +155,7 @@ class _PlayroomTabState extends ConsumerState<PlayroomTab> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(28),
               child: SkyScene(
-                image: 'art/backgrounds/playroom.webp',
+                scene: 'playroom',
                 child: LayoutBuilder(
                   builder: (context, box) => DragTarget<String>(
                     onAcceptWithDetails: (d) {

@@ -61,7 +61,7 @@ class _ToolScreenState extends ConsumerState<ToolScreen> with SingleTickerProvid
     final missing = math.max(0, tool.price - g.coins);
     return Scaffold(
       body: SkyScene(
-        image: 'art/backgrounds/shop.webp',
+        scene: 'shop',
         dim: .15,
         child: SafeArea(
           child: Column(

@@ -717,6 +717,20 @@ final Map<String, ToonPainter> thingToons = {
     }, rot: spin);
     k.face(50, 60, 8, p);
   }),
+  'ball': (k, p) => k.alive(p, () {
+    k.at(50, 62, () {
+      k.circle(0, 0, 28, Colors.white);
+      for (var i = 0; i < 3; i++) {
+        final sector = Path()
+          ..moveTo(0, 0)
+          ..arcTo(Rect.fromCircle(center: Offset.zero, radius: 27), i * math.pi * 2 / 3, math.pi / 3, false)
+          ..close();
+        k.c.drawPath(sector, Paint()..color = _rainbow[i * 2]);
+      }
+      k.circle(0, 0, 5, const Color(0xFFFFEB3B));
+      k.shine(-10, -12, 7, 4);
+    }, rot: p.act || p.happy ? p.t * 4 : p.wave(.3) * .3);
+  }, squash: .06),
   'balloon': (k, p) => k.alive(p, () {
     final sw = p.wave(.6) * .1;
     k.at(50, 44, () {
