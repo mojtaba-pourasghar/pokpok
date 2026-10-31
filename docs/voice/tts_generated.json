@@ -1,688 +1,355 @@
 {
- "note": "clips made with the TTS service — temporary until a voice actor records them",
- "files": {
-  "app_intro_1": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "سلام دوست کوچولو! من پوپو هستم، یک روباه کوچولو که عاشق بازی است.",
-   "score": 1.0,
-   "heard": "سلام دوست کوچولو من پوپو هستم یک روباه کوچولو که عاشق بازی است",
-   "at": "2026-10-29T15:09:14+00:00"
-  },
-  "app_intro_2": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "هر چیزی را که دوست داری لمس کن. ببین چه اتفاقی می‌افتد!",
-   "score": 1.0,
-   "heard": "هر چیزی را که دوست داری لمس کن ببین چه اتفاقی می افتد",
-   "at": "2026-10-29T15:09:11+00:00"
-  },
-  "app_intro_3": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "می‌توانی چیزها را بکشی و جابه‌جا کنی. بیا با هم دنیا را کشف کنیم!",
-   "score": 0.929,
-   "heard": "می توانی چیزها را بکشی و جابجا کنی بیا با هم دنیا را کشف کنیم",
-   "at": "2026-10-29T15:09:14+00:00"
-  },
-  "app_map_back": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:14.266Z"
-  },
-  "app_map_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:14.117Z"
-  },
-  "app_profiles_pick": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "کی می‌خواهد بازی کند؟ عکس خودت را لمس کن.",
-   "score": 1.0,
-   "heard": "کی می خواهد بازی کند؟ عکس خودت را لمس کن.",
-   "at": "2026-10-29T15:09:19+00:00"
-  },
-  "app_splash_welcome": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "سلام! من پوپو هستم. ببین، لمس کن، کشف کن!",
-   "score": 1.0,
-   "heard": "سلام من پوپو هستم ببین لمس کن کشف کن",
-   "at": "2026-10-29T15:09:22+00:00"
-  },
-  "art_clear_ask": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:21.376Z"
-  },
-  "art_gallery": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:21.144Z"
-  },
-  "art_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:21.390Z"
-  },
-  "art_saved": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:21.400Z"
-  },
-  "build_gears": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:24.992Z"
-  },
-  "build_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:23.612Z"
-  },
-  "build_remove": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:23.844Z"
-  },
-  "full_locked": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "این‌جا مال نسخه‌ی کامله. از مامان یا بابا بخواه برات بازش کنن!",
-   "score": 0.917,
-   "heard": "اینجا مال نسخه کامله از مامان یا بابا بخواه برات بازش کنن",
-   "at": "2026-10-29T15:09:59+00:00"
-  },
-  "idle_1": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:31.708Z"
-  },
-  "idle_2": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:31.849Z"
-  },
-  "idle_3": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:32.270Z"
-  },
-  "library_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:32.567Z"
-  },
-  "music_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:22.190Z"
-  },
-  "music_record": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:22.659Z"
-  },
-  "music_recording": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:22.490Z"
-  },
-  "music_saved": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:23.628Z"
-  },
-  "notice_new": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "یه خبر تازه داریم! بیا ببین.",
-   "score": 1.0,
-   "heard": "یه خبر تازه داریم بیا ببین",
-   "at": "2026-10-29T15:10:03+00:00"
-  },
-  "parent_ask": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "این بخش برای بزرگ‌ترهاست. از مامان یا بابا کمک بگیر.",
-   "score": 1.0,
-   "heard": "این بخش برای بزرگترهاست از مامان یا بابا کمک بگیر",
-   "at": "2026-10-29T15:09:48+00:00"
-  },
-  "play_cook_done": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:28.008Z"
-  },
-  "play_cook_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:26.867Z"
-  },
-  "play_garden_done": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:29.386Z"
-  },
-  "play_garden_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:27.828Z"
-  },
-  "play_pet_done": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:29.459Z"
-  },
-  "play_pet_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:28.187Z"
-  },
-  "play_shop_done": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:28.249Z"
-  },
-  "play_shop_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:27.604Z"
-  },
-  "play_tidy_done": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:29.725Z"
-  },
-  "play_tidy_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:28.205Z"
-  },
-  "praise_1": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "آفرین!",
-   "score": 1.0,
-   "heard": "آفرین",
-   "at": "2026-10-29T15:10:22+00:00"
-  },
-  "praise_2": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "چه عالی!",
-   "score": 1.0,
-   "heard": "چه عالی",
-   "at": "2026-10-29T15:09:20+00:00"
-  },
-  "praise_3": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "تو فوق‌العاده‌ای!",
-   "score": 1.0,
-   "heard": "تو فوق‌العاده‌ای",
-   "at": "2026-10-29T15:09:25+00:00"
-  },
-  "praise_4": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "هورا!",
-   "score": 1.0,
-   "heard": "هورا",
-   "at": "2026-10-29T15:09:28+00:00"
-  },
-  "praise_5": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "خیلی خوب بود!",
-   "score": 1.0,
-   "heard": "خیلی خوب بود",
-   "at": "2026-10-29T15:09:39+00:00"
-  },
-  "praise_6": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "باریکلا!",
-   "score": 1.0,
-   "heard": "باریکلا",
-   "at": "2026-10-29T15:09:58+00:00"
-  },
-  "puzzle_match": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:25.570Z"
-  },
-  "puzzle_pattern": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:25.624Z"
-  },
-  "puzzle_shapes": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:25.373Z"
-  },
-  "puzzle_sort": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:25.002Z"
-  },
-  "puzzle_try": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:26.014Z"
-  },
-  "puzzle_try_2": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:26.887Z"
-  },
-  "rewards_empty": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:34.212Z"
-  },
-  "rewards_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:32.454Z"
-  },
-  "scene_city_park": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:19.021Z"
-  },
-  "scene_city_street": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:19.103Z"
-  },
-  "scene_home_bathroom": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:18.653Z"
-  },
-  "scene_home_bedroom": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:17.824Z"
-  },
-  "scene_home_kitchen": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:17.635Z"
-  },
-  "scene_home_living": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:18.669Z"
-  },
-  "scene_nature_farm": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:20.583Z"
-  },
-  "scene_nature_forest": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:19.654Z"
-  },
-  "scene_nature_garden": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:20.804Z"
-  },
-  "scene_nature_pond": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:20.326Z"
-  },
-  "session_bye": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:34.251Z"
-  },
-  "session_pause": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:34.660Z"
-  },
-  "session_resume": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:34.352Z"
-  },
-  "session_sleepy": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:35.019Z"
-  },
-  "sticker_new": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "یک برچسب تازه گرفتی! در دفتر خاطره‌هایت است.",
-   "score": 1.0,
-   "heard": "یک برچسب تازه گرفتی در دفتر خاطره هایت است",
-   "at": "2026-10-29T15:10:59+00:00"
-  },
-  "world_art_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:17.003Z"
-  },
-  "world_build_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:17.688Z"
-  },
-  "world_city_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:14.843Z"
-  },
-  "world_home_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:14.307Z"
-  },
-  "world_music_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:17.028Z"
-  },
-  "world_nature_hello": {
-   "speaker": "sara",
-   "speed": 0.9,
-   "at": "2026-10-27T05:36:17.085Z"
-  },
-  "c1_film_1": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "آب‌پرتقال شیرین و ترش",
-   "score": 1.0,
-   "heard": "آب پرتقال شیرین و ترش",
-   "at": "2026-10-29T15:10:22+00:00"
-  },
-  "c1_film_3": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "سوپ داغ و خوشمزه",
-   "score": 1.0,
-   "heard": "سوپ داغ و خوشمزه",
-   "at": "2026-10-29T15:10:34+00:00"
-  },
-  "c1_intro": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "طوفان آشپزخانه‌ی خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده. بیا با هم آشپزی کنیم!",
-   "score": 0.895,
-   "heard": "توفان آشپزخانه خاله خرسی را به هم ریخته و برای جشن هیچ غذایی نمانده بیا با هم آشپزی کنیم",
-   "at": "2026-10-29T15:10:40+00:00"
-  },
-  "c1_next": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "بانی در باغ تشنه است... بیا برویم پیشش!",
-   "score": 1.0,
-   "heard": "بانی در باغ تشنه است بیا برویم پیشش",
-   "at": "2026-10-29T15:10:47+00:00"
-  },
-  "c1_film_4": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "و کیک تولد با شمع‌های روشن!",
-   "score": 1.0,
-   "heard": "و کیک تولد با شمع های روشن",
-   "at": "2026-10-29T15:10:53+00:00"
-  },
-  "c1s1_s1": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "پرتقال‌ها از بالا می‌افتند! سبد را با انگشت زیرشان ببر. سیب خراب را نگیر!",
-   "score": 1.0,
-   "heard": "پرتقال‌ها از بالا می‌افتند. سبد را با انگشت زیرشان ببر. سیب خراب را نگیر.",
-   "at": "2026-10-29T15:11:02+00:00"
-  },
-  "c1_film_2": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "نان ترد و گرم",
-   "score": 1.0,
-   "heard": "نان ترد و گرم",
-   "at": "2026-10-29T15:11:10+00:00"
-  },
-  "c1s1_s3": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "پرتقال خاکی است. انگشتت را رویش بکش تا تمیز شود.",
-   "score": 1.0,
-   "heard": "پرتقال خاکی است انگشتت را رویش بکش تا تمیز شود",
-   "at": "2026-10-29T15:11:18+00:00"
-  },
-  "c1s1_s2": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "روی پرتقال‌های درخت بزن تا در سبد بپرند. سیب خراب را نچین!",
-   "score": 1.0,
-   "heard": "روی پرتقال های درخت بزن تا در سبد بپرند سیب خراب را نچین",
-   "at": "2026-10-29T15:11:18+00:00"
-  },
-  "c1s1_s6": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "پاکت آب‌میوه را نگه دار تا در لیوان بریزد. وقتی به پرچم رسید، ول کن!",
-   "score": 1.0,
-   "heard": "پاکت آبمیوه را نگه دار تا در لیوان بریزد وقتی به پرچم رسید ول کن",
-   "at": "2026-10-29T15:11:26+00:00"
-  },
-  "c1s1_s4": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "انگشتت را روی خط‌چین بکش تا پرتقال نصف شود.",
-   "score": 1.0,
-   "heard": "انگشتت را روی خط چین بکش تا پرتقال نصف شود",
-   "at": "2026-10-29T15:11:28+00:00"
-  },
-  "c1s1_s7": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "خاله خرسی آب‌پرتقال می‌خواهد. آب‌پرتقال را بکش و به دهانش ببر!",
-   "score": 1.0,
-   "heard": "خاله خرسی آب پرتقال می خواهد آب پرتقال را بکش و به دهانش ببر",
-   "at": "2026-10-29T15:11:30+00:00"
-  },
-  "item_juice_made": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "آفرین! آب‌پرتقال آماده شد!",
-   "score": 1.0,
-   "heard": "آفرین آب پرتقال آماده شد",
-   "at": "2026-10-29T15:11:31+00:00"
-  },
-  "c1s2_mission": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "برای ناهار نان لازم داریم. بیا نان بپزیم!",
-   "score": 1.0,
-   "heard": "برای ناهار نان لازم داریم بیا نان بپزیم",
-   "at": "2026-10-29T15:11:35+00:00"
-  },
-  "c1s2_s1": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "کارت‌ها را برگردان و دو تای مثل هم را پیدا کن.",
-   "score": 1.0,
-   "heard": "کارت ها را برگردان و دو تای مثل هم را پیدا کن",
-   "at": "2026-10-29T15:11:36+00:00"
-  },
-  "c1s2_s4": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "روی خمیر بزن و ورزش بده! هر ضربه نرم‌ترش می‌کند.",
-   "score": 1.0,
-   "heard": "روی خمیر بزن و ورزش بده هر ضربه نرم ترش میکند",
-   "at": "2026-10-29T15:11:43+00:00"
-  },
-  "c1s2_s2": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "کیسه‌ی آرد را نگه دار تا در کاسه بریزد. سر پرچم ول کن!",
-   "score": 0.923,
-   "heard": "کیسه آرد را نگه دار تا در کاسه بریزد. سر پرچم را ول کن.",
-   "at": "2026-10-29T15:11:44+00:00"
-  },
-  "c1s2_s5": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "انگشتت را روی خط‌چین‌ها بکش و خمیر را تکه‌تکه کن.",
-   "score": 1.0,
-   "heard": "انگشتت را روی خط‌چین‌ها بکش و خمیر را تکه‌تکه کن.",
-   "at": "2026-10-29T15:11:51+00:00"
-  },
-  "c1s2_s6": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "نان در فر است. وقتی حلقه به جای طلایی رسید، بزن!",
-   "score": 1.0,
-   "heard": "نان در فر است وقتی حلقه به جای طلایی رسید بزن",
-   "at": "2026-10-29T15:11:55+00:00"
-  },
-  "c1s2_s3": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "حالا پارچ آب را نگه دار. وقتی آب به پرچم رسید، ول کن!",
-   "score": 1.0,
-   "heard": "حالا پارچه آب را نگه دار وقتی آب به پرچم رسید ول کن",
-   "at": "2026-10-29T15:12:07+00:00"
-  },
-  "c1s2_s7": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "خاله خرسی نان می‌خواهد. نان گرم را به دهانش ببر.",
-   "score": 1.0,
-   "heard": "خاله خرسی نان می خواهد نان گرم را به دهانش ببر",
-   "at": "2026-10-29T15:12:50+00:00"
-  },
-  "c1s1_mission": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "خاله خرسی تشنه است. بیا برایش آب‌پرتقال درست کنیم!",
-   "score": 1.0,
-   "heard": "خاله خرسی تشنه است بیا برایش آب پرتقال درست کنیم",
-   "at": "2026-10-29T15:12:52+00:00"
-  },
-  "c1s3_s2": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "هر چه روی نوار می‌آید را بکش: سالم‌ها در سبد سبز، خراب‌ها در سطل قرمز.",
-   "score": 1.0,
-   "heard": "هرچه روی نوار می آید را بکش سالم ها در سبد سبز خراب ها در سطل قرمز",
-   "at": "2026-10-29T15:13:06+00:00"
-  },
-  "c1s3_s1": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "هویج‌ها می‌افتند! سبد را زیرشان ببر. کفش و سیب خراب را نگیر!",
-   "score": 1.0,
-   "heard": "هویج‌ها می‌افتند سبد را زیرشان ببر کفش و سیب خراب را نگیر",
-   "at": "2026-10-29T15:13:12+00:00"
-  },
-  "item_bread_made": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "آفرین! نان آماده شد!",
-   "score": 1.0,
-   "heard": "آفرین نان آماده شد",
-   "at": "2026-10-29T15:14:00+00:00"
-  },
-  "c1s3_s4": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "انگشتت را روی هر خط‌چین بکش تا هویج خرد شود.",
-   "score": 1.0,
-   "heard": "انگشتت را روی هر خط چین بکش تا هویج خرد شود.",
-   "at": "2026-10-29T15:14:12+00:00"
-  },
-  "c1s3_mission": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "باد سرد می‌آید. یک سوپ گرم بپزیم!",
-   "score": 1.0,
-   "heard": "باد سرد می آید یک سوپ گرم بپزیم",
-   "at": "2026-10-29T15:14:30+00:00"
-  },
-  "c1s3_s5": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "سه تا هویج در قابلمه بینداز. بشمار: یک، دو، سه!",
-   "score": 1.0,
-   "heard": "سه تا هویج در قابلمه بینداز بشمار یک دو سه",
-   "at": "2026-10-29T15:15:01+00:00"
-  },
-  "c1s3_s3": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "سیب‌زمینی گلی است. انگشتت را رویش بکش تا تمیز شود.",
-   "score": 0.9,
-   "heard": "سیب زمینی کثیف است. انگشتت را رویش بکش تا تمیز شود.",
-   "at": "2026-10-29T15:15:02+00:00"
-  },
-  "c1s3_s6": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "انگشتت را دور قابلمه بچرخان تا سوپ هم بخورد.",
-   "score": 1.0,
-   "heard": "انگشتت را دور قابلمه بچرخان تا سوپ هم بخورد",
-   "at": "2026-10-29T15:15:23+00:00"
-  },
-  "c1s3_s7": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "سوپ داغ است! دکمه‌ی فوت را نگه دار تا خنک شود.",
-   "score": 0.909,
-   "heard": "سوپ داغ است دکمه فوت را نگه دار تا خنک شود",
-   "at": "2026-10-29T15:15:23+00:00"
-  },
-  "c1s4_mission": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "امروز تولد خاله خرسی است! بیا کیک بپزیم.",
-   "score": 1.0,
-   "heard": "امروز تولد خاله خرسی است بیا کیک بپزیم",
-   "at": "2026-10-29T15:16:07+00:00"
-  },
-  "c1s4_s1": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "روی تخم‌مرغ بزن تا بشکند و در کاسه بریزد.",
-   "score": 1.0,
-   "heard": "روی تخم مرغ بزن تا بشکند و در کاسه بریزد",
-   "at": "2026-10-29T15:16:09+00:00"
-  },
-  "c1s4_s2": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "کیسه‌ی آرد را نگه دار تا در کاسه بریزد. سر پرچم ول کن.",
-   "score": 0.923,
-   "heard": "کیسه را آرد را نگه دار تا در کاسه بریزد سر پرچم را ول کن",
-   "at": "2026-10-29T15:16:23+00:00"
-  },
-  "c1s4_s5": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "چهار شمع روی کیک بگذار. بشمار!",
-   "score": 1.0,
-   "heard": "چهار شمع روی کیک بگذار بشمار",
-   "at": "2026-10-29T15:17:29+00:00"
-  },
-  "item_soup_made": {
-   "speaker": "gemini:Leda",
-   "model": "gemini-3.1-flash-tts-preview",
-   "text": "آفرین! سوپ سبزیجات آماده شد!",
-   "score": 1.0,
-   "heard": "آفرین سوپ سبزیجات آماده شد",
-   "at": "2026-10-29T15:18:19+00:00"
+  "note": "clips made with the TTS service — temporary until a voice actor records them",
+  "files": {
+    "app_intro_1": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:15.338Z"
+    },
+    "app_intro_2": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:15.128Z"
+    },
+    "app_intro_3": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:16.217Z"
+    },
+    "app_map_back": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:14.266Z"
+    },
+    "app_map_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:14.117Z"
+    },
+    "app_profiles_pick": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:14.964Z"
+    },
+    "app_splash_welcome": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:03.110Z"
+    },
+    "art_clear_ask": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:21.376Z"
+    },
+    "art_gallery": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:21.144Z"
+    },
+    "art_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:21.390Z"
+    },
+    "art_saved": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:21.400Z"
+    },
+    "build_gears": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:24.992Z"
+    },
+    "build_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:23.612Z"
+    },
+    "build_remove": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:23.844Z"
+    },
+    "full_locked": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:37.315Z"
+    },
+    "idle_1": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:31.708Z"
+    },
+    "idle_2": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:31.849Z"
+    },
+    "idle_3": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:32.270Z"
+    },
+    "library_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:32.567Z"
+    },
+    "music_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:22.190Z"
+    },
+    "music_record": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:22.659Z"
+    },
+    "music_recording": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:22.490Z"
+    },
+    "music_saved": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:23.628Z"
+    },
+    "notice_new": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:35.889Z"
+    },
+    "parent_ask": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:36.418Z"
+    },
+    "play_cook_done": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:28.008Z"
+    },
+    "play_cook_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:26.867Z"
+    },
+    "play_garden_done": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:29.386Z"
+    },
+    "play_garden_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:27.828Z"
+    },
+    "play_pet_done": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:29.459Z"
+    },
+    "play_pet_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:28.187Z"
+    },
+    "play_shop_done": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:28.249Z"
+    },
+    "play_shop_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:27.604Z"
+    },
+    "play_tidy_done": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:29.725Z"
+    },
+    "play_tidy_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:28.205Z"
+    },
+    "praise_1": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:30.477Z"
+    },
+    "praise_2": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:30.272Z"
+    },
+    "praise_3": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:30.123Z"
+    },
+    "praise_4": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:30.075Z"
+    },
+    "praise_5": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:29.973Z"
+    },
+    "praise_6": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:31.595Z"
+    },
+    "puzzle_match": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:25.570Z"
+    },
+    "puzzle_pattern": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:25.624Z"
+    },
+    "puzzle_shapes": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:25.373Z"
+    },
+    "puzzle_sort": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:25.002Z"
+    },
+    "puzzle_try": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:26.014Z"
+    },
+    "puzzle_try_2": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:26.887Z"
+    },
+    "rewards_empty": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:34.212Z"
+    },
+    "rewards_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:32.454Z"
+    },
+    "scene_city_park": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:19.021Z"
+    },
+    "scene_city_street": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:19.103Z"
+    },
+    "scene_home_bathroom": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:18.653Z"
+    },
+    "scene_home_bedroom": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.824Z"
+    },
+    "scene_home_kitchen": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.635Z"
+    },
+    "scene_home_living": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:18.669Z"
+    },
+    "scene_nature_farm": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:20.583Z"
+    },
+    "scene_nature_forest": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:19.654Z"
+    },
+    "scene_nature_garden": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:20.804Z"
+    },
+    "scene_nature_pond": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:20.326Z"
+    },
+    "session_bye": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:34.251Z"
+    },
+    "session_pause": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:34.660Z"
+    },
+    "session_resume": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:34.352Z"
+    },
+    "session_sleepy": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:35.019Z"
+    },
+    "sticker_new": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:33.003Z"
+    },
+    "world_art_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.003Z"
+    },
+    "world_build_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.688Z"
+    },
+    "world_city_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:14.843Z"
+    },
+    "world_home_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:14.307Z"
+    },
+    "world_music_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.028Z"
+    },
+    "world_nature_hello": {
+      "speaker": "sara",
+      "speed": 0.9,
+      "at": "2026-10-27T05:36:17.085Z"
+    }
   }
- }
 }
