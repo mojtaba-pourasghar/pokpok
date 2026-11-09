@@ -94,10 +94,41 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
   @override
   void dispose() {
     _poseTimer?.cancel();
+    _exploreTimer?.cancel();
     host?.dispose();
     _audio.stopAmbient();
     _audio.stopAll();
     super.dispose();
+  }
+
+  // ── امتحان و کشف ────────────────────────────────────────────────────────
+  static const _touchesToExplore = 4;
+  static const _exploreTimeout = Duration(seconds: 7);
+  int _touched = 0;
+  bool _timeUp = false;
+  Timer? _exploreTimer;
+
+  /// «فهمیدم!» باز می‌شود با دو تلاش کامل، یا چند لمس، یا بعد از چند ثانیه؛ هیچ‌وقت گیر نمی‌کند.
+  bool get _explored => tries >= 2 || _touched >= _touchesToExplore || _timeUp;
+
+  void _startDiscover() {
+    _exploreTimer?.cancel();
+    setState(() {
+      phase = _Phase.discover;
+      pose = PopoPose.curious;
+      tries = 0;
+      _touched = 0;
+      _timeUp = false;
+    });
+    _exploreTimer = Timer(_exploreTimeout, () {
+      if (mounted && phase == _Phase.discover) setState(() => _timeUp = true);
+    });
+  }
+
+  void _toQuiz() {
+    _exploreTimer?.cancel();
+    _audio.ui(UiSound.tap);
+    setState(() => phase = _Phase.quiz);
   }
 
   /// ژست کوتاه پوپو و بعد برگشت به حالت عادی.
@@ -154,8 +185,11 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
     _fx.currentState?.burst(_stageCenter, Fx.confetti, count: 30);
     _fx.currentState?.burst(_stageCenter, Fx.sparkle);
     _audio.ui(UiSound.success);
-    unawaited(ref.sayOneOf('praise'));
-    await Future<void>.delayed(const Duration(milliseconds: 1200));
+    // تشویق کامل شنیده می‌شود و بعد گام بعد؛ قبلاً جمله‌ی گام بعد «آفرین» را وسطش می‌برید.
+    await Future.wait([
+      ref.sayOneOf('praise').timeout(const Duration(seconds: 3), onTimeout: () {}),
+      Future<void>.delayed(const Duration(milliseconds: 1200)),
+    ]);
     if (!mounted) return;
     setState(() => cheering = false);
     if (stepIndex + 1 < section.steps.length) {
@@ -170,11 +204,23 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
     unawaited(ref.say('item.${item.id}.made'));
   }
 
+  bool _finishing = false;
+
   Future<void> _finish() async {
+    if (_finishing) return;
+    _finishing = true;
     final age = ref.read(activeProfileProvider)?.ageBand ?? AgeBand.preschool;
     final target = Scoring.targetFor(section.targetSec, age, timeOn: ref.read(appPrefsProvider).timedStars);
     final o = await ref.read(gameProvider.notifier).finish(section, run, target: target);
     if (!mounted) return;
+    // نسخه‌ی رایگان: بخش تمام شد، یک تبلیغ و بعد ستاره‌ها. نسخه‌ی کامل هیچ تبلیغی نمی‌بیند.
+    final ads = ref.read(adsProvider);
+    if (ref.read(accessProvider).showsAds) {
+      _audio.stopAll();
+      await ads.show();
+      if (!mounted) return;
+      unawaited(ads.prepare());
+    }
     setState(() {
       outcome = o;
       phase = _Phase.result;
@@ -210,6 +256,9 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
     final tool = data.tools.where((t) => t.recipes.any((r) => r.id == section.id)).firstOrNull;
     return tool == null ? '/home' : '/tool/${tool.id}';
   }
+
+  /// دکمه‌ی برگشت بالای صفحه: صفحه‌ی بالاتر (نقشه‌ی فصل، کارگاه یا ابزار).
+  void _leave() => context.go(_backRoute);
 
   void _next() {
     final ch = chapter;
@@ -299,7 +348,7 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
     padding: const EdgeInsets.fromLTRB(14, 8, 14, 6),
     child: Row(
       children: [
-        ClayIconButton(icon: Icons.arrow_forward_rounded, label: 'برگشت', onTap: () => context.go(_backRoute)),
+        ClayIconButton(icon: Icons.arrow_back_rounded, label: 'برگشت', onTap: _leave),
         const SizedBox(width: 8),
         Flexible(
           child: Container(
@@ -335,23 +384,19 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
   /// دکمه‌ی پایین هر مرحله (در گام‌ها دکمه‌ای نیست؛ خود بازی جلو می‌برد).
   Widget? _button(Color color) => switch (phase) {
     _Phase.mission => ClayButton(label: 'شروع کنیم!', icon: Icons.play_arrow_rounded, color: G.orange, big: true, onTap: _startSteps),
-    _Phase.made => ClayButton(
-      label: 'امتحانش کنیم!',
-      icon: Icons.touch_app_rounded,
-      color: G.green,
-      big: true,
-      onTap: () => setState(() {
-        phase = _Phase.discover;
-        pose = PopoPose.curious;
-      }),
-    ),
+    _Phase.made => ClayButton(label: 'امتحانش کنیم!', icon: Icons.touch_app_rounded, color: G.green, big: true, onTap: _startDiscover),
     _Phase.discover => ClayButton(
-      label: tries >= 2 ? 'فهمیدم!' : 'بیشتر امتحان کن',
-      icon: tries >= 2 ? Icons.check_rounded : Icons.touch_app_rounded,
-      color: tries >= 2 ? G.purple : G.locked,
-      onTap: tries >= 2 ? () => setState(() => phase = _Phase.quiz) : null,
+      label: _explored ? 'فهمیدم!' : 'بیشتر امتحان کن',
+      icon: _explored ? Icons.check_rounded : Icons.touch_app_rounded,
+      color: _explored ? G.purple : G.locked,
+      onTap: _explored ? _toQuiz : null,
     ),
-    _Phase.play => ClayButton(label: 'بگذارش در کوله‌پشتی', icon: Icons.backpack_rounded, color: G.orange, onTap: _finish),
+    _Phase.play => ClayButton(
+      label: 'بگذارش در کوله‌پشتی',
+      icon: Icons.backpack_rounded,
+      color: G.orange,
+      onTap: _finishing ? null : _finish,
+    ),
     _Phase.result => Row(
       children: [
         Expanded(
@@ -367,7 +412,7 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
           flex: 2,
           child: ClayButton(
             label: chapter != null && chapter!.sections.last.id == section.id ? 'فیلم فصل' : 'ادامه',
-            icon: Icons.arrow_back_rounded,
+            icon: Icons.arrow_forward_rounded,
             color: G.purple,
             onTap: _next,
           ),
@@ -388,7 +433,15 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
       case _Phase.discover:
         return Stack(
           children: [
-            ItemShowcase(item: item, friend: friend, onTry: (n) => setState(() => tries = n)),
+            // هر لمس هم شمرده می‌شود؛ بعضی صحنه‌ها «تلاش کامل» را دیر می‌شمارند و دکمه قفل می‌ماند.
+            Listener(
+              behavior: HitTestBehavior.translucent,
+              onPointerDown: (_) => _touched++,
+              onPointerUp: (_) {
+                if (!_explored && _touched >= _touchesToExplore) setState(() {});
+              },
+              child: ItemShowcase(item: item, friend: friend, onTry: (n) => setState(() => tries = n)),
+            ),
             if (_hasSecret)
               Positioned(
                 top: 0,
@@ -409,6 +462,7 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
         return QuizView(
           item: item,
           onAnswered: (first) {
+            if (!mounted || phase != _Phase.quiz) return;
             if (first) run.points += Scoring.quizRight;
             if (!first) run.mistakes++;
             setState(() {
@@ -416,7 +470,7 @@ class _SectionScreenState extends ConsumerState<SectionScreen> with ActivitySess
               phase = _Phase.play;
               pose = PopoPose.happy;
             });
-            ref.say('game.play');
+            unawaited(ref.say('game.play'));
           },
         );
       case _Phase.play:

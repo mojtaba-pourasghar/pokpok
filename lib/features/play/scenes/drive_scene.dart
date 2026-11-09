@@ -22,7 +22,9 @@ class DriveScene extends ShowcaseScene {
 }
 
 class _DriveSceneState extends ConsumerState<DriveScene> with SceneBase, SingleTickerProviderStateMixin {
-  late final Ticker _ticker = createTicker(_tick)..start();
+  /// ساعت حرکت. در initState ساخته و روشن می‌شود؛ late تنبل است و اگر فقط در dispose به آن اشاره شود،
+  /// هیچ‌وقت راه نمی‌افتد و وسیله با پدال تکان نمی‌خورد.
+  late final Ticker _ticker;
   final _vehicle = GlobalKey();
   final _horn = GlobalKey();
   bool started = false;
@@ -51,6 +53,7 @@ class _DriveSceneState extends ConsumerState<DriveScene> with SceneBase, SingleT
   @override
   void initState() {
     super.initState();
+    _ticker = createTicker(_tick)..start();
     if (widget.auto) {
       Future.delayed(const Duration(milliseconds: 500), () {
         if (!mounted) return;
@@ -113,6 +116,21 @@ class _DriveSceneState extends ConsumerState<DriveScene> with SceneBase, SingleT
     sfx(hornSound);
     burstAt(_horn, Fx.notes, count: 3);
     burstAt(_vehicle, Fx.notes, offset: const Offset(40, -40), count: 3);
+    tried();
+  }
+
+  // هر بار که پدال رها شود و وسیله کمی راه رفته باشد، یک تلاش است (نه فقط بعد از ۹۰۰ واحد).
+  double _gasFrom = 0;
+
+  void _gasDown() {
+    if (!started) _start();
+    _gasFrom = distance;
+    setState(() => gas = true);
+  }
+
+  void _gasUp() {
+    setState(() => gas = false);
+    if (distance - _gasFrom > 60) tried();
   }
 
   @override
@@ -145,43 +163,52 @@ class _DriveSceneState extends ConsumerState<DriveScene> with SceneBase, SingleT
           Positioned(
             left: box.maxWidth / 2 - size / 2,
             top: (rocket ? box.maxHeight * .45 : box.maxHeight * .5) - size / 2 + rise + bounce,
-            child: ShakeScene(
-              trigger: shake,
-              strength: 7,
-              child: Stack(
-                key: _vehicle,
-                clipBehavior: Clip.none,
-                children: [
-                  if (rocket && speed > .05)
-                    Positioned(
-                      left: size * .38,
-                      top: size * .82,
-                      child: _Flame(width: size * .24, power: speed),
+            child: GestureDetector(
+              // لمس خود وسیله: روشن می‌شود و بعد بوق می‌زند (بچه‌ها اول روی خودِ ماشین می‌زنند).
+              onTap: () => started ? _honk() : _start(),
+              child: ShakeScene(
+                trigger: shake,
+                strength: 7,
+                child: Stack(
+                  key: _vehicle,
+                  clipBehavior: Clip.none,
+                  children: [
+                    if (rocket && speed > .05)
+                      Positioned(
+                        left: size * .38,
+                        top: size * .82,
+                        child: _Flame(width: size * .24, power: speed),
+                      ),
+                    GameArt(
+                      widget.item.id,
+                      size: size,
+                      label: widget.item.title,
+                      mood: speed > .05 ? ToonMood.act : (started ? ToonMood.happy : ToonMood.idle),
                     ),
-                  GameArt(widget.item.id, size: size, label: widget.item.title, mood: speed > .05 ? ToonMood.act : (started ? ToonMood.happy : ToonMood.idle)),
-                  if (started && !rocket && !underwater)
-                    // چراغ جلو
-                    Positioned(
-                      right: -size * .25,
-                      top: size * .42,
-                      child: IgnorePointer(
-                        child: Container(
-                          width: size * .45,
-                          height: size * .22,
-                          decoration: BoxDecoration(
-                            gradient: const RadialGradient(colors: [Color(0x99FFF3B0), Color(0x00FFF3B0)]),
-                            borderRadius: BorderRadius.circular(size),
+                    if (started && !rocket && !underwater)
+                      // چراغ جلو
+                      Positioned(
+                        right: -size * .25,
+                        top: size * .42,
+                        child: IgnorePointer(
+                          child: Container(
+                            width: size * .45,
+                            height: size * .22,
+                            decoration: BoxDecoration(
+                              gradient: const RadialGradient(colors: [Color(0x99FFF3B0), Color(0x00FFF3B0)]),
+                              borderRadius: BorderRadius.circular(size),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  if (widget.play && widget.friend != null)
-                    Positioned(
-                      left: size * .3,
-                      top: -size * .22,
-                      child: GameArt(widget.friend!, size: size * .38),
-                    ),
-                ],
+                    if (widget.play && widget.friend != null)
+                      Positioned(
+                        left: size * .3,
+                        top: -size * .22,
+                        child: GameArt(widget.friend!, size: size * .38),
+                      ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -201,8 +228,8 @@ class _DriveSceneState extends ConsumerState<DriveScene> with SceneBase, SingleT
                     label: rocket ? 'نگه دار تا پرواز کند' : 'نگه دار تا برود',
                     color: G.green,
                     glow: distance == 0,
-                    onDown: () => setState(() => gas = true),
-                    onUp: () => setState(() => gas = false),
+                    onDown: _gasDown,
+                    onUp: _gasUp,
                   ),
                 _Control(key: _horn, icon: Icons.campaign_rounded, label: 'بوق', color: G.blue, onDown: _honk),
               ],

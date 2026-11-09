@@ -270,13 +270,12 @@ async function recordOne(line, { force = false } = {}) {
   if (existingKeys(config.outDir).has(line.key) && !registry.has(line.key)) {
     return { ok: false, error: "این فایل ضبطِ انسانی است و با صدای ماشینی جایگزین نمی‌شود" };
   }
-  if (force) {
-    for (const ext of [".ogg", ".mp3", ".wav"]) {
-      const old = path.join(config.outDir, line.key + ext);
-      if (fs.existsSync(old)) fs.unlinkSync(old);
-    }
-  }
-  const text = config.useVowels ? line.spoken : line.written;
+  // With force the old clip stays in place until the new one is ready: a failed request must not
+  // leave the line silent in the app. Siblings in another format are removed after a success.
+  // «متنِ تلفظی» on: the vowelled text (tells «گِل» from «گُل»); off: the plain written text.
+  // The switch is the user's choice and is followed as it is.
+  const text = config.useVowels && line.spoken && line.spoken.trim() ? line.spoken : line.written;
+  say("info", `${line.key}: ${config.useVowels ? "با اِعراب" : "بی اِعراب"} — ${text}`);
   let attempt = 0;
 
   for (;;) {
@@ -325,6 +324,12 @@ async function recordOne(line, { force = false } = {}) {
         if (config.normalize) say("warn", "ffmpeg اجرا نشد؛ فایل با فرمتِ خودِ سرویس ماند");
         fs.renameSync(rawFile, path.join(config.outDir, saved));
         if (ext !== ".mp3") say("warn", `${saved}: برنامه فقط ${line.key}.mp3 را پخش می‌کند`);
+      }
+      if (force) {
+        for (const other of [".ogg", ".mp3", ".wav"]) {
+          const old = path.join(config.outDir, line.key + other);
+          if (path.basename(old) !== saved && fs.existsSync(old)) fs.unlinkSync(old);
+        }
       }
       registry.mark(line.key, { speaker: config.speaker, speed: Number(config.speed) || 1 });
       refreshAssetManifest(APP);

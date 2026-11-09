@@ -3,16 +3,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'billing.dart';
 
-/// چه کسی به کدام بخش دسترسی دارد (همان قاعده‌ی گوش‌یار، برای جهان‌ها و فعالیت‌های پوپو).
+/// دو حالت برنامه:
 ///
-/// - نسخه‌ی **release**: در هر جهان فقط صحنه‌ی اول و در هر دسته‌ی کتابخانه فقط فعالیت اول رایگان است؛
-///   بقیه با خرید «نسخه‌ی کامل» از کافه‌بازار باز می‌شوند ([needsPurchase] با شماره‌ی از صفر).
-/// - نسخه‌ی **debug** (اجرا از Android Studio): همه‌چیز باز، بی‌نیاز به خرید.
+/// - **رایگان**: همه‌ی فصل‌ها، بخش‌ها و بازی‌ها باز است؛ بعد از تمام شدن هر بخش یک تبلیغ تمام‌صفحه
+///   (ادیوری) نشان داده می‌شود ([showsAds]).
+/// - **نسخه‌ی کامل** (یک بار خرید از کافه‌بازار، از زبانه‌ی «من»): همان بازی، بی هیچ تبلیغی.
 ///
 /// شناسه‌ی محصول و قیمت در پنل کافه‌بازار تعریف می‌شوند؛ قیمت نمایشی از خود بازار خوانده می‌شود و
 /// اگر نشد، [fallbackPrice] نشان داده می‌شود.
 class AccessStore extends ChangeNotifier {
-  AccessStore(this._prefs, this._billing, {bool? paywall}) : paywall = paywall ?? kReleaseMode {
+  AccessStore(this._prefs, this._billing) {
     _owned = _prefs.getBool(_key) ?? false;
   }
 
@@ -23,28 +23,21 @@ class AccessStore extends ChangeNotifier {
   final SharedPreferences _prefs;
   final Billing _billing;
 
-  /// true در release: مرحله‌های پولی قفل‌اند. false در debug: همه باز.
-  final bool paywall;
-
   bool _owned = false;
   String? _price;
   bool _busy = false;
 
-  /// نسخه‌ی کامل خریده شده است.
+  /// نسخه‌ی کامل (بی‌تبلیغ) خریده شده است.
   bool get owned => _owned;
   bool get busy => _busy;
   String get price => _price ?? fallbackPrice;
 
-  /// همه‌چیز باز است، بی‌ترتیب (فقط debug).
-  bool get everythingOpen => !paywall;
-
-  /// مرحله‌ی شماره‌ی [index] (از صفر) پشت دیوار پرداخت است.
-  bool needsPurchase(int index) => paywall && !_owned && index > 0;
+  /// بعد از هر بخش تبلیغ نشان داده می‌شود (نسخه‌ی رایگان).
+  bool get showsAds => !_owned;
 
   /// با بازار هماهنگ می‌شود: خرید قبلی (مثلاً روی گوشی دیگر یا بعد از نصب دوباره) و قیمت.
   /// بی‌اینترنت یا بی‌بازار، همان وضعیت ذخیره‌شده می‌ماند.
   Future<void> sync() async {
-    if (!paywall) return;
     if (!await _billing.connect()) return;
     final list = await _billing.purchased();
     if (list != null) await _setOwned(list.contains(productId));

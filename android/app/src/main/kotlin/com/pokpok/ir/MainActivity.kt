@@ -22,6 +22,7 @@ import io.flutter.plugin.common.MethodChannel
  */
 class MainActivity : FlutterActivity() {
     private var billing: BazaarBilling? = null
+    private var ads: AdiveryAds? = null
     private var native: MethodChannel? = null
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
@@ -35,6 +36,8 @@ class MainActivity : FlutterActivity() {
             }
         }
         billing = BazaarBilling(this).also { MethodChannel(messenger, "com.pokpok.ir/billing").setMethodCallHandler(it) }
+        // تبلیغ بعد از هر بخش، فقط در نسخه‌ی رایگان (AdiveryAds.kt، lib/core/ads/ads.dart).
+        ads = AdiveryAds(this).also { MethodChannel(messenger, "com.pokpok.ir/ads").setMethodCallHandler(it) }
         native = MethodChannel(messenger, "com.pokpok.ir/native").also { channel ->
             channel.setMethodCallHandler { call, result ->
                 when (call.method) {
@@ -67,6 +70,7 @@ class MainActivity : FlutterActivity() {
 
     override fun onDestroy() {
         billing?.disconnect()
+        ads?.dispose()
         super.onDestroy()
     }
 

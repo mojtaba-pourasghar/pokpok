@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app/app.dart';
 import 'app/providers.dart';
+import 'core/ads/ads.dart';
 import 'core/assets/asset_resolver.dart';
 import 'core/audio/just_audio_service.dart';
 import 'core/billing/access_store.dart';
@@ -30,9 +31,12 @@ Future<void> main() async {
   final assets = AssetResolver();
   await assets.init(rootBundle);
 
-  // نسخه‌ی کامل: خرید قبلی و قیمت از کافه‌بازار؛ منتظرش نمی‌مانیم تا شروع برنامه کند نشود.
+  // نسخه‌ی کامل (بی‌تبلیغ): خرید قبلی و قیمت از کافه‌بازار؛ منتظرش نمی‌مانیم تا شروع برنامه کند نشود.
   final access = AccessStore(prefs, const BazaarBilling());
   unawaited(access.sync());
+  // نسخه‌ی رایگان: تبلیغ بعد از هر بخش از همین حالا بارگیری می‌شود تا وقتش آماده باشد.
+  const ads = AdiveryAds();
+  if (access.showsAds) unawaited(ads.prepare());
   // خبرهای امضاشده: کار پس‌زمینه‌ی اندروید هماهنگ و فایل خبرها خوانده می‌شود، هر دو بی‌انتظار.
   final notices = NoticesStore(prefs, seal: await NoticesStore.loadSeal(rootBundle));
   unawaited(notices.schedule());
@@ -48,6 +52,7 @@ Future<void> main() async {
         assetsProvider.overrideWith((_) => assets),
         audioProvider.overrideWithValue(JustAudioService(assets)),
         accessProvider.overrideWith((_) => access),
+        adsProvider.overrideWithValue(ads),
         noticesProvider.overrideWith((_) => notices),
       ],
       child: const PopoApp(),

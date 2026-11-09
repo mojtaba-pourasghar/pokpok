@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../core/ads/ads.dart';
 import '../core/assets/asset_resolver.dart';
 import '../core/assets/download_manager.dart';
 import '../core/audio/popo_audio.dart';
@@ -22,9 +23,12 @@ final audioProvider = Provider<PopoAudio>((_) => throw UnimplementedError('audio
 final assetsProvider = ChangeNotifierProvider<AssetResolver>((_) => throw UnimplementedError('assetsProvider'));
 final downloadsProvider = ChangeNotifierProvider<DownloadManager>((ref) => DownloadManager(ref.watch(assetsProvider)));
 
-/// نسخه‌ی کامل (کافه‌بازار). در main.dart با BazaarBilling جایگزین می‌شود؛ پیش‌فرض (آزمون‌ها، وب) بی پرداخت
-/// و با قاعده‌ی همان ساختی که اجرا می‌شود (debug: همه باز).
+/// نسخه‌ی کامل بی‌تبلیغ (کافه‌بازار). در main.dart با BazaarBilling جایگزین می‌شود؛ پیش‌فرض (آزمون‌ها، وب)
+/// بی پرداخت.
 final accessProvider = ChangeNotifierProvider<AccessStore>((ref) => AccessStore(ref.watch(prefsProvider), const NoBilling()));
+
+/// تبلیغ بعد از هر بخش (نسخه‌ی رایگان). در main.dart با AdiveryAds جایگزین می‌شود؛ پیش‌فرض بی‌تبلیغ.
+final adsProvider = Provider<Ads>((_) => const NoAds());
 
 /// خبرهای امضاشده. در main.dart با کلید عمومی همراه برنامه جایگزین می‌شود؛ پیش‌فرض بی‌کلید است، پس
 /// هیچ خبری خوانده و نشان داده نمی‌شود.

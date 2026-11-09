@@ -18,7 +18,22 @@ Future<bool> verifyParent(BuildContext context, WidgetRef ref) async {
   return ok == true;
 }
 
-/// برگه‌ی «نسخه‌ی کامل»: چه چیزی باز می‌شود، قیمت، خرید (پشت دروازه‌ی والدین) و بازیابی خرید.
+/// پیام نتیجه‌ی خرید (برگه‌ی خرید و زبانه‌ی «من»).
+String purchaseMessage(PurchaseResult r) => switch (r) {
+  PurchaseResult.purchased => 'ممنون! از حالا هیچ تبلیغی نمی‌بینی.',
+  PurchaseResult.cancelled => 'خرید انجام نشد.',
+  PurchaseResult.failed => 'خرید ناموفق بود. دوباره امتحان کنید.',
+  PurchaseResult.unavailable => 'برای خرید، کافه‌بازار باید روی گوشی نصب و وارد حساب شده باشد.',
+};
+
+/// پیام «قبلاً خریده‌ام».
+String restoreMessage(bool? found) => switch (found) {
+  true => 'خرید قبلی پیدا شد؛ تبلیغ‌ها خاموش شد.',
+  false => 'خریدی با این حساب کافه‌بازار پیدا نشد.',
+  null => 'به کافه‌بازار وصل نشد. اینترنت و ورود به حساب بازار را بررسی کنید.',
+};
+
+/// برگه‌ی «نسخه‌ی کامل»: بی‌تبلیغ، قیمت، خرید (پشت دروازه‌ی والدین) و بازیابی خرید.
 /// [parentVerified]: از بخش والدین باز شده و دروازه از قبل گذرانده شده است.
 Future<void> showPaywall(BuildContext context, {bool parentVerified = false}) {
   return showModalBottomSheet<void>(
@@ -41,14 +56,8 @@ class PaywallSheet extends ConsumerWidget {
     final messenger = ScaffoldMessenger.of(context);
     if (!parentVerified && !await verifyParent(context, ref)) return;
     final r = await access.buy();
-    final text = switch (r) {
-      PurchaseResult.purchased => 'ممنون! همه‌ی جهان‌ها و بازی‌ها باز شد.',
-      PurchaseResult.cancelled => 'خرید انجام نشد.',
-      PurchaseResult.failed => 'خرید ناموفق بود. دوباره امتحان کنید.',
-      PurchaseResult.unavailable => 'برای خرید، کافه‌بازار باید روی گوشی نصب و وارد حساب شده باشد.',
-    };
     if (r == PurchaseResult.purchased && nav.canPop()) nav.pop();
-    _say(messenger, text, r == PurchaseResult.purchased ? PColors.success : PColors.ink);
+    _say(messenger, purchaseMessage(r), r == PurchaseResult.purchased ? PColors.success : PColors.ink);
   }
 
   /// همان شکل toast در core/widgets/common.dart، با messenger گرفته‌شده پیش از انتظار.
@@ -66,13 +75,8 @@ class PaywallSheet extends ConsumerWidget {
     final nav = Navigator.of(context);
     final messenger = ScaffoldMessenger.of(context);
     final found = await ref.read(accessProvider).restore();
-    final text = switch (found) {
-      true => 'خرید قبلی پیدا شد؛ همه‌چیز باز است.',
-      false => 'خریدی با این حساب کافه‌بازار پیدا نشد.',
-      null => 'به کافه‌بازار وصل نشد. اینترنت و ورود به حساب بازار را بررسی کنید.',
-    };
     if (found == true && nav.canPop()) nav.pop();
-    _say(messenger, text);
+    _say(messenger, restoreMessage(found));
   }
 
   @override
@@ -92,11 +96,11 @@ class PaywallSheet extends ConsumerWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     PopoMascot(pose: PopoPose.happy, size: 96, reducedMotion: reduced),
-                    Text('همه‌ی دنیای پوپو را باز کن', style: PText.title.copyWith(color: PColors.purple), textAlign: TextAlign.center),
+                    Text('پوپو بدون تبلیغ', style: PText.title.copyWith(color: PColors.purple), textAlign: TextAlign.center),
                     const SizedBox(height: PSpace.xs),
                     const Text(
-                      'اولین صحنه‌ی هر جهان و اولین بازی هر دسته رایگان است. با نسخه‌ی کامل همه‌ی صحنه‌ها، '
-                      'نقش‌آفرینی‌ها و پازل‌ها باز می‌شوند؛ یک بار خرید، برای همیشه.',
+                      'همه‌ی فصل‌ها و بازی‌ها رایگان و باز است؛ فقط بعد از هر بخش یک تبلیغ کوتاه می‌آید. با نسخه‌ی '
+                      'کامل دیگر هیچ تبلیغی نیست؛ یک بار خرید، برای همیشه.',
                       style: PText.body,
                       textAlign: TextAlign.center,
                     ),
@@ -104,8 +108,8 @@ class PaywallSheet extends ConsumerWidget {
                     Text(access.price, style: PText.title.copyWith(color: PColors.orange)),
                     const SizedBox(height: PSpace.md),
                     PButton(
-                      label: access.busy ? 'در حال خرید…' : 'خرید نسخه‌ی کامل',
-                      icon: Icons.lock_open_rounded,
+                      label: access.busy ? 'در حال خرید…' : 'خرید نسخه‌ی بی‌تبلیغ',
+                      icon: Icons.shopping_cart_rounded,
                       color: PColors.success,
                       expand: true,
                       big: true,

@@ -313,7 +313,7 @@ class SettingRow extends StatelessWidget {
                 ),
               ),
               ?trailing,
-              if (trailing == null && onTap != null) const Icon(Icons.chevron_left_rounded, color: PColors.inkSoft),
+              if (trailing == null && onTap != null) const Icon(Icons.chevron_right_rounded, color: PColors.inkSoft),
             ],
           ),
         ),

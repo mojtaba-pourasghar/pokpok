@@ -38,7 +38,9 @@ mixin ActivitySession<T extends ConsumerStatefulWidget> on ConsumerState<T> {
   @override
   void dispose() {
     final seconds = DateTime.now().difference(_started).inSeconds;
-    _progress?.record(activityId, activityTitle, seconds);
+    final progress = _progress;
+    // تغییر provider وسط dispose (هنگام ساختن درخت) مجاز نیست؛ بعد از همین فریم ثبت می‌شود.
+    if (progress != null) Future(() => progress.record(activityId, activityTitle, seconds));
     super.dispose();
   }
 

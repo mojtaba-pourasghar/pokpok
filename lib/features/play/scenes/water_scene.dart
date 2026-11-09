@@ -113,8 +113,12 @@ class _WaterSceneState extends ConsumerState<WaterScene> with SceneBase, SingleT
   }
 
   void _stopPour() {
+    final was = pouring;
     _pour?.cancel();
-    if (mounted) setState(() => pouring = false);
+    if (!mounted) return;
+    setState(() => pouring = false);
+    // هر بار ریختن یک تلاش است؛ قبلاً فقط کاسه‌ی پر یا گلِ کامل‌رشدکرده شمرده می‌شد.
+    if (was) tried();
   }
 
   void _waterPlant() {
@@ -139,8 +143,11 @@ class _WaterSceneState extends ConsumerState<WaterScene> with SceneBase, SingleT
     if (inside) {
       burstAt(_flowers[0], Fx.hearts, count: 5);
       ui(UiSound.pop);
-      tried();
+    } else {
+      ui(UiSound.whoosh);
     }
+    // رفتن زیر چادر و بیرون آمدن هر دو تلاش‌اند.
+    tried();
   }
 
   @override
@@ -281,7 +288,11 @@ class _WaterSceneState extends ConsumerState<WaterScene> with SceneBase, SingleT
       Positioned(
         right: box.maxWidth * .08,
         bottom: 0,
-        child: GameArt(widget.item.id, size: s * .55),
+        // لمسِ خودِ چادر هم پوپو را به زیرش می‌برد.
+        child: GestureDetector(
+          onTap: _shelter,
+          child: GameArt(widget.item.id, size: s * .55),
+        ),
       ),
       AnimatedPositioned(
         duration: const Duration(milliseconds: 600),

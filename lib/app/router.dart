@@ -17,7 +17,67 @@ import '../features/profiles/profile_edit_screen.dart';
 import '../features/profiles/profiles_screen.dart';
 import '../features/settings/settings_screen.dart';
 import '../features/workshop/tool_screen.dart';
+import '../game/game_state.dart';
 import 'providers.dart';
+
+/// صفحه‌ی «بالاتر» هر نشانی، برای دکمه‌ی برگشت گوشی وقتی صفحه‌ای زیرش نیست (مثلاً بعد از context.go).
+/// null یعنی همین‌جا بمان: خانه (زبانه‌ی ماجرا) و صفحه‌ی آغاز ریشه‌اند و برگشت گوشی برنامه را نمی‌بندد.
+String? parentRoute(Ref ref, Uri uri) {
+  final parts = uri.pathSegments;
+  final first = parts.isEmpty ? '' : parts.first;
+  final id = parts.length > 1 ? parts[1] : '';
+  switch (first) {
+    case '':
+      return null;
+    case 'home':
+      final tab = uri.queryParameters['tab'];
+      return tab == null || tab == 'story' ? null : '/home';
+    case 'play':
+      final data = ref.read(gameDataProvider);
+      final ch = data.chapterOf(id);
+      if (ch != null) return '/chapter/${ch.id}';
+      if (id.startsWith('k_')) return '/home?tab=workshop';
+      final tool = data.tools.where((t) => t.recipes.any((r) => r.id == id)).firstOrNull;
+      return tool == null ? '/home' : '/tool/${tool.id}';
+    case 'chapter':
+      return '/home';
+    case 'film':
+      return '/chapter/$id';
+    case 'tool':
+      return '/home?tab=workshop';
+    case 'intro':
+      return '/';
+    case 'parent':
+      return parts.length > 1 ? '/parent' : '/home';
+    default:
+      return '/home';
+  }
+}
+
+/// دکمه‌ی برگشت گوشی هیچ‌وقت برنامه را نمی‌بندد: اگر صفحه‌ای زیر این صفحه هست به آن برمی‌گردد، وگرنه به
+/// [parent] می‌رود، و در ریشه (خانه) کاری نمی‌کند. پنجره‌ها و برگه‌های پایین مثل همیشه بسته می‌شوند.
+class BackGuard extends StatelessWidget {
+  const BackGuard({super.key, required this.parent, required this.child});
+
+  final String? parent;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) => PopScope<Object?>(
+    canPop: false,
+    onPopInvokedWithResult: (didPop, _) {
+      if (didPop) return;
+      final router = GoRouter.maybeOf(context);
+      if (router == null) return;
+      if (router.canPop()) {
+        router.pop();
+      } else if (parent != null) {
+        router.go(parent!);
+      }
+    },
+    child: child,
+  );
+}
 
 /// مسیرهایی که فقط پس از دروازه‌ی والدین باز می‌شوند.
 bool isProtected(String location) => (location == '/parent' || location.startsWith('/parent/') || location.startsWith('/settings'));
@@ -34,7 +94,10 @@ GoRouter buildRouter(Ref ref, {Listenable? refresh, String initialLocation = '/'
   // صفحه‌ی قبلی را با وضعیت قبلی نگه می‌دارد (pageKey در go_router فقط الگوی مسیر است).
   CustomTransitionPage<void> page(GoRouterState s, Widget child) => CustomTransitionPage(
     key: ValueKey('page:${s.uri}'),
-    child: KeyedSubtree(key: ValueKey(s.uri.toString()), child: child),
+    child: KeyedSubtree(
+      key: ValueKey(s.uri.toString()),
+      child: BackGuard(parent: parentRoute(ref, s.uri), child: child),
+    ),
     transitionDuration: const Duration(milliseconds: 280),
     transitionsBuilder: (context, a, _, child) {
       if (MediaQuery.maybeDisableAnimationsOf(context) == true) return child;

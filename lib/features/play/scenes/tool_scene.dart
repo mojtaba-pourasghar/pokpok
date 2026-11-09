@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -44,19 +45,32 @@ class _ToolSceneState extends ConsumerState<ToolScene> with SceneBase, TickerPro
   }
 
   Future<void> _hit(int i) async {
-    if (hits[i] >= hitsPerNail || _swing.isAnimating) return;
+    if (joined) return;
+    // میخِ تمام‌شده را زدن، میخِ بعدی را می‌زند (کودک دنبالِ میخِ درست نگردد).
+    if (hits[i] >= hitsPerNail) {
+      i = hits.indexWhere((h) => h < hitsPerNail);
+      if (i < 0) return;
+    }
     setState(() => target = i);
-    await _swing.forward(from: 0);
+    // تابِ چکش فقط نمایش است و ضربه را نگه نمی‌دارد: قبلاً لمس‌های پشتِ سرِ هم وسطِ تاب
+    // گم می‌شدند و چکش «کار نمی‌کرد».
+    unawaited(
+      _swing.forward(from: 0).then((_) {
+        if (mounted) _swing.reverse();
+      }, onError: (_) {}),
+    );
+    await Future<void>.delayed(const Duration(milliseconds: 130));
     if (!mounted) return;
     sfx(widget.item.sound);
     burstAt(_nailKeys[i], Fx.sparks, offset: const Offset(0, -18));
     burstAt(_nailKeys[i], Fx.dust, offset: const Offset(0, 6), count: 8);
+    if (hits[i] >= hitsPerNail) return;
     setState(() {
       hits[i]++;
       shake++;
     });
-    _swing.reverse();
-    if (hits[i] == hitsPerNail) tried();
+    // هر ضربه یک تلاش است؛ قبلاً فقط میخِ کامل‌فرورفته شمرده می‌شد و دکمه دیر باز می‌شد.
+    tried();
     if (hits.every((h) => h >= hitsPerNail) && !joined) {
       setState(() => joined = true);
       ui(UiSound.success);
@@ -99,6 +113,17 @@ class _ToolSceneState extends ConsumerState<ToolScene> with SceneBase, TickerPro
               left: box.maxWidth / 2 - (joined ? w * .02 : -w * .02),
               top: plankY,
               child: GameArt('plank', size: w * .5),
+            ),
+            // لمسِ هر جای تخته‌ها هم میخِ بعدی را می‌زند (روی تخته‌ها، زیرِ میخ‌ها).
+            Positioned(
+              left: 0,
+              right: 0,
+              top: plankY - 40,
+              height: w * .5,
+              child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTap: () => _hit(hits.indexWhere((h) => h < hitsPerNail).clamp(0, 2)),
+              ),
             ),
             for (var k = 0; k < 3; k++)
               Positioned(

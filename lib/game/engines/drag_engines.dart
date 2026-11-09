@@ -1359,31 +1359,57 @@ class PuzzleEngine extends EngineView {
 }
 
 class _PuzzleState extends ConsumerState<PuzzleEngine> with EngineSounds {
-  late final (int, int) grid = switch (widget.host.age.minAge) {
-    <= 2 => (2, 2),
-    <= 4 => (2, 3),
-    _ => (3, 3),
-  };
-  int get n => grid.$1 * grid.$2;
-  late final List<int> tray = [for (var i = 0; i < n; i++) i]..shuffle(math.Random(6));
+  /// همیشه مربعی، تا تصویر (که مربع است) کل صفحه‌ی پازل را پر کند و هیچ تکه‌ای خالی نماند.
+  late final int side = widget.host.age.minAge <= 2 ? 2 : 3;
+  int get n => side * side;
+  late final List<int> tray = _shuffled();
   late final List<GlobalKey> cells = [for (var i = 0; i < n; i++) GlobalKey()];
   final _board = GlobalKey();
   final Set<int> placed = {};
   bool get finished => placed.length == n;
 
+  /// ترتیب تکه‌های قفسه درهم است، ولی هیچ تکه‌ای درست زیر جای خودش نیست.
+  List<int> _shuffled() {
+    final rnd = math.Random(widget.step.str('target').hashCode);
+    final list = [for (var i = 0; i < n; i++) i];
+    for (var tries = 0; tries < 20; tries++) {
+      list.shuffle(rnd);
+      if (list.indexed.every((e) => e.$1 != e.$2)) break;
+    }
+    return list;
+  }
+
+  /// کل تصویر به اندازه‌ی صفحه‌ی پازل؛ هم سایه‌ی راهنما و هم هر تکه از همین بریده می‌شوند.
+  /// تصویر ساکن است: هر تکه کارتون جدای خودش را دارد و اگر جان داشتند، هر کدام جدا پلک می‌زد و
+  /// نفس می‌کشید و تکه‌ها کنار هم جور درنمی‌آمدند.
+  Widget _picture(double size) => MediaQuery(
+    data: MediaQuery.of(context).copyWith(disableAnimations: true),
+    child: SizedBox(
+      width: size,
+      height: size,
+      child: GameArt(widget.step.str('target'), size: size),
+    ),
+  );
+
+  /// تکه‌ی [i]: همان بخش از تصویر که در خانه‌ی [i] صفحه دیده می‌شود (ردیف و ستون از چپ به راست).
   Widget _piece(int i, double cell) {
-    final (rows, cols) = grid;
-    final r = i ~/ cols, c = i % cols;
+    final r = i ~/ side, c = i % side;
+    final board = cell * side;
     return SizedBox(
       width: cell,
       height: cell,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(cell * .08),
-        child: OverflowBox(
-          maxWidth: cell * cols,
-          maxHeight: cell * rows,
-          alignment: Alignment(cols == 1 ? 0 : -1 + 2 * c / (cols - 1), rows == 1 ? 0 : -1 + 2 * r / (rows - 1)),
-          child: GameArt(widget.step.str('target'), size: cell * math.max(rows, cols)),
+        child: ColoredBox(
+          color: const Color(0xFFFFF8E7),
+          child: OverflowBox(
+            alignment: Alignment.topLeft,
+            minWidth: board,
+            maxWidth: board,
+            minHeight: board,
+            maxHeight: board,
+            child: Transform.translate(offset: Offset(-c * cell, -r * cell), child: _picture(board)),
+          ),
         ),
       ),
     );
@@ -1407,13 +1433,25 @@ class _PuzzleState extends ConsumerState<PuzzleEngine> with EngineSounds {
   @override
   Widget build(BuildContext context) => LayoutBuilder(
     builder: (context, box) {
-      final (rows, cols) = grid;
-      final cell = math.min((box.maxWidth - 20) / cols, (box.maxHeight - 130) / rows) * .9;
-      final small = math.min(78.0, (box.maxWidth - 30) / n - 6);
+      // قفسه: تکه‌ها در حداکثر دو ردیف، بی‌آن‌که از قفسه بیرون بزنند یا روی هم بیفتند.
+      const gap = 8.0, frame = 16.0;
+      final perRow = (n / 2).ceil();
+      final small = ((box.maxWidth - 40) / perRow - gap).clamp(36.0, 84.0);
+      final shelfRows = (n / perRow).ceil();
+      final shelfH = shelfRows * (small + gap) + 22;
+      // صفحه‌ی پازل در بقیه‌ی جا، مربع.
+      final cell = (math.min(box.maxWidth - frame - 16, box.maxHeight - shelfH - frame - 16) / side).clamp(30.0, 200.0);
+      final board = cell * side;
       return ValueListenableBuilder(
         valueListenable: widget.host.hint,
         builder: (context, hint, _) {
           final next = tray.where((i) => !placed.contains(i)).firstOrNull;
+          final boardTop = (box.maxHeight - shelfH - board - frame) / 2;
+          // جای خانه‌ی بعدی برای دست راهنما (صفحه همیشه چپ‌به‌راست چیده می‌شود).
+          Offset cellCenter(int i) => Offset(
+            (box.maxWidth - board) / 2 + (i % side + .5) * cell,
+            boardTop + frame / 2 + (i ~/ side + .5) * cell,
+          );
           return Stack(
             children: [
               Column(
@@ -1425,96 +1463,108 @@ class _PuzzleState extends ConsumerState<PuzzleEngine> with EngineSounds {
                         trigger: finished ? 1 : 0,
                         amount: .1,
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: Colors.white, width: 4),
-                            boxShadow: G.soft(),
-                          ),
-                          padding: const EdgeInsets.all(4),
-                          child: Stack(
-                            children: [
-                              // سایه‌ی کم‌رنگ کل تصویر برای راهنمایی
-                              Positioned.fill(
-                                child: Opacity(
-                                  opacity: .12,
-                                  child: FittedBox(child: GameArt(widget.step.str('target'), size: cell * math.max(rows, cols))),
-                                ),
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
+                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20), boxShadow: G.soft()),
+                          padding: const EdgeInsets.all(frame / 2),
+                          // ستون صفر سمت چپ است، همان‌طور که تکه‌ها از تصویر بریده می‌شوند؛ در راست‌به‌چپ
+                          // ردیف‌ها برعکس چیده می‌شدند و تصویر کامل‌شده به‌هم‌ریخته بود.
+                          child: Directionality(
+                            textDirection: TextDirection.ltr,
+                            child: SizedBox(
+                              width: board,
+                              height: board,
+                              child: Stack(
                                 children: [
-                                  for (var r = 0; r < rows; r++)
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        for (var c = 0; c < cols; c++)
-                                          DragTarget<String>(
-                                            key: cells[r * cols + c],
-                                            onWillAcceptWithDetails: (d) => d.data == '${r * cols + c}',
-                                            onAcceptWithDetails: (_) => _place(r * cols + c),
-                                            builder: (context, cand, rejected) {
-                                              final i = r * cols + c;
-                                              return AnimatedContainer(
-                                                duration: const Duration(milliseconds: 150),
-                                                width: cell,
-                                                height: cell,
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                    color: hint >= 1 && i == next
-                                                        ? const Color(0xFFFFB300)
-                                                        : (finished ? Colors.transparent : G.line),
-                                                    width: hint >= 1 && i == next ? 4 : 2,
-                                                  ),
-                                                  color: rejected.isNotEmpty ? G.tint(G.red, .7) : Colors.transparent,
-                                                ),
-                                                child: placed.contains(i) ? PopIn(from: 1.3, child: _piece(i, cell)) : null,
-                                              );
-                                            },
+                                  // سایه‌ی کم‌رنگ کل تصویر، دقیقاً زیر خانه‌ها، برای راهنمایی
+                                  Positioned.fill(
+                                    child: IgnorePointer(child: Opacity(opacity: finished ? 0 : .18, child: _picture(board))),
+                                  ),
+                                  for (var i = 0; i < n; i++)
+                                    Positioned(
+                                      left: (i % side) * cell,
+                                      top: (i ~/ side) * cell,
+                                      width: cell,
+                                      height: cell,
+                                      child: DragTarget<int>(
+                                        key: cells[i],
+                                        onWillAcceptWithDetails: (d) => d.data == i && !placed.contains(i),
+                                        onAcceptWithDetails: (_) => _place(i),
+                                        builder: (context, cand, rejected) => AnimatedContainer(
+                                          duration: const Duration(milliseconds: 150),
+                                          decoration: BoxDecoration(
+                                            border: Border.all(
+                                              color: hint >= 1 && i == next
+                                                  ? const Color(0xFFFFB300)
+                                                  : (finished ? Colors.transparent : G.line),
+                                              width: hint >= 1 && i == next ? 4 : 1.5,
+                                            ),
+                                            color: rejected.isNotEmpty
+                                                ? G.tint(G.red, .7).withValues(alpha: .6)
+                                                : (cand.isNotEmpty ? G.tint(G.green, .6).withValues(alpha: .5) : Colors.transparent),
                                           ),
-                                      ],
+                                          child: placed.contains(i) ? PopIn(from: 1.2, child: _piece(i, cell)) : null,
+                                        ),
+                                      ),
                                     ),
                                 ],
                               ),
-                            ],
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
                   ShelfProp(
-                    height: small + 30,
-                    child: Wrap(
-                      alignment: WrapAlignment.center,
-                      spacing: 6,
-                      children: [
-                        for (final i in tray)
-                          if (!placed.contains(i))
-                            Draggable<String>(
-                              data: '$i',
-                              onDragStarted: widget.host.touch,
-                              onDraggableCanceled: (_, _) => ui(UiSound.softNo),
-                              feedback: Transform.rotate(angle: -.06, child: _piece(i, cell)),
-                              childWhenDragging: SizedBox(width: small, height: small),
-                              child: Idle(
-                                seed: i,
-                                amount: .4,
-                                child: FittedBox(child: _piece(i, small)),
+                    height: shelfH,
+                    child: Center(
+                      child: Wrap(
+                        alignment: WrapAlignment.center,
+                        runAlignment: WrapAlignment.center,
+                        spacing: gap,
+                        runSpacing: gap,
+                        children: [
+                          for (final i in tray)
+                            if (placed.contains(i))
+                              SizedBox(width: small, height: small)
+                            else
+                              Draggable<int>(
+                                data: i,
+                                // تکه وسط انگشت و به اندازه‌ی خانه‌ی صفحه، تا معلوم باشد کجا می‌نشیند.
+                                dragAnchorStrategy: (d, c, p) => Offset(cell / 2, cell / 2),
+                                onDragStarted: widget.host.touch,
+                                onDraggableCanceled: (_, _) => bad(),
+                                feedback: Directionality(
+                                  textDirection: TextDirection.ltr,
+                                  child: Opacity(
+                                    opacity: .92,
+                                    child: Transform.rotate(angle: -.05, child: _piece(i, cell)),
+                                  ),
+                                ),
+                                childWhenDragging: SizedBox(width: small, height: small),
+                                child: Directionality(
+                                  textDirection: TextDirection.ltr,
+                                  child: HintGlow(
+                                    on: hint >= 1 && i == next,
+                                    child: Container(
+                                      width: small,
+                                      height: small,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(small * .1),
+                                        border: Border.all(color: Colors.white, width: 2),
+                                        boxShadow: G.soft(),
+                                      ),
+                                      child: FittedBox(child: _piece(i, cell)),
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
               if (hint >= 3 && next != null)
-                HintHand(
-                  from: Offset(box.maxWidth / 2, box.maxHeight - 50),
-                  to: Offset(
-                    box.maxWidth / 2 + (next % cols - (cols - 1) / 2) * cell,
-                    (box.maxHeight - 110) / 2 + (next ~/ cols - (rows - 1) / 2) * cell,
-                  ),
-                ),
+                HintHand(from: Offset(box.maxWidth / 2, box.maxHeight - shelfH / 2), to: cellCenter(next)),
             ],
           );
         },

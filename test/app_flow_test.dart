@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:popo/app/localization/fa.dart';
 import 'package:popo/app/providers.dart';
+import 'package:popo/core/ads/ads.dart';
 import 'package:popo/core/audio/popo_audio.dart';
 import 'package:popo/core/content/content.dart';
 import 'package:popo/core/widgets/buttons.dart';
@@ -73,8 +74,12 @@ void main() {
     expect(container.read(gameProvider).coins, 10);
     final gate = container.read(gateProvider);
     final data = container.read(gameDataProvider);
-    expect(gate.chapterOpen(data.chapters[0]), isTrue);
-    expect(gate.chapterOpen(data.chapters[1]), gate.open, reason: 'chapter 2 waits for chapter 1 (open only in debug)');
+    for (final c in data.chapters) {
+      expect(gate.chapterOpen(c), isTrue, reason: 'every chapter is open from the start');
+      for (var i = 0; i < c.sections.length; i++) {
+        expect(gate.sectionOpen(c, i), isTrue);
+      }
+    }
     await tester.tap(find.text('آشپزخانه‌ی خاله خرسی').first);
     await settle(tester, 20);
     expect(find.byType(ChapterScreen), findsOneWidget);
@@ -139,8 +144,13 @@ void main() {
       for (final o in env.overrides) o,
       routerProvider.overrideWith((ref) => buildRouter(ref, initialLocation: '/play/c1s1')),
     ];
+    final ads = CountingAds();
     final container = ProviderContainer(
-      overrides: [...overrides.where((o) => !identical(o, overrides[3])), gameDataProvider.overrideWithValue(data)],
+      overrides: [
+        ...overrides.where((o) => !identical(o, overrides[3])),
+        gameDataProvider.overrideWithValue(data),
+        adsProvider.overrideWithValue(ads),
+      ],
     );
     await tester.pumpWidget(UncontrolledProviderScope(container: container, child: const PopoApp()));
     await settle(tester);
@@ -176,6 +186,7 @@ void main() {
     expect(g.starsOf('c1s1'), 3);
     expect(g.coins, greaterThan(0));
     expect(find.text('عالی!'), findsOneWidget);
+    expect(ads.shown, 1, reason: 'free version: one ad after the section is finished');
     await tester.pumpWidget(const SizedBox());
     await settle(tester, 3);
     container.dispose();

@@ -192,36 +192,25 @@ class _BottomNav extends StatelessWidget {
   );
 }
 
-/// قفل‌ها: فصل بعدی بعد از تمام شدن فصل قبل، بخش بعدی بعد از بخش قبل. در debug همه باز.
-/// نسخه‌ی رایگان: کل فصل ۱ و بخش اول هر فصل.
+/// پیشرفت فصل‌ها و بخش‌ها. همه‌ی فصل‌ها و بخش‌ها از اول باز است — چه نسخه‌ی رایگان (با تبلیغ بعد از
+/// هر بخش) و چه نسخه‌ی کامل (بی‌تبلیغ)؛ کودک هر جا را دوست دارد بازی می‌کند.
 class Gate {
-  Gate(this.data, this.progress, {required this.open, required this.paid});
+  Gate(this.data, this.progress);
 
   final GameData data;
   final GameProgress progress;
 
-  /// همه‌چیز باز (اجرای debug).
-  final bool open;
-
-  /// نسخه‌ی کامل خریده شده یا دیوار پرداخت خاموش است.
-  final bool paid;
-
   bool chapterDone(ChapterDef c) => c.sections.every((s) => progress.done(s.id));
 
-  bool chapterOpen(ChapterDef c) => open || c.index == 0 || chapterDone(data.chapters[c.index - 1]);
+  bool chapterOpen(ChapterDef c) => true;
 
-  bool sectionOpen(ChapterDef c, int i) => open || (chapterOpen(c) && (i == 0 || progress.done(c.sections[i - 1].id)));
-
-  bool needsPurchase(ChapterDef c, int i) => !paid && c.index > 0 && i > 0;
+  bool sectionOpen(ChapterDef c, int i) => true;
 
   int chapterStars(ChapterDef c) => c.sections.fold(0, (a, s) => a + progress.starsOf(s.id));
   int chapterDoneCount(ChapterDef c) => c.sections.where((s) => progress.done(s.id)).length;
 }
 
-final gateProvider = Provider<Gate>((ref) {
-  final access = ref.watch(accessProvider);
-  return Gate(ref.watch(gameDataProvider), ref.watch(gameProvider), open: access.everythingOpen, paid: access.owned || !access.paywall);
-});
+final gateProvider = Provider<Gate>((ref) => Gate(ref.watch(gameDataProvider), ref.watch(gameProvider)));
 
 /// زبانه‌ی ماجرا: سلام پوپو و فهرست فصل‌ها (کارت‌های رنگی مثل «بازی‌ها و مأموریت‌ها»ی گوش‌یار).
 class StoryTab extends ConsumerWidget {
@@ -382,7 +371,8 @@ class ChapterCard extends ConsumerWidget {
               ],
             ),
           ),
-          const Icon(Icons.chevron_left_rounded, color: Colors.white, size: 32),
+          // در راست‌به‌چپ، chevron_right خودش آینه می‌شود و به چپ (جلو) اشاره می‌کند.
+          const Icon(Icons.chevron_right_rounded, color: Colors.white, size: 32),
         ],
       ),
     );

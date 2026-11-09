@@ -4,10 +4,12 @@ import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../app/theme/theme.dart';
+import '../../core/billing/billing.dart';
 import '../../core/widgets/common.dart';
 import '../../game/game_state.dart';
 import '../../game/scoring.dart';
 import '../../ui/clay.dart';
+import '../paywall/paywall.dart';
 import 'home_shell.dart';
 
 /// زبانه‌ی «من»: نمایه، مرتبه‌ی سازنده، ستاره‌ها و سکه‌ها، پیشرفت فصل‌ها و فیلم‌های من.
@@ -57,6 +59,8 @@ class MeTab extends ConsumerWidget {
             ],
           ),
         ),
+        const SizedBox(height: 12),
+        const _FullVersionCard(),
         const SizedBox(height: 12),
         Row(
           children: [
@@ -131,6 +135,86 @@ class MeTab extends ConsumerWidget {
         const SizedBox(height: 20),
         ClayButton(label: 'بخش والدین', icon: Icons.lock_rounded, color: G.inkSoft, onTap: () => context.push('/parent')),
       ],
+    );
+  }
+}
+
+/// «نسخه‌ی کامل بی‌تبلیغ»: دکمه‌ی خرید که (پس از دروازه‌ی والدین) مستقیم پرداخت کافه‌بازار را باز می‌کند.
+/// بعد از خرید فقط «بدون تبلیغ» نوشته می‌شود.
+class _FullVersionCard extends ConsumerWidget {
+  const _FullVersionCard();
+
+  Future<void> _buy(BuildContext context, WidgetRef ref) async {
+    final access = ref.read(accessProvider);
+    final messenger = ScaffoldMessenger.of(context);
+    if (!await verifyParent(context, ref)) return;
+    final r = await access.buy();
+    messenger.showSnackBar(
+      SnackBar(
+        content: Text(purchaseMessage(r), style: PText.bodyStrong.copyWith(color: Colors.white)),
+        backgroundColor: r == PurchaseResult.purchased ? G.green : G.ink,
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
+
+  Future<void> _restore(BuildContext context, WidgetRef ref) async {
+    final messenger = ScaffoldMessenger.of(context);
+    final found = await ref.read(accessProvider).restore();
+    messenger.showSnackBar(
+      SnackBar(content: Text(restoreMessage(found)), behavior: SnackBarBehavior.floating),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final access = ref.watch(accessProvider);
+    if (access.owned) {
+      return ClayCard(
+        child: Row(
+          children: [
+            const Icon(Icons.verified_rounded, color: G.green, size: 36),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text('نسخه‌ی کامل — بدون تبلیغ', style: PText.heading.copyWith(color: G.green)),
+            ),
+          ],
+        ),
+      );
+    }
+    return ClayCard(
+      border: G.yellow,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.workspace_premium_rounded, color: G.orange, size: 36),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('نسخه‌ی کامل', style: PText.heading.copyWith(color: G.purple)),
+                    const Text('همه‌ی بازی‌ها بدون تبلیغ؛ یک بار خرید، برای همیشه.', style: PText.caption),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          ClayButton(
+            label: access.busy ? 'در حال خرید…' : 'خرید از کافه‌بازار — ${access.price}',
+            icon: Icons.shopping_cart_rounded,
+            color: G.green,
+            onTap: access.busy ? null : () => _buy(context, ref),
+          ),
+          TextButton(
+            onPressed: access.busy ? null : () => _restore(context, ref),
+            child: Text('قبلاً خریده‌ام', style: PText.bodyStrong.copyWith(color: G.purple)),
+          ),
+        ],
+      ),
     );
   }
 }

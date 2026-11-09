@@ -12,7 +12,6 @@ import '../../game/game_state.dart';
 import '../../ui/clay.dart';
 import '../home/home_shell.dart';
 import '../mascot/popo_mascot.dart';
-import '../paywall/paywall.dart';
 
 /// نقشه‌ی یک فصل (مثل نقشه‌ی مرحله‌های گوش‌یار): دایره‌های بخش‌ها روی یک راه پیچان، با ستاره‌ها.
 class ChapterScreen extends ConsumerStatefulWidget {
@@ -51,11 +50,6 @@ class _ChapterScreenState extends ConsumerState<ChapterScreen> {
     final s = chapter.sections[i];
     if (!gate.sectionOpen(chapter, i)) {
       ref.say('game.locked');
-      return;
-    }
-    if (gate.needsPurchase(chapter, i)) {
-      ref.say('full.locked');
-      showPaywall(context);
       return;
     }
     context.push('/play/${s.id}');
@@ -145,7 +139,6 @@ class _ChapterScreenState extends ConsumerState<ChapterScreen> {
   Widget _node(int i, Offset p, double r, Gate gate, Color color) {
     final s = chapter.sections[i];
     final open = gate.sectionOpen(chapter, i);
-    final paid = gate.needsPurchase(chapter, i);
     final stars = ref.watch(gameProvider).starsOf(s.id);
     final done = ref.watch(gameProvider).done(s.id);
     return Positioned(
@@ -173,8 +166,6 @@ class _ChapterScreenState extends ConsumerState<ChapterScreen> {
                     ),
                   ),
                   if (open) GameArt(s.makes, size: r * 1.35) else const Icon(Icons.lock_rounded, color: Colors.white, size: 40),
-                  if (open && paid)
-                    const Positioned(top: 6, right: 6, child: Icon(Icons.workspace_premium_rounded, color: G.yellow, size: 26)),
                 ],
               ),
             ),

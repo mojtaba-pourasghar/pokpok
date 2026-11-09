@@ -328,9 +328,13 @@ export default function App() {
                    onChange={(e) => setForm({ ...form, retries: e.target.value })} />
           </div>
           <label className="check">
-            <input type="checkbox" checked={form.useVowels}
-                   onChange={(e) => setForm({ ...form, useVowels: e.target.checked })} />
-            متنِ تلفظی (spoken) برای جمله‌هایی که دارند
+            {/* takes effect at once (no «ذخیره» needed), so the next build follows what is shown */}
+            <input type="checkbox" checked={config.useVowels} disabled={busy}
+                   onChange={(e) => {
+                     setForm({ ...form, useVowels: e.target.checked });
+                     save({ useVowels: e.target.checked });
+                   }} />
+            متنِ تلفظی (spoken) برای جمله‌هایی که دارند — {config.useVowels ? "روشن: با اِعراب" : "خاموش: بی اِعراب"}
           </label>
           <label className="check">
             <input type="checkbox" checked={form.normalize}
@@ -417,6 +421,33 @@ export default function App() {
               </button>
             );
           })}
+        </div>
+        <h2 style={{ marginTop: 16 }}>🔁 ساختِ دوباره از اول <span className="hint">صدای ماشینیِ موجود با تنظیماتِ فعلی دوباره ساخته می‌شود؛ ضبطِ انسانی دست نمی‌خورد و فایلِ قبلی تا آماده شدنِ فایلِ تازه می‌ماند</span></h2>
+        <div className="note">
+          متنی که فرستاده می‌شود: <b>{config.useVowels ? "با اِعراب (spoken)" : "بی اِعراب (متنِ نوشته)"}</b> — از تیکِ «متنِ تلفظی» در تنظیمات.
+        </div>
+        <div className="row">
+          {(() => {
+            const again = (subset) => subset.filter((l) => !l.done || l.tts).map((l) => l.key);
+            return (<>
+              <button className="warn" disabled={busy || status.running || !config.tokenSet || !again(lines).length}
+                      onClick={() => {
+                        const keys = again(lines);
+                        if (window.confirm(`${fa(keys.length)} جمله از اول ساخته شود؟`)) generate(keys, 0, true);
+                      }}>
+                همه از اول ({fa(again(lines).length)})
+              </button>
+              {chapters.map((c) => {
+                const keys = again(lines.filter((l) => l.chapter === c));
+                return (
+                  <button key={c} className="chip" disabled={busy || status.running || !config.tokenSet || !keys.length}
+                          onClick={() => generate(keys, 0, true)}>
+                    مرحله {fa(c)} از اول ({fa(keys.length)})
+                  </button>
+                );
+              })}
+            </>);
+          })()}
         </div>
         <div className="row" style={{ marginTop: 10 }}>
           {[10, 50, 200].map((n) => (

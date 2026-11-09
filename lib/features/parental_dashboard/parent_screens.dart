@@ -363,24 +363,15 @@ class PurchasesScreen extends ConsumerWidget {
   Future<void> _restore(BuildContext context, WidgetRef ref) async {
     final found = await ref.read(accessProvider).restore();
     if (!context.mounted) return;
-    toast(context, switch (found) {
-      true => 'خرید قبلی پیدا شد؛ همه‌چیز باز است.',
-      false => 'خریدی با این حساب کافه‌بازار پیدا نشد.',
-      null => 'به کافه‌بازار وصل نشد. اینترنت و ورود به حساب بازار را بررسی کنید.',
-    });
+    toast(context, restoreMessage(found));
   }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final access = ref.watch(accessProvider);
-    final String status;
-    if (access.everythingOpen) {
-      status = 'نسخه‌ی آزمایشی (debug): همه‌ی جهان‌ها و بازی‌ها باز است.';
-    } else if (access.owned) {
-      status = 'نسخه‌ی کامل خریده شده؛ همه‌چیز باز است.';
-    } else {
-      status = 'فقط اولین صحنه‌ی هر جهان و اولین بازی هر دسته باز است.';
-    }
+    final status = access.owned
+        ? 'نسخه‌ی کامل خریده شده؛ هیچ تبلیغی نشان داده نمی‌شود.'
+        : 'نسخه‌ی رایگان: همه‌چیز باز است و بعد از هر بخش یک تبلیغ کوتاه نشان داده می‌شود.';
     return PScaffold(
       title: 'خریدها',
       body: ListView(
@@ -393,11 +384,11 @@ class PurchasesScreen extends ConsumerWidget {
                 Text('نسخه‌ی کامل', style: PText.heading.copyWith(color: PColors.purple)),
                 const SizedBox(height: PSpace.xs),
                 Text(status, style: PText.body),
-                if (access.paywall && !access.owned) ...[
+                if (!access.owned) ...[
                   const SizedBox(height: PSpace.sm),
                   PButton(
-                    label: 'باز کردن همه — ${access.price}',
-                    icon: Icons.lock_open_rounded,
+                    label: 'حذف تبلیغ‌ها — ${access.price}',
+                    icon: Icons.shopping_cart_rounded,
                     color: PColors.success,
                     expand: true,
                     onPressed: () => showPaywall(context, parentVerified: true),

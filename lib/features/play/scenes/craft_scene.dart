@@ -94,7 +94,7 @@ class _CraftSceneState extends ConsumerState<CraftScene> with SceneBase, SingleT
     setState(() => hung.add(i));
     sfx(widget.item.sound);
     burstAt(_spots[i], Fx.sparkle, count: 8);
-    if (hung.length % 2 == 0) tried();
+    tried();
     if (hung.length == 6) {
       fx?.burst(context.globalCenter, Fx.confetti);
       Future.delayed(const Duration(milliseconds: 1500), () {
@@ -265,8 +265,17 @@ class _CraftSceneState extends ConsumerState<CraftScene> with SceneBase, SingleT
 
   Widget _hangScene(BoxConstraints box, double s) => Stack(
     children: [
-      // نخ آویزان
-      Positioned.fill(child: CustomPaint(painter: _StringPainter())),
+      // نخ آویزان؛ لمسِ هر جای صحنه تزئینِ بعدی را آویزان می‌کند.
+      Positioned.fill(
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () {
+            final i = List.generate(6, (k) => k).firstWhere((k) => !hung.contains(k), orElse: () => -1);
+            if (i >= 0) _hang(i);
+          },
+          child: CustomPaint(painter: _StringPainter()),
+        ),
+      ),
       for (var i = 0; i < 6; i++)
         Positioned(
           left: box.maxWidth * (.08 + i * .15),
@@ -379,17 +388,27 @@ class _CraftSceneState extends ConsumerState<CraftScene> with SceneBase, SingleT
   Widget _mapScene(BoxConstraints box, double s) {
     Offset at(double t) => Offset(box.maxWidth * (.12 + .76 * t), box.maxHeight * (.65 - math.sin(t * math.pi * 2) * .22 - t * .2));
     final p = at(mapT);
+    void stepTo(double t) {
+      final before = (mapT * 4).floor();
+      setState(() => mapT = t);
+      // هر یک‌چهارمِ راه یک تلاش و یک ستاره‌ی کوچک
+      if ((mapT * 4).floor() > before && mapT < .98) {
+        ui(UiSound.pop);
+        tried();
+      }
+      if (mapT > .98) _treasure();
+    }
+
     return GestureDetector(
+      // لمسِ نقشه پوپو را یک قدم جلو می‌برد؛ کشیدنِ انگشت روی راه هم.
+      onTap: () => stepTo(math.min(1, mapT + .25)),
       onPanUpdate: (d) {
         // نزدیک‌ترین نقطه‌ی کمی جلوتر روی راه
         var best = mapT;
-        for (var t = mapT; t <= math.min(1, mapT + .1); t += .01) {
+        for (var t = mapT; t <= math.min(1, mapT + .15); t += .01) {
           if ((at(t) - d.localPosition).distance < (at(best) - d.localPosition).distance) best = t;
         }
-        if (best > mapT) {
-          setState(() => mapT = best);
-          if (mapT > .98) _treasure();
-        }
+        if (best > mapT) stepTo(best);
       },
       child: Stack(
         children: [

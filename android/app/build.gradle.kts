@@ -20,6 +20,9 @@ val serviceProperties = Properties().apply {
     if (f.exists()) f.inputStream().use { load(it) }
 }
 val bazaarRsa: String = serviceProperties.getProperty("bazaar.rsa", "").trim()
+// تبلیغ ادیوری (نسخه‌ی رایگان): شناسه‌ی برنامه و جایگاه تمام‌صفحه از پنل ادیوری. خالی یعنی بی‌تبلیغ.
+val adiveryAppId: String = serviceProperties.getProperty("adivery.appId", "").trim()
+val adiveryInterstitial: String = serviceProperties.getProperty("adivery.interstitial", "").trim()
 
 android {
     namespace = "com.pokpok.ir"
@@ -43,6 +46,8 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
         manifestPlaceholders["bazaarRsa"] = bazaarRsa
+        manifestPlaceholders["adiveryAppId"] = adiveryAppId
+        manifestPlaceholders["adiveryInterstitial"] = adiveryInterstitial
         // همه‌ی پردازنده‌ها: ARM ۳۲ و ۶۴ بیتی (تقریباً همه‌ی گوشی‌ها) و x86_64 (شبیه‌سازها و چند تبلت).
         ndk {
             abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86_64")
@@ -62,6 +67,8 @@ android {
 
     buildTypes {
         release {
+            // قانون‌های R8 (proguard-rules.pro): کلاس‌های SDKهای اختیاری ادیوری که در برنامه نیستند.
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig = if (keyProperties.isNotEmpty()) {
                 signingConfigs.getByName("release")
             } else {
@@ -85,6 +92,8 @@ dependencies {
     // پرداخت درون‌برنامه‌ای کافه‌بازار (BazaarBilling.kt)، مستقیم و بی افزونه‌ی flutter_poolakey.
     implementation("com.github.cafebazaar.Poolakey:poolakey:2.2.0")
     implementation("androidx.activity:activity-ktx:1.9.3")
+    // تبلیغ تمام‌صفحه بعد از هر بخش، فقط برای نسخه‌ی رایگان (AdiveryAds.kt). از Maven Central.
+    implementation("com.adivery:sdk:4.9.0")
     // اعلان‌ها بدون هیچ سرویس پوشی: برنامه خودش فایل امضاشده‌ی خبرها را از سرور می‌خواند
     // (NoticeWork.kt هر ربع ساعت، NoticeAlarm.kt از میان Doze) و خبر تازه را در نوار اعلان می‌گذارد.
     implementation("androidx.work:work-runtime:2.9.1")

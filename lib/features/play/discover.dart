@@ -74,10 +74,17 @@ class _QuizViewState extends ConsumerState<QuizView> {
       setState(() => right = i);
       context.fx(Fx.confetti, count: 30);
       ref.read(audioProvider).ui(UiSound.success);
-      ref.say('game.quiz.right').then((_) {
-        if (mounted) ref.say('item.${widget.item.id}.use');
+      // «درست گفتی!» و بعد کاربردش، هر دو کامل؛ بعد مرحله‌ی بعد (قبلاً بعد از ۲٫۴ ثانیه وسط جمله قطع می‌شد).
+      final first = firstTry;
+      Future.wait([
+        () async {
+          await ref.say('game.quiz.right');
+          if (mounted) await ref.say('item.${widget.item.id}.use');
+        }().timeout(const Duration(seconds: 9), onTimeout: () {}),
+        Future<void>.delayed(const Duration(milliseconds: 2400)),
+      ]).then((_) {
+        if (mounted) widget.onAnswered(first);
       });
-      Future.delayed(const Duration(milliseconds: 2400), () => widget.onAnswered(firstTry));
     } else {
       firstTry = false;
       setState(() => shakes[i] = (shakes[i] ?? 0) + 1);

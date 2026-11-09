@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Modify this file to customize your launch splash screen -->
+<!-- اسپلش: همان شیبِ زرد به نارنجی و سرِ پوپو که صفحه‌ی بارگذاریِ برنامه (popo_loader.dart) ادامه می‌دهد.
+     launch_fox.png با test/tools/make_splash_test.dart ساخته می‌شود. -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="?android:colorBackground" />
-
-    <!-- You can insert your own image assets here -->
-    <!-- <item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#FFFFE07A"
+                android:endColor="#FFFF9D37"
+                android:type="linear" />
+        </shape>
+    </item>
+    <item>
         <bitmap
             android:gravity="center"
-            android:src="@mipmap/launch_image" />
-    </item> -->
+            android:src="@drawable/launch_fox" />
+    </item>
 </layer-list>

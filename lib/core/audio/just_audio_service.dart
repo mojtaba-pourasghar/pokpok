@@ -24,14 +24,19 @@ class JustAudioService with WidgetsBindingObserver implements PopoAudio {
     WidgetsBinding.instance.addObserver(this);
   }
 
-  static const _voicesPerSound = 3;
-  static const _maxSounds = 24;
+  static const _voicesPerSound = 2;
+  static const _maxSounds = 10;
+
+  /// اندروید به هر برنامه تعداد محدودی AudioTrack می‌دهد و هر پخش‌کننده‌ی آماده یکی نگه می‌دارد.
+  /// قبلاً تا ۷۲ پخش‌کننده باز می‌ماند؛ بعد از فصل اول سهمیه پر می‌شد («AudioFlinger could not create
+  /// track») و گوینده دیگر صدا نداشت. جلوه‌ها روی هم از این عدد بیشتر نمی‌شوند.
+  static const _maxEffectPlayers = 12;
 
   final AssetResolver _assets;
 
   /// صدا ← پخش‌کننده‌های آماده‌اش (به ترتیب آخرین استفاده؛ قدیمی‌ترها آزاد می‌شوند).
   final Map<String, _SoundSlot> _sounds = {};
-  final _voice = AudioPlayer();
+  late AudioPlayer _voice = _newVoice();
   final _music = _Loop();
   final _ambient = _Loop();
   final _caption = ValueNotifier<VoiceLine?>(null);
@@ -64,8 +69,10 @@ class JustAudioService with WidgetsBindingObserver implements PopoAudio {
   Future<void> say(VoiceLine? line) async {
     if (line == null) return;
     final gen = ++_gen;
-    if (_voice.playing) await _fade(_voice, to: 0, ms: 120);
+    // just_audio بعد از پایانِ جمله هنوز playing == true دارد؛ فقط وقتی واقعاً حرف می‌زند محو می‌کنیم.
+    if (_voice.playing && _voice.processingState != ProcessingState.completed) await _fade(_voice, to: 0, ms: 120);
     await _voice.stop();
+    if (gen != _gen) return;
     if (line.delayMs > 0) {
       await Future<void>.delayed(Duration(milliseconds: line.delayMs));
       if (gen != _gen) return;
@@ -75,16 +82,22 @@ class JustAudioService with WidgetsBindingObserver implements PopoAudio {
     final src = _vol(AudioChannel.voice) > 0 && _assets.exists(path) ? _source(path) : null;
     var played = false;
     if (src != null) {
-      try {
-        await _voice.setAudioSource(src);
-        if (gen == _gen) {
-          _duck(true);
+      // اگر اندروید AudioTrack نداد، جلوه‌ها آزاد و پخش‌کننده‌ی گوینده نو می‌شود و یک بار دیگر.
+      for (var attempt = 0; attempt < 2 && !played && gen == _gen; attempt++) {
+        try {
+          if (attempt > 0) await _recoverVoice();
+          // بلندی پیش از بارگذاری برمی‌گردد: بعد از محو شدنِ جمله‌ی قبل روی صفر مانده بود و
+          // ابتدای جمله‌ی تازه بی‌صدا یا بریده («پپ») شنیده می‌شد.
           await _voice.setVolume(_vol(AudioChannel.voice));
+          await _voice.setAudioSource(src);
+          if (gen != _gen) break;
+          _duck(true);
           await _voice.play();
-          played = true;
+          // play() با پایان، توقف یا خطا برمی‌گردد؛ فقط «تمام شد» یا قطع عمدی موفقیت است.
+          played = gen != _gen || _voice.processingState == ProcessingState.completed;
+        } catch (e) {
+          debugPrint('پخش گوینده شکست خورد (تلاش ${attempt + 1}): $e');
         }
-      } catch (e) {
-        debugPrint('پخش گوینده شکست خورد: $e');
       }
       if (gen == _gen) _duck(false);
     }
@@ -104,15 +117,41 @@ class JustAudioService with WidgetsBindingObserver implements PopoAudio {
     final slot = _sounds.remove(logicalPath) ?? _SoundSlot();
     _sounds[logicalPath] = slot; // تازه‌ترین در انتها
     _evict();
-    unawaited(slot.play(() => _source(logicalPath), v));
+    // پخش‌کننده‌ها پس از بارگذاری اضافه می‌شوند؛ شمارش دوباره بعد از آن.
+    unawaited(slot.play(() => _source(logicalPath), v).then((_) => _evict()));
   }
 
-  /// صداهای کم‌استفاده آزاد می‌شوند تا حافظه‌ی گوشی‌های ضعیف پر نشود.
+  /// صداهای کم‌استفاده آزاد می‌شوند تا هم حافظه و هم سهمیه‌ی AudioTrack اندروید پر نشود.
+  /// تازه‌ترین صدا (همانی که الان خواسته شده) هیچ‌وقت آزاد نمی‌شود.
   void _evict() {
-    while (_sounds.length > _maxSounds) {
-      final oldest = _sounds.keys.first;
-      _sounds.remove(oldest)!.dispose();
+    int players() => _sounds.values.fold(0, (a, s) => a + s.size);
+    while (_sounds.length > 1 && (_sounds.length > _maxSounds || players() > _maxEffectPlayers)) {
+      // قدیمی‌ترینِ ساکت آزاد می‌شود؛ صدایی که همین حالا پخش می‌شود بریده نمی‌شود.
+      final keys = _sounds.keys.toList()..removeLast();
+      final victim = keys.firstWhere((k) => !_sounds[k]!.busy, orElse: () => '');
+      if (victim.isEmpty) break;
+      _sounds.remove(victim)!.dispose();
     }
+  }
+
+  AudioPlayer _newVoice() {
+    final p = AudioPlayer();
+    // خطای پخش (مثلاً نبودِ AudioTrack) اینجا می‌آید؛ بی‌شنونده، خطای مدیریت‌نشده می‌شد.
+    p.playbackEventStream.listen((_) {}, onError: (Object e, StackTrace _) => debugPrint('خطای گوینده: $e'));
+    return p;
+  }
+
+  /// همه‌ی جلوه‌های آماده آزاد و پخش‌کننده‌ی گوینده از نو ساخته می‌شود تا AudioTrack تازه بگیرد.
+  Future<void> _recoverVoice() async {
+    for (final s in _sounds.values) {
+      s.dispose();
+    }
+    _sounds.clear();
+    final old = _voice;
+    _voice = _newVoice();
+    try {
+      await old.dispose();
+    } catch (_) {}
   }
 
   @override
@@ -121,7 +160,7 @@ class JustAudioService with WidgetsBindingObserver implements PopoAudio {
       if (_sounds.containsKey(p)) continue;
       final slot = _SoundSlot();
       _sounds[p] = slot;
-      unawaited(slot.prepare(() => _source(p)));
+      unawaited(slot.prepare(() => _source(p)).then((_) => _evict()));
     }
     _evict();
   }
@@ -157,8 +196,9 @@ class JustAudioService with WidgetsBindingObserver implements PopoAudio {
   void stopAll() {
     _gen++;
     _caption.value = null;
-    if (_voice.playing) {
-      unawaited(_fade(_voice, to: 0, ms: 150).then((_) => _voice.stop()));
+    if (_voice.playing && _voice.processingState != ProcessingState.completed) {
+      final v = _voice;
+      unawaited(_fade(v, to: 0, ms: 150).then((_) => v.stop()));
     }
     _duck(false);
   }
@@ -209,14 +249,29 @@ class _SoundSlot {
   final List<AudioPlayer> _players = [];
   int _next = 0;
   Future<void>? _ready;
+  bool _disposed = false;
+
+  /// در just_audio بعد از پایانِ صدا هنوز playing == true است؛ «تمام‌شده» هم آزاد است.
+  static bool _free(AudioPlayer p) => !p.playing || p.processingState == ProcessingState.completed;
+
+  /// همین حالا صدایی از این جلوه شنیده می‌شود؛ آزاد کردنش آن را وسط کار می‌بُرد («پپ»).
+  bool get busy => _players.any((p) => !_free(p));
+
+  /// چند پخش‌کننده (و در نتیجه چند AudioTrack) این صدا نگه داشته است.
+  int get size => _players.isEmpty && _ready != null && !_disposed ? 1 : _players.length;
 
   Future<void> prepare(AudioSource? Function() source) => _ready ??= () async {
     final src = source();
-    if (src == null) return;
+    if (src == null || _disposed) return;
     final p = AudioPlayer();
     try {
       await p.setAudioSource(src);
-      _players.add(p);
+      // اگر وسط بارگذاری آزاد شد، پخش‌کننده نباید بماند و AudioTrack نگه دارد.
+      if (_disposed) {
+        await p.dispose();
+      } else {
+        _players.add(p);
+      }
     } catch (e) {
       debugPrint('بارگذاری صدا شکست خورد: $e');
       await p.dispose();
@@ -225,15 +280,19 @@ class _SoundSlot {
 
   Future<void> play(AudioSource? Function() source, double volume) async {
     await prepare(source);
-    if (_players.isEmpty) return;
+    if (_players.isEmpty || _disposed) return;
     // اگر همه‌ی نسخه‌ها در حال پخش‌اند و جا هست، یک نسخه‌ی تازه (صدای روی هم، بی‌قطع).
-    var p = _players.firstWhere((x) => !x.playing, orElse: () => _players[_next % _players.length]);
-    if (p.playing && _players.length < JustAudioService._voicesPerSound) {
+    var p = _players.firstWhere(_free, orElse: () => _players[_next % _players.length]);
+    if (!_free(p) && _players.length < JustAudioService._voicesPerSound) {
       final src = source();
       if (src != null) {
         final extra = AudioPlayer();
         try {
           await extra.setAudioSource(src);
+          if (_disposed) {
+            await extra.dispose();
+            return;
+          }
           _players.add(extra);
           p = extra;
         } catch (_) {
@@ -258,9 +317,11 @@ class _SoundSlot {
   }
 
   void dispose() {
+    _disposed = true;
     for (final p in _players) {
       p.dispose();
     }
+    _players.clear();
   }
 }
 

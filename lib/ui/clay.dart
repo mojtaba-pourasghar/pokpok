@@ -459,7 +459,8 @@ class GameTopBar extends StatelessWidget {
     padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
     child: Row(
       children: [
-        if (onBack != null) ClayIconButton(icon: Icons.arrow_forward_rounded, label: 'برگشت', onTap: onBack),
+        // arrow_back در راست‌به‌چپ خودش آینه می‌شود و به راست (عقب) اشاره می‌کند.
+        if (onBack != null) ClayIconButton(icon: Icons.arrow_back_rounded, label: 'برگشت', onTap: onBack),
         const SizedBox(width: 10),
         Expanded(
           child: Text(

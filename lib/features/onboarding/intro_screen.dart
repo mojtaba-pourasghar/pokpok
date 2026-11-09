@@ -126,7 +126,7 @@ class _IntroScreenState extends ConsumerState<IntroScreen> {
                               duration: PMotion.quick,
                               child: PButton(
                                 label: _page == 2 ? 'بزن بریم!' : 'بعدی',
-                                icon: Icons.arrow_back_rounded,
+                                icon: Icons.arrow_forward_rounded,
                                 color: PColors.orange,
                                 onPressed: _done ? _next : null,
                               ),

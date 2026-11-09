@@ -72,6 +72,8 @@ class _ToySceneState extends ConsumerState<ToyScene> with SceneBase, SingleTicke
           _hug();
         case 'magnet':
           _catch(caught.length % 4);
+        case 'build':
+          _sendBus();
         default:
           tried();
       }
@@ -112,6 +114,7 @@ class _ToySceneState extends ConsumerState<ToyScene> with SceneBase, SingleTicke
         bubbles.add((Offset(.3 + rnd.nextDouble() * .4, .75), 22 + rnd.nextDouble() * 26, t + k));
       }
     });
+    tried();
   }
 
   void _pop(int i, BuildContext c) {
@@ -124,8 +127,10 @@ class _ToySceneState extends ConsumerState<ToyScene> with SceneBase, SingleTicke
   void _move(int dx, int dy) {
     final (x, y) = robot;
     final nx = (x + dx).clamp(0, 3), ny = (y + dy).clamp(0, 2);
+    final moved = nx != x || ny != y;
     setState(() => robot = (nx, ny));
     sfx('audio/sfx/robot.mp3', volume: .7);
+    if (moved && robot != flower) tried();
     if (robot == flower) {
       burstAt(_main, Fx.drops, count: 12);
       burstAt(_main, Fx.hearts, count: 4);
@@ -156,18 +161,37 @@ class _ToySceneState extends ConsumerState<ToyScene> with SceneBase, SingleTicke
   }
 
   void _light(int i) {
-    setState(() => lights.contains(i) ? lights.remove(i) : lights.add(i));
+    final on = !lights.contains(i);
+    setState(() => on ? lights.add(i) : lights.remove(i));
     sfx('audio/sfx/light_switch.mp3');
-    if (lights.length == 4) {
-      burstAt(_main, Fx.sparkle, count: 16);
-      tried();
-    }
+    tried();
+    if (lights.length == 4) burstAt(_main, Fx.sparkle, count: 16);
   }
 
   void _switchSignal() {
     setState(() => signal = (signal + 1) % 3);
     sfx(widget.item.sound);
-    if (signal == 2) tried();
+    tried();
+  }
+
+  int honks = 0;
+
+  void _honkBus() {
+    sfx('audio/sfx/bus_horn.mp3');
+    burstAt(_main, Fx.notes, count: 3);
+    setState(() => honks++);
+    tried();
+  }
+
+  void _sendBus() {
+    sfx(widget.item.sound);
+    burstAt(_main, Fx.sparkle, count: 10);
+    // اتوبوس از اولِ پل دوباره رد می‌شود.
+    setState(() {
+      honks++;
+      carX = -.1;
+    });
+    tried();
   }
 
   void _hug() {
@@ -306,14 +330,37 @@ class _ToySceneState extends ConsumerState<ToyScene> with SceneBase, SingleTicke
                 top: flower.$2 * cell,
                 child: GameArt('flower_pot', size: cell - 4),
               ),
+              // لمسِ یک خانه‌ی کنارِ ربات، ربات را به همان‌جا می‌برد.
+              for (var y = 0; y < 3; y++)
+                for (var x = 0; x < 4; x++)
+                  Positioned(
+                    left: x * cell,
+                    top: y * cell,
+                    width: cell,
+                    height: cell,
+                    child: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: () {
+                        final dx = (x - rx).sign, dy = (y - ry).sign;
+                        // یک قدم به سمتِ جایی که لمس شد: اول افقی، بعد عمودی.
+                        if (dx != 0) {
+                          _move(dx, 0);
+                        } else if (dy != 0) {
+                          _move(0, dy);
+                        }
+                      },
+                    ),
+                  ),
               AnimatedPositioned(
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.easeOutBack,
                 left: rx * cell,
                 top: ry * cell,
-                child: SizedBox(
-                  key: _main,
-                  child: GameArt(widget.item.id, size: cell - 4),
+                child: IgnorePointer(
+                  child: SizedBox(
+                    key: _main,
+                    child: GameArt(widget.item.id, size: cell - 4),
+                  ),
                 ),
               ),
             ],
@@ -405,9 +452,19 @@ class _ToySceneState extends ConsumerState<ToyScene> with SceneBase, SingleTicke
   Widget _house(BoxConstraints box, double s) => Stack(
     alignment: Alignment.center,
     children: [
-      SizedBox(
-        key: _main,
-        child: GameArt(widget.item.id, size: s * .7),
+      // لمسِ هر جای خانه چراغِ خاموشِ بعدی را روشن می‌کند (یا اگر همه روشن‌اند، یکی را خاموش).
+      GestureDetector(
+        onTap: () {
+          final off = [
+            for (var i = 0; i < 4; i++)
+              if (!lights.contains(i)) i,
+          ];
+          _light(off.isNotEmpty ? off.first : lights.first);
+        },
+        child: SizedBox(
+          key: _main,
+          child: GameArt(widget.item.id, size: s * .7),
+        ),
       ),
       for (var i = 0; i < 4; i++)
         Positioned(
@@ -433,11 +490,15 @@ class _ToySceneState extends ConsumerState<ToyScene> with SceneBase, SingleTicke
           right: box.maxWidth * .1 + math.sin(t) * 30,
           top: box.maxHeight * .1 + math.cos(t * 1.3) * 16,
           child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
             onTap: () {
               sfx('audio/animals/bird.mp3');
               tried();
             },
-            child: const Text('🐦', style: TextStyle(fontSize: 46)),
+            child: const Padding(
+              padding: EdgeInsets.all(12),
+              child: Text('🐦', style: TextStyle(fontSize: 46)),
+            ),
           ),
         ),
       if (tries == 0 && !widget.auto) const Positioned(top: 0, child: _Tip('پنجره‌ها را لمس کن تا چراغ‌ها روشن شوند!')),
@@ -536,25 +597,31 @@ class _ToySceneState extends ConsumerState<ToyScene> with SceneBase, SingleTicke
       Positioned(
         left: box.maxWidth / 2 - s * .4,
         top: box.maxHeight * .3,
-        child: SizedBox(
-          key: _main,
-          child: GameArt(widget.item.id, size: s * .8),
+        child: GestureDetector(
+          // لمسِ خودِ پل: اتوبوس از همین‌جا راه می‌افتد و از رویش رد می‌شود.
+          onTap: _sendBus,
+          child: Squash(
+            key: _main,
+            trigger: honks,
+            child: GameArt(widget.item.id, size: s * .8),
+          ),
         ),
       ),
       Positioned(
-        left: carX * box.maxWidth - s * .1,
-        top: box.maxHeight * .32 - math.sin(carX.clamp(0, 1) * math.pi) * s * .08,
+        left: carX * box.maxWidth - s * .13,
+        // اتوبوس روی عرشه‌ی پل راه می‌رود، نه در هوا.
+        top: box.maxHeight * .3 + s * .12 - math.sin(carX.clamp(0, 1) * math.pi) * s * .1,
         child: GestureDetector(
-          onTap: () {
-            sfx('audio/sfx/car_horn.mp3');
-            burstAt(_main, Fx.notes, count: 3);
-            tried();
-          },
-          child: GameArt('bus', size: s * .2),
+          behavior: HitTestBehavior.opaque,
+          onTap: _honkBus,
+          child: Padding(
+            // جای لمسِ بزرگ‌تر از خودِ اتوبوس، چون در حال حرکت است.
+            padding: EdgeInsets.all(s * .04),
+            child: GameArt('bus', size: s * .2),
+          ),
         ),
       ),
-      if (tries == 0 && !widget.auto)
-        const Positioned(top: 0, left: 0, right: 0, child: Center(child: _Tip('روی اتوبوس بزن تا بوق بزند!'))),
+      if (tries == 0 && !widget.auto) const Positioned(top: 0, left: 0, right: 0, child: Center(child: _Tip('روی پل یا اتوبوس بزن!'))),
     ],
   );
 

@@ -54,7 +54,8 @@ class _MusicSceneState extends ConsumerState<MusicScene> with SceneBase {
       hits[i]++;
       dance++;
     });
-    if (dance % 4 == 0) tried();
+    // هر دو نت یک تلاش (قبلاً چهار نت؛ نی و زایلوفون دیر باز می‌شدند).
+    if (dance % 2 == 0) tried();
   }
 
   @override
@@ -148,10 +149,16 @@ class _MusicSceneState extends ConsumerState<MusicScene> with SceneBase {
   );
 
   /// نی با چهار سوراخ؛ هر سوراخ یک نت.
+  int _fluteNext = 0;
+
   Widget _flute(double s) => Stack(
     alignment: Alignment.center,
     children: [
-      GameArt('flute', size: s * .8),
+      // لمسِ هر جای نی هم یک نت می‌نوازد (سوراخ‌ها برای انگشت کوچک ریزند).
+      GestureDetector(
+        onTap: () => _play(_fluteNext++ % 4),
+        child: GameArt('flute', size: s * .8),
+      ),
       Row(
         mainAxisSize: MainAxisSize.min,
         children: [

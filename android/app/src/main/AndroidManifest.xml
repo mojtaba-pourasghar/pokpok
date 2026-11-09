@@ -46,6 +46,9 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!-- مقدارها از android/services.properties (در گیت نیست) -->
         <meta-data android:name="com.pokpok.ir.BAZAAR_RSA" android:value="${bazaarRsa}" />
+        <!-- تبلیغ ادیوری بعد از هر بخش در نسخه‌ی رایگان (AdiveryAds.kt) -->
+        <meta-data android:name="com.pokpok.ir.ADIVERY_APP_ID" android:value="${adiveryAppId}" />
+        <meta-data android:name="com.pokpok.ir.ADIVERY_INTERSTITIAL" android:value="${adiveryInterstitial}" />
         <!-- بررسی پس‌زمینه‌ی خبرها که از میان Doze هم رد می‌شود (NoticeAlarm.kt) -->
         <receiver
             android:name=".NoticeAlarm"

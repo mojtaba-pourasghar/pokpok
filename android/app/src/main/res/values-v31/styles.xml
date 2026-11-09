@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- اندروید ۱۲ به بعد اسپلشِ خودش را می‌کشد (آیکونِ برنامه، یعنی سرِ پوپو، وسطِ یک رنگ).
+         رنگ همان نارنجیِ صفحه‌ی بارگذاری است تا از اسپلش به برنامه پرشِ رنگ دیده نشود. -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        <item name="android:windowSplashScreenBackground">#FFFFB347</item>
+    </style>
+    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>

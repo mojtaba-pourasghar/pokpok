@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../app/providers.dart';
 import '../../app/theme/theme.dart';
 import '../../core/narrator.dart';
 import '../../game/game_data.dart';
 import '../../game/game_state.dart';
 import '../../ui/clay.dart';
-import '../paywall/paywall.dart';
 
 /// زبانه‌ی کارگاه: «کارگاه ستاره» (کیت‌هایی که با جمع ستاره‌ها باز می‌شوند) و «فروشگاه ابزار»
 /// (ابزارهایی که با سکه خریده می‌شوند). هیچ‌کدام برای تمام کردن داستان لازم نیستند.
@@ -26,8 +24,6 @@ class _WorkshopTabState extends ConsumerState<WorkshopTab> {
   Widget build(BuildContext context) {
     final data = ref.watch(gameDataProvider);
     final g = ref.watch(gameProvider);
-    final access = ref.watch(accessProvider);
-    final paid = access.owned || !access.paywall;
     return Column(
       children: [
         Padding(
@@ -73,8 +69,7 @@ class _WorkshopTabState extends ConsumerState<WorkshopTab> {
             children: shop
                 ? [for (final t in data.tools) _ToolCard(tool: t, owned: g.tools.contains(t.id), coins: g.coins)]
                 : [
-                    for (final (i, k) in data.kits.indexed)
-                      _KitCard(kit: k, stars: g.stars, done: g.starsOf(k.section.id), locked: !paid && i > 1),
+                    for (final k in data.kits) _KitCard(kit: k, stars: g.stars, done: g.starsOf(k.section.id)),
                   ],
           ),
         ),
@@ -109,16 +104,13 @@ class _Segment extends StatelessWidget {
 }
 
 class _KitCard extends ConsumerWidget {
-  const _KitCard({required this.kit, required this.stars, required this.done, required this.locked});
+  const _KitCard({required this.kit, required this.stars, required this.done});
 
   final KitDef kit;
   final int stars;
 
   /// ستاره‌های خود این کیت (اگر ساخته شده).
   final int done;
-
-  /// پشت نسخه‌ی کامل.
-  final bool locked;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -133,11 +125,6 @@ class _KitCard extends ConsumerWidget {
           ref.say('game.locked');
           return;
         }
-        if (locked) {
-          ref.say('full.locked');
-          showPaywall(context);
-          return;
-        }
         context.push('/play/${kit.section.id}');
       },
       padding: const EdgeInsets.all(10),
@@ -149,7 +136,6 @@ class _KitCard extends ConsumerWidget {
               children: [
                 Opacity(opacity: open ? 1 : .45, child: GameArt(item.id, size: 120)),
                 if (!open) const Icon(Icons.lock_rounded, color: Colors.white, size: 44),
-                if (open && locked) const Positioned(top: 0, right: 0, child: Icon(Icons.workspace_premium_rounded, color: G.yellow)),
               ],
             ),
           ),

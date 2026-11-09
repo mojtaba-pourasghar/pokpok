@@ -178,8 +178,11 @@ class _UseState extends ConsumerState<UseEngine> with EngineSounds {
     final borrowed = !widget.host.backpack.contains(need);
     widget.host.points(borrowed ? 0 : Scoring.useRight + (firstTry ? Scoring.useFirstTry : 0));
     widget.host.right();
-    ref.say('${widget.step.p['_section']}.s${widget.step.p['_index']}.done');
-    Future.delayed(const Duration(milliseconds: 1700), widget.host.done);
+    // جمله‌ی «کار کرد!» تا آخر گفته می‌شود و بعد گام تمام می‌شود (و تشویق می‌آید)، نه وسطش.
+    Future.wait([
+      ref.say('${widget.step.p['_section']}.s${widget.step.p['_index']}.done').timeout(const Duration(seconds: 6), onTimeout: () {}),
+      Future<void>.delayed(const Duration(milliseconds: 1700)),
+    ]).then((_) => widget.host.done());
   }
 
   @override
@@ -231,7 +234,10 @@ class _UseState extends ConsumerState<UseEngine> with EngineSounds {
                                 Positioned(
                                   bottom: -spot * .05,
                                   right: -spot * .05,
-                                  child: PopIn(from: 1.6, child: GameArt(need, size: spot * .55, mood: ToonMood.act)),
+                                  child: PopIn(
+                                    from: 1.6,
+                                    child: GameArt(need, size: spot * .55, mood: ToonMood.act),
+                                  ),
                                 ),
                               if (!solved)
                                 Positioned(
@@ -392,7 +398,11 @@ class _ServeState extends ConsumerState<ServeEngine> with EngineSounds {
                                   child: Idle(
                                     seed: f + 7,
                                     amount: served.contains(f) ? 1.6 : .7,
-                                    child: GameArt(pairs[f]['friend'] as String, size: w, mood: served.contains(f) ? ToonMood.happy : ToonMood.idle),
+                                    child: GameArt(
+                                      pairs[f]['friend'] as String,
+                                      size: w,
+                                      mood: served.contains(f) ? ToonMood.happy : ToonMood.idle,
+                                    ),
                                   ),
                                 ),
                               ),

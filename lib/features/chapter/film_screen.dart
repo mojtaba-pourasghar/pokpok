@@ -119,7 +119,7 @@ class _FilmScreenState extends ConsumerState<FilmScreen> {
                   child: last
                       ? ClayButton(
                           label: chapter.next.isEmpty ? 'تمام! برگردیم خانه' : 'برویم سراغ فصل بعد',
-                          icon: Icons.arrow_back_rounded,
+                          icon: Icons.arrow_forward_rounded,
                           color: G.green,
                           big: true,
                           onTap: () {

@@ -34,44 +34,38 @@ void main() {
     prefs = await SharedPreferences.getInstance();
   });
 
-  test('debug: هیچ مرحله‌ای پشت خرید نیست', () {
-    final a = AccessStore(prefs, FakeBilling(), paywall: false);
-    expect(a.everythingOpen, isTrue);
-    expect(a.needsPurchase(5), isFalse);
-  });
-
-  test('release بدون خرید: فقط مرحله‌ی ۱ رایگان', () {
-    final a = AccessStore(prefs, FakeBilling(), paywall: true);
-    expect(a.needsPurchase(0), isFalse);
-    expect(a.needsPurchase(1), isTrue);
+  test('رایگان: تبلیغ نشان داده می‌شود، با قیمت پیش‌فرض', () {
+    final a = AccessStore(prefs, FakeBilling());
+    expect(a.owned, isFalse);
+    expect(a.showsAds, isTrue);
     expect(a.price, AccessStore.fallbackPrice);
   });
 
-  test('خرید موفق همه را باز می‌کند و ذخیره می‌شود', () async {
+  test('خرید موفق تبلیغ را خاموش می‌کند و ذخیره می‌شود', () async {
     final billing = FakeBilling();
-    final a = AccessStore(prefs, billing, paywall: true);
+    final a = AccessStore(prefs, billing);
     expect(await a.buy(), PurchaseResult.purchased);
     expect(a.owned, isTrue);
-    expect(a.needsPurchase(7), isFalse);
-    expect(AccessStore(prefs, const NoBilling(), paywall: true).owned, isTrue, reason: 'بعد از بستن برنامه هم می‌ماند');
+    expect(a.showsAds, isFalse);
+    expect(AccessStore(prefs, const NoBilling()).showsAds, isFalse, reason: 'بعد از بستن برنامه هم می‌ماند');
   });
 
-  test('لغو خرید یا نبود بازار چیزی را باز نمی‌کند', () async {
-    final a = AccessStore(prefs, FakeBilling(result: PurchaseResult.cancelled), paywall: true);
+  test('لغو خرید یا نبود بازار تبلیغ را خاموش نمی‌کند', () async {
+    final a = AccessStore(prefs, FakeBilling(result: PurchaseResult.cancelled));
     expect(await a.buy(), PurchaseResult.cancelled);
-    expect(a.owned, isFalse);
-    final b = AccessStore(prefs, FakeBilling(connects: false), paywall: true);
+    expect(a.showsAds, isTrue);
+    final b = AccessStore(prefs, FakeBilling(connects: false));
     expect(await b.buy(), PurchaseResult.unavailable);
-    expect(b.owned, isFalse);
+    expect(b.showsAds, isTrue);
   });
 
   test('همگام‌سازی: خرید قبلی از بازار پیدا می‌شود؛ بی‌اینترنت وضعیت ذخیره‌شده می‌ماند', () async {
-    final a = AccessStore(prefs, FakeBilling(owned: [AccessStore.productId]), paywall: true);
+    final a = AccessStore(prefs, FakeBilling(owned: [AccessStore.productId]));
     await a.sync();
     expect(a.owned, isTrue);
-    final offline = AccessStore(prefs, FakeBilling(owned: null), paywall: true);
+    final offline = AccessStore(prefs, FakeBilling(owned: null));
     await offline.sync();
     expect(offline.owned, isTrue);
-    expect(await AccessStore(prefs, FakeBilling(connects: false), paywall: true).restore(), isNull);
+    expect(await AccessStore(prefs, FakeBilling(connects: false)).restore(), isNull);
   });
 }
